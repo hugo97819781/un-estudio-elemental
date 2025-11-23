@@ -1,0 +1,230 @@
+\setcounter{chapter}{-1}
+\chapter{Preeliminares}
+%\pagestyle{chapstyle}
+
+\emph{\small En este capítulo se establecen las bases conceptuales y la notación que se utilizarán a lo largo de este trabajo. Se asume que el lector posee un conocimiento fundamental de la teoría de conjuntos axiomática y de la topología general, todo al nivel de cursos estándar de licenciatura. El propósito de este capítulo no es ser un tratado exhaustivo, sino fijar la terminología, los convenios y los resultados clásicos que se darán por sentados. Para una revisión más profunda, se remite al lector a textos de referencia como:}
+
+\section{Teoría  de Conjuntos}
+\subsection{Notación y convenciones básicas}
+
+\index[sym]{$\zfc$}\index[sym]{$\Ac$}
+Sea adopatará como marco axiomático a la teoría usual de conjuntos; $\zfc$. Se comprenden, por tanto, los axiomas de: existencia, extensionalidad, buena fundación, esquema de separación, par, unión, infinito, esquema de reemplazo y el axioma de elección (\textit{denotado a partir de ahora por $\Ac$}); mismos que pueden consultarse en \cite[p.~xv]{kunenSet}.
+
+Se asume que el lector está familiarizado con los objetos clásicos de la teoría de conjuntos, conviniendo las notaciones pertinentes a: los símbolos lógicos $\forall$, $\exists$, $\neg$, $\lor$, $\land$, $\rightarrow$, $\leftrightarrow$ y $\exists!$ para existencia y unicidad; el conjunto vacío $\emptyset$; la pertenencia $\in$, la contención $\subseteq$ y contención propia $\subsetneq$; la diferencia de conjuntos $X \setminus Y$; el par ordenado $(x,y)$, el conjunto potencia $\mathscr{P}(X)$; y claro, las operaciones conjuntistas: unión, intersección, producto cartesiano ($\cup$, $\cap$ y $\times$; junto con sus homólogos unarios: $\bigcup$, $\bigcap$ y $\prod$, respectivamente). A lo largo del presente texto se jerarquizarán las operaciones anteriores de la siguiente manera: se aplicarán siempre de izquierda a derecha, priorizando la diferencia de conjuntos, el producto cartesiano y la unión e intersección, en tal orden.
+
+\index[alph]{clase}\index[alph]{clase!propia}\index[alph]{clase!conjunto}
+Dado un conjunto $A$, se denotará por $\{x \in A \tq \varphi (x)\}$ al conjunto de todos los elementos $x$ de $A$ que satisfacen la fórmula $\varphi (x)$ (siendo tal colección un conjunto, debido al esquema de separación \cite[p.~xv]{kunenSet}). Una \textit{clase} es una ``colección'' del estilo $\mathcal{C} = \{x \tq \varphi (x)\}$, se dice $\mathcal{C}$ \textit{es conjunto} si y sólo si se satisface:
+$$\exists y \forall x \; ( x \in y \leftrightarrow \varphi(x)  ) $$
+en caso contrario, ésta se denomina \textit{clase propia}. Como abuso de notación, si un conjunto $x$ hace verdadera la fórmula $\varphi(x)$, se escribirá $x \in \mathcal{C}$. Se denotará por $\mathcal{V}$ a la clase $\{x \tq x=x\}$.
+
+\index[sym]{$\mapsto$}
+Se dará por sentado el conocimiento de la teoría elemental de relaciones y funciones, manteniéndose al margen de las notaciones típicas para: el dominio $\dom(f)$ e imagen $\ima(f)$; la imagen directa $f[A]$ e inversa $f^{-1}[A]$ y las funciones identidad $\Id_X$. La composición de funciones (o relaciones) será denotada por yuxtaposición $fg$ y, la restricción de una función (o relación) $f$ a un subconjunto $A \subseteq \dom(f)$, por $f \upharpoonright A$. Se señala además el uso ocasional de la expresion ``\textit{$A \to B$ dada por $x \mapsto f(x)$}'' (o simplemente ``$x \mapsto f(x)$'') para hacer referencia a la relga de correspondencia de la función $f:A \to B$, en caso su nombre carezca de interés.
+
+\subsection{Órdenes parciales}
+
+Los órdenes parciales reflexivos y antirreflexivos serán denotados por los símbolos $\leq$ y $<$, respectivamente y el término \textit{orden parcial} hará referencia a cualquiera de ellos; la posible diferencia no es sustancial, pues ambas versiones son fácilmente intercambiables al añadir o eliminar la identidad del conjunto sobre el cual se definen. Un \textit{conjunto parcialmente ordenado} se concibe como un par $(P, R)$, donde $R$ es un orden parcial en $P$. En lo que sigue, fiíese conjunto parcialmente ordenado $(P, \leq)$.
+
+Para cada $A \subseteq P$: $\min(A)$, $\max(A)$, $\sup(A)$ e $\inf(A)$ denotarán el máximo, mínimo, supremo e ínfimo de $A$, respectivamente (en caso de existir). Además, cierto $p \in P$ es \textit{$R$-minimal} de $A$ si $p \in A$ y no existe $q \in A$ tal que $q < p$, definiendo el concepto \textit{$R$-maximal} de forma dual.
+
+\index[alph]{elementos!comparables}\index[alph]{elementos!incomparables}\index[alph]{elementos!compatibles}\index[alph]{elementos!incompatibles}\index[alph]{cadena}\index[alph]{anticadena}\index[sym]{$p \parallel q$}\index[sym]{$p \perp q$}
+Se conviene que dos elementos $p,q \in P$ son \textit{comparables} si y sólo si $p \leq q$ o $q \leq p$; en caso contrario, son \textit{incomparables}. Así mismo, $p$ y $q$ serán \textit{compatibles} ($p \parallel q$) cuando exista $r \in P$ de modo que $r \leq p$ y $r \leq q$; en caso contrario, serán \textit{incompatibles} ($p \perp q$). Una $(P,\leq)$-\textit{cadena} (\textit{anticadena, respectivamente}) es un subconjunto de $P$ de elementos comparables (incompatibles, respectivamente) dos a dos; y cuando el contexto lo permita, se omitirá el prefijo $(P,\leq)$.
+
+La caracterización típica para $\Ac$ es clave:
+
+\begin{teorema}[Principio de Maximalidad de Hausdorff]\label{teo-PMH}\index[alph]{Principio!de Maximalidad de Hausdorff}\index[alph]{Hausdorff!Principio de Maximalidad de}
+	$\Ac$ se satisface si y sólo si todo conjunto parcialmente ordenado $(P, \leq)$, no vacío, posee una $(P,\leq)$-cadena $\subseteq$-maximal (del conjunto de cadenas de $P$).
+\end{teorema}
+
+\index[alph]{orden!total}\index[alph]{orden!bueno}\index[alph]{orden!bien fundado}\index[alph]{orden!completo}
+Se dice que $\leq$ ($(P,\leq)$ o $(P,<)$, indistintamente) es: \textit{total} si cualesquiera dos elementos de $P$ son comparables, \textit{buen orden} (\textit{bien fundado, o completo, respectivamente}) si y sólo si cada $A \in \ms{P}(P) \setminus \{\emptyset\}$ tiene elemento mínimo (minimal, o supremo si $A$ es acotado superiormente, respectivamente). Nótese que todo buen orden es total, bien fundado y completo.
+
+\index[alph]{isomorfismo(de orden)}\index[alph]{morfismo (de orden)}\index[alph]{orden!isomorfo a otro}\index[alph]{función!creciente}\index[alph]{función!decreciente}\index[sym]{$(P,<) \cong (Q,\sqsubset)$}
+Dados dos ordenes parciales $(P,R)$ y $(Q,S)$, se dice que una función $f:P \to Q$ es: \textit{$S$-creciente} (\textit{decreciente}, respectivamente) si y sólo si dados $p,q \in P$, se tiene que $p \mathrel{R} q$ implica $f(p) \mathrel{S} f(q)$ (o $f(p) \mathrel{S} f(q)$, respectivamente). En cualquier caso, se dice que $f$ es un \textit{morfismo de orden}; y, si además $f$ es biyectiva, se dice que $f$ es un \textit{isomorfismo} y que los órdenes $(P,R)$ y $(Q,S)$ son \textit{isomorfos}, denotado $(P,R) \cong (Q,S)$.
+
+\subsection{Ordinales y Cardinales}
+
+\index[alph]{ordinal}\index[alph]{natural}\index[sym]{$\OR$}
+Siguiendo la hoy conocida como construcción de John von Neumann, se declara que un conjunto $\alpha$ es: \textit{ordinal} si es transitivo (esto es, $\alpha \subseteq \ms{P}(\alpha)$) y $(\alpha,\in)$ es un buen orden; y, \text{natural} si es un ordinal tal que $(\alpha,\ni)$ es un buen orden. Se denota por $\OR$ a la clase (propia) de todos los ordinales.
+
+Los ordinales se denotan, típicamente, por las primeras letras griegas minúsculas: $\alpha, \beta, \gamma$, etcétera; y, los naturales por: $m,n,k$, etcétera. Se seguirá esta convención, salvo que se indique lo contrario.
+
+\index[alph]{ordinal!cero}\index[alph]{ordinal!sucesor}\index[alph]{ordinal!límite}\index[sym]{$\omega$}\index[sym]{$0$ (cero)}\index[sym]{$\alpha < \beta$}\index[sym]{$\alpha+1$}
+Si $\alpha$ y $\beta$ son ordinales, se conviene que $\alpha$ es menor que $\beta$ ($\alpha<\beta$) cuando $\alpha \in \beta$; en este sentido, es un hecho que toda clase no vacía de ordinales, $X$, tiene un mínimo (a saber, $\midcap X$). Y consecuentemente, todo conjunto de ordinales $A$ tiene supremo (a saber, $\midcup A$). Un ordinal $\alpha$ es: \textit{cero} si $\alpha=0:=\emptyset$; \textit{sucesor} cuando existe otro ordinal $\beta$ de modo que $\alpha = \beta \cup \{\beta\}$ (en cuyo caso se denota $\alpha=\beta+1$); y \textit{límite} en caso no ocurra ninguna de las dos anteriores. El primer ordinal límite se denotará por $\omega$. Es un hecho que $\omega$ es el conjunto de todos los números naturales.
+
+\begin{teorema}[Inducción transfinita]\index[alph]{Teorema!de Inducción transfinita}\index[alph]{transfinita!Inducción}
+	Si $\varphi(x)$ es una fórmula de la teoría de conjuntos y:
+	\begin{enumerate}
+		\item $\varphi(0)$ se satisface.
+		\item Para cada ordinal $\alpha$, la satisfacción de $\varphi(\alpha)$ implica la satisfacción de $\varphi(\alpha+1)$.
+		\item Para cada ordinal límite $\gamma$, la satisfacción de $\forall \alpha \in \gamma (\varphi(\alpha))$ implica la satisfacción de $\varphi(\gamma)$.
+	\end{enumerate}
+	entonces, para cualquier ordinal $\alpha$, se satisface $\varphi(\alpha)$.
+
+	Se obtiene la misma conclusión sustituyendo las condiciones (i)-(iii) por el enunciado: Para todo ordinal $\gamma$, la satisfacción de $\forall \alpha \in \gamma (\varphi(\alpha))$ implica la satisfacción de $\varphi(\gamma)$.
+\end{teorema}
+
+\index[alph]{funcional}\index[sym]{$F:\mathcal{C} \to \mathcal{C}'$}
+Dadas clases $\mathcal{C}=\{x \tq \varphi(x)\}$ y $\mathcal{C}'=\{x \tq \varphi'(x)\}$, se dice que un \textit{funcional de} $\mathcal{C}$ en $V$ es una clase $F$ de pares ordenados; a saber $F=\{(x,y) \tq \varphi(x) \land \psi(x,y)\}$, de forma que $\forall x (\varphi(x)\to \exists! y (\varphi'(y) \land \psi(x,y))) $. En cuyo caso, se denota $F:\mathcal{C} \to \mathcal{C}'$, y, para cada $x$ en $\mathcal{C}$, se denota por $F(x)$ al único $y$ en $\mathcal{C}'$ tal que $\psi(x,y)$. Siendo claro además que, si $A$ es un conjunto cualquiera, $F[A]=\{F(a) \tq a \in A\}$.
+
+\begin{teorema}[Recursión transfinita]\index[alph]{Teorema!de Recursión transfinita}\index[alph]{transfinita!Recursión}
+	Para cualesquiera funcionales $F,G:\mathcal{V} \to \mathcal{V}$ y todo conjunto $A$, existe un único funcional $G:\OR \to \mathcal{V}$ de manera que:
+	\begin{enumerate}
+		\item $G(0)=A$.
+		\item Para cada ordinal $\alpha$, $G(\alpha+1)=F(G(\alpha))$.
+		\item Para cada ordinal límite $\gamma$, $G(\gamma)=H(G[\alpha])$.
+	\end{enumerate}
+
+	Además, existe un único funcional $K:\OR \to \mathcal{V}$ de manera que para todo ordinal $\alpha$ se satisface:
+	\[ K(\alpha)=F(K[\alpha]) \]
+\end{teorema}
+
+Los teoremas anteriores se restringen a cualquier otro ordinal, consiguiéndose así las versiones clásicas para los teoremas de inducción y recursión (cada uno de ellos con dos versiones) para $\omega$ (o cualquier otro odrinal $\alpha$). Siendo tales restricciones las justificaciones rigurosas para ciertas técnicas y construcciones de las que se echa mano en este trabajo (véase \textbf{tal tal tal}).
+\index[alph]{ordinal!suma}\index[alph]{ordinal!producto}\index[alph]{ordinal!exponenciación}\index[sym]{$\alpha + \beta$}\index[sym]{$\alpha \cdot \beta$}\index[sym]{$\alpha ^ \beta$}
+Haciendo uso del Teorema de Recursión Transfinita, se pueden definir las operaciones binarias entre ordinales: $\alpha + \beta$, $\alpha \cdot \beta$ y $\alpha ^ \beta$, respectivamente. En caso se lleguen a utilizar durante la presente tesis, se indicará que tales símbolos corresponden a aritmética es ordinal (para evitar confusión con la aritmética cardinal) y seguirá la definición expuesta en \cite[p.XXX]{amorIntermedio}.
+
+\begin{teorema}[de enumeración]\label{teo-enumeracion}\index[alph]{Teorema!de enumeración}\index[alph]{enumeración!Teorema de}
+	Para cualquier buen orden $(P,<)$ existe un único ordinal $\alpha$ para el cual $(P,<) \cong (\alpha, \in)$.
+\end{teorema}
+
+\index[alph]{cardinalidad}\index[sym]{$|X|$}\index[alph]{conjunto!finito}\index[alph]{conjunto!infinito}\index[alph]{conjunto!numerable}\index[alph]{conjunto!a lo más numerable}\index[alph]{conjunto!no numerable}\index[alph]{conjunto!más que numerable}
+Tomando en cuenta que; bajo $\Ac$, cualquier conjunto admite un buen orden \cite[Teo.~5.1, p.~48]{jechSet}, se desprende de lo anterior que todo conjunto $X$ es biyectable con algún ordinal, al mínimo de tales ordinales se le denomina \textit{cardinalidad de} $X$ y se denota por $|X|$. Se conviene además que $X$ es: \textit{finito} si existe $n \in \omega$ tal que $|X|=n$; \textit{infinito} si $|X|\geq \omega$; \textit{numerable} si $|X|=\omega$; \textit{a lo más numerable} si $|X|\leq \omega$; y, \textit{más que numerable} (indistintamente, \textit{no numerable}) si $|X|>\omega$.
+
+\index[alph]{cardinal}\index[sym]{$\CAR$}
+Cualquier ordinal $\kappa$ que sea la cardinalidad de un conjunto tiene la virtud de no ser biyectable con ningún ordinal anterior a él, a estos ordinales se les llama \textit{cardinales}. Los cardinales se suelen denotar por letras griegas intermedias: $\kappa$, $\lambda$, $\mu$, etcétera. Se seguirá tal convención y además se denotará por $\CAR$ a la clase de cardinales mayores o iguales a $\omega$. Es un hecho que la intersección de una familia de cardinales, es un cardinal. En consecuencia, cualquier clase no vacía de cardinales tiene mínimo; y, cualquier conjunto de cardinales, supremo.
+
+\index[alph]{cardinal!suma}\index[alph]{cardinal!producto}\index[alph]{cardinal!exponenciación}\index[sym]{$\kappa + \lambda$}\index[sym]{$\kappa \cdot \lambda$}\index[sym]{$\kappa ^ \lambda$}\index[alph]{cardinal!suma general}\index[alph]{cardinal!producto general}\index[sym]{$\sum_{\alpha \in I} \kappa_\alpha$}\index[sym]{$\prod_{\alpha \in I} \kappa_\alpha$}
+Dados dos cardinales $\kappa$ y $\lambda$, se definen: $\kappa + \lambda:=|\kappa \times \{0\} \cup \lambda \times \{1\}|$, $\kappa \cdot \lambda:= |\kappa \times \lambda|$ y $\kappa ^ \lambda:= |\{f \tq f:\lambda \to \kappa\}|$; siendo las versiones generales de las dos primeras operaciones:
+\[ \sum_{\alpha \in I} \kappa_\alpha := \left|\bigcup_{\alpha \in I} (\kappa_\alpha \times \{\alpha\})\right| \quad \text{y} \quad \prod_{\alpha \in I} \kappa_\alpha := \left|\prod_{\alpha \in I} \kappa_\alpha\right| \]
+(cuando $\{\kappa_\alpha \tq \alpha \in I\}$ es un conjunto no vacío de cardinales).
+
+Se dará por sentado que el lector está familiarizado con la aritmética cardinal básica (véase \cite[Cap.~1, \S ~ 3]{jechSet}). Más allá de tal comportamiento elemental, se hace hincapié en los siguientes teoremas de suma relevancia para la aritmética cardinal:
+\begin{teorema}[suma y producto cardinal]\index[alph]{Teorema!de la suma cardinal}\index[alph]{Teorema!del producto cardinal}
+	Si $\{\kappa_\alpha \tq \alpha \in I\}$ es conjunto no vacío de cardinales:
+	\begin{enumerate}
+		\item $\displaystyle \sum_{\alpha \in I} \kappa_\alpha = |I| \cdot \sup_{\alpha \in I} \kappa_\alpha$.
+		\item Si ningún $\kappa_\alpha$ es $0$ y para cualesquiera $\alpha,\beta \in I$, $\alpha \leq \beta$ implica $\kappa_\alpha \leq \kappa_\beta$, entonces: $\displaystyle \prod_{\alpha \in I} \kappa_\alpha = \Big( \sup_{\alpha \in I} \kappa_\alpha \Big)^{|I|}$.
+	\end{enumerate}
+\end{teorema}
+
+\begin{teorema}[Lema de König]\index[alph]{Lema!de König}\index[alph]{König!Lema de}\index[alph]{Teorema!de Cantor}\index[alph]{Cantor!Teorema de}
+	Sean $\{\kappa_\alpha \tq \alpha \in I\}$ y $\{\lambda_\alpha \tq \alpha \in I\}$ conjuntos no vacíos de cardinales de modo que para todo $\alpha \in I$ se satisface $\kappa_\alpha < \lambda_\alpha$. Entonces:
+	\[ \sum_{\alpha \in I} \kappa_\alpha < \prod_{\alpha \in I} \kappa_\alpha \]
+
+	Particularmente, $\kappa = \sum_{\alpha \in \kappa} 1 < \prod_{\alpha \in \kappa} 2 = 2^\kappa$ (\textit{Teorema de Cantor}).
+\end{teorema}
+
+Del Lema anterior se desprende que si $\kappa \in \CAR$, existe $\lambda \in \CAR$ con $\kappa < \lambda$. Luego, se puede ordenar la clase $\CAR$ como:
+\begin{definicion}\index[sym]{$\aleph_\alpha$}\index[sym]{$\omega_\alpha$}
+	Se define recursivamente; para cualquier ordinal $\alpha$, el número $\aleph_\alpha$, de la siguiente manera:
+	\begin{enumerate}
+		\item $\aleph_0:=\omega$.
+		\item Para cada ordinal $\alpha$, $\aleph_{\alpha+1}:=\min\{ \lambda \in \CAR \tq \aleph_\alpha < \lambda \}$.
+		\item Para cada ordinal límite $\gamma$, $\aleph_\gamma:=\sup_{\alpha < \gamma} \aleph_\alpha$.
+	\end{enumerate}
+
+	Además, para cada ordinal $\alpha$, se denota $\omega_\alpha:=\aleph_\alpha$.
+\end{definicion}
+
+\index[sym]{$[X]^\kappa$}\index[sym]{$[X]^{<\kappa}$}\index[sym]{$[X]^{\leq \kappa}$}\index[sym]{$[X]^{> \kappa}$}\index[sym]{$[X]^{\geq \kappa}$}\index[sym]{$X^\kappa$}\index[sym]{$X^{<\kappa}$}
+Siempre que $X$ sea un conjunto y $\kappa$ un cardinal, se escribirá por $[X]^\kappa$ al conjunto de todos los subconjuntos de $X$ de cardinalidad $\kappa$; $[X]^{<\kappa}$ al conjunto de todos los subconjuntos de $X$ de cardinalidad estrictamente menor que $\kappa$; definiéndose análogamente a los conjuntos $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, en caso no se confunda con la notación de aritmética cardinal, $X^\kappa$ será el conjunto de funciones de $\kappa$ en $X$; y, $X^{<\kappa}$ el conjunto de funciones de funciones $f:\alpha \to X$ (con $\alpha < \kappa$).
+
+Es un hecho que si $X$ es infinito, entonces $|[X]^\kappa|=|X|^\kappa$ y $|[X]^{<\omega}|=|X|$; además, $|X^\mu|=|X|^\mu$ y $|X^{<\omega}|=|X|$.
+
+\subsection{Árboles}
+
+\index[alph]{árbol}\index[alph]{árbol!orden de un elemento de un}\index{árbol!altura de un}\index[alph]{árbol!rama de un}\index{árbol!$\alpha$-ésimo nivel de un}\index[sym]{$<_x$}\index[sym]{$o(x)$}\index[sym]{$h(T,\leq)$}
+Un \textit{árbol} es un orden parcial $(T,\leq)$ (denotado simplemente por $T$ si no hay lugar a ambigüedades) tal que para cualquier $x \in T$, el conjunto $<_x:=<^{-1}[\{x\}]=\{y \in T \tq y < x\}$ es un buen orden. Dado el \autoref{teo-enumeracion}, para cada $x \in T$ existe un único ordinal, denotado $o(x)$ para el cual $(<_x,<) \cong (o(x),\in)$. Tal ordinal $o(x)$ es nombrado el \textit{orden de} $x$ \textit{en el árbol} $T$. La \textit{altura} de $T$ es el ordinal $h(T,\leq):=\sup\{o(x) +1 \tq x \in T\}$. Para cada ordinal $\alpha$ se define el $\alpha$\textit{-ésimo nivel} de $(T,\leq)$ como el conjunto $T_\alpha := \{ x \in T \tq o(x) = \alpha \}$. Y, finalmente, un subconjunto $R \subseteq T$ se dice que es \textit{rama} si y sólo si es una $(T,\leq)$-cadena $\subseteq$-maximal (del conjunto de $(T,\leq)$-cadenas).
+
+\index{árbol!de ramas de $2^\omega$}
+Dentro de la basta variedad de árboles, será de especial interés el \textit{árbol de ramas de} $2^\omega=\{f \tq f:\omega \to 2\}$; esto es, el conjunto $2^{<\omega}$ ordenado por contención. Tal árbol es numerable, todos sus elementos tienen orden finito y su altura es exactamente $\omega$.
+
+\label{arbol-2Ramas}
+En efecto, si $f \upharpoonright n \in 2^{<\omega}$, entonces $(n,\in) \cong (f, \subsetneq_f)$ debido al isomorfismo de orden $n \to \subsetneq_f$, dado por $n \mapsto f \upharpoonright n$. Por lo tanto $T$ es un árbol, y el orden de cada $f \in T$ es su dominio; como $2^{<\omega}$ contiene a todas las funciones de naturales en $2$, se sigue que la altura de $T$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
+
+Además $T$ es numerable, ya que:
+$$ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega $$
+
+Lo cual demuestra lo que se requería respecto al árbol $(2^{<\omega},\subseteq)$.
+
+\section{Topología}
+
+\subsection{Convenios generales y propiedades topológicas}
+\index[alph]{topología}\index[alph]{espacio!topológico}\index[alph]{espacio}\index[alph]{conjunto!cerrado}\index[alph]{conjunto!abierto}
+Una \textit{topología} para un conjunto $X$ es un conjunto $\tau \subseteq \ms{P}(X)$ que tiene por elementos a $\emptyset$ a $X$; es cerrado bajo uniones (arbitrarias); y, cerrado bajo intersecciones finitas. El par $(X,\tau)$ (con frecuencia confundido con su conjunto subyacente, $X$) se denomina \textit{espacio topológico} (o simplemente \textit{espacio}). Los elementos de $\tau$ se denominan \textit{abiertos} (\textit{de $X$}) y sus complementos respecto a $X$, \textit{cerrados} (\textit{de $X$}).
+
+\index[alph]{función!continua}\index[alph]{función!homeomorfismo}
+Dados dos espacios $X$ y $Y$, se dice que una función $f:X \to Y$ es \textit{continua} si para cada $U \subseteq Y$ abierto en $Y$, se tiene que $f^{-1}[U] \subseteq X$ es abierto en $X$. Un \textit{homemorfismo entre $X$ y $Y$} es una función continua $f:X \to Y$, biyectiva, cuya inversa $f^{-1}:Y \to X$ es también continua. Cuando exista un homeomorfismo entre $X$ y $Y$, esto se denotará $X \cong Y$.
+
+\index[alph]{subespacio}\index[alph]{topología!de subespacio}\index[alph]{encaje}
+Dados un espacio $(X,\tau)$ y $A \subseteq X$ se define la \textit{topología de subespacio} (\textit{de $A$ respecto $X$}) como la colección $\tau_A := \{ U \cap A \tq U \in \tau \}$ (que, claramente, es topología para $A$). Cuando $(X,\eta),(Y,\tau)$ sean espacios topológicos, se dice que una función $f:X \to Y$ es un \textit{encaje} si y sólo si $f$ es un homeomorfismo entre $(X,\eta)$ y $(f[X],\tau_{f[X]})$. En caso ocurra lo último, se convendrá que $X$ es un \textit{subespacio} de $Y$ (o bien, que $X$ \textit{se encaja en} $Y$) y, ocasionalmente, esto se denotará $X \hookrightarrow Y$. En este contexto, la notación ``$A \subseteq X$'' significará que $A$ está contenido en $X$ como conjunto y que $A \hookrightarrow X$ por medio del encaje $A \to X$ dado por $a \mapsto a$.
+
+\index[alph]{base}\index[alph]{subbase}
+Una \textit{base} para un espacio topológico $(X,\tau)$ es una colección $\mathcal{B} \subseteq \tau$ de forma que para cualquier abierto $U$ de $X$ y cada $x \in U$ existe cierto $B \in \mathcal{B}$ de forma que $x \in B \subseteq U$.
+
+%\begin{teorema}\label{teo-subBase}\index[alph]{topología!generada}
+%    Para cualquier conjunto $X$ y cualquier $\mathcal{S} \subseteq \ms{P}(X)$, con $X \subseteq \midcup \mathcal{S}$, existe una topología $\tau$ para $X$ de forma que $\mathcal{S} \subseteq \tau$; y, para cualquier topología $\eta$ de $X$, si $\mathcal{S} \subseteq \eta$, entonces $\tau \subseteq \eta$.
+
+%   Tal topología $\tau$ se denomina \textbf{topología generada por} $\mathcal{S}$.
+%\end{teorema}
+
+\index[alph]{base!local}\index[alph]{base!de vecindades}\index[alph]{vecindad}
+Si $x \in X$, una \textit{vecindad de} $x$ (\textit{en} $X$) es un subconjunto $V \subseteq X$ de modo que existe un abierto $U$ de $X$ tal que $x \in U \subseteq V$. Además, se convendrá que una colección $\mathcal{B}_x \subseteq \ms{P}(X)$ es una \textit{base local} (\textit{de vecindades}, respectivamente) de $x$ en $X$ si y sólo si para cada elemento de $\mathcal{B}_x$ es una vecindad abierta (vecindad, respectivamente) de $x$; y, para todo abierto $U$ de $X$ con $x \in U$, existe $B \in \mathcal{B}_x$ de forma que $x \in B \subseteq U$.
+
+\index[alph]{operador!interior}\index[alph]{operador!clausura}\index[alph]{operador!exterior}\index[alph]{operador!frontera}\index[alph]{operador!derivado}\index[sym]{$\inte(A)$}\index[sym]{$\cla(A)$}\index[sym]{$\ext(A)$}\index[sym]{$\fron(A)$}\index[sym]{$\der(A)$}\index[alph]{punto!aislado}\index[alph]{punto!de acumulación}\index[alph]{conjunto!denso}
+Para cada $A \subseteq X$ se denotarán por $\inte(A),\cla(A),\ext(A),\fron(A),\der(A)$ a los \textit{operadores}: interior, clausura, exterior, frontera, y derivado de $A$, respectivamente. Sus definiciones se pueden consultar en \cite[Cap.~2]{fidelElementos}. Los elementos de $\der(A)$ se denominan \textit{puntos de acumulación de} $A$; y, los elementos en $A \setminus \der(A)$ se llaman \textit{puntos aislados de} $A$. Un subconjunto $D \subseteq X$ se dice \textit{denso} (\textit{en} $X$) si y sólo si $\cla(D)=X$.
+
+\index[alph]{producto!topológico}\index[alph]{producto!de Tychonoff}\index[alph]{suma topológica}
+Dado un conjunto no vacío de espacios topológicos $\{X_\alpha \tq \alpha \in \kappa \}$, se denotarán por $ \prod_{\alpha \in \kappa} X_\alpha$ y $ \coprod_{\alpha \in \kappa} X_\alpha$ a su \textit{producto topológico} (o, \textit{de Tychonoff}) y \textit{suma topológica}, respectivamete; siguiéndo las definiciones de estos espacios acorde al estándar, expuesto en textos como \cite{fidelElementos,munkresTopology}, entre otros. Al momento de trabajar con productos topológicos, será usual, para cada $\alpha \in \kappa$ denotar por $\pi_\alpha$ a la $\alpha$-ésima proyección cartesiana ($ \prod_{\beta \in \kappa} X_\beta \to X_\alpha$ dada por $f \mapsto f(\alpha)$).
+
+\index[alph]{propiedad!topológica}\index[alph]{propiedad!hereditaria}\index[alph]{propiedad!débilmente hereditaria}\index[alph]{propiedad!factorizable}\index[alph]{propiedad!productiva}\index[alph]{propiedad!finitamente productiva}
+Una propiedad $\varphi(X)$ (pensada como fórmula de la teoría de conjuntos) es: \textit{topológica} si es invariante bajo homeomorfismos; esto es, si $(X,\tau)$ y $(Y,\eta)$ son homeomorfos, entonces $\varphi(X)$ se satisface únicamente cuando $\varphi(Y)$ se satisface; \textit{hereditaria} (\textit{débilmente hereditaria}, respectivamente) cuando $\varphi(X)$ implica que para cualquier subespacio (subespacio cerrado, respectivamente) $A$ de $X$, $\varphi(A)$ se satisface; \textit{factorizable} si para cualquier conjunto no vacío de espacios topológicos $\{X_\alpha \tq \alpha \in \kappa \}$ se tiene que, si $\varphi(\prod_{\alpha \in \kappa} X_\alpha)$ se cumple, entonces $\forall \alpha \in \kappa (\varphi(X_\alpha))$ se satisface; \textit{productiva} (\textit{finitamente productiva}, respectivamente) si para cualquier cardinal $\kappa$ (natural $\kappa \in \omega$, respectivamente) no cero y familia $\{X_\alpha \tq \alpha \in \kappa \}$ de espacios, la satisfacción de $\forall \alpha \in \kappa (\varphi(X_\alpha))$ implica la satisfacción de $\varphi(\prod_{\alpha \in \kappa} X_\alpha)$. Además, si un espacio $X$ es tal que todos sus subespacios tienen una propiedad (a saber, $P$), $X$ se denomina \textit{hereditariamente $P$}.
+
+Las siguientes propiedades topológicas serán utilizadas a lo largo del texto. Un espacio $X$ se dice: \textit{Primero Numerable} (o $1\AN$) si cada uno de sus puntos admite una base local (equivalentemente, de vecindades) a lo más numerable; \textit{Segundo Numerable} (o $2\AN$) si admite una base a lo más numerable; \textit{Separable} si tiene un subconjunto denso y a lo más numerable; $\T_0$ si para cualesquiera $x,y \in X$ distintos existe un abierto $U$ de forma que $U \cap \{x,y\} \in \{\{x\},\{y\}\}$; $\T_1$ si para cada $x \in X$ el conjunto $\{x\}$ es cerrado, $T_2$ (o \textit{de Hausdorff}) si para cualesquiera $x,y \in X$ distintos existen abiertos ajenos $U,V$ tales que $x \in U$ y $y \in V$; \textit{regular} si para cualquier cerrado $F \subseteq X$ y cualquier $x \in X \setminus F$ existen abiertos $U,V$ ajenos de modo que $F \subseteq U$ y $x \in V$; $\T_3$ si es regular y $\T_1$; \textit{completamente regular} si para cualquier cerrado $F$ y punto $x \in X \setminus F$ existe una función continua $f:X \to \mathbb{R}$ de modo que $f(x)=0$ y $f[F] \subseteq \{1\}$; $\T_{3 \frac{1}{2}}$ (o \textit{de Tychonoff}) si es completamente regular y $\T_1$; \textit{normal} si para cualesquiera cerrados $F,G$ ajenos, existen abiertos ajenos $U,V$ de modo que $F \subseteq U$ y $G \subseteq U$; $\T_4$ si es normal y $T_1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Pruebas de Consistencia Relativa}
+\subsection{Preludio de Lógica}
+\subsection{Axioma de Martin}
+
+\index[alph]{orden!\textit{c.c.c.}}
+Un conjunto parcialmente ordenado $(P,\leq)$ es \textit{c.c.c.} (o bien, cuenta con la \textit{propiedad de anticadena contable}) si y sólo si cualquier $(P,\leq)$-anticadena es a lo más numerable.
+
+\index[alph]{filtro}\index[alph]{ideal}\index[alph]{filtro!propio}\index[alph]{ideal!propio}
+Un \textit{filtro} de $(P,\leq)$ es un subconjunto $F \subseteq P$ no vacío, cerrado por arriba (es decir, si $x \in F$ y $y \geq x$, entonces $y \in F$) y de elementos compatibles en $F$ (es decir, para cualesquiera $x,y \in F$ existe $r \in F$ de modo que $r \leq x$ y $r \leq y$). La noción de \textit{ideal} es dual a la de filtro; y, un filtro (o ideal) es \textit{propio} si y sólo si es distinto de $P$.
+
+\begin{observacion}\label{obs-filtr-potencia}
+	Sea $X$ es conjunto, entonces $F \subseteq \ms{P}(X)$ es filtro (ideal) de $(\ms{P}(X),\subseteq)$ si y sólo si $F$ es no vacío, cerrado bajo superconjuntos (subconjuntos) y bajo intersecciones (uniones) dos a dos.
+\end{observacion}
+
+\index[alph]{subconjunto!denso (de un orden parcial)}\index[alph]{subconjunto!denso bajo $p$ (de un orden parcial)}
+Se conviene que un subconjunto $D \subseteq P$ es: \textit{denso} si y sólo si para cualquier $x \in P$ existe un elemento $d \in D$ de modo que $d \leq x$; \textit{denso bajo $p \in P$} cuando para cada $x \leq p$ existe $d \in D$ de modo que $d \leq x$.
+
+\index[alph]{filtro!genérico}\index[alph]{filtro!$\ms{D}$-genérico}
+Dada una colección $\ms{D} \subseteq \ms{P}(P)$ de subconjuntos densos de $(P,\leq)$, se dice que un filtro $G$ de $(P,\leq)$ es \textit{$\ms{D}$-genérico} si es propio y tiene intersección no vacía con cada elemento de $\ms{D}$. Un filtro $G$ es \textit{genérico} si es $\ms{D}$-genérico, donde $\ms{D}$ es la colección de todos los subconjuntos densos de $(P,\leq)$.
+
+El Axioma de Martin\footnote{que surgió como fruto del estudio de la \textit{Hipótesis de Souslin} (véase la discusión correspondiente en \cite{kunenSet})} se formula de la siguiente manera:
+\begin{definicion}\label{def-AxMartin}\index[alph]{Axioma!de Martin}\index[alph]{Martin!Axioma de}\index[sym]{$\Ma(\kappa)$}\index[sym]{$\Ma$}
+	Para cada cardinal infinito $\kappa$, $\Ma(\kappa)$ es el enunciado: ``Para todo conjunto parcialmente ordenado $(P,\leq)$ \textit{c.c.c.} y cada colección $\ms{D}$ de conjuntos densos de $(P,\leq)$, con $|\ms{D}|\leq \kappa$, existe un filtro $\ms{D}$-genérico''.
+
+	El enunciado $\Ma$ se define como: ``Para cada cardinal infinito $\kappa<\mathfrak{c}$ se satisface $\Ma(\kappa)$''.
+\end{definicion}
+
+\index[sym]{$\mathfrak{m}$}
+Es un resultado estándar y bien conocido que; en $\zfc$, $\Ma(\omega)$ es verdadero y $\Ma(\mathfrak{c})$ es falso; en consecuencia, $\Ma$ se suele utilizar junto con la negación de la hipótesis del continuo (para no obtener resultados siempre vacuos). Además, a razón de ello, está bien definido:
+$$ \mathfrak{m}:=\min\{ \kappa \geq \omega \tq \lnot \Ma(\kappa) \} $$
+
+Claramente $\aleph_1 \leq \mathfrak{m} \leq \mathfrak{c}$.
+
+\subsection{Forcing}

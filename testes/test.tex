@@ -1,0 +1,45 @@
+%Formato e idioma
+    \documentclass[letterpaper,DIV=12,12pt]{scrbook}
+    \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
+    \usepackage{scrlayer-scrpage}
+    \input{../resources/koma.tex}
+%Utilidades
+    \usepackage{array}
+    \usepackage[x11names]{xcolor}
+    \usepackage{lipsum}
+%Matemáticos
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb} % eliminar si se usa unicode-math
+    \usepackage{mathrsfs} % agregar después de fuente unicode-math, si se usa
+%Etiquetas de las enumeraciones
+    \usepackage[shortlabels]{enumitem}
+    \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+    \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+%Cajas de Teoremas
+    \usepackage{thmtools}
+    \usepackage[framemethod=TikZ]{mdframed}
+    \newtheorem{definicion}{Definición}[section]
+    \newtheorem{proposicion}[definicion]{Proposición}
+    \newtheorem{lema}[definicion]{Lema}
+    \newtheorem{corolario}[definicion]{Corolario}
+    \newtheorem{observacion}[definicion]{Observación}
+    \newtheorem{ejemplo}[definicion]{Ejemplo}
+    \newtheorem{consideracion}[definicion]{Consideración}
+    \newtheorem{teorema}[definicion]{Teorema}
+%Comandos Creados
+	\input{../resources/comandos.tex}
+
+%Exclusivo del minimal
+    \renewcommand{\ref}[1]{??}
+    \renewcommand{\pageref}[1]{??}
+    \newcommand{\autoref}[1]{??}
+    \renewcommand{\cite}[2]{??}
+    \renewcommand{\index}[2][]{}
+    \newcommand{\hyperref}[2][]{#2}
+    \providecommand{\texorpdfstring}[2]{#1}
+
+\begin{document}
+\pagestyle{chapstyle}
+\input{../chapters/c0.tex}
+\end{document}

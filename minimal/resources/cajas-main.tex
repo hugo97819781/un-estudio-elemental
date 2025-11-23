@@ -1,0 +1,103 @@
+%Colores
+\definecolor{azul}{RGB}{0, 60, 113}
+\definecolor{dorado}{RGB}{196, 151, 57}
+\definecolor{morado}{RGB}{101, 43, 145}
+\definecolor{rosa}{RGB}{146, 33, 209}
+\definecolor{azulC}{RGB}{52, 90, 229}
+
+%Setup
+\mdfsetup{innertopmargin=-2pt, innerbottommargin=3pt}
+%\mdfsetup{
+%    splittable=true,
+%    usename=true,
+%    skipabove=2pt,
+%    skipbelow=2pt,
+%    needspace=no
+%}
+
+%Estilos de Cajas
+\mdfdefinestyle{caja1}{
+	leftline=true,
+	rightline=false,
+	topline=false,
+	bottomline=false,
+	linecolor=morado!90,
+	linewidth=2.5pt,
+	backgroundcolor=morado!5,
+}
+
+\mdfdefinestyle{caja2}{
+	roundcorner=5pt,
+	backgroundcolor=dorado!8,
+	linewidth=0,
+	%shadow=true,
+	%shadowcolor=dorado!70,
+	%shadowsize=4pt,
+}
+
+\mdfdefinestyle{caja3}{
+	topline=false,
+	bottomline=true,
+	leftline=true,
+	rightline=false,
+	linewidth=1.5pt,
+	linecolor=azul!90,
+}
+
+\mdfdefinestyle{caja4}{
+	topline=true,
+	bottomline=true,
+	leftline=false,
+	rightline=false,
+	linewidth=1.5pt,
+	linecolor=gray!90,
+}
+
+%Definicion de entornos
+\newmdtheoremenv[style=caja1]{definicion}{Definición}[section]
+\newmdtheoremenv[style=caja2]{proposicion}[definicion]{Proposición}
+\newmdtheoremenv[style=caja2]{lema}[definicion]{Lema}
+\newmdtheoremenv[style=caja2]{corolario}[definicion]{Corolario}
+\newmdtheoremenv[style=caja3]{observacion}[definicion]{Observación}
+\newmdtheoremenv[style=caja3]{ejemplo}[definicion]{Ejemplo}
+\newmdtheoremenv[style=caja4]{consideracion}[definicion]{Consideración}
+
+%Entorno (complicado) de teorema
+\newcounter{theot}
+\newenvironment{teorema}[1][]{%
+	%\setcounter{theot}{\value{TemTheot}}
+	\stepcounter{definicion}
+	%\setcounter{theot}{\value{definicion}}
+	\renewcommand{\thetheot}{\thedefinicion}
+	\refstepcounter{theot}
+	\ifstrempty{#1}%
+	{\mdfsetup{%
+			frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=dorado!35]
+					{\strut Teorema~\thetheot};}}
+	}%
+	{\mdfsetup{%
+			frametitle={%
+					\tikz[baseline=(current bounding box.east),outer sep=0pt]
+					\node[anchor=east,rectangle,fill=dorado!35]
+					{\strut \textbf{Teorema~\thetheot~(#1)}};}}%
+	}%
+	\mdfsetup{innertopmargin=0pt,innerleftmargin=3pt,innerrightmargin=3pt,linecolor=dorado!35,%
+		linewidth=2pt,topline=true,
+		frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+	\begin{mdframed}[]\relax%
+		}{\end{mdframed}}
+\providecommand*{\theotautorefname}{Teorema}
+
+\makeatletter
+\renewenvironment{proof}{%
+	\par\pushQED{\qed}%
+	\renewcommand{\qedsymbol}{$\blacksquare$}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep\bfseries\itshape Demostración.]\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother

@@ -1,0 +1,36 @@
+%%%%%BASURERO
+
+\begin{lema}
+	El conjunto ordenado $T=(2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$. Más aun, para cada $f \in 2^\omega$, el conjunto $\{ f \upharpoonright n \tq n \in \omega \}$ es rama numerable de $T$.
+\end{lema}
+
+\begin{proof}
+	Si $f=f \upharpoonright n \in 2^{<\omega}$, entonces $(n,\in) \cong (f, \subsetneq_f)$ por medio de $H:n \to \subsetneq_f=\{ f \upharpoonright m \tq m < \dom(f) \}$, definida como $H(m)=f \upharpoonright m$ para cada $m \in n$. En efecto, para cualesquiera $m,k \in n$ se tiene $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$ y además claramente $H$ es biyectiva, así que $H$ es isomorfismo de orden.
+
+	Por lo tanto $T$ es un árbol, y más aún, el orden de cada $f \in T$ es su dominio; como $2^{<\omega}$ contiene únicamente a todas las funciones de en $2$, se sigue que la altura de $T$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
+
+	Además $T$ es numerable, ya que:
+	$$ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega $$
+
+	Ahora, sean $f \in 2^\omega$ cualquiera y $R:=\{ f \upharpoonright n \tq n \in \omega \}$, claramente $R$ es cadena de $T$. Supóngase que $S \subseteq 2^{<\omega}$ es una rama de $T$ tal que $R \subseteq S$ y sea $g \in S$. Si $\dom(g)=n$, dado que $S$ es cadena de $T$, $f \upharpoonright n \subseteq g$ o $g \subseteq f \upharpoonright n$. Cualquiera de los casos anteriores implican que $f \upharpoonright n = g$ ya que $\dom(g)=\dom(f \upharpoonright n)$, así que $g \in R$ y $R = S$.
+\end{proof}
+
+
+\newpage
+
+\section{Un ejemplo bajo MA (?)}
+
+Recién se dio un ejemplo de dos espacios de Fréchet cuyo producto no satisface esa propiedad. Otra aplicación de las familias casi ajenas es la construcción de un espacio $X$ de modo que, para cada $n \in \omega$ el producto $X^n$ es de Fréchet, pero, el producto $X^\omega$ no es de Fréchet.
+
+\begin{lema}
+	Sean $n,m \in \omega$ y $\ms{A}=\{A_\alpha \tq \alpha \in \kappa\}$ es una familia casi ajena de tamano $\kappa<\mathfrak{c}$. Supóngase que existe $\beta : m \to \kappa$  de modo que:
+	\begin{enumerate}[a)]
+		\item $A \subseteq \omega^n \times \prod_{j \in m} {A_{\alpha(j)}} \subseteq \omega^{n+m}$.
+		\item Para cualesquiera $E: n \to \ms{I}(\ms{A})$ y $F: \omega \to \Finn$ se satsiface que $A \cap \Big( \prod_{i \in n} \omega \setminus E(i) \times \prod_{j \in m} A_{\alpha(i)} \setminus F(j) \Big)\neq \emptyset$.
+	\end{enumerate}
+	Entonces; bajo $\Ma$, existe $x \in A^\omega$ de modo que:
+	\begin{enumerate}
+		\item Si $i \neq j$, entonces $\ima(x(i)) \cap \ima(x(j)) = \emptyset$.
+		\item $B:=\{ \pi_i (x(j)) \tq i \in n \land j \in m \}$ es casi ajeno con cada elemento de $\ms{A}$. Donde cada $\pi_i$ es la $i$-ésima proyección de $\omega^{n+m}$.
+	\end{enumerate}
+\end{lema}

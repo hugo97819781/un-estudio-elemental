@@ -1,0 +1,115 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FORMATO E IDIOMA %%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+    \documentclass[letterpaper,DIV=12,12pt]{scrbook}
+    \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
+    \usepackage{scrlayer-scrpage}
+    \input{../resources/koma.tex}
+%%%%%%%%%%%%%%%%
+%%% PAQUETES %%%
+%%%%%%%%%%%%%%%%
+    \usepackage{array}
+    \usepackage[x11names]{xcolor}
+    \usepackage{lipsum}
+    \usepackage[shortlabels]{enumitem}
+        \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+        \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FUENTES Y MATEMÁTICAS %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage{fontspec}
+    \setmainfont{GFSArtemisia.otf}[ 
+        Path = ../fonts/GFSArtemisia/,
+        BoldFont = GFSArtemisiaBold.otf,
+        ItalicFont = GFSArtemisiaIt.otf,
+        BoldItalicFont = GFSArtemisiaBoldIt.otf
+    ]
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb}
+    \usepackage{unicode-math}
+    \setmathfont{STIXTwoMath-Regular.ttf}[
+        Path = ../fonts/StixTwo/,
+    ]
+    \setmathrm{STIXTwoText-Regular.ttf}[
+        Path = ../fonts/StixTwo/,
+        BoldFont = STIXTwoText-Bold.ttf,
+        ItalicFont = STIXTwoText-Italic.ttf,
+        BoldItalicFont = STIXTwoText-BoldItalic.ttf,
+    ]
+    \usepackage{mathrsfs}
+%%%%%%%%%%%%%%%%%%%
+%%% REFERENCIAS %%%
+%%%%%%%%%%%%%%%%%%%
+    \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
+    \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
+    \usepackage{csquotes,url}
+        \addbibresource{../chapters/referencias.bib}
+%%%%%%%%%%%%%%%
+%%% ÍNDICES %%%
+%%%%%%%%%%%%%%%
+    \usepackage{imakeidx}
+    \usepackage{etoolbox}
+        \makeindex[columns=1, intoc, title=PRUEBA]
+        \makeindex[name=trad, columns=1, intoc, title=Caracterizaciones]
+        \makeindex[name=sym, columns=3, intoc, title=Índice Simbólico]
+        \makeindex[name=alph, columns=2, intoc, title=Índice Alfabético]
+        \indexsetup{firstpagestyle=beginstyle}
+%%%%%%%%%%%%%
+%%% CAJAS %%%
+%%%%%%%%%%%%%
+    \usepackage{thmtools}
+    \usepackage[framemethod=TikZ]{mdframed}
+    \allowdisplaybreaks
+    \input{../resources/cajas-main.tex}
+%%%%%%%%%%%%%%%%
+%%% COMANDOS %%%
+%%%%%%%%%%%%%%%%
+    \renewcommand{\mathbb}[1]{{\symbb{#1}}}
+    \renewcommand{\mathcal}[1]{{\symcal{#1}}}
+    \renewcommand{\mathfrak}[1]{{\symfrak{#1}}}
+    \input{../resources/comandos.tex}
+%%%%%%%%%%%%%%%%%
+%%% DOCUMENTO %%%
+%%%%%%%%%%%%%%%%%
+\begin{document}
+
+    \pagestyle{empty}
+    \frontmatter
+        \pagestyle{empty}
+        \input{../resources/cover.tex}
+        \input{../chapters/frase.tex}
+
+        \chapter*{Agradecimientos}
+        \thispagestyle{empty}
+        \input{../chapters/a0-agradecimientos.tex}
+
+        \clearpage
+        \pagestyle{beginstyle}
+        \tableofcontents
+        \chapter*{Introducción}
+        \addcontentsline{toc}{chapter}{Introducción}
+        \input{../chapters/a1-introduccion.tex}
+
+    \mainmatter
+        \cleardoublepage
+        \pagestyle{chapstyle}
+
+        \input{../chapters/c0.tex}
+        \input{../chapters/c1.tex}
+        \input{../chapters/c2.tex}
+        \input{../chapters/c3.tex}
+        \input{../chapters/c4.tex}
+
+    \backmatter
+        \cleardoublepage
+        \pagenumbering{alph}
+        \pagestyle{beginstyle}
+
+        \printindex[trad]
+        \printindex[sym]
+        \printindex[alph]
+
+        \printbibliography[heading=bibintoc, title={Referencias}]
+
+\end{document}

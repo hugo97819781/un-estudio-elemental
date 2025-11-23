@@ -1,0 +1,48 @@
+%GENERALES
+\newcommand{\tq}{\text{ $|$ }}
+\newcommand{\midcup}{\mbox{$\bigcup$}\,}
+\newcommand{\midcap}{\mbox{$\bigcap$}\,}
+\newcommand{\ms}[1]{\mathscr{#1}}
+%RENOVACIÓN DE COMANDOS
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\tau}{\ms{T}}
+%Nuevo "Setminus"
+\newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\mysetminusT}{\mysetminusD}
+\newcommand{\mysetminusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\mysetminusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+\newcommand{\mysetminus}{\mathbin{\mathchoice{\mysetminusD}{\mysetminusT}{\mysetminusS}{\mysetminusSS}}}
+\renewcommand{\setminus}{\mysetminus}
+%OPERADORES
+%\makeatletter
+%	\renewcommand{\operator@font}{\opfont}
+%\makeatother
+
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\ext}{ext}
+\DeclareMathOperator{\cla}{cl}
+\DeclareMathOperator{\der}{der}
+\DeclareMathOperator{\fron}{fr}
+\DeclareMathOperator{\scl}{sqcl}
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ima}{ima}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\Osq}{O_{sq}}
+%TEXTOS
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\AN}{AN}
+\DeclareMathOperator{\OR}{OR}
+\DeclareMathOperator{\CAR}{CAR}
+\DeclareMathOperator{\zfc}{ZFC}
+\DeclareMathOperator{\zf}{ZF}
+\DeclareMathOperator{\HC}{CH}
+\DeclareMathOperator{\Ma}{MA}
+\DeclareMathOperator{\Ac}{AC}
+\DeclareMathOperator{\Pm}{MC}
+\DeclareMathOperator{\Pdm}{WMC}
+\DeclareMathOperator{\Ad}{AD}
+\DeclareMathOperator{\Mad}{MAD}
+%COCIENTE
+%\newcommand{\quot}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}

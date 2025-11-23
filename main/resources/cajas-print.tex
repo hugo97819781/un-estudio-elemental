@@ -1,0 +1,40 @@
+%Colores
+\definecolor{azul}{RGB}{0, 60, 113}
+\definecolor{dorado}{RGB}{196, 151, 57}
+\definecolor{morado}{RGB}{101, 43, 145}
+\definecolor{rosa}{RGB}{146, 33, 209}
+\definecolor{azulC}{RGB}{52, 90, 229}
+
+\mdfsetup{
+	innertopmargin=-2pt,
+	innerbottommargin=3pt
+}
+
+%Estilos de Cajas
+\mdfdefinestyle{caja1}{
+	roundcorner=5pt,
+	innertopmargin = -0.5ex,
+	linecolor=white
+}
+
+%Definicion de entornos
+\newmdtheoremenv[style=caja1]{definicion}{Definición}[section]
+\newmdtheoremenv[style=caja1]{proposicion}[definicion]{Proposición}
+\newmdtheoremenv[style=caja1]{lema}[definicion]{Lema}
+\newmdtheoremenv[style=caja1]{corolario}[definicion]{Corolario}
+\newmdtheoremenv[style=caja1]{observacion}[definicion]{Observación}
+\newmdtheoremenv[style=caja1]{ejemplo}[definicion]{Ejemplo}
+\newmdtheoremenv[style=caja1]{consideracion}[definicion]{Consideración}
+\newmdtheoremenv[style=caja1]{teorema}[definicion]{Teorema}
+
+\makeatletter
+\renewenvironment{proof}{%
+	\par\pushQED{\qed}%
+	\renewcommand{\qedsymbol}{$\blacksquare$}%
+	\normalfont \topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep\bfseries\itshape Demostración.]\ignorespaces
+}{%
+	\popQED\endtrivlist\@endpefalse
+}
+\makeatother

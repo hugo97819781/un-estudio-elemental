@@ -1,0 +1,17 @@
+*.aux
+*.log
+*.synctex.gz
+*.synctex
+*.synctex(busy)
+*.toc
+*.gz
+*.ilg
+*.bcf
+*.run.xml
+*.idx
+*.ind
+*.bbl
+*.bbl-SAVE-ERROR
+*.blg
+*.fls
+*.fdb_latexmk

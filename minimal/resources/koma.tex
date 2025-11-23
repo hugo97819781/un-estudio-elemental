@@ -1,0 +1,41 @@
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\newpairofpagestyles{chapstyle}{
+	\clearpairofpagestyles
+	\lehead{\textbf{\chaptername~\thechapter} \leftmark}
+	\rohead{\textbf{\thesection} \rightmark}
+	\rehead{\pagemark}
+	\lohead{\pagemark}
+	%\ohead*{\pagemark}
+	\addtokomafont{pagehead}{\normalfont\footnotesize}
+	\KOMAoptions{headsepline=true}
+}
+
+\newpairofpagestyles{beginstyle}{
+	\clearpairofpagestyles
+	\KOMAoptions{headsepline=false}
+	\cfoot{\footnotesize \pagemark}
+}
+
+\renewcommand*{\chapterpagestyle}{beginstyle}
+
+%\makeatletter
+%\renewcommand{\chapter}{%
+%\if@openright\cleardoublepage\else\clearpage\fi
+%\thispagestyle{beginstyle} % Página sin numeración
+%\secdef\@chapter\@schapter
+%}
+%\makeatother
+
+\addtokomafont{chapter}{\rmfamily}
+\addtokomafont{section}{\rmfamily}
+\addtokomafont{subsection}{\raggedleft\rmfamily}
+\addtokomafont{subsubsection}{\raggedleft\rmfamily}
+\addtokomafont{chapterentry}{\rmfamily}
+
+%\KOMAoptions{headsepline=true,footsepline=true}
+\setlength{\headsep}{5pt}
+\setlength{\footskip}{25pt}
+\setlength{\textheight}{500pt}
+\setlength{\textwidth}{400pt}

@@ -4,7 +4,7 @@
     \documentclass[letterpaper,DIV=12,12pt]{scrbook}
     \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
     \usepackage{scrlayer-scrpage}
-    \input{../resources/koma.tex}
+    \input{resources/koma.tex}
 %%%%%%%%%%%%%%%%
 %%% PAQUETES %%%
 %%%%%%%%%%%%%%%%
@@ -17,34 +17,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% FUENTES Y MATEMÁTICAS %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{fontspec}
-    \setmainfont{GFSArtemisia.otf}[ 
-        Path = ../fonts/GFSArtemisia/,
-        BoldFont = GFSArtemisiaBold.otf,
-        ItalicFont = GFSArtemisiaIt.otf,
-        BoldItalicFont = GFSArtemisiaBoldIt.otf
-    ]
+    \usepackage{stix2}
     \usepackage{amsmath}
     \usepackage{amsthm}
     \usepackage{amssymb}
-    \usepackage{unicode-math}
-    \setmathfont{STIXTwoMath-Regular.ttf}[
-        Path = ../fonts/StixTwo/,
-    ]
-    \setmathrm{STIXTwoText-Regular.ttf}[
-        Path = ../fonts/StixTwo/,
-        BoldFont = STIXTwoText-Bold.ttf,
-        ItalicFont = STIXTwoText-Italic.ttf,
-        BoldItalicFont = STIXTwoText-BoldItalic.ttf,
-    ]
-    \usepackage{mathrsfs}
 %%%%%%%%%%%%%%%%%%%
 %%% REFERENCIAS %%%
 %%%%%%%%%%%%%%%%%%%
     \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
-        \addbibresource{../chapters/referencias.bib}
+        \addbibresource{chapters/referencias.bib}
 %%%%%%%%%%%%%%%
 %%% ÍNDICES %%%
 %%%%%%%%%%%%%%%
@@ -60,46 +43,45 @@
 %%%%%%%%%%%%%
     \usepackage{thmtools}
     \usepackage[framemethod=TikZ]{mdframed}
-    \allowdisplaybreaks
-    \input{../resources/cajas-main.tex}
+    %\allowdisplaybreaks
+    \input{resources/cajas-main.tex}
 %%%%%%%%%%%%%%%%
 %%% COMANDOS %%%
 %%%%%%%%%%%%%%%%
-    \renewcommand{\mathbb}[1]{{\symbb{#1}}}
-    \renewcommand{\mathcal}[1]{{\symcal{#1}}}
-    \renewcommand{\mathfrak}[1]{{\symfrak{#1}}}
-    \input{../resources/comandos.tex}
+    %\renewcommand{\mathbb}[1]{{\symbb{#1}}}
+    %\renewcommand{\mathcal}[1]{{\symcal{#1}}}
+    %\renewcommand{\mathfrak}[1]{{\symfrak{#1}}}
+    \input{resources/comandos.tex}
 %%%%%%%%%%%%%%%%%
 %%% DOCUMENTO %%%
 %%%%%%%%%%%%%%%%%
 \begin{document}
-
     \pagestyle{empty}
     \frontmatter
         \pagestyle{empty}
-        \input{../resources/cover.tex}
-        \input{../chapters/frase.tex}
+        \input{resources/cover.tex}
+        \input{chapters/frase.tex}
 
         \chapter*{Agradecimientos}
         \thispagestyle{empty}
-        \input{../chapters/a0-agradecimientos.tex}
+        \input{chapters/a0-agradecimientos.tex}
 
         \clearpage
         \pagestyle{beginstyle}
         \tableofcontents
         \chapter*{Introducción}
         \addcontentsline{toc}{chapter}{Introducción}
-        \input{../chapters/a1-introduccion.tex}
+        \input{chapters/a1-introduccion.tex}
 
     \mainmatter
         \cleardoublepage
         \pagestyle{chapstyle}
 
-        \input{../chapters/c0.tex}
-        \input{../chapters/c1.tex}
-        \input{../chapters/c2.tex}
-        \input{../chapters/c3.tex}
-        \input{../chapters/c4.tex}
+        \input{chapters/c0.tex}
+        \input{chapters/c1.tex}
+        \input{chapters/c2.tex}
+        \input{chapters/c3.tex}
+        \input{chapters/c4.tex}
 
     \backmatter
         \cleardoublepage
@@ -111,5 +93,4 @@
         \printindex[alph]
 
         \printbibliography[heading=bibintoc, title={Referencias}]
-
 \end{document}

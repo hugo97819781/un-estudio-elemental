@@ -6,7 +6,7 @@
 \definecolor{azulC}{RGB}{52, 90, 229}
 
 %Setup
-\mdfsetup{innertopmargin=-2pt, innerbottommargin=3pt}
+\mdfsetup{linewidth=0}
 %\mdfsetup{
 %    splittable=true,
 %    usename=true,
@@ -30,9 +30,6 @@
 	roundcorner=5pt,
 	backgroundcolor=dorado!8,
 	linewidth=0,
-	%shadow=true,
-	%shadowcolor=dorado!70,
-	%shadowsize=4pt,
 }
 
 \mdfdefinestyle{caja3}{
@@ -45,22 +42,17 @@
 }
 
 \mdfdefinestyle{caja4}{
-	topline=true,
-	bottomline=true,
-	leftline=false,
-	rightline=false,
-	linewidth=1.5pt,
-	linecolor=gray!90,
+	linewidth=0,
 }
 
 %Definicion de entornos
-\newmdtheoremenv[style=caja1]{definicion}{Definición}[section]
-\newmdtheoremenv[style=caja2]{proposicion}[definicion]{Proposición}
-\newmdtheoremenv[style=caja2]{lema}[definicion]{Lema}
-\newmdtheoremenv[style=caja2]{corolario}[definicion]{Corolario}
-\newmdtheoremenv[style=caja3]{observacion}[definicion]{Observación}
-\newmdtheoremenv[style=caja3]{ejemplo}[definicion]{Ejemplo}
-\newmdtheoremenv[style=caja4]{consideracion}[definicion]{Consideración}
+\newmdtheoremenv{definicion}{Definición}[section]
+\newmdtheoremenv{proposicion}[definicion]{Proposición}
+\newmdtheoremenv{lema}[definicion]{Lema}
+\newmdtheoremenv{corolario}[definicion]{Corolario}
+\newmdtheoremenv{observacion}[definicion]{Observación}
+\newmdtheoremenv{ejemplo}[definicion]{Ejemplo}
+\newmdtheoremenv{consideracion}[definicion]{Consideración}
 
 %Entorno (complicado) de teorema
 \newcounter{theot}
@@ -83,7 +75,7 @@
 					\node[anchor=east,rectangle,fill=dorado!35]
 					{\strut \textbf{Teorema~\thetheot~(#1)}};}}%
 	}%
-	\mdfsetup{innertopmargin=0pt,innerleftmargin=3pt,innerrightmargin=3pt,linecolor=dorado!35,%
+	\mdfsetup{innertopmargin=0pt,innerleftmargin=5pt,innerrightmargin=5pt,linecolor=dorado!35,%
 		linewidth=2pt,topline=true,
 		frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
 	\begin{mdframed}[]\relax%

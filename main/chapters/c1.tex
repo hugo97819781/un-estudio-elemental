@@ -8,21 +8,14 @@
 \begin{definicion}\label{def-casi-ajena}\index[alph]{casi!ajeno}\index[alph]{casi!ajena sobre $N$, familia}\index[alph]{familia!casi ajena}\index[alph]{casi!ajena, familia}\index[alph]{familia!casi ajena sobre $N$}\index[sym]{$\Ad(N)$}
 	Dado un conjunto numerable $N$, una \textbf{familia casi ajena sobre $N$} es un subconjunto $\ms{A}\subseteq[N]^\omega$ tal que cualesquiera dos elementos distintos de $\ms{A}$ son casi ajenos. Se denotará:
 	$$ \Ad(N):=\{ \ms{A} \subseteq [N]^\omega \tq \ms{A} \text{ es familia casi ajena sobre } N \} $$
-	y el término ``\textbf{familia casi ajena}'' (o simplemente ``\textbf{familia}'') hará referencia a una familia casi ajena sobre $\omega$.
+	y el término \textbf{familia casi ajena} (o simplemente \textbf{familia}) hará referencia a una familia casi ajena sobre $\omega$.
 \end{definicion}
 
 El concepto previo es fácilmente generalizable, el lector puede indagar al respecto en \cite[Def.~9.20, p.~118]{jechSet}. Sin embargo, la teoría resultante del estudio de las familias casi ajenas (definidas como en \ref{def-casi-ajena}) tiene un gran valor por sí misma.
 
-\begin{observacion}
-	Si $N$ es un conjunto numerable:
-	\begin{enumerate}
-		\item Cualquier subconjunto de una familia casi ajena sobre $N$ es también una familia casi ajena sobre $N$.
-		\item Si $\ms{A} \subseteq [N]^\omega$ está enumerado como $\ms{A} =\{ a_\alpha \tq \alpha \in I \}$; para mostrar que $\ms{A}$ es familia casi ajena biyectable con $I$, bastará verificar si $\alpha \neq \beta$, entonces $a_\alpha \cap a_\beta$ es finito.
-		\item Toda familia de subconjuntos infinitos de $N$, ajenos por pares, es casi ajena sobre $N$; en particular, $\left[ [N]^\omega \right]^{\leq 1} \subseteq \Ad(N)$.
-	\end{enumerate}
-\end{observacion}
+Cualquier familia de subconjuntos ajenos por pares de $N$, es también una familia casi ajena sobre $N$; particularmente, $\emptyset$ y cualquier conjunto $\{A\} \subseteq [N]^\omega$. Además, resulta evidente que cada subconjunto de una familia casi ajena sobre $N$ es, a su vez, una familia casi ajena sobre $N$.
 
-Es claro que toda familia casi ajena tiene tamaño menor o igual a $\mathfrak{c}$; así que en virtud de la observacion previa, de existir alguna con tamaño exactamente el continuo, se garantizaría la existencia de familias ajenas de cualquier tamaño inferior a éste.
+Es claro que toda familia casi ajena tiene tamaño menor o igual a $\mathfrak{c}$; así que en virtud de lo previamente observado, de existir alguna con tamaño exactamente el continuo, se garantizaría la existencia de familias ajenas de cualquier tamaño inferior a éste.
 
 \begin{ejemplo}
 	\label{ej-ADfacil}
@@ -40,7 +33,7 @@ Resulta no muy difícil verificar que las primeras dos familias del ejemplo ante
 \begin{observacion}
 	Sean $N$ un conjunto numerable. Una familia $\ms{A} \in \Ad(N) $ es maximal en $N$ si y sólo si se cumple cualquiera de las siguientes condiciones equivalentes:
 	\begin{enumerate}
-		\item Para toda $\ms{B} \in \Ad(N)$, si $\ms{A} \subseteq \ms{B}$, entonces $\ms{A} = \ms{B}$
+		%\item Para toda $\ms{B} \in \Ad(N)$, si $\ms{A} \subseteq \ms{B}$, entonces $\ms{A} = \ms{B}$
 		\item Para cualquier $\ms{B} \subseteq [N]^\omega$, si $\ms{A} \subsetneq \ms{B}$, entonces $\ms{B} \notin \Ad(N)$.
 		\item Para cada $B \in [N]^\omega$ existe $A \in \ms{A}$ tal que $A \cap B$ es infinito.
 	\end{enumerate}
@@ -53,15 +46,15 @@ Se advierte que las familias sobre $\omega$ parecerán deslucir a las construida
 	$$ \Phi_h (\ms{A}) = \{ h[A] \tq A \in \ms{A} \} $$
 \end{definicion}
 
-En términos de lo recién enunciado, se remarca que al ser $h$ biyección, $\Phi_h$ será una biyección. Siendo claro además, que ésta respeta todas las virtudes conjuntistas.
+En términos de lo recién enunciado, se remarca que al ser $h$ biyección, $\Phi_h$ será una biyección. Más aun, estas biyecciones se comportan bien respecto a ciertas virtudes conjuntistas, tal y como se ilustra a continuación.
 
 \begin{proposicion}\label{prop-ADbiyec}
 	Sean $N,M$ son numerables y $h:N \to M$ una biyección cualquiera. Entonces:
 	\begin{enumerate}
-		\item $|\ms{A}|=|\Phi_h(\ms{A})|$.
+		\item $\ms{A} \subsetneq \ms{B}$ ocurre si y sólo si $\Phi_h(\ms{A}) \subsetneq \Phi_h(\ms{B})$.
 		\item $\Phi_h(\ms{A} \cap \ms{B}) = \Phi_h(\ms{A}) \cap \Phi_h(\ms{B})$.
 		\item $\Phi_h(\ms{A} \cup \ms{B}) = \Phi_h(\ms{A}) \cup \Phi_h(\ms{B})$.
-		\item $\ms{A} \subsetneq \ms{B}$ ocurre si y sólo si $\Phi_h(\ms{A}) \subsetneq \Phi_h(\ms{B})$.
+		\item $|\ms{A}|=|\Phi_h(\ms{A})|$.		
 		\item $\Phi_h[\Ad(N)]=\Ad(M)$.
 		\item $\Phi_h[\Mad(N)]=\Mad(M)$
 	\end{enumerate}
@@ -69,18 +62,18 @@ En términos de lo recién enunciado, se remarca que al ser $h$ biyección, $\Ph
 \begin{proof}
 	Se mostrarán únicamente (v) y (vi). En ambos basta probar la contención directa, pues al ser $h$ biyección, $\Phi_h^{-1} = \Phi_{h^{-1}}$.
 
-	(v) Si $\ms{A} \in \Ad(N)$, entonces $\ms{A} \subseteq [N]^\omega$ y así $\Phi_h(\ms{A}) \subseteq [M]^\omega$. Ahora, si $h[A],h[B] \in \Phi_h(\ms{A})$ son distintos, es necesario que $A \neq B$ y por ello $h[A] \cap h[B]=h[A \cap B]=^* \emptyset $, mostrando que $\Phi_h(\ms{A}) \in \Ad(M)$.
+	(v) Si $\ms{A} \in \Ad(N)$, entonces $\ms{A} \subseteq [N]^\omega$ y así $\Phi_h(\ms{A}) \subseteq [M]^\omega$. Ahora, si $h[A],h[B] \in \Phi_h(\ms{A})$ son distintos, es necesario que $A \neq B$ y por ello $A \cap B =^* \emptyset$, de donde $h[A] \cap h[B]=h[A \cap B]=^* \emptyset $, mostrando que $\Phi_h(\ms{A}) \in \Ad(M)$.
 
 	(vi) Si $\ms{A} \in \Mad(\ms{A})$ y $B \subseteq M$ es infinito, entonces $h^{-1}[B] \subseteq N$ es infinito y existe $A \in \ms{A}$ tal que $A \cap h^{-1}[B]$ es infinito. Al ser $h$ biyección, $h[A \cap h^{-1}[B]]=h[A] \cap B$ es infinito, por ende $\Phi_h(\ms{A}) \in \Mad(M)$.
 \end{proof}
 
-Se consolida la usanza; a partir de este momento, de hacer hincapié sobre cuáles propiedades u objetos basados en las familias casi ajenas se preservan bajo las biyecciones $\Psi_h$.
+Se consolida la usanza; a partir de este momento, de hacer hincapié sobre cuáles propiedades u objetos basados en las familias casi ajenas se preservan bajo las biyecciones $\Phi_h$.
 
 Una aplicación superflua del Corolario anterior es el nacimiento de un método cómodo para generar familias casi ajenas; en especial infinitas.
 
 \begin{ejemplo}
 	\label{ej-Bandas}
-	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h:\omega \times \omega \to \omega$ es biyección, entonces $\Psi_h(\ms{A}) \in \ms{A}$ es una familia casi ajena en $\omega$. Más aún, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec})
+	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h:\omega \times \omega \to \omega$ es biyección, entonces $\Phi_h(\ms{A}) \in \ms{A}$ es una familia casi ajena en $\omega$. Más aun, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec})
 \end{ejemplo}
 
 A continuación se comenzarán a examinar las propiedades de las familias casi ajenas maximales; se tiene la intención de responder a las preguntas que surgen naturalmente como: ¿puede haber familias casi ajenas más que numerables?, o, ¿existen familias maximales infinitas?
@@ -90,7 +83,7 @@ A continuación se comenzarán a examinar las propiedades de las familias casi a
 \end{lema}
 
 \begin{proof}
-	Por contrapuesta, supóngase que $\omega \not\subseteq^* \midcup \ms{A}$, es decir que el conjunto $B:=\omega \setminus \midcup \ms{A}$ es infinito. Si $A \in \ms{A}$, entonces $A \subseteq \midcup \ms{A}$ y así, $A \cap B \subseteq A \setminus \midcup \ms{A} \subseteq A \setminus A = \emptyset$. Por lo que $B \in [\omega]^\omega$ es casi ajeno con cada elemento de $\ms{A}$, mostrando que $\ms{A}$ no es maximal.
+	Por contrapuesta, supóngase que $B:=\omega \setminus \midcup \ms{A}$ es infinito. Si $A \in \ms{A}$, entonces $A \subseteq \midcup \ms{A}$ y así, $A \cap B \subseteq A \setminus \midcup \ms{A} \subseteq A \setminus A = \emptyset$. Por lo que $B \in [\omega]^\omega$ es casi ajeno con cada elemento de $\ms{A}$, mostrando que $\ms{A}$ no es maximal.
 \end{proof}
 
 El recíproco del Lema previo falla para familias infinitas (véase la familia $\ms{B}$ del \autoref{ej-Bandas}); y de hecho, no se cuenta un resultado ``amigable'' para determinar cuándo estas resultan ser maximales (véanse \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv}). En contraparte a esto, se deduce rápidamente la siguiente caracterización para la maximalidad de las familias casi ajenas finitas.
@@ -102,12 +95,10 @@ El recíproco del Lema previo falla para familias infinitas (véase la familia $
 \begin{proof}
 	Por el Lema previo, basta demostrar la necesidad.
 
-	Supóngase $\omega \subseteq^* \midcup \ms{A}$ y nótese que si $B \in [\omega]^\omega$, entonces $B \subseteq^*\midcup \ms{A}$ y con ello $\emptyset \neq^* B  \subseteq^* \midcap \ms{A} = \midcup\{B \cap A \tq A \in \ms{A}\}$. Como la última es una unión finita, $B$ debe tener intersección finita con algún elemento de $\ms{A}$.
-
-	Esto es, todos los subconjuntos de $\omega$ casi ajenos con $\ms{A}$ son finitos, por lo que $\ms{A}$ debe ser maximal.
+	Supóngase $\omega \subseteq^* \midcup \ms{A}$ y nótese que si $B \in [\omega]^\omega$, entonces $B \subseteq^*\midcup \ms{A}$ y con ello $\emptyset \neq^* B  \subseteq^* B \cap \midcup \ms{A} = \midcup\{B \cap A \tq A \in \ms{A}\}$. Como la última es una unión finita, $B$ debe tener intersección finita con algún elemento de $\ms{A}$.
 \end{proof}
 
-El posterior resultado puede ser visto como un símil al aclamado Teorema del Ultrafiltro (todo filtro se extiende a un filtro maximal) o cualquier resultado afín en el que típicamente se haga uso de formas $\Ac$ relacionadas con órdenes parciales
+El posterior resultado puede ser visto como un símil al aclamado Teorema del Ultrafiltro \textcolor{red}{\textbf{(ver prelims)}} o cualquier resultado afín en el que se haga uso de formas $\Ac$ como el Lema de Zorn o el Principio de Maximalidad de Hausdorff \textcolor{red}{\textbf{(ver prelims)}}.
 
 \begin{lema}\label{lem-MADs}
 	Toda familia casi ajena está contenida en una familia maximal.
@@ -116,75 +107,64 @@ El posterior resultado puede ser visto como un símil al aclamado Teorema del Ul
 \begin{proof}
 	Sean $\ms{A} \in \Ad(\omega)$ y $X$ el conjunto de todos las familias casi ajenas que contienen a $\ms{A}$. Como $(X,\subseteq)$ es un conjunto parcialmente ordenado y no vacío, por el Principio de Maximalidad de Hausdorff ($\Ac$), existe $Y \subseteq X$, una cadena $\subseteq$-maximal de $(X,\subseteq)$.
 
-	Defínase $\ms{B}:=\midcup Y$, como $Y \subseteq \ms{P}([\omega]^\omega)$, entonces $\ms{B} \subseteq [\omega]^{\omega}$. Además, si $C,D \in \ms{B}$, existen $\ms{C},\ms{D} \in Y \subseteq \Ad(\omega)$ con $C \in \ms{C}$ y $D\in \ms{D}$. Puesto que $Y$ es cadena de $(X,\subseteq)$, sin pérdida de generalidad, $C,D \in \ms{D} \supseteq \ms{C}$; y con ello, $C \cap D$ es finito. Por lo que $\ms{B} \in \Ad(\omega)$.
+	Defínase $\ms{B}:=\midcup Y$, como $Y \subseteq \ms{P}([\omega]^\omega)$, entonces $\ms{B} \subseteq [\omega]^{\omega}$. Además, si $C,D \in \ms{B}$, existen $\ms{C},\ms{D} \in Y \subseteq \Ad(\omega)$ con $C \in \ms{C}$ y $D\in \ms{D}$. Puesto que $Y$ es cadena de $(X,\subseteq)$, sin pérdida de generalidad, $C,D \in \ms{D} \supseteq \ms{C}$; y con ello, $C \cap D$ es finito, ya que $\mathscr{D} \in Y \subseteq X \subseteq \Ad(\omega)$. Por lo que $\ms{B} \in \Ad(\omega)$, y además, $\ms{A} \subseteq \ms{B}$.
 
-	Finalmente, si $\ms{B}' \in \Ad(\omega)$ y $\ms{B} \subsetneq \ms{B}'$, entonces $Y \cup \{\ms{B}'\}$ es una cadena en $(X,\subseteq)$ con $Y \subsetneq Y\cup\{\ms{B}'\}$, lo que contradice la $\subseteq$-maximalidad de $Y$. Por lo tanto, $\ms{B}\in \Mad(\omega)$ y $\ms{A} \subseteq \ms{B}$.
+	Finalmente, si $\ms{B}' \in \Ad(\omega)$ y $\ms{B} \subsetneq \ms{B}'$, entonces $Y \cup \{\ms{B}'\}$ es una cadena en $(X,\subseteq)$ con $Y \subsetneq Y\cup\{\ms{B}'\}$, lo que contradice la $\subseteq$-maximalidad de $Y$. Por lo tanto, $\ms{B}\in \Mad(\omega)$.
 \end{proof}
 
-%\begin{observacion}
-% Se destaca de la prueba anterior el siguiente hecho general. Si $X \subseteq \Ad(\omega)$ y $(X,\subseteq)$ es orden total, $\midcup X \in \Ad(\omega)$.
-%\end{observacion}
-
-Si bien las familias maximales finitas existen y su obtención resulta simple (\autoref{cor-MADnecesarioUnion}), la siguiente proposición es testigo de que construir una familia maximal infinita requiere de un nivel superior de creatividad. Pese a no haber un acuerdo general, el resultado se le atribuye a Wacław Sierpinski, pues éste se desprende de \cite[Teo.~2, p.~458]{SierpinskiCardinal}.
+Si bien las familias maximales finitas existen y su obtención resulta inmediata al \autoref{cor-MADnecesarioUnion}, la siguiente proposición es testigo de que la construcción una familia maximal infinita requiere de un nivel superior de creatividad. Pese a no haber un acuerdo general, el resultado se le atribuye a Wacław Sierpinski, pues éste se desprende de \cite[Teo.~2, p.~458]{SierpinskiCardinal}.
 
 \begin{lema}\label{prop-MADnoNum}
 	Ninguna familia casi ajena numerable es maximal.
 \end{lema}
 
 \begin{proof}
-	Sea $\ms{A}$ una familia casi ajena numerable indexada como $\ms{A}=\{A_n \tq n \in \omega\}$. Si $n \in \omega$ es cualquiera, $A_n \cap \midcup \{A_m \tq m< n\}$ es finito pues $A_n$ es casi ajeno con cada $A_m$ (si $m<n$). Así que por ser $A_n$ infinito, el conjunto $A_n \setminus \midcup \{A_m \tq m<n\} = A_n \setminus \big( A_n \cap \midcup \{A_m \tq m<n\} \big)$ es infinito, particularmente no no vacío.
+	Sea $\ms{A} \in \Ad(\omega)$ enumerada por $\ms{A}=\{A_n \tq n \in \omega\}$. Si $n \in \omega$ es cualquiera, $A_n \cap \midcup \{A_m \tq m< n\}$ es finito pues $A_n$ es casi ajeno con cada $A_m$ (si $m<n$). Así que por ser $A_n$ infinito, el conjunto $A_n \setminus \midcup \{A_m \tq m<n\} = A_n \setminus \big( A_n \cap \midcup \{A_m \tq m<n\} \big)$ es infinito, particularmente no no vacío.
 
-	Sea $f:\omega \to \omega$ definida por $f(n) = \min\{A_n \setminus \midcup \{A_m \tq m<n\}\}$ para cada $n$. Así, $f$ es inyectiva, pues si $m<n$, entonces $f(n) \notin A_m$ y $f(m) \in A_m$, de donde $f(n) \neq f(m)$. Además, es claro que para cada $n \in \omega$, se tiene $A_n \cap \ima(f) = \{f(n)\}$. Entonces $\ima(f) \subseteq \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
+	Sea $f:\omega \to \omega$ definida por $f(n) = \min\{A_n \setminus \midcup \{A_m \tq m<n\}\}$ para cada $n$. Luego, $f$ es inyectiva, pues si $m<n$, entonces $f(n) \notin A_m$, $f(m) \in A_m$ y $f(n) \neq f(m)$. Es claro que para cada $n \in \omega$, se tiene $A_n \cap \ima(f) = \{f(n)\}$. Entonces $\ima(f) \subseteq \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
 \end{proof}
 
-Naturalmente, se conjetura la existencia de las familias maximales infinitas, el Axioma de Elección y su aplicación \ref{lem-MADs}, brinda la respuesta; misma que, dada su naturaleza no constructiva, podría ser considerada tan insatisfactoria como destacable.
+El lema previo y su predecesor tienen como efecto inmediato la existencia de familias maximales infinitas, consecuentemente, la de familias casi ajenas más que numerables. Tal consecuencia es tan sencilla como, quizás, poco satisfactoria, debido a su naturaleza no constructiva. Durante la posterior sección se mostrarán métodos para obtener estos últimos objetos de una manera ligeramente más explícita.
+
+%Naturalmente, se conjetura la existencia de las familias maximales infinitas, el Axioma de Elección y su aplicación \ref{lem-MADs}, brinda la respuesta; misma que, dada su naturaleza no constructiva, podría ser considerada tan insatisfactoria como destacable.
 
 \begin{observacion}\label{obs-ExisteNoNumMAD}
 	Existe una familia maximal más que numerable.
 
-	Efectivamente, considérese cualquier familia $\ms{A} \in \Ad(\omega)$ numerable. Por el \autoref{lem-MADs}, existe una familia maximal $\ms{B} \supseteq \ms{A}$. Así $\ms{B}$ es infinita y es numerable, dada la Proposición anterior.
+	Efectivamente, considérese cualquier familia $\ms{A} \in \Ad(\omega)$ numerable. Por el \autoref{lem-MADs}, existe una familia maximal $\ms{B} \supseteq \ms{A}$. Así $\ms{B}$ es infinita y no numerable, dada la Proposición anterior.
 \end{observacion}
 
 \section{Familias casi ajenas de tamaño \texorpdfstring{$\mathfrak{c}$}{c}}
 
 La presente sección tiene por meta exhibir dos de los métodos más típicos para la construcción de familias casi ajenas infinitas. El primero de ellos, se basa en las sucesiones convergentes de espacios topológicos de Hausdorff, primero numerables.
 
-\begin{lema}
-	Sean $X$ un espacio topológico $\T_1$, de Fréchet, $A\subseteq X$ denso en $X$ y $A \subseteq D \setminus X$. Para cada $x \in A$ existe una sucesión en $D$, inyectiva y convergente a $x$.
-\end{lema}
-\begin{proof}
-	Sea $x\in A$ arbitrario. Como $D$ es denso en $X$ y éste es de Fréchet, $x \in \cla(D)=\scl(D)$ y se puede fijar una sucesión en $D$ convergente a $x$. Puesto que el espacio $X$ es $\T_1$, tal sucesión debe ser infinita; y como es convergente, sin pérdida de generalidad, inyectiva.
-\end{proof}
-
-%Agregando el Axioma de separación de Hausdorff, se deriva una forma muy conveniente de obtener familias casi ajenas.
+Al tomar cualquier espacio de Fréchet $X$ y un subespacio denso $D \subseteq X$, es claro que para cualquier $x \in X \setminus D$ ha de existir una sucesión en $D$ convergente a $x$. Si a $X$ le adicionamos la condición de ser $\T_1$, la imagen de tal función es un conjunto $A_x \in [D]^\omega$ convergente a $x$ en $X$ \textcolor{red}{\textbf{(En el sentido de PRELIMS)}}.
 
 \begin{proposicion}\label{prop-famSucesiones}
-	Sean $X$ un espacio topológico más que numerable, de Hausdorff, de Fréchet. Si $D$ es un denso numerable de $X$, para cada $A \subseteq X \setminus D$ existe una familia casi ajena sobre $D$ biyectable con $A$.
+	Supóngase que $X$ es un espacio de Hausdorff, de Fréchet y que $D \subseteq X$ es denso y numerable. Para cada $A \subseteq X \setminus D$ existe una familia casi ajena sobre $D$ biyectable con $A$.
 \end{proposicion}
 
 \begin{proof}
-	Fíjese $D\subseteq X$ un denso numerable de $X$. Usando el Lema previo, para cada $x \in A$ fíjese ($\Ac$) $A_x \subseteq D$ numerable de modo tal que $A_x \to x$. Defínase el conjunto $\ms{A}_{D,A}:=\{ A_x \subseteq D \tq x \in A \}$, nótese que $\ms{A}_{D,A} \subseteq [D]^\omega$ y $|\ms{A}_{D,A}|=|A|$.
+	Con sustento en la discusión previa a esta prueba, para cada $x \in A$ fíjese ($\Ac$) $A_x \subseteq D$ numerable de modo tal que $A_x \to x$. Defínase el conjunto $\ms{A}_{D,A}:=\{ A_x \subseteq D \tq x \in A \}$, nótese que $\ms{A}_{D,A} \subseteq [D]^\omega$ y $|\ms{A}_{D,A}|=|A|$.
 
 	Sean $x,y \in A$ con $x \neq y$, por ser $X$ de Hausdorff, hay abiertos ajenos $U,V$ tales que $x \in U$ y $y \in V$. Seguido de que $A_x \to x$ y $A_y \to y$, se tiene $A_x \subseteq^* U$ y $A_y \subseteq ^* V$, y en consecuencia $A_x \cap A_y \subseteq^* U \cap V = \emptyset$. Lo cual prueba que $\ms{A}_{D,A} \in \Ad(D)$.
 \end{proof}
 
 \begin{definicion}\label{def-FamSucesiones}\index[alph]{familia!de!sucesiones en $D$ convergentes a $A$}\index[sym]{$\ms{A}_{D,A}$}
-	Sean $X$ un espacio topológico de Hausdorff, de Fréchet, $D \subseteq X$ denso numerable y $A \subseteq X \setminus D$.
-
-	La familia $\ms{A}_{D,A}:=\{ A_x \subseteq D \tq x \in A \}$; construida como en la demostración anterior, se denomina \textbf{familia de sucesiones en $D$ convergentes a $A$}.
+	Si $X$, $D$ y $A$ son como en la proposición anterior, el conjunto $\ms{A}_{D,A}:=\{ A_x \subseteq D \tq x \in A \}$ se denomina \textbf{familia de sucesiones en $D$ convergentes a $A$}.
 \end{definicion}
 
 Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$.
 
-La próxima estrategia de construcción se basa en considerar ciertas ramas del árbol $2^{<\omega}$.
+El corazón de la próxima estrategia para la obtención de familias casi ajenas, de tamaño el continuo, son los árboles. Comenzaremos con una observación sencilla, las ramas de los árboles son cerradas bajo cotas inferiores:
 
 \begin{lema}
-	Sean $(T,\leq)$ un árbol y $S \subseteq T$ cualquier rama. Si $x \in S$, entonces $S \subseteq <_{x_0}$.
+	Sean $(T,\leq)$ un árbol y $S \subseteq T$ cualquier rama. Si $x \in S$ y $y < x$ entonces $ y \in S$.
 \end{lema}
 \begin{proof}
-	Sean $x \in S$ y $y \in <_{x}$ cualesquiera. Si $s \in S$, como $S$ es cadena, se tiene que $x \leq s$ o $s < x$. En el primer caso, $y<x\leq s$ y $y$ es comparable con $s$. En el segundo caso $y,s \in <_{x}$; y como $(<_{x},\leq)$ es buen orden (por ser $(T,\leq)$ un árbol), $y$ y $s$ son comparables.
+	Sean $x \in S$ y $y \leq x$ cualesquiera. Si $s \in S$, como $S$ es cadena, se tiene que $x < s$ o $s \leq x$. En el primer caso, $y \leq x < s$ y, así, $y$ es comparable con $s$. En el segundo $y,s \leq x$, y como $(\{ y \in T \tq y<z \},\leq)$ es buen orden, $y$ y $s$ son comparables.
 
-	Por tanto, $S \cup \{y\}$ es una cadena; y seguido de que $S$ es rama, $y \in S$, lo cual demuestra la contención deseada.
+	Por tanto, $S \cup \{y\}$ es una cadena; y seguido de que $S$ es rama, $y \in S$.
 \end{proof}
 
 \begin{proposicion}
@@ -192,15 +172,15 @@ La próxima estrategia de construcción se basa en considerar ciertas ramas del 
 \end{proposicion}
 
 \begin{proof}
-	Nótese que $\ms{A} \subseteq [T]^\omega$. Sean $R,S \in \ms{A}$ distintos, entonces $R \cap S$ es vacío y finito, o se puede fijar cierto $x_0 \in R \cap S$; en cuyo caso, de la proposición previa se desprende que $R \cap S \subseteq <_{x_0}$.
-
-	Como $T$ tiene altura $\omega$, el orden de $x_0$ es natural, consecuentemente se tiene que $R \cap S$ es finito.
+	Nótese que $\ms{A} \subseteq [T]^\omega$. Sean $R,S \in \ms{A}$ distintas, sin pérdida de generalidad, existe $x_0 \in R \setminus S \neq \emptyset$. De existir $y \in R \cap S$ tal que $y \not < x_0$, resultaría que $x_0 < y$, en virtud de que $x,y \in R$ y $R$ es rama. Sin embargo, esto es imposible dado el Lema anterior y que $S$ es rama.
+	
+	Por lo tanto, $R \cap S \subseteq \{ y \in T \tq y<z \}$ y como $T$ tiene altura $\omega$, el orden de $x_0$ es un natural, consecuentemente se tiene que $R \cap S$ es finito.
 \end{proof}
 
-Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (véase la \hyperref[arbol-2Ramas]{Página~\pageref{arbol-2Ramas}}); considerar la siguiente clase de familias en él desembocará en resultados sumamente notables (como se puede ver en la \autoref{Sec-PDM}).
+Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ \textcolor{red}{\textbf{(véase PRELIMS)}}; considerar la siguiente clase de familias desembocará en resultados sumamente notables (como se puede ver en la \autoref{Sec-PDM}).
 
 \begin{proposicion}
-	Sea $T$ el árbol $(2^{<\omega},\subseteq)$ y para cada $f \in 2^\omega$ denótese $A_f:=\{ f \upharpoonright n \tq n \in \omega \} \subseteq 2^{<\omega}$; entonces:
+	Sea $T$ el árbol $(2^{<\omega},\subseteq)$. Para cada $f \in 2^\omega$ denótese $A_f:=\{ f \upharpoonright n \tq n \in \omega \} \subseteq 2^{<\omega}$; entonces:
 	\begin{enumerate}
 		\item Cada $A_f$ es una rama de $T$.
 		\item Si $f\neq g$, entonces $A_f \neq A_g$.
@@ -221,22 +201,22 @@ Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (v�
 	Esta familia será nombrada la \textbf{familia de las ramas de $X$ en $2^{<\omega}$}.
 \end{definicion}
 
-En paralelo a lo comentado después de \ref{def-FamSucesiones}, también se puede concluir vía la construcción recién expuesta (y el \autoref{lem-MADs}) lo siguiente.
+En paralelo a lo comentado después de \ref{def-FamSucesiones}, también se puede concluir vía la construcción recién expuesta, y el \autoref{lem-MADs}, lo siguiente:
 
 \begin{corolario}\label{cor-famGrandes}
 	Existe una familia maximal de cardinalidad $\mathfrak{c}$.
 
-	Además, para cualquier cardinal $\lambda \leq \mathfrak{c}$ existe una familia casi ajena de cardinalidad $\lambda$.
+	En consecuencia, para cualquier cardinal $\lambda \leq \mathfrak{c}$ existe una familia casi ajena de cardinalidad $\lambda$.
 \end{corolario}
 
-Se concluirá esta sección comentando cosas en relación a la pregunta obvia: ¿existen familias maximales de cualquier cardinalidad entre $\aleph_1$ y $\mathfrak{c}$?
+Se concluirá esta sección comentando qué ocurre respecto la interrogante obvia que surge tras lo ya realizado: ¿existen familias maximales de cualquier cardinalidad entre $\aleph_1$ y $\mathfrak{c}$?
 
 \begin{definicion}
 	Se define el \textbf{cardinal de casi ajenidad} como:\index[alph]{cardinal! de casi ajenidad}\index[alph]{casi!ajenidad, cardinal de} \index[sym]{$\mathfrak{a}$}
 	$$ \mathfrak{a}:=\min\{ \kappa \geq \omega \tq \text{Existe una familia maximal de cardinalidad } \kappa \} $$
 \end{definicion}
 
-Debido a \ref{prop-MADnoNum}, se tiene $\aleph_1 \leq \mathfrak{a} \leq \mathfrak{c}$ y claramente bajo $\HC$ se debe satisfacer $\mathfrak{a}=\mathfrak{c}$; luego, es consistente con $\zfc$ que $\mathfrak{a}=\mathfrak{c}$. Comentar que la teoría en relación al cardinal $\mathfrak{a}$ (así como de otros cardinales importantes) es increíblemente basta y existen resultados de consistencia como el siguiente.
+Debido a \ref{prop-MADnoNum}, se tiene $\aleph_1 \leq \mathfrak{a} \leq \mathfrak{c}$ y claramente bajo $\HC$ se debe satisfacer $\mathfrak{a}=\mathfrak{c}$; luego, es consistente con $\zfc$ que $\mathfrak{a}=\mathfrak{c}$. Comentar que la teoría en relación al cardinal $\mathfrak{a}$ (así como de otros cardinales importantes) es basta y existen resultados de consistencia como el siguiente.
 
 \begin{teorema}\label{teo-stafa}
 	Si $\kappa$ es cualquier cardinal regular con $\aleph_1 \leq \kappa \leq \mathfrak{c}$, es consistente con $\zfc$ que $\mathfrak{a}=\kappa$.
@@ -254,10 +234,10 @@ El Teorema recién enunciado consecuencia de \cite[Teo.~5.1, p.~127]{kunenHandbo
 		      $$ \ms{I}_N(\ms{A}) := \{ B \subseteq N \tq \exists H \in [\ms{A}]^{<\omega} \: ( B \subseteq^* \midcup H ) \} $$
 		\item La \textbf{parte positiva de $\ms{A}$} es $ \ms{I}_N^+(\ms{A}) := \ms{P}(N) \setminus \ms{I}_N(\ms{A})$.
 	\end{enumerate}
-	Si $N=\omega$, se escribirá únicamente $\ms{I}(\ms{A})$ ($\ms{I}^+(\ms{A})$, respectivamente).
+	Si $N=\omega$, se escribirá únicamente $\ms{I}(\ms{A})$ (y $\ms{I}^+(\ms{A})$, respectivamente).
 \end{definicion}
 
-El objeto introducido previamente es de vital importancia para el estudio de la combinatoria de las familias casi ajenas. Como se había advertido, resulta necesario realizar la siguiente observación con el propósito de no perder generalidad con los resultados mostrados durante esta sección.
+El objeto introducido previamente es de vital importancia para el estudio de la combinatoria de las familias casi ajenas. Como se había advertido, resulta necesario realizar la siguiente observación, con el propósito de no perder generalidad con los resultados mostrados durante esta sección.
 
 \begin{proposicion}\label{prop-IdealBiyec}
 	Sean $N,M$ conjuntos numerables y $h:N \to M$ biyectiva. Si $\ms{A} \in \Ad(N)$, entonces $\Phi_h (\ms{I}_N (\ms{A})) = \ms{I}_M (\Phi_h( \ms{A} )) $.
@@ -274,7 +254,7 @@ Resulta sencillo constatar que el objeto definido en \ref{def-ideal} es; como su
 \begin{observacion}\label{obs-IdealPrevia}
 	Si $\ms{A}$ es familia casi ajena, entonces:
 	\begin{enumerate}[i)]
-		\item Cualquier subconjunto finito de $\omega$, así como cualquier elemento de $\ms{A}$, es elemento de $\ms{I}(\ms{A})$. Por lo que se dan las contenciones $\emptyset \subsetneq [\omega]^{<\omega} \cup \ms{A} \subseteq \ms{I}(\ms{A})$.
+		\item Cualquier subconjunto finito de $\omega$, así como cualquier elemento de $\ms{A}$, es elemento de $\ms{I}(\ms{A})$. Por lo que $\emptyset \subsetneq [\omega]^{<\omega} \cup \ms{A} \subseteq \ms{I}(\ms{A})$.
 		\item Si $\ms{B} \in \Ad(\omega)$ y $\ms{A} \subseteq \ms{B}$, entonces $\ms{I}(\ms{A}) \subseteq \ms{I}(\ms{B})$.
 	\end{enumerate}
 \end{observacion}
@@ -294,12 +274,12 @@ Cada vez que $\ms{A}$ sea una familia casi ajena maximal y finita, en virtud del
 \begin{corolario}\label{cor-IdealPropioCaract}
 	Sean $N$ un conjunto numerable y $\ms{A}$ cualquier familia casi ajena sobre $N$. Las siguientes condiciones son equivalentes:
 	\begin{enumerate}[i)]
-		\item $\ms{A}$ es infinita o no maximal en $N$.
-		\item $\ms{I}_N(\ms{A})$ es ideal propio en $(\ms{P}(N),\subseteq)$, es decir, $N \notin \ms{I}_N(\ms{A})$.
+		\item $\ms{A}$ es finita y maximal en $N$.
+		\item $\ms{I}_N(\ms{A})$ no es ideal propio, es decir, $N \in \ms{I}_N(\ms{A})$.
 	\end{enumerate}
 \end{corolario}
 
-Con relativa frecuencia aparecerán familias que, pese a no ser maximales, satisfacen la condición (ii) de lo subsecuente; ésta puede ser tomada como un debilitamiento de la maximalidad.
+Con relativa frecuencia aparecerán familias que, pese a no ser maximales, satisfacen la condición (ii) de lo subsecuente; ésta puede ser tomada como un debilitamiento a la condición de maximalidad.
 
 \begin{definicion}\label{def-MaxEnAlguna}\index[alph]{traza de $\ms{A}$ en $X$}\index[sym]{$\ms{A} \upharpoonright X$}\index[alph]{familia!maximal en alguna parte}\index[alph]{familia!maximal en ninguna parte}
 	Si $N$ es numerable y $\ms{A}$ familia casi ajena sobre $N$:
@@ -322,7 +302,7 @@ Sin causa de asombro, los conceptos recién establecidos son respetados por las 
 \end{proposicion}
 
 \begin{proof}
-	(i) Nótese que por ser $h$ biyección:
+	(i) Por ser $h$ biyección:
 	\begin{align*}
 		\Phi_h(\ms{A}) \upharpoonright h[X] & = \{ B \cap h[X] \in \big[ h[X] \big]^\omega \tq B \in \Phi_h(\ms{A}) \} \\
 		                                    & = \{ h[A] \cap h[X] \in \big[ h[X] \big]^\omega \tq A \in \ms{A} \}      \\
@@ -334,10 +314,10 @@ Sin causa de asombro, los conceptos recién establecidos son respetados por las 
 	Además, dado que $g:= h \upharpoonright X : X \to h[X]$ es biyección y se tiene que $\Phi_h(\ms{A}) \upharpoonright h[X]=\Phi_h (\ms{A} \upharpoonright X)=\Phi_g (\ms{A} \upharpoonright X)$, se desprende del \autoref{prop-ADbiyec} que $\Phi_h(\ms{A}) \upharpoonright h[X]$ es maximal en $h[X]$.
 \end{proof}
 
-Es adecuado señalar la siguiente serie de observaciones; que aunque técnicas, permitirán manejar con soltura tanto las trazas de familias casi ajenas, como sus ideales generados.
+Es adecuado señalar la siguiente serie de observaciones que, aunque técnicas, permitirán manejar con soltura tanto las trazas de familias casi ajenas, como sus ideales generados.
 
 \begin{proposicion}\label{prop-TrazaBasicos}
-	Sean $\ms{A},\ms{B}$ familias casi ajenas y $X,Y \in [\omega]^\omega$ cualesquiera, entonces:
+	Sean $\ms{A},\ms{B}$ familias casi ajenas. Para cualesquiera $X,Y \in [\omega]^\omega$:
 	\begin{enumerate}[i)]
 		\item Si $\ms{A} \subseteq \ms{B}$, entonces $\ms{A} \upharpoonright X \subseteq \ms{B} \upharpoonright X$.
 		\item Se da la igualdad $(\ms{A} \upharpoonright Y) \upharpoonright X = \ms{A} \upharpoonright (Y \cap X)$.
@@ -352,8 +332,6 @@ Es adecuado señalar la siguiente serie de observaciones; que aunque técnicas, 
 	(iii) Supóngase que $X \subseteq Y$ y sea $B \in \ms{I}_X(\ms{A} \upharpoonright X)$. Entonces $B \subseteq X \subseteq Y$ y existe $H \subseteq \ms{A} \upharpoonright X$ finito tal que $B \subseteq^* \midcup H$. Cada $A \cap X \in H$ es infinito, luego $A \cap Y$ es infinito y así $H \subseteq J:=\{A \cap Y \tq A \cap X \in H\}$. De manera que $B \subseteq^* \midcup J$ y por lo tanto $B \in \ms{I}_Y(\ms{A} \upharpoonright Y)$.
 \end{proof}
 
-%\subsection{Caracterización de la maximalidad de una familia}\label{subsec-Ideal}
-
 Se darán a continuación una serie de observaciones que conectan la maximalidad de una familia con sus trazas y su ideal generado.
 
 \begin{proposicion}\label{prop-CaracMADIdeal}
@@ -361,10 +339,10 @@ Se darán a continuación una serie de observaciones que conectan la maximalidad
 \end{proposicion}
 
 \begin{proof}
-	Supóngase que $\ms{A}$ es maximal y sea $X \in \ms{I}(\ms{A})$. Entonces, existe $H \subseteq \ms{A}$ finito tal que $X \subseteq^* \midcup H$. Luego $X \subseteq^* C \cap \midcup H$ y como $H$ es un conjunto finito:
+	Supóngase que $\ms{A}$ es maximal y sea $X \in \ms{I}(\ms{A})$. Entonces, existe $H \subseteq \ms{A}$ finito tal que $X \subseteq^* \midcup H$. Luego $X \subseteq^* X \cap \midcup H$ y como $H$ es un conjunto finito:
 	\begin{align*}
-		X \subseteq^* \midcap\{ A \cap X \in [\omega]^\omega \tq A \in H \} \cup \midcup\{ A \cap X \in [\omega]^{<\omega} \tq A \in H \} \\
-		=^* \midcap\{ A \cap X \in \ms{A} \upharpoonright X \tq A \in H \}
+		X & \subseteq^* \midcap\{ A \cap X \in [\omega]^\omega \tq A \in H \} \cup \midcup\{ A \cap X \in [\omega]^{<\omega} \tq A \in H \} \\
+		& =^* \midcap\{ A \cap X \in \ms{A} \upharpoonright X \tq A \in H \}
 	\end{align*}
 	mostrando que $X \in \ms(I)_X(\ms{A}\upharpoonright X)$, y por \ref{cor-IdealPropioCaract}, $\ms{A} \upharpoonright X$ es finita y maximal en $X$.
 
@@ -373,7 +351,7 @@ Se darán a continuación una serie de observaciones que conectan la maximalidad
 
 Si $\ms{A}$ es maximal, cada subconjunto infinito de $\omega$ tiene intersección infinita con al menos un elemento de $\ms{A}$. En comparativa, cada conjunto en la parte positiva de $\ms{A}$ tiene un comportamiento más fuerte, más allá de cumplirse:
 \[ \{X \in [\omega]^{\omega} \tq \forall A \in \ms{A} \: (A \cap X =^* \emptyset) \} \subseteq \ms{I}^+(\ms{A}) \]
-ocurre la siguiente caracterización:
+ocurre lo siguiente:
 
 \begin{proposicion}\label{prop-CaracMADPositiv}
 	Sean $\ms{A}$ una familia casi ajena. Entonces $\ms{A}$ es maximal si y sólo si para cada $X \in \ms{I}^+(\ms{A})$ la familia $\ms{A} \upharpoonright X$ es infinita.
@@ -401,15 +379,15 @@ Y a consecuencia de \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv} se obt
 La siguiente observación, y el subsecuente Lema, configuran la antesala para enunciar uno de los tres resultados más importantes que figuran en esta sección.
 
 \begin{observacion}
-	Sea $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$ una sucesión decreciente respecto $\subseteq$, entonces existe $Y \in [X_0]^\omega$ tal que si $k \in \omega$, se da $Y \subseteq^* X_k$.
+	Para toda sucesión $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$, que sea $\subseteq$-decreciente, existe $Y \in [X_0]^\omega$ tal que para cada $k \in \omega$, ocurre $Y \subseteq^* X_k$.
 
-	Si $n \in \omega$, $\{y_m \tq m<n\} \subseteq \omega$ tiene exactamente $n$ elementos y para cada $m<n$ se tiene $y_m \in X_m$; entonces $X_n \setminus \{y_m \tq m<n\}$ es infinito y se puede fijar $y_n \in X_n \setminus \{y_m \tq m<n\}$.
+	En efecto, si $n \in \omega$, $\{y_m \tq m<n\} \subseteq \omega$ tiene exactamente $n$ elementos y para cada $m<n$ se tiene $y_m \in X_m$; entonces $X_n \setminus \{y_m \tq m<n\}$ es infinito y se puede fijar $y_n \in X_n \setminus \{y_m \tq m<n\}$.
 
-	Así, $Y:=\{y_n \tq n \in \omega\} \subseteq X_0$ es infinito y si $k \in \omega$, entonces $Y \setminus X_k \subseteq \{y_n \tq n<k\}=^* \emptyset$, esto es, $Y \subseteq^* X_k$.
+	Así, $Y:=\{y_n \tq n \in \omega\} \subseteq X_0$ es infinito y para cualquier $k \in \omega$ debe ocurrir que: $Y \setminus X_k \subseteq \{y_n \tq n<k\}=^* \emptyset$, esto es, $Y \subseteq^* X_k$.
 \end{observacion}
 
 \begin{lema}[Dočkálková]\index[alph]{Dočkálková!Lema de}\index[alph]{Lema!de Dočkálková}\label{lem-PositivCadenaDecreciente}
-	Sean $\ms{A} \in \Mad(\omega)$ y $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ decreciente respecto $\subseteq$. Entonces existe $Y \in \ms{I}^+(\ms{A})$ tal que si $n\in \omega$, entonces $Y \subseteq^* X_n$.
+	Sean $\ms{A} \in \Mad(\omega)$ y $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ una sucesión $\subseteq$-decreciente. Existe $Y \in \ms{I}^+(\ms{A})$ tal que si $n\in \omega$, entonces $Y \subseteq^* X_n$.
 \end{lema}
 
 \begin{proof}
@@ -433,7 +411,7 @@ La siguiente observación, y el subsecuente Lema, configuran la antesala para en
 El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y tiene consecuencias importantes en topología general (véase el \autoref{cor-FrechNoProd}).
 
 \begin{teorema}[Simon]\index[alph]{Simon!Teorema de}\index[alph]{Teorema!de Simon}\label{Teo-Simon}
-	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $X \in \ms{I}^+(\ms{A})$ tal que la familia $\ms{A} \upharpoonright X$ es maximal en $X$ y además es unión ajena de dos familias maximales en ninguna parte.
+	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $X \in \ms{I}^+(\ms{A})$ tal que la familia $\ms{A} \upharpoonright X$ es maximal en $X$. Además $\mathscr{A} \upharpoonright X$ es unión ajena de dos familias maximales en ninguna parte.
 \end{teorema}
 
 \begin{proof}
@@ -464,32 +442,32 @@ El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{Simon
 \begin{definicion}\label{Def-particionador}\label{def-grieta}\index[alph]{particionador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
 	Sea $N$ un conjunto numerable y $\ms{A},\ms{B} \in \Ad(N)$.
 	\begin{enumerate}
-		\item El par $(\ms{A},\ms{B})$ es una \textbf{grieta} si y solamente si $\ms{A} \cap \ms{B}=\emptyset$ y $\ms{A} \cup \ms{B} \in \Ad(N)$. Se suele decir que $(\ms{A},\ms{B})$ \textbf{está contenida} en $\ms{A} \cup \ms{B}$, o que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
+		\item El par $(\ms{A},\ms{B})$ es una \textbf{grieta} si y sólo si $\ms{A} \cap \ms{B}=\emptyset$ y $\ms{A} \cup \ms{B} \in \Ad(N)$. Se suele decir que $(\ms{A},\ms{B})$ \textbf{está contenida} en $\ms{A} \cup \ms{B}$, o que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
 		\item Un subconjunto $D \subseteq N$ es \textbf{particionador} de $\ms{A}$ y $\ms{B}$ si y sólo si para cada $A \in \ms{A}$ y $B \in \ms{B}$ se tiene $A \subseteq^* D$ y $B \cap D =^* \emptyset$.
 		\item Una grieta $(\ms{A},\ms{B})$ está \textbf{separada} si y sólo si existe un particionador de $\ms{A}$ y $\ms{B}$.
 	\end{enumerate}
 \end{definicion}
 
-En términos de la definición anterior, no resulta complicado notar que $D$ es particionador de $\ms{A}$ y $\ms{B}$ si y sólo si $N \setminus D$ es particionador de $\ms{B}$ y $\ms{A}$. Además $\ms{A}=\{X \in \ms{A} \cup \ms{B} \tq X \subseteq ^* D\}$ y $\ms{B}=\{X \in \ms{A} \cup \ms{B} \tq X \cap D =^* \emptyset\}$.
+En términos de la definición anterior, no resulta complicado notar que $D$ es particionador de $\ms{A}$ y $\ms{B}$ si y sólo si $N \setminus D$ es particionador de $\ms{B}$ y $\ms{A}$. Además, en tal caso $\ms{A}=\{X \in \ms{A} \cup \ms{B} \tq X \subseteq ^* D\}$ y $\ms{B}=\{X \in \ms{A} \cup \ms{B} \tq X \cap D =^* \emptyset\}$.
 
 Como ha resultado ser rutina a lo largo de todo el capítulo, se deberá hacer hincapié en el comportamiento de las grietas respecto a las biyecciones $\Phi_h$. La demostración de este hecho resulta estándar.
 
-\begin{proposicion}\label{prop-grietasBiyec}
+\begin{observacion}\label{prop-grietasBiyec}
 	Sean $N$ y $M$ conjuntos numerables. Para toda biyección $h:N \to M$ y toda grieta $(\ms{A},\ms{B})$ en $N$ se cumple:
 	\begin{enumerate}
 		\item $(\Phi_h(\ms{A}),\Phi_h(\ms{B}))$ es grieta en $M$.
 		\item $(\ms{A},\ms{B})$ está separada si y sólo si $(\Phi_h(\ms{A}),\Phi_h(\ms{B}))$ está separada.
 	\end{enumerate}
-\end{proposicion}
+\end{observacion}
 
 En virtud de lo anterior, cada vez que $(\ms{A},\ms{B})$ sea grieta; y salvo que se diga lo contrario, se dará por sentado que $\ms{A},\ms{B} \in \Ad(\omega)$
 
 \begin{observacion}\label{obs-GrietasSimple}
 	Para cualesquiera grietas $(\ms{A},\ms{B})$ y $(\ms{A}',\ms{B}')$:
 	\begin{enumerate}
-		\item $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$ (seguido de \autoref{obs-IdealPrevia}).
+		\item $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$ (seguido de la \autoref{obs-IdealPrevia}).
 		\item $(\ms{A},\ms{B})$ está separada si y sólo si $(\ms{B},\ms{A})$ está separada.
-		\item Si $(\ms{A}',\ms{B}')$ está separada, entonces $(\ms{A},\ms{B})$ está separada.
+		\item Si $(\ms{A}',\ms{B}')$ está separada, $\ms{A} \subseteq \ms{A}'$ y $\ms{B} \subseteq \ms{B}'$, entonces $(\ms{A},\ms{B})$ está separada.
 	\end{enumerate}
 \end{observacion}
 
@@ -503,10 +481,10 @@ A continuación se dan dos hechos básicos sobre la separación de grietas; y si
 	\end{enumerate}
 \end{ejemplo}
 
-El siguiente tipo de familias poseen virtudes que las convierten en objetos canónicos dentro de la teoria  de conjuntos.
+El siguiente tipo de familias poseen virtudes que las convierten en objetos de suma relevancia para la teoria  de conjuntos.
 
 \begin{definicion}\label{def-LuzinFam}\index[alph]{familia!de Luzin}\index[alph]{Luzin!familia de}
-	Una familia casi ajena $\ms{A}$ es de Luzin si existe $X \in [\omega_1]^{\omega_1}$ de forma que $\ms{A}$ se puede enumerar como $\{A_\alpha \tq \alpha \in X \}$ y se cumple que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
+	Una familia casi ajena $\ms{A}$ es \textbf{de Luzin} si existe $X \in [\omega_1]^{\omega_1}$ de forma que $\ms{A}$ se puede enumerar como $\{A_\alpha \tq \alpha \in X \}$ y se cumple que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 \end{definicion}
 
 Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1 \}$ sea de Luzin es que; fijando $\alpha \in \omega_1$, para cada $D \subseteq \alpha$ infinito, $A_\alpha \cap \midcup\{A_\beta \tq \beta \in D\}$ es infinito. Esto se debe a que si $n \in \omega$, entonces $D \setminus \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es infinito, particularmente no vacío.
@@ -522,13 +500,13 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Como $\gamma \in \omega \setminus \omega_1$, $\gamma$ es numerable y se puede enumerar $\{A_\alpha \tq \alpha \in \gamma\}$ como $\{B_n \tq n\in \omega\}$. Por ser tal, una familia casi ajena, cada conjunto $C_n:=B_n \setminus \midcup\{ B_j \tq j<n \}$ es infinito (corrobórese ésto en la demostración de \ref{prop-MADnoNum}). Para cada $n \in \omega$ fíjese $a_n \in [C_n]^n$ y defínase:
 	$$ A_\gamma:=\midcup\{a_m \tq m \in \omega\} $$
 
-	Nótese que si $n \neq m$, entonces $a_n \cap a_m = \emptyset$. De este modo, si $n \in \omega$ es cualquiera, resulta que $A_\gamma \cap B_n = a_n \cap B_n = a_n$ es finito. Más aún, como $a_n$ tiene exatamente $n$ elementos, $n \leq \max(A_n)$; y consecuentemente, si $m \in \omega$ y $A_\gamma \cap B_n \subseteq m$, entonces $n \leq m$.
+	Nótese que si $n \neq m$, entonces $a_n \cap a_m = \emptyset$. De este modo, si $n \in \omega$ es cualquiera, resulta que $A_\gamma \cap B_n = a_n \cap B_n = a_n$ es finito. Más aun, como $a_n$ tiene exatamente $n$ elementos, $n \leq \max(A_n)$; y consecuentemente, si $m \in \omega$ y $A_\gamma \cap B_n \subseteq m$, entonces $n \leq m$.
 
-	Lo anterior prueba, no sólo que $\{A_\alpha \tq \alpha \ \leq \gamma\}$ es familia casi ajena, sino que para cualesquiera $\alpha\leq \gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito. Lo cual finaliza la construcción por recursión de los conjuntos $A_\alpha$ (con $\omega \leq \alpha<2$); es claro que para $\ms{A}:=\{A_\alpha \tq \alpha \in \omega_1 \}$ es una familia Luzin que extiende a $\ms{B}$.
+	Lo anterior prueba, no sólo que $\{A_\alpha \tq \alpha \ \leq \gamma\}$ es familia casi ajena, sino que para cualesquiera $\alpha\leq \gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito. Lo cual finaliza la construcción por recursión de los conjuntos $A_\alpha$ (con $\omega \leq \alpha< \omega_1$); es claro que para $\ms{A}:=\{A_\alpha \tq \alpha \in \omega_1 \}$ es una familia Luzin que extiende a $\ms{B}$.
 \end{proof}
 
 \index[alph]{familia!inseparable}\label{def-FamInseparable}
-Cualquier familia de Luizn cumplirá que ninguna grieta formada por sus subconjuntos más que numerables está separada; es decir, es una \textit{familia inseparable} (véase \cite[\S~ 3.2]{hruAlmost}).
+Cualquier familia de Luizn cumplirá que ninguna grieta formada por sus subconjuntos más que numerables está separada; es decir, es una \textit{familia inseparable} (siguiendo la nomenclatura expuesta en \cite[\S~ 3.2]{hruAlmost}).
 
 Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\midcup \ms{B} \cap \midcup \ms{C}$ es finito, entonces $\midcup \ms{B}$ es separador de $\ms{B}$ y $\ms{C}$, así $(\ms{B},\ms{C})$ está separada. Pese a no ocurrir el recíproco de lo anterior, se configura la siguiente caracterización.
 
@@ -562,7 +540,7 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
 			\item Si $\alpha \neq \beta$, entonces $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\} \not \subseteq m$.
 		\end{enumerate}
 
-		A $X$ y $m$ se les llama testigos de que $(\ms{A}_i \tq i \in I)$ es $n$-grieta de Luzin; y, una $2$-grieta de Luzin se denomina simplemente \textbf{grieta de Luzin}.
+		A los conjuntos $X$ y $m$ se les llama testigos de que $(\ms{A}_i \tq i \in I)$ es $n$-grieta de Luzin. Una $2$-grieta de Luzin se denomina simplemente \textbf{grieta de Luzin}.
 	\end{definicion}
 
 	Una observación pertiente es que las $n$-grietas de Luzin poseen un comportamiento en común a las familias Luzin, el comentado posteriormente a la \autoref{def-LuzinFam}. Inclusive, en según qué literatura se consulte, se suelen confundir los términos ``familia de Luzin'' y ``grieta de Luzin''.
@@ -583,7 +561,7 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
 		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
 	\end{proof}
 
-	La siguiente proposición deja en claro la labor de ``debilitamiento'' que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; resulta que, cualquiera de estas últimas contiene siempre una ($2$-)grieta de Luzin. La prueba del hecho en cuestión requiere remembrar el \textit{Lema de Fodor} (véase \textbf{RAAL}) y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
+	La siguiente proposición deja en claro la labor de ``debilitamiento'' que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; resulta que, cualquiera de estas últimas contiene siempre una ($2$-)grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} (véase \textbf{RAAL}) y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
 
 	\begin{proposicion}
 		Toda familia de Luzin contiene una grieta de Luzin.
@@ -602,7 +580,7 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
         
         Como $0 \notin S$, $l$ es regresiva; nuevamente, del Lema de Fodor, se sigue la existencia de un conjunto $X \subseteq S$, estacionario en $\omega_1$, tal que $l$ es constante en $X$. Así, para cualesquiera $\alpha,\beta \in X$:
         \begin{enumerate}
-            \item Como $X \subseteq S$ y $j[S] \subseteq \{m\}$, luego $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$.
+            \item Como $X \subseteq S$ y $j[S] \subseteq \{m\}$, entonces $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y en consecuencia $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$.
             \item Supóngase que $\beta < \alpha$, como $l$ es constante en $X$, $l(\alpha) = l(\beta)$. Si este último valor es cero, entonces $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. En caso contrario:
             \[ 0 \neq l(\alpha) = l (\beta) < \beta < \alpha \]
             y como $l(\alpha)< \beta < \alpha$, la definición de $l$ obliga a que $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. 
@@ -613,20 +591,16 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
 \subsection{Lema de Solovay}
 
 \begin{definicion}\label{def-ordenBasado} \index[alph]{orden!basado en $\ms{A}$}\index[sym]{$\mathbb{P}_\ms{A}$}\index[sym]{$\leq_\ms{A}$}
-	Sea $\ms{A}$ una familia casi ajena. El par ordenado $\mathbb{P}_\ms{A}:=([\omega]^{<\omega} \times [\ms{A}]^{<\omega}, \leq_\ms{A})$; donde $(p,P) \leq_\ms{A} (h,H)$ si y sólo si $h \subseteq p$, $H \subseteq P$ y $p \setminus h \subseteq \omega \setminus \midcup H$, se denomina \textbf{orden basado en} $\ms{A}$. Cuando el contexto sea claro, se escribirá $\leq$ en vez de $\leq_\ms{A}$.
+	Sea $\ms{A}$ una familia casi ajena. El \textbf{orden basado en} $\ms{A}$ es el par:
+	\[ \mathbb{P}_\ms{A}:=([\omega]^{<\omega} \times [\ms{A}]^{<\omega}, \leq_\ms{A}) \]
+	donde $(p,P) \leq_\ms{A} (h,H)$ si y sólo si $h \subseteq p$, $H \subseteq P$ y $p \setminus h \subseteq \omega \setminus \midcup H$.
+	
+	Cuando el contexto sea claro, se escribirá $\leq$ en vez de $\leq_\ms{A}$.
 \end{definicion}
 
-\begin{proposicion}
-	Si $\ms{A} \in \Ad(\omega)$, entonces $\mathbb{P}_\ms{A}$ es un conjunto parcialmente ordenado.
-\end{proposicion}
-
-\begin{proof}
-	Claramente el orden basado en $\ms{A}$; $\leq$, es una relación reflexiva y antisimétrica. Supóngase que $(p,P) \leq (h,H)$ y $(h,H) \leq (k,K)$. Dada \ref{def-ordenBasado}, $k \subseteq h \subseteq p$ y $K \subseteq H \subseteq P$; en consecuencia $k \subseteq p$ y $K \subseteq P$.
-
-	Y como además $p \setminus h \subseteq \omega \setminus \midcup H$ y $h \setminus k \subseteq \omega \setminus \midcup K$, resulta que:
-	$$ p \setminus k \subseteq (h \setminus k) \cup (p \setminus h) \subseteq \big( \omega \setminus \midcup K \big) \cup \big( \omega \setminus \midcup H \big) $$
-	mostrando $p \setminus k \subseteq \omega \setminus \midcup K$, por lo que $\leq$ es transitiva.
-\end{proof}
+Habrá de verificarse que el orden basado en $\ms{A}$ es, en efecto, un orden parcial. Claramente es una relación reflexiva y antisimétrica. Ahora, si $(p,P) \leq (h,H)$ y $(h,H) \leq (k,K)$, es inmediato a la definición de $\leq_\mathscr{A}$ que $k \subseteq h \subseteq p$ y $K \subseteq H \subseteq P$; en consecuencia $k \subseteq p$ y $K \subseteq P$. Además $p \setminus h \subseteq \omega \setminus \midcup H$ y $h \setminus k \subseteq \omega \setminus \midcup K$, resultando en que:
+	\[ p \setminus k \subseteq (h \setminus k) \cup (p \setminus h) \subseteq \big( \omega \setminus \midcup K \big) \cup \big( \omega \setminus \midcup H \big) \]
+mostrando $p \setminus k \subseteq \omega \setminus \midcup K$, por lo que $\leq$ es transitiva, y con ello, orden parcial.
 
 En términos informales, $(p,P) \leq (h,H)$ significa que ``$h$ se extiende a $p$ y $H$ a $P$''. Conforme $H \subseteq \ms{A}$ crece, se aproxima a $\ms{A}$. Dado que, conforme $h$ crece, éste se acerca a un subconjunto casi ajeno con $\midcup H$; eventualmente, se formará un subconjunto casi ajeno con $\midcup \ms{A}$.
 
@@ -694,7 +668,10 @@ El \autoref{cor-SolovayDebil} es una inmediatez, dada toda su discusión previa.
 
 Sería deseable que la conclusión del Lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falso.
 
-Bajo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (probada en \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad. Se puede decir que si una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay}, entonces está ``débilmente separada'' (véase \cite[\S~ 3.2]{hruAlmost}), si $D$ es como en la conclusión de \ref{lem-Solovay}.
+\index[alph]{familia!débilmente separada}
+Bajo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (probada en \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad. Se puede decir que si una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay}, entonces está \textit{débilmente separada} (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}), si $D$ es como en la conclusión de \ref{lem-Solovay}.
+
+La siguiente es una aplicación típica quel lema de Solovay, una prueba sencilla de la consistencia, respecto a $\zfc$, del enunciado $2^{\aleph_0}=2^{\aleph_1}$. Como se podrá verificar en secciones futuras de este escrito, el enunciado $2^{\aleph_1} = 2^{\aleph_0}$ y su negación $2^{\aleph_1} > 2^{\aleph_0}$, tendrán repercusiones en el comportamiento topológico de los $\Psi$-espacios. Especialmente, se mostrarán sus efectos sobre la Conjetura de Moore (véase \autoref{Sec-PDM}).
 
 \begin{corolario}
 	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$, entonces bajo $\Ma(\kappa)$, se tiene $2^\kappa=\mathfrak{c}$.
@@ -710,4 +687,4 @@ Bajo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (probada en \ref{pr
 	Para la segunda parte, $\lnot \HC + \Ma$ es consistente con $\zfc$. Y como $\lnot \HC$ y $\Ma$ implican $\Ma(\aleph_1)$ y $\omega \leq \aleph_1 < \mathfrak{c}$, se tiene por consiguiente que $\zfc+\lnot \HC + \Ma \vdash 2^{\aleph_0}=2^{\aleph_1}$.
 \end{proof}
 
-Como se podrá atestiguar posteriormente en la tesis, los enunciados $2^{\aleph_1} = 2^{\aleph_0}$ y su negación; $2^{\aleph_1} > 2^{\aleph_0}$ tienen efectos notables en la topología general. Especialmente, se mostrarán sus efectos sobre la Conjetura de Moore (\autoref{Sec-PDM}).
+

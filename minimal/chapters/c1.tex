@@ -80,7 +80,7 @@ Una aplicación superflua del Corolario anterior es el nacimiento de un método 
 
 \begin{ejemplo}
 	\label{ej-Bandas}
-	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h:\omega \times \omega \to \omega$ es biyección, entonces $\Psi_h(\ms{A}) \in \ms{A}$ es una familia casi ajena en $\omega$. Más aún, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec})
+	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h:\omega \times \omega \to \omega$ es biyección, entonces $\Psi_h(\ms{A}) \in \ms{A}$ es una familia casi ajena en $\omega$. Más aun, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec})
 \end{ejemplo}
 
 A continuación se comenzarán a examinar las propiedades de las familias casi ajenas maximales; se tiene la intención de responder a las preguntas que surgen naturalmente como: ¿puede haber familias casi ajenas más que numerables?, o, ¿existen familias maximales infinitas?
@@ -522,7 +522,7 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Como $\gamma \in \omega \setminus \omega_1$, $\gamma$ es numerable y se puede enumerar $\{A_\alpha \tq \alpha \in \gamma\}$ como $\{B_n \tq n\in \omega\}$. Por ser tal, una familia casi ajena, cada conjunto $C_n:=B_n \setminus \midcup\{ B_j \tq j<n \}$ es infinito (corrobórese ésto en la demostración de \ref{prop-MADnoNum}). Para cada $n \in \omega$ fíjese $a_n \in [C_n]^n$ y defínase:
 	$$ A_\gamma:=\midcup\{a_m \tq m \in \omega\} $$
 
-	Nótese que si $n \neq m$, entonces $a_n \cap a_m = \emptyset$. De este modo, si $n \in \omega$ es cualquiera, resulta que $A_\gamma \cap B_n = a_n \cap B_n = a_n$ es finito. Más aún, como $a_n$ tiene exatamente $n$ elementos, $n \leq \max(A_n)$; y consecuentemente, si $m \in \omega$ y $A_\gamma \cap B_n \subseteq m$, entonces $n \leq m$.
+	Nótese que si $n \neq m$, entonces $a_n \cap a_m = \emptyset$. De este modo, si $n \in \omega$ es cualquiera, resulta que $A_\gamma \cap B_n = a_n \cap B_n = a_n$ es finito. Más aun, como $a_n$ tiene exatamente $n$ elementos, $n \leq \max(A_n)$; y consecuentemente, si $m \in \omega$ y $A_\gamma \cap B_n \subseteq m$, entonces $n \leq m$.
 
 	Lo anterior prueba, no sólo que $\{A_\alpha \tq \alpha \ \leq \gamma\}$ es familia casi ajena, sino que para cualesquiera $\alpha\leq \gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito. Lo cual finaliza la construcción por recursión de los conjuntos $A_\alpha$ (con $\omega \leq \alpha<2$); es claro que para $\ms{A}:=\{A_\alpha \tq \alpha \in \omega_1 \}$ es una familia Luzin que extiende a $\ms{B}$.
 \end{proof}

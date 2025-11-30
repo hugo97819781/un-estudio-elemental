@@ -88,7 +88,7 @@ A continuación se comenzarán a examinar las propiedades de las familias casi a
 	Por contrapuesta, supóngase que $B:=\omega \setminus \midcup \ms{A}$ es infinito. Si $A \in \ms{A}$, entonces $A \subseteq \midcup \ms{A}$, y así $A \cap B \subseteq A \setminus \midcup \ms{A} \subseteq A \setminus A = \emptyset$. Por lo que $B \in [\omega]^\omega$ es casi ajeno con cada elemento de $\ms{A}$.
 \end{proof}
 
-El recíproco del Lema previo falla para familias infinitas (véase la familia $\Psi(\ms{A})$ del \autoref{ej-Bandas}); y de hecho, no se cuenta un resultado \enquote{amigable} para determinar cuándo estas resultan ser maximales (véanse \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv}). En contraparte a esto, se deduce rápidamente la siguiente equivalencia:
+El recíproco del Lema previo falla para familias infinitas (véase la familia $\Psi(\ms{A})$ del \autoref{ej-Bandas}); y de hecho, no se cuenta un resultado \enquote{amigable} para determinar cuándo estas resultan ser maximales (véase \ref{prop-CaracMADPositiv}). En contraparte a esto, se deduce rápidamente la siguiente equivalencia:
 
 \begin{corolario}\label{cor-MADnecesarioUnion}
 	Sea $\ms{A} \in \Ad(\omega)$. $\ms{A}$ es maximal si y sólo si $\omega \subseteq^* \midcup \ms{A}$.
@@ -149,7 +149,7 @@ Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$
 \end{proof}
 
 \begin{definicion}\label{def-FamSucesiones}\index[alph]{familia!de!sucesiones en $D$ convergentes a $A$ en $X$}\index[sym]{$\ms{A}_{D,A}$}
-	Si $X$, $D$ y $A$ son como en la proposición anterior, a $\ms{A}_{D,A}$ se le denomina \textbf{familia de sucesiones en $D$ convergentes a $A$ en $X$}.
+	Si $X$, $D$ y $A$ son como en la Proposición anterior, a $\ms{A}_{D,A}$ se le denomina \textbf{familia de sucesiones en $D$ convergentes a $A$ en $X$}.
 \end{definicion}
 
 Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$ el conjunto $A_x$ de la \autoref{prop-famSucesiones} se puede construir de manera explícita. Si $q:\omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
@@ -166,7 +166,7 @@ Comenzaremos observando que si $S$ es cualquier rama de un árbol $(T,\leq)$, en
 \end{proposicion}
 
 \begin{proof}
-	Sean $R,S \in \ms{A}$ con $R \neq S$, sin pérdida de generalidad, existe $x_0 \in R \setminus S \neq \emptyset$. De existir $y \in R \cap S$ tal que $y \not < x_0$, resultaría que $x_0 \leq y$, en virtud de que $x,y \in R$ y $R$ es rama. Lo anterior y la discusión previa a esta proposición implican que $x_0 \in S$, lo cual es imposible.
+	Sean $R,S \in \ms{A}$ con $R \neq S$, sin pérdida de generalidad, existe $x_0 \in R \setminus S \neq \emptyset$. De existir $y \in R \cap S$ tal que $y \not < x_0$, resultaría que $x_0 \leq y$, en virtud de que $x,y \in R$ y $R$ es rama. Lo anterior y la discusión previa a esta Proposición implican que $x_0 \in S$, lo cual es imposible.
 	
 	Por lo tanto $R \cap S \subseteq \{ y \in T \tq y<z \}$; y como $T$ tiene altura $\omega$, el orden de $x_0$ es un natural; consecuentemente, $R \cap S$ es finito.
 \end{proof}
@@ -191,7 +191,7 @@ Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ \te
 Las proposiciones anteriores permiten definir, de forma explícita y sin recurrir al $\Ac$, el siguiente tipo de familias casi ajenas.
 
 \begin{definicion}\label{def-FamRamas}\index[sym]{$\ms{A}_X$}\index[alph]{familia!de!ramas de $X$ en $2^\omega$}
-	Para cada $X \subseteq 2^\omega$ defínase $\ms{A}_X:=\{A_f \tq f \in X\}$ como en la proposición previa.
+	Para cada $X \subseteq 2^\omega$ defínase $\ms{A}_X:=\{A_f \tq f \in X\}$ como en la Proposición previa.
 
 	Esta familia será nombrada la \textbf{familia de las ramas de $X$ en $2^{<\omega}$}.
 \end{definicion}
@@ -278,7 +278,7 @@ Con relativa frecuencia aparecerán familias que, pese a no ser maximales, satis
 \begin{definicion}\label{def-MaxEnAlguna}\index[alph]{traza de $\ms{A}$ en $X$}\index[sym]{$\ms{A} \upharpoonright X$}\index[alph]{familia!maximal en alguna parte}\index[alph]{familia!maximal en ninguna parte}
 	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$.
 	\begin{enumerate}[i)]
-		\item Para cada $X \subseteq N$, la \textbf{traza de $\ms{A}$ en $X$} es la colección $ \ms{A} \upharpoonright X$, definida como el conjunto $\{ A \cap X \in [X]^\omega \tq A \in \ms{A} \} $.
+		\item Para cada $X \in [N]^\omega$, la \textbf{traza de $\ms{A}$ en $X$} es la colección $ \ms{A} \upharpoonright X$, definida como el conjunto $\{ A \cap X \in [X]^\omega \tq A \in \ms{A} \} $.
 		\item $\ms{A}$ es \textbf{maximal en alguna parte} si y sólo si existe $X \in \ms{I}_N^+(\ms{A})$ tal que la familia $\ms{A} \upharpoonright X$ es maximal en $X$.
 		\item $\ms{A}$ es \textbf{maximal en ninguna parte} si no es maximal en alguna parte.
 	\end{enumerate}
@@ -291,17 +291,17 @@ Sin causa de asombro, los conceptos recién establecidos son respetados por las 
 \begin{proposicion}
 	Sean $N,M$ conjuntos numerables, $h:N \to M$ biyección y $\ms{A} \in \Ad(N)$.
 	\begin{enumerate}[i)]
-		\item Para cada $X \in [N]^\omega$ se cumple $Phi_h(\ms{A}) \upharpoonright h[X]=\Phi_h(\ms{A} \upharpoonright X)$.
+		\item Para cada $X \in [N]^\omega$ se cumple $\Phi_h(\ms{A}) \upharpoonright h[X]=\Phi_h(\ms{A} \upharpoonright X)$.
 		\item $\ms{A}$ es maximal en alguna parte si y sólo si $\Phi_h(\ms{A})$ también lo es.
 	\end{enumerate}
 \end{proposicion}
 
 \begin{proof}
-	(i) Por ser $h$ biyección:
+	(i) Como $h$ biyección, de la definición de $\Phi_h(\ms{A})$ se obtiene:
 	\begin{align*}
 		\Phi_h(\ms{A}) \upharpoonright h[X] & = \{ B \cap h[X] \in \big[ h[X] \big]^\omega \tq B \in \Phi_h(\ms{A}) \} \\
-		                                    & = \{ h[A] \cap h[X] \in \big[ h[X] \big]^\omega \tq A \in \ms{A} \}      \\
-		                                    & = \{ h[A \cap X] \in \big[ h[X] \big]^\omega \tq A \in \ms{A} \}         \\
+		                                    & = \{ h[A] \cap h[X] \in \big[ h[X] \big]^\omega \tq A \in \ms{A} \} \\
+											& = \{ h[A \cap X] \tq A \cap X  \in [X]^\omega \land A \in \ms{A} \} \\
 		                                    & = \Phi_h (\ms{A} \upharpoonright X)
 	\end{align*}
 	(ii) Como $\Phi_h ^{-1} = \Phi_{h^{-1}}$, basta probar la suficiencia. Supóngase que $\ms{A}$ es maximal en alguna parte, entonces existe $X \in \ms{I}^+(\ms{A})$ tal que $\ms{A} \upharpoonright X$ es maximal en $X$. 
@@ -327,42 +327,53 @@ Las siguientes propiedades son esperables, pero no por ello menos útiles. Es im
 	(iii) Supóngase que $X \subseteq Y$ y sea $B \in \ms{I}_X(\ms{A} \upharpoonright X)$. Entonces $B \subseteq X \subseteq Y$ y existe $H \subseteq \ms{A} \upharpoonright X$ finito tal que $B \subseteq^* \midcup H$. Cada elemento $A \cap X \in H$ es infinito y está contenido en $A \cap Y$, luego $J:=\{A \cap Y \tq A \cap X \in H\} \subseteq \ms{A} \upharpoonright Y$ es finito y $B \subseteq^* \midcup J$ y por lo tanto $B \in \ms{I}_Y(\ms{A} \upharpoonright Y)$.
 \end{proof}
 
-Tras la \autoref{def-MaxEnAlguna} se mostró que la maximalidad de una familia \enquote{baja} a cada una de sus trazas. Lo que está por realizarse ahora, es una serie de observaciones sobre el comportamiento de sus trazas. La primera de ellas revela que las trazas de una familia hacia elementos de su ideal generado son \enquote{poco interesantes}, en el siguiente aspecto:
+Si bien se demostró, tras la \autoref{def-MaxEnAlguna}, que la maximalidad de una familia implica la de cada una de sus trazas. La próxima observación muestra que la maximalidad de aquellas trazas tomadas sobre elementos del ideal generado no constituye una condición suficiente para concluir la maximalidad de la familia dada.
 
 \begin{proposicion}\label{prop-CaracMADIdeal}
-	Sean $\ms{A} \in \Ad(\omega)$ y $X \in \ms{I}(\ms{A})$ infinito. $\ms{A} \upharpoonright X$ es finita y maximal en $X$.
+	Sean $\ms{A} \in \Ad(\omega)$ y $X \in [\omega]^\omega$. Entonces $X \in \ms{I}(\ms{A})$ si y sólo si la familia $\ms{A} \upharpoonright X$ es finita y maximal en $X$.
 \end{proposicion}
 
 \begin{proof}
-	Como $X \in \ms{I}(\ms{A})$, existe $H \subseteq \ms{A}$ finito tal que $X \subseteq^* \midcup H$. Así, $X \subseteq^* X \cap \midcup H$ y como $H$ es finito:
+	Por el \autoref{cor-IdealPropioCaract}, basta mostrar que $X \in \ms{I}(\ms{A})$ si y sólo si $X \in \ms{I}_X(\ms{A} \upharpoonright X)$. Dado lo demostrado en \ref{prop-TrazaBasicos}, la necesidad de tal equivalencia es inmediata. Ahora, si $X \in \ms{I}(\ms{A})$, entonces $X \subseteq^* \midcup H$ para cierto $H \in [\ms{A}^{<\omega}]$. Luego $X \subseteq^* X \cap \midcup H$ y la finitud de $H$ implica que:
 	\begin{align*}
-		X & \subseteq^* \midcup\{ A \cap X \in [\omega]^\omega \tq A \in H \} \cup \midcup\{ A \cap X \in [\omega]^{<\omega} \tq A \in H \} \\
-		& =^* \midcup\{ A \cap X \in \ms{A} \upharpoonright X \tq A \in H \}
+		X & \subseteq^* \{ A \cap X \in [X]^{<\omega} \tq A \in H \} \cup \{ A \cap X \in [X]^\omega \tq A \in H \} \\
+		& =^* \{ A \cap X \in [X]^\omega \tq A \in H \}
 	\end{align*}
-	mostrando que $X \in \ms{I}_X(\ms{A}\upharpoonright X)$, y por \ref{cor-IdealPropioCaract}, $\ms{A} \upharpoonright X$ es finita y maximal en $X$.
+	probando que $X \in \ms{I}_X(\ms{A} \upharpoonright X)$.
 \end{proof}
 
-Si $\ms{A}$ es maximal, cada subconjunto infinito de $\omega$ tiene intersección infinita con al menos un elemento de $\ms{A}$. En comparativa, cada conjunto en la parte positiva de $\ms{A}$ tiene un comportamiento más fuerte, más allá de cumplirse:
-\[ \{X \in [\omega]^{\omega} \tq \forall A \in \ms{A} \: (A \cap X =^* \emptyset) \} \subseteq \ms{I}^+(\ms{A}) \]
-ocurre lo siguiente:
+Como la familia vacía no es maximal, la Proposición anterior deja como reflexión que los únicos conjuntos que podrían ser testigos de que $\ms{A}$ no es maximal, son aquellos que pertenecen a la parte positiva de $\ms{A}$.
 
-\begin{proposicion}\label{prop-CaracMADPositiv}
-	Sean $\ms{A}$ una familia casi ajena. Entonces $\ms{A}$ es maximal si y sólo si para cada $X \in \ms{I}^+(\ms{A})$ la familia $\ms{A} \upharpoonright X$ es infinita.
-\end{proposicion}
+\begin{corolario}\label{cor-CasiajenoPartePositiva}
+	Si $\ms{A} \in \Ad(\omega)$, $\{X \in [\omega]^{\omega} \tq \ms{A} \upharpoonright X= \emptyset \} \subseteq \ms{I}^+(\ms{A})$.
+\end{corolario}
 
+Si $X \in [\omega]^\omega$ y $\ms{A}$ es maximal, entonces $X$ debe tener intersección infinita con algún elemento de $\ms{A}$. Los conjuntos de $\ms{I}^+(\ms{{A}})$ tienen un comportamiento más fuerte en caso de que $\ms{A}$ sea maximal, cada uno de ellos tiene intersección infinita con una infinidad de elementos de $\ms{A}$.
+
+\begin{corolario}\label{prop-CaracMADPositiv}
+	Sea $\ms{A} \in \Ad(\omega)$. Entonces $\ms{A}$ es maximal si y sólo si para cada $X \in \ms{I}^+(\ms{A})$ la familia $\ms{A} \upharpoonright X$ es infinita.
+\end{corolario}
 \begin{proof}
-	Prócedase a probar la suficiencia por contrapuesta. Supóngase que existe $X \in \ms{I}^+(\ms{A})$ tal que la familia $\ms{A} \upharpoonright X$ es finita, entonces el conjunto $H:=\{ A \in \ms{A} \tq A \cap X \neq^* \emptyset \}$ es finito. Como $X \notin \ms{I}(\ms{A})$, el conjunto $B:=X \setminus \midcup H \subseteq \omega$ es infinito. Si $A \in \ms{A}$ es cualquiera, $A \cap B$ no puede ser infinito, sino $A \cap X$ es infinito, $A \in H$ y en consecuencia $A \cap B = (A \cap X) \setminus \midcup H \subseteq (A \cap X) \setminus A = \emptyset$, lo cual no tiene sentido. Así que $B$ es casi ajeno con cada elemento de $\ms{A}$ y $\ms{A}$ no es maximal.
+	Suṕongase que $\ms{A}$ es maximal y sea $X \in \ms{I}^+(\ms{A})$. Por la maximalidad de $\ms{A}$, se sigue de lo comentado tras la \autoref{def-MaxEnAlguna} que $\ms{A} \upharpoonright X$ es maximal en $X$. Por lo que, acorde a \ref{prop-CaracMADIdeal}, $\ms{A} \upharpoonright X$ debe ser infinita.
 
-	Para la necesidad, procédase de nuevo por contrapuesta. Si $\ms{A}$ no es maximal, existe $B \in [\omega]^\omega$ casi ajeno con cada elemento de $\ms{A}$. Nótese que entonces $\ms{A} \upharpoonright B = \emptyset$ es finita. Además $B \notin \ms{I}(\ms{A})$, pues de no ocurrir esto, existe $H \subseteq \ms{A}$ finito tal que $B \subseteq \midcup H$. Pero como $H$ es finito, $B \subseteq^* B \cap \midcup H = \midcup \{ h \cap B \tq h \in H \} =^* \emptyset$, lo cual es imposible. Por lo tanto $B \in \ms{I}^+(\ms{A})$ y $\ms{A} \upharpoonright B$ es finita.
+	Recíprocamente, si $\ms{A}$ no es maximal, existe $B \in [\omega]^\omega$ casi ajeno con cada elemento de $\ms{A}$. Así, $\ms{A} \upharpoonright B = \emptyset$ y se sigue de \ref{cor-CasiajenoPartePositiva}, que $B \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
-Y a consecuencia de \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv} se obtiene:
+El Corolario que se avecina es una manera de condensar de todo lo comentado y demostrado tras la \autoref{def-MaxEnAlguna}.
 
 \begin{corolario}\label{cor-MADPositivCarac}
-	Sean $N$ un conjunto numerable y $\ms{A}$ una familia casi ajena en $N$. Entonces $\ms{A}$ es maximal si y sólo si se da la igualdad:
-	$$ \ms{I}_N^+(\ms{A})=\{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \neq^* \emptyset\} $$
-	Si $\ms{A}$ no es maximal, la contención directa de la igualdad anterior falla.
+	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Entonces $\ms{A}$ es maximal si y sólo si ocurre alguna de las siguientes condiciones equivalentes:
+	\begin{enumerate}
+		\item $\ms{I}_N^+(\ms{A}) \subseteq \{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \neq^* \emptyset\}$.
+		\item $\ms{I}_N^+(\ms{A}) \subseteq \{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \in \Mad(X)\}$.
+	\end{enumerate}
+
+	Además, las contenciones recíprocas siempre ocurren.
 \end{corolario}
+
+\begin{proof}
+	Dados \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv}, basta probar que (ii) implica que $\ms{A}$ es maximal. En efecto, si $\ms{A}$ no es maximal, de \ref{cor-IdealPropioCaract} se desprende que $N \in \ms{I}_N^+(\ms{A})$. Siguiéndose de (ii) que $\ms{A} \upharpoonright N = \ms{A} \in \Mad(N)$, lo cual es una contradicción.
+\end{proof}
 
 \section{Resultados en combinatoria infinita}
 
@@ -394,7 +405,7 @@ La siguiente observación, y el subsecuente Lema, configuran la antesala para en
 
 	Como $Y_n \subseteq X_n \setminus B \subseteq \omega$ es infinito y $\ms{A}$ es maximal, se puede fijar (de nuevo, con $\Ac$) un elemento $A_n \in \ms{A}$ tal que $Y_n \cap A_n$ es infinito. Nótese que de la Definición de $B$ y de $Y_n \cap B = \emptyset$, se desprende tanto que $Y_n \notin \{Y_m \tq m<n\}$, como que $A_n \notin \{A_m \tq m<n\}$; pues para cada $m<n$ se tiene que $Y_m \cap B$ es infinito, a razón de que $A_m \subseteq B$ y de que $A_m \cap Y_m$ es infinito, finalizando la construcción recursiva.
 
-	Sea $Y:=\midcup\{Y_n \tq n\in \omega\}$ y obsérvese que $\ms{A} \upharpoonright Y$ es infinita, pues cada $A_n$ tiene intersección finita con $Y$. Luego, seguido de la \autoref{prop-CaracMADPositiv} y de que $\ms{A}$ es maximal, se obtiene $Y \in \ms{I}^+(\ms{A})$. Por otro lado, si $n \in \omega$ es cualquiera, entonces:
+	Sea $Y:=\midcup\{Y_n \tq n\in \omega\}$ y obsérvese que $\ms{A} \upharpoonright Y$ es infinita, pues cada $A_n$ tiene intersección finita con $Y$. Luego, seguido del \autoref{prop-CaracMADPositiv} y de que $\ms{A}$ es maximal, se obtiene $Y \in \ms{I}^+(\ms{A})$. Por otro lado, si $n \in \omega$ es cualquiera, entonces:
 	\begin{align*}
 		Y \setminus X_n & = \bigcup_{m<n} (Y_m \setminus X_n) \cup \bigcup_{m \geq n} (Y_m \setminus X_n) = \bigcup_{m<n} (Y_m \setminus X_n) =^* \emptyset
 	\end{align*}
@@ -554,7 +565,7 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
 		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
 	\end{proof}
 
-	La siguiente proposición deja en claro la labor de ``debilitamiento'' que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; resulta que, cualquiera de estas últimas contiene siempre una ($2$-)grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} \textcolor{red}{\textbf{(ver REFE)}} y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
+	La siguiente Proposición deja en claro la labor de ``debilitamiento'' que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; resulta que, cualquiera de estas últimas contiene siempre una ($2$-)grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} \textcolor{red}{\textbf{(ver REFE)}} y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
 
 	\begin{proposicion}
 		Toda familia de Luzin contiene una grieta de Luzin.

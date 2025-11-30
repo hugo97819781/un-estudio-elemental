@@ -1,13 +1,13 @@
 %%%%%BASURERO
 
 \begin{lema}
-	El conjunto ordenado $T=(2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$. Más aun, para cada $f \in 2^\omega$, el conjunto $\{ f \upharpoonright n \tq n \in \omega \}$ es rama numerable de $T$.
+	El conjunto ordenado $T=(2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$. Más aún, para cada $f \in 2^\omega$, el conjunto $\{ f \upharpoonright n \tq n \in \omega \}$ es rama numerable de $T$.
 \end{lema}
 
 \begin{proof}
 	Si $f=f \upharpoonright n \in 2^{<\omega}$, entonces $(n,\in) \cong (f, \subsetneq_f)$ por medio de $H:n \to \subsetneq_f=\{ f \upharpoonright m \tq m < \dom(f) \}$, definida como $H(m)=f \upharpoonright m$ para cada $m \in n$. En efecto, para cualesquiera $m,k \in n$ se tiene $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$ y además claramente $H$ es biyectiva, así que $H$ es isomorfismo de orden.
 
-	Por lo tanto $T$ es un árbol, y más aun, el orden de cada $f \in T$ es su dominio; como $2^{<\omega}$ contiene únicamente a todas las funciones de en $2$, se sigue que la altura de $T$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
+	Por lo tanto $T$ es un árbol, y más aún, el orden de cada $f \in T$ es su dominio; como $2^{<\omega}$ contiene únicamente a todas las funciones de en $2$, se sigue que la altura de $T$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
 
 	Además $T$ es numerable, ya que:
 	$$ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega $$

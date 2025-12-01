@@ -380,15 +380,18 @@ El Corolario que se avecina es una manera de condensar de todo lo comentado y de
 \subsection{Teorema de Simon}\label{subsec-Simon}
 \label{Sec-TeoSimon}
 
-La siguiente observación, y el subsecuente Lema, configuran la antesala para enunciar uno de los tres resultados más importantes que figuran en esta sección.
+Durante esta subsección del escrito se abordará un análisis simple sobre la combinatoria inherente a las familias casi ajenas. Comenzaremos configurado la antesala para enunciar uno de los tres resultados importantes que expondremos, el Teorema de Simon (\ref{teo-Simon}).
 
-\begin{observacion}
-	Para toda sucesión $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$, que sea $\subseteq$-decreciente, existe $Y \in [X_0]^\omega$ tal que para cada $k \in \omega$, ocurre $Y \subseteq^* X_k$.
+\begin{lema}
+	Sea $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$ una sucesión $\subseteq$-decreciente. Entonces existe $Y \in [X_0]^\omega$ tal que para cada $k \in \omega$, ocurre $Y \subseteq^* X_k$.
+\end{lema}
+\begin{proof}
+	Considérese la función $f:\omega \to X_0$, dada recursivamente como $f(n) = \min (X_n \setminus f[n])$. Como cada $f[n]$ es finito, $X_n \setminus f[n] \neq \emptyset$, así, $f$ está bien definida. Además, es inyectiva, por lo que $Y:=\{ f(n) \tq n \in \omega \} \in [X_0]^\omega$.
 
-	En efecto, si $n \in \omega$, $\{y_m \tq m<n\} \subseteq \omega$ tiene exactamente $n$ elementos y para cada $m<n$ se tiene $y_m \in X_m$; entonces $X_n \setminus \{y_m \tq m<n\}$ es infinito y se puede fijar $y_n \in X_n \setminus \{y_m \tq m<n\}$.
+	Si $k \in \omega$, cada $x=f(n) \in Y \setminus X_k$ debe satisfacer que $n<k$, dada la hipótesis sobre $(X_n)_{n \in \omega}$. Esto prueba que $Y \setminus X_k \subseteq f[k] =^* \emptyset$; es decir, $Y \subseteq^* X_k$.
+\end{proof}
 
-	Así, $Y:=\{y_n \tq n \in \omega\} \subseteq X_0$ es infinito y para cualquier $k \in \omega$ debe ocurrir que: $Y \setminus X_k \subseteq \{y_n \tq n<k\}=^* \emptyset$, esto es, $Y \subseteq^* X_k$.
-\end{observacion}
+Una posible interpretación al siguiente resultado es que, la parte positiva de cualquier familia maximal contiene tantos elementos como para acotar inferiormente a cualquier cadena numerable dentro de ella.
 
 \begin{lema}[Dočkálková]\index[alph]{Dočkálková!Lema de}\index[alph]{Lema!de Dočkálková}\label{lem-PositivCadenaDecreciente}
 	Sean $\ms{A} \in \Mad(\omega)$ y $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ una sucesión $\subseteq$-decreciente. Existe $Y \in \ms{I}^+(\ms{A})$ tal que si $n\in \omega$, entonces $Y \subseteq^* X_n$.

@@ -457,7 +457,7 @@ En virtud de lo anterior, cada vez que $(\ms{A},\ms{B})$ sea grieta; y salvo que
 	\end{enumerate}
 \end{observacion}
 
-A continuación se dan dos hechos básicos sobre la separación de grietas; y sin bien se podrían exponer las correspondientes demostraciones disponiendo solamente de la artillería dada hasta el momento, se dejarán a modo de corolario de la teoría resultante de los $\Psi$-espacios (véase \ref{col-tra-interrelacion}).
+A continuación se exponen dos hechos sobre la separación de grietas, sus demostraciones se omitirán debido a que son resultados fácilmente obtenibles a partir de la teoría resultante de los $\Psi$-espacios (véase \ref{col-tra-interrelacion}).
 
 \begin{ejemplo}\label{ej-interrelacion}
 	Sea $\ms{C}\in \Ad(\omega)$, entonces:
@@ -467,10 +467,10 @@ A continuación se dan dos hechos básicos sobre la separación de grietas; y si
 	\end{enumerate}
 \end{ejemplo}
 
-El siguiente tipo de familias poseen virtudes que las convierten en objetos de suma relevancia para la teoria  de conjuntos.
+En la década de 1910, el analista Nikolai Luzin introdujo ciertos subconjuntos especiales de $\mathbb{R}$, mismos que hoy llevan su nombre. Y pese a que el estudio de aquellos conjuntos es relativo a la teoría descriptiva de conjuntos, las analogías entre sus propiedades y las de las familias que a continuación presentamos, son suficiente razón como para que estas lleven el subfijo \enquote{de Luzin}.
 
 \begin{definicion}\label{def-LuzinFam}\index[alph]{familia!de Luzin}\index[alph]{Luzin!familia de}
-	Una familia casi ajena $\ms{A}$ es \textbf{de Luzin} si existe $X \in [\omega_1]^{\omega_1}$ de forma que $\ms{A}$ se puede enumerar como $\{A_\alpha \tq \alpha \in X \}$ y se cumple que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
+	Una familia $\ms{A}$ es \textbf{de Luzin} cuando existen $X \in [\omega_1]^{\omega_1}$ y una enumeración $\ms{A} = \{A_\alpha \tq \alpha \in X \}$ tales que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 \end{definicion}
 
 Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1 \}$ sea de Luzin es que; fijando $\alpha \in \omega_1$, para cada $D \subseteq \alpha$ infinito, $A_\alpha \cap \midcup\{A_\beta \tq \beta \in D\}$ es infinito. Esto se debe a que si $n \in \omega$, entonces $D \setminus \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es infinito, particularmente no vacío.
@@ -479,7 +479,7 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Toda familia casi ajena numerable se extiende a una familia de Luzin. Particularmente, existe una familia de Luzin.
 \end{proposicion}
 \begin{proof}
-	Sea $\ms{B}=\{A_n \tq n \in \omega\}$ cualquier familia casi ajena numerable y nóntese que claramente para cualesquiera $m,n \in \omega$, el conjunto $ \{ k<m \tq A_m \cap A_k \subseteq n \} $ es finito.
+	Sea $\ms{B}=\{A_n \tq n \in \omega\} \in \Ad(\omega)$ numerable y nótese que para cualesquiera $m,n \in \omega$, el conjunto $ \{ k<m \tq A_m \cap A_k \subseteq n \} $ es finito.
 
 	Por recursión sobre $\omega_1 \setminus \omega$, sea $\gamma \in \omega_1 \setminus \omega$ cualquiera y supóngase $\{A_\alpha \tq \alpha \in \gamma\}$ es una familia casi ajena tal que, si $\alpha<\gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 
@@ -491,10 +491,13 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Lo anterior prueba, no sólo que $\{A_\alpha \tq \alpha \ \leq \gamma\}$ es familia casi ajena, sino que para cualesquiera $\alpha\leq \gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito. Lo cual finaliza la construcción por recursión de los conjuntos $A_\alpha$ (con $\omega \leq \alpha< \omega_1$); es claro que para $\ms{A}:=\{A_\alpha \tq \alpha \in \omega_1 \}$ es una familia Luzin que extiende a $\ms{B}$.
 \end{proof}
 
-\index[alph]{familia!inseparable}\label{def-FamInseparable}
-Cualquier familia de Luizn cumplirá que ninguna grieta formada por sus subconjuntos más que numerables está separada; es decir, es una \textit{familia inseparable} (siguiendo la nomenclatura expuesta en \cite[\S~ 3.2]{hruAlmost}).
+Las familias de Luzin tienen una propiedad destacable, cualquiera de ellas es \textit{inseparable}, en el siguiente sentido (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}):
 
-Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\midcup \ms{B} \cap \midcup \ms{C}$ es finito, entonces $\midcup \ms{B}$ es separador de $\ms{B}$ y $\ms{C}$, así $(\ms{B},\ms{C})$ está separada. Pese a no ocurrir el recíproco de lo anterior, se configura la siguiente caracterización.
+\begin{definicion}\index[alph]{familia!inseparable}\label{def-FamInseparable}
+	Una familia $\ms{A} \in \Ad(\omega)$ se dice \textbf{Inseparable} cuando ninguna grieta $(\ms{B},\ms{C}) \in ([\ms{A}]^{\omega_1})^2$ está separada.
+\end{definicion}
+
+Para probar la afirmación previa, obsérvese que si $(\ms{B},\ms{C})$ es una grieta y $\midcup \ms{B} \cap \midcup \ms{C}$ es finito, resulta claro que $\midcup \ms{B}$ es separador de $\ms{B}$ y $\ms{C}$. Se consolida:
 
 \begin{lema}\label{lem-InseparableCar}
 	Sea $\ms{A}\in \Ad(\omega)$, entonces $\ms{A}$ es inseparable si y sólo si para cualesquiera $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ ajenos, $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito.

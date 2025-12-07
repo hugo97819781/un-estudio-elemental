@@ -416,7 +416,7 @@ El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{Simon
 	Por \ref{cor-MADPositivCarac}, $\ms{A} \upharpoonright Y$ es infinita; y por ello, existen $g \in F$ y $m \in \omega$ tales que $g(m) \neq k(m,X_m)$ y $A_g \cap Y$ es infinito. Puesto que $Y \setminus X_{m+1} =^* \emptyset$, es necesario que $A_g \cap X_{m+1} \subseteq X_{m+1}$ sea infinito y como $\ms{A}(m,k(m,X_m)) \upharpoonright X_{m+1} \in \Mad(X_{m+1})$, existe $A_f \in \ms{A}(m,k(m,X_m))$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1}) \neq ^* \emptyset$. Pero, a razón de que $f(m)=k(m,X_m) \neq g(m)$, se tiene que $f \neq g$ y $A_f \cap A_g =^* \emptyset$, lo cual es un absurdo a lo previamente establecido.
 \end{proof}
 
-La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maximal e infinita necesariamente. Así que, tomando $\ms{A}$ como cualquier familia maximal infinita, se obtiene la siguiente consecuencia:
+La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maximal e infinita necesariamente. Así que, tomando en cualquier $\ms{A} \in \Mad(\omega)$ infinita se tiene:
 
 \begin{corolario}
 	Existe una familia maximal infinita que es unión ajena de dos familias maximales en ninguna parte.
@@ -425,18 +425,18 @@ La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maxima
 \subsection{Familias y grietas de Luzin}
 \label{Sec-Luzin}
 
-\begin{definicion}\label{Def-particionador}\label{def-grieta}\index[alph]{particionador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
+\begin{definicion}\label{Def-separador}\label{def-grieta}\index[alph]{separador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
 	Sea $N$ un conjunto numerable y $\ms{A},\ms{B} \in \Ad(N)$.
 	\begin{enumerate}
 		\item El par $(\ms{A},\ms{B})$ es una \textbf{grieta} si y sólo si $\ms{A} \cap \ms{B}=\emptyset$ y $\ms{A} \cup \ms{B} \in \Ad(N)$. Se suele decir que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
-		\item Un subconjunto $D \subseteq N$ es \textbf{particionador} de $\ms{A}$ y $\ms{B}$ si y sólo si para cada $A \in \ms{A}$ y $B \in \ms{B}$ se tiene $A \subseteq^* D$ y $B \cap D =^* \emptyset$.
-		\item Una grieta $(\ms{A},\ms{B})$ está \textbf{separada} si y sólo si existe un particionador de $\ms{A}$ y $\ms{B}$.
+		\item Un subconjunto $D \subseteq N$ es \textbf{separador} de $\ms{A}$ y $\ms{B}$ si y sólo si para cada $A \in \ms{A}$ y $B \in \ms{B}$ se tiene $A \subseteq^* D$ y $B \cap D =^* \emptyset$.
+		\item Una grieta $(\ms{A},\ms{B})$ está \textbf{separada} cuando existe un separador de $\ms{A}$ y $\ms{B}$.
 	\end{enumerate}
 \end{definicion}
 
-En términos de la definición anterior, no resulta complicado notar que $D$ es particionador de $\ms{A}$ y $\ms{B}$ si y sólo si $N \setminus D$ es particionador de $\ms{B}$ y $\ms{A}$. Además, en tal caso $\ms{A}=\{X \in \ms{A} \cup \ms{B} \tq X \subseteq ^* D\}$ y $\ms{B}=\{X \in \ms{A} \cup \ms{B} \tq X \cap D =^* \emptyset\}$.
+En términos de la definición anterior, no resulta complicado notar que $D$ es separador de $\ms{A}$ y $\ms{B}$ si y sólo si $N \setminus D$ es separador de $\ms{B}$ y $\ms{A}$. Además, en tal caso $\ms{A}=\{X \in \ms{A} \cup \ms{B} \tq X \subseteq ^* D\}$ y $\ms{B}=\{X \in \ms{A} \cup \ms{B} \tq X \cap D =^* \emptyset\}$.
 
-Como ha resultado ser rutina a lo largo de todo el capítulo, se deberá hacer hincapié en el comportamiento de las grietas respecto a las biyecciones $\Phi_h$. La demostración de este hecho resulta estándar.
+Cualquier biyección $h:N \to M$ respeta casi contenciones, seguido de esto y de la \autoref{prop-ADbiyec}, se obtiene fácilmente:
 
 \begin{observacion}\label{prop-grietasBiyec}
 	Sean $N$ y $M$ conjuntos numerables. Para toda biyección $h:N \to M$ y toda grieta $(\ms{A},\ms{B})$ en $N$ se cumple:
@@ -449,11 +449,11 @@ Como ha resultado ser rutina a lo largo de todo el capítulo, se deberá hacer h
 En virtud de lo anterior, cada vez que $(\ms{A},\ms{B})$ sea grieta; y salvo que se diga lo contrario, se dará por sentado que $\ms{A},\ms{B} \in \Ad(\omega)$
 
 \begin{observacion}\label{obs-GrietasSimple}
-	Para cualesquiera grietas $(\ms{A},\ms{B})$ y $(\ms{A}',\ms{B}')$:
+	Para cualesquiera grietas $(\ms{A},\ms{B})$:
 	\begin{enumerate}
-		\item $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$ (seguido de la \autoref{obs-IdealPrevia}).
 		\item $(\ms{A},\ms{B})$ está separada si y sólo si $(\ms{B},\ms{A})$ está separada.
-		\item Si $(\ms{A}',\ms{B}')$ está separada, $\ms{A} \subseteq \ms{A}'$ y $\ms{B} \subseteq \ms{B}'$, entonces $(\ms{A},\ms{B})$ está separada.
+		\item Si $(\ms{A}',\ms{B}')$ es una grieta separada, $\ms{A} \subseteq \ms{A}'$ y $\ms{B} \subseteq \ms{B}'$, entonces la grieta $(\ms{A},\ms{B})$ está separada.
+		\item $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$.
 	\end{enumerate}
 \end{observacion}
 
@@ -502,7 +502,7 @@ Obsérvese que si $\ms{B}$ y $\ms{C}$ son familias casi ajenas de modo que $\mid
 \begin{proof}
 	Por la discusión previa, basta sólo probar la necesidad.
 
-	Por contrapuesta, supóngase que $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ son tales que existe $D \subseteq \omega$, particionador de $\ms{B}$ y $\ms{C}$. Entonces las asignaciones $\ms{B} \to \omega$ y $\ms{C} \to \omega$; dadas por $b \mapsto \max(b \setminus D)$ y $c \mapsto \max(c \cap D)$ están bien definidas. Pero en vista de que $|\ms{B}|=|\ms{C}|=\omega_1$, estas no pueden ser inyectivas, y existen $m,n \in \omega$ de modo que $\ms{B}':=\{b \in \ms{B} \tq b \setminus D \subseteq m\}$ y $\ms{C}':=\{b \in \ms{C} \tq c \cap D \subseteq n\}$ tienen tamaño $\omega_1$.
+	Por contrapuesta, supóngase que $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ son tales que existe $D \subseteq \omega$, separador de $\ms{B}$ y $\ms{C}$. Entonces las asignaciones $\ms{B} \to \omega$ y $\ms{C} \to \omega$; dadas por $b \mapsto \max(b \setminus D)$ y $c \mapsto \max(c \cap D)$ están bien definidas. Pero en vista de que $|\ms{B}|=|\ms{C}|=\omega_1$, estas no pueden ser inyectivas, y existen $m,n \in \omega$ de modo que $\ms{B}':=\{b \in \ms{B} \tq b \setminus D \subseteq m\}$ y $\ms{C}':=\{b \in \ms{C} \tq c \cap D \subseteq n\}$ tienen tamaño $\omega_1$.
 
 	Además $\midcup \ms{B}' \setminus D \subseteq m =^* \emptyset$ y $\midcup \ms{C}' \cap D \subseteq n =^* \emptyset$, por lo que $\midcap \ms{B} \subseteq^* D$, $\midcap \ms{C} \subseteq^* \omega \setminus D$, y así, $\midcup \ms{B}' \cap \midcup \ms{C}' \subseteq^* D \cap (\omega \setminus D) = \emptyset$.
 \end{proof}
@@ -668,7 +668,7 @@ La siguiente es una aplicación típica quel lema de Solovay, una prueba sencill
 \begin{proof}
 	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$ y supóngase $\Ma(\kappa)$. Tomando en cuenta \ref{cor-famGrandes}, fíjese una familia casi ajena $\ms{A}$ con $|\ms{A}|=\kappa$ y defínase $f:\ms{P}(\omega) \to \ms{P}(\ms{A})$ como $ f(X)=\{ b \in \ms{A} \tq b \cap X =^* \emptyset \} $.
 
-	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el Lema de Solovay (\ref{lem-Solovay}), existe un particionador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$, resultando en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
+	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el Lema de Solovay (\ref{lem-Solovay}), existe un separador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$, resultando en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
 
 	Para la segunda parte, $\lnot \HC + \Ma$ es consistente con $\zfc$. Y como $\lnot \HC$ y $\Ma$ implican $\Ma(\aleph_1)$ y $\omega \leq \aleph_1 < \mathfrak{c}$, se tiene por consiguiente que $\zfc+\lnot \HC + \Ma \vdash 2^{\aleph_0}=2^{\aleph_1}$.
 \end{proof}

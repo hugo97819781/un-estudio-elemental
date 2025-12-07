@@ -397,12 +397,12 @@ Una posible interpretación al siguiente resultado es que, la parte positiva de 
 El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y como se verá más adelante (\autoref{cor-FrechNoProd}), juega un papel fundamental en el estudio de la propiedad topológica de Fréchet.
 
 \begin{teorema}[Simon]\index[alph]{Simon!Teorema de}\index[alph]{Teorema!de Simon}\label{Teo-Simon}
-	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $X \in \ms{I}^+(\ms{A})$ tal que $\mathscr{A} \upharpoonright X$ es unión ajena de dos familias maximales en ninguna parte.
+	Para toda familia maximal e infinita $\ms{A}$ existe $Y \in \ms{I}^+(\ms{A})$ tal que $\mathscr{A} \upharpoonright Y$ es unión ajena de dos familias maximales en ninguna parte.
 \end{teorema}
 \begin{proof}
 	Procédase por contradicción supongiendo que $\ms{A} \in \Mad(\omega)$ es tal que para cada $X \in \ms{I}^+(\ms{A})$, si $\ms{A} \upharpoonright X = \ms{B} \cup \ms{C}$ y $\ms{B} \cap \ms{C} = \emptyset$, entonces $\ms{B}$ es maximal en alguna parte o $\ms{C}$ es maximal en alguna parte.
 
-	Como $|\ms{A}| \leq |2^\omega|$, existe $F \subseteq 2^\omega$ tal que $\ms{A}=\{A_f \tq f \in F\}$; donde $f \neq g$ implica $A_f \neq A_g$. Para cada $(n,k) \in \omega \times 2$ defínase:
+	Como $\omega < |\ms{A}| \leq |2^\omega|$, existe $F \subseteq 2^\omega$ inifnito y tal que $\ms{A}=\{A_f \tq f \in F\}$; donde $f \neq g$ implica $A_f \neq A_g$. Para cada $(n,k) \in \omega \times 2$ defínase:
 	\[ \ms{A}(n,k)=\{A_f \in \ms{A} \tq f(n)=k \} \, . \]
 	
 	Nótese que para cualesquiera $m \in \omega$ y $X \in \ms{I}^+(\ms{A})$ ocurren simultáneamente $\ms{A} \upharpoonright X = \ms{A}(m,0) \upharpoonright X \cup \ms{A}(m,1) \upharpoonright X$ y $\ms{A}(m,0) \upharpoonright X \cap \ms{A}(m,1) \upharpoonright X = \emptyset$. Se sigue de la hipótesis la existencia $(\Ac)$ de una función $k:\omega \times \ms{I}^+(\ms{A}) \to 2$ tal que si $(m,X) \in \dom(k)$, entonces $\ms{A}(m,k(m,X)) \upharpoonright X$ es maximal en alguna parte. Con ello, existe una función $j:\omega \times \ms{I}^+(\ms{A}) \to \ms{I}^+_X(\ms{A}(m,k(m,X)) \upharpoonright X)$ de manera que para cada $(m,X) \in \dom(j)$:
@@ -410,32 +410,15 @@ El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{Simon
 
 	Defínase recursivamente la sucesión $(X_n)_{n \in \omega} \subseteq \ms{I}^+(\ms{A})$ como $X_0=\omega$; y para cada $n \in \omega$, $X_{n+1}=j(n,X_n)$. Para cada $n \in \omega$, por las propiedades de monotonía expuestas en \ref{prop-TrazaBasicos}, $X_{n+1} \in \ms{I}_{X_n}^+( \ms{A}(n,k(n,X_n)) \upharpoonright X_n ) \subseteq \ms{I}^+(\ms{A})$; y, por la definición de $j$:
 	\[ \ms{A}(n,k(n,X_n)) \upharpoonright X_{n+1} \in \Mad(X_{n+1}) \, ; \]	
-	a consecuencia del ello $X_{n+1} \subseteq X_n$. Se obtiene, dado el Lema de Dočkálková, un conjunto $Y \in \ms{I}^+ (\ms{A})$ casi contenido en cada $X_n$.
+	a consecuencia del ello $X_{n+1} \subseteq X_n$. Se obtiene entonces, por al Lema de Dočkálková, un conjunto $Y \in \ms{I}^+ (\ms{A})$ casi contenido en cada $X_n$.
 
-	Como $F$ es infinito, existen $g \in F$ y $m \in \omega$ tales que $g(m) \neq k(m,X_m)$. Además $Y \setminus X_{m+1} =^* \emptyset$ y $Y \cap A_g \neq^* \emptyset$, luego $A_g \cap X_{m+1} \subseteq X_m$ tiene que ser infinito. Puesto que $\ms{A}(m,k(m,X_m)) \upharpoonright X_{m+1} \in \Mad(X_{m+1})$, existe $A_f \in \ms{A}(m,k(m,X_m))$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1}) \neq ^* \emptyset$. Sin embargo, lo anterior conduce a una contradicción, pues $f(m)=k(m,X_m) \neq g(m)$ implica que $f \neq g$, y esto a su vez, que $A_f \cap A_g =^* \emptyset$, por ser $\ms{A}$ familia casi ajena.
+	Por \ref{cor-MADPositivCarac}, $\ms{A} \upharpoonright Y$ es infinita; en consecuencia, existen $g \in F$ y $m \in \omega$ tales que $g(m) \neq k(m,X_m)$ y $A_g \cap Y$ es infinito; puesto que $Y \setminus X_{m+1} =^* \emptyset$, es necesario que $A_g \cap X_{m+1} \subseteq X_m$ sea infinito. Ahora, $\ms{A}(m,k(m,X_m)) \upharpoonright X_{m+1} \in \Mad(X_{m+1})$, por lo que existe $A_f \in \ms{A}(m,k(m,X_m))$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1}) \neq ^* \emptyset$. Pero, a razón de que $f(m)=k(m,X_m) \neq g(m)$, se tiene que $f \neq g$ y $A_f \cap A_g =^* \emptyset$, lo cual es imposible.
 \end{proof}
 
-\newpage
-\begin{proof}
-	Por contradicción, supóngase que $\ms{A}$ es una familia maximal infinita la cual, sin perder generalidad, la podemos suponer definida sobre $\omega$, tal que para cada $X \in \ms{I}^+(\ms{A})$ o bien $\ms{A} \upharpoonright X$ no es maximal en $X$, o bien, si $\ms{A} \upharpoonright X$ es unión ajena de $\ms{B}$ y $\ms{C}$, entonces $\ms{B}$ o $\ms{C}$ es maximal en alguna parte.
-
-	Como $|\ms{A}| \leq \mathfrak{c}$, existe $F \subseteq 2^\omega$ tal que $\ms{A}$ se puede enumerar inyectivamente como $\ms{A}=\{A_f \tq f \in F\}$. Dados $n \in \omega$ y $k \in 2$, defínase:
-	$$ \ms{A}(n,k)=\{A_f \in \ms{A} \tq f(n)=k \} $$
-	y nótese que para todo $m$ natural, $\ms{A}$ unión ajena de $\ms{A}(m,0)$ y $\ms{A}(m,1)$.
-
-	Constrúyanse; por recursión en $\omega$, las sucesiones $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ y $(k_n)_{n\in \omega} \subseteq 2$, tales que si $n \in \omega$, se da $X_{n+1} \in \ms{I}_{X_n}^+ ( \ms{A}(0,k_n) \upharpoonright X_n )$ y $\ms{A}(n,k_n) \upharpoonright X_{n+1} \in \Mad(X_{n+1})$.
-
-	Como $\ms{A}$ es familia maximal e infinita, defínase $X_0:=\omega \in \ms{I}^+(\ms{A})$ (véase \ref{cor-IdealPropioCaract}); así que $\ms{A} = \ms{A} \upharpoonright X_0$ es maximal sobre $X_0$. Como $\ms{A}$ es unión ajena de $\ms{A}(0,0)$ y $\ms{A}(0,1)$, se sigue de la hipótesis la existencia de un elemento $k_0 \in 2$ tal que $\ms{A}(0,k_0)$ es maximal en ninguna parte. Con $\Ac$, fíjese un elemento $X_1 \in \ms{I}^+(\ms{A}(0,k_0)) = \ms{I}_{X_0}^+(\ms{A}(0,k_0) \upharpoonright X_0)$ de forma tal que $(\ms{A}(0,k_0) \upharpoonright X_0) \upharpoonright X_1 = \ms{A}(0,k_0) \upharpoonright X_1$ sea maximal en $X_1$. Como $X_1 \notin \ms{I}_{X_0}(\ms{A}(0,k_0) \upharpoonright X_0)$ y $X_1 \subseteq X_0$, se desprende de \autoref{prop-TrazaBasicos} que $X_1 \in \ms{I}_{X_1}^+ (\ms{A}(0,k_0) \upharpoonright X_1)$, por lo que $\ms{A}(0,k_0) \upharpoonright X_1$ es infinita, en virtud de su maximalidad y del \autoref{cor-IdealPropioCaract}. Así, $\ms{A} \upharpoonright X_1$ es infinita, lo cual implica que $X_1 \in \ms{I}^+(\ms{A})$, pues $\ms{A}$ es maximal (véase \ref{cor-MADPositivCarac}).
-
-	Supóngase ahora que $n \in \omega$ y que $X_n, X_{n+1} \in \ms{I}^+(\ms{A})$ y $k_n \in 2$ son tales que $X_{n+1} \in \ms{I}_{X_n}^+ ( \ms{A}(n,k_n) \upharpoonright X_n )$ de modo que $\ms{A}(n,k_n) \upharpoonright X_{n+1}$ es maximal en $X_{n+1}$. Como $\ms{A}$ unión ajena de $\ms{A}(n+1,0)$ y $\ms{A}(n+1,1)$, $\ms{A} \upharpoonright X_{n+1}$ es unión ajena de $\ms{A}(n+1,0) \upharpoonright X_{n+1}$ y $\ms{A}(n+1,1) \upharpoonright X_{n+1}$. De nuevo, con $\Ac$ fíjense $k_{n+1}\in 2$ y $X_{n+2} \in \ms{I}_{X_{n+1}}^+ ( \ms{A}(n+1,k_{n+1}) \upharpoonright X_{n+1} )$ de modo tal que $\ms{A}(n+1,k_{n+1}) \upharpoonright X_{n+2} \in \Mad(X_{n+2})$. Al igual que antes, se obtiene de \ref{cor-IdealPropioCaract} y \ref{cor-MADPositivCarac}, que $X_{n+2} \in \ms{I}^+(\ms{A})$, lo que finaliza la construcción recursiva.
-
-	Por construcción, $(X_n)_{n\in \omega} \subseteq \ms{I}^+(\ms{A})$ es $\subseteq$-decreciente, por lo que del Lema de Dočkálková, existe un conjunto $Y \in \ms{I}^+(\ms{A})$ tal que para cada $n \in \omega$ se cumple $Y \subseteq^* X_n$. Puesto que $Y \in \ms{I}^+(\ms{A})$ y $\ms{A}$ es maximal, de \ref{cor-MADPositivCarac} se tiene que $\ms{A} \upharpoonright Y$ es infinita, y con ello, existe $g \in F \setminus \{(k_n)_{n \in \omega}\} \subseteq 2^\omega$ tal que $A_g \cap Y$ es infinito. Siendo $k$ distinta de $g$, hay un natural $m$ tal que $k_m \neq g(m)$.
-
-	Como $Y \subseteq^* X_{m+1}$, entonces $Y \setminus X_{m+1}$ es finito. Luego, derivado de que $Y \cap A_g$ es infinito, se obtiene que $A_g \cap X_{m+1} \subseteq X_{m+1}$ es infinito. Así, por la maximalidad de $\ms{A}(m,k_m) \upharpoonright X_{m+1}$ en $X_{m+1}$ se obtiene un $A_f \in \ms{A}(m,k_m)$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1})$ es infinito. Sin embargo, lo anterior conduce a una contradicción, pues $f(m)=k_m \neq g(m)$ implica que $f \neq g$, y esto a su vez, que $A_f \cap A_g$ es finito por ser $\ms{A}$ familia casi ajena.
-\end{proof}
+La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maximal e infinita necesariamente. Así que, tomando $\ms{A}$ como cualquier familia maximal de tamaño $\mathfrak{c}$, se obtiene la siguiente consecuencia:
 
 \begin{corolario}
-	Existe una familia maximal de tamaño $\mathfrak{c}$ que es unión ajena de dos familias maximales en ninguna parte.
+	Existe una familia maximal infinita que es unión ajena de dos familias maximales en ninguna parte.
 \end{corolario}
 
 \subsection{Familias y grietas de Luzin}

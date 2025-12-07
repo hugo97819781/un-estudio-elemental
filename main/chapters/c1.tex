@@ -45,7 +45,7 @@ Se advierte que las familias sobre $\omega$ parecerán deslucir a las construida
 
 \begin{definicion}\label{def-Biyecs-h}\index[sym]{$\Phi_h$}
 	Sean $N,M$ conjuntos numerables y $h:N \to M$ cualquier biyección. Se define $\Phi_h : \ms{P}(\ms{P}(N)) \to \ms{P}(\ms{P}(M))$ como:
-	$$ \Phi_h (\ms{A}) = \{ h[A] \tq A \in \ms{A} \} $$
+	\[ \Phi_h (\ms{A}) = \{ h[A] \tq A \in \ms{A} \} \, . \]
 \end{definicion}
 
 En términos de lo recién definido, se remarca que al ser $h$ biyección, $\Phi_h$ será una biyección. Más aún, estas biyecciones se comportan bien respecto a ciertas virtudes conjuntistas, tal y como se ilustra a continuación.
@@ -153,7 +153,7 @@ Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$
 \end{definicion}
 
 Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$ el conjunto $A_x$ de la \autoref{prop-famSucesiones} se puede construir de manera explícita. Si $q:\omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
-\[ A_x = \Big\{ q \Big( \min \Big( q^{-1} \Big[ \mathbb{Q} \cap \Big( x-\frac{1}{n+1}, x-\frac{1}{n} \Big) \Big] \Big) \Big) \, \Big| \, n \in \omega \setminus \{0\} \Big\} \]
+\[ A_x = \Big\{ q \Big( \min \Big( q^{-1} \Big[ \mathbb{Q} \cap \Big( x-\frac{1}{n+1}, x-\frac{1}{n} \Big) \Big] \Big) \Big) \, \Big| \, n \in \omega \setminus \{0\} \Big\} \, . \]
 
 
 
@@ -206,9 +206,8 @@ En paralelo a lo comentado después de \ref{def-FamSucesiones}, también se pued
 
 Se concluirá esta sección comentando qué ocurre respecto una interrogante surge naturalmente tras todo lo realizado: ¿existen familias maximales de cualquier cardinalidad entre $\aleph_1$ y $\mathfrak{c}$?
 
-\begin{definicion}
-	Se define el \textbf{cardinal de casi ajenidad} como:\index[alph]{cardinal! de casi ajenidad}\index[alph]{casi!ajenidad, cardinal de} \index[sym]{$\mathfrak{a}$}
-	$$ \mathfrak{a}:=\min\{ \kappa \geq \omega \tq \Ad(\omega) \cap [\ms{P}(\omega)]^\kappa \neq \emptyset \} $$
+\begin{definicion}\index[alph]{cardinal! de casi ajenidad}\index[alph]{casi!ajenidad, cardinal de}\index[sym]{$\mathfrak{a}$}
+	El \textbf{cardinal de casi ajenidad}, $\mathfrak{a}$, es el mínimo cardinal infinito $\kappa$ tal que existe una familia maximal de tamaño $\kappa$.
 \end{definicion}
 
 Debido a \ref{prop-MADnoNum}, se tiene $\aleph_1 \leq \mathfrak{a} \leq \mathfrak{c}$ y claramente bajo $\HC$ se debe satisfacer que $\mathfrak{a}=\mathfrak{c}$; luego, es consistente con $\zfc$ que $\mathfrak{a}=\mathfrak{c}$. Comentar que la teoría en relación al cardinal $\mathfrak{a}$ es basta y existen resultados de consistencia como el enunciado en seguida:
@@ -302,7 +301,7 @@ Sin causa de asombro, los conceptos recién establecidos son respetados por las 
 		\Phi_h(\ms{A}) \upharpoonright h[X] & = \{ B \cap h[X] \in \big[ h[X] \big]^\omega \tq B \in \Phi_h(\ms{A}) \} \\
 		                                    & = \{ h[A] \cap h[X] \in \big[ h[X] \big]^\omega \tq A \in \ms{A} \} \\
 											& = \{ h[A \cap X] \tq A \cap X  \in [X]^\omega \land A \in \ms{A} \} \\
-		                                    & = \Phi_h (\ms{A} \upharpoonright X)
+		                                    & = \Phi_h (\ms{A} \upharpoonright X) \, .
 	\end{align*}
 	(ii) Como $\Phi_h ^{-1} = \Phi_{h^{-1}}$, basta probar la suficiencia. Supóngase que $\ms{A}$ es maximal en alguna parte, entonces existe $X \in \ms{I}^+(\ms{A})$ tal que $\ms{A} \upharpoonright X$ es maximal en $X$. 
 	
@@ -337,7 +336,7 @@ Si bien se demostró, tras la \autoref{def-MaxEnAlguna}, que la maximalidad de u
 	Por el \autoref{cor-IdealPropioCaract}, basta mostrar que $X \in \ms{I}(\ms{A})$ si y sólo si $X \in \ms{I}_X(\ms{A} \upharpoonright X)$. Dado lo demostrado en \ref{prop-TrazaBasicos}, la necesidad de tal equivalencia es inmediata. Ahora, si $X \in \ms{I}(\ms{A})$, entonces $X \subseteq^* \midcup H$ para cierto $H \in [\ms{A}^{<\omega}]$. Luego $X \subseteq^* X \cap \midcup H$ y la finitud de $H$ implica que:
 	\begin{align*}
 		X & \subseteq^* \{ A \cap X \in [X]^{<\omega} \tq A \in H \} \cup \{ A \cap X \in [X]^\omega \tq A \in H \} \\
-		& =^* \{ A \cap X \in [X]^\omega \tq A \in H \}
+		& =^* \{ A \cap X \in [X]^\omega \tq A \in H \} \, ,
 	\end{align*}
 	probando que $X \in \ms{I}_X(\ms{A} \upharpoonright X)$.
 \end{proof}
@@ -348,79 +347,75 @@ Como la familia vacía no es maximal, la Proposición anterior deja como reflexi
 	Si $\ms{A} \in \Ad(\omega)$, $\{X \in [\omega]^{\omega} \tq \ms{A} \upharpoonright X= \emptyset \} \subseteq \ms{I}^+(\ms{A})$.
 \end{corolario}
 
-Si $X \in [\omega]^\omega$ y $\ms{A}$ es maximal, entonces $X$ debe tener intersección infinita con algún elemento de $\ms{A}$. Los conjuntos de $\ms{I}^+(\ms{{A}})$ tienen un comportamiento más fuerte en caso de que $\ms{A}$ sea maximal, cada uno de ellos tiene intersección infinita con una infinidad de elementos de $\ms{A}$.
+Si $X \in [\omega]^\omega$ y $\ms{A}$ es maximal, entonces $X$ debe tener intersección infinita con algún elemento de $\ms{A}$; los conjuntos en $\ms{I}^+(\ms{{A}})$ tienen un comportamiento más fuerte, cada uno de ellos tiene intersección infinita con una infinidad de elementos de $\ms{A}$.
 
 \begin{corolario}\label{prop-CaracMADPositiv}
 	Sea $\ms{A} \in \Ad(\omega)$. Entonces $\ms{A}$ es maximal si y sólo si para cada $X \in \ms{I}^+(\ms{A})$ la familia $\ms{A} \upharpoonright X$ es infinita.
 \end{corolario}
 \begin{proof}
-	Suṕongase que $\ms{A}$ es maximal y sea $X \in \ms{I}^+(\ms{A})$. Por la maximalidad de $\ms{A}$, se sigue de lo comentado tras la \autoref{def-MaxEnAlguna} que $\ms{A} \upharpoonright X$ es maximal en $X$. Por lo que, acorde a \ref{prop-CaracMADIdeal}, $\ms{A} \upharpoonright X$ debe ser infinita.
+	Supóngase que $\ms{A}$ es maximal y sea $X \in \ms{I}^+(\ms{A})$. Por la maximalidad de $\ms{A}$, se sigue de lo comentado tras la \autoref{def-MaxEnAlguna} que $\ms{A} \upharpoonright X$ es maximal en $X$. Por lo que, acorde a \ref{prop-CaracMADIdeal}, $\ms{A} \upharpoonright X$ debe ser infinita.
 
 	Recíprocamente, si $\ms{A}$ no es maximal, existe $B \in [\omega]^\omega$ casi ajeno con cada elemento de $\ms{A}$. Así, $\ms{A} \upharpoonright B = \emptyset$ y se sigue de \ref{cor-CasiajenoPartePositiva}, que $B \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
-El Corolario que se avecina es una manera de condensar de todo lo comentado y demostrado tras la \autoref{def-MaxEnAlguna}.
+Como ninguna familia maximal es numerable, del Corolario anterior se desprende la siguiente condensación de todo lo comentado y demostrado tras \ref{def-MaxEnAlguna}.
 
 \begin{corolario}\label{cor-MADPositivCarac}
-	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Entonces $\ms{A}$ es maximal si y sólo si ocurre alguna de las siguientes condiciones equivalentes:
-	\begin{enumerate}
-		\item $\ms{I}_N^+(\ms{A}) \subseteq \{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \neq^* \emptyset\}$.
-		\item $\ms{I}_N^+(\ms{A}) \subseteq \{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \in \Mad(X)\}$.
-	\end{enumerate}
-
-	Además, las contenciones recíprocas siempre ocurren.
+	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Entonces ocurre $\{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \in \Mad(X) \land \omega \leq |\ms{A} \upharpoonright X|\} \subseteq \ms{I}_N^+(\ms{A})$. La contención recíproca ocurre si y sólo si $\ms{A}$ es maximal, y en tal caso:
+	\[ \{ X \in [N]^\omega \tq \omega < |\ms{A} \upharpoonright X| \} = \ms{I}_N^+(\ms{A}) \, . \]
 \end{corolario}
-
-\begin{proof}
-	Dados \ref{prop-CaracMADIdeal} y \ref{prop-CaracMADPositiv}, basta probar que (ii) implica que $\ms{A}$ es maximal. En efecto, si $\ms{A}$ no es maximal, de \ref{cor-IdealPropioCaract} se desprende que $N \in \ms{I}_N^+(\ms{A})$. Siguiéndose de (ii) que $\ms{A} \upharpoonright N = \ms{A} \in \Mad(N)$, lo cual es una contradicción.
-\end{proof}
 
 \section{Resultados en combinatoria infinita}
 
 \subsection{Teorema de Simon}\label{subsec-Simon}
 \label{Sec-TeoSimon}
 
-Durante esta subsección del escrito se abordará un análisis simple sobre la combinatoria inherente a las familias casi ajenas. Comenzaremos configurado la antesala para enunciar uno de los tres resultados importantes que expondremos, el Teorema de Simon (\ref{teo-Simon}).
+Durante esta subsección del escrito se abordará un análisis simple sobre la combinatoria inherente a las familias casi ajenas. Comenzaremos configurado la antesala para enunciar el primer resultado importante de la sección, el Teorema de Simon (\ref{Teo-Simon}).
 
 \begin{lema}
 	Sea $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$ una sucesión $\subseteq$-decreciente. Entonces existe $Y \in [X_0]^\omega$ tal que para cada $k \in \omega$, ocurre $Y \subseteq^* X_k$.
 \end{lema}
 \begin{proof}
-	Considérese la función $f:\omega \to X_0$, dada recursivamente como $f(n) = \min (X_n \setminus f[n])$. Como cada $f[n]$ es finito, $X_n \setminus f[n] \neq \emptyset$, así, $f$ está bien definida. Además, es inyectiva, por lo que $Y:=\{ f(n) \tq n \in \omega \} \in [X_0]^\omega$.
+	Considérese la función $f:\omega \to X_0$, dada recursivamente como $f(n) = \min (X_n \setminus f[n])$. Nótese que $f$ es inyectiva, si $m < n$ entonces $f(n) \notin f[n]$ y particularmente $f(n) \neq f(m)$. Consecuentemente, $Y:= f[\omega] \in [X_0]^\omega$.
 
 	Si $k \in \omega$, cada $x=f(n) \in Y \setminus X_k$ debe satisfacer que $n<k$, dada la hipótesis sobre $(X_n)_{n \in \omega}$. Esto prueba que $Y \setminus X_k \subseteq f[k] =^* \emptyset$; es decir, $Y \subseteq^* X_k$.
 \end{proof}
 
 Una posible interpretación al siguiente resultado es que, la parte positiva de cualquier familia maximal contiene tantos elementos como para acotar inferiormente a cualquier cadena numerable dentro de ella.
-
 \begin{lema}[Dočkálková]\index[alph]{Dočkálková!Lema de}\index[alph]{Lema!de Dočkálková}\label{lem-PositivCadenaDecreciente}
 	Sean $\ms{A} \in \Mad(\omega)$ y $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ una sucesión $\subseteq$-decreciente. Existe $Y \in \ms{I}^+(\ms{A})$ tal que si $n\in \omega$, entonces $Y \subseteq^* X_n$.
 \end{lema}
 
 \begin{proof}
-	Se construirán por recursión, dos conjuntos enumerados inyectivamente; $\{Y_n \tq n\in \omega\} \subseteq [\omega]^\omega$ y $\{A_n \tq n \in \omega\} \subseteq \ms{A}$, tales que para cada $n \in \omega$ se cumple que $Y_n \subseteq X_n$; y, para cada $k\in \omega$, $Y_n \subseteq^* X_k$; y, $Y_n \cap A_n$ es infinito.
+	Por el \autoref{cor-MADPositivCarac}, si $n \in \omega$, $H_n:=\{ A \in \ms{A} \tq A \cap X_n \neq^* \emptyset \}$ debe ser infinito. Para cada $n \in \omega$ fijese ($\Ac$) una función $f_n : \ms{P}(H_n) \setminus \{\emptyset\} \to H_n$ de elección; y defínase recursivamente $B:\omega \to \ms{A}$ como $B(n) = f(H_n \setminus B[n] )$.
 
-	Sea $n \in \omega$ y supóngase que los conjuntos $\{Y_m \tq m<n\} \subseteq [\omega]^\omega$ y $\{A_m \tq m<n\} \subseteq \ms{A}$ tienen exactamente $n$ elementos y son tales que si $m<n$, se satisface: $Y_m \subseteq X_m$; si $k \in \omega$, entonces $Y_m \subseteq^* X_k$; y, $Y_m \cap A_m$ es infinito.
-
-	A consecuencia de que el conjunto $\{A_m \tq m<n\} \subseteq \ms{A}$ es finito, resulta que $B:=\midcup \{A_m \tq m<n\} \in \ms{I}^+(\ms{A})$ y debido a ello:
-	$$ (X_{n+k}\setminus B)_{k \in \omega} \subseteq \ms{I}^+(\ms{A}) \subseteq [\omega]^\omega $$
-	es una sucesión $\subseteq$-decreciente. Utilizando la Observación previa, fíjese (con $\Ac$) un conjunto infinito $Y_n \subseteq X_n$ tal que para cada $k \in \omega$ ocurre $Y_n \subseteq^*X_{n+k} \setminus B$ y nótese que por ser $(X_n)_{n \in \omega}$ sucesión $\subseteq$-decreciente, $Y \subseteq^* X_k$.
-
-	Como $Y_n \subseteq X_n \setminus B \subseteq \omega$ es infinito y $\ms{A}$ es maximal, se puede fijar (de nuevo, con $\Ac$) un elemento $A_n \in \ms{A}$ tal que $Y_n \cap A_n$ es infinito. Nótese que de la Definición de $B$ y de $Y_n \cap B = \emptyset$, se desprende tanto que $Y_n \notin \{Y_m \tq m<n\}$, como que $A_n \notin \{A_m \tq m<n\}$; pues para cada $m<n$ se tiene que $Y_m \cap B$ es infinito, a razón de que $A_m \subseteq B$ y de que $A_m \cap Y_m$ es infinito, finalizando la construcción recursiva.
-
-	Sea $Y:=\midcup\{Y_n \tq n\in \omega\}$ y obsérvese que $\ms{A} \upharpoonright Y$ es infinita, pues cada $A_n$ tiene intersección finita con $Y$. Luego, seguido del \autoref{prop-CaracMADPositiv} y de que $\ms{A}$ es maximal, se obtiene $Y \in \ms{I}^+(\ms{A})$. Por otro lado, si $n \in \omega$ es cualquiera, entonces:
-	\begin{align*}
-		Y \setminus X_n & = \bigcup_{m<n} (Y_m \setminus X_n) \cup \bigcup_{m \geq n} (Y_m \setminus X_n) = \bigcup_{m<n} (Y_m \setminus X_n) =^* \emptyset
-	\end{align*}
-	pues si $m<n$ entonces $Y_m \subseteq^* X_n$, y si $m\geq n$, entonces se dan las contenciones $Y_m \subseteq X_m \subseteq X_n$. Finalizando la prueba.
+	Así, $(\midcup\{B(m) \tq m\geq n \} \cap X_n)_{n \in \omega}$ satisface las hipótesis del Lema previo. Efectivamente; si $n \in \omega$, entonces $B(n) \in H_n$ y $\midcup\{B(m) \tq m\geq n \} \cap X_n \supseteq B(n) \cap X_n$ es infinito. Esta sucesión es $\subseteq$-decreciente, debido a que $(X_n)_n \in \omega$ también lo es. Por lo tanto, existe $Y \in [\omega]^\omega$ de manera que para cada $k \in \omega$:
+	\[ Y \subseteq^* \midcup\{B(m) \tq m\leq k \} \cap X_n \subseteq B(k) \cap X_k \subseteq X_k \, , \]
+	al ser $Y$ infinito, se tiene que $Y \cap B(k) \supseteq X \cap (B(k) \cap X_k )$ es infinito. Por lo tanto $\ms{A} \upharpoonright Y$ es infinita; siguiéndose del \autoref{cor-MADPositivCarac} que $Y \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
-El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y tiene consecuencias importantes en topología general (véase el \autoref{cor-FrechNoProd}).
+El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y como se verá más adelante (\autoref{cor-FrechNoProd}), juega un papel fundamental en el estudio de la propiedad topológica de Fréchet.
 
 \begin{teorema}[Simon]\index[alph]{Simon!Teorema de}\index[alph]{Teorema!de Simon}\label{Teo-Simon}
-	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $X \in \ms{I}^+(\ms{A})$ tal que la familia $\ms{A} \upharpoonright X$ es maximal en $X$. Además $\mathscr{A} \upharpoonright X$ es unión ajena de dos familias maximales en ninguna parte.
+	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $X \in \ms{I}^+(\ms{A})$ tal que $\mathscr{A} \upharpoonright X$ es unión ajena de dos familias maximales en ninguna parte.
 \end{teorema}
+\begin{proof}
+	Procédase por contradicción supongiendo que $\ms{A} \in \Mad(\omega)$ es tal que para cada $X \in \ms{I}^+(\ms{A})$, si $\ms{A} \upharpoonright X = \ms{B} \cup \ms{C}$ y $\ms{B} \cap \ms{C} = \emptyset$, entonces $\ms{B}$ es maximal en alguna parte o $\ms{C}$ es maximal en alguna parte.
 
+	Como $|\ms{A}| \leq |2^\omega|$, existe $F \subseteq 2^\omega$ tal que $\ms{A}=\{A_f \tq f \in F\}$; donde $f \neq g$ implica $A_f \neq A_g$. Para cada $(n,k) \in \omega \times 2$ defínase:
+	\[ \ms{A}(n,k)=\{A_f \in \ms{A} \tq f(n)=k \} \, . \]
+	
+	Nótese que para cualesquiera $m \in \omega$ y $X \in \ms{I}^+(\ms{A})$ ocurren simultáneamente $\ms{A} \upharpoonright X = \ms{A}(m,0) \upharpoonright X \cup \ms{A}(m,1) \upharpoonright X$ y $\ms{A}(m,0) \upharpoonright X \cap \ms{A}(m,1) \upharpoonright X = \emptyset$. Se sigue de la hipótesis la existencia $(\Ac)$ de una función $k:\omega \times \ms{I}^+(\ms{A}) \to 2$ tal que si $(m,X) \in \dom(k)$, entonces $\ms{A}(m,k(m,X)) \upharpoonright X$ es maximal en alguna parte. Con ello, existe una función $j:\omega \times \ms{I}^+(\ms{A}) \to \ms{I}^+_X(\ms{A}(m,k(m,X)) \upharpoonright X)$ de manera que para cada $(m,X) \in \dom(j)$:
+	\[ (\ms{A}(m,k(m,X)) \upharpoonright X) \upharpoonright j(m,X) = \ms{A}(m,k(m,X)) \upharpoonright j(m,X) \in \Mad(j(m,X)) \,. \]
+
+	Defínase recursivamente la sucesión $(X_n)_{n \in \omega} \subseteq \ms{I}^+(\ms{A})$ como $X_0=\omega$; y para cada $n \in \omega$, $X_{n+1}=j(n,X_n)$. Para cada $n \in \omega$, por las propiedades de monotonía expuestas en \ref{prop-TrazaBasicos}, $X_{n+1} \in \ms{I}_{X_n}^+( \ms{A}(n,k(n,X_n)) \upharpoonright X_n ) \subseteq \ms{I}^+(\ms{A})$; y, por la definición de $j$:
+	\[ \ms{A}(n,k(n,X_n)) \upharpoonright X_{n+1} \in \Mad(X_{n+1}) \, ; \]	
+	a consecuencia del ello $X_{n+1} \subseteq X_n$. Se obtiene, dado el Lema de Dočkálková, un conjunto $Y \in \ms{I}^+ (\ms{A})$ casi contenido en cada $X_n$.
+
+	Como $F$ es infinito, existen $g \in F$ y $m \in \omega$ tales que $f(m) \neq k(m,X_m)$. Además $Y \setminus X_{m+1} =^* \emptyset$ y $Y \cap A_g \neq^* \emptyset$, luego $A_g \cap X_{m+1} \subseteq X_m$ tiene que ser infinito. Puesto que $\ms{A}(m,k(m,X_m)) \upharpoonright X_{m+1} \in \Mad(X_{m+1})$, existe $A_f \in \ms{A}(m,k(m,X_m))$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1}) \neq ^* \emptyset$. Sin embargo, lo anterior conduce a una contradicción, pues $f(m)=k(m,X_m) \neq g(m)$ implica que $f \neq g$, y esto a su vez, que $A_f \cap A_g =^* \emptyset$, por ser $\ms{A}$ familia casi ajena.
+\end{proof}
+
+\newpage
 \begin{proof}
 	Por contradicción, supóngase que $\ms{A}$ es una familia maximal infinita la cual, sin perder generalidad, la podemos suponer definida sobre $\omega$, tal que para cada $X \in \ms{I}^+(\ms{A})$ o bien $\ms{A} \upharpoonright X$ no es maximal en $X$, o bien, si $\ms{A} \upharpoonright X$ es unión ajena de $\ms{B}$ y $\ms{C}$, entonces $\ms{B}$ o $\ms{C}$ es maximal en alguna parte.
 

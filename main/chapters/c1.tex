@@ -1,12 +1,12 @@
 \chapter{Familias casi ajenas}
-\emph{\small Las familias casi ajenas son objetos fascinantes de la teoría de conjuntos; como se verá a lo largo de este trabajo, sus aplicaciones no sólo se limitan a esta rama de las matemáticas, sino que sus repercusiones se extienden a la topología. Entre los pioneros de su estudio destacan figuras como Hausdorff, Sierpiński, Erdős y Rado.}
+\emph{\small Las familias casi ajenas (\enquote{almost disjoint families}, en inglés) son objetos fascinantes de la teoría de conjuntos; como se verá a lo largo de este trabajo, sus aplicaciones no sólo se limitan a esta rama de las matemáticas, sino que sus repercusiones se extienden a la topología. Entre los pioneros de su estudio destacan enormes personajes, entre ellos Felix Hausdorff, Wacław Sierpiński, Kazimierz Kuratowski, Eduard Čech y Stefan Banach.}
 
-\emph{\small El presente capítulo tiene como meta presentar a este objeto matemático y exponer sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. En este última parte se abordarán resultados clásicos: los Lemas de Dočkálková y Solovay, el Teorema de Simon y la existencia de las familias de Luzin. Finalmente, se darán algunas aplicaciones de esta teoría sobre el comportamiento de los cardinales $\mathfrak{c}$, $\mathfrak{m}$ y $\mathfrak{a}$.}
+\emph{\small En lo que sigue, se presentarán estos objetos y se expondrán sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. A lo largo de esta última sección, se abordarán las pruebas de algunos resultados clásicos, principalmente: los Lemas de Dočkálková y de Solovay, el Teorema de Simon y la existencia de las familias de Luzin. Por último, se darán algunas aplicaciones de esta teoría sobre el comportamiento de los cardinales $\mathfrak{c}$, $\mathfrak{m}$ y $\mathfrak{a}$.}
 
 \section{Observaciones inmediatas}
 
 \begin{definicion}\label{def-casi-ajena}\index[alph]{casi!ajeno}\index[alph]{casi!ajena sobre $N$, familia}\index[alph]{familia!casi ajena}\index[alph]{casi!ajena, familia}\index[alph]{familia!casi ajena sobre $N$}\index[sym]{$\Ad(N)$}
-	Sea $N$ un conjunto numerable. Una \textbf{familia casi ajena sobre $N$} es un subconjunto $\ms{A}\subseteq[N]^\omega$ cuyos elementos son casi ajenos por pares. $\Ad(N)$ denotará el conjunto de todas las familias casi ajenas sobre $N$.
+	Sea $N$ un conjunto numerable. Una \textbf{familia casi ajena sobre $N$} es un subconjunto $\ms{A}\subseteq[N]^\omega$ cuyos elementos son casi ajenos por pares. $\Ad(N)$ es el conjunto de todas las familias casi ajenas sobre $N$.
 	
 	El término \textbf{familia casi ajena} (o simplemente \textbf{familia}) hará referencia a una familia casi ajena sobre $\omega$.
 \end{definicion}
@@ -19,13 +19,13 @@ Es claro que toda familia casi ajena tiene tamaño menor o igual a $\mathfrak{c}
 
 \begin{ejemplo}
 	\label{ej-ADfacil}
-	Las colecciones $\{\omega\}$, $\{ \{ 2n \tq n \in \omega \}, \{ 2n+1 \tq n \in \omega \} \}$ y $\{ \{ p^n \tq n \in \omega \setminus \{0\} \} \tq p \text{ es primo} \}$ son familias casi ajenas sobre $\omega$.
+	Las siguientes colecciones: $\{\omega\}$, $\{ \{ 2n \tq n \in \omega \}, \{ 2n+1 \tq n \in \omega \} \}$ y $\{ \{ p^n \tq n \in \omega \setminus \{0\} \} \tq p \text{ es primo} \}$ son familias casi ajenas sobre $\omega$.
 \end{ejemplo}
 
 No resulta muy difícil verificar que las primeras dos familias del ejemplo anterior son \enquote{grandes}, en el siguiente sentido:
 
 \begin{definicion}\index[alph]{familia!casi ajena sobre $N$!maximal en $N$}\index[sym]{$\Mad(N)$}\index[alph]{familia!casi ajena!maximal}
-	Sea $N$ conjunto numerable. Una familia $\ms{A}$ sobre $N$ es \textbf{maximal en} $N$ si es un elemento $\subseteq$-maximal del conjunto $\Ad(N)$. Se denotará por $\Mad(N)$ al conjunto de todas ellas.
+	Sea $N$ conjunto numerable. Una familia $\ms{A}$ sobre $N$ es \textbf{maximal en} $N$ si es $\subseteq$-maximal del conjunto $\Ad(N)$. Se denotará por $\Mad(N)$ al conjunto de todas ellas.
 	
 	Cuando no haya riesgo de ambigüedad, el término \textbf{familia maximal} hará referencia a una familia maximal en $\omega$.
 \end{definicion}
@@ -114,7 +114,7 @@ El posterior resultado puede ser visto como un símil al Teorema del Ultrafiltro
 	Finalmente, si $\ms{B}' \in \Ad(\omega)$ y $\ms{B} \subseteq \ms{B}'$, entonces $Y \cup \{\ms{B}'\}$ es una cadena de $(X,\subseteq)$; lo cual, junto a la maximalidad de $Y$, implica que $\mathscr{B}' \in Y$ y $\mathscr{B} = \mathscr{B}'$. Por lo tanto, $\ms{B}\in \Mad(\omega)$.
 \end{proof}
 
-El siguiente resultado revela un fenómeno interesante respecto al tamaño de las familias maximales. Este se le atribuye a Wacław Sierpinski (se desprende de \cite[Teo.~2, p.~458]{SierpinskiCardinal}).
+El siguiente resultado revela un fenómeno interesante respecto al tamaño de las familias maximales. Este se le atribuye a Wacław Sierpiński (se desprende de \cite[Teo.~2, p.~458]{SierpinskiCardinal}).
 
 \begin{lema}\label{prop-MADnoNum}
 	Ninguna familia casi ajena numerable es maximal.

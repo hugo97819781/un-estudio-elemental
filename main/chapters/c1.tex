@@ -1,7 +1,7 @@
 \chapter{Familias casi ajenas}
 \emph{\small Las familias casi ajenas son objetos fascinantes de la teoría de conjuntos; como se verá a lo largo de este trabajo, sus aplicaciones no sólo se limitan a esta rama de las matemáticas, sino que sus repercusiones se extienden a la topología. Entre los pioneros de su estudio destacan figuras como Hausdorff, Sierpiński, Erdős y Rado.}
 
-\emph{\small El presente capítulo tiene como meta presentar a este objeto matemático y exponer sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. En este última parte se abordarán resultados clásicos: los Lemas de Dočkálková y Solovay, el Teorema de Simon y la existencia de las familias de Luzin.}
+\emph{\small El presente capítulo tiene como meta presentar a este objeto matemático y exponer sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. En este última parte se abordarán resultados clásicos: los Lemas de Dočkálková y Solovay, el Teorema de Simon y la existencia de las familias de Luzin. Finalmente, se darán algunas aplicaciones de esta teoría sobre el comportamiento de los cardinales $\mathfrak{c}$, $\mathfrak{m}$ y $\mathfrak{a}$.}
 
 \section{Observaciones inmediatas}
 
@@ -152,7 +152,7 @@ Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$
 	Si $X$, $D$ y $A$ son como en la Proposición anterior, a $\ms{A}_{D,A}$ se le denomina \textbf{familia de sucesiones en $D$ convergentes a $A$ en $X$}.
 \end{definicion}
 
-Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$ el conjunto $A_x$ de la \autoref{prop-famSucesiones} se puede construir de manera explícita. Si $q:\omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
+Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$, el conjunto $A_x$ de la \autoref{prop-famSucesiones} se puede construir de manera explícita. Si $q:\omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
 \[ A_x = \Big\{ q \Big( \min \Big( q^{-1} \Big[ \mathbb{Q} \cap \Big( x-\frac{1}{n+1}, x-\frac{1}{n} \Big) \Big] \Big) \Big) \, \Big| \, n \in \omega \setminus \{0\} \Big\} \, . \]
 
 
@@ -422,58 +422,76 @@ La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maxima
 	Existe una familia maximal infinita que es unión ajena de dos familias maximales en ninguna parte.
 \end{corolario}
 
-\subsection{Familias y grietas de Luzin}
+\subsection{Grietas y familias de Luzin}
 \label{Sec-Luzin}
 
+La teoría de grietas (\enquote{gaps}, en inglés) es extensa, y su estudio se remonta a los trabajos de Felix Hausdorff. En lo que sigue nos restringiremos a analizar grietas en $\omega$. No obstante, a partir de la \autoref{prop-ADbiyec} es inmediato comprobar que la definición que presentamos a continuación se extiende sin dificultad a grietas sobre cualquier conjunto numerable $N$.
+
 \begin{definicion}\label{Def-separador}\label{def-grieta}\index[alph]{separador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
-	Sea $N$ un conjunto numerable y $\ms{A},\ms{B} \in \Ad(N)$.
+	Una \textbf{grieta} es un par ordenado $(\ms{A},\ms{B}) \in \Ad(\omega) \times \Ad(\omega)$ tal que $\ms{A} \cup \ms{B} \in \Ad(\omega)$.
 	\begin{enumerate}
-		\item El par $(\ms{A},\ms{B})$ es una \textbf{grieta} si y sólo si $\ms{A} \cap \ms{B}=\emptyset$ y $\ms{A} \cup \ms{B} \in \Ad(N)$. Se suele decir que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
-		\item Un subconjunto $D \subseteq N$ es \textbf{separador} de $\ms{A}$ y $\ms{B}$ si y sólo si para cada $A \in \ms{A}$ y $B \in \ms{B}$ se tiene $A \subseteq^* D$ y $B \cap D =^* \emptyset$.
-		\item Una grieta $(\ms{A},\ms{B})$ está \textbf{separada} cuando existe un separador de $\ms{A}$ y $\ms{B}$.
+		\item Se suele decir que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
+		\item Un subconjunto $D \subseteq \omega$ es \textbf{separador} de $\ms{A}$ y $\ms{B}$ si y sólo si para cualesquiera $A \in \ms{A}$ y $B \in \ms{B}$ se tiene que $A \subseteq^* D$ y $B \cap D =^* \emptyset$.
+		\item $(\ms{A},\ms{B})$ está \textbf{separada} cuando existe un separador de $\ms{A}$ y $\ms{B}$.
 	\end{enumerate}
 \end{definicion}
 
-En términos de la definición anterior, no resulta complicado notar que $D$ es separador de $\ms{A}$ y $\ms{B}$ si y sólo si $N \setminus D$ es separador de $\ms{B}$ y $\ms{A}$. Además, en tal caso $\ms{A}=\{X \in \ms{A} \cup \ms{B} \tq X \subseteq ^* D\}$ y $\ms{B}=\{X \in \ms{A} \cup \ms{B} \tq X \cap D =^* \emptyset\}$.
+En términos de la definición anterior, es inmediato que si $(\ms{A}',\ms{B}')$ es una grieta separada, $\ms{A} \subseteq \ms{A}'$ y $\ms{B} \subseteq \ms{B}'$, entonces la grieta $(\ms{A},\ms{B})$ está separada. Además, cuando $D$ es separador de $\ms{A}$ y $\ms{B}$, el conjunto $\omega \setminus D$ es separador de $\ms{B}$ y $\ms{A}$; por ello, $(\ms{A},\ms{B})$ está separada si y sólo si $(\ms{B},\ms{A})$ está separada. Obsérvese además que seguido del \autoref{cor-CasiajenoPartePositiva}:
 
-Cualquier biyección $h:N \to M$ respeta casi contenciones, seguido de esto y de la \autoref{prop-ADbiyec}, se obtiene fácilmente:
+\begin{proposicion}\label{obs-GrietasSimple}
+	Para toda grieta $(\ms{A},\ms{B})$, $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$.
+\end{proposicion}
 
-\begin{observacion}\label{prop-grietasBiyec}
-	Sean $N$ y $M$ conjuntos numerables. Para toda biyección $h:N \to M$ y toda grieta $(\ms{A},\ms{B})$ en $N$ se cumple:
+Al considerar una familia casi ajena, surgen preguntas en relación al comportamiento de las grietas contenidas en ella; en tal aspecto se mueve la siguiente definición.
+
+%Las familias de Luzin tienen una propiedad destacable, cualquiera de ellas es \textit{inseparable}, en el siguiente sentido (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}):
+
+\begin{definicion}\index[alph]{familia!separable}\index[alph]{familia!normal}\index[alph]{familia!inseparable}\index[alph]{familia!parcialemnte separable}\label{def-FamInseparable}\label{def-FamParcialmenteSeparable}
+	Una familia $\ms{A} \in \Ad(\omega)$ se dice:
 	\begin{enumerate}
-		\item $(\Phi_h(\ms{A}),\Phi_h(\ms{B}))$ es grieta en $M$.
-		\item $(\ms{A},\ms{B})$ está separada si y sólo si $(\Phi_h(\ms{A}),\Phi_h(\ms{B}))$ está separada.
-	\end{enumerate}
-\end{observacion}
+		\item \textbf{Separable} (o \textbf{normal}) cuando todas las grietas $(\ms{B},\ms{C}) \in \ms{P}(\ms{A})^2$ están separadas.
+		\item \textbf{Parcialmente separable} cuando para toda grieta $(\ms{B},\ms{C}) \in ([\ms{A}]^{\omega_1})^2$ existen $\ms{B}' \subseteq \ms{B}$ y $\ms{C}' \subseteq \ms{C}$ tales que $(\ms{B}',\ms{C}')$ está separada.
+		\item \textbf{Inseparable} cuando ninguna grieta $(\ms{B},\ms{C}) \in ([\ms{A}]^{\omega_1})^2$ está separada.
+	\end{enumerate}	
+\end{definicion}
 
-En virtud de lo anterior, cada vez que $(\ms{A},\ms{B})$ sea grieta; y salvo que se diga lo contrario, se dará por sentado que $\ms{A},\ms{B} \in \Ad(\omega)$
-
-\begin{observacion}\label{obs-GrietasSimple}
-	Para cualesquiera grietas $(\ms{A},\ms{B})$:
-	\begin{enumerate}
-		\item $(\ms{A},\ms{B})$ está separada si y sólo si $(\ms{B},\ms{A})$ está separada.
-		\item Si $(\ms{A}',\ms{B}')$ es una grieta separada, $\ms{A} \subseteq \ms{A}'$ y $\ms{B} \subseteq \ms{B}'$, entonces la grieta $(\ms{A},\ms{B})$ está separada.
-		\item $\ms{A} \subseteq \ms{I}^+(\ms{B})$ y $\ms{B} \subseteq \ms{I}^+(\ms{A})$.
-	\end{enumerate}
-\end{observacion}
-
-A continuación se exponen dos hechos sobre la separación de grietas, sus demostraciones se omitirán debido a que son resultados fácilmente obtenibles a partir de la teoría resultante de los $\Psi$-espacios (véase \ref{col-tra-interrelacion}).
+Se obtiene el siguiente comportamiento; la demostración del mismo puede ser realizada con lo desarrollado hasta el momento, sin embargo, dejaremos este resultado como una consecuencia del estudio de los $\Psi$-espacios (véase \ref{col-tra-interrelacion})
 
 \begin{ejemplo}\label{ej-interrelacion}
-	Sea $\ms{C}\in \Ad(\omega)$, entonces:
-	\begin{enumerate}
-		\item Si $|\ms{C}|\leq \aleph_0$, entonces cualquier grieta contenida en $\ms{C}$ está separada.
-		\item Si $\ms{C}$ es inifnita y, $|\ms{C}|=\mathfrak{c}$ o $\ms{C}\in \Mad(\omega)$; entonces $\ms{C}$ contiene una grieta que no está separada.
-	\end{enumerate}
+	Sea $\ms{C}\in \Ad(\omega)$. Si $|\ms{C}|\leq \omega$, entonces $\ms{C}$ es separable. Y, si $\ms{C}$ más que numerable y separable, entonces $\omega<|\ms{C}|<\mathfrak{c}$ y $\ms{C} \notin \Mad(\omega)$.
 \end{ejemplo}
 
-En la década de 1910, el analista Nikolai Luzin introdujo ciertos subconjuntos especiales de $\mathbb{R}$, mismos que hoy llevan su nombre. Y pese a que el estudio de aquellos conjuntos es relativo a la teoría descriptiva de conjuntos, las analogías entre sus propiedades y las de las familias que a continuación presentamos, son suficiente razón como para que estas lleven el subfijo \enquote{de Luzin}.
+Obsérvese ahora que si $(\ms{B},\ms{C})$ es una grieta y $\midcup \ms{B} \cap \midcup \ms{C}$ es finito, entonces el conjunto $\midcup \ms{B} \subseteq \omega$ es separador de $\ms{B}$ y $\ms{C}$. Se puede caracterizar la inseparabilidad de una familia mediante lo siguiente:
+
+\begin{lema}\label{lem-InseparableCar}
+	Sea $\ms{A}\in \Ad(\omega)$, entonces $\ms{A}$ es inseparable si y sólo si para cualesquiera $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ ajenos, $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito.
+\end{lema}
+\begin{proof}
+	Por la discusión previa, basta sólo probar la necesidad.
+
+	Por contrapuesta, supóngase que $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ son tales que existe $D \subseteq \omega$, separador de $\ms{B}$ y $\ms{C}$. Entonces las asignaciones $\ms{B} \to \omega$ y $\ms{C} \to \omega$; dadas por $b \mapsto \max(b \setminus D)+1$ y $c \mapsto \max(c \cap D)+1$ están bien definidas. Pero en vista de que $|\ms{B}|=|\ms{C}|=\omega_1$, estas no pueden ser inyectivas, y existen $m,n \in \omega$ de modo que $\ms{B}':=\{b \in \ms{B} \tq b \setminus D \subseteq m\}$ y $\ms{C}':=\{b \in \ms{C} \tq c \cap D \subseteq n\}$ tienen tamaño $\omega_1$.
+
+	Además $\midcup \ms{B}' \setminus D \subseteq m =^* \emptyset$ y $\midcup \ms{C}' \cap D \subseteq n =^* \emptyset$, por lo que $\midcup \ms{B} \subseteq^* D$, $\midcup \ms{C} \subseteq^* \omega \setminus D$, y así, $\midcup \ms{B}' \cap \midcup \ms{C}' \subseteq^* D \cap (\omega \setminus D) = \emptyset$.
+\end{proof}
+
+En la década de 1910, el analista Nikolai Luzin introdujo ciertos subconjuntos especiales de $\mathbb{R}$, mismos que hoy llevan su nombre. Y pese a que el estudio de aquellos objetos es relativo a la teoría descriptiva de conjuntos, las analogías entre sus propiedades y las de las familias que a continuación presentamos, son suficiente razón como para que estas lleven el subfijo \enquote{de Luzin}.
 
 \begin{definicion}\label{def-LuzinFam}\index[alph]{familia!de Luzin}\index[alph]{Luzin!familia de}
 	Una familia $\ms{A}$ es \textbf{de Luzin} cuando existen $X \in [\omega_1]^{\omega_1}$ y una enumeración $\ms{A} = \{A_\alpha \tq \alpha \in X \}$ tales que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 \end{definicion}
 
-Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1 \}$ sea de Luzin es que; fijando $\alpha \in \omega_1$, para cada $D \subseteq \alpha$ infinito, $A_\alpha \cap \midcup\{A_\beta \tq \beta \in D\}$ es infinito. Esto se debe a que si $n \in \omega$, entonces $D \setminus \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es infinito, particularmente no vacío.
+Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1 \}$ sea de Luzin es que; fijando $\alpha \in \omega_1$, para cada $D \subseteq \alpha$ infinito, $A_\alpha \cap \midcup\{A_\beta \tq \beta \in D\}$ es infinito. Esto se debe a que si $n \in \omega$, entonces $D \setminus \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es infinito, particularmente no vacío. Como consecuencia:
+
+\begin{proposicion}\label{prop-LuzinSeparadas}
+	Cualquier familia Luzin es inseparable.
+\end{proposicion}
+\begin{proof}
+	Sean $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ una familia de Luzin y supógnase que $\ms{B}=\{A_\alpha \tq \alpha \in B\},\ms{C}=\{A_\alpha \tq \alpha \in C\} \subseteq \ms{A}$ son no numerables y ajenos. Como $C$ es infinito, existe $\alpha \in \omega_1$ de manera que $C \cap \alpha$ es infinito. Nótese que $B$ es cofinal en $\omega_1$, por ser $\omega_1$ regular; así que sin pérdida de generalidad, supóngase $\alpha \in B$.
+
+	Dados los comentarios previos a esta demostración, $A_\alpha \cap \midcup \{A_\beta \tq \beta \in C \cap \alpha \}$ es infinito, demostrando que $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito, y se sigue del \autoref{lem-InseparableCar}, que $\ms{A}$ es inseparable.
+\end{proof}
+
+La existencia de familias de Luzin no es tan inucitada, resulta que cualquier familia infinita trae consigo una extensión que es de Luzin.
 
 \begin{proposicion}\label{pro-LuzinExisten}
 	Toda familia casi ajena numerable se extiende a una familia de Luzin. Particularmente, existe una familia de Luzin.
@@ -481,7 +499,7 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 \begin{proof}
 	Sea $\ms{B}=\{A_n \tq n \in \omega\} \in \Ad(\omega)$ numerable y nótese que para cualesquiera $m,n \in \omega$, el conjunto $ \{ k<m \tq A_m \cap A_k \subseteq n \} $ es finito.
 
-	Por recursión sobre $\omega_1 \setminus \omega$, sea $\gamma \in \omega_1 \setminus \omega$ cualquiera y supóngase $\{A_\alpha \tq \alpha \in \gamma\}$ es una familia casi ajena tal que, si $\alpha<\gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
+	Por recursión sobre $\omega_1 \setminus \omega$, sea $\gamma \in \omega_1 \setminus \omega$ y supóngase $\{A_\alpha \tq \alpha \in \gamma\}$ es una familia tal que, si $\alpha<\gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 
 	Como $\gamma \in \omega \setminus \omega_1$, $\gamma$ es numerable y se puede enumerar $\{A_\alpha \tq \alpha \in \gamma\}$ como $\{B_n \tq n\in \omega\}$. Por ser tal, una familia casi ajena, cada conjunto $C_n:=B_n \setminus \midcup\{ B_j \tq j<n \}$ es infinito (corrobórese ésto en la demostración de \ref{prop-MADnoNum}). Para cada $n \in \omega$ fíjese $a_n \in [C_n]^n$ y defínase:
 	$$ A_\gamma:=\midcup\{a_m \tq m \in \omega\} $$
@@ -491,176 +509,151 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Lo anterior prueba, no sólo que $\{A_\alpha \tq \alpha \ \leq \gamma\}$ es familia casi ajena, sino que para cualesquiera $\alpha\leq \gamma$ y $n \in \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito. Lo cual finaliza la construcción por recursión de los conjuntos $A_\alpha$ (con $\omega \leq \alpha< \omega_1$); es claro que para $\ms{A}:=\{A_\alpha \tq \alpha \in \omega_1 \}$ es una familia Luzin que extiende a $\ms{B}$.
 \end{proof}
 
-Las familias de Luzin tienen una propiedad destacable, cualquiera de ellas es \textit{inseparable}, en el siguiente sentido (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}):
+Los siguientes objetos son una suerte de modificación a la \autoref{def-LuzinFam}; mientras que las familias de Luzin son \enquote{unidimensionales}, en el sentido de que están indexadas por $\omega_1$; las grietas de Luzin son \enquote{$n$-dimensionales}:
 
-\begin{definicion}\index[alph]{familia!inseparable}\label{def-FamInseparable}
-	Una familia $\ms{A} \in \Ad(\omega)$ se dice \textbf{Inseparable} cuando ninguna grieta $(\ms{B},\ms{C}) \in ([\ms{A}]^{\omega_1})^2$ está separada.
-\end{definicion}
-
-Para probar la afirmación previa, obsérvese que si $(\ms{B},\ms{C})$ es una grieta y $\midcup \ms{B} \cap \midcup \ms{C}$ es finito, resulta claro que $\midcup \ms{B}$ es separador de $\ms{B}$ y $\ms{C}$. Se consolida:
-
-\begin{lema}\label{lem-InseparableCar}
-	Sea $\ms{A}\in \Ad(\omega)$, entonces $\ms{A}$ es inseparable si y sólo si para cualesquiera $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ ajenos, $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito.
-\end{lema}
-\begin{proof}
-	Por la discusión previa, basta sólo probar la necesidad.
-
-	Por contrapuesta, supóngase que $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ son tales que existe $D \subseteq \omega$, separador de $\ms{B}$ y $\ms{C}$. Entonces las asignaciones $\ms{B} \to \omega$ y $\ms{C} \to \omega$; dadas por $b \mapsto \max(b \setminus D)$ y $c \mapsto \max(c \cap D)$ están bien definidas. Pero en vista de que $|\ms{B}|=|\ms{C}|=\omega_1$, estas no pueden ser inyectivas, y existen $m,n \in \omega$ de modo que $\ms{B}':=\{b \in \ms{B} \tq b \setminus D \subseteq m\}$ y $\ms{C}':=\{b \in \ms{C} \tq c \cap D \subseteq n\}$ tienen tamaño $\omega_1$.
-
-	Además $\midcup \ms{B}' \setminus D \subseteq m =^* \emptyset$ y $\midcup \ms{C}' \cap D \subseteq n =^* \emptyset$, por lo que $\midcap \ms{B} \subseteq^* D$, $\midcap \ms{C} \subseteq^* \omega \setminus D$, y así, $\midcup \ms{B}' \cap \midcup \ms{C}' \subseteq^* D \cap (\omega \setminus D) = \emptyset$.
-\end{proof}
-
-\begin{proposicion}\label{prop-LuzinSeparadas}
-	Cualquier familia Luzin es inseparable.
-\end{proposicion}
-\begin{proof}
-	Sean $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ cualquier familia de Luzin y $\ms{B}=\{A_\alpha \tq \alpha \in B\},\ms{C}=\{A_\alpha \tq \alpha \in C\} \subseteq \ms{A}$ no numerables y ajenos. Como $C$ es infinito, existe $\alpha \in \omega_1$ de manera que $C \cap \alpha$ es infinito. Nótese que $B$ es cofinal en $\omega_1$, por ser $\omega_1$ regular; así que sin pérdida de generalidad, supóngase $\alpha \in B$.
-
-	En virtud de los comentarios posteriores a la \autoref{def-LuzinFam}, se tiene que $A_\alpha \cap \midcup \{A_\beta \tq \beta \in C \cap \alpha \}$ es infinito, demostrando que $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito. Se concluye del lema previo que $\ms{A}$ es inseparable.
-\end{proof}
-
-	\index[alph]{familia!parcialmente separable}
-	De manera casi dual al concepto de familia inseparable, existe el concepto de \textit{familia parcialmente separable}; esto es, una familia casi ajena $\ms{A}$ tal que si $\ms{B},\ms{C} \in [\ms{A}]^{\omega_1}$ son ajenas, entonces existen $\ms{B}' \subseteq \ms{B}$ y $\ms{C}' \subseteq \ms{C}$ tales que la grieta $(\ms{B}', \ms{C}')$ está separada. Los siguientes objetos surgen como una suerte de debilitamiento para la condición de familia de Luzin, pues jamás resultan ser parcialmente separables.
-
-	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de,}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de,}\index[aplh]{testigos!de una $n$-grieta de Luzin}
-		Sea $n \in \omega \setminus 2$. Una \textbf{$n$-grieta de Luzin} es un $n$-ada $(\ms{A}_i \tq i \in I)$ de familias casi ajenas, disjuntas entre sí, tales que existen $X \in [\omega_1]^{\omega_1}$ y $m \in \omega$, de modo que cada $\ms{A}_i$ se puede enumerar como $\{ A_\alpha^i \tq \alpha \in X \}$ y se cumple que si $\alpha, \beta \in X$:
+	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de,}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de,}\index[alph]{testigos!de una $n$-grieta de Luzin}
+		Sea $n \in \omega \setminus 2$. Una \textbf{$n$-grieta de Luzin} es una sucesión finita $(\ms{A}_i)_{i \in I} \subseteq \Ad(\omega)$ cuya union es una familia casi ajena; y, tales que existen $X \in [\omega_1]^{\omega_1}$ y $m \in \omega$, de modo que cada $\ms{A}_i$ se puede enumerar como $\{ A_\alpha^i \tq \alpha \in X \}$ de manera que:
 		\begin{enumerate}
-			\item Para cualesquiera $i,j \in n$ distintos, $A_\alpha^i \cap A_\alpha^j \subseteq m$.
-			\item Si $\alpha \neq \beta$, entonces $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\} \not \subseteq m$.
+			\item Para cualesquiera $i,j \in n$ distintos y $\alpha \in X$, se da $A_\alpha^i \cap A_\alpha^j \subseteq m$.
+			\item Si $\alpha,\beta \in X$ y $\alpha \neq \beta$, entonces $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\} \not \subseteq m$.
 		\end{enumerate}
 
 		A los conjuntos $X$ y $m$ se les llama testigos de que $(\ms{A}_i \tq i \in I)$ es $n$-grieta de Luzin. Una $2$-grieta de Luzin se denomina simplemente \textbf{grieta de Luzin}.
 	\end{definicion}
 
-	Una observación pertiente es que las $n$-grietas de Luzin poseen un comportamiento en común a las familias Luzin, el comentado posteriormente a la \autoref{def-LuzinFam}. Inclusive, en según qué literatura se consulte, se suelen confundir los términos ``familia de Luzin'' y ``grieta de Luzin''.
+	Las $n$-grietas de Luzin poseen un comportamiento en común a las familias Luzin, el comentado posteriormente a la \autoref{def-LuzinFam}. Este comportamiento similar es la razón de que, según la literatura que se consulte, a veces se confunden los términos \enquote{familia de Luzin} y \enquote{grieta de Luzin}.
 	
 	\begin{lema}
 		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Para cada $Y \subseteq X$ no numerable, existe $Y' \subseteq Y$ no numerable tal que para cualesquiera $\alpha,\beta \in Y'$ distintos, $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito.
 	\end{lema}
 	\begin{proof}
-		Sea $k \in \omega \setminus m$. Para cada $i \in n$ sea $f_i:Y \to \omega$ dada por $f(\alpha)=A_\alpha ^ i \cap k$. Como $f_0$ no es inyectiva, existe $Y_0 \subseteq Y$ de modo que $f_0 \upharpoonright Y_0$ es constante. Sea ahora $j \in n \setminus \{n\}$ y supóngase que $Y_j \subseteq Y$ es no numerable y tal que para cada $l<j$ se cumple que $Y_j \subseteq Y_l$ y que $f_j \upharpoonright Y_l$ es constante. Como $f_{j+1} \upharpoonright Y_j$ no es ineyctiva, pues $Y_j$ no es numerable, fíjese $Y_{j+1} \subseteq Y_j \subseteq Y$ no numerable de modo que $f_{j+1}$ es constante en $Y_{j+1}$. Finalizando esta recursión se obtiene que $Y':=\midcap\{ Y_i \tq i \in n \}$ es un subconjunto no numerable de $Y$ tal que para cada $i \in n$, $f_i$ es constante en $Y'$.
+		Sea $k \in \omega \setminus m$. Para cada $i \in n$ sea $f_i:Y \to \omega$ dada por $f(\alpha)=A_\alpha ^ i \cap k$. Para cada $S \in [X]^{>\omega}$ y $g:Z \to \omega$, $g$ no es inyectiva; fíjese entonces ($\Ac$) un conjunto $S(g) \subseteq S$ no numerable para el cual $g \upharpoonright A_g$ es constante. Defínase la sucesión finita $(Y_i)_{i \in n}$ de manera recursiva como $Y_0:=Y$; y, para cada $j \in n$, $Y_{j+1}:=S(f \upharpoonright Y_j) \subseteq Y_j$.
+		
+		Entonces el conjunto $Y':=\midcap\{ Y_i \tq i \in n \} = Y_{\cup n}$ es un subconjunto no numerable de $Y$ tal que para cada $i \in n$, $f_i$ es constante en $Y'$. Sean $\alpha, \beta \in Y'$ distintos, como $(\ms{A}_i)_{i \in I}$ es $n$-grieta de Luzin, existen $i,j \in n$ diferentes de manera que $A_\alpha^i \cap A_\beta^j \not \subseteq m$. Como $f_i$ es constante en $Y'$, entonces $A_\alpha^i \cap k = A_\beta ^i \cap k$.
 
-		Sean $\alpha, \beta \in Y'$ distintos, como $(\ms{A}_i \tq i \in I)$ es $n$-grieta de Luzin, existen $i,j \in n$ diferentes de manera que $A_\alpha^i \cap A_\beta^j \not \subseteq m$. Como $f_i$ es constante en $Y'$, entonces $A_\alpha^i \cap k = A_\beta ^i \cap k $; y, como $A_\beta^i \cap A_\beta ^j \subseteq m \subseteq k$, resulta necesario que $A_\alpha^i \cap A_\beta^j \not \subseteq k$. Dada la arbitrariedad de $k$, se concluye que $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito.
+
+		Como además $A_\beta^i \cap A_\beta ^j \subseteq m \subseteq k$, resulta necesario que $A_\alpha^i \cap A_\beta^j \not \subseteq k$. Así, en virtud de la arbitrariedad del natural $k$, se concluye que el siguiente conjunto debe ser infinito: $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$.
 	\end{proof}
+
+	A razón de la proposición anterior se desprende que; así como ninguna familia parcialmente separable puede ser de Luzin, resulta que:
 
 	\begin{corolario}\label{cor-ngrietasNoSep}
 		Si una familia casi ajena es parcialmente separable, no puede contener ninguna $n$-grieta de Luzin.
 	\end{corolario}
 	\begin{proof}
-		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
+		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo a esta demostración, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que el conjunto $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
 	\end{proof}
 
-	La siguiente Proposición deja en claro la labor de ``debilitamiento'' que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; resulta que, cualquiera de estas últimas contiene siempre una ($2$-)grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} \textcolor{red}{\textbf{(ver REFE)}} y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
+	La siguiente Proposición deja en claro la labor de \enquote{debilitamiento} que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; cualquiera de estas últimas contiene siempre una $2$-grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} \textcolor{red}{\textbf{(ver REFE)}} y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
 
 	\begin{proposicion}
-		Toda familia de Luzin contiene una grieta de Luzin.
+		Toda familia de Luzin contiene una grieta de Luzin. En consecuencia, existe una grieta de Luzin.
 	\end{proposicion}
 	\begin{proof}
 		Sea $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ una familia de Luzin y $f,g:\omega_1 \to \omega_1$ tales que si $ \beta < \alpha < \omega_1$, entonces $g(\beta) < f(\beta) < g(\alpha)$.
 
 		Como $\omega_1 \setminus \omega$ es estacionario en $\omega_1$ y la asignación $j:\omega_1 \setminus \omega \to \omega_1$; dada por $j(\alpha) = \max(A_{f(\alpha)} \cap A_{g(\alpha)}) +1 $, es regresiva, en virtud del Lema de Fodor, existen $S \subseteq \omega_1 \setminus \omega$ estacionario en $\omega_1$ y un natural $m$ tales que $j[S] \subseteq \{m\}$.
 
-        Ahora, si $\beta < \alpha$, entonces $f(\beta) < g(\alpha)$, de modo que $f[\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}] \subseteq \{ \gamma < g(\alpha) \tq A_{g(\alpha)} \subseteq m \}$. Como $\ms{A}$ es de Luzin y $f$ es inyectiva (por ser estrictamente creciente), el conjunto $\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}$ es finito, permitiendo la buena definición de $l:S \to \omega_1$ dada por:
-        
+        Ahora, si $\beta < \alpha$, entonces debido a la hipótesis $f(\beta) < g(\alpha)$, de modo que $f[\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}] \subseteq \{ \gamma < g(\alpha) \tq A_{g(\alpha)} \subseteq m \}$. Como $\ms{A}$ es de Luzin y $f$ es inyectiva (por ser estrictamente creciente), $\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}$ es finito, permitiendo la buena definición de $l:S \to \omega_1$, definida por medio de la siguiente regla de correspondencia:
         \[ l(\alpha) = \left\lbrace \begin{array}{l l}
             0 & ; \,\, \forall \gamma < \alpha ( A_{f(\gamma)} \cap A_{g(\alpha)} \not\subseteq m ) \\
             \max\{ \gamma < \alpha \tq A_{f(\gamma)} \cap A_{g(\alpha)} \subseteq m \} & ; \,\, \text{otro caso}
         \end{array} \right. \]
         
-        Como $0 \notin S$, $l$ es regresiva; nuevamente, del Lema de Fodor, se sigue la existencia de un conjunto $X \subseteq S$, estacionario en $\omega_1$, tal que $l$ es constante en $X$. Así, para cualesquiera $\alpha,\beta \in X$:
-        \begin{enumerate}
-            \item Como $X \subseteq S$ y $j[S] \subseteq \{m\}$, entonces $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y en consecuencia $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$.
-            \item Supóngase que $\beta < \alpha$, como $l$ es constante en $X$, $l(\alpha) = l(\beta)$. Si este último valor es cero, entonces $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. En caso contrario:
-            \[ 0 \neq l(\alpha) = l (\beta) < \beta < \alpha \]
-            y como $l(\alpha)< \beta < \alpha$, la definición de $l$ obliga a que $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. 
-        \end{enumerate} 
-        Los puntos anteriores demuestran que $(\{A_{f(\alpha)} \tq \alpha \in X\},\{A_{g(\alpha)} \tq \alpha \in X\})$ es una grieta de Luzin (con testigos $X$ y $m$).
+        Como $0 \notin S$, $l$ es regresiva; nuevamente, del Lema de Fodor, se sigue la existencia de un conjunto $X \subseteq S$, estacionario en $\omega_1$, tal que $l$ es constante en $X$. Así, para cada $\alpha \in X$ se tiene que $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y en consecuencia $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$, pues $X \subseteq S$ y $j[S] \subseteq \{m\}$.
+		
+		Ahora, supóngase que $\beta, \alpha \in X$ y $\beta < \alpha$, como $l$ es constante en $X$, $l(\alpha) = l(\beta)$. Si este último valor es cero, entonces $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. En caso contrario:
+            \[ 0 \neq l(\alpha) = l (\beta) < \beta < \alpha \, , \]
+        y como $l(\alpha)< \beta < \alpha$, la definición de $l$ obliga a que $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. Lo anterior demuestra que $(\{A_{f(\alpha)} \tq \alpha \in X\},\{A_{g(\alpha)} \tq \alpha \in X\})$ es una grieta de Luzin (con testigos $X$ y $m$) contenida en $\ms{A}$.
 	\end{proof}
 	
 \subsection{Lema de Solovay}
 
 \begin{definicion}\label{def-ordenBasado} \index[alph]{orden!basado en $\ms{A}$}\index[sym]{$\mathbb{P}_\ms{A}$}\index[sym]{$\leq_\ms{A}$}
-	Sea $\ms{A}$ una familia casi ajena. El \textbf{orden basado en} $\ms{A}$ es el par:
-	\[ \mathbb{P}_\ms{A}:=([\omega]^{<\omega} \times [\ms{A}]^{<\omega}, \leq_\ms{A}) \]
-	donde $(p,P) \leq_\ms{A} (h,H)$ si y sólo si $h \subseteq p$, $H \subseteq P$ y $p \setminus h \subseteq \omega \setminus \midcup H$.
+	Sea $\ms{A}$ una familia casi ajena. El \textbf{orden basado en} $\ms{A}$ es el par $\mathbb{P}_\ms{A}:=([\omega]^{<\omega} \times [\ms{A}]^{<\omega}, \leq_\ms{A})$; donde: $(p,P) \leq_\ms{A} (h,H)$ si y sólo si $h \subseteq p$, $H \subseteq P$ y $p \setminus h \subseteq \omega \setminus \midcup H$.
 	
 	Cuando el contexto sea claro, se escribirá $\leq$ en vez de $\leq_\ms{A}$.
 \end{definicion}
 
 Habrá de verificarse que el orden basado en $\ms{A}$ es, en efecto, un orden parcial. Claramente es una relación reflexiva y antisimétrica. Ahora, si $(p,P) \leq (h,H)$ y $(h,H) \leq (k,K)$, es inmediato a la definición de $\leq_\mathscr{A}$ que $k \subseteq h \subseteq p$ y $K \subseteq H \subseteq P$; en consecuencia $k \subseteq p$ y $K \subseteq P$. Además $p \setminus h \subseteq \omega \setminus \midcup H$ y $h \setminus k \subseteq \omega \setminus \midcup K$, resultando en que:
-	\[ p \setminus k \subseteq (h \setminus k) \cup (p \setminus h) \subseteq \big( \omega \setminus \midcup K \big) \cup \big( \omega \setminus \midcup H \big) \]
-mostrando $p \setminus k \subseteq \omega \setminus \midcup K$, por lo que $\leq$ es transitiva, y con ello, orden parcial.
+	\[ p \setminus k \subseteq (h \setminus k) \cup (p \setminus h) \subseteq \big( \omega \setminus \midcup K \big) \cup \big( \omega \setminus \midcup H \big) \, ; \]
+lo cual demuestra $p \setminus k \subseteq \omega \setminus \midcup K$. Luego $\leq$ es transitiva, y con ello, orden parcial.
 
-En términos informales, $(p,P) \leq (h,H)$ significa que ``$h$ se extiende a $p$ y $H$ a $P$''. Conforme $H \subseteq \ms{A}$ crece, se aproxima a $\ms{A}$. Dado que, conforme $h$ crece, este se acerca a un subconjunto casi ajeno con $\midcup H$; eventualmente, se formará un subconjunto casi ajeno con $\midcup \ms{A}$.
+En términos sumamente intuitivos, $(p,P) \leq (h,H)$ significa que \enquote{$h$ se extiende a $p$ y $H$ a $P$}. Así, conforme $H \subseteq \ms{A}$ \enquote{crece}, se aproxima a $\ms{A}$. Dado que, conforme $h$ \enquote{crece}, este se \enquote{aproxima} a un subconjunto casi ajeno con $\midcup H$; y eventualmente, se formará un subconjunto casi ajeno con $\midcup \ms{A}$.
 
-\begin{consideracion}\index[sym]{$D_a$ (si $a \in \ms{A}$)}\index[sym]{$D_G$ (si $\mathcal{G} \subseteq \mathbb{P}_\ms{A}$)}
-	En lo que resta de la subsección:
-	\begin{enumerate}
+Para dar una formalización de la intuición recien dada, comenzaremos definiendo los siguientes objetos para todo lo que resta de la sección.
+\index[sym]{$D_a$ (si $a \in \ms{A}$)}\index[sym]{$D_G$ (si $G \subseteq \mathbb{P}_\ms{A}$)}
+\begin{enumerate}
 		\item Para cada $a \in \ms{A}$, $ D_a:=\{ (p,P) \in \mathbb{P}_\ms{A} \tq a \in P\} $.
-		\item Si $\mathcal{G} \subseteq \mathbb{P}_\ms{A}$, $ D_\mathcal{G}:=\midcup\{ h \subseteq \omega \tq \exists H \in [\omega]^{\omega} \: \big( (h,H) \in \mathcal{G} \big) \} $.
-	\end{enumerate}
-\end{consideracion}
+		\item Si $G \subseteq \mathbb{P}_\ms{A}$, se define $ D_G:=\midcup\{ h \subseteq \omega \tq \exists H \in [\omega]^{\omega} \: \big( (h,H) \in G \big) \} $.
+\end{enumerate}
+
+El siguiente Lema indica por qué la existencia de ciertos filtros en $\mathbb{P}_{\mathscr{A}}$ genera conjuntos casi ajenos con cada elemento de $\ms{A}$; es decir, se implica bajo esta condición, la no maximalidad de la familia.
 
 \begin{lema}\label{lem-DgMagia}
-	Sean $\ms{A}$ una familia casi ajena, y $\mathcal{G}$ un filtro de $\mathbb{P}_\ms{A}$, entonces para cada $a \in \ms{A}$:
+	Sean $\ms{A}$ una familia casi ajena, y $G$ un filtro de $\mathbb{P}_\ms{A}$, entonces para cada $a \in \ms{A}$:
 	\begin{enumerate}
 		\item $D_a$ es denso en $\mathbb{P}_\ms{A}$.
-		\item Si $\mathcal{G} \cap D_a \neq \emptyset$; entonces, $D_\mathcal{G} \cap a$ es finito.
+		\item Si $G \cap D_a \neq \emptyset$; entonces, $D_G \cap a$ es finito.
 	\end{enumerate}
 \end{lema}
 
 \begin{proof}
-	(i) Si $a \in \ms{A}$ y $(p,P) \in \mathbb{P}_\ms{A}$ son elementos arbitrarios, entonces $(p,P\cup\{a\}) \in D_a$ y además es inmediato a la \autoref{def-ordenBasado} que $(p,P\cup\{a\}) \leq (p,P)$.
+	(i) Si $a \in \ms{A}$ y $(p,P) \in \mathbb{P}_\ms{A}$ son elementos arbitrarios, entonces $(p,P\cup\{a\}) \in D_a$ y además, por \ref{def-ordenBasado}, $(p,P\cup\{a\}) \leq (p,P)$.
 
-	(ii) Supóngase que $(p,P) \in \mathcal{G} \cap D_a$ y sea $x \in D_\mathcal{G} \cap a$ cualquier elemento. Por definición de $D_\mathcal{G}$, existe $(h,H) \in \mathcal{G}$ de modo que $x \in h$. Y por ser $\mathcal{G}$ filtro, $(k,K) \leq (p,P),(h,H)$ para cierto $(k,K) \in \mathcal{G}$. De esto, particularmente se obtiene que $h \subseteq k$, $k \setminus p \subseteq \omega \setminus \midcup P$.
+	(ii) Supóngase que $(p,P) \in G \cap D_a$ y sea $x \in D_G \cap a$ cualquier elemento. Por definición de $D_G$, existe $(h,H) \in G$ de modo que $x \in h$. Y por ser $G$ filtro, $(k,K) \leq (p,P),(h,H)$ para cierto $(k,K) \in G$. De esto, particularmente se obtiene que $h \subseteq k$, $k \setminus p \subseteq \omega \setminus \midcup P$.
 
-	Ahora, como $a \in P$ (pues $(p,P)\in D_a$), se tiene que $x \in \midcap P$. Además, $x \in h \subseteq k$, así que $x \in k \cap \midcup P$, lo cual obliga a que $x \in p$. Por tanto $D_\mathcal{G} \cap a \subseteq p =^* \emptyset$.
+	Ahora, como $(p,P)\in D_a$, entonces como $a \in P$. En consecuencia, se tiene que $x \in \midcup P$. Finalmente, $x \in h \subseteq k$, así que $x \in k \cap \midcup P$, lo cual obliga a que $x \in p$. Por tanto $D_G \cap a \subseteq p =^* \emptyset$.
 \end{proof}
+
+Se tiene entonces lo subsecuente de forma inmediata:
 
 \begin{corolario}\label{cor-SolovayDebil}
 	Sean $\ms{A} \in \Ad(\omega)$ y $\ms{D}:=\{D_a \tq a \in \ms{A}\}$. Si existe un filtro $\ms{D}$-genérico, $\ms{A}$ no es maximal.
 \end{corolario}
 
-Debido a lo recién mostrado, de tener $\mathbb{P}_\ms{A}$ la \textit{c.c.c.} \textcolor{red}{\textbf{(ver PRELIMS)}}, se satisfaría que $\Ma(|\ms{A}|)$ implica $\ms{A} \notin \Mad(\omega)$.
+Debido a lo recién mostrado, de tener $\mathbb{P}_\ms{A}$ la \textit{c.c.c.} \textcolor{red}{\textbf{(ver PRELIMS)}}, se satisfaría que $\Ma(|\ms{A}|)$ implica $\ms{A} \notin \Mad(\omega)$. En tal caso, se estaría probando que si $\Ma(\kappa)$ es cierto, entonces $\kappa < \mathfrak{a}$; por ello, $\mathfrak{m} \leq \mathfrak{a}$.
 
 Y en efecto, si $\mathcal{A} \subseteq \mathbb{P}_\ms{A}$ es anticadena y $(p,P),(h,H) \in \mathcal{A}$, se tiene $p\neq h$; sino $(p,P \cup H) \leq (p,P),(h,H)$ y $\mathcal{A}$ dejaría de ser anticadena. En consecuencia $|\mathcal{A}|\leq|[\omega]^{<\omega}|=\aleph_0$ y $\mathbb{P}_\ms{A}$ tiene la \textit{c.c.c.}
 
 \begin{corolario}\label{cor-MaSimple}
-	Si $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$; bajo $\Ma(\kappa)$, se tiene $\Mad(\omega) \subseteq \left[[\omega]^\omega\right]^{>\kappa}$; y por ello $\mathfrak{a}>\kappa$.
-	Consecuentemente:
+	Si $\kappa \geq \omega$ y $\Ma(\kappa)$, entonces $\kappa < \mathfrak{a}$; así que:
 	\begin{enumerate}
-		\item $\zfc \vdash \mathfrak{m} \leq \mathfrak{a}$ % (recuérdese \textbf{Def m}).
-		\item $\zfc + \Ma \vdash \mathfrak{a}=\mathfrak{c}$.
-		\item $\mathfrak{a} = \mathfrak{c}$ es estrictamente más débil que $\HC$.
+		\item $\mathfrak{m} \leq \mathfrak{a}$.
+		\item Bajo $\Ma + \lnot\HC$ se tiene $\mathfrak{m}=\mathfrak{a}=\mathfrak{c}$.
+		\item $\zfc$ no demuestra la implicación $\mathfrak{a}=\mathfrak{c} \to \HC$.
 	\end{enumerate}
 \end{corolario}
 
 \begin{proof}
-	Únicamente falta verificar (iii). Basta tener en cuenta que $\Ma + \lnot \HC$ es consistente con $\zfc$ (consúltese \cite[p.~279-281]{kunenSet}); así que de (iii), se obtiene que $\zfc + \Ma + \lnot \HC \vdash \mathfrak{a}=\mathfrak{c}$. Por ende, $\zfc + \mathfrak{a}=\mathfrak{c} \not\vdash \HC$.
+	Los puntos (i) y (ii) son inmediatos. Para (iii) únicamente basta recordar que $\Ma + \lnot \HC$ es consistente con $\zfc$ (consúltese \cite[p.~279-281]{kunenSet}).
 \end{proof}
 
 El \autoref{cor-SolovayDebil} es una inmediatez, dada toda su discusión previa. Una versión bastante más fortalecida de este, es el siguiente resultado mostrado por Robert Solovay.
 
 \begin{lema}[Solovay]\label{lem-Solovay}\index[alph]{Lema!de Solovay}\index[alph]{Solovay!Lema de}
-	Sea $\kappa$ un cardinal de modo que $\omega \leq \kappa < \mathfrak{c}$. Bajo $\Ma(\kappa)$; para toda grieta $(\ms{A},\ms{B})$; con $|\ms{A}|,|\ms{B}|\leq \kappa$, existe $D\subseteq \ms{A}$ tal que para cada $A \in \ms{A}$ y $b \in \ms{B}$, $a \cap D=^*\emptyset$ y $b \cap D\neq ^*\emptyset$.
+	Sean $\kappa$ un cardinal con $\omega \leq \kappa < \mathfrak{c}$ y $(\ms{A},\ms{B})$ una grieta tal que $|\ms{A}|,|\ms{B}|\leq \kappa$. Bajo $\Ma(\kappa)$; existe $D\subseteq \ms{A}$ de modo que para cualesquiera $A \in \ms{A}$ y $b \in \ms{B}$ ocurre $a \cap D=^*\emptyset$ y $b \cap D\neq ^*\emptyset$.
 \end{lema}
 
 \begin{proof}
-	Supóngase $\Ma(\kappa)$ y sea $(\ms{A},\ms{B})$ una grieta de forma que $|\ms{A}|,|\ms{B}|\leq \kappa$. Para cualesquiera $b \in \ms{B}$ y $n \in \omega$, defínase el conjunto $D(b,n):=\{ (h,H) \in \mathbb{P}_\ms{A} \tq h \cap b \not\subseteq n \}$.
+	Supóngase $\Ma(\kappa)$ y para cada $(b,n) \in \ms{B} \times \omega$, defínase el conjunto $D(b,n):=\{ (h,H) \in \mathbb{P}_\ms{A} \tq h \cap b \not\subseteq n \}$.
 
-	Cada $D(b,n)$ es denso en $\mathbb{P}_\ms{A}$. Sea $(p,P) \in \mathbb{P}_\ms{A}$ cualquiera; por \ref{obs-GrietasSimple}, $b \notin \ms{I}(\ms{A}) $, luego $b \setminus \midcup P$ es infinito. Por ello, existe $m \in \omega$ de modo que $n+1 \in m$ y $m \in b \setminus \midcup P \subseteq \omega \setminus \midcup P$; así, $p \cup \{m\}$ es finito, $(p \cup \{m\}, P) \in D(b,n)$ y $(p \cup \{m\}, P) \leq_\ms{A} (p,P)$.
+	Sea $(p,P) \in \mathbb{P}_\ms{A}$; por la \autoref{obs-GrietasSimple} $b \notin \ms{I}(\ms{A}) $, luego $b \setminus \midcup P$ es infinito. Por ello, existe $m \in \omega$ de modo que $n+1 \in m$ y $m \in b \setminus \midcup P \subseteq \omega \setminus \midcup P$; así, $p \cup \{m\}$ es finito, $(p \cup \{m\}, P) \in D(b,n)$ y $(p \cup \{m\}, P) \leq_\ms{A} (p,P)$. Por lo tanto, cada $D(b,n)$ es denso en $\mathbb{P}_\ms{A}$.
 
-	Sea $\ms{D}=\{ D(b,n) \tq (b,n) \in \ms{B} \times \omega \} \cup \{D_a \tq a \in \ms{A} \}$ y obsérvese que $\ms{D}$ es una familia de densos de $\mathbb{P}_\ms{A}$ de cardinalidad menor o igual a $\kappa$. Como $\mathbb{P}_\ms{A}$ es \textit{c.c.c.}, de $\Ma(\kappa)$ se desprende la existencia de un filtro $\mathcal{G}$ en $\mathbb{P}_\ms{A}$, $\ms{D}$-genérico. Se afirma que $D_\mathcal{G}$ es el conjunto buscado.
+	Sea $\ms{D}=\{ D(b,n) \tq (b,n) \in \ms{B} \times \omega \} \cup \{D_a \tq a \in \ms{A} \}$ y obsérvese que $\ms{D}$ es una familia de densos de $\mathbb{P}_\ms{A}$ de cardinalidad menor o igual a $\kappa$. Como $\mathbb{P}_\ms{A}$ es \textit{c.c.c.}, de $\Ma(\kappa)$ se desprende la existencia de un filtro $G$ en $\mathbb{P}_\ms{A}$, $\ms{D}$-genérico. Se afirma que $D_G$ es el conjunto buscado.
 
-	En efecto, por \ref{lem-DgMagia} se tiene que para cada $a \in \ms{A}$, el conjunto $D_\mathcal{G} \cap a$ es finito. Ahora, si $b \in \ms{B}$ es cualquiera, para cada $n \in \omega$ existe $(k,K) \in \mathcal{G} \cap D(b,n)$; y en consecuencia $D_\mathcal{G} \cap b \not \subseteq n$ (pues $h \cap b \not \subseteq n$). Por lo que el conujunto $D_\mathcal{G} \cap b$ no puede ser finito.
+	En efecto, por \ref{lem-DgMagia} se tiene que para cada $a \in \ms{A}$, el conjunto $D_G \cap a$ es finito. Ahora, si $b \in \ms{B}$ es cualquiera, para cada $n \in \omega$ existe $(k,K) \in G \cap D(b,n)$; y en consecuencia $D_G \cap b \not \subseteq n$ (pues $h \cap b \not \subseteq n$). Por lo que el conujunto $D_G \cap b$ no puede ser finito.
 \end{proof}
 
-Sería deseable que la conclusión del Lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falso.
+Es deseable que la conclusión del Lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falaz. Suponiendo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (véase \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad; pues esta tiene tamaño $\aleph_1 < \mathfrak{m}$ y es inseparable.
 
 \index[alph]{familia!débilmente separada}
-Bajo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (probada en \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad. Se puede decir que si una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay}, entonces está \textit{débilmente separada} (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}), si $D$ es como en la conclusión de \ref{lem-Solovay}.
+Como \enquote{breviario cultural}, cuando una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay} para cierto subconjunto $D \subseteq \omega$, se dirá que está \textit{débilmente separada} (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}). 
 
-La siguiente es una aplicación típica quel lema de Solovay, una prueba sencilla de la consistencia, respecto a $\zfc$, del enunciado $2^{\aleph_0}=2^{\aleph_1}$. Como se podrá verificar en secciones futuras de este escrito, el enunciado $2^{\aleph_1} = 2^{\aleph_0}$ y su negación $2^{\aleph_1} > 2^{\aleph_0}$, tendrán repercusiones en el comportamiento topológico de los $\Psi$-espacios. Especialmente, se mostrarán sus efectos sobre la Conjetura de Moore (véase \autoref{Sec-PDM}).
+\index[alph]{hipótesis!de Jones}\index[alph]{Jones! hipótesis de,}
+La siguiente es una aplicación típica quel lema de Solovay, una prueba sencilla de la consistencia, respecto a $\zfc$, del enunciado $2^{\aleph_0}=2^{\aleph_1}$ (la moderadamente famosa \textit{Hipótesis de Jones}). Como se podrá verificar en secciones futuras de este escrito, tanto la hipótesis de Jones, como su negación, tendrán repercusiones en el comportamiento topológico de los $\Psi$-espacios; especialmente, en la relación que estos guardan con la Conjetura de Moore (véase \autoref{Sec-PDM}).
+
+Aprovechamos para mencionar una última aplcación \enquote{conjuntista} de la combinatoria de las familias casi ajenas; a través de ellas, se puede mostrar la consistencia de la Hipótesis de Jones con $\zfc$.
 
 \begin{corolario}
 	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$, entonces bajo $\Ma(\kappa)$, se tiene $2^\kappa=\mathfrak{c}$.
@@ -669,11 +662,11 @@ La siguiente es una aplicación típica quel lema de Solovay, una prueba sencill
 \end{corolario}
 
 \begin{proof}
-	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$ y supóngase $\Ma(\kappa)$. Tomando en cuenta \ref{cor-famGrandes}, fíjese una familia casi ajena $\ms{A}$ con $|\ms{A}|=\kappa$ y defínase $f:\ms{P}(\omega) \to \ms{P}(\ms{A})$ como $ f(X)=\{ b \in \ms{A} \tq b \cap X =^* \emptyset \} $.
+	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$ y supóngase $\Ma(\kappa)$. Tomando en cuenta \ref{cor-famGrandes}, fíjese una familia casi ajena $\ms{A}$ con $|\ms{A}|=\kappa$ y defínase la función $f:\ms{P}(\omega) \to \ms{P}(\ms{A})$ como $ f(X)=\{ b \in \ms{A} \tq b \cap X =^* \emptyset \} $.
 
-	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el Lema de Solovay (\ref{lem-Solovay}), existe un separador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$, resultando en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
+	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el Lema de Solovay (\ref{lem-Solovay}) se concluye la existencia de un separador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$. Esto resulta en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
 
-	Para la segunda parte, $\lnot \HC + \Ma$ es consistente con $\zfc$. Y como $\lnot \HC$ y $\Ma$ implican $\Ma(\aleph_1)$ y $\omega \leq \aleph_1 < \mathfrak{c}$, se tiene por consiguiente que $\zfc+\lnot \HC + \Ma \vdash 2^{\aleph_0}=2^{\aleph_1}$.
+	Para la segunda parte, es suficiente notar que $\Ma + \lnot \HC$ es consistente con $\zfc$, y que a partir de ellos se concluye $\Ma(\aleph_1)$ y $\omega \leq \aleph_1 < \mathfrak{c}$.
 \end{proof}
 
 

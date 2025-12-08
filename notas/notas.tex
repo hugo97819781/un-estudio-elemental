@@ -1,0 +1,80 @@
+%Formato e idioma
+    \documentclass[letterpaper,DIV=12,12pt]{scrbook}
+    \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
+%Utilidades
+    \usepackage{array}
+    \usepackage[x11names]{xcolor}
+    \usepackage{lipsum}
+    \usepackage{stix2}
+%Matemáticos
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{amssymb} % eliminar si se usa unicode-math
+    %\usepackage{mathrsfs} % agregar después de fuente unicode-math, si se usa
+%Etiquetas de las enumeraciones
+%    \usepackage[shortlabels]{enumitem}
+%    \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+%    \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+
+\begin{document}
+    \chapter*{Introducción}
+
+    \section*{Conjuntos}
+
+    \begin{enumerate}
+        \item Axiomas y AC
+        \item Axiomas adicionales como HC y \textcolor{green}{referenciar MA}.
+        \item \textcolor{blue}{Consistencia, referenciar a lógica ??}
+        \item Notación para contención, contención propia, diferencia, unión e intersección, potencia, producto, exponenciales, restricción.
+        \item \textcolor{blue}{sucesiones, notación, crecencia y decrecencia}.
+        \item Ordinales, cardinales (notaciones $\omega$, $\aleph$ y carindales $\mathfrak{c}$, $\mathfrak{m}$).
+        \item Cardinalidad, finito, numerables, no numerable.
+        \item Notación de corchetes y $X^{<\kappa}$.
+        \item Conjuntos club, estacionarios y lema de Fodor.
+        \item OPRDENES PARCIALES
+            \begin{enumerate}
+                \item \textcolor{blue}{segmentos iniciales ??}
+                \item maximalidad y elementos distinguidos
+                \item cadenas, ordenes totales y buenos ordenes.
+                \item \textcolor{red}{AC sii LZ y PMO}
+                \item Filtros, ideales (propios y no) ultras
+                \item \textcolor{red}{teorema del ultrafiltro}
+                \item CASI CONTENCION
+                \begin{enumerate}
+                    \item $\subseteq^*$ y $=^*$.
+                    \item Propiedades de la $\subseteq^*$ respecto a: preorden, monotonía, finitud, uniones e intersecciones y SOBRE IMAGENES E IMAGENES INVERSAS.
+                    \item \textcolor{blue}{Cocientes??}
+                \end{enumerate}
+                \item ARBOLES
+                \begin{enumerate}
+                    \item Definición
+                    \item $2^{<\omega}$ es un arbol.
+                \end{enumerate}
+                \item COSAS MARTIN
+                \begin{enumerate}
+                    \item densos, genéricos
+                    \item anticadenas y C.C.C.
+                    \item compatibiliadad, paralelismo, extensiones :vvv
+                \end{enumerate}
+            \end{enumerate}
+        \item 
+    \end{enumerate}
+
+
+    \section*{Topología}
+    \begin{enumerate}
+        \item Definición de espacio.
+        \item Funciones continuas, encaje y homeomorfismo.
+        \item Propiedades topológicas
+        \item Axiomas de separación.
+        \item CONVERGENCIA
+        \begin{enumerate}
+            \item Sucesiones y conjuntos convergentes.
+            \item Cerradura secuencial.
+            \item \textcolor{red}{sucesión conv sii cjto conv en $T_1$}
+            \item Espacios Secuenciales y de Fréchet.
+            \item Implicaciones $1AN$ $\to$ Fréchet $\to$ Secuencial.
+        \end{enumerate}
+    \end{enumerate}
+
+\end{document}

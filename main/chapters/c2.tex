@@ -7,7 +7,10 @@
 
 Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$. Así por ejemplo, $\omega+1 \cong \Psi(\{\omega \})$.
 
-\begin{figure}[htbp]
+Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$.
+
+\newpage
+\begin{figure}[h]
 \centering
 \begin{minipage}{0.45\textwidth}
   \centering
@@ -59,23 +62,21 @@ Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndo
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}\vspace{0pt} % ← CLAVE
-  Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$. Esta construcción funciona pues $\omega \cap \ms{A} = \emptyset$ \enquote{hecho fácilmente verificable partiendo de que, bajo la construcción de Von Neumann, cada natural es un conjunto finito de naturales}.
+  Esta construcción funciona pues la intersección $\omega \cap \ms{A}$ es vacía \enquote{lo cual es fácilmente verificable partiendo de que, bajo la construcción de Von Neumann, cada natural es un conjunto finito de naturales}. Así que para no perder generalidad en la próxima construcción, es conveniente establecer la siguiente convención respecto a las familias de subconjuntos infinitos de un conjunto numerable dado:
 \end{minipage}
 \end{figure}
-
-Así que para no perder generalidad en la próxima construcción, es conveniente establecer lo siguiente
 
 \begin{consideracion}\label{cons-ajenosNyA}
 	Durante el resto del documento, siempre que $N$ sea un conjunto numerable y $\ms{A} \subseteq [N]^\omega$, se asumirá que $N \cap \ms{A} = \emptyset$.
 \end{consideracion}
 
-Si bien no hay garantía de que lo anterior siempre ocurra, siempre es posible definir la topología siguiente sobre el conjunto $N + \ms{A} := (N \times \{0\}) \cup (\ms{A} \cup \{1\})$.
+Si bien no hay garantía de que lo anterior ocurra, siempre es posible definir la topología siguiente sobre la unión ajena $(N \times \{0\}) \cup (\ms{A} \cup \{1\})$.
 
 \begin{proposicion}\index[sym]{$\tau_{N,\ms{A}}$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$. La colección $\tau_{N,\ms{A}} := \{ U \subseteq N \cup \ms{A} \tq \forall x \in U \cap \ms{A} \: ( x \subseteq^* U ) \} $ es una topología para $N \cup \ms{A}$.
 \end{proposicion}
 \begin{proof}
-	Resulta evidente que $\emptyset, N \cup \ms{A} \in \tau_{N,\ms{A}}$. Ahora, dados $U,V \in \tau_{N,\ms{A}}$ y $x \in (U \cap V) \cap \ms{A}$ cualquiera, $x \subseteq^* U$ y $x \subseteq^* V$, de donde $x \subseteq^* U \cap V$ y $U \cap V \in \tau_{N,\ms{A}}$. Finalmente, dados $\mathcal{U}\subseteq \tau_{N,\ms{A}}$ y $x \in \midcup \mathcal{U} \cap \ms{A}$ arbitrarios, existe $U_0 \in \mathcal{U}$ con $x \in U_0$; así que $x \subseteq^* U_0$ y consecuentemente $x \setminus U_0$ es finito. Como $x \setminus \midcup \mathcal{U} \subseteq x \setminus U_0$, resulta que $x \subseteq^* \midcup \mathcal{U}$ y así $\midcup \mathcal{U} \in \tau_{N,\ms{A}}$.
+	Es evidente que $\emptyset, N \cup \ms{A} \in \tau_{N,\ms{A}}$. Ahora, dados $U,V \in \tau_{N,\ms{A}}$ y $x \in (U \cap V) \cap \ms{A}$ cualquiera; $x \subseteq^* U$ y $x \subseteq^* V$, de donde $x \subseteq^* U \cap V$ y $U \cap V \in \tau_{N,\ms{A}}$. Finalmente, dados $\mathcal{U}\subseteq \tau_{N,\ms{A}}$ y $x \in \midcup \mathcal{U} \cap \ms{A}$ arbitrarios, existe $U_0 \in \mathcal{U}$ con $x \in U_0$; así que $x \subseteq^* U_0$ y consecuentemente $x \setminus U_0$ es finito. Como $x \setminus \midcup \mathcal{U} \subseteq x \setminus U_0$, resulta que $x \subseteq^* \midcup \mathcal{U}$ y así $\midcup \mathcal{U} \in \tau_{N,\ms{A}}$.
 \end{proof}
 
 \begin{definicion}\label{Def-Mrowka}\index[alph]{topología!de Mrówka}\index[alph]{topología!de Isbell-Mrówka}\index[alph]{Mrówka! topología de}\index[alph]{Isbell-Mrówka!topología de}\index[sym]{$\tau_\ms{A}$}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$}\index[sym]{$\Psi_N(\ms{A})$}\index[sym]{$\Psi(\ms{A})$}

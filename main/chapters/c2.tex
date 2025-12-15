@@ -5,7 +5,7 @@
 
 \section{\texorpdfstring{$\Psi$-espacios y caracterizaciones elementales}{Psi-espacios y caracterizaciones elementales}}
 
-Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$. Así por ejemplo, $\omega+1 \cong \Psi(\{\omega \})$.
+Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $X=\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$. Así por ejemplo, $\omega+1 \cong \Psi(\{\omega \})$.
 
 Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$. Asegurando que todo $x \in \ms{A}$, pensado como subconjunto de $\Psi(\ms{A})$, sea una sucesión convergente al punto $x$ del espacio; y al mismo tiempo, que cada punto $n \in \omega$ sea sislado.
 
@@ -68,11 +68,11 @@ Una manera de capturar la descripción informal previamente dada, es considerand
 	\end{minipage}
 \hfill
 	\begin{minipage}{0.38\textwidth}
-		\phantom{A} Como bajo la construcción de Von Neumann, cada natural es un conjunto finito; siempre que $\ms{A} \subseteq [\omega]^\omega$, se tendrá que $\omega \cap \ms{A} = \emptyset$; es a razón de ello que los subespacios $\omega$ y $\ms{A}$ de $\Psi(\ms{A})$ se pueden visualizar de forma independiente. En general, cuando $N$ es un conjunto numerable, no hay garantía de que cada familia de subconjuntos infinitos de $N$ sea ajena con $N$; a razón de esto, lo suyo sería definir los $\Psi$-espacios asociados a una de estas familias sobre la unión $(N \times \{0\}) \cup (\ms{A} \cup \{1\})$. Sin
+		\phantom{A} Como bajo la construcción de Von Neumann, cada natural es un conjunto finito; siempre que $\ms{A} \subseteq [\omega]^\omega$, se tendrá que $\omega \cap \ms{A} = \emptyset$; es por tal motivo que los subespacios $\omega$ y $\ms{A}$ de $\Psi(\ms{A})$ se pueden visualizar de forma independiente. En general, cuando $N$ es un conjunto numerable, no hay garantía de que cada familia de subconjuntos infinitos de $N$ sea ajena con $N$; a razón de esto, lo suyo sería definir los $\Psi$-espacios asociados a una de estas familias sobre la unión ajena $N+\ms{A}=N\cup (\ms{A} \cup \{N\})$. Pa-
 	\end{minipage}
 \end{figure}
 
-\noindent embargo, para aligerar la notación siempre que $N$ sea un conjunto numerable y $\ms{A} \subseteq [N]^\omega$, asumiremos que se satisface $N \cap \ms{A} = \emptyset$.
+\noindent ra cada $x \in \ms{A}$, se usará la notación $\hat{x}=(x,N)$.
 
 \begin{proposicion}\index[sym]{$\tau_{N,\ms{A}}$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$. La colección $\tau_{N,\ms{A}} := \{ U \subseteq N \cup \ms{A} \tq \forall x \in U \cap \ms{A} \: ( x \subseteq^* U ) \} $ es una topología para $N \cup \ms{A}$.
@@ -84,22 +84,22 @@ Una manera de capturar la descripción informal previamente dada, es considerand
 \begin{definicion}\label{Def-Mrowka}\index[alph]{topología!de Mrówka}\index[alph]{topología!de Isbell-Mrówka}\index[alph]{Mrówka! topología de}\index[alph]{Isbell-Mrówka!topología de}\index[sym]{$\tau_\ms{A}$}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$}\index[sym]{$\Psi_N(\ms{A})$}\index[sym]{$\Psi(\ms{A})$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$.
 	\begin{enumerate}
-		\item La colección $\tau_{N,\ms{A}}$ de la Proposición anterior es la \textbf{Topología de Mrówka (de Isbell-Mrókwa)} \textbf{generada por $\ms{A}$}.
-		\item El \textbf{$\Psi$-espacio}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$} \textbf{generado por $\ms{A}$} se denota por $\Psi_N(\ms{A})$\index[sym]{$\Psi_N(\ms{A})$}, y consta del conjunto $N \cup \ms{A}$ dotado con su topología $\tau_{N,\ms{A}}$.
+		\item $\tau_{N,\ms{A}}$ es la \textbf{topología de de Isbell-Mrókwa} \textbf{generada por $\ms{A}$}.
+		\item El \textbf{$\Psi$-espacio} \textbf{generado por $\ms{A}$} es el par $\Psi_N(\ms{A})=(N \cup \ms{A}, \tau_{N,\ms{A}})$.
 	\end{enumerate}
 
-	$\tau_\ms{A}$ y $\Psi(\ms{A})$ denotarán a $\tau_{\omega,\ms{A}}$ y $\Psi_\omega(\ms{A})$, respectivamente.
+	Si $\ms{A} \subseteq [\omega]^\omega$, $\tau_\ms{A}$ y $\Psi(\ms{A})$ denotarán a $\tau_{\omega,\ms{A}}$ y a $\Psi_\omega(\ms{A})$, respectivamente.
 \end{definicion}
 
-Previo a abordar otros temas, se mostrará por qué; a efectos topológicos, bastará considerar familias de subconjuntos de $\omega$.% para estudiar las propiedades topológicas de los $\Psi$-espacios.
+Previo a abordar otros temas, se mostrará por qué; a efectos topológicos, bastará considerar familias de subconjuntos infinitos de $\omega$.
 
 \begin{proposicion}\label{prop-MrowHomeoBiyec}
 	Sean $N,M$ conjuntos numerables, $\ms{A} \subseteq [N]^\omega$ arbitraria y $h:N \to M$ una biyección. Entonces $\Psi_N(\ms{A}) \cong \Psi_M(\Phi_h(\ms{A}))$.
 \end{proposicion}
 \begin{proof}
-	Sea $f:\Psi_N(\ms{A}) \to \Psi_M(\Phi_h(\ms{A}))$ definida por medio de $f(x)=h(x)$ si $x \in N$ y $f(x)=h[x]$ si $x \in \ms{A}$. Nótese que; por la \autoref{cons-ajenosNyA}, $f$ es biyectiva. Además, por definición de $f$, y como $\Psi_h^{-1}=\Phi_{h^{-1}}$, basta verificar únicamente la continuidad de $f$.
+	Sea $f:\Psi_N(\ms{A}) \to \Psi_M(\Phi_h(\ms{A}))$ definida como $f(x)=h(x)$ si $x \in N$ y $f(x)=h[x]$ si $x \in \ms{A}$. Nótese que $f$ es biyectiva. Por definición de $f$, y como $\Phi_h^{-1}=\Phi_{h^{-1}}$, basta verificar únicamente la continuidad de $f$.
 
-	Sea $U$ abierto en $\Psi_M(\Phi_h(\ms{A}))$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Entonces $f(x) = h[x] \in U \cap \Phi_h(\ms{A})$. Como $U$ es abierto en $\Psi_M(\Phi_h(\ms{A}))$, entonces $f(x) \setminus U$ es finito. Así que $f^{-1}[f(x) \setminus U] = h^{-1}[h(x)] \setminus f^{-1}[U] = x \setminus f^{-1}[U]$ es finito y así $x \subseteq^* f^{-1}[U]$, probando $f^{-1}[U]$ es abierto en $\Psi_N(\ms{A})$.
+	Sea $U$ abierto en $\Psi_M(\Phi_h(\ms{A}))$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Entonces $f(x) = h[x] \in U \cap \Phi_h(\ms{A})$. Como $U$ es abierto en $\Psi_M(\Phi_h(\ms{A}))$, entonces $f(x) \setminus U$ es finito. Así que $f^{-1}[f(x) \setminus U] = h^{-1}[h(x)] \setminus f^{-1}[U] = x \setminus f^{-1}[U]$ es finito y así $x \subseteq^* f^{-1}[U]$, probando que $f^{-1}[U]$ es abierto en $\Psi_N(\ms{A})$.
 \end{proof}
 
 La siguiente manera de describir la topología de Mrówka es la más común en la literatura (como ejemplo están \cite{hruMrowka} o \cite{hruAlmost}).

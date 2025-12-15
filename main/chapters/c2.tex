@@ -7,70 +7,72 @@
 
 Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$. Así por ejemplo, $\omega+1 \cong \Psi(\{\omega \})$.
 
-Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$.
+Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$. Asegurando que todo $x \in \ms{A}$, pensado como subconjunto de $\Psi(\ms{A})$, sea una sucesión convergente al punto $x$ del espacio; y al mismo tiempo, que cada punto $n \in \omega$ sea sislado.
 
-\newpage
-\begin{figure}[h]
+\begin{figure}[htb]
 \centering
-\begin{minipage}{0.45\textwidth}
-  \centering
-  % --- TikZ aquí ---
-  \begin{tikzpicture}
-    % Región W
-				\draw[thick]
-				(0,0)
-				.. controls (-2,1.5) and (-2,-2) .. (0,-2)
-				.. controls (2,-2) and (2,1.5) .. (0,0);
-				\node at (0,-2.4) {$\omega$};
+	\begin{minipage}{0.6\textwidth}
+	\centering
+		\begin{tikzpicture}[scale=1.55]
+			\fill[gray!20]
+			(0,-.5)
+			to[out=80,in=260] (.5,1)
+			to[out=260+180,in=30] (-1.4,1)
+			to[out=30+180,in=160] (-1.5,-2.5)
+			to[out=160+180,in=290] (.5,-1.5)
+			to[out=290+180,in=80+180] (0,-.5);
 
-				% Región sombreada inferior: x in Psi(A)
-				\fill[gray!30]
-				(0,-0.2)
-				.. controls (-1.2,-0.5) and (-1.2,-1.4) .. (0,-1.5)
-				.. controls (1.2,-1.4) and (1.2,-0.5) .. (0,-0.2);
-				\draw
-				(0,-0.2)
-				.. controls (-1.2,-0.5) and (-1.2,-1.4) .. (0,-1.5)
-				.. controls (1.2,-1.4) and (1.2,-0.5) .. (0,-0.2);
+			\fill[fill=morado!50, fill opacity=0.5]
+			(0,-.51)
+			to[out=80+70,in=50] (-1.8,-.5)
+			to[out=50+180,in=130] (-1.7,-1.2)
+			to[out=130+180,in=-80-70] (0,-.51);
 
-				\node at (0,-1.0) {$x\subseteq \Psi(\mathcal A)$};
+			\fill[fill=morado!50, fill opacity=0.5]
+			(.505,1.02)
+			to[out=80+70,in=50] (-1.3,0.5)
+			to[out=50+180,in=130] (-1.1,-.4)
+			to[out=130+180,in=-80-70] (.505,1.02);
 
-				% Región sombreada superior (otra vecindad)
-				\fill[gray!20]
-				(0,0)
-				.. controls (-0.9,0.3) and (-0.9,0.8) .. (0,1)
-				.. controls (0.9,0.8) and (0.9,0.3) .. (0,0);
-				\draw
-				(0,0)
-				.. controls (-0.9,0.3) and (-0.9,0.8) .. (0,1)
-				.. controls (0.9,0.8) and (0.9,0.3) .. (0,0);
+			%\draw[morado, line width=.4]
+			%(0,-.51)
+			%to[out=80+70,in=50] (-1.8,-.5)
+			%to[out=50+180,in=130] (-1.7,-1.2)
+			%to[out=130+180,in=-80-70] (0,-.51);
+			\node[above right] at (-1.8,-1) {$x \subseteq  \Psi(\mathscr{A})$};
 
-				% Punto de adherencia en el borde
-				\fill (0,0) circle (2pt);
+			%\draw[morado, line width=.4]
+			%(.505,1.02)
+			%to[out=80+70,in=50] (-1.3,0.5)
+			%to[out=50+180,in=130] (-1.1,-.4)
+			%to[out=130+180,in=-80-70] (.505,1.02);
+			\node[above right] at (-1.4,.1) {$y \subseteq  \Psi(\mathscr{A})$};
 
-				% Punto x fuera de W
-				\fill (2.3,0.3) circle (2pt);
-				\node[right] at (2.3,0.3) {$x\in\Psi(\mathcal A)$};
+			\draw[thick, dash pattern=on 1pt off 1pt on 1pt off 1pt, azul]
+			(.5,-1.5)
+			to[out=290+180,in=80+180] (0,-.5)
+			to[out=80,in=260] (.5,1)
+			to[out=260+180,in=30] (-1.4,1);
+			\node[above right] at (-1.4,1.15) {$\mathscr{A}$};
 
-				% Curva que "sale" del borde
-				\draw[thick]
-				(0,0)
-				.. controls (1.2,0.8) and (1.8,0.6) .. (2.3,0.3);
-  \end{tikzpicture}
-  \caption{Intuición pedorra.}
-  \label{fig:psi-heuristica}
-\end{minipage}
+			\draw[fill=azul, azul] (0,-.51) circle (1pt);
+			\node[above right] at (0,-.5) {$x \in \Psi(\mathscr{A})$};
+
+			\draw[fill=azul, azul] (.505,1.02) circle (1pt);
+			\node[above right] at (.5,1) {$y \in \Psi(\mathscr{A})$};
+
+			\node[above right] at (-1,-2) {$\omega$};
+		\end{tikzpicture}
+	\caption{Imagen intuitiva de $\Psi(\ms{A})$.}
+	\label{fig:psi-heuristica}
+	\end{minipage}
 \hfill
-\begin{minipage}{0.48\textwidth}\vspace{0pt} % ← CLAVE
-  Esta construcción funciona pues la intersección $\omega \cap \ms{A}$ es vacía \enquote{lo cual es fácilmente verificable partiendo de que, bajo la construcción de Von Neumann, cada natural es un conjunto finito de naturales}. Así que para no perder generalidad en la próxima construcción, es conveniente establecer la siguiente convención respecto a las familias de subconjuntos infinitos de un conjunto numerable dado:
-\end{minipage}
+	\begin{minipage}{0.38\textwidth}
+		\phantom{A} Como bajo la construcción de Von Neumann, cada natural es un conjunto finito; siempre que $\ms{A} \subseteq [\omega]^\omega$, se tendrá que $\omega \cap \ms{A} = \emptyset$; es a razón de ello que los subespacios $\omega$ y $\ms{A}$ de $\Psi(\ms{A})$ se pueden visualizar de forma independiente. En general, cuando $N$ es un conjunto numerable, no hay garantía de que cada familia de subconjuntos infinitos de $N$ sea ajena con $N$; a razón de esto, lo suyo sería definir los $\Psi$-espacios asociados a una de estas familias sobre la unión $(N \times \{0\}) \cup (\ms{A} \cup \{1\})$. Sin
+	\end{minipage}
 \end{figure}
 
-\begin{consideracion}\label{cons-ajenosNyA}
-	Durante el resto del documento, siempre que $N$ sea un conjunto numerable y $\ms{A} \subseteq [N]^\omega$, se asumirá que $N \cap \ms{A} = \emptyset$.
-\end{consideracion}
-
-Si bien no hay garantía de que lo anterior ocurra, siempre es posible definir la topología siguiente sobre la unión ajena $(N \times \{0\}) \cup (\ms{A} \cup \{1\})$.
+\noindent embargo, para aligerar la notación siempre que $N$ sea un conjunto numerable y $\ms{A} \subseteq [N]^\omega$, asumiremos que se satisface $N \cap \ms{A} = \emptyset$.
 
 \begin{proposicion}\index[sym]{$\tau_{N,\ms{A}}$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$. La colección $\tau_{N,\ms{A}} := \{ U \subseteq N \cup \ms{A} \tq \forall x \in U \cap \ms{A} \: ( x \subseteq^* U ) \} $ es una topología para $N \cup \ms{A}$.

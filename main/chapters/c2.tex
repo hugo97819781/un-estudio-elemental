@@ -5,15 +5,13 @@
 
 \section{\texorpdfstring{$\Psi$-espacios y caracterizaciones elementales}{Psi-espacios y caracterizaciones elementales}}
 
-Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $X=\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$. Así por ejemplo, $\omega+1 \cong \Psi(\{\omega \})$.
+Una forma amigable de \enquote{visualizar} a los $\Psi$-espacios es concibiéndolos como una generalización al espacio de ordinales $X=\omega + 1$, este se estructura de forma que el subespacio $\omega \subseteq X$ es denso, discreto y se acumula \enquote{hacia} el punto $\omega \in X$. Los espacios $\Psi(\ms{A})$ tienen por conjunto subyacente a $\omega \cup \ms{A}$ y, en un sentido puramente intuitivo, se puede describir su topología de la siguiente manera: el subconjunto $\omega$ es una \enquote{masa} densa y discreta, pero, se acumula en \enquote{direcciones} independientes entre sí, una por cada elemento en $\ms{A}$. Cada $x \in \ms{A}$, pensado como subespacio de $\Psi(\ms{A})$, forma una sucesión convergente al punto $x \in \Psi(\ms{A})$.
 
-Una manera de capturar la descripción informal previamente dada, es considerando que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a cada uno de los elementos en $U \cap \ms{A}$. Asegurando que todo $x \in \ms{A}$, pensado como subconjunto de $\Psi(\ms{A})$, sea una sucesión convergente al punto $x$ del espacio; y al mismo tiempo, que cada punto $n \in \omega$ sea sislado.
+Para conseguir el comportamiento anterior, bastará considerar que un subconjunto $U$ de $\Psi(\ms{A})=\omega \cup \ms{A}$ es abierto si y solamente si casi contiene a sus elementos que estén en $\ms{A}$. De esta manera, cuando $x \in \ms{A}$ pertenezca a un abierto $U$, se tendrá $x \subseteq^* U$: y así $x$ como subconjunto del espacio, convergerá a $x$ como punto del espacio.
 
 \begin{figure}[htb]
-\centering
-	\begin{minipage}{0.6\textwidth}
 	\centering
-		\begin{tikzpicture}[scale=1.55]
+		\begin{tikzpicture}[scale=1.3]
 			\fill[gray!20]
 			(0,-.5)
 			to[out=80,in=260] (.5,1)
@@ -48,7 +46,7 @@ Una manera de capturar la descripción informal previamente dada, es considerand
 			%to[out=130+180,in=-80-70] (.505,1.02);
 			\node[above right] at (-1.4,.1) {$y \subseteq  \Psi(\mathscr{A})$};
 
-			\draw[thick, dash pattern=on 1pt off 1pt on 1pt off 1pt, azul]
+			\draw[line width=1.5, dash pattern=on 1pt off 1pt on 1pt off 1pt, azul]
 			(.5,-1.5)
 			to[out=290+180,in=80+180] (0,-.5)
 			to[out=80,in=260] (.5,1)
@@ -65,86 +63,87 @@ Una manera de capturar la descripción informal previamente dada, es considerand
 		\end{tikzpicture}
 	\caption{Imagen intuitiva de $\Psi(\ms{A})$.}
 	\label{fig:psi-heuristica}
-	\end{minipage}
-\hfill
-	\begin{minipage}{0.38\textwidth}
-		\phantom{A} Como bajo la construcción de Von Neumann, cada natural es un conjunto finito; siempre que $\ms{A} \subseteq [\omega]^\omega$, se tendrá que $\omega \cap \ms{A} = \emptyset$; es por tal motivo que los subespacios $\omega$ y $\ms{A}$ de $\Psi(\ms{A})$ se pueden visualizar de forma independiente. En general, cuando $N$ es un conjunto numerable, no hay garantía de que cada familia de subconjuntos infinitos de $N$ sea ajena con $N$; a razón de esto, lo suyo sería definir los $\Psi$-espacios asociados a una de estas familias sobre la unión ajena $N+\ms{A}=N\cup (\ms{A} \cup \{N\})$. Pa-
-	\end{minipage}
 \end{figure}
 
-\noindent ra cada $x \in \ms{A}$, se usará la notación $\hat{x}=(x,N)$.
+Es fundamental notar la importancia de que $\omega \cap \ms{A}$ sea vacía. Pese a que en general, si $N$ es un conjunto numerable arbitrario y $\ms{A} \subseteq [\omega]^\omega$, no hay garantía de que $N \cap \ms{A} = \emptyset$; utilizando las biyeccines $\Phi_h$, es posible trasladar la familia $\ms{A}$ hacia una familia sobre $\omega$ que tenga \enquote{las mismas propiedades}. Por ello se convendrá, sin perder generalidad, lo que sigue:
+\begin{consideracion}\label{cons-ajenidad}
+	Cuando $N$ sea un conjunto numerable y $\ms{A} \subseteq [N]^\omega$, a partir de este momento, se asumirá siempre que $N \cap \ms{A} = \emptyset$.
+\end{consideracion}
 
-\begin{proposicion}\index[sym]{$\tau_{N,\ms{A}}$}
-	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$. La colección $\tau_{N,\ms{A}} := \{ U \subseteq N \cup \ms{A} \tq \forall x \in U \cap \ms{A} \: ( x \subseteq^* U ) \} $ es una topología para $N \cup \ms{A}$.
-\end{proposicion}
-\begin{proof}
-	Es evidente que $\emptyset, N \cup \ms{A} \in \tau_{N,\ms{A}}$. Ahora, dados $U,V \in \tau_{N,\ms{A}}$ y $x \in (U \cap V) \cap \ms{A}$ cualquiera; $x \subseteq^* U$ y $x \subseteq^* V$, de donde $x \subseteq^* U \cap V$ y $U \cap V \in \tau_{N,\ms{A}}$. Finalmente, dados $\mathcal{U}\subseteq \tau_{N,\ms{A}}$ y $x \in \midcup \mathcal{U} \cap \ms{A}$ arbitrarios, existe $U_0 \in \mathcal{U}$ con $x \in U_0$; así que $x \subseteq^* U_0$ y consecuentemente $x \setminus U_0$ es finito. Como $x \setminus \midcup \mathcal{U} \subseteq x \setminus U_0$, resulta que $x \subseteq^* \midcup \mathcal{U}$ y así $\midcup \mathcal{U} \in \tau_{N,\ms{A}}$.
-\end{proof}
+Bajo la consideración previa, para cualquier conjunto numerable $N$ y familia de subconjuntos $\ms{A} \subseteq [N]^\omega$, se define la colección:
+\begin{equation}\index[sym]{$\tau_{N,\ms{A}}$}
+	\tau_{N,\ms{A}} := \{ U \subseteq N \cup \ms{A} \tq \forall x \in U \cap \ms{A} \, (x \subseteq^* U) \} \, .
+\end{equation}
+
+Tal colección forma una topología para $N \cup \ms{A}$. Evidentemente $\emptyset$ y $N \cup \ms{A}$ son elementos de $\tau_{\ms{A}}$. Si $U,V \in \tau_{\ms{A}}$ y $x \in (U \cap V) \cap \ms{A}$, entonces $x \subseteq^* U$ y $x \subseteq^* V$, de donde $x \subseteq^* U \cap V$ y $U \cap V \in \tau_{N,\ms{A}}$. Finalmente, si $\mathcal{U}\subseteq \tau_{\ms{A}}$ y $x \in \midcup \mathcal{U} \cap \ms{A}$, existe $U_0 \in \mathcal{U}$ con $x \in U_0$; así que $x \subseteq^* U_0 \subseteq \midcup \mathcal{U}$ y por ello $\midcup \mathcal{U} \in \tau_{\ms{A}}$.
 
 \begin{definicion}\label{Def-Mrowka}\index[alph]{topología!de Mrówka}\index[alph]{topología!de Isbell-Mrówka}\index[alph]{Mrówka! topología de}\index[alph]{Isbell-Mrówka!topología de}\index[sym]{$\tau_\ms{A}$}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$}\index[sym]{$\Psi_N(\ms{A})$}\index[sym]{$\Psi(\ms{A})$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$.
 	\begin{enumerate}
 		\item $\tau_{N,\ms{A}}$ es la \textbf{topología de de Isbell-Mrókwa} \textbf{generada por $\ms{A}$}.
-		\item El \textbf{$\Psi$-espacio} \textbf{generado por $\ms{A}$} es el par $\Psi_N(\ms{A})=(N \cup \ms{A}, \tau_{N,\ms{A}})$.
+		\item El \textbf{$\Psi$-espacio} \textbf{generado por $\ms{A}$} es el par $\Psi_N(\ms{A})=( N \cup \ms{A}, \tau_{N,\ms{A}})$.
 	\end{enumerate}
-
-	Si $\ms{A} \subseteq [\omega]^\omega$, $\tau_\ms{A}$ y $\Psi(\ms{A})$ denotarán a $\tau_{\omega,\ms{A}}$ y a $\Psi_\omega(\ms{A})$, respectivamente.
+	Si $N=\omega$, los objetos anteriores se denotarán por $\tau_\ms{A}$ y $\Psi(\ms{A})$, respectivamente.
 \end{definicion}
 
-Previo a abordar otros temas, se mostrará por qué; a efectos topológicos, bastará considerar familias de subconjuntos infinitos de $\omega$.
+Desde un punto de vista topológico, lo anterior no define dos clases distintas de objetos. Por tal motivo, bastará de ahora en más, estudiar los $\Psi$-espacios generados por familias de subconjuntos infinitos de $\omega$.
 
 \begin{proposicion}\label{prop-MrowHomeoBiyec}
-	Sean $N,M$ conjuntos numerables, $\ms{A} \subseteq [N]^\omega$ arbitraria y $h:N \to M$ una biyección. Entonces $\Psi_N(\ms{A}) \cong \Psi_M(\Phi_h(\ms{A}))$.
+	Sean $N, M$ conjuntos numerables, $\ms{A} \subseteq [N]^\omega$ y cualquier biyección $h:N \to M$. Entonces $\Psi_N(\ms{A}) \cong \Psi_M(\Phi_h(\ms{A}))$.
 \end{proposicion}
 \begin{proof}
-	Sea $f:\Psi_N(\ms{A}) \to \Psi_M(\Phi_h(\ms{A}))$ definida como $f(x)=h(x)$ si $x \in N$ y $f(x)=h[x]$ si $x \in \ms{A}$. Nótese que $f$ es biyectiva. Por definición de $f$, y como $\Phi_h^{-1}=\Phi_{h^{-1}}$, basta verificar únicamente la continuidad de $f$.
+	Sea $f:\Psi_N(\ms{A}) \to \Psi_M(\Phi_h(\ms{A}))$ dada por $f(x)=h(x)$, si $x \in N$; y $f(x)=h[x]$, si $x \in \ms{A}$. Nótese que $f$ es biyectiva \enquote{dada \ref{cons-ajenidad}}. Por definición de $f$, y como $\Phi_h^{-1}=\Phi_{h^{-1}}$, basta ver únicamente la continuidad de $f$.
 
 	Sea $U$ abierto en $\Psi_M(\Phi_h(\ms{A}))$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Entonces $f(x) = h[x] \in U \cap \Phi_h(\ms{A})$. Como $U$ es abierto en $\Psi_M(\Phi_h(\ms{A}))$, entonces $f(x) \setminus U$ es finito. Así que $f^{-1}[f(x) \setminus U] = h^{-1}[h(x)] \setminus f^{-1}[U] = x \setminus f^{-1}[U]$ es finito y así $x \subseteq^* f^{-1}[U]$, probando que $f^{-1}[U]$ es abierto en $\Psi_N(\ms{A})$.
 \end{proof}
 
-La siguiente manera de describir la topología de Mrówka es la más común en la literatura (como ejemplo están \cite{hruMrowka} o \cite{hruAlmost}).
+La siguiente manera de describir la topología de Mrówka es la más común en la literatura \enquote{como ejemplo de ello, \cite{hruMrowka} o \cite{hruAlmost}}.
 
-\begin{proposicion}\label{prop-BaseLocMrowka}\index[sym]{$\mathcal{B}_x$}\index[alph]{base!local!estándar de $x$ en $\Psi_N(\ms{A})$}
+\begin{proposicion}\label{prop-BaseLocMrowka}\index[sym]{$\mathcal{B}_x$}%\index[alph]{base!local!estándar de $x$ en $\Psi_N(\ms{A})$}
 	Sea $\ms{A} \subseteq [\omega]^\omega$, entonces:
 	\begin{enumerate}[i)]
-		\item Cada $B \subseteq \omega$ es abierto en $\Psi(\ms{A})$, en particular, cada $n \in \omega$ es punto aislado.
-		\item Si $x \in \ms{A}$, el conjunto $\mathcal{B}_x:=\{ \{x\} \cup x \setminus F \tq F \in[x]^{<\omega} \}$ es base local de $x$ en $\Psi(\ms{A})$. $\mathcal{B}_x$ es la \textbf{base local estándar de $x$ en $\Psi_N(\ms{A})$}.
+		\item Cada $B \subseteq \omega$ es abierto en $\Psi(\ms{A})$, así, cada $n \in \omega$ es punto aislado.
+		\item Si $x \in \ms{A}$, $\mathcal{B}_x:=\{ \{x\} \cup x \setminus F \tq F \in[x]^{<\omega} \}$ es base local de $x$ en $\Psi(\ms{A})$.% A $\mathcal{B}_x$ se le llamará \textbf{base local estándar de $x$ en $\Psi(\ms{A})$}.
 	\end{enumerate}
 \end{proposicion}
 \begin{proof}
 	(i) Si $B \subseteq \omega$, es vacuo que $B \in \tau_\ms{A}$, pues $B \cap \ms{A} = \emptyset$.
 
-	(ii) Sea $x \in \ms{A}$, entonces $\mathcal{B}_x \subseteq \tau_\ms{A}$. En efecto, si $G \subseteq x$ es finito y $y \in \big( \{x\} \cup x \setminus G \big) \cap \ms{A}$, necesariamente $y=x$, de donde $y \subseteq^* \{x\} \cup x \setminus G$ pues $G$ es finito, así $\{x\} \cup x \setminus G \in \tau_{\ms{A}}$. Ahora, si $U \subseteq \Psi(\ms{A)}$ es abierto y $x \in U$, $F:= x \setminus U \subseteq x$ es finito y $x \in \{x\} \cup x \setminus F \subseteq U$.
+	(ii) Sea $x \in \ms{A}$. Si $G \subseteq x$ es finito y $y \in \big( \{x\} \cup x \setminus G \big) \cap \ms{A}$, necesariamente $y=x$, de donde $y \subseteq^* \{x\} \cup x \setminus G$ pues $G$ es finito, así $\{x\} \cup x \setminus G \in \tau_{\ms{A}}$, por lo que $\mathcal{B}_x \subseteq \tau_\ms{A}$. Ahora, si $U \subseteq \Psi(\ms{A)}$ es abierto y $x \in U$, $F:= x \setminus U \subseteq x$ es finito y $x \in \{x\} \cup x \setminus F \subseteq U$.
 \end{proof}
 
-\begin{corolario}\label{cor-NumAxMrowka}\index[sym]{$\mathcal{B}_\ms{A}$}\index[alph]{base!estándar de $\Psi_N(\ms{A})$}
-	Si $N$ es numerable y $\ms{A} \subseteq [N]^\omega$, entonces:
+En términos de lo recién demostrado, cada $\mathcal{B}_x$ es imagen de $[x]^{<\omega}$. Pero este último conjunto es numerable, pues $x$ es lo es. Por lo tanto, se desprende:
+
+\begin{corolario}\label{cor-NumAxMrowka}\index[sym]{$\mathcal{B}_\ms{A}$}%\index[alph]{base!estándar de $\Psi_N(\ms{A})$}
+	Para cualquier familia $\ms{A} \subseteq [\omega]^\omega$:
 	\begin{enumerate}[i)]
 		\item $\Psi(\ms{A})$ es $1\AN$.
-		\item $\mathcal{B}_{\ms{A}} := \midcup \{ \mathcal{B}_x \tq x \in \ms{A} \} \cup \big\{ \{n\} \tq n \in N \big\}$; denominado la \textbf{base estándar de} $\Psi_N(\ms{A})$, es una base de $\Psi_N(\ms{A})$ de tamaño $\aleph_0+|\ms{A}|$.
-		\item $w(\Psi_N(\ms{A})) = \aleph_0+|\ms{A}|$. Por ello, $\Psi(\ms{A})$ es $2\AN$ si y sólo si $|\ms{A}|\leq \aleph_0$.
+		\item $\mathcal{B}_{\ms{A}} := \midcup \{ \mathcal{B}_x \tq x \in \ms{A} \} \cup \big\{ \{n\} \tq n \in \omega \big\}$ es una base de $\Psi_N(\ms{A})$% de tamaño $\aleph_0+|\ms{A}|$.% A $\mathcal{B}_\ms{A}$ se le llamará \textbf{base estándar de $\Psi(\ms{A})$}.
+		\item El peso de $\Psi(\ms{A})$ es $\aleph_0+|\ms{A}|$.
+		\item $\Psi(\ms{A})$ es $2\AN$ si y sólo si $|\ms{A}|\leq \aleph_0$.
 	\end{enumerate}
 \end{corolario}
 \begin{proof}
-	(i), (ii) y $w(\Psi_N(\ms{A})) \leq \aleph_0+|\ms{A}|$ son claros.
+	Basta probar únicamente (iii).
 
-	Para $\aleph_0+|\ms{A}| \leq w(\Psi_N(\ms{A}))$ basta observar que $\omega,\ms{A} \subseteq \Psi(\omega)$ son subespacios discretos de tamaño (y por tanto, peso) $\aleph_0$ y $|\ms{A}|$, respectivamente. Por consiguiente, el peso de $\Psi(\omega)$ debe ser mayor o igual que ambos.
+	Debido a (ii), el peso del espacio es menor o igual a $|\mathcal{B}_{\ms{A}}|=\aleph_0+|\ms{A}|$. Además, $\omega, \ms{A} \subseteq \Psi(\omega)$ son subespacios discretos \enquote{véase el \autoref{lem-primerosSubs}} de tamaño, y por tanto peso, $\aleph_0$ y $|\ms{A}|$, respectivamente. Consecuentemente, el peso de $\Psi(\ms{A})$ debe ser mayor o igual a ambos.
 \end{proof}
 
 Si $\ms{A}\subseteq [\omega]^\omega$ y $X \subseteq \Psi(\ms{A})$, dado que cada punto de $\omega$
-es aislado, se tiene que $\der(X) \subseteq \ms{A}$. Por otra parte, si $a \in \ms{A}$, la única forma de que cada $a \setminus F$ (con $F \in [a]^{<\omega}$) tenga intersección no vacía con $X$ es que $X \cap a$ sea infinito.
-
-Debido a \ref{prop-BaseLocMrowka}, la discusión recién dada prueba el primer inciso (y con ello todos los restantes) del siguiente útil Lema.
+es aislado, se tiene que $\der(X) \subseteq \ms{A}$. Por otra parte, si $a \in \ms{A}$, la única forma de que cada $a \setminus F$ \enquote{con $F \in [a]^{<\omega}$} tenga intersección no vacía con $X$, es que $X \cap a$ sea infinito. Esta argumentación junto con \ref{prop-BaseLocMrowka} demuestran el primer punto, y con ello el resto, del siguiente Lema:
 
 \begin{lema}\label{lem-primerosSubs}
 	Sea $\ms{A} \subseteq [\omega]^\omega$, entonces:
 	\begin{enumerate}[i)]
 		\item Si $X \subseteq \Psi(\ms{A})$ , entonces $ \der(X)=\{ y \in \ms{A} \tq X \cap y \neq^* \emptyset \} $.
-		\item $\ms{A}=\der( \Psi(\ms{A}) )$ y $\omega$ es discreto, denso en $\Psi(\ms{A})$.
+		\item $\ms{A}=\der( \Psi(\ms{A}) ) = \der(\omega)$.
 		\item Cada $B \subseteq \ms{A}$ es un subespacio cerrado y discreto de $\Psi(\ms{A})$.
-		\item $B \subseteq \omega$ es cerrado en $\Psi(\ms{A})$ sólo si es casi ajeno con cada elemento de $\ms{A}$.
+		\item $\omega$ es discreto, denso en $\Psi(\ms{A})$.
+		\item $B \subseteq \omega$ es cerrado si y sólo si es casi ajeno con cada elemento de $\ms{A}$.
 	\end{enumerate}
 \end{lema}
+
+Las siguientes son propiedades topológicas inherentes a todo $\Psi$-espacio.
 
 \begin{proposicion}\label{prop-PsiSiempre}
 	Todo $\Psi$-espacio es separable, primero numerable, $\T_1$, disperso y desarrollable.
@@ -153,23 +152,23 @@ Debido a \ref{prop-BaseLocMrowka}, la discusión recién dada prueba el primer i
 \begin{proof}
 	Sea $\ms{A} \subseteq [\omega]^\omega$ cualquiera. El $\Psi$-espacio generado por $\ms{A}$ es separable pues $\omega$ es denso en $\Psi(\ms{A})$ y numerable; además, este espacio es primero numerable debido al \autoref{cor-NumAxMrowka}.
 
-	(Axioma $\T_1$) Si $x \in \ms{A}$, del \autoref{lem-primerosSubs} se desprende la igualdad $\der(\{x\})=\{y \in \ms{A} \tq \{x\} \cap y \neq^* \emptyset \}=\emptyset$, lo cual implica que $\{x\}$ es cerrado.
+	(Axioma $\T_1$) Sea $x \in \Psi(\ms{A})$. De \ref{lem-primerosSubs}, $\der(\{x\})=\{y \in \ms{A} \tq \{x\} \cap y \neq^* \emptyset \}=\emptyset$, lo cual implica que $\{x\}$ es cerrado.
 
-	(Dispersión) Supóngase que $X \subseteq \Psi(\ms{A})$ es cualquier subconjunto no vacío. Si $X \subseteq \ms{A}$, cualquier $x \in X$ es aislado en $X$, pues $X$ es discreto (véase \ref{lem-primerosSubs}). En caso contrario, existe un elemento $x \in X \cap \omega$ y $x$ es aislado en $X$, pues $\{x\}$ es abierto al ser $x$ elemento de $\omega$.
+	(Dispersión) Supóngase que $X \subseteq \Psi(\ms{A})$ es no vacío. Si $X \subseteq \ms{A}$, cada $x \in X$ es aislado en el discreto $X$. \enquote{inciso (iii) de \ref{lem-primerosSubs}}. En caso contrario, existe un elemento $n \in X \cap \omega$ y $n$ es aislado en $X$, pues $\{n\}$ es abierto en $\Psi(\ms{A})$ y en $X$.
 
-	(Desarrollabilidad) Defínase $\mathcal{U}_n:=\{ \{a\} \cup a \setminus n \tq a \in \ms{A} \} \cup \{ \{y\} \tq y \in \omega \}$ para cada $n \in \omega$. Resulta claro que cada colección $\mathcal{U}_n$ es cubierta abierta de $\Psi(\ms{A})$. Sean $x \in \Psi(\ms{A})$ y $U$ un abierto tal que $x \in U$.
+	(Desarrollabilidad) Defínase $\mathcal{U}_n:=\{ \{a\} \cup a \setminus n \tq a \in \ms{A} \} \cup \{ \{y\} \tq y \in \omega \}$ para cada $n \in \omega$. Así, cada $\mathcal{U}_n$ es cubierta abierta de $\Psi(\ms{A})$. Sean $x \in \Psi(\ms{A})$ y $U$ un abierto tal que $x \in U$.
 
-	Si $x \in \omega$, entonces $\{x\} = \St(x, \mathcal{U}_{x+1})$; en efecto, sea $V \in \mathcal{U}_{x+1}$ con $x \in V$, entonces $V=\{x\}$; pues de lo contrario $V =\{a\} \cup a \setminus (x+1)$ para cierto $a \in \ms{A}$, implicando esto que $x \notin x+1$, lo cual es imposible ya que $x \in \omega$. Por tanto, $x \in \{x\} = \St(x,\mathcal{U}_{x+1}) \subseteq U$.
+	Si $x \in \omega$, entonces ningún $V \in \mathcal{U}_{x+1}$, con $x \in V$, puede ser de la forma $\{a\} \cup a \setminus (x+1)$. Por tanto, $x \in \{x\} = \St(x,\mathcal{U}_{x+1}) \subseteq U$. Si $x \in \ms{A}$, entonces y $x \setminus U \subseteq \omega$ es finito y existe $n_0 \in \omega$ tal que $x \setminus U \subseteq n_0$. Como $\{x\} \cup x \setminus n_0 \in \mathcal{U}_{n_0}$ es el único abierto de $\mathcal{U}_{n_0}$ al cual $x$ pertenece, $x \in \{x\} \cup x \setminus n_0 = \St(x, \mathcal{U}_{n_0}) \subseteq U$.
 
-	Si $x \in \ms{A}$, entonces $x \subseteq^* U$ y $x \setminus U \subseteq \omega$ es finito y por ello existe $n_0 \in \omega$ tal que $x \setminus U \subseteq n_0$. Como $\{x\} \cup x \setminus n_0 \in \mathcal{U}_{n_0}$ es el único abierto de $\mathcal{U}_{n_0}$ al cual $x$ pertenece, $x \in \{x\} \cup x \setminus n_0 = \St(x, \mathcal{U}_{n_0}) \subseteq U$.
-
-	Así pues, para cada $n \in \omega$, la colección $\{\St(x, \mathcal{U}_n) \tq n \in \omega\}$ es base local de $x$. Así que $\{\mathcal{U}_n \tq n \in \omega \}$ es un desarrollo para $\Psi(\ms{A})$.
+	Así pues, $\{\St(x, \mathcal{U}_n) \tq n \in \omega\}$ es base local de $x$, mostrando que $\{\mathcal{U}_n \tq n \in \omega \}$ es un desarrollo para $\Psi(\ms{A})$.
 \end{proof}
 
-Como se probó recién, todo $\Psi$-espacio es $\T_1$, sin embargo, cuando la familia $\ms{A} \subseteq [\omega]^\omega$ no es casi ajena, el espacio $\Psi(\ms{A})$ no satisface el axioma de separación $\T_2$. Por esta razón, en la literatura se suele dar la \autoref{Def-Mrowka} partiendo directamente de una familia casi ajena (el lector podrá corroborar esto en textos como \cite{hruMrowka,hruAlmost,kannanHereditarily}).
+Cuando la familia $\ms{A} \subseteq [\omega]^\omega$ no es casi ajena, el espacio $\Psi(\ms{A})$ no satisface el axioma de separación de Hausdorff. Es por tal razón, que en la literatura se suele dar la \autoref{Def-Mrowka} partiendo directamente de una familia casi ajena \enquote{el lector podrá corroborar esto en textos como \cite{hruMrowka,hruAlmost,kannanHereditarily}}.
+
+A continuación se muestran aquellas propiedades topológicas de $\Psi(\ms{A})$ \enquote{codificadas} a través de la condición $\ms{A} \in \Ad(\omega)$.
 
 \begin{proposicion}\label{prop-tra-casiAjenidad}\index[trad]{cero-dimensionalidad de $\Psi(\ms{A})$}\index[trad]{propiedad de! Tychonoff en $\Psi(\ms{A})$}\index[trad]{propiedad de!Hausdorff en $\Psi(\ms{A})$}
-	Para cualquier $\ms{A}\subseteq [\omega]^\omega$ son equivalentes las siguientes condiciones:
+	Para cada $\ms{A}\subseteq [\omega]^\omega$, son equivalentes:
 	\begin{enumerate}[i)]
 		\item $\ms{A}$ es familia casi ajena.
 		\item $\Psi(\ms{A})$ es cero-dimensional.
@@ -179,9 +178,9 @@ Como se probó recién, todo $\Psi$-espacio es $\T_1$, sin embargo, cuando la fa
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) Si $\ms{A}$ es familia casi ajena, como $\Psi(\ms{A})$ es $\T_1$, basta verificar que cada elemento de la base estándar $\ms{B}_\ms{A}$ (definida en el \autoref{cor-NumAxMrowka}) es cerrado. En efecto, cada $\{n\}$ con $n \in \omega$ es cerrado pues $\Psi(\ms{A})$ es $\T_1$. Y dados $x \in \ms{A}$ y $F \subseteq x$ finto, haciendo uso de \ref{lem-primerosSubs} se tiene que por ser $\ms{A}$ familia casi ajena, $\der(\{x\} \cup x \setminus F)=\{x\} \subseteq \{x\} \cup x \setminus F$. Así que $\{x\} \cup x \setminus F$ es cerrado, mostrando que $\Psi(\ms{A})$ es cero-dimensional, pues es $\T_1$ y contiene una base de abiertos y cerrados (\textbf{resultado R)}.
+	(i) $\rightarrow$ (ii) Si $\ms{A}$ es familia casi ajena, como $\Psi(\ms{A})$ es $\T_1$, basta verificar que cada elemento de la base $\ms{B}_\ms{A}$ \enquote{definida como en \ref{cor-NumAxMrowka}} es cerrado. En efecto, cada $\{n\}$ con $n \in \omega$ es cerrado pues $\Psi(\ms{A})$ es $\T_1$. Y dados $x \in \ms{A}$ y $F \subseteq x$ finto, haciendo uso de \ref{lem-primerosSubs} se tiene que por ser $\ms{A}$ familia casi ajena, $\der(\{x\} \cup x \setminus F)=\{x\} \subseteq \{x\} \cup x \setminus F$. Así que $\{x\} \cup x \setminus F$ es cerrado.
 
-	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta que entonces es espacio de Tychonoff (\textbf{resultado R)}. Por su parte, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
+	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta que entonces ser de Tychonoff \textcolor{red}{(ver PRELIMS)}. Por su parte, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
 
 	(iv) $\rightarrow$ (i) Si $\Psi(\ms{A})$ es de Hausdorff y $x,y \in \ms{A}$ son distintos, existen abiertos ajenos $U,V \subseteq \Psi(\ms{A})$ abiertos tales que $x \in U$ y $y \in V$. De donde $x \subseteq^* U$, $y \subseteq^* V$ y por consiguiente $x \cap y \subseteq^* U \cap V = \emptyset$.
 \end{proof}

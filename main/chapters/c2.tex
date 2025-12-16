@@ -326,80 +326,83 @@ Ahora, falta establecer una relación entre $\Psi(\ms{A})$ y la maximalidad de l
 \begin{proof}
 	(i) $\rightarrow$ (ii). Si $\ms{A}$ no es maximal, existe $B \subseteq \omega$ infinito y casi ajeno con cada elemento de $\ms{A}$. Por \ref{prop-BaseLocMrowka} y \ref{lem-primerosSubs}, $B$ es discreto, abierto y cerrado, obteniéndose de \textcolor{red}{(Ree A)} que $\Psi(\ms{A})$ no es pseudocompacto.
 
-	(ii) $\rightarrow$ (iii) Por contrapuesta, supóngase que $B \subseteq \Psi(\ms{A})$ es infinito, discreto, abierto y cerrado de $\Psi(\ms{A})$. Si $B \subseteq \omega$, de \ref{lem-primerosSubs} se desprende que $B$ casi ajeno con cada elemento de $\ms{A}$. Y si existe $a \in B \cap \ms{A}$, cumple que $a \cap B = B \cap (\{a\} \cup a) \subseteq \omega$ es infinito, cerrado, abierto y discreto. Resulta análogo a lo anterior mostrar que $a$ es casi ajeno con cada $a \in \ms{A}$.
-	
-	Sin pérdida de generalidad $B \subseteq \omega$ (de lo contrario cada $a \in B \cap \ms{A}$ cumple que $a \cap B = B \cap (\{a\} \cup a) \subseteq \omega$ es infinito, cerrado, abierto y discreto). Luego, de \ref{lem-primerosSubs} se desprende que $B$ casi ajeno con cada elemento de $\ms{A}$.
+	(ii) $\rightarrow$ (iii) Por contrapuesta, supóngase que existe $B \subseteq \Psi(\ms{A})$, abierto, cerrado, discreto e infinito. Como $B$ es cerrado y discreto, $\der(B)=\emptyset$ y se obtiene del inciso (i) de \ref{lem-primerosSubs} que $B \subseteq \omega$. Concluyéndose por el quinto inciso de tal Lema que $B$ es casi ajeno con todo elemento de $\ms{A}$.
 
-	(iii) $\rightarrow$ (iv) Supóngase (iii) y sea $B \in [\omega]^\omega $. Así, $B$ es discreto, infinito y abierto. Por hipótesis, debe existir $x \in \der(B) \setminus B$ y por \ref{cor-MrwokaSiempre}, $x \in \ms{A}$ y $B \cap x$ es infinito. Siguiéndose del \autoref{lem-primerosSubs} que $B \cap x \to x$.
+	(iii) $\rightarrow$ (iv) Supóngase (iii) y sea $B \in [\omega]^\omega $. Así, $B$ es discreto, infinito y abierto. Por hipótesis, $B$ no es cerrado y debe existir $x \in \der(B) \setminus B$ y por \ref{cor-MrwokaSiempre}, $x \in \ms{A}$ y $B \cap x$ es infinito. Siguiéndose del \autoref{lem-primerosSubs} que $B \cap x \to x$ en $\Psi(\ms{A})$.
 
-	(iv) $\rightarrow$ (i) Por contrapuesta, supóngase que $f:\Psi(\ms{A}) \to \mathbb{R}$ es continua y no acotada. Entonces; por densidad de $\omega$, para cada $n \in \omega$ se puede fijar $m_n \in \omega \cap f^{-1}[(n,\infty)]$. Así, $B=\{m_n \tq n \in \omega\}$ es infinito, y no admite subsucesiones convergentes en $\Psi(\ms{A})$, pues ningún $C \in [B]^\omega$ tiene imagen no acotada bajo $f$.
+	(iv) $\rightarrow$ (i) Esta implicación se sigue inmediatamente de la caracterización para la pseudocompacidad dada en \textcolor{red}{(Ree A)}.
 \end{proof}
 
-Combinando \ref{prop-tra-compacidad}, \ref{prop-tra-numerable} y \ref{prop-tra-pseudoCaract} se obtienen ejemplos muy concretos. Por ejemplo, si un espacio de Mrówka $\Psi(\ms{A})$ no es pseudocompacto pero sí es metrizable, necesariamente $\ms{A}$ es numerable. Otro ejemplo responde con una negativa a lo que en su momento fue un problema popular: ¿la pseudocompacidad equivale a la compacidad numerable en espacios Tychonoff?, resultado se sabía cierto en la clase de espacios $\T_4$ (\textbf{Reee R}) y falso dentro de la clase de espacios que no son $\T_1$. En virtud de \ref{prop-tra-compacidad}, y considerando cualquier familia maximal infinita, se obtiene:
+Combinando \ref{prop-tra-compacidad}, \ref{prop-tra-numerable} y \ref{prop-tra-pseudoCaract} se obtienen ejemplos muy concretos. Por ejemplo, si un espacio de Mrówka $\Psi(\ms{A})$ no es pseudocompacto pero sí es metrizable, necesariamente $\ms{A}$ es numerable. Otro ejemplo responde con una negativa a lo que en su momento fue un problema popular: ¿la pseudocompacidad equivale a la compacidad numerable en espacios Tychonoff?, resultado se sabe cierto en la clase de espacios $\T_4$ (\textcolor{red}{Reee R}) y falso dentro de la clase de espacios que no son $\T_1$. En virtud de \ref{prop-tra-compacidad}, tomando cualquier familia maximal infinita:
 
 \begin{corolario}\label{cor-EjmPseudoNoNumC}
 	Existe un espacio de Tychonoff, que es pseudocompacto pero no numerablemente compacto.
 \end{corolario}
 
-La siguiente es una caracterización conocida (véase \cite[p.~39,45]{GeorginaTesis}) y; entre tanto, desvela que el comportamiento sumamente organizado y \textit{amigable} de $\Psi(\ms{A})$ se rompe bruscamente cuando $\ms{A}$ deja de ser numerable. Por tal motivo, no suelen ser de tanto interés los $\Psi$-espacios generados por familias casi ajenas a lo más numerables.
+La siguiente es una caracterización conocida (véase \cite[p.~39,45]{GeorginaTesis}), desvela que el comportamiento sumamente organizado de $\Psi(\ms{A})$ se rompe bruscamente cuando $\ms{A}$ deja de ser numerable. %Dado lo subsecuente, los únicos espacios de Mrówka de interés son aquellos generados por familias más que numerables.
 
 \begin{proposicion}\label{prop-alomasNumCaract}\index[trad]{ordenabilidad lineal de $\Psi(\ms{A})$}
-	Sea $\ms{A}$ una familia casi ajena con cardinalidad $\kappa$, entonces\footnotemark se satisface:
+	Sea $\ms{A} \in \Ad(\omega)$ de cardinalidad $\kappa$, entonces\footnotemark :
 	\begin{enumerate}[i)]
 		\item Si $\kappa=0$, entonces $\Psi(\ms{A}) \cong \omega$.
-		\item Si $\kappa \in \omega$ y $\ms{A}$ no es maximal, $\Psi(\ms{A}) \cong \omega \cdot (\kappa+1)$.
-		\item Si $\kappa \in \omega$ y $\ms{A}$ es maximal, $\Psi(\ms{A}) \cong \omega \cdot (\kappa+1)+1$.
+		\item Si $\kappa < \omega$ y $\ms{A}$ no es maximal, $\Psi(\ms{A}) \cong \omega \cdot (\kappa+1)$.
+		\item Si $\kappa < \omega$ y $\ms{A}$ es maximal, $\Psi(\ms{A}) \cong \omega \cdot (\kappa+1)+1$.
 		\item Si $\kappa=\omega$, entonces $\Psi(\ms{A}) \cong \omega^2$.
 		\item Si $\kappa>\omega$, entonces $\Psi(\ms{A})$ no homeomorfo a ningún espacio de ordinales; más aún, $\Psi(\ms{A})$ no es linealmente ordenable.
 	\end{enumerate}
 \end{proposicion}
 
-\footnotetext{En los incisos (i)-(iv), los espacios homeomorfos a $\Psi(\ms{A})$ están escritos en aritmética ordinal y dotados de su topología de orden.}
+\footnotetext{En los incisos (i)-(iv), los espacios homeomorfos a $\Psi(\ms{A})$ son espacios de ordinales.}
 
-Se derivan conclusiones de interés moderado, como puede ser que $\omega^2$ (como producto ordinal) es el único espacio de Mrówka metrizable, no compacto. Una consecuencia \textit{curiosa} en relación a este espacio; y que además, surge como fruto del Teorema principal de la \autoref{sec-KRTeo}, es el \autoref{cor-omegaCuadra}.
+De (iv), en la Proposición previa, surge que el espacio de ordinales $\omega^2$ es el único espacio de Mrówka metrizable y no compacto. Queda claro además, que cualesquiera dos familias numerables son \enquote{iguales} en el siguiente aspecto:
+
+\begin{definicion}\index[alph]{familias!esencialmente iguales}
+	Dados conjuntos $N, M$ numerables, se dice que $\ms{A} \subseteq [N]^\omega$ y $\ms{B} \subseteq [M]^\omega$ son \textbf{esencialmente iguales} cuando $\Psi_N(\ms{A}) \cong \Psi_M(\ms{B})$.
+\end{definicion}
+
+Una consecuencia \enquote{curiosa} en relación $\omega^2$, fruto de lo anterior y del Teorema principal de la \autoref{sec-KRTeo}, es el \autoref{cor-omegaCuadra}.
 \label{Dif-esencial}
-La peculiaridad recién comentada, sugiere que todas las familias casi ajenas numerables son muy \textit{esencialmente iguales} (conviniendo que $\ms{A}$ y $\ms{B}$ son \textit{esencialmente iguales} cuando $\Psi(\ms{A})$ y $\Psi(\ms{B})$ son homeomorfos).
+
+
 
 \section{Teorema de Kannan y Rajagopalan}
 \label{sec-KRTeo}
-La meta primordial en lo que resta del capítulo será caracterizar aquellos espacios que son homeomorfos a algún espacio de Mrówka. Como fue mostrado en la \autoref{prop-MrwokaHLC}, todos los espacios de Mrówka son hereditariamente localmente compactos, una propiedad cuanto menos peculiar. Tal propiedad será la que los caracterizará dentro de la clase de espacios infinitos, de Hausdorff y separables.
+La meta primordial en lo que resta del capítulo será caracterizar aquellos espacios que son homeomorfos a algún espacio de Mrówka. %La propiedad que nos permitirá realizar esto será la compacidad local hereditaria. %Como fue mostrado en la \autoref{prop-MrwokaHLC}, todos los espacios de Mrówka son hereditariamente localmente compactos, una propiedad cuanto menos peculiar. Tal propiedad será la que los caracterizará dentro de la clase de espacios infinitos, de Hausdorff y separables.
 
 \begin{lema}\label{lem-TKR-Baire}
-	Sea $X$ un espacio de Hausdorff y localmente compacto. Si $X$ contiene un denso $D$, abierto y a lo más numerable, entonces $N:=X \setminus \der(X) \subseteq X$ discreto y denso en $X$.
+	Sea $X$ un espacio de Hausdorff y localmente compacto. Si $X$ contiene un abierto denso $D \in [X]^{\leq \omega}$, entonces $N:=X \setminus \der(X)$ es denso en $X$. %y N es discreto.
 \end{lema}
 
 \begin{proof}
-	Claramente $N$ es discreto. Por el Teorema de Categoría De Baire (\textbf{TCB}), resulta que $X$ es un espacio de Baire.
+	Si $x \in X$ es aislado en $D$, dada la  densidad de $D$, es necesario que $x \in D$. Luego $\{x\}=D \cap U$ para cierto abierto $U$ de $X$; y como $X$ es un espacio $\T_1$, resulta que $U=\{x\}$. Por lo tanto $X \setminus \der_D(D) \subseteq N$.
 
-	Ahora, si $x \in D$ es aislado en $D$, entonces $\{x\}=D \cap U$ para cierto abierto $U$ de $X$ y dado que $D$ es denso y $X$ es un espacio $\T_1$, es necesario que $U=\{x\}$. Lo anterior prueba que $X \setminus \der_D(D) \subseteq N$.
-
-	Por otra parte, si $x \in \der_D(D) \subseteq \der(X)$, entonces $X \setminus \{x\}$ es abierto y denso en $X$. Luego $X \setminus \der_D(D)=\midcap\{ X \setminus \{x\} \tq x \in \der_D(D) \}$ es denso, debido a que $X$ es de Baire. Lo cual basta para mostrar que $N$ es denso.
+	Nótese que $X \setminus \der_D(D)=\midcap\{ X \setminus \{y\} \tq y \in \der_D(D) \}$. Pero, para cada punto $y \in \der_D(D) \subseteq \der(X)$, el conjunto $X \setminus \{y\}$ es abierto y denso en $X$. De la hipótesis y el \textcolor{red}{(TCB)}, $X$ es de Baire, así que $N \supseteq X \setminus \der_D(D)$ debe ser denso.% 
 \end{proof}
 
 \begin{lema}\label{lem-TKR-DerX}
-	Sean $X$ un espacio topológico y $N:=X \setminus \der(X)$. Las siguientes condiciones son equivalentes:
+	Sean $X$ un espacio y $N:=X \setminus \der(X)$. Son equivalentes:
 	\begin{enumerate}[i)]
-		\item $N$ es denso y para cada $y \in \der(X)$, $N \cup \{y\}$ es abierto.
+		\item $N$ es denso y cada $y \in \der(X)$ cumple que $N \cup \{y\}$ es abierto en $X$.
 		\item $\der(X)$ es discreto.
 	\end{enumerate}
 \end{lema}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) Supóngase (i) y sea $y \in \der(X)$ cualquier elemento. $N \cup \{y\}$ es abierto en $X$, en consecuencia $y \in U \subseteq N \cup \{y\}$, para cierto abierto $U$. Seguido de lo anterior, ${y} = U \setminus N = U \cap \der(X)$. Mostrando que $\der(X)$ es discreto.
+	(i) $\rightarrow$ (ii) Supóngase (i) y sea $y \in \der(X)$. Como $N \cup \{y\}$ es abierto en $X$, entonces $y \in U \subseteq N \cup \{y\}$ para cierto abierto $U$. Seguido de lo anterior, $\{y\} = U \setminus N = U \cap \der(X)$. Mostrando que $\der(X)$ es discreto.
 
 	(ii) $\rightarrow$ (i) Supóngase que $\der(X)$ es discreto. Si $N$ no es denso, existen $x \in X$ y un abierto $U$ de modo tal que $x \in U \subseteq \der(X)$. Pero al ser $\der(X)$ discreto, $\{x\}=W \cap \der(X)$ para cierto abierto $W$, de donde $U \cap W = \{x\}$ y $x \in N$, esto es imposible. Así que $N$ es denso en $X$.
 
-	Ahora, si $y \in \der(X)$ es arbitrario, existe un abierto $U$ de modo que se da $\{y\} = U \cap \der(X)$, pues $\der(X)$ es discreto. De lo anterior se obtiene que $N \cup \{y\} = (N \cup U) \cap (N \cup \der(X)) = N \cup U$ es abierto en $X$.
+	Ahora, si $y \in \der(X)$, ha de existir un abierto $U$ tal que $\{y\} = U \cap \der(X)$. De lo anterior, $N \cup \{y\} = (N \cup U) \cap (N \cup \der(X)) = N \cup U$ es abierto en $X$.
 \end{proof}
 
 
-La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisundaram Rajagopalan, quienes en 1970 (consúltese \cite{kannanHereditarily}) dieron con el resultado.
+La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisundaram Rajagopalan, quienes en 1970 (consúltese \cite{kannanHereditarily}) dieron con un resultado que permite caracterizar de una forma sencilla a los espacios de Mrówka. Su característica fundamental es la compacidad local hereditaria.
 
 \begin{teorema}[Kannan, Rajagopalan]\label{teo-HLCCaract}\index[alph]{Kannan!Teorema de Rajagopalan y}\index[alph]{Rajagopalan!Teorema de Kannan y}\index[alph]{Teorema! de Kannan y Rajagopalan}\index[trad]{compacidad local hereditaria de cualquier espacio infinito, separable, de Hausdorff}
-	Para cualquier espacio topológico $X$ infinito, de Hausdorff y separable son equivalentes:
+	Para todo espacio $X$ infinito, de Hausdorff y separable, son equivalentes:
 	\begin{enumerate}[i)]
 		\item $X$ es hereditariamente localmente compacto.
-		\item $X$ es localmente compacto $\der(X)$ es discreto.
+		\item $X$ es localmente compacto y $\der(X)$ es discreto.
 		\item $X$ es homeomorfo a un espacio de Mrówka.
 	\end{enumerate}
 \end{teorema}
@@ -407,11 +410,11 @@ La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisunda
 \begin{proof}
 	Supóngase que $X$ es cualquier espacio infinito, de Hausdorff, separable y sea $N:=X \setminus \der(X)$.
 
-	(i) $\rightarrow$ (ii) Supóngase que $X$ es hereditariamente localmente compacto. Por separabilidad de $X$, existe $D \subseteq X$ denso y a lo más numerable. Se sigue de la hipótesis que $D$ es localmente compacto y por ello, es abierto en su cerradura, $X$. Debido al \autoref{lem-TKR-Baire}, $N$ es denso en $X$.
+	(i) $\rightarrow$ (ii) Supóngase que $X$ es hereditariamente localmente compacto. Por separabilidad e infinitud de $X$, existe $D \in [X]^\omega$ denso. Se sigue de la hipótesis que $D$ es localmente compacto y por ello, es abierto en su cerradura, $X$. Debido al \autoref{lem-TKR-Baire}, $N$ es denso en $X$.
 
-	Por otro lado, si $y \in \der(X)$ es cualquiera, $N \cup \{y\} \subseteq X$ es localmente compacto, y por ende, es abierto en su cerradura. Pero $N$ es denso, así que $N \cup \{y\}$ es abierto en $X=\cla(N \cup \{y\})$. Por lo tanto, de \ref{lem-TKR-DerX} se obtiene que $\der(X)$ es discreto.
+	Por otro lado, si $y \in \der(X)$ es cualquiera, $N \cup \{y\} \subseteq X$ es localmente compacto, y por ende, es abierto en su cerradura. Pero $N$ es denso, así que $N \cup \{y\}$ es abierto en $X=\cla(N \cup \{y\})$. Se sigue de \ref{lem-TKR-DerX} que $\der(X)$ es discreto.
 
-	(ii) $\rightarrow$ (iii) Supóngase que $X$ es localmente compacto y que $\der(X)$ es discreto. Por el \autoref{lem-TKR-DerX} resulta que $N$ es denso en $X$ y que $N \cup \{y\}$ es abierto siempre que $y \in \der(X)$. Por ser $X$ infinito y separable, se tiene que $N$ es numerable. Utilizando la compacidad local de $X$, para cada $x \in \der(X)$ fíjese (utilizando $\Ac$) una vecindad compacta $V_x$ de $x$ en $X$ contenida en $N \cup \{x\}$. Se afirma que $ \ms{A} = \{ V_x \setminus \{x\} \subseteq N \tq x \in \der(X) \} \in \Ad(N) $.
+	(ii) $\rightarrow$ (iii) Supóngase que $X$ es localmente compacto y que $\der(X)$ es discreto. Por el \autoref{lem-TKR-DerX} resulta que $N$ es denso en $X$ y que $N \cup \{y\}$ es abierto siempre que $y \in \der(X)$. Por ser $X$ infinito y separable, se tiene que $N$ es numerable. Utilizando la compacidad local de $X$, para cada $x \in \der(X)$ fíjese ($\Ac$) una vecindad compacta $V_x$ de $x$ en $X$ contenida en $N \cup \{x\}$. Se afirma que $ \ms{A} = \{ V_x \setminus \{x\} \subseteq N \tq x \in \der(X) \} \in \Ad(N) $.
 
 	En efecto, si $x \in \der(X)$ es cualquiera, entonces $V_x \setminus \{x\}$ no es finito. De lo contrario, $\{x\}= (N \cup \{x\}) \setminus (V_x \setminus \{x\})$ sería abierto en $X$ (que es espacio $\T_1$) y se contradiría que $x \in \der(X)$. Por tanto, $\ms{A} \subseteq [N]^\omega$. Además, si $x,y \in \der(X)$ son distintos, se tiene que $V_x \cap V_y \subseteq N$. Así $V_x \cap V_y$ es subespacio compacto del discreto $N$, lo cual obliga a que sea finito. Como consecuencia, $\ms{A}$ es familia casi ajena en $N$.
 

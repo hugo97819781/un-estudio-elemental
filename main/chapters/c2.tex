@@ -94,7 +94,7 @@ Desde un punto de vista topológico, lo anterior no define dos clases distintas 
 \begin{proof}
 	Sea $f:\Psi_N(\ms{A}) \to \Psi_M(\Phi_h(\ms{A}))$ dada por $f(x)=h(x)$, si $x \in N$; y $f(x)=h[x]$, si $x \in \ms{A}$. Nótese que $f$ es biyectiva \enquote{dada \ref{cons-ajenidad}}. Por definición de $f$, y como $\Phi_h^{-1}=\Phi_{h^{-1}}$, basta ver únicamente la continuidad de $f$.
 
-	Sea $U$ abierto en $\Psi_M(\Phi_h(\ms{A}))$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Entonces $f(x) = h[x] \in U \cap \Phi_h(\ms{A})$. Como $U$ es abierto en $\Psi_M(\Phi_h(\ms{A}))$, entonces $f(x) \setminus U$ es finito. Así que $f^{-1}[f(x) \setminus U] = h^{-1}[h(x)] \setminus f^{-1}[U] = x \setminus f^{-1}[U]$ es finito y así $x \subseteq^* f^{-1}[U]$, probando que $f^{-1}[U]$ es abierto en $\Psi_N(\ms{A})$.
+	Sea $U$ abierto en $\Psi_M(\Phi_h(\ms{A}))$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Entonces $f(x) = h[x] \in U \cap \Phi_h(\ms{A})$. Como $U$ es abierto en $\Psi_M(\Phi_h(\ms{A}))$, entonces $f(x) \setminus U$ es finito. Así que $f^{-1}[f(x) \setminus U] = h^{-1}[h[x]] \setminus f^{-1}[U] = x \setminus f^{-1}[U]$ es finito y así $x \subseteq^* f^{-1}[U]$, probando que $f^{-1}[U]$ es abierto en $\Psi_N(\ms{A})$.
 \end{proof}
 
 La siguiente manera de describir la topología de Mrówka es la más común en la literatura \enquote{como ejemplo de ello, \cite{hruMrowka} o \cite{hruAlmost}}.
@@ -180,16 +180,18 @@ A continuación se muestran aquellas propiedades topológicas de $\Psi(\ms{A})$ 
 \begin{proof}
 	(i) $\rightarrow$ (ii) Si $\ms{A}$ es familia casi ajena, como $\Psi(\ms{A})$ es $\T_1$, basta verificar que cada elemento de la base $\ms{B}_\ms{A}$ \enquote{definida como en \ref{cor-NumAxMrowka}} es cerrado. En efecto, cada $\{n\}$ con $n \in \omega$ es cerrado pues $\Psi(\ms{A})$ es $\T_1$. Y dados $x \in \ms{A}$ y $F \subseteq x$ finto, haciendo uso de \ref{lem-primerosSubs} se tiene que por ser $\ms{A}$ familia casi ajena, $\der(\{x\} \cup x \setminus F)=\{x\} \subseteq \{x\} \cup x \setminus F$. Así que $\{x\} \cup x \setminus F$ es cerrado.
 
-	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta que entonces ser de Tychonoff \textcolor{red}{(ver PRELIMS)}. Por su parte, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
+	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta ser de Tychonoff \textcolor{red}{(ver PRELIMS)}. Y, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
 
-	(iv) $\rightarrow$ (i) Si $\Psi(\ms{A})$ es de Hausdorff y $x,y \in \ms{A}$ son distintos, existen abiertos ajenos $U,V \subseteq \Psi(\ms{A})$ abiertos tales que $x \in U$ y $y \in V$. De donde $x \subseteq^* U$, $y \subseteq^* V$ y por consiguiente $x \cap y \subseteq^* U \cap V = \emptyset$.
+	(iv) $\rightarrow$ (i) Si $\Psi(\ms{A})$ es de Hausdorff y $x,y \in \ms{A}$ son distintos, existen abiertos ajenos $U,V \subseteq \Psi(\ms{A})$ tales que $x \in U$ y $y \in V$. De donde $x \subseteq^* U$, $y \subseteq^* V$ y por consiguiente $x \cap y \subseteq^* U \cap V = \emptyset$.
 \end{proof}
 
-La Proposición anterior es el motivo por el cual el presente trabajo se enfocará únicamente la siguiente clase de espacios:
+La Proposición anterior es el motivo principal por el cual nos restringiremos a considerar únicamente $\Psi$-espacios generados por familias casi ajenas, es decir, espacios de Mrówka.
 
-\begin{definicion}
-	Un \textbf{espacio de Mrówka (o, de Isbell-Mrówka)}\index[alph]{espacio!de Mrówka}\index[alph]{Mrówka!espacio de}\index[alph]{espacio!de Isbell-Mrówka}\index[alph]{Isbell-Mrówka!espacio de} es un $\Psi$-espacio generado por una familia casi ajena.
+\begin{definicion}\index[alph]{espacio!de Mrówka}\index[alph]{Mrówka!espacio de}\index[alph]{espacio!de Isbell-Mrówka}\index[alph]{Isbell-Mrówka!espacio de}
+	Un \textbf{espacio de Mrówka} (o, \textbf{de Isbell-Mrówka}) es un $\Psi$-espacio generado por una familia casi ajena.
 \end{definicion}
+
+Recordando que un espacio topológico es de Moore si y sólo si satisface el axioma $\T_3$ y tiene un desarrollo, se tiene la siguiente compilación básica respecto a las propiedades con las que siempre cuenta un espacio de Mrówka.
 
 \begin{corolario}\label{cor-MrwokaSiempre}
 	Todo espacio de Mrókwa es separable, primero numerable, de Tychonoff, cero-dimensional, disperso y de Moore.
@@ -201,30 +203,28 @@ La siguiente es sólo una de las múltiples relaciones importantes que existen e
 	Todo espacio de Mrówka $\Psi(\ms{A})$ se encaja en $2^{\aleph_0+|\ms{A}|}$. Particularmente, si $|\ms{A}|\leq \aleph_0$, el espacio $\Psi(\ms{A})$ se encaja en $2^\omega$ y es metrizable.
 \end{corolario}
 
-\section{Compacidad y local compacidad}
+\section{Compacidad y compacidad local}
 
-Como el lector puede advertir, cada vez surgen más traducciones con las cuales maniobrar al momento de estudiar los $\Psi$-espacios. El ideal generado por cierta $\ms{A} \in \Ad(\omega)$ es clave para distinguir cuáles subespacios de $\Psi(\ms{A})$ son compactos, y cuales no.
+Surgen más \enquote{traducciones} con las cuales maniobrar al momento de estudiar los $\Psi$-espacios. El ideal generado por una familia casi ajena determina a los subespacios compactos del espacio de Mrówka asociado a la misma.
 
 \begin{proposicion}\label{prop-Kcaract}\index[trad]{compacidad de los subespacios de $\Psi(\ms{A})$}
 	Sean $\ms{A}\in \Ad(\omega)$ y $K \subseteq \Psi(\ms{A})$. Entonces $K$ es compacto si y sólo si $K \cap \omega \subseteq^* \midcup (K \cap \ms{A})$ y $K \cap \ms{A}$ es finito.
 \end{proposicion}
 \begin{proof}
-	Supóngase que $K \subseteq \Psi(\ms{A})$ es subespacio compacto, como la colección $\mathcal{U}:=\{ \{n\} \tq n \in K \cap \omega \} \cup \{ \{x\} \cup x \tq x \in K \cap \ms{A} \}$ es cubierta abierta para $K$ en $\Psi(\ms{A})$, existen $F \subseteq K \cap \omega$ y $G \subseteq K \cap \ms{A}$ finitos tales que $\{ \{n\} \tq n \in F\} \cup \{ \{x\} \cup x \tq x \in G\}$ es subcubierta de $\mathcal{U}$. Luego, es necesario que $K \cap \ms{A} =G$, así que $K \cap \ms{A}$ es finito. Además $(K \cap \omega) \setminus \midcup G = K \setminus \midcup G \subseteq F$ es finito y con ello $K \cap \omega \subseteq^* \midcup (K \cap \ms{A})$.
+	Si $K \subseteq \Psi(\ms{A})$ es subespacio compacto; en virtud de que la colección $\mathcal{U}:=\{ \{n\} \tq n \in K \cap \omega \} \cup \{ \{x\} \cup x \tq x \in K \cap \ms{A} \}$ es cubierta abierta para $K$ en $\Psi(\ms{A})$, existen $F \subseteq K \cap \omega$ y $G \subseteq K \cap \ms{A}$ finitos de manera tal que $\{ \{n\} \tq n \in F\} \cup \{ \{x\} \cup x \tq x \in G\}$ es subcubierta de $\mathcal{U}$. Necesariamente $K \cap \ms{A} =G$, así que $K \cap \ms{A}$ es finito. Además $(K \cap \omega) \setminus \midcup G = K \setminus \midcup G \subseteq F$ es finito y con ello $K \cap \omega \subseteq^* \midcup (K \cap \ms{A})$.
 
-	Conversamente, supóngase que $K \cap \omega \subseteq^* \midcup (K \cap \ms{A})$ y que $K \cap \ms{A}$ es finito. Resulta claro que; si $y \in \ms{A}$, entonces $\{y\} \cup y$ es un subespacio compacto de $\Psi(\ms{A})$; consecuentemente $L:=\midcup\{ \{y\} \cup y \tq y \in K \cap \ms{A} \}$ es un subespacio compacto de $\Psi(\ms{A})$.
-
-	Nótese que $K \cap L$ es cerrado en $L$; pues $L \setminus K \subseteq \omega$; consecuentemente $K \setminus L$ es compacto. Como $K \setminus L = (K \cap \omega) \setminus \midcup (K \cap \ms{A})$ es finito por hipótesis, $K \setminus L$ es compacto. Así, $K=(K \setminus L) \cup (K \cap L)$ es unión de subsespacios compactos de $\Psi(\ms{A})$; por tanto, es compacto.
+	Conversamente, supóngase que $K \cap \omega \subseteq^* \midcup (K \cap \ms{A})$ y que $K \cap \ms{A}$ es finito. Para cada $y \in \ms{A}$, $\{y\} \cup y$ es compacto; por ello $L:=\midcup\{ \{y\} \cup y \tq y \in K \cap \ms{A} \}$ es un subespacio compacto de $\Psi(\ms{A})$. Nótese que $K \cap L$ es cerrado en $L$; pues $L \setminus K \subseteq \omega$; así que $K \cap L \subseteq L$ es compacto. Como $K \setminus L = (K \cap \omega) \setminus \midcup (K \cap \ms{A})$ es finito por hipótesis, es compacto. Así, $K=(K \setminus L) \cup (K \cap L)$ es unión de subespacios compactos de $\Psi(\ms{A})$, y por lo tanto, es compacto.
 \end{proof}
 
-Así, los los subespacios compactos de $\Psi(\ms{A})$ son únicamente aquellos de la forma $M \cup H$; donde $H \subseteq \ms{A}$ es finito y $M \subseteq^* \midcup H$. Esto es, si $\mathcal{K}$ el conjunto de los subespacios compactos de $\Psi(\ms{A})$:
-$$ \mathcal{K}=\bigcup_{H \in [\ms{A}]^{<\omega}} \{ F \cup M \cup H \tq (F,M) \in [\omega]^{<\omega} \times \ms{P}(H) \} $$
+Entonces los subespacios compactos de $\Psi(\ms{A})$ son aquellos de la forma $M \cup H$; donde $H \subseteq \ms{A}$ es finito y $M \subseteq^* \midcup H$. Esto es, si $\mathcal{K}$ es el conjunto de todos los subespacios compactos de $\Psi(\ms{A})$:
+\[ \mathcal{K}=\bigcup_{H \in [\ms{A}]^{<\omega}} \{ (F \cup M) \cup H \tq (F,M) \in [\omega]^{<\omega} \times \ms{P}(H) \} \]
 
-Por ello $|\ms{A}| \cdot \aleph_0 \leq |\mathcal{K}| \leq \sum \{ (\aleph_0 \cdot \mathfrak{c} ) \tq H \in [\ms{A}]^{<\omega} \} \leq |\ms{A}| \cdot \mathfrak{c} \leq \mathfrak{c} $; asi que todo espacio de Mrówka tiene; a lo sumo, $\mathfrak{c}$ subespacios compactos.
+Por ello $|\ms{A}| \cdot \aleph_0 \leq |\mathcal{K}| \leq \sum \{ (\aleph_0 \cdot \mathfrak{c} ) \tq H \in [\ms{A}]^{<\omega} \} \leq |\ms{A}| \cdot \mathfrak{c} \leq \mathfrak{c} $ y todo espacio de Mrówka tiene; a lo sumo, $\mathfrak{c}$ subespacios compactos.
 
-La discusión sobre cuántos subespacios compactos \textit{importantes} (esto es, los que determinan el carácter topológico de su extensión unipuntual) tiene $\Psi(\ms{A})$ se retomará en la \autoref{Subsec-sucesiones-Franklin}.
+La discusión sobre cuántos subespacios compactos \textit{importantes} \enquote{esto es, los que determinan el carácter topológico de su extensión unipuntual} tiene $\Psi(\ms{A})$ se retomará en la \autoref{Subsec-sucesiones-Franklin}.
 
 \begin{corolario}\label{cor-IdealCompactosCarac}
-	Sean $\ms{A}$una familia casi ajena y $A \subseteq \omega$ cualquiera. Entonces son equivalentes las siguientes condiciones:
+	Sean $\ms{A} \in \Ad(\omega)$ y $A \subseteq \omega$. Son equivalentes:
 	\begin{enumerate}[i)]
 		\item $A \in \ms{I}(\ms{A})$
 		\item Existe $K \subseteq \Psi(\ms{A})$ compacto tal que $A \subseteq K$.
@@ -233,15 +233,17 @@ La discusión sobre cuántos subespacios compactos \textit{importantes} (esto es
 \end{corolario}
 
 \begin{proof}
-	(i) $\to$ (ii) Si $A \in \ms{I}(\ms{A})$, existe $H \subseteq \ms{A}$ finito tal que $A \subseteq^* \midcup H$. De la Proposición anterior se desprende que $K:=A \cup H$ es un subespacio compacto de $\Psi(\ms{A})$ tal que $A \subseteq K$.
+	(i) $\to$ (ii) Si $A \in \ms{I}(\ms{A})$, existe cierto $H \subseteq \ms{A}$ finito de modo tal que $A \subseteq^* \midcup H$. Debido a \ref{prop-Kcaract}, $K:=A \cup H$ es compacto y $A \subseteq K$.
 
-	La implicación (ii) $\to$ (iii) es clara, procédase con la restante.
+	%La implicación (ii) $\to$ (iii) es obvia.
 
-	(iii) $\to$ (i) Supóngase que $K$ es un subespacio compacto de $\Psi(\ms{A})$ tal que $A \subseteq^* K$. Consecuentemente $A \setminus \midcup (K \cap \ms{A}) \subseteq^* A \setminus (K \cap \omega) = A \setminus K =^* \emptyset$, en virtud de la Proposición previa. Lo anterior; dado que $K \cap \ms{A}$ es finito, muestra que $A \in \ms{I}(\ms{A})$.
+	(iii) $\to$ (i) Supóngase que $K \subseteq \Psi(\ms{A})$ es compacto y tal que $A \subseteq^* K$. Consecuentemente $A \setminus \midcup (K \cap \ms{A}) \subseteq^* A \setminus (K \cap \omega) = A \setminus K =^* \emptyset$, en virtud de la \autoref{prop-Kcaract}. Como $K \cap \ms{A}$ es finito, resulta que $A \in \ms{I}(\ms{A})$.
 \end{proof}
 
+%Tras lo ya hecho, resulta posible caracterizar la compacidad del propio espacio.
+
 \begin{proposicion}\label{prop-tra-compacidad}\index[trad]{compacidad de $\Psi(\ms{A})$}\index[trad]{compacidad numerable de $\Psi(\ms{A})$}
-	Sea $\ms{A}\in \Ad(\omega)$, entonces son equivalentes:
+	Para cualquier $\ms{A}\in \Ad(\omega)$ son equivalentes:
 	\begin{enumerate}[i)]
 		\item $\Psi(\ms{A})$ es compacto.
 		\item $\Psi(\ms{A})$ es numerablemente compacto.
@@ -249,12 +251,11 @@ La discusión sobre cuántos subespacios compactos \textit{importantes} (esto es
 	\end{enumerate}
 \end{proposicion}
 
-\begin{proof}
-	La implicación (i) $\rightarrow$ (ii) es evidente.
+\begin{proof} (i) $\rightarrow$ (ii) es clara.
+	
+	(ii) $\rightarrow$ (iii) Supóngase que $\Psi(\ms{A})$ es numerablemente compacto. Dado que $\ms{A}$ es un subespacio cerrado y discreto de $\Psi(\ms{A})$ \enquote{véase \ref{lem-primerosSubs}}; necesariamente, debe ser finito. Luego, $\mathcal{U}:=\big\{ \{n\} \tq n\in \omega \big\} \cup \big\{ \{x\} \cup x \tq x \in \ms{A} \big\}$ es una cubierta numerable para $\Psi(\ms{A})$, y como este espacio es numerablemente compacto, existe $F \subseteq \omega$ finito de tal modo que la colección $\big \{ \{n\} \tq n \in F \big\} \cup \big\{ \{x\} \cup x \tq x \in \ms{A}\}$ es subcubierta de $\mathcal{U}$. Se obtiene de la finitud de $F$ que $\omega \subseteq^* \midcup \ms{A}$; y al ser $\ms{A}$ finita, del \autoref{cor-MADnecesarioUnion} se sigue su maximalidad.
 
-	(ii) $\rightarrow$ (iii) Supóngase que $\Psi(\ms{A})$ es numerablemente compacto. Dado que $\ms{A} \subseteq \Psi(\ms{A})$ es subespacio cerrado y discreto de $\Psi(\ms{A})$ (véase \ref{lem-primerosSubs}), entonces $\ms{A}$ es numerablemente compacto y discreto; por ello, es finito. De esta forma, $\mathcal{U}:=\big\{ \{n\} \tq n\in \omega \big\} \cup \big\{ \{x\} \cup x \tq x \in \ms{A} \big\}$ es una cubierta numerable para $\Psi(\ms{A})$ y en consecuencia, existe $F \subseteq \omega$ finito de tal modo que la colección $\big \{ \{n\} \tq n \in F \big\} \cup \big\{ \{x\} \cup x \tq x \in \ms{A}\}$ es subcubierta de $\mathcal{U}$. Por ende $\omega \subseteq^* \midcup \ms{A}$, al ser $\ms{A}$ y $F$ finitos. Así, $\ms{A}$ es maximal en virtud del \autoref{cor-MADnecesarioUnion}.
-
-	(iii) $\rightarrow$ (i) Si $\ms{A}$ es finita y maximal, se desprende del \autoref{cor-MADnecesarioUnion} que $\omega \subseteq^* \midcup \ms{A}$. Así, $\Psi(\ms{A}) \cap \omega \subseteq^* \midcup (\Psi(\ms{A}) \cap \ms{A} )$ y $\Psi(\ms{A}) \cap \ms{A} = \ms{A}$ es finito, siguiéndose dela \autoref{prop-Kcaract} la compacidad de $\Psi(\ms{A})$.
+	(iii) $\rightarrow$ (i) Si $\ms{A}$ es finita y maximal, entonces de \ref{cor-IdealPropioCaract} se tiene que $\omega \in \ms{I}(\ms{A})$. Aplicando el \autoref{cor-IdealCompactosCarac} se tiene la compacidad de $\Psi(\ms{A})$.
 \end{proof}
 
 La siguiente Proposición para nada carece de importancia, pues los espacios de Isbell-Mrówka son los únicos (dentro de cierta clase) con tal propiedad.
@@ -266,14 +267,14 @@ La siguiente Proposición para nada carece de importancia, pues los espacios de 
 \begin{proof}
 	Supóngase que $\ms{A}\in \Ad(\omega)$ y sea $X \subseteq \Psi(\ms{A})$ cualquiera. Como $\Psi(\ms{A})$ es de Hausdorff (recuérdese \ref{cor-MrwokaSiempre}), $X$ es de Hausdorff y basta verificar que cada punto de $X$ tiene una vecindad en $X$ compacta.
 
-	Sea $x \in X$ arbitrario. Si $x \in \omega$, entonces $\{x\}$ es vecindad compacta de $x$ en $X$. Ahora, si $x \in \ms{A}$, entonces $K:=X \cap (\{x\} \cup x) \subseteq \{x\} \cup x$ es vecindad de $x$ en $X$. Además $K$ es compacto, en virtud del \autoref{cor-IdealCompactosCarac}, pues $K \cap \ms{A} = \{x\}$ es finito y $K \cap \omega \subseteq x \subseteq^* \midcup \{x\} = \midcup (K \cap \ms{A})$. Así, $X$ es localmente compacto y $\Psi(\ms{A})$ hereditariamente localmente compacto.
+	Sea $x \in X$ arbitrario. Si $x \in \omega$, $\{x\}$ es vecindad compacta de $x$ en $X$. Ahora, si $x \in \ms{A}$, entonces $K:=X \cap (\{x\} \cup x) \subseteq \{x\} \cup x$ es vecindad de $x$ en $X$. En virtud de la \autoref{prop-Kcaract}, $K$ es compacto; pues $K \cap \ms{A} = \{x\}$ es finito y $K \cap \omega \subseteq x \subseteq^* \midcup \{x\} = \midcup (K \cap \ms{A})$. Así, $X$ es localmente compacto.
 
-	Consecuentemente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire \textbf{(Teorema de Categoría de Baire)}.
+	Finalmente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire \textcolor{red}{(Teorema de Categoría de Baire)}.
 \end{proof}
 
 \section{Metrizabilidad y Pseudocompacidad}
 
-El \autoref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una familia casi ajena $\ms{A}$ es suficiente para concluir la metrizabilidad de su espacio de Mrówka asociado, no resulta difícil notar que el recíproco también ocurre (dados \ref{cor-NumAxMrowka} y que $\Psi(\ms{A})$ es separable); sin embargo, se tienen más equivalencias:
+El \autoref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una familia casi ajena $\ms{A}$ es suficiente para concluir la metrizabilidad de su espacio de Mrówka asociado, no resulta difícil notar que el recíproco también ocurre \enquote{dados \ref{cor-NumAxMrowka} y que $\Psi(\ms{A})$ es separable}; sin embargo, se tienen más equivalencias:
 
 \begin{proposicion}\label{prop-tra-numerable}\index[trad]{metrizabilidad de $\Psi(\ms{A})$}\index[trad]{segundo numerabilidad de $\Psi(\ms{A})$}\index[trad]{$\sigma$-compacidad de $\Psi(\ms{A})$}\index[trad]{propiedad de!Lindelöf en $\Psi(\ms{A})$}
 	Sea $\ms{A}\in \Ad(\omega)$, entonces son equivalentes:
@@ -287,27 +288,29 @@ El \autoref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una famil
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textbf{(MtzEq)}.
+	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textcolor{red}{(MtzEq)}.
 
-	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto \textbf{(Resultado R)}. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. \textbf{(Resultado R)}
+	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto \textcolor{red}{(2AN, locComp implica sigma comp)}. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. \textcolor{red}{(sigma comp implica lind)}
 
-	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf y sea $\mathcal{B}_\ms{A}$ la base estándar de $\Psi(\ms{A})$ (definida en \ref{cor-NumAxMrowka}). Luego $\mathcal{B}_ \ms{A}$ es una cubierta abierta de $\Psi(\ms{A})$, y deben existir $\ms{A}' \subseteq \ms{A}$ y $N \subseteq \omega$ a lo más numerables tales que $\midcup \big\{ \big\{ \{x\} \cup x \setminus F \tq F \in [x]^{<\omega} \big\} \tq x \in \ms{A}' \big\} \cup \big\{ \{n\} \tq n \in N \big\}$ es subcubierta de $\mathcal{B}_ \ms{A}$. Resulta así que $\ms{A} \subseteq \ms{A}'$ y $|\ms{A}| \leq \aleph_0$.
+	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, debe ser $2\AN$ \textcolor{red}{(Lind Desr implica 2an)}. Se sigue del \autoref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
 \end{proof}
 
-Como fue mostrado en \ref{prop-MADnoNum}, ninguna familia casi ajena numerable es maximal. Así que si $\ms{A}$ es una familia casi ajena numerable, por \ref{prop-tra-compacidad}, $\Psi(\ms{A})$ no es compacto. Consecuentemente (por \ref{prop-tra-numerable}), si $\ms{A}$ es numerable, $\Psi(\ms{A})$ es Lindelöf y $\sigma$-compacto, pero no compacto.
+El siguiente corolario es una sencilla aplicación de \ref{prop-tra-compacidad} y \ref{prop-tra-numerable}, ejemplos como este ilustran desde ya el poder \enquote{constructivo} que tienen estos espacios.
 
-\begin{observacion}
-	Si $\Psi(\ms{A})$ es metrizable (o cualquiera de sus equivalentes planteados en \ref{prop-tra-numerable}) y no compacto, no necesariamente $\ms{A}$ es numerable. Esto responde al sencillo motivo de que $\ms{A}$ podría ser maximal o no; la \autoref{prop-tra-numerable} no toma en cuenta este aspecto.
-\end{observacion}
+\begin{corolario}
+	Sea $\ms{A} \in \Ad(\omega)$. Entonces $\Psi(\ms{A})$ no compacto y metrizable (o cualquiera de sus equivalentes dados en \ref{prop-tra-numerable}) si y solamente si $|\ms{A}|=\aleph_0$.
+\end{corolario}
 
-La observación recién hecha da constancia de que falta establecer una relación entre $\Psi(\ms{A})$ y la maximalidad de la familia $\ms{A}$. En la \autoref{Subsec-sucesiones-Franklin} se ahondará con mucha más profundidad en el estudio de las sucesiones convergentes; pero de momento, es necesario considerar el siguiente Lema, en orden de dar una caracterización completa para $\ms{A} \in \Mad(\omega)$.
+Ahora, falta establecer una relación entre $\Psi(\ms{A})$ y la maximalidad de la familia $\ms{A}$. En la \autoref{Subsec-sucesiones-Franklin} se ahondará con mucha más profundidad en el estudio de las sucesiones convergentes; pero de momento, es necesario considerar el siguiente Lema, en orden de dar una caracterización completa para la condición $\ms{A} \in \Mad(\omega)$.
 
 \begin{lema}\label{lem-convObvia}
-	Sean $\ms{A} \in \Ad(\omega) $, $x \in \ms{A}$ y $B \subseteq [\omega]^\omega$ cualesquiera. Entonces $B \to x$ en $\Psi(\ms{A})$ si y sólo si $B \subseteq ^* x$.
+	Sean $\ms{A} \in \Ad(\omega) $, $x \in \ms{A}$ y $B \in [\omega]^\omega$. Entonces $B \to x$ en $\Psi(\ms{A})$ si y sólo si $B \subseteq ^* x$.
 \end{lema}
 
 \begin{proof}
-	Supóngase que $B \to x$ en $\Psi(\ms{A})$. Entonces, como $x \cup \{x\}$ es un abierto de $\Psi(\ms{A})$ que contiene a $x$, se tiene que $B \subseteq^* x \cup \{x\}$, mostrando que $B \subseteq^* x$. Y recíprocamente, si $B \subseteq^* x$ y $U \subseteq \Psi(\ms{A})$ es cualquier abierto con $x \in U$, entonces $x \subseteq^* U$, y por tanto, $B \subseteq^* U$.
+	Supóngase que $B \to x$ en $\Psi(\ms{A})$. Como $x \cup \{x\}$ es un abierto de $\Psi(\ms{A})$ que tiene a $x$, se tiene que $B \subseteq^* x \cup \{x\} =^* x$.
+
+	Recíprocamente, si $B \subseteq^* x$ y $U \subseteq \Psi(\ms{A})$ es un abierto cualquiera tal que $x \in U$, resulta que $x \subseteq^* U$. Por lo tanto $B \subseteq^* U$, mostrando que $B \to x$ en $\Psi(\ms{A})$.
 \end{proof}
 
 \begin{proposicion}\label{prop-tra-pseudoCaract}\index[trad]{pseudocompacidad de $\Psi(\ms{A})$}
@@ -321,9 +324,11 @@ La observación recién hecha da constancia de que falta establecer una relació
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii). Si $\ms{A}$ no es maximal, existe $B \subseteq \omega$ infinito y casi ajeno con cada elemento de $\ms{A}$. Por \ref{prop-BaseLocMrowka} y \ref{lem-primerosSubs}, $B$ es discreto, abierto y cerrado, y de \textbf{(Ree A)} se sigue que $\Psi(\ms{A})$ no es pseudocompacto.
+	(i) $\rightarrow$ (ii). Si $\ms{A}$ no es maximal, existe $B \subseteq \omega$ infinito y casi ajeno con cada elemento de $\ms{A}$. Por \ref{prop-BaseLocMrowka} y \ref{lem-primerosSubs}, $B$ es discreto, abierto y cerrado, obteniéndose de \textcolor{red}{(Ree A)} que $\Psi(\ms{A})$ no es pseudocompacto.
 
-	(ii) $\rightarrow$ (iii) Por contrapuesta, supóngase que $B \subseteq \Psi(\ms{A})$ es infinito, discreto, abierto y cerrado de $\Psi(\ms{A})$. Sin pérdida de generalidad $B \subseteq \omega$ (de lo contrario cada $a \in B \cap \ms{A}$ cumple que $a \cap B = B \cap (\{a\} \cup a) \subseteq \omega$ es infinito, cerrado, abierto y discreto). Luego, de \ref{lem-primerosSubs} se desprende que $B$ casi ajeno con cada elemento de $\ms{A}$.
+	(ii) $\rightarrow$ (iii) Por contrapuesta, supóngase que $B \subseteq \Psi(\ms{A})$ es infinito, discreto, abierto y cerrado de $\Psi(\ms{A})$. Si $B \subseteq \omega$, de \ref{lem-primerosSubs} se desprende que $B$ casi ajeno con cada elemento de $\ms{A}$. Y si existe $a \in B \cap \ms{A}$, cumple que $a \cap B = B \cap (\{a\} \cup a) \subseteq \omega$ es infinito, cerrado, abierto y discreto. Resulta análogo a lo anterior mostrar que $a$ es casi ajeno con cada $a \in \ms{A}$.
+	
+	Sin pérdida de generalidad $B \subseteq \omega$ (de lo contrario cada $a \in B \cap \ms{A}$ cumple que $a \cap B = B \cap (\{a\} \cup a) \subseteq \omega$ es infinito, cerrado, abierto y discreto). Luego, de \ref{lem-primerosSubs} se desprende que $B$ casi ajeno con cada elemento de $\ms{A}$.
 
 	(iii) $\rightarrow$ (iv) Supóngase (iii) y sea $B \in [\omega]^\omega $. Así, $B$ es discreto, infinito y abierto. Por hipótesis, debe existir $x \in \der(B) \setminus B$ y por \ref{cor-MrwokaSiempre}, $x \in \ms{A}$ y $B \cap x$ es infinito. Siguiéndose del \autoref{lem-primerosSubs} que $B \cap x \to x$.
 

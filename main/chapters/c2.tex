@@ -414,17 +414,17 @@ La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisunda
 
 	Por otro lado, si $y \in \der(X)$ es cualquiera, $N \cup \{y\} \subseteq X$ es localmente compacto, y por ende, es abierto en su cerradura. Pero $N$ es denso, así que $N \cup \{y\}$ es abierto en $X=\cla(N \cup \{y\})$. Se sigue de \ref{lem-TKR-DerX} que $\der(X)$ es discreto.
 
-	(ii) $\rightarrow$ (iii) Supóngase que $X$ es localmente compacto y que $\der(X)$ es discreto. Por el \autoref{lem-TKR-DerX} resulta que $N$ es denso en $X$ y que $N \cup \{y\}$ es abierto siempre que $y \in \der(X)$. Por ser $X$ infinito y separable, se tiene que $N$ es numerable. Utilizando la compacidad local de $X$, para cada $x \in \der(X)$ fíjese ($\Ac$) una vecindad compacta $V_x$ de $x$ en $X$ contenida en $N \cup \{x\}$. Se afirma que $ \ms{A} = \{ V_x \setminus \{x\} \subseteq N \tq x \in \der(X) \} \in \Ad(N) $.
+	(ii) $\rightarrow$ (iii) Supóngase que $X$ es localmente compacto y que $\der(X)$ es discreto. Por el \autoref{lem-TKR-DerX} resulta que $N$ es denso en $X$ y que $N \cup \{y\}$ es abierto siempre que $y \in \der(X)$. Por ser $X$ infinito y separable, se tiene que $N$ es numerable. Utilizando la compacidad local de $X$, para cada $x \in \der(X)$ fíjese ($\Ac$) una vecindad compacta $V_x$ de $x$ en $X$ contenida en $N \cup \{x\}$. Se afirma que $ \ms{A} = \{ V_x \setminus \{x\} \subseteq N \tq x \in \der(X) \}$ es una familia casi ajena.
 
-	En efecto, si $x \in \der(X)$ es cualquiera, entonces $V_x \setminus \{x\}$ no es finito. De lo contrario, $\{x\}= (N \cup \{x\}) \setminus (V_x \setminus \{x\})$ sería abierto en $X$ (que es espacio $\T_1$) y se contradiría que $x \in \der(X)$. Por tanto, $\ms{A} \subseteq [N]^\omega$. Además, si $x,y \in \der(X)$ son distintos, se tiene que $V_x \cap V_y \subseteq N$. Así $V_x \cap V_y$ es subespacio compacto del discreto $N$, lo cual obliga a que sea finito. Como consecuencia, $\ms{A}$ es familia casi ajena en $N$.
+	En efecto, si $x \in \der(X)$ es cualquiera, entonces $V_x \setminus \{x\}$ no es finito. De lo contrario, $\{x\}= (N \cup \{x\}) \setminus (V_x \setminus \{x\})$ sería abierto en $X$, quien es $\T_1$, y se contradiría que $x \in \der(X)$; luego, $\ms{A} \subseteq [N]^\omega$. Además, si $x,y \in \der(X)$ son distintos, se tiene que $V_x \cap V_y \subseteq N$. Así $V_x \cap V_y$ es subespacio compacto del discreto $N$, lo cual obliga a que sea finito. Por ello $\ms{A} \in \Ad(N)$.
 
-	Defínase $f:X \to \Psi_N(\ms{A})$ por medio de $f(n)=n$ si $n \in N$ y $f(x)=V_x$ si $x \in \der(X)$. Claramente $f$ es función biyectiva; además, como $N$ es el conjunto de puntos aislados de $X$, para verificar que $f$ es homeomorfismo basta verificar lo siguiente.
+	Sea $f:X \to \Psi_N(\ms{A})$ dada por: $f(n)=n$, si $n \in N$; y $f(x)=V_x$, si $x \in \der(X)$. Resulta que $f$ es biyectiva; y como $N$ es el conjunto de puntos aislados de $X$, para verificar que $f$ es homeomorfismo basta verificar lo siguiente:
 	\begin{enumerate}[\hspace{1.5 cm}, listparindent=1.5em]
-		\item \textit{Afirmación.} Un subconjunto $U \subseteq X$ es abierto si y sólo si para cada $x \in U \cap \der(X)$ se tiene $V_x \setminus \{x\} \subseteq^* U$.
+		\item \textit{Afirmación.} Para cada $U \subseteq X$, $U$ es abierto en $X$ si y sólo si para cualquier elemetno $x \in U \cap \der(X)$ ocurre que $V_x \setminus \{x\} \subseteq^* U$.
 
-		\item \textit{Demostración.} Sea $U \subseteq X$. Si $U$ es abierto y $x \in U \cap \der(X)$ es cualquiera, entonces $V_x \setminus U \subseteq N$ es cerrado en $X$, así en $V_x$ y como $V_x$ es compacto; $V_x \setminus U$ es subespacio compacto del discreto $N$, por tanto finito. Así que $V_x \setminus \{x\} \subseteq^* U$.
+		\item \textit{Demostración.} Sea $U \subseteq X$. Si $U$ es abierto y $x \in U \cap \der(X)$, entonces $V_x \setminus U \subseteq N$ es cerrado en $X$, así en $V_x$ y como $V_x$ es compacto; $V_x \setminus U$ es subespacio compacto del discreto $N$, por tanto finito. Así que $V_x \setminus \{x\} \subseteq^* U$.
 
-		      Recíprocamente, supóngase que para cada $x \in U \cap \der(X)$ se tiene que $V_x \setminus \{x\} \subseteq^* U$, es decir, que $V_x \setminus U$ es finito. Sea $y \in U$ cualquiera, si $y \in N$ entonces $\{y\}$ es abierto en $X$ y $U$ es vecindad de $y$. Ahora, si $y \in \der(X)$ entonces $V_y \setminus U$ es finito y con ello $V_y \setminus (V_y \setminus U) \subseteq U$, de donde $U$ es vecindad de $y$ (usando que $X$ es espacio $\T_1$). Luego, $U$ es vecindad de todos sus puntos, y por tanto, es abierto. \hfill$\boxtimes$
+		      Recíprocamente, supóngase que para cada $x \in U \cap \der(X)$ se tiene que $V_x \setminus \{x\} \subseteq^* U$, es decir, que $V_x \setminus U$ es finito. Sea $y \in U$ cualquiera, si $y \in N$ entonces $\{y\}$ es abierto en $X$ y $U$ es vecindad de $y$. Ahora, si $y \in \der(X)$ entonces $V_y \setminus U$ es finito y con ello $V_y \setminus (V_y \setminus U) \subseteq U$, de donde $U$ es vecindad de $y$ \enquote{usando que $X$ es espacio $\T_1$}. Luego, $U$ es vecindad de todos sus puntos, y por tanto, es abierto. \hfill$\boxtimes$
 	\end{enumerate}
 
 	(iii) $\rightarrow$ (i) Si $X$ es homeomorfo a un espacio de Mrówka, las propiedades topológicas del último se satisfacen en $X$, siguiéndose de \ref{prop-MrwokaHLC} que $X$ es hereditariamente localmente compacto.
@@ -441,12 +441,14 @@ Del resultado anterior es casi inmediata la obtención de las siguientes condici
 	\end{enumerate}
 \end{corolario}
 \begin{proof}
-	Por el Teorema de Kannan y Rajagopalan, lo demostrado en \ref{prop-tra-pseudoCaract} y como todo espacio de Mrówka es de Tychonoff (véase \ref{cor-MrwokaSiempre}); particularmente regular, bastará demostrar que si $X$ satisface (ii) entonces $X$ es localmente compacto. Supóngase (ii), claramente cada punto aislado de $X$ tiene una vecindad compacta en $X$.
+	Por el Teorema de Kannan y Rajagopalan, lo demostrado en \ref{prop-tra-pseudoCaract} y como todo espacio de Mrówka es de Tychonoff \enquote{véase \ref{cor-MrwokaSiempre}}; particularmente regular, bastará demostrar que si $X$ satisface (ii) entonces $X$ es localmente compacto. Supóngase (ii), claramente cada punto aislado de $X$ tiene una vecindad compacta en $X$.
 
-	Sea $x \in \der(X)$ arbitrario, como $\der(X)$ es discreto, existe $U \subseteq X$ abierto con $\{x\} = U \cap \der(X)$. Por regularidad de $X$, fíjese un abierto $V$ tal que $x \in V \subseteq \cla(V) \subseteq U$ y nótese que entonces $\{x\}=\cla(V) \cap \der(X)$.
+	Sea $x \in \der(X)$ cualquier elemento, puesto que $\der(X)$ es discreto, existe $U \subseteq X$ abierto con $\{x\} = U \cap \der(X)$. Por regularidad de $X$, fíjese un abierto $V$ tal que $x \in V \subseteq \cla(V) \subseteq U$ y nótese que entonces $\{x\}=\cla(V) \cap \der(X)$.
 
-	Si $W$ es una vecindad abierta de $x$, entonces $\cla(V) \setminus W$ es discreto y abierto (por ser subespacio de $X \setminus \der(X)$) y cerrado (por ser intersección de cerrados). De (ii) se sigue la finitud de $\cla(V) \setminus W$, y de esto, la compacidad de $\cla(V)$, siendo tal subespacio, una vecindad compacta de $x$ en $X$.
+	Si $W$ es una vecindad abierta de $x$, entonces $\cla(V) \setminus W \subseteq X \setminus \der(X)$ es discreto y abierto, además es cerrado, por ser intersección de cerrados. De (ii) se sigue la finitud de $\cla(V) \setminus W$, y de esto, la compacidad de $\cla(V)$. Por lo cual, tal subespacio es una vecindad compacta de $x$ en $X$.
 \end{proof}
+
+Como otra \enquote{aplicación} del \autoref{teo-HLCCaract} es el siguiente Corolario, se puede caracterizar muy fácilmente cuando un subespacio de un espacio de Mrówka vuelve a ser de Mrówka.
 
 \begin{corolario}
 	Sea $X$ un espacio topológico infinito, entonces $X$ es homeomorfo a un espacio de Mrówka si y sólo si es homeomorfo a un subespacio abierto de un espacio de Mrówka.
@@ -455,8 +457,10 @@ Del resultado anterior es casi inmediata la obtención de las siguientes condici
 	Basta probar la necesidad. Supóngase que $\ms{A}$ es una familia casi ajena y que $U \subseteq \Psi(\ms{A})$ es un abierto tal que $X \cong U$. Como $X$ es infinito, $U$ es infinito, además por ser $\Psi(\ms{A})$ de Hausdorff y hereditariamente localmente compacto, se tiene que $U$ es de Hausdorff y hereditariamente localmente compacto. Por último, como $\omega$ es denso en $\Psi(\ms{A})$ y $U$ es abierto en $\Psi(\ms{A})$, se tiene que $U \cap \omega$ es denso en $U$; así que $U$ es separable. De lo anterior $U$, y por tanto $X$, es homeomorfo a un espacio de Mrówka; a saber $\Psi_{U \cap \omega} (U \cap \ms{A})$.
 \end{proof}
 
+A continuación se responden dos preguntas esenciales: ¿cuándo el producto y la suma topológica de espacios de Mrówka, es de nuevo, un espacio de Mrówka?. Comenzaremos analizando qué ocurre con la suma topológica de estos espacios.
+
 \begin{corolario}
-	Sea $\{X_\alpha \tq \alpha \in \kappa \}$ una familia no vacía de espacios topológicos infinitos; sin pérdida de generalidad ajenos dos a dos, entonces son equivalentes:
+	Sea $\{X_\alpha \tq \alpha \in \kappa \}$ una familia no vacía de espacios topológicos infinitos; sin pérdida de generalidad ajenos dos a dos. Son equivalentes:
 	\begin{enumerate}[i)]
 		\item $\displaystyle Y:=\coprod_{\alpha \in \kappa} X_\alpha$ es homeomorfo a un espacio de Mrówka.
 		\item $\kappa$ es contable y cada $X_\alpha$ es homeomorfo a un espacio de Mrówka.
@@ -476,8 +480,10 @@ Se explotará mucho la siguiente observación durante el subsecuente Corolario, 
 \begin{observacion}
 	Sea $X$ un espacio topológico, $\der(X)$ es discreto si y sólo si $\der^2(X):=\der(\der(X)) = \emptyset$.
 
-	Efectivamente; como $X\setminus \der(X)$ es abierto, $\der(X)$ es discreto si y sólo si es discreto y cerrado. Esto último sucede únicamente cuando $\der_{\der(X)}(\der(X))=\der(X) \cap \der^2(X) =\emptyset$. Sin embargo, cualquier punto aislado en $X$, es aislado en $\der(X)$, así que $\der^2(X) \subseteq \der(X)$; por lo tanto, $\der(X)$ es discreto si y sólo si $\der^2(X)=\emptyset$.
+	Como $X\setminus \der(X)$ es abierto, $\der(X)$ es discreto si y sólo si es discreto y cerrado. Lo último sucede sólo si $\der_{\der(X)}(\der(X))=\der(X) \cap \der^2(X) =\emptyset$. Sin embargo, cualquier punto aislado en $X$, es aislado también en $\der(X)$, así que $\der^2(X) \subseteq \der(X)$; por lo tanto, $\der(X)$ es discreto si y sólo si $\der^2(X)=\emptyset$.
 \end{observacion}
+
+Del siguiente resultado se desprenderá que la relación entre el producto topológico y los espacios de Mrówka es \enquote{poco interesante}, en el aspecto de que tal relación es muy restrictiva.
 
 \begin{lema}
 	Sean $X$ y $Y$ espacios topológicos infinitos, entonces $X \times Y$ es homeomorfo a un espacio de Mrówka si y sólo si $X$ y $Y$ son de Mrówka y además $X \cong \omega$ o $Y \cong \omega$
@@ -486,12 +492,12 @@ Se explotará mucho la siguiente observación durante el subsecuente Corolario, 
 \begin{proof}
 	Obsérvese la igualdad:
 	\begin{align*}
-		\der^2_{X \times Y} (X \times Y) & = \der_{X \times Y} \Big( \der_X(X) \times \cla_Y(Y) \cup \cla_X(X) \times \der_Y(Y) \Big)               \\
-		                                 & = \der_{X \times Y} \Big( \der_X(X) \times Y \cup X \times \der_Y(Y) \Big)                               \\
-		                                 & = \der_{X \times Y} \Big( \der_X(X) \times Y \Big) \cup \der_{X \times Y} \Big( X \times \der_Y(Y) \Big) \\
-		                                 & = \der_X(\der_X(X)) \times \cla_Y(Y) \cup \cla_X(\der_X(X)) \times \der_Y(Y) \: \cup                     \\
-		                                 & \cup \der_X(X) \times \cla_Y(\der_Y(Y)) \cup \cla_X(X) \times \der_Y(\der_Y(Y))                          \\
-		                                 & = \der^2_X(X) \times Y \cup \der_X(X) \times \der_Y(Y) \cup X \times \der^2_Y(Y)
+		\der^2_{X \times Y} (X \times Y)& = \der_{X \times Y} \Big( \der_X(X) \times \cla_Y(Y) \cup \cla_X(X) \times \der_Y(Y) \Big)               \\
+		                                & = \der_{X \times Y} \Big( \der_X(X) \times Y \cup X \times \der_Y(Y) \Big)                               \\
+		                                & = \der_{X \times Y} \Big( \der_X(X) \times Y \Big) \cup \der_{X \times Y} \Big( X \times \der_Y(Y) \Big) \\
+		                                & = \der_X(\der_X(X)) \times \cla_Y(Y) \cup \cla_X(\der_X(X)) \times \der_Y(Y) \: \cup                     \\
+		                                & \phantom{aa} \cup \der_X(X) \times \cla_Y(\der_Y(Y)) \cup \cla_X(X) \times \der_Y(\der_Y(Y))                          \\
+		                                & = \der^2_X(X) \times Y \cup \der_X(X) \times \der_Y(Y) \cup X \times \der^2_Y(Y)
 	\end{align*}
 
 	Puesto que $X,Y \neq \emptyset$, resulta que $\der^2_{X \times Y} (X \times Y)$ es vacío si y sólo si $\der^2_X(X) = \der^2_Y(Y) = \der_X(X) \times \der_Y(Y) = \emptyset$. Esto es, el subespacio $\der_{X \times Y}(X \times Y) \subseteq X \times Y$ es discreto si y sólo si los subespacios $\der_X(X)$ de $X$ y $\der_Y(Y)$ de $Y$ son discretos y además $X$ es discreto o $Y$ es discreto.
@@ -500,10 +506,10 @@ Se explotará mucho la siguiente observación durante el subsecuente Corolario, 
 \end{proof}
 
 \begin{corolario}
-	Sea $\{X_\alpha \tq \alpha \in \kappa \}$ una familia no vacía de espacios topológicos infinitos; sin pérdida de generalidad ajenos dos a dos, entonces son equivalentes:
+	Sea $\{X_\alpha \tq \alpha \in \kappa \}$ una familia de espacios topológicos infinitos; sin pérdida de generalidad, ajenos dos a dos, entonces son equivalentes:
 	\begin{enumerate}[i)]
 		\item $\displaystyle Y:=\prod_{\alpha \in \kappa} X_\alpha$ es homeomorfo a un espacio de Mrówka.
-		\item $\kappa$ es finito, cada $X_\alpha$ es homeomorfo a un espacio de Mrówka y existe $\beta_0 \in \kappa$ tal que si $\alpha \in \kappa \setminus \{\beta_0\}$, se tiene $X_\alpha \cong \omega$.
+		\item $\kappa$ es finito, cada espacio $X_\alpha$ es homeomorfo a un espacio de Mrówka y existe $\beta_0 \in \kappa$ tal que si $\alpha \in \kappa \setminus \{\beta_0\}$, entonces $X_\alpha \cong \omega$.
 	\end{enumerate}
 \end{corolario}
 

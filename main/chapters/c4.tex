@@ -34,7 +34,7 @@ Se comenzará exponiendo una condición necesaria que dicta ''dónde buscar'' es
 
 Lo subsecuente caracteriza; en términos simples, la normalidad de un espacio de Mróka, a través de la combinatoria de su familia asociada.
 
-\begin{proposicion}\label{pro-ParticionadorCerrados}
+\begin{proposicion}\label{pro-SeparadorCerrados}
 	Sean $\ms{A}$ una familia casi ajena y $F,G \subseteq \Psi(\omega)$ cerrados ajenos. Son equivalentes:
 	\begin{enumerate}
 		\item $F$ y $G$ se separan por abiertos ajenos de $\Psi(\ms{A})$.
@@ -48,16 +48,16 @@ Lo subsecuente caracteriza; en términos simples, la normalidad de un espacio de
 
 	(ii) $\to$ (iii) Supóngase que $U,V \subseteq \Psi(\ms{A})$ son abiertos ajenos tales que $F \cap \ms{A} \subseteq U$ y $G \cap \ms{A} \subseteq U$.
 
-	Si $a \in F \cap \ms{A}$ es cualquiera, entonces $a \in U$ y por definición de la topología en $\Psi(\ms{A})$ resulta que $a \subseteq^* U$. Ahora, si $b \in G \cap \ms{A}$ es cualquiera, entonces $b \subseteq^* V \subseteq \omega \setminus U$; de donde, $b \cap U =* \emptyset$. Por lo tanto, $U$ es particionador de $F \cap \ms{A}$ y $G \cap \ms{A}$.
+	Si $a \in F \cap \ms{A}$ es cualquiera, entonces $a \in U$ y por definición de la topología en $\Psi(\ms{A})$ resulta que $a \subseteq^* U$. Ahora, si $b \in G \cap \ms{A}$ es cualquiera, entonces $b \subseteq^* V \subseteq \omega \setminus U$; de donde, $b \cap U =* \emptyset$. Por lo tanto, $U$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$.
 
-	(iii) $\to$ (i) Supóngase que $D \subseteq \omega$ es particionador de $F \cap \ms{A}$ y $G \cap \ms{A}$. Nótese que $F \subseteq U:=F \cup D\setminus G$; y además, $U$ es abierto. Efectivamente, dado $a \in U \cap \ms{A} \subseteq F \cap \ms{A}$ se tiene que $a \subseteq^* D$ (por ser $D$ particionador de $F \cap \ms{A}$ y $G \cap \ms{A}$) y $a \subseteq^* \Psi(\ms{A}) \setminus G$ (por ser $G$ cerrado y ajeno a $F$), en consecuencia $a \subseteq^* D\setminus G \subseteq U$.
+	(iii) $\to$ (i) Supóngase que $D \subseteq \omega$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$. Nótese que $F \subseteq U:=F \cup D\setminus G$; y además, $U$ es abierto. Efectivamente, dado $a \in U \cap \ms{A} \subseteq F \cap \ms{A}$ se tiene que $a \subseteq^* D$ (por ser $D$ separador de $F \cap \ms{A}$ y $G \cap \ms{A}$) y $a \subseteq^* \Psi(\ms{A}) \setminus G$ (por ser $G$ cerrado y ajeno a $F$), en consecuencia $a \subseteq^* D\setminus G \subseteq U$.
 
-	Como $D$ es particionador de $F \cap \ms{A}$ y $G \cap \ms{A}$; $\omega \setminus D$ es particionador de $G\cap \ms{A}$ y $F \cap \ms{A}$, y resulta análogo que $G \subseteq V:=G \cup (\omega \setminus D)\setminus F$ y $V$ es abierto. Probando que $F$ y $G$ se separan por los abiertos ajenos $U$ y $V$.
+	Como $D$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$; $\omega \setminus D$ es separador de $G\cap \ms{A}$ y $F \cap \ms{A}$, y resulta análogo que $G \subseteq V:=G \cup (\omega \setminus D)\setminus F$ y $V$ es abierto. Probando que $F$ y $G$ se separan por los abiertos ajenos $U$ y $V$.
 \end{proof}
 
 Debido al \autoref{lem-primerosSubs} y la \autoref{obs-GrietasSimple}, se desprende:
 
-\begin{corolario}\label{cor-tra-NormalParticionador}\index[trad]{Normalidad de $\Psi(\ms{A})$ (con grietas separables)}
+\begin{corolario}\label{cor-tra-NormalSeparador}\index[trad]{Normalidad de $\Psi(\ms{A})$ (con grietas separables)}
 	Para cada familia casi ajena $\ms{A}$ son equivalentes:
 	\begin{enumerate}
 		\item $\Psi(\ms{A})$ es normal.
@@ -184,13 +184,13 @@ El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \c
 
 	Sea $\ms{B}:=\{A_x \tq x \in F\} \subseteq \ms{A}_{D,A}$ cualquiera. Como $A$ es discreto y cerrado en $X$, cualquiera de sus subespacios es cerrado en $X$; en consecuencia y por normalidad de $X$, existen abiertos $U,V \subseteq X$ ajenos, de modo que $F \subseteq U$ y $A \setminus F \subseteq V$. Si $x \in F$, entonces $A_x \to x$ y por ello $A_x \subseteq^* U$, similarmente, si $y \in A \setminus F$, entonces $A_y \subseteq^* V \subseteq X \setminus U$; de donde $A_y \cap U^* = \emptyset$.
 
-	Por tanto $(\ms{B}, \ms{A}_{D,A} \setminus \ms{B})$ está separada, obteniéndose de \ref{cor-tra-NormalParticionador} la normalidad de $\Psi_D(\ms{A}_{D,A})$.
+	Por tanto $(\ms{B}, \ms{A}_{D,A} \setminus \ms{B})$ está separada, obteniéndose de \ref{cor-tra-NormalSeparador} la normalidad de $\Psi_D(\ms{A}_{D,A})$.
 
 	(ii) $\to$ (iii) Si $\kappa = \omega$, la implicación resulta vacua; pues todo subespacio numerable de $2^\omega$ es un $Q$-set (\autoref{ej-QsetFacil}). Supóngase pues, que $\Psi(\ms{A})$ es un espacio normal de tamaño $\kappa>\omega$; siendo necesario que $|\ms{A}|=\kappa$.
 
 	Para cada $C \subseteq \omega$ denótese por $\varphi_C \in 2^ \omega$ a la función característica de $C$ y sea $X:=\{\varphi_A \in 2^\omega \tq A \in \ms{A} \}$. Obsérvese que $X$ es un espacio metrizable, separable (por ser subespacio del metrizable, separable, $2^\omega$) de tamaño $\kappa$.
 
-	Sea $Y = \{ \varphi_A \in X \tq A \in \ms{B} \} \subseteq X$ cualquiera. Dado el \autoref{cor-tra-NormalParticionador}, la normalidad de $\Psi(\ms{A})$ implica la existencia de un particionador de $\ms{A}\setminus \ms{B}$ y $\ms{B}$; de este modo:
+	Sea $Y = \{ \varphi_A \in X \tq A \in \ms{B} \} \subseteq X$ cualquiera. Dado el \autoref{cor-tra-NormalSeparador}, la normalidad de $\Psi(\ms{A})$ implica la existencia de un separador de $\ms{A}\setminus \ms{B}$ y $\ms{B}$; de este modo:
 	\begin{align*}
 		Y & = \{ \varphi_A \in X \tq A \in \ms{B} \}                                        \\
 		  & = \{ \varphi_A \in X \tq A \cap D \neq^* \emptyset \}                           \\
@@ -214,7 +214,7 @@ El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \c
 
 	Por ello, si $v \in A_y \setminus D_n\subseteq F_n$, existen $x \in F_n$ y $k \in \omega$ de modo que $v = x \upharpoonright k$. Así que $x \in \midcup \ms{A}_{F_n}$; y como $v \notin D_n$, existen $m<n$ y $g \in G_m$ de manera que $v = y \upharpoonright k = g \upharpoonright k$. Y a razón de ello, no puede ocurrir $s \subseteq k$. Por lo tanto $k<s$ y $A_y \setminus D_n \subseteq 2^{<s} =^* \emptyset$; esto es, $A_y \subseteq^* D_n \subseteq D$.
 
-	Similarmente, para cada $y \in X \setminus Y$ existe un $n \in \omega$ tal que $A_y \subseteq^* L_n \subseteq N \setminus D$; de donde, $A_y \cap D ^= \emptyset$. Así que $D$ es separador de $\ms{B}$ y $\ms{A} \setminus \ms{B}$; probando por el \autoref{cor-tra-NormalParticionador} la normalidad de $\Psi_N(\ms{A}_X)$.
+	Similarmente, para cada $y \in X \setminus Y$ existe un $n \in \omega$ tal que $A_y \subseteq^* L_n \subseteq N \setminus D$; de donde, $A_y \cap D ^= \emptyset$. Así que $D$ es separador de $\ms{B}$ y $\ms{A} \setminus \ms{B}$; probando por el \autoref{cor-tra-NormalSeparador} la normalidad de $\Psi_N(\ms{A}_X)$.
 \end{proof}
 
 Es inmediato al \autoref{teo-EquivPDM} (y a \ref{cor-HCnoMrowkasNormales}, o bien, \ref{obs-HCNoQset}) la siguiente consecuencia:
@@ -272,7 +272,7 @@ De la proposición recién mostrada, el \autoref{teo-EquivPDM} y el \autoref{cor
 	\end{enumerate}
 \end{corolario}
 
-Contrastable con \ref{pro-MaQsetChar} es el hecho de que aún no se ha dado una caracterización para la normalidad de los espacios de Mrówka. Resulta seductor conjeturar que cualquier espacio de Isbell-Mrówka de tamaño menor al continuo es normal. Sin embargo, el \autoref{cor-MrowkaLuzin} muestra que; bajo $\Ma+\lnot \HC$, existe un espacio de Mrówka, no normal y de tamaño menor al continuo.
+Contrastable con \ref{pro-MaQsetChar} es el hecho de que aun no se ha dado una caracterización para la normalidad de los espacios de Mrówka. Resulta seductor conjeturar que cualquier espacio de Isbell-Mrówka de tamaño menor al continuo es normal. Sin embargo, el \autoref{cor-MrowkaLuzin} muestra que; bajo $\Ma+\lnot \HC$, existe un espacio de Mrówka, no normal y de tamaño menor al continuo.
 
 El comentario anterior deja como consecuencia la falsedad de que cualquier familia casi ajena sea \textit{esencialmente igual} a alguna de las definidas en \ref{def-FamRamas} (en el sentido lo comentado en la \hyperref[Dif-esencial]{Página~\pageref{Dif-esencial}}); de lo contrario, cualquier espacio espacio de Isbell-Mrówka de tamaño menor al continuo sería es normal, cosa que es falsa (al menos desde $\zfc$ únicamente).
 

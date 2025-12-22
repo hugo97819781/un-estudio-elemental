@@ -548,40 +548,35 @@ El siguiente Corolario del Teorema de Kannan y Rajagopalan (\autoref{teo-HLCCara
 
 	Para la suficiencia procédase por contrapuesta suponiendo que $\ms{A}$ es más que numerable, entonces $\ms{A}$ es un subespacio de $\Psi(\ms{A})$ discreto y más que numerable, con lo que, no puede ser separable. Para la necesidad, si $\ms{A}$ es a lo más numerable, cada subespacio de $\Psi(\ms{A})$ es a lo más numerable, y con ello, separable.
 \end{proof}
-
+cite[Def.~9.20, p.~118]
 La \textit{curiosidad} (comentada posteriormente a \ref{prop-alomasNumCaract}) en relación al espacio de ordinales $\omega^2$ tiene su justificación en el anterior Corolario.
 
-Se finalizará la sección; y con ello el actual capítulo, dando un Corolario importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos.
+Se finalizará la sección; y con ello el actual capítulo, dando un Corolario importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. Vale mencionar que el próximo Corolario aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily}, en tal artículo no se agrega la propiedad de Fréchet como hipótesis general; sin embargo, en este trabajo mostraremos la versión de este que sí la incluye.
 
 \begin{corolario}
-	Sea $X$ infinito y de Hausdorff. Son equivalentes:
+	Sea $X$ infinito, de Hausdorff y de Fréchet. Las siguientes condiciones son equivalentes:
 	\begin{enumerate}[i)]
 		\item Existe un denso $D \subseteq X$ de $X$ numerable tal que cada sucesión en $D$ tiene una subsucesión convergente en $X$.
 		\item $X$ es imagen continua de un espacio de Mrówka generado por una familia maximal.
 	\end{enumerate}
 \end{corolario}
-
 \begin{proof}
-	(i) $\rightarrow$ (ii) Supóngase (ii) y sea $S \subseteq \Ad(D)$ el conjunto de familias casi ajenas en $D$ tales que para cada $\ms{B} \in S$, cada elemento de $\ms{B}$ es imagen de una sucesión en $D$ convergente en $X$. Como $D$ es numerable, existe una biyección $f_0:\omega \to D$ biyectiva, misma que admite una subsucesión convergente, a saber $g_0:\omega \to D$ convergente en $X$. Se desprende que $\{\ima(g_0)\} \in S$ y por tanto $S$ es no vacío, siguiéndose de una aplicación del Principio de Maximalidad de Hausdorff (similar al utilizado en \ref{lem-MADs}) la existencia de una familia casi ajena en $D$, $\ms{A} \subseteq \midcup S$ tal que si $\ms{B} \in S$ y $\ms{A} \subseteq \ms{B}$, entonces $\ms{A} = \ms{B}$.
-	\begin{enumerate}[\hspace{1.5 cm}, listparindent=1.5em]
-		\item \textit{Afirmación.} $\ms{A}$ es familia casi ajena maximal sobre $D$.
+	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
 
-		\item \textit{Demostración.} Obsérvese primero que si $A\in \ms{A}$, existe $\ms{C} \in S$ tal que $A \in \ms{C}$ tal que $A \in \ms{C}$; consecuentemente $A$ es imagen de una sucesión en $D$ convergente en $X$; es decir $A \in \ms{A}$. Ahora, si $B \subseteq D$ infinito, entonces existe una biyección $f:\omega \to B$ y, por hipótesis, existe $g:\omega \to B \subseteq D$ subsucesión de $f$, convergente en $X$ y con ello $\{\ima(g)\} \in S$.
+	Obsérvese que si $A \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $B \subseteq A$ en $X$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $C \in \ms{A}$ que tiene intersección infinita con $B$; así mismo, con $A$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Defínase $f:\Psi_D(\ms{A}) \to X$ como: $f(x)$, si $x \in D$; y $f(x)=\lim (x)$, si $x \in \ms{A}$. Como $\ms{A} \supseteq \ms{A}_{D,X\setminus D}$, $f$ es sobreyectiva.
+	
+	Finalmente, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
 
-		      Por un lado, si $\ms{A} \cup \{\ima(g)\}$ no es casi ajena, existe $A \in \ms{A}$ de modo que $A \cap \ima(g)$ es infinito, y con ello $A \cap B$ es infinito. De otro modo, $\ms{A} \cup \{\ima(g)\} \in S$ y por la construcción de $A$ se tiene $\ms{A} \cup \{\ima(g)\} = \ms{A}$, siendo $A:=\ima(g) \in \ms{A}$ tal que $A \cap B$ es infinito (pues $g$ es subsucesión de $f$). Lo anterior prueba que $\ms{A}$ es maximal sobre $D$. \hfill $\boxtimes$
-	\end{enumerate}
+	%(ii) \to (i) Supóngase que $\ms{A} \in \Mad(\omega)$ y que $f:\Psi(\ms{A}) \to X$ es sobreyectiva. Puesto que $\omega$ es denso en $\Psi(\ms{A})$, se tiene que $D:=f[\omega]$ es denso en $X$.
 
-	Para cada $A \in \ms{A}$ fíjese ($\Ac$) una sucesión $f_A:\omega \to D$ convergente a $x_A$ en $X$ tal que $A=\ima(f_A)$. Nótese que, como $X$ es de Hausdorff tal elemento $x_A$ es el único al cual $f_A$ converge. Además, dado que los elementos de $\ms{A}$ son casi ajenos dos a dos, y de nuevo por ser $X$ de Hausdorff, cada vez que $A,B \in \ms{A}$ sean distintos, se tendrá que $f_A \neq f_B$ y $x_A \neq x_B$. Defínase la función $p:\Psi_D(\ms{A}) \to X$ como $p(d)=d$ si $d \in D$ y $p(A)=x_A$ si $A \in \ms{A}$, veamos que $p$ es continua y sobreyectiva.
-
-	Sea $U \subseteq X$ abierto en $X$ y supóngase que $A \in p^{-1}[U] \cap \ms{A}$ es cualquiera, entonces $p(A)=x_A \in U$ y $A=\ima(f_A)$. Como $U$ es un abierto de $X$ y $f_A$ converge a $x_A$ en $X$, resulta que $\ima(f_A) \subseteq^* U$ y con ello $A \subseteq^* p^{-1}[U]$; así que $p^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$, y por tanto $p$ es continua.
-
-	Ahora, sea $x \in X \setminus D$ cualquier elemento. Por contradicción, supóngase que $x \notin \ima(p)$, entonces si $s:\omega \to D$ es cualquiera, $s$ no puede converger a $a$ en $X$; de lo contrario, existe $A \in \ms{A}$ tal que $A \cap \ima(s)$ es infinito y con ello $f_A$ converge a $x$ en $X$, con lo que $x=p(A)$. Sin embargo
-	$$ \text{AQUÍ ESTO YA NO SALE} $$
-
-	(ii) $\to$ (i) SALE FÁCIL
+	Ahora, si $A \in [D]^\omega$ es cualquier sucesión, entonces $f^{-1}[A] \subseteq \omega$ es infinito. Como $\ms{A}$ es maximal, es inmediato a \ref{prop-tra-pseudoCaract}, la existencia de una sucesión convergente $B \subseteq f^{-1}[A] \omega$. Luego, cualquier biyección $x:\omega \to B$ es una sucesión convergente en $\Psi(\ms{A})$, siendo $fx: \omega \to A$ una sucesión convergente en $X$.
 \end{proof}
-% Supóngase que $\ms{A}$ es una familia maximal tal que $X$ es imagen continua de $\Psi(\ms{A})$ por medio de $f:\Psi(\ms{A}) \to X$. Como $f$ es continua y sobreyectiva, $D:=f[\omega]$ es denso en $X$. Supóngase que $(a_n)_{n \in \omega} \subseteq D$ es cualquier sucesión. Para cada $n \in \omega$ fíjese $b_n \in \omega$ de modo tal que $f(b_n)=a_n$ (esto no requiere de elección debido al buen orden de $\omega$). Así, $(b_n)_{n \in \omega}$ es una sucesión en $\omega$ y como $\ms{A}$ es maximal, se sigue de la Proposición \ref{prop-tra-pseudoCaract}, que $(b_n)_{n \in \omega}$ contiene una subsucesión convergente en $\Psi(\ms{A})$. Así que por continuidad de $f$, la sucesión $(a_n)_{n \in \omega}$ admite también una subsucesión convergente en $X$.
+
+Todo espacio metrizable, compacto y separable $X$ es $1\AN$, por tanto es de Fréchet. Además $X$ es secuencialmente compacto (\textcolor{red}{Prelim}), consecuentemente, cualquier denso numerable $D$, de $X$, tiene el comportamiento del inciso (i) del Corolario previo. Se demuestra entonces la consecuencia:
+
 
 \begin{corolario}
-	Todo espacio metrizable, separable y compacto es imagen continua de un espacio de Mrówka; en particular, el cubo de Hilbert $[0,1]^\omega$ y el conjunto de Cantor $2^\omega$.
+	Todo espacio metrizable, separable y compacto es imagen continua de un espacio de Mrówka (generado por una familia maximal).
 \end{corolario}
+
+El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables (\textcolor{red}{Prelim}), y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo (\textcolor{red}{Prelim}); lo cual es cuanto menos, digno de mencionar.

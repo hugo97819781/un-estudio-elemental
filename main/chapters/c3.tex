@@ -1,7 +1,7 @@
 \chapter{El compacto de Franklin}
-\emph{\small Se comenzará introduciendo los espacios conocidos como \textit{compactos de Franklin}, que no son más que la extensión unipuntual (de Alexxandroff) de los espacios de Mrówka, si estos son no compactos.}
+\emph{\small Los espacios conocidos como \textit{compactos de Franklin} son la extensión unipuntual de los espacios de Mrówka. En el presente capítulo se estudiarán sus cualidades, comenzando por dar una caracterización de los mismos en propiedades topológiacas. Se demostrará que los compactos de Franklin asociados a un espacio de Mrówka pseudocompacto es un espacio secuencial de orden $2$.}
 
-\emph{\small Se logrará caracterizar cuándo estos espacios satisfacen con la propiedad de Fréchet; objetivo que requerirá los conocimientos obtenidos en el primer capítulo de este trabajo de tesis y nociones básicas sobre espacios secuenciales y de Fréchet. Durante el proceso de tal caracterización, se resolverá de paso un problema que estuvo sin solución en $\zfc$ durante cierta parte del siglo pasado; la productividad finita de la propiedad de Fréchet.}
+\emph{\small Se probará que el carácter del punto al infinito en el compacto de Franklin asociado a $\Psi(\ms{A})$ es $|\ms{A}|$, y se demostrará que este espacio es de Fréchet si y sólo si su familia asociada es maximal en ninguna parte. Esto a su paso dará la negativa, dentro de $\zfc$, a una cuestión relevante que estuvo sin solución durante el siglo XX: ¿es la propiedad de Fréchet finitamente productiva?.}
 
 \section{\texorpdfstring{Sucesiones en $\ms{F}(\ms{A})$}{Sucesiones en F(A)}}
 \label{Subsec-sucesiones-Franklin}
@@ -13,39 +13,40 @@
 \end{definicion}
 
 \index[alph]{familia!no compacta}
-Dado que un espacio topológico no compacto admite compactaciones Hausdorff únicamente cuando es Tychonoff y localmente compacto (véase \cite[p.~ 221]{fidelElementos}), el compacto de Franklin resulta ser la compactación de Alexandroff de $\Psi(\ms{A})$ únicamente cuando $\ms{A}$ sea una familia casi ajena, lo que garantiza que $\Psi(\ms{A})$ sea de Tychonoff; y sea \textit{no compacta} (es decir, que no sea simultáneamente finita y maximal), lo cual obliga a que $\Psi(\ms{A})$ sea no compacto; a razón de la \autoref{prop-tra-compacidad}.
-
-Por ello; y salvo se diga lo contrario, se convendrá que $\ms{A}$ es una familia (casi ajena) no compacta. Y más allá de esto, en pos de aligerar la notación de las futuras pruebas del capítulo, es menester convenir:
+Dado que un espacio topológico, no compacto, admite compactaciones Hausdorff únicamente cuando es Tychonoff y localmente compacto (véase \cite[p.~ 221]{fidelElementos}), el compacto de Franklin resulta ser la compactación de Alexandroff de $\Psi(\ms{A})$ únicamente cuando $\ms{A}$ sea una familia casi ajena, lo que garantiza que $\Psi(\ms{A})$ sea de Tychonoff; y sea \textit{no compacta} (es decir, que no sea simultáneamente finita y maximal), lo cual obliga a que $\Psi(\ms{A})$ sea no compacto; a razón de la \autoref{prop-tra-compacidad}.
 
 \begin{consideracion}
 	Durante esta sección:
 	\begin{enumerate}
+		\item Cualquier familia casi ajena $\ms{A}$ que se considere será no compacta.
 		\item Para cada subespacio compacto $K \subseteq \Psi(\ms{A})$, se denotará por $V(K)$ a la vecindad abierta de $\infty$: $\{\infty\} \cup \Psi(\ms{A}) \setminus K$ (como $\Psi(\ms{A})$ es Hausdorff, todos los abiertos al rededor de $\infty$ son de esta forma).
 		\item Se utilizarán casi en exceso los resultados obtenidos en \ref{prop-Kcaract} y \ref{cor-IdealCompactosCarac}, así que no se referenciarán de ahora en más.
-		\item Todas las convergencias y operadores que aparezcan sin subíndices se asumirán en $\ms{F}(\ms{A})$. En caso de aparecer éstos en otros espacios, esto se indicará en sus subíndices.
+		\item Todas las convergencias y operadores que aparezcan sin subíndices, se asumirán en $\ms{F}(\ms{A})$.
 	\end{enumerate}
 \end{consideracion}
 
-Lo primero a observar es lo siguiente: dado que $\Psi(\ms{A})$ no es compacto, al ser un espacio de Tychonoff y localmente compacto, se tiene efectivamente que $\ms{F}(\ms{A})$ es de Hausdorff, compacto (en consecuencia, normal). Como es previsible, ciertas propiedades de $\Psi(\ms{A})$ influyen en la topología de $\ms{F}(\ms{A})$; como ejemplo inmediato, la separabilidad se preserva.
+Lo primero a observar es lo siguiente: dado que $\Psi(\ms{A})$ no es compacto, al ser un espacio de Tychonoff y localmente compacto, se tiene efectivamente que $\ms{F}(\ms{A})$ es de Hausdorff, compacto (véase \textcolor{red}{(prelims)}; y en consecuencia, normal. Como es previsible, ciertas propiedades de $\Psi(\ms{A})$ \enquote{suben} a la topología de $\ms{F}(\ms{A})$; como ejemplo inmediato, la separabilidad se preserva.
 
 \begin{observacion}
-	Sea $\ms{A}$ una familia casi ajena. Entonces el espacio $\ms{F}(\ms{A})$ es de Hausdorff, compacto, normal, localmente compacto, separable y disperso.
+	Sea $\ms{A}$ una familia casi ajena. Entonces $\ms{F}(\ms{A})$ es de Hausdorff, compacto, normal, localmente compacto, separable y disperso.
 \end{observacion}
 
-Comparando con el \autoref{cor-MrwokaSiempre} con las observaciones recién hechas, vale mencionar que existen propiedades $\ms{F}(\ms{A})$ que tienen una dependencia más compleja con $\Psi(\ms{A})$. Entre ellas, todas las que tengan relación a las sucesiones.
+Comparando con el \autoref{cor-MrwokaSiempre} con las observaciones recién hechas, vale mencionar que existen propiedades $\ms{F}(\ms{A})$ que tienen una dependencia más compleja con $\Psi(\ms{A})$. Iniciarmos mostrando estas disparidades con lo próximo:
 
 \begin{proposicion}\label{prop-caracterFrechet}
-	Sea $\ms{A}$ una familia no compacta. Entonces el carácter de $\infty$ en $\ms{F}(\ms{A})$ es exactamente $\aleph_0 + |\ms{A}|$.
+	Para toda familia $\ms{A}$ se tiene que $\chi(\infty) = \aleph_0 + |\ms{A}|$.
 \end{proposicion}
 
-\begin{proof} Es evidente que $\aleph_0 \leq \chi(\infty,\ms{F}(\ms{A}))$. Ahora, sea $\mathcal{B}$ una base local de $\infty$ en $\ms{F}(\ms{A})$. Para cada $y \in \ms{A}$ fíjese un elemento $B_y \in \mathcal{B}$ de modo que $B_y \subseteq V(y \cup \{y\})$ (recuérdese que $y \cup \{y\}$ es compacto). Obsérvese que la asignación $y \mapsto B_y$ es inyectiva; pues, si $x,y \in \ms{A}$ son distintos, entonces $B_x \subseteq U(x \cup \{x\})$ y $B_y \subseteq U(y \cup \{y\})$, de donde $x \in B_y \setminus B_x$. Por lo tanto $ |\ms{A}| \leq |\mathcal{B}|$, y en consecuencia $\aleph_0 + |\ms{A}|\leq \chi(\infty,\ms{F}(\ms{A}))$.
+\begin{proof} Es evidente que $\aleph_0 \leq \chi(\infty)$. Ahora, sea $\mathcal{B}$ una base local de $\infty$ en $\ms{F}(\ms{A})$. Para cada $y \in \ms{A}$ fíjese ($\Ac$) un $B_y \in \mathcal{B}$ con $B_y \subseteq V(y \cup \{y\})$. Obsérvese que la asignación $y \mapsto B_y$ es inyectiva; pues, si $x,y \in \ms{A}$ son distintos, entonces $B_x \subseteq U(x \cup \{x\})$ y $B_y \subseteq U(y \cup \{y\})$, de donde $x \in B_y \setminus B_x$. Por lo tanto $ |\ms{A}| \leq |\mathcal{B}|$, y en consecuencia $\aleph_0 + |\ms{A}|\leq \chi(\infty)$.
 
-	Para la desigualdad recíproca defínase:
-	$$ \mathcal{B} = \big\{ V\big( h \cup (B \cup \midcup h) \big) \tq (h,B) \in [\ms{A}]^{<\omega} \times [\omega]^{<\omega} \big\} $$
-	y nótese que $\mathcal{B}$ es un conjunto de vecindades de $\infty$ en $\ms{F}(\ms{A})$.
+Para la desigualdad recíproca defínase:
+$$ \mathcal{B} = \big\{ V( B \cup \midcup h \cup h ) \tq (B,h) \in [\omega]^{<\omega} \times [\ms{A}]^{<\omega} \big\} $$
+y nótese que $\mathcal{B}$ es un conjunto de vecindades de $\infty$ en $\ms{F}(\ms{A})$.
 
-	Si $K$ es cualquier subespacio compacto de $\Psi(\ms{A})$, entonces los conjuntos $K \cap \ms{A} \subseteq \ms{A}$ y $G:=(K \cap \omega) \setminus \midcup (K \cap \ms{A}) \subseteq \omega$ son finitos; consecuentemente $V\big( (K \cap \ms{A}) \cup \big( G \cup \midcup (K \cap \ms{A}) \big) \big) \subseteq U $. Mostrando que que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$; y además $ |\mathcal{B}| \leq | [\ms{A}]^{<\omega} \times [\omega]^{<\omega} | \leq |\ms{A}| \cdot \aleph_0 = \aleph_0 + |\ms{A}| $. Lo anterior prueba que $\chi(\infty,\ms{F}(\ms{A})) \leq \aleph_0 + |\ms{A}|$.
+Ahora, si $K \subseteq \Psi(\ms{A})$ es compacto, $h:=K \cap \ms{A} \subseteq \ms{A}$ y $G:=(K \cap \omega) \setminus \midcup h \subseteq \omega$ son finitos, además $V\big( G \cup \midcup h \cup h \big) \subseteq V(K)$. Lo cual demuestra que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$. Dado que $ |\mathcal{B}| \leq | [\omega]^{<\omega} \times [\ms{A}]^{<\omega} | = \aleph_0 + |\ms{A}| $, resulta que $\chi(\infty) \leq \aleph_0 + |\ms{A}|$.
 \end{proof}
+
+En seguida a lo anterior se concluye que, para toda familia no compacta e infinita, el espacio $\ms{F}(\ms{A})$ no es de primero numerable. 
 
 El siguiente Corolario se puede enriquecer con \ref{prop-tra-numerable}.
 
@@ -53,38 +54,40 @@ El siguiente Corolario se puede enriquecer con \ref{prop-tra-numerable}.
 	Para toda familia no compacta $\ms{A}$, el espacio $\ms{F}(\ms{A})$ es primero numerable si y sólo si $|\ms{A}| \leq \aleph_0$.
 \end{corolario}
 
-El próximo Lema es clave por varios motivos; entre ellos, responde a una pregunta que sugiere la discusión previa al \autoref{prop-CaracMADPositiv} ¿qué distingue a los subconjuntos de $\omega$ casi ajenos con cada elemento de una familia casi ajena con aquellos en su parte positiva?.
+El próximo Lema es clave por varios motivos; entre ellos, responde a una pregunta que sugiere la discusión previa al \autoref{prop-CaracMADPositiv} ¿qué distingue a los subconjuntos de $\omega$ casi ajenos con cada elemento de $\ms{A}$, con los elementos de $\ms{I}^+(\ms{A})$?, encontramos la solución a esta interrogante por medio de la topología.
 
 \begin{lema}\label{lem-convClave}
-	Sean $\ms{A}\in \Ad(\omega)$ y $B \subseteq \Psi(\ms{A})$, entonces:
+	Sean $\ms{A}\in \Ad(\omega)$ y $B \subseteq \Psi(\ms{A})$ infinito, entonces:
 	\begin{enumerate}[i)]
-		\item Si $B$ es numerable, $B \to \infty$ si y sólo si $B \subseteq^* \ms{A}$, o $B \cap \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
+		\item $\infty \in \scl(B)$ si y sólo si $B \cap \ms{A}$ es infinito, o $B \cap \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
 		\item $\infty \in \cla(B)$ si y sólo si $B \cap \ms{A}$ es infinito, o $B \cap \omega \in \ms{I}^+(\ms{A})$.
 	\end{enumerate}
 \end{lema}
 
 \begin{proof}
-	(i) Supóngase que $B$ es numerable. Pruébese la suficiencia por contradicción; esto es, asúmase que $B \to \infty$ pero $B \not\subseteq^* \ms{A}$ ($B\cap \ms{A}$ es infinito) y que existe cierto $a \in \ms{A}$ cuya intersección con $B \cap \omega$ es infinita. Como $B\to \infty$ y $a \cap B = a \cap (B \cap \omega) \subseteq B$ es infinito, ocurre que $a \cap B \to \infty$. Sin embargo, $a \cap B \subseteq a$ es infinito y a razón del \autoref{lem-convObvia} se tiene que $a \to a$ en $\Psi(\ms{A})$; así mismo en $\ms{F}(\ms{A})$. Lo anterior implica que $a \cap B \to a$ y $a \cap B \to \infty$, siendo esto un absurdo.
+	(i) Para la suficiencia supóngase por absurdo que $\infty \in \scl(B)$, esto es (véase \textcolor{red}{(prelim)}), existe $C \in [B]^\omega$ tal que $C \to \infty$; que $B \cap \ms{A}$ es finito; y que $a \in \ms{A}$ es un elemento tal que $a \cap (B \cap \omega)$ es infinito. Obsérvese que, necesariamente $a \cap C$ es infinito. Como $C \to \infty$ y $a \cap C \subseteq C$ es infinito, ocurre que $a \cap C \to \infty$. Sin embargo, $a \cap C \subseteq a$ y a razón del \autoref{lem-convObvia}, $a \cap C \to a$ en $\Psi(\ms{A})$; así mismo en $\ms{F}(\ms{A})$. Lo anterior es imposible, ya que $a \neq \infty$ y $\ms{F}(\ms{A})$ es de Hausdorff.
 
-	Conversamente, si $B \not\to \infty$, existe un compacto $K \subseteq \Psi(\ms{A})$ de modo que $B \not\subseteq^* U_K$; esto es, $B \cap K$ es infinito. Como $K \cap \ms{A}$ es finito, lo anterior prueba que $B \cap \omega \subseteq (B \cap \omega) \cap K$ es infinito, y así mismo, $B \not\subseteq^* \ms{A}$. Además $C:=(B \cap \omega) \cap K$ es un elemento en $\ms{I}(\ms{A})$; a consecuencia de esto y lo comentado antes de \ref{prop-CaracMADPositiv}, existe cierto $a \in A$ con $C \cap a$ infinito; de donde, $B \cap a$ es infinito.
+	Recíprocamente, si $B \cap \ms{A}$ es infinito, existe $C_0 \in [B \cap \ms{A}]^\omega$; y, si $K \subseteq \Psi(\ms{A})$ es cualquier compacto, entonces $C_0 \setminus V(K) = C_0 \cap K \subseteq K \cap \ms{A}$ es finito, mostrando que $C_0 \to \infty$ y que $\infty \in \scl(B)$.
 
-	(ii) Para la suficiencia, supóngase que $\infty \in \cla(B)$ y que $B \cap \ms{A}$ es finito. Resulta necesario que $\infty \in \cla(B \cap \omega)$ y con ello $B \cap \omega \not\to \ms{I}(\ms{A})$. En efecto; de lo contrario, $B \cap \omega$ sería compacto y por ello lo tanto $\infty \in \cla(B \cap \omega) \subseteq B$, lo cual es imposible pues $\infty \notin \Psi(\ms{A})$. Así que $B \cap \omega \in \ms{I}^+(\ms{A})$.
+	Ahora, supóngase que $B \cap \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$. Si $\infty \notin \scl(B)$, entonces $B \cap \omega \not\to \infty$ y existiría un compacto $K_0 \subseteq \Psi(\ms{A})$ tal que $S:=(B \cap \omega) \cap K_0$ es infinito. $S \subseteq K$ es un elemento en $\ms{I}(\ms{A})$; a consecuencia de esto y de \ref{cor-CasiajenoPartePositiva}, existe cierto $a \in A$ con $S \cap a$ infinito; de donde, $B \cap a$ es infinito, contradiciendo la suposición sobre $B$. Por tanto, $\infty \in \scl(B)$
 
-	Para la necesidad, sí $B \cap \ms{A}$ es infinito, existe $C \subseteq B \cap \ms{A}$ numerable y por el inciso anterior $C \to \infty$, de donde $\infty \in \cla(C) \subseteq \cla(B)$. Por otra parte, si $B \cap \omega \in \ms{I}^+(\ms{A})$ y $K \subseteq \Psi(\ms{A})$ es compacto, resulta que $B \cap \omega \not\subseteq K$ y con ello $B\cap U_K \neq \emptyset$, mostrando que $\infty \in \cla(B)$.
+	(ii) Para la suficiencia, supóngase que $\infty \in \cla(B)$ y que $B \cap \ms{A}$ es finito. Resulta necesario que $\infty \in \cla(B \cap \omega)$. Si $K \subseteq \Psi(\ms{A})$ es compacto, $(B \cap \omega) \cap V(K) \neq \emptyset$, prohibiendo que $B \cap \omega \subseteq K$, por tanto, $B \cap \omega \notin \ms{I}(\ms{A})$.
+
+	Para la necesidad, sí $B \cap \ms{A}$ es infinito, existe $C \subseteq B \cap \ms{A}$ numerable y por el inciso anterior $C \to \infty$, de donde $\infty \in \cla(C) \subseteq \cla(B)$. Y, si $B \cap \omega \in \ms{I}^+(\ms{A})$ y $K \subseteq \Psi(\ms{A})$ es compacto, resulta que $B \cap \omega \not\subseteq K$ y con ello $B\cap V(K) \neq \emptyset$, mostrando que $\infty \in \cla(B)$.
 \end{proof}
 
-Si $\ms{A}$ es una familia casi ajena maximal e infinita, entonces la condición (i) del Teorema anterior implica que las únicas sucesiones convergentes a $\infty$ son únicamente las (infinitas) contenidas en $\ms{A}$; por ello:
+Si $\ms{A}$ es una familia maximal, la condición (i) del resultado anterior implica que ninguna sucesión contenida en $\omega$ es convergente a $\infty$. A continuación se establecen las únicas convergencias posibles en el compacto de Franklin.
 \begin{corolario}\label{cor-convMaximal}
-	Supóngase que $\ms{A}$ es una familia casi ajena maximal e infinita, entonces para cada $X \in [\ms{F}(\ms{A})]^\omega$:
+	Sean $\ms{A} \in \Mad(\omega)$ infinita y $X \subseteq \ms{F}(\ms{A})$ nuemrable.
 	\begin{enumerate}
-		\item $X$ es convergente si y sólo si $X \subseteq^* \ms{A}$, o, para algun $a \in \ms{A}$ se tiene que $X \subseteq^* a$.
+		\item $X$ es convergente si y sólo si $X \subseteq^* \ms{A}$, o para algún $a \in \ms{A}$, $X \subseteq^* a$.
 		\item Si $X \subseteq \omega$ y $x \in \omega \cup \{\infty\}$, entonces $X \not\to x$.
 		\item Si $B \subseteq \omega \cap \scl(X)$, entonces $B \subseteq X$.
 	\end{enumerate}
 \end{corolario}
 
 \begin{proof}
-	(i) Sea $X \in [\ms{F}(\ms{A})]^\omega$ cualquiera. El recíproco es inmediato a razón de \ref{lem-convObvia} y el Lema previo. Para la suficiencia asúmase que $X \to x$ en el compacto de Franklin. Si $x = \infty$, se sigue del lema anterior y la maximalidad de $\ms{A}$ que $X \subseteq^* \ms{A}$. En otro caso, se puede suponer sin pérdida de generalidad que $X \subseteq \Psi(\ms{A})$, siguiéndose de \ref{lem-convObvia} que $X$ debe estar casi contenido en algún elemento de $\ms{A}$.
+	(i) El recíproco es inmediato a razón de \ref{lem-convObvia} y el Lema previo. Para la suficiencia asúmase que $X \to x$ en el compacto de Franklin. Si $x = \infty$, se sigue del Lema anterior y la maximalidad de $\ms{A}$ que $X \subseteq^* \ms{A}$. En otro caso, se puede suponer sin pérdida de generalidad que $X \subseteq \Psi(\ms{A})$, siguiéndose de \ref{lem-convObvia} que $X$ debe estar casi contenido en algún elemento de $\ms{A}$.
 
 	(ii) y (iii) Se desprenden inmediatamente del inciso (i) y de que cada punto en $\omega$ es aislado (por lo que las sucesiones convergentes a puntos de $\omega$ son eventualmente constantes).
 \end{proof}

@@ -553,7 +553,7 @@ La \textit{curiosidad} (comentada posteriormente a \ref{prop-alomasNumCaract}) e
 
 \subsection{Sobre un corolario de Kannan y Rajagopalan}
 
-Se finalizará la sección; y con ello el actual capítulo, dando un Corolario importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. Vale mencionar que este resultado aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y se enuncia de la siguiente manera: \enquote{\textit{Un espacio $X$ infinito, de Hausdoff es imagen continua de un espacio de Mrówka pseudocompacto si y sólo si existe un denso numerable $D \subseteq X$ de manera de forma que toda sucesión en $D$ contiene una subsucesión convergente.}}
+Se finalizará la sección; y con ello el actual capítulo, dando un Corolario importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. Vale mencionar que este resultado aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y se enuncia de la siguiente manera: \enquote{\textit{Un espacio $X$ infinito, de Hausdorff es imagen continua de un espacio de Mrówka pseudocompacto si y sólo si existe un denso numerable $D \subseteq X$ de manera de forma que toda sucesión en $D$ contiene una subsucesión convergente.}}
 
 En el documento original no se demuestra el resultado mencionado, sólo se esboza la mitad de la prueba. Para mostrar que este resultado es erróneo (tal cual está enunciado) basta encontrar un espacio de Hausdorff, separable y secuencialmente compacto, que tenga tamaño mayor al continuo. Tal espacio satisfaría la condición escrita en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y no podría ser imágen continua de ningún espacio de Mrówka (todos ellos tienen tamaño menor o igual a $\mathfrak{c}$). Los siguientes comentarios encuentran la consistencia con $\zfc$ de un espacio de esa naturaleza.
 
@@ -566,31 +566,25 @@ Pero, seguido de \textcolor{red}{HAND}, se desprende que:
 
 A razón de lo anterior, es consistene con $\zfc$ está el hecho de que $2^{\omega_1}$ es un espacio secuencialmente compacto de tamaño mayor a $\mathfrak{c}$. Este espacio es de Hausdorff y cumple la condición enunciada en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily}, pues al ser un producto de menos de $\mathfrak{c}$ espacios separables, es separable. Mostrando que, desde $\zfc$, es imposible demostrar ese resultado, incluso en la clase de espacios compactos de Hausdorff.
 
-Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopalan es agregando la propiedad de Fréchet en la hipótesi general; pero esta manera no es la única. También basta con agregar que el espacio sea regular y hereditariamente Lindelöf.
+Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopalan es agregando la propiedad de Fréchet como la hipótesis general.
 
 \begin{proposicion}\label{prop-imagenKanan}
-	Sea $X$ infinito, de Hausdorff. Si $X$ es de Fréchet, o $X$ es regular y hereditariamente Lindelöf, son equivalentes:
+	Sea $X$ infinito, de Hausdorff y de Fréchet. Entonces las siguientes condiciones son equivalentes:
 	\begin{enumerate}[i)]
 		\item Existe un denso $D \subseteq X$ de $X$ numerable tal que cada sucesión en $D$ tiene una subsucesión convergente en $X$.
 		\item $X$ es imagen continua de un espacio de Mrówka pseudocompacto.
 	\end{enumerate}
 \end{proposicion}
 \begin{proof}
-	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(D):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$.
+	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
 
-	Sea $\ms{B} \in \Ad(D)$ una familia casi ajena infinita. Por hipótesis, para cada $B \in \ms{B}$ se puede fijar ($\Ac$) un subconjunto $B' \subseteq B$ que sea una sucesión convergente en $X$. Por ello $\ms{B}':=\{B' \tq B \in \ms{B}\} \in \operatorname*{CS}(D)$. De forma análoga a la prueba del \autoref{lem-MADs}, constrúyase una familia $\ms{A} \supseteq \ms{B}'$ que sea $\subseteq$-maximal de $\operatorname*{CS}(D)$.
+	Obsérvese que si $A \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $B \subseteq A$ en $X$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $C \in \ms{A}$ que tiene intersección infinita con $B$; así mismo, con $A$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Defínase $f:\Psi_D(\ms{A}) \to X$ como: $f(x)$, si $x \in D$; y $f(x)=\lim (x)$, si $x \in \ms{A}$. Como $\ms{A} \supseteq \ms{A}_{D,X\setminus D}$, $f$ es sobreyectiva.
+	
+	Finalmente, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
 
-	Obsérvese que si $S \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $S' \subseteq S$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $A \in \ms{A}$ que tiene intersección infinita con $S'$; así mismo, con $S$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Considérese la función $f:\Psi_D(\ms{A}) \to X$, dada por: $f(n)$, si $n \in D$; y $f(y)=\lim (y)$, si $y \in \ms{A}$, claramente $D \subseteq f[\Psi_D(\ms{A})]$.
+	(ii) \to (i) Supóngase que $\ms{A} \in \Mad(\omega)$ y que $f:\Psi(\ms{A}) \to X$ es sobreyectiva. Puesto que $\omega$ es denso en $\Psi(\ms{A})$, se tiene que $D:=f[\omega]$ es denso en $X$.
 
-	Ahora, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
-
-	\begin{enumerate}
-		\item Supóngase que $X$ es de Fréchet y sea $x \in X \setminus D$. Como $D$ es denso en $X$, existe $S \subseteq D$ con $S \to x$ en $X$. Por maximalidad de $\ms{A}$, existe $y \in \ms{A}$ de modo que $y \cap S$ es infinito, así que $y \cap S \to x$ en $X$. En virtud del \autoref{lem-convObvia}, $S \cap y$ y $y \subseteq \Psi_D(\ms{A})$ convergen al mismo punto en $\Psi_D(\ms{A})$. Esto prueba que $x=\lim(y)=f(y)$. 
-		
-		\item Supóngase que $X$ es regular y hereditariamente Lindelöf. Nótese que el subespacio $f[\Psi_D(\ms{A})]$ es denso y pseudocompacto. Luego entonces, al ser regular y Lindelöf, es compacto. Por tanto, es subespacio compacto del espacio de Hausdorff $X$, y necesariamente debe ser cerrado; por ser denso, $f[\Psi_D(\ms{A})]=X$.
-	\end{enumerate}
-
-	En cualquier caso, $f$ es sobreyectiva y $X$ es imagen continua de $\Psi_D(\ms{A})$.
+	Ahora, si $A \in [D]^\omega$ es cualquier sucesión, entonces $f^{-1}[A] \subseteq \omega$ es infinito. Como $\ms{A}$ es maximal, es inmediato a \ref{prop-tra-pseudoCaract}, la existencia de una sucesión convergente $B \subseteq f^{-1}[A] \omega$. Luego, cualquier biyección $x:\omega \to B$ es una sucesión convergente en $\Psi(\ms{A})$, siendo $fx: \omega \to A$ una sucesión convergente en $X$.
 \end{proof}
 
 \begin{corolario}
@@ -600,23 +594,32 @@ Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopala
 Si $X$ es un espacio metrizable y compacto, en automático se deduce (véase \textcolor{red}{(prelims)}) que es secuencialmente compacto y de Fréchet. Además es de Lindelöf, y con ello (\textcolor{red}{prelims}), separable. Así que:
 
 \begin{corolario}
-	Todo espacio metrizable, separable y compacto es imagen continua de un espacio de Mrówka (generado por una familia maximal).
+	Todo espacio metrizable y compacto es imagen continua de un espacio de Mrówka (pseudocompacto).
 \end{corolario}
 
-El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables (\textcolor{red}{Prelim}), y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo (\textcolor{red}{Prelim}); lo cual es cuanto menos, digno de mencionar.
+El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables (\textcolor{red}{Prelim}), y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka generados por familias maximales. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo (\textcolor{red}{Prelim}); lo cual es cuanto menos, digno de mencionar.
 
-Finalmente, mencionaremos que las hipótesis de la \autoref{prop-imagenKanan} sobre el espacio $X$, se pueden remover. En el próximo capítulo se mostrará que la compactación unipuntual de un espacio de Mrówka pseudocompacto, es imagen de ese espacio de Mrówka. Tal espacio es el \textit{comapcto de Franklin} y resulta ser un espacio que no tiene la propiedad de Fréchet y tampoco es hereditariamente Lindelöf.
+%%%%%%%%% Estoy casi seguro de que NO se puede remover, pero no sale la demostración.
+
+%Finalmente, mencionaremos que las hipótesis de la \autoref{prop-imagenKanan} sobre el espacio $X$, se pueden remover. En el próximo capítulo se mostrará que la compactación unipuntual de un espacio de Mrówka pseudocompacto, es imagen de ese espacio de Mrówka. Tal espacio es el \textit{comapcto de Franklin} y resulta ser un espacio que no tiene la propiedad de Fréchet y tampoco es hereditariamente Lindelöf.
 
 
-%\newpage
+%%%%%%%%% Demo tomando en cuenta regular y hereditariamente Lindelöf (PEDIR MUCHÍSIMO)
+
 %\begin{proof}
-%	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
+	%(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(D):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$.
 
-%	Obsérvese que si $A \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $B \subseteq A$ en $X$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $C \in \ms{A}$ que tiene intersección infinita con $B$; así mismo, con $A$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Defínase $f:\Psi_D(\ms{A}) \to X$ como: $f(x)$, si $x \in D$; y $f(x)=\lim (x)$, si $x \in \ms{A}$. Como $\ms{A} \supseteq \ms{A}_{D,X\setminus D}$, $f$ es sobreyectiva.
-	
-%	Finalmente, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
+	%Sea $\ms{B} \in \Ad(D)$ una familia casi ajena infinita. Por hipótesis, para cada $B \in \ms{B}$ se puede fijar ($\Ac$) un subconjunto $B' \subseteq B$ que sea una sucesión convergente en $X$. Por ello $\ms{B}':=\{B' \tq B \in \ms{B}\} \in \operatorname*{CS}(D)$. De forma análoga a la prueba del \autoref{lem-MADs}, constrúyase una familia $\ms{A} \supseteq \ms{B}'$ que sea $\subseteq$-maximal de $\operatorname*{CS}(D)$.
 
-	%(ii) \to (i) Supóngase que $\ms{A} \in \Mad(\omega)$ y que $f:\Psi(\ms{A}) \to X$ es sobreyectiva. Puesto que $\omega$ es denso en $\Psi(\ms{A})$, se tiene que $D:=f[\omega]$ es denso en $X$.
+	%Obsérvese que si $S \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $S' \subseteq S$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $A \in \ms{A}$ que tiene intersección infinita con $S'$; así mismo, con $S$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Considérese la función $f:\Psi_D(\ms{A}) \to X$, dada por: $f(n)$, si $n \in D$; y $f(y)=\lim (y)$, si $y \in \ms{A}$, claramente $D \subseteq f[\Psi_D(\ms{A})]$.
 
-%	Ahora, si $A \in [D]^\omega$ es cualquier sucesión, entonces $f^{-1}[A] \subseteq \omega$ es infinito. Como $\ms{A}$ es maximal, es inmediato a \ref{prop-tra-pseudoCaract}, la existencia de una sucesión convergente $B \subseteq f^{-1}[A] \omega$. Luego, cualquier biyección $x:\omega \to B$ es una sucesión convergente en $\Psi(\ms{A})$, siendo $fx: \omega \to A$ una sucesión convergente en $X$.
+	%Ahora, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
+
+	%\begin{enumerate}
+	%	\item Supóngase que $X$ es de Fréchet y sea $x \in X \setminus D$. Como $D$ es denso en $X$, existe $S \subseteq D$ con $S \to x$ en $X$. Por maximalidad de $\ms{A}$, existe $y \in \ms{A}$ de modo que $y \cap S$ es infinito, así que $y \cap S \to x$ en $X$. En virtud del \autoref{lem-convObvia}, $S \cap y$ y $y \subseteq \Psi_D(\ms{A})$ convergen al mismo punto en $\Psi_D(\ms{A})$. Esto prueba que $x=\lim(y)=f(y)$. 
+		
+	%	\item Supóngase que $X$ es regular y hereditariamente Lindelöf. Nótese que el subespacio $f[\Psi_D(\ms{A})]$ es denso y pseudocompacto. Luego entonces, al ser regular y Lindelöf, es compacto. Por tanto, es subespacio compacto del espacio de Hausdorff $X$, y necesariamente debe ser cerrado; por ser denso, $f[\Psi_D(\ms{A})]=X$.
+	%\end{enumerate}
+
+	%En cualquier caso, $f$ es sobreyectiva y $X$ es imagen continua de $\Psi_D(\ms{A})$.
 %\end{proof}

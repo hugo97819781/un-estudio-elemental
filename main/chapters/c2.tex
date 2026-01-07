@@ -180,7 +180,7 @@ A continuación se muestran aquellas propiedades topológicas de $\Psi(\ms{A})$ 
 \begin{proof}
 	(i) $\rightarrow$ (ii) Si $\ms{A}$ es familia casi ajena, como $\Psi(\ms{A})$ es $\T_1$, basta verificar que cada elemento de la base $\ms{B}_\ms{A}$ (definida como en \ref{cor-NumAxMrowka}) es cerrado. En efecto, cada $\{n\}$ con $n \in \omega$ es cerrado pues $\Psi(\ms{A})$ es $\T_1$. Y dados $x \in \ms{A}$ y $F \subseteq x$ finto, haciendo uso de \ref{lem-primerosSubs} se tiene que por ser $\ms{A}$ familia casi ajena, $\der(\{x\} \cup x \setminus F)=\{x\} \subseteq \{x\} \cup x \setminus F$. Así que $\{x\} \cup x \setminus F$ es cerrado.
 
-	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta ser de Tychonoff \textcolor{red}{(ver PRELIMS)}. Y, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
+	(ii) $\rightarrow$ (iii) $\rightarrow$ (iv) Si $\Psi(\ms{A})$ es cero-dimensional, al ser espacio $\T_1$, resulta ser de Tychonoff \textcolor{red}{(prelim)}. Y, si $\Psi(\ms{A})$ es de Tychonoff, entonces es de Hausdorff.
 
 	(iv) $\rightarrow$ (i) Si $\Psi(\ms{A})$ es de Hausdorff y $x,y \in \ms{A}$ son distintos, existen abiertos ajenos $U,V \subseteq \Psi(\ms{A})$ tales que $x \in U$ y $y \in V$. De donde $x \subseteq^* U$, $y \subseteq^* V$ y por consiguiente $x \cap y \subseteq^* U \cap V = \emptyset$.
 \end{proof}
@@ -269,7 +269,7 @@ La siguiente Proposición para nada carece de importancia, pues los espacios de 
 
 	Sea $x \in X$ arbitrario. Si $x \in \omega$, $\{x\}$ es vecindad compacta de $x$ en $X$. Ahora, si $x \in \ms{A}$, entonces $K:=X \cap (\{x\} \cup x) \subseteq \{x\} \cup x$ es vecindad de $x$ en $X$. En virtud de la \autoref{prop-Kcaract}, $K$ es compacto; pues $K \cap \ms{A} = \{x\}$ es finito y $K \cap \omega \subseteq x \subseteq^* \midcup \{x\} = \midcup (K \cap \ms{A})$. Así, $X$ es localmente compacto.
 
-	Finalmente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire \textcolor{red}{(Teorema de Categoría de Baire)}.
+	Finalmente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire \textcolor{red}{(prelim)}.
 \end{proof}
 
 \section{Metrizabilidad y Pseudocompacidad}
@@ -288,11 +288,11 @@ El \autoref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una famil
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textcolor{red}{(MtzEq)}.
+	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textcolor{red}{(prelim)}.
 
-	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto \textcolor{red}{(2AN, locComp implica sigma comp)}. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. \textcolor{red}{(sigma comp implica lind)}
+	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto \textcolor{red}{(prelim)}. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. \textcolor{red}{(prelim)}
 
-	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, debe ser $2\AN$ \textcolor{red}{(Lind Desr implica 2an)}. Se sigue del \autoref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
+	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, debe ser $2\AN$ \textcolor{red}{(prelim)}. Se sigue de \ref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
 \end{proof}
 
 El siguiente corolario es una sencilla aplicación de \ref{prop-tra-compacidad} y \ref{prop-tra-numerable}, ejemplos como este ilustran desde ya el poder \enquote{constructivo} que tienen estos espacios.
@@ -324,16 +324,16 @@ Ahora, falta establecer una relación entre $\Psi(\ms{A})$ y la maximalidad de l
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii). Si $\ms{A}$ no es maximal, existe $B \subseteq \omega$ infinito y casi ajeno con cada elemento de $\ms{A}$. Por \ref{prop-BaseLocMrowka} y \ref{lem-primerosSubs}, $B$ es discreto, abierto y cerrado, obteniéndose de \textcolor{red}{(Ree A)} que $\Psi(\ms{A})$ no es pseudocompacto.
+	(i) $\rightarrow$ (ii). Si $\ms{A}$ no es maximal, existe $B \subseteq \omega$ infinito y casi ajeno con cada elemento de $\ms{A}$. Por \ref{prop-BaseLocMrowka} y \ref{lem-primerosSubs}, $B$ es discreto, abierto y cerrado, obteniéndose de \textcolor{red}{(prelim)} que $\Psi(\ms{A})$ no es pseudocompacto.
 
 	(ii) $\rightarrow$ (iii) Por contrapuesta, supóngase que existe $B \subseteq \Psi(\ms{A})$, abierto, cerrado, discreto e infinito. Como $B$ es cerrado y discreto, $\der(B)=\emptyset$ y se obtiene del inciso (i) de \ref{lem-primerosSubs} que $B \subseteq \omega$. Concluyéndose por el quinto inciso de tal Lema que $B$ es casi ajeno con todo elemento de $\ms{A}$.
 
 	(iii) $\rightarrow$ (iv) Supóngase (iii) y sea $B \in [\omega]^\omega $. Así, $B$ es discreto, infinito y abierto. Por hipótesis, $B$ no es cerrado y debe existir $x \in \der(B) \setminus B$ y por \ref{cor-MrwokaSiempre}, $x \in \ms{A}$ y $B \cap x$ es infinito. Siguiéndose del \autoref{lem-primerosSubs} que $B \cap x \to x$ en $\Psi(\ms{A})$.
 
-	(iv) $\rightarrow$ (i) Esta implicación se sigue inmediatamente de la caracterización para la pseudocompacidad dada en \textcolor{red}{(Ree A)}.
+	(iv) $\rightarrow$ (i) Esta implicación se sigue inmediatamente de la caracterización para la pseudocompacidad dada en \textcolor{red}{(prelim)}.
 \end{proof}
 
-Combinando \ref{prop-tra-compacidad}, \ref{prop-tra-numerable} y \ref{prop-tra-pseudoCaract} se obtienen ejemplos muy concretos. Por ejemplo, si un espacio de Mrówka $\Psi(\ms{A})$ no es pseudocompacto pero sí es metrizable, necesariamente $\ms{A}$ es numerable. Otro ejemplo responde con una negativa a lo que en su momento fue un problema popular: ¿la pseudocompacidad equivale a la compacidad numerable en espacios Tychonoff?, resultado se sabe cierto en la clase de espacios $\T_4$ (\textcolor{red}{Reee R}) y falso dentro de la clase de espacios que no son $\T_1$. En virtud de \ref{prop-tra-compacidad}, tomando cualquier familia maximal infinita:
+Combinando \ref{prop-tra-compacidad}, \ref{prop-tra-numerable} y \ref{prop-tra-pseudoCaract} se obtienen ejemplos muy concretos. Por ejemplo, si un espacio de Mrówka $\Psi(\ms{A})$ no es pseudocompacto pero sí es metrizable, necesariamente $\ms{A}$ es numerable. Otro ejemplo responde con una negativa a lo que en su momento fue un problema popular: ¿la pseudocompacidad equivale a la compacidad numerable en espacios Tychonoff?, resultado se sabe cierto en la clase de espacios $\T_4$ \textcolor{red}{(prelim)} y falso dentro de la clase de espacios que no son $\T_1$. En virtud de \ref{prop-tra-compacidad}, tomando cualquier familia maximal infinita:
 
 \begin{corolario}\label{cor-EjmPseudoNoNumC}
 	Existe un espacio de Tychonoff, que es pseudocompacto pero no numerablemente compacto.
@@ -356,14 +356,11 @@ La siguiente es una caracterización conocida (véase \cite[p.~39,45]{GeorginaTe
 
 De (iv), en la Proposición previa, surge que el espacio de ordinales $\omega^2$ es el único espacio de Mrówka metrizable y no compacto. Queda claro además, que cualesquiera dos familias numerables son \enquote{iguales} en el siguiente aspecto:
 
-\begin{definicion}\index[alph]{familias!esencialmente iguales}
+\begin{definicion}\label{Dif-esencial}\index[alph]{familias!esencialmente iguales}
 	Dados conjuntos $N, M$ numerables, se dice que $\ms{A} \subseteq [N]^\omega$ y $\ms{B} \subseteq [M]^\omega$ son \textbf{esencialmente iguales} cuando $\Psi_N(\ms{A}) \cong \Psi_M(\ms{B})$.
 \end{definicion}
 
 Una consecuencia \enquote{curiosa} en relación $\omega^2$, fruto de lo anterior y del Teorema principal de la \autoref{sec-KRTeo}, es el \autoref{cor-omegaCuadra}.
-\label{Dif-esencial}
-
-
 
 \section{Teorema de Kannan y Rajagopalan}
 \label{sec-KRTeo}
@@ -376,7 +373,7 @@ La meta primordial en lo que resta del capítulo será caracterizar aquellos esp
 \begin{proof}
 	Si $x \in X$ es aislado en $D$, dada la  densidad de $D$, es necesario que $x \in D$. Luego $\{x\}=D \cap U$ para cierto abierto $U$ de $X$; y como $X$ es un espacio $\T_1$, resulta que $U=\{x\}$. Por lo tanto $X \setminus \der_D(D) \subseteq N$.
 
-	Nótese que $X \setminus \der_D(D)=\midcap\{ X \setminus \{y\} \tq y \in \der_D(D) \}$. Pero, para cada punto $y \in \der_D(D) \subseteq \der(X)$, el conjunto $X \setminus \{y\}$ es abierto y denso en $X$. De la hipótesis y el \textcolor{red}{(TCB)}, $X$ es de Baire, así que $N \supseteq X \setminus \der_D(D)$ debe ser denso.% 
+	Nótese que $X \setminus \der_D(D)=\midcap\{ X \setminus \{y\} \tq y \in \der_D(D) \}$. Pero, para cada punto $y \in \der_D(D) \subseteq \der(X)$, el conjunto $X \setminus \{y\}$ es abierto y denso en $X$. De la hipótesis y el \textcolor{red}{(prelim)}, $X$ es de Baire, así que $N \supseteq X \setminus \der_D(D)$ debe ser denso.% 
 \end{proof}
 
 \begin{lema}\label{lem-TKR-DerX}
@@ -557,9 +554,9 @@ Se finalizará la sección; y con ello el actual capítulo, dando un Corolario i
 
 En el documento original no se demuestra el resultado mencionado, sólo se esboza la mitad de la prueba. Para mostrar que este resultado es erróneo (tal cual está enunciado) basta encontrar un espacio de Hausdorff, separable y secuencialmente compacto, que tenga tamaño mayor al continuo. Tal espacio satisfaría la condición escrita en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y no podría ser imágen continua de ningún espacio de Mrówka (todos ellos tienen tamaño menor o igual a $\mathfrak{c}$). Los siguientes comentarios encuentran la consistencia con $\zfc$ de un espacio de esa naturaleza.
 
-Es un hecho conocido que el espacio $2^\mathfrak{c}$ no es secuencialmente compacto, se puede considerar entonces el cardinal (véase \textcolor{red}{HAND}):
+Es un hecho conocido que el espacio $2^\mathfrak{c}$ no es secuencialmente compacto, se puede considerar entonces el cardinal (véase \textcolor{red}{(prelim)}):
 \[\mathfrak{s}=\min\{ \kappa \geq \omega \tq 2^\kappa \text{ no es secuencialmente compacto } \} \, . \]
-Pero, seguido de \textcolor{red}{HAND}, se desprende que:
+Pero, seguido de \textcolor{red}{(prelim)}, se desprende que:
 \begin{teorema}
 	Es consistente con $\zfc$ que $\omega_1<\mathfrak{s}$ y $\mathfrak{c}<2^{\omega_1}$.
 \end{teorema}
@@ -576,7 +573,7 @@ Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopala
 	\end{enumerate}
 \end{proposicion}
 \begin{proof}
-	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{Prelm}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
+	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{(prelim)}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
 
 	Obsérvese que si $A \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $B \subseteq A$ en $X$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $C \in \ms{A}$ que tiene intersección infinita con $B$; así mismo, con $A$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Defínase $f:\Psi_D(\ms{A}) \to X$ como: $f(x)$, si $x \in D$; y $f(x)=\lim (x)$, si $x \in \ms{A}$. Como $\ms{A} \supseteq \ms{A}_{D,X\setminus D}$, $f$ es sobreyectiva.
 	
@@ -591,13 +588,13 @@ Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopala
 	Sea $X$ un espacio infinito, de Hausdorff, separable y secuencialmente compacto. Si $X$ es de Fréchet, o regular y hereditariamente Lindelöf, entonces es imagen continua de un espacio de Mrówka pseudocompacto.
 \end{corolario}
 
-Si $X$ es un espacio metrizable y compacto, en automático se deduce (véase \textcolor{red}{(prelims)}) que es secuencialmente compacto y de Fréchet. Además es de Lindelöf, y con ello (\textcolor{red}{prelims}), separable. Así que:
+Si $X$ es un espacio metrizable y compacto, en automático se deduce (véase \textcolor{red}{(prelims)}) que es secuencialmente compacto y de Fréchet. Además es de Lindelöf, y con ello \textcolor{red}{(prelim)}, separable. Así que:
 
 \begin{corolario}
 	Todo espacio metrizable y compacto es imagen continua de un espacio de Mrówka (pseudocompacto).
 \end{corolario}
 
-El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables (\textcolor{red}{Prelim}), y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka generados por familias maximales. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo (\textcolor{red}{Prelim}); lo cual es cuanto menos, digno de mencionar.
+El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables \textcolor{red}{(prelim)}, y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka generados por familias maximales. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo \textcolor{red}{Prelim}; lo cual es cuanto menos, digno de mencionar.
 
 %%%%%%%%% Estoy casi seguro de que NO se puede remover, pero no sale la demostración.
 

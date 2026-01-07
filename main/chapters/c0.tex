@@ -3,24 +3,62 @@
 
 \section{Conjuntos}
 
-\begin{enumerate}[1.]
-    \item Convención sobre las notaciones ``no estándar'' (potencia, colecciones $[A]^{z \kappa}$, etcétera)
-    \item Naturales, ordinales y cardinales.
-    \item Inducción y Recursión más allá de $\omega$ (?)
-    \item Órdenes parciales y sus elementos distinguidos, árboles.
-    \item Casi contención y el comportamiento básico de la misma.
-\end{enumerate}
+\index[sym]{$\zfc$}\index[sym]{$\zf$}\index[sym]{$\Ac$}\index[sym]{$\HC$}\index[sym]{$\Ma$}
+El presente trabajo tiene su base en el sistema axiomático usual para la teoría de conjuntos; es decir $\zfc$, que es el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, como lo son la hipótesis del continuo $\HC$, o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden ser consultados en \cite[p.~118]{jechSet}.
 
-\section{Topología}
+\index[sym]{$\ms{P}(X)$}\index[sym]{$f \upharpoonright B$}
+Se utilizará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Cuando $X$ sea un conjunto, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ hacia $B$ como $f \upharpoonright B$.
 
-\begin{enumerate}[1.]
-    \item Espacios topológicos, bases, axiomas de numerabilidad. Definición sucinta de los términos: peso, carácter
-    \item Convenciones sobre las notaciones para producto, suma, homeomorfismos, encajes, y  esclarecimiento de los los términos: propiedades topológicas, productivas, factorizables, etc...
-    \item Axiomas de separación (desde $\T_0$ a $\T_4$, normalidad, regularidad, regularidad completa y normalidad).
-    \item Espacios cero dimensionales y su caracterización.
-    \item Convergencia de sucesiones, espacios de Fréchet y secuenciales. Convención de términos como: sucesiones convergentes, clausura secuencial, etcétera.
-    \item Compacidad y sus ``variantes'': compacidad numerable, Lindelöf, compacidad secuencial, pseudocompacidad, compacidad local, etc...
-    \item Metrizabilidad: se conviene de forma breve lo que es una métrica (y métrica completa ?), un espacio metrizable (y completamente metrizable ?). Se enuncian teoremas de equivalencia para: su separabilidad; y, su compacidad.
-    \item Metrización:Se enuncian los teoremas de metrización de: Urysohn, Bing y Arhangel’skii.
-    \item Categoría de Baire, se define el concepto de espacio de Baire y se enuncia el teorema de Categoría de Baire para: espacios de Hausdorff y localmente compactos; y, espacios completamente metrizables.
-\end{enumerate}
+Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este tenor, un conjunto $\alpha$ se dice \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Cualquier conjunto no vacío de ordinales tiene $\in$-mínimo. Cuando $\alpha$ y $\beta$ sean ordinales, $\alpha < \beta$ significará $\alpha \in \beta$. Se denotará por $\omega$ al primer ordinal infinito. Es un hecho que $\omega=\mathbb{N}$, nótese que si $n$ es cualquier natural, $n=\{m \in \omega \tq m<n\}$. Un ordinal $\kappa$ es \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual para los cardinales $\aleph_\alpha=\omega_\alpha$. Es un hecho que cualquier conjunto $X$ es biyectable con un ordinal, el mínimo ordinal biyectable con $X$ es, de hecho, un cardinal y se denotará $|X|$; tal cardinal es \textit{la cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ es el cardinal del \textit{continuo}, es decir, $\mathfrak{c}=|\mathbb{R}|=2^\aleph_0$ De manera puntual, se aludirá a la aritmética ordinal, la notación será la convencional para la suma, producto y exponenciación entre ordinales y cardinales. Se sugiere revisar \cite{jechSet} para un entendimiento más profundo del tema.
+
+Dado un conjunto $X$ y un cardinal $\kappa$, se denotarán por $[X]^\kappa$ y $[X]^{<\kappa}$ a las colecciones de subconjuntos de $X$ de tamaño exactamente $\kappa$, y menor estricto que $\kappa$, respectivamente. De forma similar se definen: $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ es el conjunto de todas las funciones de $\kappa$ en $X$; y, $X^{<\kappa}$ es el conjunto de funciones $f$ para las que existe $\alpha < \kappa$ de manera que $f:\alpha \to X$.
+
+Un subconjunto $C$ de un ordinal límite $\gamma$ es \textit{cerrado} cuando para cada $\alpha < \gamma$, si $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ es estacionario si y sólo si tiene intersección no vacía con cada club de $\gamma$. Sobre esta terminología se desenvuelve el \textit{Lema de Fodor}: Si $\kappa$ es un ordinal regular, $S$ es estacionario en $\kappa$ y $f:S \to \kappa$ es tal que para cada $\alpha \in S \setminus \{0\}$, $f(\alpha) < \alpha$; entonces, existe $T \subseteq \kappa$ estacionario tal que $f \upharpoonright T$ es constante.
+
+\newpage
+
+El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, es decir, $\zfc$, entendido como el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden ser consultados en \cite[p.~118]{jechSet}.
+
+Se utilizará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$.
+
+Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se dice \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Todo conjunto no vacío de ordinales tiene un $\in$-mínimo. Si $\alpha$ y $\beta$ son ordinales, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$. Denotaremos por $\omega$ al primer ordinal infinito; es un hecho que $\omega=\mathbb{N}$, y nótese que, si $n$ es cualquier número natural, entonces
+\[
+n=\{m \in \omega \tq m<n\}.
+\]
+
+Un ordinal $\kappa$ se dice \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual de los cardinales, denotando $\aleph_\alpha=\omega_\alpha$. Es un hecho que cualquier conjunto $X$ es biyectable con algún ordinal; el mínimo ordinal biyectable con $X$ es, en efecto, un cardinal, el cual se denotará por $|X|$ y se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir,
+\[
+\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}.
+\]
+De manera puntual, se hará referencia a la aritmética ordinal; la notación será la convencional para la suma, el producto y la exponenciación entre ordinales y cardinales. Para un tratamiento más detallado del tema, se sugiere consultar \cite{jechSet}.
+
+Dado un conjunto $X$ y un cardinal $\kappa$, se denotará por $[X]^\kappa$ a la colección de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$, y por $[X]^{<\kappa}$ a la colección de aquellos de cardinalidad estrictamente menor que $\kappa$. De forma análoga se definen $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto de todas las funciones $f$ para las cuales existe algún $\alpha<\kappa$ tal que $f:\alpha \to X$.
+
+Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si para todo $\alpha<\gamma$, cuando $\midcup (C \cap \alpha)=\alpha$, se tiene $\alpha \in C$. Si, además, $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se dice \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$.
+
+Con esta terminología se enuncia el \textit{Lema de Fodor}: si $\kappa$ es un ordinal regular, $S$ es un subconjunto estacionario de $\kappa$ y $f:S \to \kappa$ es tal que, para cada $\alpha \in S \setminus \{0\}$, se cumple $f(\alpha)<\alpha$, entonces existe un conjunto estacionario $T \subseteq \kappa$ tal que la restricción $f \upharpoonright T$ es constante.
+
+\newpage
+
+El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden consultarse en \cite[p.~118]{jechSet}.
+
+A lo largo del texto se empleará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$. Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$.
+
+Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Todo conjunto no vacío de ordinales posee un $\in$-mínimo. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$. Denotaremos por $\omega$ al primer ordinal infinito; es un hecho que $\omega=\mathbb{N}$. Nótese, además, que si $n$ es cualquier número natural, entonces
+\[
+n=\{m \in \omega \tq m<n\}.
+\]
+
+Un ordinal $\kappa$ se dice \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual de los cardinales, denotando $\aleph_\alpha=\omega_\alpha$. Es un hecho que todo conjunto $X$ es biyectable con algún ordinal; el mínimo ordinal biyectable con $X$ es, de hecho, un cardinal, el cual se denotará por $|X|$ y se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir,
+\[
+\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}.
+\]
+De manera puntual, se hará referencia a la aritmética ordinal, utilizando la notación convencional para la suma, el producto y la exponenciación entre ordinales y cardinales. Para un tratamiento más detallado del tema se sugiere consultar \cite{jechSet}.
+
+Dado un conjunto $X$ y un cardinal $\kappa$, se denotará por $[X]^\kappa$ la colección de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$, y por $[X]^{<\kappa}$ la colección de aquellos cuya cardinalidad es estrictamente menor que $\kappa$. De forma análoga se definen las colecciones $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto de todas las funciones $f$ para las cuales existe algún $\alpha<\kappa$ tal que $f:\alpha \to X$.
+
+Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$.
+
+Con esta terminología se enuncia el \textit{Lema de Fodor}: si $\kappa$ es un ordinal regular, $S$ es un subconjunto estacionario de $\kappa$ y $f:S \to \kappa$ es tal que, para cada $\alpha \in S \setminus \{0\}$, se cumple $f(\alpha)<\alpha$, entonces existe un conjunto estacionario $T \subseteq \kappa$ tal que la restricción $f \upharpoonright T$ es constante.
+
+

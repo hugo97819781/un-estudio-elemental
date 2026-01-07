@@ -1,32 +1,31 @@
 \chapter{Normalidad en los espacios de Mrówka}
 
 \index[alph]{Conjetura!de Moore}\index[alph]{Conjetura!débil de Moore}\index[alph]{Moore!conjetura de}\index[alph]{Moore!conjetura débil de}\index[sym]{$\Pm$}\index[sym]{$\Pdm$}
-\emph{\small La hoy conocida como <<Conjetura de Moore>> (\,$\Pm$), establece que todo espacio de Moore normal es metrizable; se trata de un problema lanzado a la comunidad matemática por Jones en 1933 que atiende a la cuestión ¿qué requiere un espacio de Moore para ser metrizable?. Este problema marcó un antes y un después para la topología general, consolidándose como uno de los problemas (sino el que más) importantes en la topología y la teoría de conjuntos. $\Pm$ tiene, presumiblemente, una solución independiente a la axiomática $\zfc$ (\cite[p.~429-435]{nyikosMoore}).}
+\index[alph]{Conjetura!de Moore}\index[alph]{Conjetura!débil de Moore}\index[alph]{Moore!conjetura de}\index[alph]{Moore!conjetura débil de}\index[sym]{$\Pm$}\index[sym]{$\Pdm$}
+\emph{\small La Conjetura de Moore }{\small ($\Pm$)}\emph{\small es el enunciado: todo espacio normal y de Moore es metrizable. Se trata de un problema lanzado a la comunidad matemática por Jones en 1933 que atiende a la cuestión ¿qué requiere un espacio de Moore para ser metrizable?. Este problema marcó un antes y un después para la topología general, consolidándose como uno de los grandes problemas, probablemente de los más importantes, en la topología general del sigo XX. $\Pm$ es, presumiblemente, independiente de $\zfc$ }{\small \cite[p.~429-435]{nyikosMoore}}\emph{\small. Lo que haremos en este capitulo será mostrar la independencia de una versión débil de $\Pm$, la que llamaremos \enquote{Conjetura débil de Moore} }{\small ($\Pdm$)}\emph{\small: todo espacio separable, normal y de Moore es metrizable.}
 
-\emph{\small En el año 1937 (véase \cite[Teo~5, p.~ 676]{jonesCM}), el propio Jones muestra la consistencia de la <<Conjetura Débil de Moore>> (\,$\Pdm$); esto es, cualquier espacio separable, normal y de Mooore, debe ser metrizable. Pero no sería sino hasta 1969 cuando Tall, en su tesis doctoral \cite{tallTesis}, logra establecer una equivalencia para $\Pdm$ en términos de la existencia ciertos espacios topológicos ($Q$-sets, \autoref{def-Qset}) no numerables; mismos para los cuales, Silver mostró consistente su existencia.}
+\emph{\small En el año 1937 }{\small \cite[Teo~5, p.~ 676]{jonesCM}}\emph{\small, el propio Jones muestra la consistencia de $\Pdm$, pero no sería sino hasta 1969 cuando Tall, en su tesis doctoral }{\small \cite{tallTesis}}\emph{\small, logra establecer una equivalencia para $\Pdm$ en términos de la existencia de $Q$-sets no numerables. Silver probó que la existencia de tales espacios es consistente con $\zfc$. La meta de este capítulo es exponer las contribuciones de Jones, Silver y Tall, lo cual culmina con la independencia de $\Pdm$ de la axiomática $\zfc$.}
 
-\emph{\small La meta de este capítulo será exponer las contribuciones de Jones, Silver y Tall; las cuales conjuntamente, permiten mostrar la independencia de $\Pdm$ de la axiomática usual de $\zfc$.}
+\section{Independencia de $\Pdm$}
 
-\section{Independencia de la Conjetura Débil de Moore}
-
-Por otra parte, todo espacio de Mrówka es de Moore y separable (\autoref{cor-MrwokaSiempre}); así que el enunciado $\Pdm$ (por consiguiente, $\Pm$) implica que ningún espacio $\Psi(\ms{A})$; con $\ms{A}$ una familia casi ajena más que numerable, puede ser normal. Lo que ataña a la presente sección; y claramente presenta una dificultad mayor, es mostrar el recíproco de la anterior implicación.
-
-Se comenzará exponiendo una condición necesaria que dicta ''dónde buscar'' espacios de Mrówka que sirvan de contrajemplo para $\Pdm$.
+Todo espacio de Mrówka $\Psi(\ms{A})$ es de Moore y separable, algo demostrado en \ref{cor-MrwokaSiempre}; además, cuando $\ms{A}$ es más que numerable, resulta que $\Psi(\ms{A})$ no es metrizable (véase \ref{prop-tra-numerable}). Así que, si ocurre $\Pdm$, entonces ningún espacio $\Psi(\ms{A})$, con $|\ms{A}|>\omega$, puede ser normal. Lo que ataña a la presente sección presenta una dificultad mayor, se mostrará el recíproco de la anterior implicación.
 
 \begin{proposicion}\label{pro-ObsNormalidad}
 	Sea $\ms{A} \in \Ad(\omega)$, se cumple:
 	\begin{enumerate}
-		\item Si $|\ms{A}| \leq \aleph_0$, entonces $\Psi(\ms{A})$ es normal.
-		\item Si $\ms{A}$ es infinita y $\Psi(\ms{A})$ es normal, $\ms{A}$ no es maximal y además $\aleph_1 \leq |\ms{A}|< \mathfrak{c}$.
+		\item Si $|\ms{A}| \leq \omega$, entonces $\Psi(\ms{A})$ es normal.
+		\item Si $|\ms{A}| > \omega$ y $\Psi(\ms{A})$ es normal, entonces $\ms{A} \notin \Mad(\omega)$ y $|\ms{A}|< \mathfrak{c}$.
 	\end{enumerate}
 \end{proposicion}
 \begin{proof}
-	(i) Cualquier espacio de Mrówka numerable es metrizable (por \ref{prop-tra-numerable}), particularmente normal (\textbf{Ree BSB}).
+	(i) Por la caracterización \ref{prop-tra-numerable}, todo espacio de Mrówka numerable es metrizable, particularmente normal \textcolor{red}{(prelim)}.
 
-	(ii) Supóngase que $\ms{A}$ es infinita y que $\Psi(\ms{A})$ es normal. Si $\ms{A}$ fuera maximal, entonces por \ref{prop-tra-pseudoCaract} y \ref{prop-tra-compacidad}, se tiene que $\Psi(\ms{A})$ es pseudocompacto pero no numerablemente compacto. Lo cual (por el \textbf{RAKA}) imposibilita que $\Psi(\ms{A})$ sea normal. Por tanto, $\ms{A}$ no es maximal. Esto también implica que $\aleph_1 \leq |\ms{A}|$ (en virtud de la \autoref{prop-MADnoNum}).
+	(ii) Supóngase que $\ms{A}$ es infinita y que $\Psi(\ms{A})$ es normal. Si $\ms{A}$ fuera maximal, entonces por \ref{prop-tra-pseudoCaract} y \ref{prop-tra-compacidad}, se tiene que $\Psi(\ms{A})$ es pseudocompacto pero no numerablemente compacto. Lo cual (por \textcolor{red}{(prelim)}) imposibilita que $\Psi(\ms{A})$ sea normal. Por tanto, $\ms{A}$ no es maximal.
 
-	Finalmente, $|\ms{A}|=\mathfrak{c}$, debido a \ref{lem-primerosSubs}, $\ms{A}$ es un subespacio cerrado y discreto de $\Psi(\ms{A})$ de tamaño $\mathfrak{c}$. Así, de la separabilidad y normalidad de $\Psi(\ms{A})$ se desprende; por el Lema de Jones (léase \textbf{TAL}), que $2^\mathfrak{c} = 2^{|\ms{A}|} \leq 2^{\aleph_0} = \mathfrak{c}$, lo cual es imposible. Por lo tanto $|\ms{A}|< \mathfrak{c}$.
+	Nótese que $\ms{A}$ es un subespacio cerrado y discreto de $\Psi(\ms{A})$ de tamaño $\mathfrak{c}$ (en virtud de \ref{lem-primerosSubs}). Así, de la separabilidad y normalidad de $\Psi(\ms{A})$, junto con el \textcolor{red}{Lema de Jones}, se obtiene que $2^{|\ms{A}|} \leq 2^{\aleph_0} = \mathfrak{c}$, lo cual obliga a que ocurra $|\ms{A}|< \mathfrak{c}$.
 \end{proof}
+
+La proposición anterior dicta que, para encontrar espacios de Mrówka que atestiguen la falsedad de $\Pdm$, es necesario buscar entre aquellos generados por familias casi ajenas de tamaño estrictamente entre $\aleph_0$ y $\mathfrak{c}$, consecuentemente:
 
 \begin{corolario}\label{cor-HCnoMrowkasNormales}
 	Bajo $\HC$; ningún espacio de Mrówka más que numerable, es normal.

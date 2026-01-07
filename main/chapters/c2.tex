@@ -567,19 +567,19 @@ Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopala
 
 \begin{proposicion}\label{prop-imagenKanan}
 	Sea $X$ infinito, de Hausdorff y de Fréchet. Entonces las siguientes condiciones son equivalentes:
-	\begin{enumerate}[i)]
+	\begin{enumerate}
 		\item Existe un denso $D \subseteq X$ de $X$ numerable tal que cada sucesión en $D$ tiene una subsucesión convergente en $X$.
 		\item $X$ es imagen continua de un espacio de Mrówka pseudocompacto.
 	\end{enumerate}
 \end{proposicion}
 \begin{proof}
-	(i) $\rightarrow$ (ii) Supóngase (i). En el sentido de \textcolor{red}{(prelim)}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A \text{ es sucesión convergente en X} ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
+	(i) $\to$ (ii) Supóngase (i). En el sentido de \textcolor{red}{(prelim)}, defínase la colección $\operatorname*{CS}(X):=\{ \ms{A} \in \Ad(D) \tq \forall A \in \ms{A} \, ( A$ es una sucesión convergente en $X ) \}$. Nótese que la familia $\ms{A}_{D,X\setminus D}$, definda como en \ref{def-FamSucesiones}, es un elemento de $\operatorname*{CS}(X)$. De forma análoga a la demostración del \autoref{lem-MADs}, constrúyase una familia $\ms{A}$ que contenga a $\ms{A}_{D,X \setminus D}$ y sea $\subseteq$-maximal de $\operatorname*{CS}(X)$.
 
 	Obsérvese que si $A \in [D]^\omega$, en virtud de la hipótesis y de que $X$ es $\T_1$, existe una sucesión convergente $B \subseteq A$ en $X$. Dada la maximalidad de $\ms{A}$ en $\operatorname*{CS}(X)$, existe $C \in \ms{A}$ que tiene intersección infinita con $B$; así mismo, con $A$. Lo anterior muestra que $\ms{A} \in \Mad(D)$. Defínase $f:\Psi_D(\ms{A}) \to X$ como: $f(x)$, si $x \in D$; y $f(x)=\lim (x)$, si $x \in \ms{A}$. Como $\ms{A} \supseteq \ms{A}_{D,X\setminus D}$, $f$ es sobreyectiva.
 	
 	Finalmente, sea $U \subseteq X$ abierto en $X$ y supóngase que $x \in f^{-1}[U] \cap \ms{A}$. Luego $f(x)=\lim(x) \in U$; como $U$ es un abierto de $X$ y $x \to f(x)$ en $X$, entonces $x \subseteq^* U$. Pero $x \subseteq D$, así que $x=f[x]$; en consecuencia $x \subseteq^* f^{-1}[U]$. Esto muestra que $f^{-1}[U]$ es abierto en $\Psi_D(\ms{A})$; y por tanto, que $f$ es continua.
 
-	(ii) \to (i) Supóngase que $\ms{A} \in \Mad(\omega)$ y que $f:\Psi(\ms{A}) \to X$ es sobreyectiva. Puesto que $\omega$ es denso en $\Psi(\ms{A})$, se tiene que $D:=f[\omega]$ es denso en $X$.
+	(ii) $\to$ (i) Supóngase que $\ms{A} \in \Mad(\omega)$ y que $f:\Psi(\ms{A}) \to X$ es sobreyectiva. Puesto que $\omega$ es denso en $\Psi(\ms{A})$, se tiene que $D:=f[\omega]$ es denso en $X$.
 
 	Ahora, si $A \in [D]^\omega$ es cualquier sucesión, entonces $f^{-1}[A] \subseteq \omega$ es infinito. Como $\ms{A}$ es maximal, es inmediato a \ref{prop-tra-pseudoCaract}, la existencia de una sucesión convergente $B \subseteq f^{-1}[A] \omega$. Luego, cualquier biyección $x:\omega \to B$ es una sucesión convergente en $\Psi(\ms{A})$, siendo $fx: \omega \to A$ una sucesión convergente en $X$.
 \end{proof}

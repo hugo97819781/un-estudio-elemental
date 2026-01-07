@@ -78,7 +78,7 @@ El próximo Lema es clave por varios motivos; entre ellos, responde a una pregun
 
 Si $\ms{A}$ es una familia maximal, la condición (i) del resultado anterior implica que ninguna sucesión contenida en $\omega$ es convergente a $\infty$. A continuación se establecen las únicas convergencias posibles en el compacto de Franklin.
 \begin{corolario}\label{cor-convMaximal}
-	Sean $\ms{A} \in \Mad(\omega)$ infinita y $X \subseteq \ms{F}(\ms{A})$ nuemrable.
+	Sean $\ms{A} \in \Mad(\omega)$ infinita y $X \subseteq \ms{F}(\ms{A})$ numerable.
 	\begin{enumerate}
 		\item $X$ es convergente si y sólo si $X \subseteq^* \ms{A}$, o para algún $a \in \ms{A}$, $X \subseteq^* a$.
 		\item Si $X \subseteq \omega$ y $x \in \omega \cup \{\infty\}$, entonces $X \not\to x$.
@@ -91,20 +91,18 @@ Si $\ms{A}$ es una familia maximal, la condición (i) del resultado anterior imp
 
 	(ii) y (iii) Se desprenden inmediatamente del inciso (i) y de que cada punto en $\omega$ es aislado (por lo que las sucesiones convergentes a puntos de $\omega$ son eventualmente constantes).
 \end{proof}
-
 \begin{corolario}
-	Sea $\ms{A} \in \Mad(\omega)$ infinita, entonces el orden secuencial de $\ms{F}(\ms{A})$ es $2$.
+	Sea $\ms{A} \in \Mad(\omega)$ infinita, entonces $\Osq(\ms{F}(\ms{A}))=2$.
 \end{corolario}
-
 \begin{proof}
 	Nótese que $\scl^2(\omega) \not\subseteq \scl(\omega)$. Efectivamente; dado el Corolario anterior, $\scl(\omega) = \omega \cup \ms{A}$. Más aún, como $\ms{A}$ es infinita, contiene cierto subconjunto numerable $B \subseteq \ms{A}$. Y se obtiene de \ref{lem-convClave} que $B \to \infty$, esto muestra que $\infty \in \scl^2(\omega) \setminus \scl(\omega)$, por lo que $\Osq(\ms{F}(\ms{A})) \geq 2$.
 
-	Ahora, sea $X \subseteq \ms{F}(\ms{A})$ cualquiera y supóngase que $x \in \scl^3(X)$. Como $\Psi(\ms{A})$ tiene orden secuencial $1$ (pues es $1\AN$, consecuentemente de Fréchet), es requisito que $x=\infty$. Así, existe $A \subseteq \scl^2(X)$ numerable tal que $A \to \infty$ en $\ms{F}(\ms{A})$. Por el \autoref{lem-convClave}, sin pérdida de generalidad, $A \subseteq \ms{A}$. Para cada $a \in A$ fíjese un conjunto numerable $B_a \subseteq \scl(X)$ de modo que $B_a \to a$. Se afirma que $\scl(X) \cap \ms{A}$ es infinito.
-
-	Supóngase lo contrario, es decir, $\scl(X) \subseteq^* \omega$. Como cada $B_a \subseteq X$ es convergente, se puede asumir sin pérdida de generalidad que $B_a \subseteq \omega$. En consecuencia de lo anterior, $B_a \subseteq \omega \cap \scl(X)$ y se obtiene del inciso (iii) del Corolario anterior que $B_a \subseteq X$. Así $A \subseteq \scl(X)$ ya que cada $B_a$ satisface $B_a \to a \in A$. Esto muestra que $x \in \scl(\scl(X))=\scl^2(X)$. Es decir, $\scl^3(X) \subseteq \scl^2(X)$ y $\Osq(\ms{F}(\ms{A})) \leq 2$.
+	Ahora, sea $X \subseteq \ms{F}(\ms{A})$ cualquiera y supóngase que $x \in \scl^3(X)$. Como $\Psi(\ms{A})$ tiene orden secuencial $1$ (pues es $1\AN$, consecuentemente de Fréchet), es requisito que $x=\infty$. Así, existe $A \subseteq \scl^2(X)$ numerable tal que $A \to \infty$ en $\ms{F}(\ms{A})$. Sin pérdida de generalidad, $A \subseteq \ms{A}$ (dado \ref{lem-convClave}). Para cada $a \in A$ fíjese un conjunto numerable $B_a \in [\scl(X)]^\omega$ de manera que $B_a \to a$.
+	
+	Ahora, si $\scl(X) \cap \ms{A}$ es infinito, entonces por \ref{lem-convClave}, $x=\infty \in \scl(\scl(X))$. Supóngase pues que $\scl(X) \subseteq^* \omega$. Como cada $B_a \subseteq \scl(X)$ es convergente, asúmase sin pérdida de generalidad que $B_a \subseteq \omega$ (de nuevo, debido a \ref{lem-convClave}). En consecuencia, $B_a \subseteq \omega \cap \scl(X)$ y se obtiene del inciso (iii) del Corolario previo que $B_a \subseteq X$. Así $A \subseteq \scl(X)$, ya que cada $B_a$ satisface $B_a \to a \in A$. Esto muestra que $x \in \scl(A) \subseteq \scl^2(X)$. Es decir, $\scl^3(X) \subseteq \scl^2(X)$ y $\Osq(\ms{F}(\ms{A})) \leq 2$.
 \end{proof}
 
-El posterior Teorema sigue la línea del Teorema de Kannan y Rajagopalan (\autoref{teo-HLCCaract}), es una caracterización en propiedades topológicas de ciertos compactos de Franklin.
+%El posterior Teorema sigue la línea del Teorema de Kannan y Rajagopalan (\ref{teo-HLCCaract}), es una caracterización en propiedades topológicas de ciertos compactos de Franklin.
 \begin{teorema}\index[trad]{homeomorfismo con $\ms{F}(\ms{A})$ ($\ms{A}$ maximal)}
 	Sea $X$ un espacio topológico infinito. $X$ es homeomorfo a un compacto de Franklin generado por una familia maximal infinita si y sólo si se satisfacen:
 	\begin{enumerate}

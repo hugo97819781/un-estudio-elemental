@@ -56,29 +56,54 @@ Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\ka
 
     (iii) Obsérvese que $|X|\leq [X]^{<\omega}$, pues $x \mapsto \{x\}$ es inyección de $X$ en $[X]^{<\omega}$. Para la desigualdad recíproca, note que:
     \[ |[X]^{<\omega}| = \Bigg| \bigcup_{n \in \omega} [X]^n \Bigg| \leq \sum_{n \in \omega} |[X]^n| = \sum_{n \in \omega} |X| = |X| \cdot \aleph_0  = |X| \, . \]
-    probando la igualdad deseada. $⟼$
+    probando la igualdad deseada.
 \end{proof}
 
-\begin{align*}
-    |X| &=  \\
-\end{align*}
-
 \index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
-Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si la diferencia $A \setminus B$ es finita, esta situación se denotará por $A \subseteq^* B$ y convendremos que $A=^*B$ ($A$ y $B$ son \textit{casi iguales}) si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$. Nótese que un conjunto $N$ es vacío si y sólo si $N =^* \emptyset$. Un conjunto $X$ es \textit{casi ajeno} a otro conjunto $Y$ si y sólo si $X \cap Y =^* \emptyset$. Es un hecho que:
+Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si la diferencia $A \setminus B$ es finita, esta situación se denotará por $A \subseteq^* B$ y convendremos que $A=^*B$ ($A$ y $B$ son \textit{casi iguales}) si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$. Nótese que un conjunto $N$ es vacío si y sólo si $N =^* \emptyset$, por ello, $A \subseteq^* B$ si y sólo si $A \setminus B =^* \emptyset$. Se dice que $A$ es \textit{casi ajeno} con $B$ si y sólo si $X \cap Y =^* \emptyset$. Claramente $A \subseteq B$ implica que $A \subseteq^* B$.
 \begin{proposicion}
     Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
     \begin{enumerate}
-        \item Si $A \subseteq B$, entonces $A \subseteq^* B$.
         \item $A \subseteq^* A$ y $A =^* A$.
         \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
-        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
         \item $=^*$ se comporta como relación de equivalencia.
-        \item Si $A,B \subseteq C$ entonces $A \setminus B$ si y sólo si $A \setminus C$.
-        \item $A \subseteq^* B$ si y sólo si existe un conjunto finito $F$ tal que $A \setminus F \subseteq B$.
+        \item Si $A,B \subseteq C$ entonces $A \setminus B$ si y sólo si $C \setminus B \subseteq C \setminus A$.
+        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
+        %\item Si $A,B \subseteq C$ y $f$ es una función de dominio $C$, entonces $A=^* B$ implica que $f[A] =^* f[B]$.
     \end{enumerate}
 \end{proposicion}
+\begin{proof}
+    Los puntos (i) y (ii) son claros, (iii) se sigue de estos.
+
+    Para (iv) basta probar necesidad, nótese que si $A,B \subseteq C$, entonces ocurren $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus B$ y $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus (C \setminus A) = A$. De esta manera, si $A \setminus B$ es finito, entonces $(C \setminus B) \setminus (C \setminus A) \subseteq A \setminus B$ igual.
+    
+    (v) Basta notar que $(A \cap C) \setminus (A \cap B) \subseteq A \setminus B$ y también $(A \cup C) \setminus (A \cup B) \subseteq A \setminus B$.
+\end{proof}
+\begin{proposicion}
+    Sean $f:X \to Y$, $A,B \subseteq X$ y $C \subseteq Y$. Entonces:
+    \begin{enumerate}
+        \item Si $A \subseteq^* B$, entonces $f[A] \subseteq^* f[B]$.
+        \item Si $A \subseteq^* f^{-1}[C]$ entonces $f[A] \subseteq^* C$.
+    \end{enumerate}
+    Además, si $f$ es inyectiva, ocurren los recíprocos.
+\end{proposicion}
+\begin{proof}
+    Para (i), si $A \setminus B$ es finito, también lo es $f[A \setminus B]$. El resultado se obtiene de que $f[A] \setminus f[B] \subseteq f[A \setminus B]$. El punto (ii) es inmediato a (i) y que $f[f^{-1}[C]] \subseteq C$.
+
+    Finalmente, supóngase que $f$ es inyectiva. Obsérvese que $f[A] \setminus f[B] = f[A \setminus B]$ y además $|A \setminus B| = |f[A \setminus B]|$, lo cual implica el recíproco de (i); así mismo, el recíroco de (ii), pues: $A \subseteq f^{-1}[f[A]]$.
+\end{proof}
+
+\index[alph]{conjunto!cofinal}\index[alph]{función!cofinal}\index[alph]{cofinalidad}
+Finalizaremos esta sección comentando un par de cosas sobre cofinalidad. Si $(P,\leq)$ es un conjunto parcialmente ordenado, un subconjunto $X \subseteq P$ se dice \textit{cofinal} (en $P$) si y sólo si para cada $p \in P$ existe $x \in X$ tal que $p \leq x$. Dados dos ordinales $\alpha$ y $\beta$, se dice que una función $f:\beta \to \alpha$ es \textit{cofinal} (en $\alpha$) si su imagen es cofinal en $\alpha$. Se define:
+\[ \cf(\alpha) = \min \{  \beta \tq \exists f:\beta \to \alpha \, (f \text{ es cofinal en } \alpha ) \} \, . \]
+Es un hecho que para cualquier ordinal $\alpha$, ocurre que: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un cardinal; si $\omega \leq \alpha < \omega_1$, entonces $ \cf(\alpha) = \omega$; y, que siempre existe una función cofinal y estrictamente creciente $f:\cf(\alpha) \to \alpha$. Un ordinal $\kappa$ es regular si y sólo si $\cf(\kappa)=\kappa$, es un hecho que $\omega_1$ es regular.
 
 \newpage
+
+El \textit{cofinalidad} de $P$, denotada por $\cf(P)$, es el mínimo cardinal de un subconjunto cofinal de $P$. Un ordinal $\gamma$ es \textit{límite} si no es cero y no es sucesor de ningún ordinal, es decir, si $\gamma \neq 0$ y para todo $\alpha < \gamma$, ocurre que $\alpha +1 < \gamma$. Un ordinal $\kappa$ es \textit{regular} si $\cf(\kappa)=\kappa$; en caso contrario, se dice que $\kappa$ es \textit{singular}. Es un hecho que todo ordinal sucesor es regular y que $\omega$ es el menor ordinal regular infinito \cite[Obs.~I.2.6]{jechSet}.
+
+
+
 Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$.
 
 Con esta terminología se enuncia el \textit{Lema de Fodor}: si $\kappa$ es un ordinal regular, $S$ es un subconjunto estacionario de $\kappa$ y $f:S \to \kappa$ es tal que, para cada $\alpha \in S \setminus \{0\}$, se cumple $f(\alpha)<\alpha$, entonces existe un conjunto estacionario $T \subseteq \kappa$ tal que la restricción $f \upharpoonright T$ es constante.

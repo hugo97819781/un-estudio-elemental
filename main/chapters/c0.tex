@@ -4,59 +4,81 @@
 \section{Conjuntos}
 
 \index[sym]{$\zfc$}\index[sym]{$\zf$}\index[sym]{$\Ac$}\index[sym]{$\HC$}\index[sym]{$\Ma$}
-El presente trabajo tiene su base en el sistema axiomático usual para la teoría de conjuntos; es decir $\zfc$, que es el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, como lo son la hipótesis del continuo $\HC$, o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden ser consultados en \cite[p.~118]{jechSet}.
+El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ \textcolor{blue}{(cruz)} o el axioma de Martin $\Ma$ $\HC$ \textcolor{blue}{(cruz)}. Los sistemas de axiomas previamente mencionados pueden consultarse en \cite[p.~3]{jechSet}.
 
-\index[sym]{$\ms{P}(X)$}\index[sym]{$f \upharpoonright B$}
-Se utilizará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Cuando $X$ sea un conjunto, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ hacia $B$ como $f \upharpoonright B$.
+\index[alph]{clase}\index[sym]{$\ms{P}$}\index[sym]{$f \upharpoonright B$}
+A lo largo del texto se empleará la notación convencional para las fórmulas lógicas y las operaciones conjuntistas. Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$. Las jerarquía de operaciones binarias entre conjuntos que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$.
 
-Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este tenor, un conjunto $\alpha$ se dice \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Cualquier conjunto no vacío de ordinales tiene $\in$-mínimo. Cuando $\alpha$ y $\beta$ sean ordinales, $\alpha < \beta$ significará $\alpha \in \beta$. Se denotará por $\omega$ al primer ordinal infinito. Es un hecho que $\omega=\mathbb{N}$, nótese que si $n$ es cualquier natural, $n=\{m \in \omega \tq m<n\}$. Un ordinal $\kappa$ es \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual para los cardinales $\aleph_\alpha=\omega_\alpha$. Es un hecho que cualquier conjunto $X$ es biyectable con un ordinal, el mínimo ordinal biyectable con $X$ es, de hecho, un cardinal y se denotará $|X|$; tal cardinal es \textit{la cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ es el cardinal del \textit{continuo}, es decir, $\mathfrak{c}=|\mathbb{R}|=2^\aleph_0$ De manera puntual, se aludirá a la aritmética ordinal, la notación será la convencional para la suma, producto y exponenciación entre ordinales y cardinales. Se sugiere revisar \cite{jechSet} para un entendimiento más profundo del tema.
+\index[alph]{conjunto!parcialmente ordenado}\index[alph]{orden!parcial}\index[alph]{orden!parcial antireflexivo}\index[sym]{$\leq$ (orden)}{$<$ (orden)}
+Un \textit{orden parcial} sobre un conjunto $P$ es una relación $\leq \subseteq P \times P$ tal que para cualesquiera $p,q,r \in P$ se cumple: $p \leq p$ ($\leq$ reflexiva); si $p \leq q$ y $q \leq r$, entonces $p \leq r$ ($\leq$ es transitiva); y, si $p \leq q$ y $q \leq p$, entonces $p=q$ ($\leq$ antisimétrica). Se denotará por $<$ a $\leq \setminus \Id(P)$. Un \textit{conjunto parcialmente ordenado} es un par ordenado $(P,R)$, donde $R$ es un orden parcial en $P$. 
 
-Dado un conjunto $X$ y un cardinal $\kappa$, se denotarán por $[X]^\kappa$ y $[X]^{<\kappa}$ a las colecciones de subconjuntos de $X$ de tamaño exactamente $\kappa$, y menor estricto que $\kappa$, respectivamente. De forma similar se definen: $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ es el conjunto de todas las funciones de $\kappa$ en $X$; y, $X^{<\kappa}$ es el conjunto de funciones $f$ para las que existe $\alpha < \kappa$ de manera que $f:\alpha \to X$.
+%Un \textit{orden parcial antireflexivo} sobre un conjunto $P$ es una relación $< \subseteq P \times P$ transitiva tal que para cualesquiera $p,q \in P$ se cumple: $p \not< p$ ($<$ es antireflexiva); y, si $p < q$, entonces $q \not< r$ ($<$ es irreflexiva). Un \textit{conjunto parcialmente ordenado} es una pareja $(P,R)$, donde $R$ es un orden parcial, o un orden parcial antireflexivo en $P$. Un conjunto ordenado $(P,R)$ está \textit{totalmente ordenado} (o es \textit{cadena}) cuando para cualesquiera $p,q \in P$, se cumple que $p \mathrel{R} q$, $p = q$ o $q \mathrel{R} p$, en tal caso, también se dice que $R$ es \textit{orden total}.
 
-Un subconjunto $C$ de un ordinal límite $\gamma$ es \textit{cerrado} cuando para cada $\alpha < \gamma$, si $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ es estacionario si y sólo si tiene intersección no vacía con cada club de $\gamma$. Sobre esta terminología se desenvuelve el \textit{Lema de Fodor}: Si $\kappa$ es un ordinal regular, $S$ es estacionario en $\kappa$ y $f:S \to \kappa$ es tal que para cada $\alpha \in S \setminus \{0\}$, $f(\alpha) < \alpha$; entonces, existe $T \subseteq \kappa$ estacionario tal que $f \upharpoonright T$ es constante.
+\index[alph]{cota!superior}\index[alph]{cota!inferior}\index[alph]{elemento!máximo}\index[alph]{elemento!mínimo}\index[alph]{elemento!supremo}\index[alph]{elemento!ínfimo}\index[alph]{elemento!maximal}\index[alph]{elemento!minimal}\index[sym]{$\uparrow(A)$}\index[sym]{$\downarrow(A)$}\index[sym]{$\max(A)$}\index[sym]{$\min(A)$}\index[sym]{$\sup(A)$}\index[sym]{$\inf(A)$}\index[alph]{conjunto!totalmente ordenado}\index[alph]{orden!total}\index[alph]{orden!buen orden}
+Dados un conjunto parcialmente ordenado $(P,\leq)$ y cualquier $A \subseteq \emptyset$, se denotará por $\uparrow (A)$ al conjunto de \textit{cotas superiores} de $A$, es decir, $\uparrow (A) = \{ p \in P \tq \forall a \in A \, (a \leq p) \}$. Un elemento $p \in P$ es máximo de $A$ si y sólo si $p \in A \cap \uparrow (A)$, este $p$ es único y se denota $\max(A)$. De forma dual se define el conjunto de \textit{cotas inferiores} de $A$, $\downarrow (A)$, y el elemento mínimo de $A$, $\min(A)$. Un elemento $q \in P$ es \textit{supremo} de $A$ cuando $p=\min(\uparrow (A))$, en cuyo caso, se denota $p=\sup(A)$. De forma dual se define el \textit{ínfimo} de $A$, $\inf(A)$. Finalmente, diremos que $r \in P$ es en elemento \textit{maximal} de $A$ si no existe $a \in A$ tal que $r < a$; de forma análoga se define el elemento \textit{minimal} de $A$. Si para cualesquiera $p,q \in P$, se cumple $p \leq q$ o $q \leq p$ diremos que $(P,\leq)$ es un \textit{conjunto totalmente ordenado}, o que $R$ es \textit{orden total} en $P$; y, si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $(P,\leq)$ es un \textit{buen orden}, o que $R$ es un \textit{buen orden} en $P$.
+
+\index[alph]{número!ordinal}\index[sym]{$\alpha < \beta$ (ordinales)}\index[sym]{$\omega$}
+Como es estándar, trabajaremos sobre el universo de Von Neumann  para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$.Es un hecho que toda clase no vacía de ordinales tiene un  mínimo \cite[Obs.~I.2.4]{jechSet}. Denotaremos por $\omega$ al primer ordinal infinito; es un hecho que $\omega$ es el conjunto de todos los números naturales.
+
+\index[alph]{número!ordinal}\index[sym]{$\aleph_\alpha$}\index[sym]{$\omega_\alpha$}\index[sym]{$\mathfrak{c}$}\index[alph]{conjunto!numerable}\index[alph]{conjunto!finito}\index[alph]{conjunto!más que numerable}\index[alph]{conjunto!no numerable}
+Un \textit{número cardinal} es un ordinal no biyectable con ninguno de sus elementos. Se usará la enumeración habitual de los cardinales, $\aleph_\alpha=\omega_\alpha$. Para cada conjunto $A$: denotaremos por $|A|$ al único cardinal biyectable con $A$, al cual se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $A$; $A$ se dice \textit{finito} si $|A|<\omega$; \textit{contable} si $|A| \leq \omega$; \textit{numerable} si $|A|=\omega$; y, cuando $|A|>\omega$, se dirá que $A$ es \textit{más que numerable} o \textit{no numerable}. El siguiente hecho es consecuencia que la cardinalidad de cualquier conjunto esté bien definida:
+\begin{proposicion}
+    Para cualesquiera conjuntos $X$ y $Y$:
+    \begin{enumerate}
+        \item $|X|=|Y|$ si y sólo si existe $f: X \to Y$ biyectiva.
+        \item $|X| \leq |Y|$ si y sólo si existe $f: X \to Y$ inyectiva.
+        \item ($\Ac$) $|X| \leq |Y|$ si y sólo si existe $f: Y \to X$ sobreyectiva.
+        \item Si $|X| \leq |Y|$ y $|Y| \leq |X|$, entonces $|X| = |Y|$.
+    \end{enumerate}
+\end{proposicion}
+
+De manera puntual, se hará referencia a la aritmética ordinal y cardinal, utilizando la notación convencional para la suma, el producto y la exponenciación \cite[Def.~ I.3.3, I.5.14, I.5.15]{jechSet}. Se recuerda que, si $\{\kappa_\alpha \tq \alpha \in I\}$ es una familia no vacía de cardinales y cada $\kappa_\alpha$ es infinito; o bien, $I$ es infinito, entonces:
+\[ \sum_{\alpha \in  I} \kappa_\alpha = |I| \sup_{\alpha \in I} \kappa_\alpha \, . \]
+
+\index[sym]{$\mathfrak{c}$}
+Es un hecho que para todo conjunto $X$, ocurre que $|\ms{P}(X)|=2^{|X|}$. La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir $\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}$, es un hecho (Teorema de Cantor) que para todo ordinal $\kappa$, ocurre que $\kappa<2^\kappa$ \cite[Teo.~I.3.1]{jechSet}. La formulación de $\HC$ que utilizaremos es: $\aleph_1=\mathfrak{c}$.
+
+\index[sym]{$[X]^\kappa$}\index[sym]{$[X]^{<\kappa}$}\index[sym]{$[X]^{\leq\kappa}$}\index[sym]{$[X]^{>\kappa}$}\index[sym]{$[X]^{\geq\kappa}$}\index[sym]{$X^\kappa$}\index[sym]{$X^{\kappa}$}
+Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\kappa$ y $[X]^{<\kappa}$ a las colecciones de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$ y menor que $\kappa$, respectivamente. De forma análoga se definen $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto $\{ f \tq \exists \alpha < \kappa \, (f:\alpha \to X) \}$.
+
+\begin{proposicion}
+    Sean $X$ un conjunto infinito y $\kappa \leq |X|$, entonces:
+    \begin{enumerate}
+        \item $|[X]^\kappa| = |X|^\kappa$.
+        \item Si $X$ es numerable, $|[X]^{\omega}| = \mathfrak{c}$.
+        \item $|[X]^{<\omega}| = |X|$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Para cada $A \in [X]^\kappa \subseteq \ms{P}(X)$ fíjese ($\Ac$) una biyección $g_A : \kappa \to A$. Entonces la función $A \mapsto g_A$ es inyección de $[X]^\kappa$ en $X^\kappa$. Para la desigualdad recíproca, como $\kappa \leq |X|$, existe una biyección $g:X \times \kappa \to X$. Cada $f \in X^\kappa$ es un subconjunto de tamaño $\kappa$ de $X \times \kappa$; por tanto, la asignación $f \mapsto g[f]$ es inyección de $X^\kappa$ en $[X]^\kappa$.
+
+    (ii) Por el primer punto, $|[X]^\omega| = |X|^{\aleph_0} = \aleph_0^{\aleph_0}$. Como $2 \leq \aleph_0$, entonces $\aleph_0 ^{\aleph_0}$; y como $\aleph_0 < 2^\aleph_0$, entonces $\aleph_0^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \aleph_0} = 2^\aleph_0$.
+
+    (iii) Obsérvese que $|X|\leq [X]^{<\omega}$, pues $x \mapsto \{x\}$ es inyección de $X$ en $[X]^{<\omega}$. Para la desigualdad recíproca, note que:
+    \[ |[X]^{<\omega}| = \Bigg| \bigcup_{n \in \omega} [X]^n \Bigg| \leq \sum_{n \in \omega} |[X]^n| = \sum_{n \in \omega} |X| = |X| \cdot \aleph_0  = |X| \, . \]
+    probando la igualdad deseada. $⟼$
+\end{proof}
+
+\begin{align*}
+    |X| &=  \\
+\end{align*}
+
+\index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
+Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si la diferencia $A \setminus B$ es finita, esta situación se denotará por $A \subseteq^* B$ y convendremos que $A=^*B$ ($A$ y $B$ son \textit{casi iguales}) si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$. Nótese que un conjunto $N$ es vacío si y sólo si $N =^* \emptyset$. Un conjunto $X$ es \textit{casi ajeno} a otro conjunto $Y$ si y sólo si $X \cap Y =^* \emptyset$. Es un hecho que:
+\begin{proposicion}
+    Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
+    \begin{enumerate}
+        \item Si $A \subseteq B$, entonces $A \subseteq^* B$.
+        \item $A \subseteq^* A$ y $A =^* A$.
+        \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
+        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
+        \item $=^*$ se comporta como relación de equivalencia.
+        \item Si $A,B \subseteq C$ entonces $A \setminus B$ si y sólo si $A \setminus C$.
+        \item $A \subseteq^* B$ si y sólo si existe un conjunto finito $F$ tal que $A \setminus F \subseteq B$.
+    \end{enumerate}
+\end{proposicion}
 
 \newpage
-
-El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, es decir, $\zfc$, entendido como el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden ser consultados en \cite[p.~118]{jechSet}.
-
-Se utilizará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$.
-
-Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se dice \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Todo conjunto no vacío de ordinales tiene un $\in$-mínimo. Si $\alpha$ y $\beta$ son ordinales, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$. Denotaremos por $\omega$ al primer ordinal infinito; es un hecho que $\omega=\mathbb{N}$, y nótese que, si $n$ es cualquier número natural, entonces
-\[
-n=\{m \in \omega \tq m<n\}.
-\]
-
-Un ordinal $\kappa$ se dice \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual de los cardinales, denotando $\aleph_\alpha=\omega_\alpha$. Es un hecho que cualquier conjunto $X$ es biyectable con algún ordinal; el mínimo ordinal biyectable con $X$ es, en efecto, un cardinal, el cual se denotará por $|X|$ y se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir,
-\[
-\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}.
-\]
-De manera puntual, se hará referencia a la aritmética ordinal; la notación será la convencional para la suma, el producto y la exponenciación entre ordinales y cardinales. Para un tratamiento más detallado del tema, se sugiere consultar \cite{jechSet}.
-
-Dado un conjunto $X$ y un cardinal $\kappa$, se denotará por $[X]^\kappa$ a la colección de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$, y por $[X]^{<\kappa}$ a la colección de aquellos de cardinalidad estrictamente menor que $\kappa$. De forma análoga se definen $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto de todas las funciones $f$ para las cuales existe algún $\alpha<\kappa$ tal que $f:\alpha \to X$.
-
-Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si para todo $\alpha<\gamma$, cuando $\midcup (C \cap \alpha)=\alpha$, se tiene $\alpha \in C$. Si, además, $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se dice \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$.
-
-Con esta terminología se enuncia el \textit{Lema de Fodor}: si $\kappa$ es un ordinal regular, $S$ es un subconjunto estacionario de $\kappa$ y $f:S \to \kappa$ es tal que, para cada $\alpha \in S \setminus \{0\}$, se cumple $f(\alpha)<\alpha$, entonces existe un conjunto estacionario $T \subseteq \kappa$ tal que la restricción $f \upharpoonright T$ es constante.
-
-\newpage
-
-El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como el marco $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ o el axioma de Martin $\Ma$. Los marcos axiomáticos previamente mencionados pueden consultarse en \cite[p.~118]{jechSet}.
-
-A lo largo del texto se empleará la notación convencional para los predicados lógicos y las operaciones conjuntistas. Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$. Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$.
-
-Como es estándar, trabajaremos sobre el universo de Von Neumann para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado \textcolor{blue}{(ver def 2)}. Todo conjunto no vacío de ordinales posee un $\in$-mínimo. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$. Denotaremos por $\omega$ al primer ordinal infinito; es un hecho que $\omega=\mathbb{N}$. Nótese, además, que si $n$ es cualquier número natural, entonces
-\[
-n=\{m \in \omega \tq m<n\}.
-\]
-
-Un ordinal $\kappa$ se dice \textit{cardinal} cuando no es biyectable con ninguno de sus elementos. Utilizaremos la enumeración habitual de los cardinales, denotando $\aleph_\alpha=\omega_\alpha$. Es un hecho que todo conjunto $X$ es biyectable con algún ordinal; el mínimo ordinal biyectable con $X$ es, de hecho, un cardinal, el cual se denotará por $|X|$ y se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $X$. La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir,
-\[
-\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}.
-\]
-De manera puntual, se hará referencia a la aritmética ordinal, utilizando la notación convencional para la suma, el producto y la exponenciación entre ordinales y cardinales. Para un tratamiento más detallado del tema se sugiere consultar \cite{jechSet}.
-
-Dado un conjunto $X$ y un cardinal $\kappa$, se denotará por $[X]^\kappa$ la colección de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$, y por $[X]^{<\kappa}$ la colección de aquellos cuya cardinalidad es estrictamente menor que $\kappa$. De forma análoga se definen las colecciones $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto de todas las funciones $f$ para las cuales existe algún $\alpha<\kappa$ tal que $f:\alpha \to X$.
-
 Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no acotado en $\gamma$ \textcolor{blue}{(ver abajo)}, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$.
 
 Con esta terminología se enuncia el \textit{Lema de Fodor}: si $\kappa$ es un ordinal regular, $S$ es un subconjunto estacionario de $\kappa$ y $f:S \to \kappa$ es tal que, para cada $\alpha \in S \setminus \{0\}$, se cumple $f(\alpha)<\alpha$, entonces existe un conjunto estacionario $T \subseteq \kappa$ tal que la restricción $f \upharpoonright T$ es constante.

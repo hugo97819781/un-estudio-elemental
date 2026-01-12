@@ -269,7 +269,7 @@ La siguiente Proposición para nada carece de importancia, pues los espacios de 
 
 	Sea $x \in X$ arbitrario. Si $x \in \omega$, $\{x\}$ es vecindad compacta de $x$ en $X$. Ahora, si $x \in \ms{A}$, entonces $K:=X \cap (\{x\} \cup x) \subseteq \{x\} \cup x$ es vecindad de $x$ en $X$. En virtud de la \autoref{prop-Kcaract}, $K$ es compacto; pues $K \cap \ms{A} = \{x\}$ es finito y $K \cap \omega \subseteq x \subseteq^* \midcup \{x\} = \midcup (K \cap \ms{A})$. Así, $X$ es localmente compacto.
 
-	Finalmente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire \textcolor{red}{(prelim)}.
+	Finalmente, $\Psi(\ms{A})$ es localmente compacto y de Hausdorff, siendo esto suficiente para ser de Baire (\autoref{teo-CatBaire}).
 \end{proof}
 
 \section{Metrizabilidad y Pseudocompacidad}
@@ -290,7 +290,7 @@ El \autoref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una famil
 \begin{proof}
 	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textcolor{red}{(prelim)}.
 
-	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto \textcolor{red}{(prelim)}. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. \textcolor{red}{(prelim)}
+	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. Todo este párrafo es a razón del \autoref{cor-2AN-Linde}.
 
 	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, debe ser $2\AN$ \textcolor{red}{(prelim)}. Se sigue de \ref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
 \end{proof}
@@ -373,7 +373,7 @@ La meta primordial en lo que resta del capítulo será caracterizar aquellos esp
 \begin{proof}
 	Si $x \in X$ es aislado en $D$, dada la  densidad de $D$, es necesario que $x \in D$. Luego $\{x\}=D \cap U$ para cierto abierto $U$ de $X$; y como $X$ es un espacio $\T_1$, resulta que $U=\{x\}$. Por lo tanto $X \setminus \der_D(D) \subseteq N$.
 
-	Nótese que $X \setminus \der_D(D)=\midcap\{ X \setminus \{y\} \tq y \in \der_D(D) \}$. Pero, para cada punto $y \in \der_D(D) \subseteq \der(X)$, el conjunto $X \setminus \{y\}$ es abierto y denso en $X$. De la hipótesis y el \textcolor{red}{(prelim)}, $X$ es de Baire, así que $N \supseteq X \setminus \der_D(D)$ debe ser denso.% 
+	Nótese que $X \setminus \der_D(D)=\midcap\{ X \setminus \{y\} \tq y \in \der_D(D) \}$. Pero, para cada punto $y \in \der_D(D) \subseteq \der(X)$, el conjunto $X \setminus \{y\}$ es abierto y denso en $X$. De la hipótesis y el \autoref{teo-CatBaire}, $X$ es de Baire, así que $N \supseteq X \setminus \der_D(D)$ debe ser denso.% 
 \end{proof}
 
 \begin{lema}\label{lem-TKR-DerX}
@@ -483,7 +483,7 @@ Se explotará mucho la siguiente observación durante el subsecuente Corolario, 
 Del siguiente resultado se desprenderá que la relación entre el producto topológico y los espacios de Mrówka es \enquote{poco interesante}, en el aspecto de que tal relación es muy restrictiva.
 
 \begin{lema}
-	Sean $X$ y $Y$ espacios topológicos infinitos, entonces $X \times Y$ es homeomorfo a un espacio de Mrówka si y sólo si $X$ y $Y$ son de Mrówka y además $X \cong \omega$ o $Y \cong \omega$
+	Sean $X$ y $Y$ espacios infinitos, entonces $X \times Y$ es homeomorfo a un espacio de Mrówka si y sólo si $X$ y $Y$ son de Mrówka y $X \cong \omega$ o $Y \cong \omega$
 \end{lema}
 
 \begin{proof}

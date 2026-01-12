@@ -231,9 +231,22 @@ Dado que el discreto de dos puntos es un de Tychonoff, tal propiedad es producti
 
 Finalizaremos la sección enunciando uno de los resultados más \enquote{potentes} para espacios normales, la demostración de este hecho se puede ver en \textcolor{magenta}{(CITE)}.
 
-\begin{teorema}[extensión de Tietze]
+\begin{teorema}[extensión de Tietze]\label{Teo-Tietze}\index[alph]{Teorema!de extensión de Tietze}\index[alph]{Tietze!Teorema de extensión de}
     Sea $X$ un espacio $\T_1$ y $F \subseteq X$ cualquier cerrado. Si $f:F \to \mathbb{R}$ es continua, entonces existe $g:X \to \mathbb{R}$ continua y tal que extiende a $f$, es decir, $g \upharpoonright A = f$.
 \end{teorema}
+
+\begin{corolario}[Lema de Jones]\label{lem-JonesS}\index[alph]{Lema!de Jones}\index[alph]{Jones!Lema de}
+    Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
+\end{corolario}
+\begin{proof}
+    Sea $F:=\mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f:X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.%, por lo que $|\mathbb{R}^S| \leq |\mathbb{R}^\mathbb{R}|$.
+
+    Supóngase ahora que $h,k:X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva.
+
+    Por lo mencionado anteriormente, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, así:
+    \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \]
+    finalizando la prueba.
+\end{proof}
 
 \section{Convergencia de sucesiones}
 \label{prelim-sucesiones}
@@ -306,7 +319,7 @@ Para todo espacio $X$ son equivalentes:
 
 \subsection{Compacidad y tipos de compacidad}
 
-\index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{espacio!pseudocompacto}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
+\index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
 Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathfrak{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Todas las propiedades anteriores son débilmente hereditarias. Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Claramente, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf.
 
 \index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
@@ -321,7 +334,7 @@ Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\
     Efectivamente, si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Así, existen un abierto $U$ de $X$, y un elemento $B \in \mathcal{B}$, tales que $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$, por lo que $X \subseteq \midcup \mathcal{V}$.
 \end{proof}
 
-\begin{corolario}
+\begin{corolario}\label{cor-2AN-Linde}
     Sea $X$ un espacio topológico.
     \begin{enumerate}
         \item Si $X$ es $2\AN$, o $\sigma$ compacto, entonces es de Lindelöf
@@ -388,6 +401,21 @@ Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conoc
     (ii) Como $D$ es denso, de ser abierto, es abierto en $X=\cla(D)$, siguiéndose el resultado de la proposición previa.
 \end{proof}
 
+\index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del Teorema de Categoría de Baire.
+
+\begin{teorema}\label{teo-CatBaire}\index[alph]{Teorema!de Categoría de Baire}\index[alph]{Baire!Teorema de Categoría de}
+    Todo espacio $X$ de Hausdorff, localmente compacto, es de Baire.
+\end{teorema}
+\begin{proof}
+    Sea $\{D_n \tq n \in \omega\}$ una colección de abiertos, densos de $X$, habrá de mostrarse que $A:=\midcap\{ D_n \tq n \in \omega \}$ es denso en $X$. Sea $U$ un abierto no vacío de $X$.
+
+    Para cada punto $x \in X$ y vecindad $N$ de $x$ fíjese ($\Ac$) una vecindad compacta $K(x,N)$ de $X$ tal que $x \in K(x,N) \subseteq N$. Por recursión en $\omega$ defínanse $x_0$ como cualquier elemento de $U \cap D_0$ y $K_0:=K(x_0,U \cap D_0)$; y, para cada $n \in \omega$, tómense $x_{n+1} \in K_n \cap D_{n+1}$ y $K_{n+1}=K(x_{n+1},K_n \cap D_{n+1})$.
+    
+    De esta manera, $\{K_n \tq n \in \omega\}$ es una sucesión $\subseteq$-decreciente de subespacios compactos no vacíos de $X$. Como todos ellos son subespacios compactos, de Hausdorff, no vacíos, y del espacio compacto $K_0$, la siguiente intersección no puede ser vacía: $\midcap\{ K_n \tq n \in \omega \} \subseteq U \cap A$. Así, $A$ es denso y $X$ es de Baire.
+\end{proof}
+
+\index[alph]{espacio!pseudocompacto}
 El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función continua $f:X \to \mathbb{R}$ es \textit{acotada}, es decir, existe $M>0$ tal que para cada $x \in X$, ocurre $|f(x)| \leq M$. La pseudocompacidad es una propiedad claramente más débil que la compacidad, pero una cuestión interesante es si esta propiedad implica la compacidad numerable, en general esto es flaso. Se tiene una relación importante entre la compacidad numerable y la pseudocompacidad.
 
 \begin{proposicion}\label{pseudo-numerableCompacto}
@@ -404,7 +432,7 @@ El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función 
 
     (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f:A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
 
-    Como $X$ es normal, el Teorema de Tietze garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+    Como $X$ es normal, el Teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
 \end{proof}
 
 \begin{proposicion}\label{pseudocom-subcjtos}
@@ -458,5 +486,3 @@ Decimos que la extensión unipuntual de un espacio no compacto $X$ es la \textit
     
     Efectivamente, sean $x \in X$ y $N$ una vecindad compacta para $x$ en $X$. Fíjese un abierto $V$ de $X$ con $x \in V \subseteq N$. Ahora, como $N$ es compacto y cerrado del espacio de Hausdorff $X$; por lo tanto, $U:= \{\infty\} \cup X \setminus N$ es un abierto en $X \cup \{\infty\}$ ajeno con $V$.
 \end{proof}
-
-\subsection{Teorema de Categoría de Baire}

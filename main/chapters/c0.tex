@@ -183,22 +183,14 @@ A continuación se presentan algunas propiedades topológicas. Se dice que $X$ e
     \item Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad,respectivamente, adicionados con el axioma $\T_1$. Cuando es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}.
 \end{enumerate}
 
+\begin{proposicion}
+    Sean $X$ un espacio $\T_1$ y $A \subseteq X$. Si $x \in \der(X)$ y $U$ es un abierto con $x \in U$, entonces $U \cap A$ es infinito.
+\end{proposicion}
 
+\begin{teorema}[extensión de Tietze]
+    Sea $X$ un espacio $\T_1$ y $F \subseteq X$ cualquier cerrado. Si $f:F \to \mathbb{R}$ es continua, entonces existe $g:X \to \mathbb{R}$ continua y tal que extiende a $f$, es decir, $g \upharpoonright A = f$.
+\end{teorema}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 \section{Convergencia de sucesiones}
 
 \index[alph]{subsucesión}\index[alph]{sucesión!convergente}\index[alph]{sucesión!subsucesión}\index[sym]{$x_n \to a$}
@@ -270,37 +262,39 @@ Para todo espacio $X$ son equivalentes:
 \subsection{Compacidad y tipos de compacidad}
 
 \index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{espacio!pseudocompacto}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
-Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathfrak{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Claramente, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf; además, todo espacio $\sigma$-compacto es de Lindelöf. Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Es un hecho \textcolor{magenta}{(CITE)} que, si $X$ es de Hausdorff, entonces $X$ es localmente compacto si y sólo si cada punto $x \in X$ tiene una vecindad compacta. Todas las propiedades topológicas mencionadas en este párrafo son débilmente hereditarias.
-
-El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función continua $f:X \to \mathbb{R}$ es \textit{acotada}, es decir, existe $M>0$ tal que para cada $x \in X$, ocurre $-M < f(x) < M$. La pseudocompacidad es una propiedad claramente más débil que la compacidad, la siguiente caracterización ofrece dos puntos de vista alternativos para ella.
-
+Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathfrak{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Claramente, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf; además, todo espacio $\sigma$-compacto es de Lindelöf.
 \begin{proposicion}
-    Para todo espacio $X$ son equivalentes:
-    \begin{enumerate}
-        \item $X$ es pseudocompacto.
-        \item Si $B \subseteq X$ abierto, cerrado y discreto, no puede ser infinito.
-        \item Si $\mathcal{U}$ es cubierta abierta a lo más numerable de $X$, existe $\mathcal{V} \subseteq \mathcal{U}$ finita, tal que $\midcup \mathcal{V}$ es denso en $X$.
-    \end{enumerate}
+    Sea $X$ un espacio $\T_1$. Entonces $X$ es numerablemente comapcto si y sólo si, para cada $A \subseteq X$ infinito $\der(A) \neq \emptyset$.
 \end{proposicion}
-\begin{proof}
-    (i) $\to$ (ii) Por contrapuesta, supóngase que $B \subseteq X$ es abierto, cerrado y discreto. Si $B$ es infinito, tómese $C \in [B]^\omega$. Luego, existe una biyección $f:X \omega$, nótese que como $B$ es discreto, entonces $f$ es continua. Sea $g:X \subseteq \mathbb{R}$ la función constante $0$. Como $X$ y $X \setminus B$ son abiertos ajenos y $f,g$ son continuas, $f \cup g: X \to \mathbb{R}$ es continua y no acotada.
 
-    (ii) $\to$ (iii) Por contradicción, supóngase (ii) y que $\mathcal{U}$ es una cubierta numerable de $X$, enumerada como $\{U_n \tq n \in \omega\}$, tal que ninguno de sus subconjuntos finitos tiene unión densa en $X$. Entonces, para cada $n \in \omega$, el conjunto $V_n := \midcup \{U_m \tq n \leq m\}$ no es denso en $X$ y existe un abierto $W_n \neq \emptyset$ que es ajeno con $V_n$. Como $V_n$ es abierto, entonces $V_n \cap \cla(W_n)=\emptyset$. Como $\mathcal{U}$ es cubierta, entonces $\midcap\{\cla(W_n) \tq n \in \omega\} = \emptyset$.
+Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Es un hecho \textcolor{magenta}{(CITE)} que, si $X$ es de Hausdorff, entonces $X$ es localmente compacto si y sólo si cada punto $x \in X$ tiene una vecindad compacta. Todas las propiedades topológicas mencionadas en este párrafo son débilmente hereditarias.
 
+El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función continua $f:X \to \mathbb{R}$ es \textit{acotada}, es decir, existe $M>0$ tal que para cada $x \in X$, ocurre $|f(x)| \leq M$. La pseudocompacidad es una propiedad claramente más débil que la compacidad, pero una cuestión interesante es si esta propiedad implica la compacidad numerable, en general esto es flaso. Se tiene una relación importante entre la compacidad numerable y la pseudocompacidad.
 
-\end{proof}
-
-
-
-
-\newpage
-\begin{teorema}
-    Sea $X$ un espacio topológico.
+\begin{corolario}
+    Sea $X$ un espacio topológico $\T_1$.
     \begin{enumerate}
         \item Si $X$ es numerablemente compacto, es pseudocompacto.
         \item Si $X$ es normal y pseudocompacto, es numerablemente compacto.
     \end{enumerate}
-\end{teorema}
+\end{corolario}
 \begin{proof}
-    (i) Supóngase que $X$ es numerablemente compacto 
+    (i) Por absurdo, supóngase que $X$ es numerablemente compacto  y no pseudocompacto. Fíjese $f:X \to \mathbb{R}$ no acodada. Entonces, para cada $n \in \omega$ se puede fijar ($\Ac$) un elemento $x_n \in X$ de modo que $|f(x)|>n$, con ello, el conjunto $A:=\{x_n \tq n \in \omega\}$ es infinito.
+
+    Como $X$ es numerablemente compacto y $\T_1$, existe $x \in \der(A)$ y como $f$ es continua, $f(x) \in \der(f[A])$. A razón de esto, $(0,f(x)+1) \cap f[A]$ es infinito, de donde, $\{ m \in \omega \tq f(x_n) < f(x)+1 \}$ es infinito. Pero, lo anterior es una contradicción, dada la elección de los puntos $x_n$. Por lo tanto, $X$ debe ser pseudocompacto.
+
+    (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f:A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
+
+    Como $X$ es normal, el Teorema de Tietze garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+\end{proof}
+
+\begin{proposicion}
+    Seam $X$ un espacio pseudocompacto.
+    \begin{enumerate}
+        \item Si $B \subseteq X$ es abierto y cerrado, no puede ser infinito.
+        \item Si $D \subseteq X$ es denso, cada sucesión en $D$ contiene una subsucesión convergente en $X$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    
 \end{proof}

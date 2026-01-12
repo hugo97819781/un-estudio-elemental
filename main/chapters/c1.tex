@@ -100,7 +100,7 @@ El recíproco del Lema previo falla para familias infinitas (véase la familia $
 	Supóngase $\omega \subseteq^* \midcup \ms{A}$ y nótese que si $B \in [\omega]^\omega$, entonces $B \subseteq^*\midcup \ms{A}$ y con ello $\emptyset \neq^* B  \subseteq^* B \cap \midcup \ms{A} = \midcup\{B \cap A \tq A \in \ms{A}\}$. Como la última es una unión finita, $B$ debe tener intersección infinita con algún elemento de $\ms{A}$.
 \end{proof}
 
-El posterior resultado puede ser visto como un símil al Teorema del Ultrafiltro \textcolor{red}{(prelim)}, o bien, cualquier resultado afín en el que se haga uso del Principio de Maximalidad de Hausdorff o sus equivalentes \textcolor{red}{(prelim)}.
+El posterior resultado puede ser visto como un símil al Teorema del Ultrafiltro \textcolor{red}{(prelim)}, o bien, cualquier resultado afín en el que se haga uso del Principio de Maximalidad de Hausdorff (\ref{teo-PMO}) o sus equivalentes.
 
 \begin{lema}\label{lem-MADs}
 	Toda familia casi ajena está contenida en una familia maximal.
@@ -136,7 +136,7 @@ Tomando cualquier familia infinita $\ms{A}$ y aplicando \autoref{lem-MADs}, se o
 
 %La presente sección tiene por meta exhibir dos de los métodos más típicos para la construcción de familias casi ajenas infinitas. El primero de ellos, se basa en las sucesiones convergentes de espacios topológicos de Hausdorff, primero numerables.
 
-Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$, para cada $x \in X \setminus D$ ha de existir una sucesión en $D$ convergente a $x$. Si a $X$ le adicionamos la condición de ser $\T_1$, la imagen de tal sucesión es necesariamente un conjunto numerable $A_x \subseteq D$, convergente a $x$ en $X$ \textcolor{red}{(prelim)}.
+Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$, para cada $x \in X \setminus D$ ha de existir una sucesión en $D$ convergente a $x$. Si a $X$ le adicionamos la condición de ser $\T_1$, la imagen de tal sucesión es necesariamente un conjunto numerable $A_x \subseteq D$, convergente a $x$ en $X$ (véase \ref{prop-sucesionesConvergentesT1}).
 
 \begin{proposicion}\label{prop-famSucesiones}
 	Supóngase que $X$ es un espacio de Hausdorff, de Fréchet y que $D \subseteq X$ es denso y numerable. Para cada $A \subseteq X \setminus D$ existe una familia casi ajena sobre $D$ biyectable con $A$.
@@ -475,7 +475,7 @@ Obsérvese ahora que si $(\ms{B},\ms{C})$ es una grieta y $\midcup \ms{B} \cap \
 
 En la década de 1910, el analista Nikolai Luzin introdujo ciertos subconjuntos especiales de $\mathbb{R}$, mismos que hoy llevan su nombre. Y pese a que el estudio de aquellos objetos es relativo a la teoría descriptiva de conjuntos, las analogías entre sus propiedades y las de las familias que a continuación presentamos, son suficiente razón como para que estas lleven el subfijo \enquote{de Luzin}.
 
-\begin{definicion}\label{def-LuzinFam}\index[alph]{familia!de Luzin}\index[alph]{Luzin!familia de}
+\begin{definicion}\label{def-LuzinFam}\index[alph]{familia!de!Luzin}\index[alph]{Luzin!familia de}
 	Una familia $\ms{A}$ es \textbf{de Luzin} cuando existen $X \in [\omega_1]^{\omega_1}$ y una enumeración $\ms{A} = \{A_\alpha \tq \alpha \in X \}$ tales que para todo $(\alpha, n) \in \omega_1 \times \omega$, el conjunto $ \{ \beta<\alpha \tq A_\alpha \cap A_\beta \subseteq n \} $ es finito.
 \end{definicion}
 
@@ -510,7 +510,7 @@ La existencia de familias de Luzin no es tan inucitada, resulta que cualquier fa
 
 Los siguientes objetos son una suerte de modificación a la \autoref{def-LuzinFam}; mientras que las familias de Luzin son \enquote{unidimensionales}, en el sentido de que están indexadas por $\omega_1$; las grietas de Luzin son \enquote{$n$-dimensionales}:
 
-	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de,}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de,}\index[alph]{testigos!de una $n$-grieta de Luzin}
+	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de}\index[alph]{testigos!de una $n$-grieta de Luzin}
 		Sea $n \in \omega \setminus 2$. Una \textbf{$n$-grieta de Luzin} es una sucesión finita $(\ms{A}_i)_{i \in I} \subseteq \Ad(\omega)$ cuya union es una familia casi ajena; y, tales que existen $X \in [\omega_1]^{\omega_1}$ y $m \in \omega$, de modo que cada $\ms{A}_i$ se puede enumerar como $\{ A_\alpha^i \tq \alpha \in X \}$ de manera que:
 		\begin{enumerate}
 			\item Para cualesquiera $i,j \in n$ distintos y $\alpha \in X$, se da $A_\alpha^i \cap A_\alpha^j \subseteq m$.
@@ -649,7 +649,7 @@ Es deseable que la conclusión del Lema de Solovay fuese que la grieta $(\ms{A},
 \index[alph]{familia!débilmente separada}
 Como \enquote{breviario cultural}, cuando una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay} para cierto subconjunto $D \subseteq \omega$, se dirá que está \textit{débilmente separada} (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}). 
 
-\index[alph]{hipótesis!de Jones}\index[alph]{Jones! hipótesis de,}
+\index[alph]{hipótesis!de Jones}\index[alph]{Jones! hipótesis de}
 La siguiente es una aplicación típica del lema de Solovay, una prueba sencilla de la consistencia, respecto a $\zfc$, del enunciado $2^{\aleph_0}=2^{\aleph_1}$ (la moderadamente famosa \textit{Hipótesis de Jones}). Como se podrá verificar en secciones futuras de este escrito, tanto la hipótesis de Jones, como su negación, tendrán repercusiones en el comportamiento topológico de los $\Psi$-espacios; especialmente, en la relación que estos guardan con la Conjetura de Moore (véase \autoref{Sec-PDM}).
 
 Aprovechamos para mencionar una última aplicación \enquote{conjuntista} de la combinatoria de las familias casi ajenas; a través de ellas, se puede mostrar la consistencia de la Hipótesis de Jones con $\zfc$.

@@ -288,11 +288,11 @@ El \cref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una familia 
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$ \textcolor{red}{(prelim)}.
+	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$, en cirtud del \cref{metri-lindSii2an}
 
 	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. Todo este párrafo es a razón del \cref{cor-2AN-Linde}.
 
-	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, debe ser $2\AN$ \textcolor{red}{(prelim)}. Se sigue de \ref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
+	(v) $\rightarrow$ (i) Por último, supóngase que $\Psi(\ms{A})$ es de Lindelöf. Como este espacio es desarrollable, se sigue de la \cref{desarrollo-lindSii2an}, que debe ser $2\AN$. Se sigue de \ref{cor-NumAxMrowka} que $|\ms{A}| \leq \aleph_0$.
 \end{proof}
 
 El siguiente corolario es una sencilla aplicación de \ref{prop-tra-compacidad} y \ref{prop-tra-numerable}, ejemplos como este ilustran desde ya el poder \enquote{constructivo} que tienen estos espacios.
@@ -548,13 +548,14 @@ El siguiente Corolario del Teorema de Kannan y Rajagopalan (\cref{teo-HLCCaract}
 cite[Def.~9.20, p.~118]
 La \textit{curiosidad} (comentada posteriormente a \ref{prop-alomasNumCaract}) en relación al espacio de ordinales $\omega^2$ tiene su justificación en el anterior Corolario.
 
-\subsection{Sobre un corolario de Kannan y Rajagopalan}
+\subsection{Sobre una observacion de Kannan y Rajagopalan}
 
 Se finalizará la sección; y con ello el actual capítulo, dando un Corolario importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. Vale mencionar que este resultado aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y se enuncia de la siguiente manera: \enquote{\textit{Un espacio $X$ infinito, de Hausdorff es imagen continua de un espacio de Mrówka pseudocompacto si y sólo si existe un denso numerable $D \subseteq X$ de manera de forma que toda sucesión en $D$ contiene una subsucesión convergente.}}
 
 En el documento original no se demuestra el resultado mencionado, sólo se esboza la mitad de la prueba. Para mostrar que este resultado es erróneo (tal cual está enunciado) basta encontrar un espacio de Hausdorff, separable y secuencialmente compacto, que tenga tamaño mayor al continuo. Tal espacio satisfaría la condición escrita en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y no podría ser imágen continua de ningún espacio de Mrówka (todos ellos tienen tamaño menor o igual a $\mathfrak{c}$). Los siguientes comentarios encuentran la consistencia con $\zfc$ de un espacio de esa naturaleza.
 
 Es un hecho conocido que el espacio $2^\mathfrak{c}$ no es secuencialmente compacto, se puede considerar entonces el cardinal \cite[Teo.~III.6.1]{kunenHandbook}:
+\index[sym]{$\mathfrak{s}$}
 \[\mathfrak{s}=\min\{ \kappa \geq \omega \tq 2^\kappa \text{ no es secuencialmente compacto } \} \, . \]
 Pero, seguido de la prueba expuesta en \cite[Teo.~III.5.4]{kunenHandbook}, se desprende que:
 \begin{teorema}
@@ -588,13 +589,14 @@ Una manera de \enquote{rescatar} el corolario mencionado por Kannan y Rajagopala
 	Sea $X$ un espacio infinito, de Hausdorff, separable y secuencialmente compacto. Si $X$ es de Fréchet, o regular y hereditariamente Lindelöf, entonces es imagen continua de un espacio de Mrówka pseudocompacto.
 \end{corolario}
 
-Si $X$ es un espacio metrizable y compacto, en automático se deduce (véase \textcolor{red}{(prelims)}) que es secuencialmente compacto y de Fréchet. Además es de Lindelöf, y con ello \textcolor{red}{(prelim)}, separable. Así que:
+Si $X$ es un espacio metrizable y compacto, en automático se deduce (véase la \ref{metri-comp}) que es secuencialmente compacto y de Fréchet. Además es de Lindelöf, y debido a \ref{metri-lindSii2an}, separable. Así que:
 
 \begin{corolario}
 	Todo espacio metrizable y compacto es imagen continua de un espacio de Mrówka (pseudocompacto).
 \end{corolario}
 
-El cubo de Hilbert, $[0,1]^\omega$, es universal sobre la clase de espacios metrizables y separables \textcolor{red}{(prelim)}, y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka generados por familias maximales. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo \textcolor{red}{Prelim}; lo cual es cuanto menos, digno de mencionar.
+\index[alph]{continuo!espacio}\index[alph]{espacio!continuo}
+El cubo de Hilbert, $[0,1]^\omega$, contiene una copia homeomorfa de todos los espacios metrizables y separables \cite[Teo.~ 4.2.10]{engelTopo}, y más aun, todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágenes continuas de espacios de Mrówka generados por familias maximales. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$ y todo continuo (todo espacio $X$ no vacío, metrizable, compacto y conexo; es decir, los únicos subconjuntos de $X$ abiertos y cerrados a la vez son $\emptyset$ y $X$); lo cual es cuanto menos, digno de mencionar.
 
 %%%%%%%%% Estoy casi seguro de que NO se puede remover, pero no sale la demostración.
 

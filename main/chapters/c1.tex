@@ -100,7 +100,7 @@ El recíproco del Lema previo falla para familias infinitas (véase la familia $
 	Supóngase $\omega \subseteq^* \midcup \ms{A}$ y nótese que si $B \in [\omega]^\omega$, entonces $B \subseteq^*\midcup \ms{A}$ y con ello $\emptyset \neq^* B  \subseteq^* B \cap \midcup \ms{A} = \midcup\{B \cap A \tq A \in \ms{A}\}$. Como la última es una unión finita, $B$ debe tener intersección infinita con algún elemento de $\ms{A}$.
 \end{proof}
 
-El posterior resultado puede ser visto como un símil al Teorema del Ultrafiltro \textcolor{red}{(prelim)}, o bien, cualquier resultado afín en el que se haga uso del Principio de Maximalidad de Hausdorff (\ref{teo-PMO}) o sus equivalentes.
+El posterior resultado puede ser visto como un símil al Teorema del Ultrafiltro (\cref{lem-ultrafil}), o bien, cualquier resultado afín en el que se haga uso del Principio de Maximalidad de Hausdorff (\ref{teo-PMO}) o sus equivalentes.
 
 \begin{lema}\phantomsection\label{lem-MADs}
 	Toda familia casi ajena está contenida en una familia maximal.
@@ -171,7 +171,7 @@ Comenzaremos observando que si $S$ es cualquier rama de un árbol $(T,\leq)$, en
 	Por lo tanto $R \cap S \subseteq \{ y \in T \tq y<z \}$; y como $T$ tiene altura $\omega$, el orden de $x_0$ es un natural; consecuentemente, $R \cap S$ es finito.
 \end{proof}
 
-Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ \textcolor{red}{(prelim)}; considerar la siguiente clase de familias desembocará en resultados sumamente notables (como se puede ver en la \cref{Sec-PDM}).
+Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (\cref{2fin-es-arbol}); considerar la siguiente clase de familias desembocará en resultados sumamente notables (como se puede ver en la \cref{Sec-PDM}).
 
 \begin{proposicion}
 	Para cada $f \in 2^\omega$ defínase $A_f:=\{ f \upharpoonright n \tq n \in \omega \} \subseteq 2^{<\omega}$; entonces:
@@ -543,7 +543,7 @@ Los siguientes objetos son una suerte de modificación a la \cref{def-LuzinFam};
 		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo a esta demostración, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que el conjunto $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
 	\end{proof}
 
-	La siguiente Proposición deja en claro la labor de \enquote{debilitamiento} que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; cualquiera de estas últimas contiene siempre una $2$-grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} \textcolor{red}{(prelim)} y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
+	La siguiente Proposición deja en claro la labor de \enquote{debilitamiento} que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; cualquiera de estas últimas contiene siempre una $2$-grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} (\cref{fodor-lem}) y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
 
 	\begin{proposicion}
 		Toda familia de Luzin contiene una grieta de Luzin. En consecuencia, existe una grieta de Luzin.
@@ -611,7 +611,7 @@ Se tiene entonces lo subsecuente de forma inmediata:
 	Sean $\ms{A} \in \Ad(\omega)$ y $\ms{D}:=\{D_a \tq a \in \ms{A}\}$. Si existe un filtro $\ms{D}$-genérico, $\ms{A}$ no es maximal.
 \end{corolario}
 
-Debido a lo recién mostrado, de tener $\mathbb{P}_\ms{A}$ la \textit{c.c.c.} \textcolor{red}{(prelim)}, se satisfaría que $\Ma(|\ms{A}|)$ implica $\ms{A} \notin \Mad(\omega)$. En tal caso, se estaría probando que si $\Ma(\kappa)$ es cierto, entonces $\kappa < \mathfrak{a}$; por ello, $\mathfrak{m} \leq \mathfrak{a}$.
+Debido a lo recién mostrado, de tener $\mathbb{P}_\ms{A}$ la c.c.c. (propiedad definida en la \cref{copo-ccc}), se satisfaría que $\Ma(|\ms{A}|)$ implica $\ms{A} \notin \Mad(\omega)$. En tal caso, se estaría probando que si $\Ma(\kappa)$ es cierto, entonces $\kappa < \mathfrak{a}$; por ello, $\mathfrak{m} \leq \mathfrak{a}$.
 
 Y en efecto, si $\mathcal{A} \subseteq \mathbb{P}_\ms{A}$ es anticadena y $(p,P),(h,H) \in \mathcal{A}$, se tiene $p\neq h$; sino $(p,P \cup H) \leq (p,P),(h,H)$ y $\mathcal{A}$ dejaría de ser anticadena. En consecuencia $|\mathcal{A}|\leq|[\omega]^{<\omega}|=\aleph_0$ y $\mathbb{P}_\ms{A}$ tiene la \textit{c.c.c.}
 

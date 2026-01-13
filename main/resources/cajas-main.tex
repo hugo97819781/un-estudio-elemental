@@ -17,13 +17,9 @@
 
 %Estilos de Cajas
 \mdfdefinestyle{caja1}{
-	leftline=true,
-	rightline=false,
-	topline=false,
-	bottomline=false,
-	linecolor=morado!90,
-	linewidth=2.5pt,
-	backgroundcolor=morado!5,
+	roundcorner=5pt,
+	backgroundcolor=azul!8,
+	linewidth=0,
 }
 
 \mdfdefinestyle{caja2}{
@@ -33,74 +29,39 @@
 }
 
 \mdfdefinestyle{caja3}{
-	topline=false,
-	bottomline=true,
-	leftline=true,
-	rightline=false,
-	linewidth=1.5pt,
-	linecolor=azul!90,
+	roundcorner=5pt,
+	backgroundcolor=morado!8,
+	linewidth=0,
 }
-
 \mdfdefinestyle{caja4}{
+	roundcorner=5pt,
+	backgroundcolor=gray!10,
 	linewidth=0,
 }
 
+%Estilos de Teoremas
 \declaretheoremstyle[
-    headfont=\bfseries,          % "Lema A.1" en negrita
-    notefont=\bfseries,          % "(de Solovay)" en negrita
-    notebraces={(}{)},           % Paréntesis automáticos
-    bodyfont=\itshape,        % Texto del contenido (cámbialo a \itshape si lo quieres cursiva)
-    %headpunct={.},               % Punto final tras el título
+    headfont=\bfseries,         % "Lema A.1" en negrita
+    notefont=\bfseries,         % "(de Solovay)" en negrita
+    notebraces={(}{)},          % Paréntesis automáticos
+    bodyfont=\itshape,        	% Texto del contenido (cámbialo a \itshape si lo quieres cursiva)
+    %headpunct={.},             % Punto final tras el título
     postheadspace=0.5em,
-    mdframed={style=caja2} % <--- AQUÍ SE CONECTAN
-]{estiloLemaNegrita}
+]{myTeoStyle}
 
-%Definicion de entornos
-%\newmdtheoremenv{definicion}{Definición}[section]
-%\newmdtheoremenv{proposicion}[definicion]{Proposición}
-%\newmdtheoremenv{lema}[definicion]{Lema}
-%\newmdtheoremenv[style=estiloLemaNegrita]{corolario}[definicion]{Corolario}
-%\newmdtheoremenv{observacion}[definicion]{Observación}
-%\newmdtheoremenv{ejemplo}[definicion]{Ejemplo}
-%\newmdtheoremenv{consideracion}[definicion]{Consideración}
+%Declaración de cajas.
+\declaretheorem[style=myTeoStyle,mdframed={style=caja1},name=Definición,numberwithin=section]{definicion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Proposición,sharenumber=definicion]{proposicion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Lema,sharenumber=definicion]{lema}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja3},name=Corolario,sharenumber=definicion]{corolario}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Observación,sharenumber=definicion]{observacion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Ejemplo,sharenumber=definicion]{ejemplo}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Consideración,sharenumber=definicion]{consideracion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Teorema,sharenumber=definicion]{teorema}
 
-\declaretheorem[style=estiloLemaNegrita,name=Definición,numberwithin=section]{definicion}
-\declaretheorem[style=estiloLemaNegrita,name=Proposición,numberwithin=section]{proposicion}
-\declaretheorem[style=estiloLemaNegrita,name=Lema,numberwithin=section]{lema}
-\declaretheorem[style=estiloLemaNegrita,name=Corolario,numberwithin=section]{corolario}
-\declaretheorem[style=estiloLemaNegrita,name=Observación,numberwithin=section]{observacion}
-\declaretheorem[style=estiloLemaNegrita,name=Ejemplo,numberwithin=section]{ejemplo}
-\declaretheorem[style=estiloLemaNegrita,name=Consideración,numberwithin=section]{consideracion}
-\declaretheorem[style=estiloLemaNegrita,name=Teorema,numberwithin=section]{teorema}
 
-%Entorno (complicado) de teorema
-%\newcounter{theot}
-%\newenvironment{teorema}[1][]{%
-	%\setcounter{theot}{\value{TemTheot}}
-%	\stepcounter{definicion}
-	%\setcounter{theot}{\value{definicion}}
-%	\renewcommand{\thetheot}{\thedefinicion}
-%	\refstepcounter{theot}
-%	\ifstrempty{#1}%
-%	{\mdfsetup{%
-%			frametitle={%
-%					\tikz[baseline=(current bounding box.east),outer sep=0pt]
-%					\node[anchor=east,rectangle,fill=dorado!35]
-%					{\strut Teorema~\thetheot};}}
-%	}%
-%	{\mdfsetup{%
-%			frametitle={%
-%					\tikz[baseline=(current bounding box.east),outer sep=0pt]
-%					\node[anchor=east,rectangle,fill=dorado!35]
-%					{\strut \textbf{Teorema~\thetheot~(#1)}};}}%
-%	}%
-%	\mdfsetup{innertopmargin=0pt,innerleftmargin=5pt,innerrightmargin=5pt,linecolor=dorado!35,%
-%		linewidth=2pt,topline=true,
-%		frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
-%	\begin{mdframed}[]\relax%
-%		}{\end{mdframed}}
-%\providecommand*{\theotautorefname}{Teorema}
 
+%Entorno "proof"
 \makeatletter
 \renewenvironment{proof}{%
 	\par\pushQED{\qed}%

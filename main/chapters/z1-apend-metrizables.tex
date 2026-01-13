@@ -1,0 +1,122 @@
+\chapter{Espacios Metrizables}
+
+\section{Espacios Metrizables}
+
+\index[alph]{función!métrica}\index[alph]{métrica}\index[alph]{espacio!métrico}
+Una \textit{métrica} sobre un conjunto $X$ es una función $d:X \times X \to \mathbb{R}^+ \cup \{0\}$ tal que para cualesquiera $x,y,z \in X$ se cumple: $d(x,y)=d(y,x)$; $d(x,y)=0$ si y sólo si $x=y$; y $d(x,z)\leq d(x,y) + d(y,z)$, en tal caso el par ordenado $(X,d)$ es un \textit{espacio métrico}. 
+
+\index[alph]{bola abierta}\index[alph]{topología!inducida por una métrica}\index[alph]{conjunto!bola abierta}\index[sym]{$B(x,\varepsilon)$}\index[sym]{$\tau_d$}\index[alph]{espacio!metrizable}
+Sea $(X,d)$ un espacio métrico, para cada $\varepsilon>0$ y $x \in X$ se define la \textit{bola abierta de radio} $\varepsilon$ \textit{y centro} $x$ como el conjunto $B(x,\varepsilon)=\{ y \in X \tq d(y,x)<\varepsilon \}$. Dado esto, se define la \textit{topología inducida por} $d$ \textit{en} $X$ como:
+\[ \tau_d := \{ U \subseteq X \tq \forall x \in U \, \exists \varepsilon > 0 \, ( x \in B(x,\varepsilon) \subseteq U ) \} \, . \]
+Es un hecho que $\tau_d$ es siempre una topología, y que, las bolas abiertas son subconjuntos abieros en $(X,\tau_d)$.Un espacio topológico $(X,\tau)$ es \textit{metrizable} cuando existe una métrica $d$ en $X$ tal que $\tau=\tau_d$.
+
+\index[alph]{estrella al rededor de $x$}\index[alph]{espacio!desarrollable}\index[alph]{desarrollo}\index[alph]{espacio!de Moore}\index[alph]{Moore!espacio de}\index[sym]{$\St(x,\mathcal{U})$}
+A continuación se introduce una forma de \enquote{aproximar} la metrizabilidad de un espacio. Sea $X$ un espacio topológico, si $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ defínase la \textit{estrella al rededor} de $x$ (respecto $\mathcal{U}$) como: $\St(x,\mathcal{U}):=\midcup \{ U \in \mathcal{U} \tq x \in U \}$. Se dice que un conjunto contable de cubiertas abiertas para $X$, digamos $\{U_n \tq n \in \omega\}$, es un \textit{desarrollo} para $X$ si y sólo si para cada $x \in X$, el conjunto $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es una base local para $x$ en $X$, en tal caso $X$ es \textit{desarrollable}. Un espacio es de Moore si y sólo si es $\T_3$ y desarrollable. Todo espacio de Moore es $1\AN$, es bien sabido \cite[Teo.~ 4.1.13]{engelTopo} que todo espacio metrizable es $\T_4$. Ahora:
+
+\begin{proposicion}\phantomsection\label{metri-moore}
+    Todo espacio metrizable es normal y de Moore.
+\end{proposicion}
+\begin{proof}
+    Sea $X$ un espacio metrizable por la métrica $d$, basta demostrar que $X$ es desarrollable. Para cada $n \in \omega$ sea $\mathcal{U}_n:=\{ B(x,1/n) \tq x \in X \}$, entonces $\{ \mathcal{U}_n \tq n \in \omega \}$ es un desarrollo para $X$.
+
+    Efectivamente, supóngase que $U$ es abierto en $X$ y que $x \in X$, entonces, existe $\varepsilon>0$ de manera que $x \in B(x,\varepsilon) \subseteq U$. Sea $N \in \omega$ tal que $1/N<\varepsilon /2$ y supóngase que $y \in \St(x,\mathcal{U}_N)$ es cualquiera. Por ello, existe $z \in X$ con $x,y \in B(z,1/N)$, consecuentemente $d(x,y) \leq d(x,z) +  d(z,y) \leq 2/N < \varepsilon$. Esto prueba que $x \in \St(x, \mathcal{U}_N) \subseteq U$, por lo que $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es base local de $x$ en $X$.
+\end{proof}
+\begin{corolario}
+    Todo espacio metrizable es primero numerable
+\end{corolario}
+
+Se tiene el siguiente comportamiento para los espacios desarrollables.
+
+\begin{proposicion}\phantomsection\label{desarrollo-lindSii2an}
+    Sea $X$ un espacio desarrollable, entonces $X$ es $2\AN$ si y sólo si $X$ es de Lindelöf.
+\end{proposicion}
+\begin{proof}
+    La suficiencia es inmediata al \cref{cor-2AN-Linde}. Para la necesidad sea $\{ \mathcal{U}_n \tq n \in \omega \}$ un desarrollo de $X$ y supóngase que $X$ es de Lindelöf. Para cada $n \in \omega$ fíjsese ($\Ac$) una subcubierta contable $\mathcal{V}_n$ de $\mathcal{U}_n$. Entonces $\mathcal{B}:=\midcup\{ \mathcal{V}_n \tq n \in \omega \}$ es una coleción contable de abiertos de $X$.
+
+    Supóngase que $U$ es un abierto de $X$ y $x \in U$, entonces existe $N \in \omega$ de modo que $x \in \St(x,\mathcal{U}_N) \subseteq U$. Como $\mathcal{V}_N$ es cubierta de $X$, existe $V \in \mathcal{U}_N \subseteq \mathcal{B}$ tal que $x \in U$. Nótese que, como $\mathcal{V}_n \subseteq \mathcal{U}_n$ y $x \in V$, se tiene que $x \in V \subseteq \St(x,\mathcal{U}_N) \subseteq U$, mostrando que $\mathcal{B}$ es base contable para $X$.
+\end{proof}
+
+
+\begin{corolario}\phantomsection\label{metri-lindSii2an}
+    Sea $X$ un espacio metrizable por la métrica $d$. Entonces las siguientes condiciones son equivalentes:
+    \begin{enumerate}
+        \item $X$ es $2\AN$.
+        \item $X$ es de Lindelöf.
+        \item $X$ es separable.
+    \end{enumerate}
+\end{corolario}
+\begin{proof}
+    Por \ref{metri-moore} y \ref{desarrollo-lindSii2an}, basta probar (iii) $\to$ (i).
+
+    Supóngase que $D=\{x_n \tq n \in \omega\} \subseteq X$ es denso. Se afirma que el conjunto numerable de abiertos, $\mathcal{B}:=\{ B(x_m,1/n) \tq (m,n) \in \omega \times \omega \setminus \{0\} \}$, es base para $X$. En efecto, supóngase que $U$ es abierto y que $x \in U$, entonces existe $\varepsilon>0$ tal que $x \in B(x,\varepsilon) \subseteq U$. Por densidad de $D$, existe $m \in \omega$ tal que $x_m \in B(x,\varepsilon /2)$.
+
+    Tómese $N \in \omega$ de manera que $1/N<\varepsilon/2$. Entonces, si $y \in B(x_m,N)$, entonces $d(x,y) \leq d(y,x_m)+d(x_m,x) < \varepsilon$, mostrando que $x \in B(x_m, 1/N)$, y con ello, que $\mathcal{B}$ es base contable para $X$.
+\end{proof}
+
+A continuación se caracterizará la compacidad en espacios metrizables.
+
+\begin{proposicion}\phantomsection\label{metri-comp}
+    Sea $X$ un espacio metrizable por la métrica $d$. Las siguientes condiciones son equivalentes:
+    \begin{enumerate}
+        \item $X$ es compacto.
+        \item $X$ es numerablemente compacto. 
+        \item $X$ es secuencialmente compacto.               
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) $\to$ (ii) siempre ocurre.
+
+    (ii) $\to$ (iii) Supógnase que $X$ es numerablemente compacto, usaremos la caracterización (ii) del \cref{sqcl-en-T1}. Sea $B \subseteq X$ numerable. Como $X$ es numerablemente compacto, se sigue de \ref{t1-limPointsiiNumcCom} que existe algún $y \in \der(B)$.
+
+    Sea $\{ U_n \tq n \in \omega \}$ una base local contable para $y$ en $X$. Fíjese para cada $n \in \omega$ ($\Ac$) un elemento $a_n \in B \cap \midcap\{ U_m \tq m \leq n \}$. Entonces, para cada abierto $U$ de $X$ con $y \in U$, existe $N \in \omega$  con $y \in U_N \subseteq U$, de donde, $A \setminus U \subseteq \{ a_k \tq k < m \} =^* \emptyset$. Esto prueba que $A \to y$, por lo que, $X$ es secuencialmente compacto.
+
+    (iii) $\to$ (i) Supóngase que $X$ es secuencialmente compacto y, sea $\mathcal{U}$ una cubierta abierta de $X$.
+    \begin{enumerate}[\hspace{1.5 cm}, listparindent=1.5em]
+		\item \textit{Afirmación 1.} Existe $\delta>0$ tal que para cada $x \in X$ existe $U \in \mathcal{U}$ de manera que $B(x,\delta) \subseteq U$
+
+		\item \textit{Demostración.} Por contradicción, supóngase lo contrario. Para cada elemento $n \in \omega \setminus \{0\}$ fíjese ($\Ac$) $x_n \in X$ de manera que para cada $U \in \mathcal{U}$, $B(x_n,1/n) \not\subseteq U$. Como $X$ es secuencialmente compacto, existe una función $f:\omega\setminus \{0\} \to \omega \setminus \{0\}$ estrictamente creciente tal que $x_{f(n)} \to y$, para algún $y \in X$.
+		
+        Al ser $\mathcal{U}$ cubierta, existe $U \in \mathcal{U}$ de manera que $y \in U$. Luego, existen $\varepsilon>0$ con $y \in B(y, \varepsilon) \subseteq U$, y $N \in \omega$ con $\{ x_{f(n)} \tq n\geq N\} \subseteq B(y,\varepsilon/2)$. Pero, considerando $M \in \omega$ de manera que $1/M<\varepsilon /2$ se obtiene que $B(x_M,1/M) \subseteq U$, lo cual es una contradicción. \hfill $\boxtimes$		
+	\end{enumerate}
+
+    Entonces $\{ B(x,\delta) \tq x \in X \}$ es un refinamiento abierto de $\mathcal{U}$.
+    \begin{enumerate}[\hspace{1.5 cm}, listparindent=1.5em]
+		\item \textit{Afirmación 2.} Existe $N \in [X]^{< \omega}$ tal que $\{ B(x,\delta) \tq x \in N \}$ es cubierta de $X$.
+
+		\item \textit{Demostración.} Por contradicción, supóngase lo contrario. Defínase entonces por recursión, y utilizando $\Ac$, una función $h:\omega \setminus \{0\} \to X$ de modo que para cada $n \in \omega$ ocurra $h(n) \in X \setminus \midcup\{ B(f(m),\delta) \tq m< n \}$. Por hipótesis, existe $k:\omega \setminus \{0\} \to \omega \setminus \{0\}$ estrictamente creciente tal que $(hk(n))_{n \in \omega}$ es convergnete en $X$.
+		
+        Luego, si $n,m \in \omega \setminus \{0\}$ son distintos, $d(hk(n),hk(m)) \geq \delta$, lo cual imposibilita la convergencia de $(hk(n))_{n \in \omega}$. \hfill $\boxtimes$
+	\end{enumerate}
+
+    Las afirmaciones anteriores prueban que $\{ B(x,\delta) \tq x \in N \} \preccurlyeq \mathcal{U}$, lo cual muestra que $\mathcal{U}$ tiene una subcubierta finita. Así, $X$ es compacto.
+\end{proof}
+
+\begin{corolario}
+    Todo espacio metrizable y compacto, es separable.
+\end{corolario}
+
+Un teorema de metrización es un teorema que caracteriza que un espacio sea metrizable, quizás el más famoso de ellos es el siguiente \cite[Teo.~ 4.2.9]{engelTopo}:
+
+\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{Teorema!de metrización de Uryshon}\index[alph]{Uryshon!Teorema de metrización de}
+    Todo espacio $\T_3$ y segundo numerable es metrizable.
+\end{teorema}
+
+En lo que resta, daremos la terminomlogía necesaria para enunciar dos de los teoremas más fuertes de metrización, los Teoremas de metrización de Bing y Arhangel’skii, cuyas pruebas pueden ser consultadas en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
+
+\index[alph]{familia!discreta}\index[alph]{espacio!colectivamente normal}
+Una familia de subconjuntos $\mathcal{A}$ de un espacio $X$ es \textit{discreta} cuando para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, cuyos elementos sean cerrados de $X$, se seapara por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos $\{ U_A \tq A \in \mathcal{A} \}$ tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
+
+\begin{teorema}[Bing]\phantomsection\label{metri-Bing}\index[alph]{Teorema!de metrización de Bing}\index[alph]{Bing!Teorema de metrización de}
+    Un espacio de Moore es metrizable si y sólo si es colectivamente normal.
+\end{teorema}
+
+\phantomsection
+\label{base-reg}
+\index[alph]{regular!base}\index[alph]{base!regular}
+Una base $\mathcal{B}$ de un espacio topológico $X$ es \textit{regular} si y sólo si para cada $x \in X$ y cada abierto $U$ con $x \in X$ existe un abierto $V$, con $x \in V$ y tal que:
+\[ \{ B \in \mathcal{B} \tq B \cap V \neq \emptyset \, \land \, B \cap (X \setminus V) \neq \emptyset \} =^* \emptyset \, \]
+el siguiente teorema de metrización establece que lo únicos espacios $\T_1$ que admiten bases regulares, son exactamente los metrizables.
+
+\begin{teorema}[Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{Teorema!de metrización de Arhangel’skii}\index[alph]{Arhangel’skii!Teorema de metrización de}
+    Un espacio es metrizable si y sólo si es $\T_1$ y admite una base regular.
+\end{teorema}

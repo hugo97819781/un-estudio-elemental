@@ -6,6 +6,9 @@
 %RENOVACIÓN DE COMANDOS
 \renewcommand{\emptyset}{\varnothing}
 \renewcommand{\tau}{\ms{T}}
+
+%\renewcommand{\mapsto}{\DOTSB\mapstochar\rightarrow}
+
 %Nuevo "Setminus"
 \newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
 \newcommand{\mysetminusT}{\mysetminusD}
@@ -32,6 +35,7 @@
 \DeclareMathOperator{\Osq}{so}
 %TEXTOS
 \DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\US}{US}
 \DeclareMathOperator{\AN}{AN}
 \DeclareMathOperator{\OR}{OR}
 \DeclareMathOperator{\CAR}{CAR}
@@ -45,4 +49,8 @@
 \DeclareMathOperator{\Ad}{AD}
 \DeclareMathOperator{\Mad}{MAD}
 %COCIENTE
-%\newcommand{\quot}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\quot}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\fracc}[2]{{\scriptscriptstyle #1/#2}}
+%Logic
+\DeclareMathOperator{\Gen}{Gen}
+\DeclareMathOperator{\MP}{MP}

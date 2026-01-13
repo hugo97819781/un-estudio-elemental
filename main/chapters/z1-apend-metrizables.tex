@@ -95,5 +95,28 @@ A continuación se caracterizará la compacidad en espacios metrizables.
     Todo espacio metrizable y compacto, es separable.
 \end{corolario}
 
-\newpage
-\section{Dos Teoremas de Metrización}
+Un teorema de metrización es un teorema que caracteriza que un espacio sea metrizable, quizás el más famoso de ellos es el siguiente \cite[Teo.~ 4.2.9]{engelTopo}:
+
+\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{Teorema!de metrización de Uryshon}\index[alph]{Uryshon!Teorema de metrización de}
+    Todo espacio $\T_3$ y segundo numerable es metrizable.
+\end{teorema}
+
+En lo que resta, daremos la terminomlogía necesaria para enunciar dos de los teoremas más fuertes de metrización, los Teoremas de metrización de Bing y Arhangel’skii, cuyas pruebas pueden ser consultadas en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
+
+\index[alph]{familia!discreta}\index[alph]{espacio!colectivamente normal}
+Una familia de subconjuntos $\mathcal{A}$ de un espacio $X$ es \textit{discreta} cuando para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, cuyos elementos sean cerrados de $X$, se seapara por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos $\{ U_A \tq A \in \mathcal{A} \}$ tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
+
+\begin{teorema}[Bing]\phantomsection\label{metri-Bing}\index[alph]{Teorema!de metrización de Bing}\index[alph]{Bing!Teorema de metrización de}
+    Un espacio de Moore es metrizable si y sólo si es colectivamente normal.
+\end{teorema}
+
+\phantomsection
+\label{base-reg}
+\index[alph]{regular!base}\index[alph]{base!regular}
+Una base $\mathcal{B}$ de un espacio topológico $X$ es \textit{regular} si y sólo si para cada $x \in X$ y cada abierto $U$ con $x \in X$ existe un abierto $V$, con $x \in V$ y tal que:
+\[ \{ B \in \mathcal{B} \tq B \cap V \neq \emptyset \, \land \, B \cap (X \setminus V) \neq \emptyset \} =^* \emptyset \, \]
+el siguiente teorema de metrización establece que lo únicos espacios $\T_1$ que admiten bases regulares, son exactamente los metrizables.
+
+\begin{teorema}[Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{Teorema!de metrización de Arhangel’skii}\index[alph]{Arhangel’skii!Teorema de metrización de}
+    Un espacio es metrizable si y sólo si es $\T_1$ y admite una base regular.
+\end{teorema}

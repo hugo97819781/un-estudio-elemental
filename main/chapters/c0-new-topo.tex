@@ -86,39 +86,65 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
 \subsection{Convergencia de sucesiones}
 
 \index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[sym]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}
-Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un subsucesión de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f:\omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es de convergencia única si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única \textcolor{magenta}{\cite[Prop. 1.6.11, 1.6.16]{engelTopo}}.
+Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f:\omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
 
 \index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
-Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente} si existe $a \in X$ de manera que, para cada abierto $U$ de $X$, con $a \in U$, $A \subseteq ^* U$; lo cual denotará como $A \to a$, o bien $a=\lim(A)$, si $X$ es de convergencia única.
+Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente} si existe $a \in X$ de manera que, para cada abierto $U$ de $X$ con $a \in U$, $A \subseteq ^* U$; lo cual se denotará como $A \to a$, o bien $a=\lim(A)$ si $X$ es de convergencia única.
 
-\begin{proposicion}\phantomsection\label{prop-sucesionesConvergentesT1}
+\begin{proposicion}\phantomsection\label{prop-sucesionesConvergentes}
     Sean $X$ un espacio y $a \in X$. Entonces:
     \begin{enumerate}
-        \item Si $(x_\omega)_{n \in \omega} \subseteq X$ es infinita y $x_n \to a$, entonces $x[\omega] \to a$.
+        \item Si $(x_n)_{n \in \omega} \subseteq X$ es infinita y $x_n \to a$, entonces $x[\omega] \to a$.
         \item Si $A \in [X]^\omega$, $A \to a$ y $x:\omega \to A$ es inyección, $x_n \to a$.
     \end{enumerate}
 \end{proposicion}
-\begin{proof}
-    (i) $\to$ (ii) Supóngase que $x_n \to a$ y sea $U$ un abierto tal que $a \in U$. Entonces existe $N \in \omega$ tal que $\{x_n \tq n\geq N\} \subseteq U$, consecuentemente, ocurre que $B \setminus U \subseteq \{x_n \tq n<N\} =^* \emptyset$, y así, $x[\omega] \to a$.
+%\begin{proof}
+%    (i) $\to$ (ii) Supóngase que $x_n \to a$ y sea $U$ un abierto tal que $a \in U$. Entonces existe $N \in \omega$ tal que $\{x_n \tq n\geq N\} \subseteq U$, consecuentemente, ocurre que $B \setminus U \subseteq \{x_n \tq n<N\} =^* \emptyset$, y así, $x[\omega] \to a$.
 
-    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x:\omega \to A$ cualquier inyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $A \setminus U \subseteq x[\omega]$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
+%    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x:\omega \to A$ cualquier inyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $A \setminus U \subseteq x[\omega]$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
+%\end{proof}
+
+\index[sym]{espacio!secuencialmente compacto}
+Un espacio $X$ es \textit{secuencialmente compacto} si y sólo si cada sucesión en $X$ tiene una subsucesión convergente; equivalentemente (en virtud de \ref{prop-sucesionesConvergentes}), para cada $A \in [X]^\omega$ existen $a \in X$ y $B \in [A]^\omega$ con $B \to a$.
+
+\index[alph]{clausura!secuencial}\index[sym]{$\scl(A)$}\index[alph]{operador!clausura secuencial}
+Para cada $A \subseteq X$ denotarmos por $\scl(A)$ la \textit{clausura secuencial} de $A$, esto es, el conjunto de puntos $x \in X$ tales que existe $(y_n)_{n \in \omega} \subseteq A$ con $y_n \to x$. Se dice que $A \subseteq X$ es \textit{secuencialmente cerrado} si $\scl(A) \subseteq X$. Como consecuencia de la \cref{prop-sucesionesConvergentes} se tiene que:
+\begin{corolario}
+    Si $X$ es espacio $\T_1$ y $A \subseteq X$, entonces:
+    \[ \scl(A) = A \cup \{ x \in X \tq \exists B \in [A]^\omega \, (B \to a) \} \, . \]
+\end{corolario}
+
+\index[alph]{clausura!secuencial!transfinita}\index[sym]{$\scl^\alpha(A)$}\index[alph]{operador!clausura secuencial!transfinita}
+Para cada ordinal $\alpha \leq \omega_1$ defínase la \textit{clausura secuencial transfinita} de $A$, por recursión en $\omega_1$, como:
+\begin{enumerate}
+    \item $\scl^0(A)=A$,
+    \item Para todo ordinal $\alpha<\omega_1$, $\scl^{\alpha+1}(A)=\scl(\scl^\alpha(A))$, y
+    \item Para todo ordinal límite $\gamma \leq \omega_1$, $\scl^{\gamma}(A)=\midcup\{ \scl^\alpha (A) \tq \alpha < \gamma \}$.
+\end{enumerate} 
+
+\index[alph]{orden!secuencial}\index[alph]{secuencial!orden}\index[sym]{$\Osq(X)$}
+En caso de existir, se define el \textit{orden secuencial} de $X$, $\Osq(X)$, como el mínimo ordinal $\alpha$ tal que para cada $A \subseteq X$, $\scl^\alpha(A)=\cla(A)$.
+
+El espacio $X$ es \textit{secuencial} cuando todos sus subconjuntos secuencialmente cerrados son cerrados en $X$, equivalentemente, cuando $\Osq(X)$ está bien definido. El espacio $X$ es \textit{de Fréchet} si para cada $A \subseteq X$, $\cla(A)=\scl(A)$, equivalentemente, si $\Osq(X)=1$. Todo espacio $1\AN$ es de Fréchet y todo espacio de Fréchet es secuencial. La propiedad de Féchet es hereditaria, por ello, factorizable. %\cite[Ej.~2.1.H]{engelTopo}.
+
+\subsection{Compacidad y extensiones unipuntuales}
+
+\index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
+Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathcal{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Todas las propiedades anteriores son débilmente hereditarias, y, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf.
+
+\index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
+Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\mathcal{V} \subseteq \ms{P}(X)$ es \textit{refinamiento} de $\mathcal{U}$ cuando para cada $V \in \mathcal{V}$ existe $U \in \mathcal{U}$ de manera que $V \subseteq U$, esta situación será denotada por $\mathcal{V} \preccurlyeq \mathcal{U}$. Un refinamiento es \textit{abierto} cuando todos sus elementos son abiertos. Nótese que si $\mathcal{V} \preccurlyeq \mathcal{U}$, entonces fijando para cada $V \in \mathcal{V}$ un elemento $U_V \in \mathcal{U}$ de modo que $V \subseteq U_V$ se obtiene una subcubierta $\{U_V \tq V \in \mathcal{V}\}$ de $\mathcal{U}$ de tamaño a lo más $|\mathcal{V}|$.
+
+\begin{lema}
+    Sea $X$ un espacio $2\AN$. Si $\mathcal{U}$ es una cubierta de $X$ y para cada $x \in X$ tiene una vecindad $N \in \mathcal{U}$, $\mathcal{U}$ contiene una subcubierta contable.
+\end{lema}
+\begin{proof}
+    Por los comentarios previos al enunciado de esta proposición, basta encontrar un refinamiento a lo más numerable de $\mathcal{U}$. Defínase la colección $\mathcal{V}:=\{  B \in \mathcal{B} \tq \exists U \in \mathcal{U} \, (B \subseteq U) \}$, para que $\mathcal{V} \preccurlyeq \mathcal{U}$, resta ver que $\mathcal{V}$ cubre a $X$.
+
+    Efectivamente, si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Así, existen un abierto $U$ de $X$, y un elemento $B \in \mathcal{B}$, tales que $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$, por lo que $X \subseteq \midcup \mathcal{V}$.
 \end{proof}
 
-
-
-
-
-
-
-
-
-
-
-
-
 \newpage
-\subsection{Compacidad y tipos de compacidad}
-
 \subsection{Extensiones unipuntuales}
 
 \subsection{Espacios Metrizables}

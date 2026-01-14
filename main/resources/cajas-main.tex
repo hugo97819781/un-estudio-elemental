@@ -64,12 +64,13 @@
 %Entorno "proof"
 \makeatletter
 \renewenvironment{proof}{%
-	\par\pushQED{\qed}%
-	\renewcommand{\qedsymbol}{$\blacksquare$}%
-	\normalfont \topsep6\p@\@plus6\p@\relax
-	\trivlist
-	\item[\hskip\labelsep\bfseries\itshape Demostración.]\ignorespaces
+    \par\pushQED{\qed}%
+    \renewcommand{\qedsymbol}{$\blacksquare$}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item[\hskip\labelsep\bfseries\itshape Demostración.]\ignorespaces
 }{%
-	\popQED\endtrivlist\@endpefalse
+    \popQED\endtrivlist\@endpefalse
+    \vspace{-0.3em} % <--- Ajusta este valor según lo necesites
 }
 \makeatother

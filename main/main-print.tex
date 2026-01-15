@@ -7,15 +7,34 @@
     \usepackage{array}
     \usepackage[x11names]{xcolor}
     \usepackage{lipsum}
-    \usepackage{showframe}
+    %\usepackage{showframe}
     
 %%% REFERENCIAS %%%
-    \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
+    \usepackage[draft]{hyperref}
     \usepackage[spanish, capitalize]{cleveref}
         \crefname{section}{Sección}{Secciones}
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
         \addbibresource{chapters/referencias.bib}
+    \AtBeginDocument{
+        \let\oldcref\cref
+        \let\oldref\ref
+        \let\oldpageref\pageref
+        \let\oldcite\cite
+        \DeclareRobustCommand{\ref}[1]{\textbf{\small\textsc{\oldref{#1}}}}
+        \renewcommand{\cref}[1]{\textbf{\small\textsc{\oldcref{#1}}}}
+        \renewcommand{\pageref}[1]{\textbf{\small\textsc{\oldpageref{#1}}}}
+        \DeclareRobustCommand{\cite}[2][]{%
+            \ifstrempty{#1}{\textbf{\small\textsc{\oldcite{#2}}}}{\textbf{\small\textsc{\oldcite[#1]{#2}}}}
+        }
+        
+    }
+
+    \newcommand{\myprueba}[2][]{%
+    \ifstrempty{#1}{A, obligatorio #2}{B: opcional #1 y obligatorio #2}%
+    }
+
+    \newcommand{\pagp}{\textbf{\small\textsc{P.}}}
 
 %%% ÍNDICES %%%
     \usepackage{imakeidx}
@@ -42,13 +61,13 @@
     \usepackage{scrlayer-scrpage}
     \input{resources/koma-print.tex}
     \input{resources/comandos.tex}
-
 %%% CUERPO %%%
 \begin{document}
     \pagestyle{empty}
     \frontmatter
         \pagestyle{empty}
         \input{chapters/0-cover.tex}
+        %{\selectcolormodel{gray}		
         \input{chapters/a0-frase.tex}
 
         \chapter*{Agradecimientos}
@@ -85,6 +104,6 @@
         %\printindex[trad]
         \printindex[sym]
         \printindex[alph]
-
         \printbibliography[heading=bibintoc, title={Referencias}]
+    %}
 \end{document}

@@ -9,20 +9,7 @@
 
 \subsection{Compacidad y tipos de compacidad}
 
-\index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
-Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathcal{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Todas las propiedades anteriores son débilmente hereditarias, y, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf.
 
-\index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
-Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\mathcal{V} \subseteq \ms{P}(X)$ es \textit{refinamiento} de $\mathcal{U}$ cuando para cada $V \in \mathcal{V}$ existe $U \in \mathcal{U}$ de manera que $V \subseteq U$, esta situación será denotada por $\mathcal{V} \preccurlyeq \mathcal{U}$. Un refinamiento es \textit{abierto} cuando todos sus elementos son abiertos. Nótese que si $\mathcal{V} \preccurlyeq \mathcal{U}$, entonces fijando para cada $V \in \mathcal{V}$ un elemento $U_V \in \mathcal{U}$ de modo que $V \subseteq U_V$ se obtiene una subcubierta $\{U_V \tq V \in \mathcal{V}\}$ de $\mathcal{U}$ de tamaño a lo más $|\mathcal{V}|$.
-
-\begin{lema}
-    Sea $X$ un espacio $2\AN$. Si $\mathcal{U}$ es una cubierta de $X$ y para cada $x \in X$ tiene una vecindad $N \in \mathcal{U}$, $\mathcal{U}$ contiene una subcubierta contable.
-\end{lema}
-\begin{proof}
-    Por los comentarios previos al enunciado de esta proposición, basta encontrar un refinamiento a lo más numerable de $\mathcal{U}$. Defínase la colección $\mathcal{V}:=\{  B \in \mathcal{B} \tq \exists U \in \mathcal{U} \, (B \subseteq U) \}$, para que $\mathcal{V} \preccurlyeq \mathcal{U}$, resta ver que $\mathcal{V}$ cubre a $X$.
-
-    Efectivamente, si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Así, existen un abierto $U$ de $X$, y un elemento $B \in \mathcal{B}$, tales que $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$, por lo que $X \subseteq \midcup \mathcal{V}$.
-\end{proof}
 
 \begin{corolario}\phantomsection\label{cor-2AN-Linde}
     Sea $X$ un espacio topológico.
@@ -31,6 +18,8 @@ Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\
         \item Si $X$ es $2\AN$ y localmente compacto, entonces es $\sigma$-compacto.
     \end{enumerate}
 \end{corolario}
+
+
 \begin{proof}
     (i) Sea $\mathcal{U}$ una cubierta abierta para $X$, como todo abierto es vecindad de cada uno de sus puntos, $\mathcal{U}$ satisface las hipótesis del lema previo. Con ello, si $X$ es segundo numerable, $\mathcal{U}$ admite una subcubierta contable.
 
@@ -46,6 +35,21 @@ Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\
         \item Si $X$ es $\T_1$ y para cada $A \subseteq X$ infinito, $\der(A) \neq \emptyset$; entonces, $X$ es numerablemente compacto.
     \end{enumerate}
 \end{proposicion}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conocido de que \enquote{los compactos se comportan como puntos}, en este aspecto, es bien sabido que cualquier subespacio compacto de un espacio de Hausdorff es cerrado; mucho más fuerte aún, todo espacio compacto de Hausdorff es normal \cite[Teo.~3.1.9]{engelTopo}. Se explorará ahora la siguiente equivalencia para la compacidad local en espacios de Hausdorff:
 

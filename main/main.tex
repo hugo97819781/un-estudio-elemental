@@ -1,11 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%% FORMATO E IDIOMA %%%
 %%%%%%%%%%%%%%%%%%%%%%%%
-    \documentclass[letpterpaper,DIV=12,12pt]{scrbook}
+    \documentclass[letterpaper,DIV=12,12pt]{scrbook}
     \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
     \usepackage{scrlayer-scrpage}
     \input{resources/koma.tex}
-    %\usepackage{showframe}
+    \usepackage{showframe}
 %%%%%%%%%%%%%%%%
 %%% PAQUETES %%%
 %%%%%%%%%%%%%%%%
@@ -28,6 +28,8 @@
 %%%%%%%%%%%%%%%%%%%
     \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
     \usepackage[spanish, capitalize]{cleveref}
+    \crefname{section}{Sección}{Secciones}
+    \Crefname{section}{Sección}{Secciones}
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
         \addbibresource{chapters/referencias.bib}
@@ -90,10 +92,10 @@
         \input{chapters/c2.tex}
         \input{chapters/c3.tex}
         \input{chapters/c4.tex}
+        \cleardoublepage
 
         \appendix
         \input{chapters/z1-apend-MA.tex}
-        \input{chapters/z1-apend-metrizables.tex}
 
     \backmatter
         \cleardoublepage

@@ -7,10 +7,10 @@ Un \textit{espacio topológico} (o simplemente, \textit{espacio}) es un par orde
 Una \textit{vecindad} para un punto $x \in X$ es un conjunto $N \subseteq X$ tal que existe un abierto $U$ de $X$ con la propiedad $x \in U \subseteq N$. Una \textit{base de vecindades} de un punto $x$ en $X$ es una colección $\mathcal{B}_x$ de vecindades de $x$ tal que para cada abierto $U$, con $x \in U$, existe $B \in \mathcal{B}_x$ de modo que $x \in B \subseteq U$. Una \textit{base local} de $x$ es una base de vecindades de $x$ compuesta de abiertos del espacio.
 
 \index[alph]{función!abierta}\index[alph]{función!encaje}\index[alph]{encaje}\index[sym]{$X \cong Y$}\index[alph]{espacio!encajado en}\index[alph]{copia homeomorfa}
-Si $X$ y $Y$ son homeomorfos, escribiremos $X \cong Y$. Una función $f:X \to Y$ es \textit{encaje} si es un homeomorfismo entre $X$ y $f[X] \subseteq Y$, en tal caso, se dice que $X$ \textit{está encajado} en $Y$ o que $Y$ contiene una \textit{copia homeomorfa} de $X$. Una función $g:X \to Y$ es \textit{abierta} si para cada $U$ abierto en $X$, $g[U]$ es abierto en $Y$.
+Si $X$ y $Y$ son homeomorfos, escribiremos $X \cong Y$. Una función $f \colon X \to Y$ es \textit{encaje} si es un homeomorfismo entre $X$ y $f[X] \subseteq Y$, en tal caso, se dice que $X$ \textit{está encajado} en $Y$ o que $Y$ contiene una \textit{copia homeomorfa} de $X$. Una función $g \colon X \to Y$ es \textit{abierta} si para cada $U$ abierto en $X$, $g[U]$ es abierto en $Y$.
 
 \index[alph]{producto topológico}\index[alph]{suma topológica}\index[sym]{$\coprod_{\alpha \in I} X_\alpha$}\index[sym]{$\prod_{\alpha \in I} X_\alpha$}\index[alph]{función!proyección}\index[alph]{proyección!cartesiana}\index[sym]{$\pi_\alpha$}
-La \textit{suma topológica} y el \textit{producto topológico}, de una colección no vacía de espacios $\{X_\alpha \tq \alpha \in I \}$, se denotarán $\coprod_{\alpha \in I} X_\alpha$ y $\prod_{\alpha \in I} X_\alpha$, respectivamente. Si $\beta \in I$, $\pi_\beta:\prod_{\alpha \in I} X_\alpha \to X_\beta$ será la $\beta$-ésima \textit{proyección cartesiana} ($f \mapsto f(\beta)$).
+La \textit{suma topológica} y el \textit{producto topológico}, de una colección no vacía de espacios $\{X_\alpha \tq \alpha \in I \}$, se denotarán $\coprod_{\alpha \in I} X_\alpha$ y $\prod_{\alpha \in I} X_\alpha$, respectivamente. Si $\beta \in I$, $\pi_\beta \colon \prod_{\alpha \in I} X_\alpha \to X_\beta$ será la $\beta$-ésima \textit{proyección cartesiana} ($f \mapsto f(\beta)$).
 
 \index[alph]{operador!derivado}\index[alph]{operador!clausura}\index[alph]{operador!interior}\index[alph]{operador!exterior}\index[alph]{operador!frontera}\index[alph]{derivado}\index[alph]{clausura}\index[alph]{interior}\index[alph]{exterior}\index[alph]{frontera}\index[sym]{$\der(A)$}\index[sym]{$\cla(A)$}\index[sym]{$\inte(A)$}\index[sym]{$\ext(A)$}\index[sym]{$\fron(A)$}
 Para cualquier $A \subseteq X$ utilizaremos las notaciones $\der(A)$, $\inte(A)$, $\cla(A)$, $\ext(A)$ y $\fron(A)$ para: el conjunto de puntos de acumulación, el \textit{interior}, la \textit{clausura}, el \textit{exterior} y la \textit{frontera} de $A$, respectivamente.
@@ -32,9 +32,9 @@ Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los c
     \end{enumerate}
 \end{proposicion}
 %\begin{proof}
-%    (i) Fíjese ($\Ac$), para cada $B \in \mathcal{B}$, un elemento $x_B \in B$. De esta forma, si $U$ es cualquier abierto no vacío de $X$, existen un punto $x \in U$ y cierto $B \in \mathcal{B}$ de modo que $x \in B \subseteq U$. De aquí que $x_B \in U$, mostrando que $D:=\{ x_B \tq B \in \mathcal{B} \}$ es un denso de $X$ de cardinalidad menor o igual a $\kappa$.
+%    (i) Fíjese ($\Ac$), para cada $B \in \mathcal{B}$, un elemento $x_B \in B$. De esta forma, si $U$ es cualquier abierto no vacío de $X$, existen un punto $x \in U$ y cierto $B \in \mathcal{B}$ de modo que $x \in B \subseteq U$. De aquí que $x_B \in U$, mostrando que $D \mycoloneq \{ x_B \tq B \in \mathcal{B} \}$ es un denso de $X$ de cardinalidad menor o igual a $\kappa$.
 
-%    (ii) Sea $R:=\{ (U,W) \in \mathcal{B}^2 \tq \exists C \in \mathcal{C} \, (U \subseteq C \subseteq W) \}$. Utilizando $\Ac$, para cada $(U,W) \in R$ fíjese $C_{U,W} \in W$ tal que $U \subseteq C_{U,W} \subseteq W$. De esta manera, $\mathcal{C}':=\{ C_{U,W} \tq U,W \in \mathcal{B}^2 \} \subseteq \mathcal{C}$ tiene tamaño no mayor a $\kappa$.
+%    (ii) Sea $R \mycoloneq \{ (U,W) \in \mathcal{B}^2 \tq \exists C \in \mathcal{C} \, (U \subseteq C \subseteq W) \}$. Utilizando $\Ac$, para cada $(U,W) \in R$ fíjese $C_{U,W} \in W$ tal que $U \subseteq C_{U,W} \subseteq W$. De esta manera, $\mathcal{C}' \mycoloneq \{ C_{U,W} \tq U,W \in \mathcal{B}^2 \} \subseteq \mathcal{C}$ tiene tamaño no mayor a $\kappa$.
     
     
 %    Sea $O$ un abierto de $X$ y supóngase que $x \in O$, entonces existe $W \in \mathcal{B}$ tal que $x \in W \subseteq O$; de donde, por ser $\mathcal{C}$ base, existe $C \in \mathcal{C}$ de modo que $x \in C \subseteq W \subseteq O$. De nuevo, por ser $\mathcal{B}$ base, existe cierto $U \in \mathcal{B}$ tal que $x \in U \subseteq C \subseteq W \subseteq O$. De esta forma, $(U,W) \in R$, y así $x \in C_{U,W} \subseteq O$, mostrando que $\mathcal{C}'$ es base de $X$.
@@ -51,7 +51,7 @@ A continuación se enuncian dos de los resultados más notables en relación a l
 \end{teorema}
 
 \begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{Teorema!de extensión de Tietze}\index[alph]{Tietze!Teorema de extensión de}
-    Un espacio $X$ es normal si y sólo si para cualquier cerrado $F \subseteq X$ y cualquier función continua $f:F \to \mathbb{R}$, existe $g:X \to \mathbb{R}$ continua y tal que $g \upharpoonright A = f$.
+    Un espacio $X$ es normal si y sólo si para cualquier cerrado $F \subseteq X$ y cualquier función continua $f \colon F \to \mathbb{R}$, existe $g \colon X \to \mathbb{R}$ continua y tal que $g \upharpoonright A = f$.
 \end{teorema}
 
 El siguiente Lema será utilizado en el CHAP 4, anexaremos su demostración, pues es una alicación sencilla del Teorema de extensión de Tietze.
@@ -60,9 +60,9 @@ El siguiente Lema será utilizado en el CHAP 4, anexaremos su demostración, pue
     Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
 \end{corolario}
 \begin{proof}
-    Sea $F:=\mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f:X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
+    Sea $F \colon =\mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
 
-    Supóngase ahora que $h,k:X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
+    Supóngase ahora que $h,k \colon X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
     \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \, \]
     finalizando la prueba.
 \end{proof}
@@ -74,7 +74,7 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
     Un espacio $X$ es cero-dimensional y sólo si se encaja en $2^{w(X)}$. Por tanto, todo espacio cero-dimensional es de Tychonoff (\ref{Teo-Inm-Tych}).
 \end{proposicion}
 \begin{proof}
-    (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase la función $f:X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
+    (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase la función $f \colon X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
 
     $f$ es continua, pues para cada $\alpha \in w(X)$, $\pi_\alpha f$ es la función característica del abierto y cerrado $B_\alpha \subseteq X$. Ahora, si $x \neq y$, entonces por ser $X$ espacio $\T_1$, existe $\beta \in w(X)$ de manera que $x \in B_\beta$, pero $y \notin B_\beta$; así que $f(x)(\beta) \neq f(y)(\beta)$ y en consecuencia $f(x) \neq f(y)$.
     
@@ -84,9 +84,10 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
 \end{proof}
 
 \subsection{Convergencia de sucesiones}
+\label{prelim-sucesiones}
 
 \index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[sym]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}
-Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f:\omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
+Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f \colon \omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
 
 \index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
 Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente} si existe $a \in X$ de manera que, para cada abierto $U$ de $X$ con $a \in U$, $A \subseteq ^* U$; lo cual se denotará como $A \to a$, o bien $a=\lim(A)$ si $X$ es de convergencia única.
@@ -95,13 +96,13 @@ Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente
     Sean $X$ un espacio y $a \in X$. Entonces:
     \begin{enumerate}
         \item Si $(x_n)_{n \in \omega} \subseteq X$ es infinita y $x_n \to a$, entonces $x[\omega] \to a$.
-        \item Si $A \in [X]^\omega$, $A \to a$ y $x:\omega \to A$ es inyección, $x_n \to a$.
+        \item Si $A \in [X]^\omega$, $A \to a$ y $x \colon \omega \to A$ es inyección, $x_n \to a$.
     \end{enumerate}
 \end{proposicion}
 %\begin{proof}
 %    (i) $\to$ (ii) Supóngase que $x_n \to a$ y sea $U$ un abierto tal que $a \in U$. Entonces existe $N \in \omega$ tal que $\{x_n \tq n\geq N\} \subseteq U$, consecuentemente, ocurre que $B \setminus U \subseteq \{x_n \tq n<N\} =^* \emptyset$, y así, $x[\omega] \to a$.
 
-%    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x:\omega \to A$ cualquier inyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $A \setminus U \subseteq x[\omega]$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
+%    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x \colon \omega \to A$ cualquier inyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $A \setminus U \subseteq x[\omega]$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
 %\end{proof}
 
 \index[sym]{espacio!secuencialmente compacto}
@@ -130,21 +131,168 @@ El espacio $X$ es \textit{secuencial} cuando todos sus subconjuntos secuencialme
 \subsection{Compacidad y extensiones unipuntuales}
 
 \index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
-Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Una cubierta de $X$ es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si cualquiera de sus cubiertas abiertas tiene una subcubierta finita; es \textit{numerablemente compacto} si toda cubierta contable de $X$ tiene una subcubierta finita; y es \textit{de Lindelöf} si toda cubierta abierta de $X$ tiene una cubierta abierta contable. $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de subespacios compactos. $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Todos estos invariantes son factorizables y débilmente hereditarias.
+Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Una cubierta de $X$ es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si cualquiera de sus cubiertas abiertas tiene una subcubierta finita; es \textit{numerablemente compacto} si toda cubierta contable de $X$ tiene una subcubierta finita; y es \textit{de Lindelöf} si toda cubierta abierta de $X$ tiene una cubierta abierta contable. $X$ es \textit{$\sigma$-compacto} cuando es unión contable de subespacios compactos. $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Todos estos invariantes son factorizables y débilmente hereditarias.
 
-\index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
-Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\mathcal{V} \subseteq \ms{P}(X)$ es \textit{refinamiento} de $\mathcal{U}$ cuando para cada $V \in \mathcal{V}$ existe $U \in \mathcal{U}$ de manera que $V \subseteq U$, esta situación será denotada por $\mathcal{V} \preccurlyeq \mathcal{U}$. Un refinamiento es \textit{abierto} cuando todos sus elementos son abiertos. Si $\mathcal{V} \preccurlyeq \mathcal{U}$, fijando ($\Ac$) para cada $V \in \mathcal{V}$ un elemento $U_V \in \mathcal{U}$ con $V \subseteq U_V$ se obtiene una subcubierta de $\mathcal{U}$ de tamaño a lo más $|\mathcal{V}|$, a saber, $\{U_V \tq V \in \mathcal{V}\}$.
+En la clase de espacios Haussdorff, la compacidad de $X$ implica su normalidad \cite[Teo.~3.1.9]{engelTopo}, además, se tienen los siguientes resultados conocidos para la compacidad local:
+\begin{proposicion}
+    Sea $X$ un espacio localmente compacto y de Hausdorff. Para cada $A \subseteq X$ son equivalentes:
+    \begin{enumerate}
+        \item $A$ es localmente compacto
+        \item $A$ es abierto en $\cla(A)$
+        \item Existen un abierto $U$ y un cerrado $F$ tales que $A=U \cap F$.        
+    \end{enumerate}
+\end{proposicion}
+%\begin{proof}
+    %(i) $\to$ (ii) Supóngase que $A$ es localmente compacto y sea $x \in A$ cualquiera. Como $A$ es localmente compacto, existe una vecindad compacta $N$ de $x$ en $A$, con ello, hay un abierto $V$ de $A$ tal que $x \in V \subseteq K \subseteq A$. Como $A$ es de Hausdorff, $\cla_A(V) \subseteq \cla_A(K) = K$, y así, $\cla_A(V)$ es subespacio cerrado del compacto $K$, por ello, es compacto.
 
-\begin{lema}
-    Sea $X$ un espacio $2\AN$. Si $\mathcal{U}$ es una cubierta de $X$ y para cada $x \in X$ tiene una vecindad $N \in \mathcal{U}$, $\mathcal{U}$ contiene una subcubierta contable.
-\end{lema}
-\begin{proof}
-    Por los comentarios previos al enunciado de esta proposición, basta encontrar un refinamiento a lo más numerable de $\mathcal{U}$. Defínase la colección $\mathcal{V}:=\{  B \in \mathcal{B} \tq \exists U \in \mathcal{U} \, (B \subseteq U) \}$, para que $\mathcal{V} \preccurlyeq \mathcal{U}$, resta ver que $\mathcal{V}$ cubre a $X$.
+    %Por ser $X$ de Hausdorff, $\cla_A(V) = \cla(V) \cap A$ es cerrado en $X$. Dado que $V \subseteq A$, entonces $V \subseteq \cla(V) \cap A$, y así $\cla(V) \subseteq \cla(\cla(V) \cap A) = \cla(V) \cap A$. Se deduce entonces que $\cla(V) \subseteq A$.
 
-    Efectivamente, si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Así, existen un abierto $U$ de $X$, y un elemento $B \in \mathcal{B}$, tales que $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$, por lo que $X \subseteq \midcup \mathcal{V}$.
-\end{proof}
+    %Como $V$ es abierto en $A$, existe un abierto $U$ de $X$ con $V = U \cap A$. La condición $\cla(V) \subseteq A$ implica que $\cla(A) \cap U \subseteq A$. Como $U$ es abierto en $X$, entonces el conjunto  $W \mycoloneq \cla(A)\cap U$ es un abierto de $\cla(A)$ tal que $x \in W \subseteq A \subseteq \cla(A)$. Lo cual demuestra que $A$ es abierto en $\cla(A)$.
+
+    %(ii) $\to$ (iii) Supógnase que $A$ es abierto en su clausura, entonces $A=U \cap \cla(A)$, donde $U$ es abierto en $X$ y $\cla(A)$ es cerrado en $X$.
+
+    %(iii) $\to$ (i) Supóngase que $A=U \cap F$, donde $U$ es abierto y $F$ es cerrado. Sean $x \in A$ y $W$ abierto en $U \cap F$ tal que $x \in W$, entonces, existe un abierto $W'$ de $X$ tal que $W=W' \cap (U \cap F) = (W' \cap U) \cap F$.    
+    
+    %Como $x \in W' \cap U$ y $X$ es localmente compacto, existe un a vecindad compacta $N$ de $x$ en $X$ tal que $x \in N \subseteq W' \cap U$, de donde, $x \in N \cap F \subseteq W' \cap (U \cap F)$. Nótese que $N \cap F$ es un subespacio cerrado de $N$, y como $N$ es compacto, entonces $N \cap F$ es compacto.
+
+    %Finalmente, como $N$ es vecindad de $x$ en $X$, existe un abierto $V$ de $X$ tal que $x \in V \subseteq N$, de aquí que $x \in V \cap (U \cap F) \subseteq N \cap F \subseteq U \cap F$; y, como $V \cap (U \cap F)$ es abierto en $U \cap F$, $N \cap F$ es una vecindad compacta de $x$ en $U \cap F$. Lo cual prueba que $A=U \cap F$ es localmente compacto.
+%\end{proof}
+
+\begin{corolario}\phantomsection\label{Hauss-LocComp}
+    Sea $X$ un espacio de Hausdorff. Entonces:
+    \begin{enumerate}
+        \item $X$ es localmente compacto si y sólo si cada $x \in X$ tiene una vecindad compacta.
+        \item Si $D \subseteq X$ es denso y abierto, entonces es localmente compacto
+    \end{enumerate}
+    
+\end{corolario}
+%\begin{proof}
+    %(i) Basta probar necesidad. Supóngase que cada punto de $X$ tiene una vecindad compacta. Sea $x \in X$ cualquiera y $\mathcal{B}$ una base local para $x$ en $X$, por la proposición anterior cada $B \in \mathcal{B}$ es localmente compacto. Fíjese ($\Ac$) una vecindad compacta $N_B$ de $x$ en $B$.
+
+    %Como $N_B$ es vecindad de $x$ en $B$, existe un abierto $U$ de $V$ tal que $x \in U \subseteq N_B \subseteq B$, pero al ser $B$ abierto, $U$ es abierto en $X$. Esto prueba que cada $N_B$ es vecindad compacta de $x$ en $X$; y así, $\{ N_B \tq B \in \mathcal{B} \}$ es una base de vecindades compactas para $x$ en $X$.
+
+    %(ii) Como $D$ es denso, de ser abierto, es abierto en $X=\cla(D)$, siguiéndose el resultado de la proposición previa.
+%\end{proof}
+
+
 
 \newpage
+%\index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
+%Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\mathcal{V} \subseteq \ms{P}(X)$ es \textit{refinamiento} de $\mathcal{U}$ cuando para cada $V \in \mathcal{V}$ existe $U \in \mathcal{U}$ de manera que $V \subseteq U$, esta situación será denotada por $\mathcal{V} \preccurlyeq \mathcal{U}$. Un refinamiento es \textit{abierto} cuando todos sus elementos son abiertos. %Si $\mathcal{V} \preccurlyeq \mathcal{U}$, fijando ($\Ac$) para cada $V \in \mathcal{V}$ un elemento $U_V \in \mathcal{U}$ con $V \subseteq U_V$ se obtiene una subcubierta de $\mathcal{U}$ de tamaño a lo más $|\mathcal{V}|$, a saber, $\{U_V \tq V \in \mathcal{V}\}$.
+
+\begin{lema}
+    Sea $X$ un espacio $2\AN$ y $\mathcal{U}$ una cubierta de $X$ tal que cada $x \in X$ tiene una vecindad en $\mathcal{U}$. Entonces, $\mathcal{U}$ tiene una subcubierta contable.
+\end{lema}
+\begin{proof}
+    Sea $\mathcal{V} \mycoloneq \{  B \in \mathcal{B} \tq \exists N \in \mathcal{U} \, (B \subseteq N) \}$. Si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Por ello, existen un abierto $U$ de $X$ y un elemento $B \in \mathcal{B}$ con $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$ y $X \subseteq \midcup \mathcal{V}$.
+    
+    Fijando ($\Ac$), para cada $B \in \mathcal{V}$, un elemento $N_B$ con $B \subseteq N_B$ se obtiene que la subcubierta contable de $\mathcal{U}$, $\{ N_B \tq B \in \mathcal{B} \}$.
+\end{proof}
+
+\begin{proposicion}\phantomsection\label{cor-2AN-Linde}
+    Sea $X$ un espacio topológico.
+    \begin{enumerate}
+        \item Si $X$ es $2\AN$, entonces es (hereditariamente) de Lindelöf.
+        \item Si $X$ es $2\AN$ y localmente compacto, entonces es $\sigma$-compacto.
+        \item Si $X$ es $\sigma$-compacto, entonces es de Lindelöf.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Se sigue del Lema anterior y de que $2\AN$ es hereditaria.
+
+    (ii) Supóngase que $X$ es $2\AN$ y localmente compacto. Para cada $x \in X$ elíjase ($\Ac$) una vecindad compacta, $N_x$, de $x$. Entonces $\mathcal{U} \mycoloneq \{ N_x \tq x \in X \}$ cumple las hipótesis del Lema previo, y así, admite una subcubierta contable $\mathcal{V}$. Como cada elemento de $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, $X$ es $\sigma$-compacto.
+
+    (iii) Supóngase que $X$ es unión contable de subespacios compactos, a saber $\{X_n \tq n \in \omega\}$. Para cada $n \in \omega$ tómese ($\Ac$) algún $\mathcal{U}_n \in [\mathcal{U}]^{<\omega}$ con $X_n \subseteq \midcup \mathcal{U}_n$, consecuentemente, $\midcup\{ \mathcal{U}_n \tq n \in \omega\}$ es subcubierta contable de $\mathcal{U}$.
+\end{proof}
+
+\index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del Teorema de Categoría de Baire.
+
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{Teorema!de Categoría de Baire}\index[alph]{Baire!Teorema de Categoría de}
+    Todo espacio de Hausdorff y localmente compacto es de Baire.
+\end{teorema}
+\begin{proof}
+    Sea $X$ de Hausdorff y localmente compacto y supóngase que $\{D_n \tq n \in \omega\}$ una colección de abiertos, densos en $X$.
+    
+    Sea $U$ cualquier abierto no vacío de $X$. Para cada punto $x \in X$ y vecindad $N$ de $x$ fíjese ($\Ac$) una vecindad compacta $K(x,N)$ de $x$ con $x \in K(x,N) \subseteq N$. Por recursión, defínanse $x_0$ como cualquier elemento de $U \cap D_0$ y $K_0 \mycoloneq K(x_0,U \cap D_0)$ y para cada $n \in \omega$, tómense $x_{n+1} \in K_n \cap D_{n+1}$ y $K_{n+1}=K(x_{n+1},K_n \cap D_{n+1})$.
+    
+    De esta manera, $\{K_n \tq n \in \omega\}$ es una sucesión $\subseteq$-decreciente de subespacios compactos no vacíos de $X$. Como todos ellos son subespacios compactos, de Hausdorff, no vacíos, y del espacio compacto $K_0$, la siguiente intersección no puede ser vacía: $\midcap\{ K_n \tq n \in \omega \} \subseteq U \cap A$. Así, $A$ es denso y $X$ es de Baire.
+\end{proof}
+
+
+
+
+\index[alph]{espacio!pseudocompacto}
+El espacio $X$ es \textit{pseudocompacto} si cualquier función $f \colon X \to \mathbb{R}$ continua es \textit{acotada}, es decir, existe $M>0$ tal que para cada $x \in X$, ocurre $|f(x)| \leq M$.
+
+\begin{proposicion}\phantomsection\label{pseudo-numerableCompacto}
+    Sea $X$ un espacio topológico $\T_1$.
+    \begin{enumerate}
+        \item Si $X$ es numerablemente compacto, es pseudocompacto.
+        \item Si $X$ es normal y pseudocompacto, es numerablemente compacto.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Por absurdo, supóngase que $X$ es numerablemente compacto  y no pseudocompacto. Fíjese $f \colon X \to \mathbb{R}$ no acodada. Entonces, para cada $n \in \omega$ se puede fijar ($\Ac$) un elemento $x_n \in X$ de modo que $|f(x)|>n$, con ello, el conjunto $A \mycoloneq \{x_n \tq n \in \omega\}$ es infinito.
+
+    Como $X$ es numerablemente compacto y $\T_1$, existe $x \in \der(A)$ y como $f$ es continua, $f(x) \in \der(f[A])$. A razón de esto, $(0,f(x)+1) \cap f[A]$ es infinito, de donde, $\{ m \in \omega \tq f(x_n) < f(x)+1 \}$ es infinito. Pero, lo anterior es una contradicción, dada la elección de los puntos $x_n$. Por lo tanto, $X$ debe ser pseudocompacto.
+
+    (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f \colon A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
+
+    Como $X$ es normal, el Teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g \colon X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+\end{proof}
+
+\begin{proposicion}\phantomsection\label{pseudocom-subcjtos}
+    Sean $X$ un espacio topológico y $B \subseteq X$.
+    \begin{enumerate}
+        \item Si $X$ es pseudocompacto y $B$ es abierto y cerrado, $B$ no puede ser infinito.
+        \item Si $B$ es denso y cada sucesión en $B$ contiene una subsucesión convergente en $X$, entonces $X$ es pseudocompacto.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Supóngase que $B$ es abierto, cerrado e infinito, sin pérdida de generalidad, numerable. Sea $f \colon B \to \omega \subseteq \mathbb{R}$ biyectiva, nótese que al ser $B$ discreto, $f$ es continua. Sea $g \colon X \setminus B \to \mathbb{R}$ la función constante $0$, $g$ es continua. Como $f,g$ son continuas y $B , X \setminus B$ son abiertos (ajenos) de $X$, entonces $f \cup g \colon X \to \mathbb{R}$ es continua, y claramente no acotada, probando que $X$ no es pseudocompacto, lo cual es imposible.
+
+    (ii) Supóngase que $B$ es denso y que $X$ no es pseudocompacto. Entonces para cada $n \in \omega$, por densidad de $B$, se puede fijar un elemento $x_n \in D \cap f^{-1}[(n, \infty)] \neq \emptyset$. Se afirma que $(x_n)_{n \in \omega} \subseteq D$ no tiene subsucesiones convergentes.
+
+    Efectivamente, sea $g \colon \omega \to \omega$ estrictamente creciente. Por continuidad de $f$, si $(x_{g(n)})_{n \in \omega}$ converge en $X$, $(f(x_{g(n)}))_{n \in \omega}$ converge en $\mathbb{R}$, y por tanto, es acotada. Esto contradice la construcción de $f$, por lo tanto, $(x_n)_{n \in \omega}$ no contiene subsucesiones convergentes en $X$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Extensiones unipuntuales}
 
 \subsection{Espacios Metrizables}

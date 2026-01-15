@@ -5,11 +5,11 @@
 
 \emph{\small En el año 1937 }{\small \cite[Teo~5, p.~ 676]{jonesCM}}\emph{\small, el propio Jones muestra la consistencia de $\Pdm$, pero no sería sino hasta 1969 cuando Tall, en su tesis doctoral }{\small \cite{tallTesis}}\emph{\small, logra establecer una equivalencia para $\Pdm$ en términos de la existencia de $Q$-sets no numerables. Silver probó que la existencia de tales espacios es consistente con $\zfc$. La meta de este capítulo es exponer las contribuciones de Jones, Silver y Tall, lo cual culmina con la independencia de $\Pdm$ de la axiomática $\zfc$.}
 
-\section{Independencia de $\Pdm$}
+\section{Consistencia de \texorpdfstring{}\textsf{WMC}}
 
 Todo espacio de Mrówka $\Psi(\ms{A})$ es de Moore y separable, algo demostrado en \ref{cor-MrwokaSiempre}; además, cuando $\ms{A}$ es más que numerable, resulta que $\Psi(\ms{A})$ no es metrizable (véase \ref{prop-tra-numerable}). Así que, si ocurre $\Pdm$, entonces ningún espacio $\Psi(\ms{A})$, con $|\ms{A}|>\omega$, puede ser normal. Lo que ataña a la presente sección presenta una dificultad mayor, se mostrará el recíproco de la anterior implicación.
 
-\begin{proposicion}\phantomsection\phantomsection\label{pro-ObsNormalidad}
+\begin{proposicion}\phantomsection\label{pro-ObsNormalidad}
 	Sea $\ms{A} \in \Ad(\omega)$, se cumple:
 	\begin{enumerate}
 		\item Si $|\ms{A}| \leq \omega$, entonces $\Psi(\ms{A})$ es normal.
@@ -26,11 +26,11 @@ Todo espacio de Mrówka $\Psi(\ms{A})$ es de Moore y separable, algo demostrado 
 
 La proposición anterior dicta que, para encontrar espacios de Mrówka que atestiguen la falsedad de $\Pdm$, es necesario buscar entre aquellos generados por familias casi ajenas de tamaño estrictamente entre $\aleph_0$ y $\mathfrak{c}$, consecuentemente:
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-HCnoMrowkasNormales}
+\begin{corolario}\phantomsection\label{cor-HCnoMrowkasNormales}
 	Si $\HC$ ocurre, entonces ningún espacio de Mrówka más que numerable puede ser normal.
 \end{corolario}
 
-\begin{proposicion}\phantomsection\phantomsection\label{pro-SeparadorCerrados}
+\begin{proposicion}\phantomsection\label{pro-SeparadorCerrados}
 	Sean $\ms{A}$ una familia casi ajena y $F,G \subseteq \Psi(\omega)$ cerrados ajenos. Son equivalentes:
 	\begin{enumerate}
 		\item $F$ y $G$ se separan por abiertos ajenos de $\Psi(\ms{A})$.
@@ -44,14 +44,14 @@ La proposición anterior dicta que, para encontrar espacios de Mrówka que atest
 
 	(ii) $\to$ (iii) Supóngase que $U,V \subseteq \Psi(\ms{A})$ son abiertos ajenos con $F \cap \ms{A} \subseteq U$ y $G \cap \ms{A} \subseteq U$. Para cada $a \in F \cap \ms{A} \subseteq U$ se tiene que $a \subseteq^* U$. Consecuentemente, para cada $b \in G \cap \ms{A} \subseteq V$ ocurre que $b \cap U =^* V \cap U = \emptyset$. Por lo tanto, $U$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$.
 
-	(iii) $\to$ (i) Supóngase que $D \subseteq \omega$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$. Nótese que $F \subseteq U:=F \cup D\setminus G$ y que $U$ es abierto. En efecto, si $a \in U \cap \ms{A} \subseteq F \cap \ms{A}$, entonces $a \subseteq^* D$ y, por ser $G$ cerrado y ajeno a $F$, $a \subseteq^* \Psi(\ms{A}) \setminus G$. Luego, $a \subseteq^* D\setminus G \subseteq U$.
+	(iii) $\to$ (i) Supóngase que $D \subseteq \omega$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$. Nótese que $F \subseteq U \mycoloneq F \cup D\setminus G$ y que $U$ es abierto. En efecto, si $a \in U \cap \ms{A} \subseteq F \cap \ms{A}$, entonces $a \subseteq^* D$ y, por ser $G$ cerrado y ajeno a $F$, $a \subseteq^* \Psi(\ms{A}) \setminus G$. Luego, $a \subseteq^* D\setminus G \subseteq U$.
 
-	Como $D$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$; $\omega \setminus D$ es separador de $G\cap \ms{A}$ y $F \cap \ms{A}$, y resulta análogo que $G \subseteq V:=G \cup (\omega \setminus D)\setminus F$ y $V$ es abierto. Lo anterior demuestra que $F$ y $G$ se separan por los abiertos ajenos $U$ y $V$.
+	Como $D$ es separador de $F \cap \ms{A}$ y $G \cap \ms{A}$; $\omega \setminus D$ es separador de $G\cap \ms{A}$ y $F \cap \ms{A}$, y resulta análogo que $G \subseteq V \mycoloneq G \cup (\omega \setminus D)\setminus F$ y $V$ es abierto. Lo anterior demuestra que $F$ y $G$ se separan por los abiertos ajenos $U$ y $V$.
 \end{proof}
 
 Del \cref{lem-primerosSubs} y la \cref{obs-GrietasSimple} se desprende la posterior equivalencia:
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-tra-NormalSeparador}\index[trad]{Normalidad de $\Psi(\ms{A})$ (con grietas separables)}
+\begin{corolario}\phantomsection\label{cor-tra-NormalSeparador}\index[trad]{Normalidad de $\Psi(\ms{A})$ (con grietas separables)}
 	Para cada familia casi ajena $\ms{A}$ son equivalentes:
 	\begin{enumerate}
 		\item $\Psi(\ms{A})$ es normal.
@@ -61,7 +61,7 @@ Del \cref{lem-primerosSubs} y la \cref{obs-GrietasSimple} se desprende la poster
 
 La traducción de la \cref{pro-ObsNormalidad} en términos \enquote{combinatorios} es el siguiente Corolario; mismo que por cierto, prueba el \cref{ej-interrelacion} de la \cref{Sec-Luzin}.
 
-\begin{corolario}\phantomsection\phantomsection\label{col-tra-interrelacion}
+\begin{corolario}\phantomsection\label{col-tra-interrelacion}
 	Sea $\ms{C}\in \Ad(\omega)$, entonces:
 	\begin{enumerate}
 		\item Si $|\ms{C}|\leq \aleph_0$, toda grieta contenida en $\ms{C}$ está separada.
@@ -71,7 +71,7 @@ La traducción de la \cref{pro-ObsNormalidad} en términos \enquote{combinatorio
 
 Hay una diferencia notable entre los conceptos de familia no separable y familia inseparable, en términos  topológicos, las familias inseparables (definidas en \ref{def-FamInseparable}) generan espacios de Mrówka más que no normales. Cualquier familia de Luzin (\cref{def-LuzinFam}) es inseparable, lo cual regala un ejemplo \enquote{canónico} dentro de $\zfc$ de espacio separable, de Moore y no normal de tamaño $\mathfrak{c}$.
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-MrowkaLuzin}
+\begin{corolario}\phantomsection\label{cor-MrowkaLuzin}
 	%Si $\ms{A}$ es una familia que contiene una $n$-grieta de Luzin, ningún par de cerrados ajenos no numerables de $\Psi(\ms{A})$ se pueden separar por abiertos ajenos.
 	Particularmente, existe un espacio de Mrówka con tamaño $\aleph_1$, no es normal; a saber, el generado por una familia de Luzin.
 \end{corolario}
@@ -84,18 +84,17 @@ Ahora, por lo demostrado en el \cref{cor-ngrietasNoSep}, se tiene el siguiente c
 
 Dado todo lo realizado hasta el momento, el corolario anterior es relativamente inmediato; en contraste, su recíproco logra caracterizar por completo la normalidad de los espacios de Mrówka, en $\zfc +  \Ma$, \cite[Teo.~9]{hruAlmost}. Tal resultado es meritorio de un estudio mucho más profundo y dedicado, mismo que escapa a los propósitos de este trabajo.
 
-\subsection{Consistencia de \textsf{WMC}}
-\phantomsection\phantomsection\label{Sec-PDM}
+\phantomsection\label{Sec-PDM}
 
 Siguiendo la técnica de Tall, probaremos la independencia de $\Pdm$ de $\zfc$ utilizando, a modo de intermediario, los siguientes espacios:
 
-\begin{definicion}\phantomsection\phantomsection\label{def-Qset}\index[alph]{$Q$-set}
+\begin{definicion}\phantomsection\label{def-Qset}\index[alph]{$Q$-set}
 	Un $Q$-set es un espacio metrizable, separable y tal que todos sus subespacios son de tipo $G_\delta$ (equivalentemente, todos sus subespacios son de tipo $F_\sigma$).
 \end{definicion}
 
 Como primer familia de ejemplos de espacios $Q$-set se tiene:
 
-\begin{ejemplo}\phantomsection\phantomsection\label{ej-QsetFacil}
+\begin{ejemplo}\phantomsection\label{ej-QsetFacil}
 	Cualquier espacio $X$ metrizable, a lo más numerable, es un $Q$-set. Efectivamente, nótese que $X$ es separable. Y además, si $A \subseteq X$ es cualquiera, entonces $A=\midcup\big\{\{a\} \tq a \in X\big\}$ es de tipo $F_\sigma$.
 \end{ejemplo}
 
@@ -111,7 +110,7 @@ Se comenzará por observar que todo espacio $Q$-set es, salvo homeomorfismos, un
 	Por construcción, $\{B(x,\delta_\varepsilon) \tq \varepsilon>0\}$ es una base local para $x$ en $X$.
 \end{proof}
 
-\begin{proposicion}\phantomsection\phantomsection\label{prop-QsetEquivs}
+\begin{proposicion}\phantomsection\label{prop-QsetEquivs}
 	Para todo espacio $X$ son equivalentes:
 	\begin{enumerate}
 		\item $X$ es un $Q$-set.
@@ -132,13 +131,13 @@ Se comenzará por observar que todo espacio $Q$-set es, salvo homeomorfismos, un
 	Por ello $|X| < \mathfrak{c}$ la cero-dimensionalidad de $X$ se obtiene del Lema previo.
 \end{proof}
 
-\begin{observacion}\phantomsection\phantomsection\label{obs-HCNoQset}
+\begin{observacion}\phantomsection\label{obs-HCNoQset}
 	Todo $Q$-set tiene tamaño menor que $\mathfrak{c}$. Consecuentemente, $\HC$ implica que todos los espacios $Q$-set son a lo más numerables.
 \end{observacion}
 
 El paralelismo del resultado anterior con el \cref{cor-HCnoMrowkasNormales} no es coincidencia. La meta ahora es mostrar que la existencia de $Q$-sets no numerables es equivalente a la existencia de espacios de Mrówka no numerables y normales; más aún, si estos espacios no existen, entonces $\Pdm$ se satisface.
 
-\begin{lema}\phantomsection\phantomsection\label{coro-Bing}
+\begin{lema}\phantomsection\label{coro-Bing}
 	Supóngase que $X$ es un espacio normal, de Moore, no metrizable y que $D \subseteq X$ es denso a lo más numerable; entonces existe $A \subseteq X \setminus D$ más que numerable, discreto y cerrado en $X$.
 \end{lema}
 
@@ -148,21 +147,21 @@ El paralelismo del resultado anterior con el \cref{cor-HCnoMrowkasNormales} no e
 	\begin{enumerate}[\hspace{1.5 cm}, listparindent=1.5em]
 		\item \textit{Afirmación.} $\mathcal{A}$ es más que numerable.
 
-		\item \textit{Demostración.} Supóngase que $\mathcal{A}$ está enumerado como $\{A_n \tq n \in \omega\}$. Por ser $\mathcal{A}$ una familia discreta de cerrados de $X$, si $n \in \omega$, entonces el conjunto $B_n:=\midcup\{A_m \tq m>n\}$ es cerrado.
+		\item \textit{Demostración.} Supóngase que $\mathcal{A}$ está enumerado como $\{A_n \tq n \in \omega\}$. Por ser $\mathcal{A}$ una familia discreta de cerrados de $X$, si $n \in \omega$, entonces el conjunto $B_n \mycoloneq \midcup\{A_m \tq m>n\}$ es cerrado.
 
-		      Por recursión defínanse $U_0:=W(A_0,B_0)$ y $V_0:=S(A_0,B_0)$; y, para cada $n \in \omega$, $U_{n+1}:=W(A_{n+1},B_{n+1}) \cap V_n$ y $V_{n+1}= S(A_{n+1},B_{n+1}) \cap V_n$.
+		      Por recursión defínanse $U_0 \mycoloneq W(A_0,B_0)$ y $V_0 \mycoloneq S(A_0,B_0)$; y, para cada $n \in \omega$, $U_{n+1} \mycoloneq W(A_{n+1},B_{n+1}) \cap V_n$ y $V_{n+1}= S(A_{n+1},B_{n+1}) \cap V_n$.
 
 		      Por construcción, $\{U_n \tq n\in \omega\}$ es una familia de abiertos, ajenos por pares tales que para cada $n \in \omega$ se tiene $A_n \subseteq U_n$. Así, los elementos de $\mathcal{A}$ se separan por abiertos ajenos; contradiciendo su elección. \hfill$\boxtimes$
 	\end{enumerate}
 
-	Dada la afirmación anterior, y fijando para cada $a \in \mathcal{A}$ un elemento $x_a \in \mathcal{A}$, se obtiene un conjunto mas que numerable $B:=\{x_a \tq a \in \mathcal{A}\}$; mismo que por ser $\ms{A}$ familia discreta y $X$ de Hausdorff, resulta ser cerrado y discreto.
+	Dada la afirmación anterior, y fijando para cada $a \in \mathcal{A}$ un elemento $x_a \in \mathcal{A}$, se obtiene un conjunto mas que numerable $B \mycoloneq \{x_a \tq a \in \mathcal{A}\}$; mismo que por ser $\ms{A}$ familia discreta y $X$ de Hausdorff, resulta ser cerrado y discreto.
 
-	Por último nótese que cada subespacio de $B$ es discreto y cerrado en $X$; pues $B$ es discreto y cerrado en $X$. Particularmente, $A:=B \setminus D$ es discreto, discreto en $X$ y no numerable (pues $B$ es más que numerable y $D$ es numerable).
+	Por último nótese que cada subespacio de $B$ es discreto y cerrado en $X$; pues $B$ es discreto y cerrado en $X$. Particularmente, $A \mycoloneq B \setminus D$ es discreto, discreto en $X$ y no numerable (pues $B$ es más que numerable y $D$ es numerable).
 \end{proof}
 
 El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \cite{tallTesis}), y es la pieza clave para atacar la Conjetura Débil de Moore.
 
-\begin{teorema}[Tall]\phantomsection\phantomsection\label{teo-EquivPDM}
+\begin{teorema}[Tall]\phantomsection\label{teo-EquivPDM}
 	Si $\kappa$ es un cardinal infinito, son equivalentes:
 	\begin{enumerate}
 		\item Existe un espacio de Moore, normal, no metrizable de tamaño $\kappa$.
@@ -173,13 +172,13 @@ El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \c
 \begin{proof}
 	(i) $\to$ (ii) Supóngase que $X$ es un espacio, normal, de Moore y no metrizable de tamaño $\kappa$ y sea fíjese $D\subseteq X$ denso numerable de $X$. Por \ref{coro-Bing}, $D$ es infinito y existe un subespacio $A \subseteq X \setminus D$ más que numerable; discreto y cerrado de $X$. Como $X$ es de Hausdorff y primero numerable, considérese $ \ms{A}_{D,A}=\{A_x \in [D]^\omega \tq x \in A\} $; la familia de sucesiones en $D$ convergentes a $A$ (definida en \ref{def-FamSucesiones}), donde cada $A_x$ converge a $x$. Por la \cref{prop-famSucesiones}, $|\ms{A}_{D,A}|=\kappa$ y así mismo, $\Psi_D(\ms{A}_{D,A})=\kappa$.
 
-	Sea $\ms{B}:=\{A_x \tq x \in F\} \subseteq \ms{A}_{D,A}$ cualquiera. Como $A$ es discreto y cerrado en $X$, cualquiera de sus subespacios es cerrado en $X$; en consecuencia y por normalidad de $X$, existen abiertos $U,V \subseteq X$ ajenos, de modo que $F \subseteq U$ y $A \setminus F \subseteq V$. Si $x \in F$, entonces $A_x \to x$ y por ello $A_x \subseteq^* U$, similarmente, si $y \in A \setminus F$, entonces $A_y \subseteq^* V \subseteq X \setminus U$; de donde $A_y \cap U^* = \emptyset$.
+	Sea $\ms{B} \mycoloneq \{A_x \tq x \in F\} \subseteq \ms{A}_{D,A}$ cualquiera. Como $A$ es discreto y cerrado en $X$, cualquiera de sus subespacios es cerrado en $X$; en consecuencia y por normalidad de $X$, existen abiertos $U,V \subseteq X$ ajenos, de modo que $F \subseteq U$ y $A \setminus F \subseteq V$. Si $x \in F$, entonces $A_x \to x$ y por ello $A_x \subseteq^* U$, similarmente, si $y \in A \setminus F$, entonces $A_y \subseteq^* V \subseteq X \setminus U$; de donde $A_y \cap U^* = \emptyset$.
 
 	Por tanto $(\ms{B}, \ms{A}_{D,A} \setminus \ms{B})$ está separada, obteniéndose de \ref{cor-tra-NormalSeparador} la normalidad de $\Psi_D(\ms{A}_{D,A})$.
 
 	(ii) $\to$ (iii) Si $\kappa = \omega$, la implicación resulta vacua; pues todo subespacio numerable de $2^\omega$ es un $Q$-set (\cref{ej-QsetFacil}). Supóngase pues, que $\Psi(\ms{A})$ es un espacio normal de tamaño $\kappa>\omega$; siendo necesario que $|\ms{A}|=\kappa$.
 
-	Para cada $C \subseteq \omega$ denótese por $\varphi_C \in 2^ \omega$ a la función característica de $C$ y sea $X:=\{\varphi_A \in 2^\omega \tq A \in \ms{A} \}$. Obsérvese que $X$ es un espacio metrizable, separable (por ser subespacio del metrizable, separable, $2^\omega$) de tamaño $\kappa$.
+	Para cada $C \subseteq \omega$ denótese por $\varphi_C \in 2^ \omega$ a la función característica de $C$ y sea $X \mycoloneq \{\varphi_A \in 2^\omega \tq A \in \ms{A} \}$. Obsérvese que $X$ es un espacio metrizable, separable (por ser subespacio del metrizable, separable, $2^\omega$) de tamaño $\kappa$.
 
 	Sea $Y = \{ \varphi_A \in X \tq A \in \ms{B} \} \subseteq X$ cualquiera. Dado el \cref{cor-tra-NormalSeparador}, la normalidad de $\Psi(\ms{A})$ implica la existencia de un separador de $\ms{A}\setminus \ms{B}$ y $\ms{B}$; de este modo:
 	\begin{align*}
@@ -189,16 +188,16 @@ El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \c
 		  & = \bigcap_{n \in \omega} \{\varphi_A \in X \tq A \cap D \not\subseteq n\}
 	\end{align*}
 
-	Ahora, si $n \in \omega$ y $\varphi \in U_n:=\{\varphi_A \in X \tq A \cap D \not\subseteq n\}$ es cualquiera, existe cierto $k \in (A \cap D) \setminus n$. Por ello, si $x=\varphi_B \in X$ es tal que $x(k)=1$, entonces $k \in (B \cap D) \setminus n$ y $B \cap D \not \subseteq n$; es decir $f \in U_n$. Mostrando así que $\{ x \in X \tq x\upharpoonright \{k\} = \varphi \upharpoonright \{k\} \} \subseteq U_n$. Por lo tanto, cada $U_n$ es abierto en $X$. De esta manera, cualquier $Y \subseteq X$ es $G_\delta$ en $X$ y $X$ es un $Q$-set.
+	Ahora, si $n \in \omega$ y $\varphi \in U_n \mycoloneq \{\varphi_A \in X \tq A \cap D \not\subseteq n\}$ es cualquiera, existe cierto $k \in (A \cap D) \setminus n$. Por ello, si $x=\varphi_B \in X$ es tal que $x(k)=1$, entonces $k \in (B \cap D) \setminus n$ y $B \cap D \not \subseteq n$; es decir $f \in U_n$. Mostrando así que $\{ x \in X \tq x\upharpoonright \{k\} = \varphi \upharpoonright \{k\} \} \subseteq U_n$. Por lo tanto, cada $U_n$ es abierto en $X$. De esta manera, cualquier $Y \subseteq X$ es $G_\delta$ en $X$ y $X$ es un $Q$-set.
 
-	(iii) $\to$ (i) Supóngase que $X$ es un $Q$-set de tamaño $\kappa$. En virtud del \cref{prop-QsetEquivs}, supóngase sin pérdida de generalidad que $X \subseteq 2^\omega$. Para cada $E \subseteq X$ considérese $ \ms{A}_E:=\{ A_x \in [N]^\omega \tq x \in E \} $, la familia de las ramas de $E$ en $N$ (definida en \ref{def-FamRamas}); donde $N:=2^{<\omega}$ y cada $A_x$ es el conjunto $\{x \upharpoonright n \tq n \in \omega\} \subseteq N$. Puesto que $|X|=\kappa$, del \cref{def-FamRamas} se sigue que $|\ms{A}_X|=\kappa$, y con ello $|\Psi_N(\ms{A}_X)|=\kappa$.
+	(iii) $\to$ (i) Supóngase que $X$ es un $Q$-set de tamaño $\kappa$. En virtud del \cref{prop-QsetEquivs}, supóngase sin pérdida de generalidad que $X \subseteq 2^\omega$. Para cada $E \subseteq X$ considérese $ \ms{A}_E \mycoloneq \{ A_x \in [N]^\omega \tq x \in E \} $, la familia de las ramas de $E$ en $N$ (definida en \ref{def-FamRamas}); donde $N \mycoloneq 2^{<\omega}$ y cada $A_x$ es el conjunto $\{x \upharpoonright n \tq n \in \omega\} \subseteq N$. Puesto que $|X|=\kappa$, del \cref{def-FamRamas} se sigue que $|\ms{A}_X|=\kappa$, y con ello $|\Psi_N(\ms{A}_X)|=\kappa$.
 
 	Sea $Y \subseteq X$ cualquiera. Como $X$ es un $Q$-set, $Y=\midcup\{F_n \tq n \in \omega\}$ y $X \setminus Y=\midcup\{G_n \tq n\in \omega\}$; donde cada conjunto $F_n$ y $G_n$ es cerrado en $X\subseteq 2^\omega$. Para cada $n \in \omega$ defínanse los conjuntos:
 	\begin{align*}
-		D_n := \left( \midcup \ms{A}_{F_n} \right) \setminus \bigcup_{m<n} \left( \midcup \ms{A}_{G_m} \right) \\
-		L_n := \left( \midcup \ms{A}_{G_n} \right) \setminus \bigcup_{m\leq n} \left( \midcup \ms{A}_{F_m} \right)
+		D_n  \mycoloneq  \left( \midcup \ms{A}_{F_n} \right) \setminus \bigcup_{m<n} \left( \midcup \ms{A}_{G_m} \right) \\
+		L_n  \mycoloneq  \left( \midcup \ms{A}_{G_n} \right) \setminus \bigcup_{m\leq n} \left( \midcup \ms{A}_{F_m} \right)
 	\end{align*}
-	y sea $D:=\midcup\{D_n \tq n \in \omega\}$. Nótese que por construcción, si $m,n \in \omega$, se tiene $D_n \cap L_m = \emptyset$; consecuentemente, cada $L_n$ es ajeno con $D$.
+	y sea $D \mycoloneq \midcup\{D_n \tq n \in \omega\}$. Nótese que por construcción, si $m,n \in \omega$, se tiene $D_n \cap L_m = \emptyset$; consecuentemente, cada $L_n$ es ajeno con $D$.
 
 	Sea $y \in A_Y$; entonces existe $n \in \omega$ de modo que $y \in F_n$. Por otra parte, cada $G_m\subseteq X\setminus Y$ (con $m<n$) es cerrado en $X$, por lo que existe $s \in \omega$ de modo que:
 	$$ \{ x \in X \tq x \upharpoonright s = y \upharpoonright s \} \subseteq X \setminus \bigcup_{m<n} G_m $$
@@ -210,7 +209,7 @@ El siguiente teorema aparece en la tesis doctoral de Franklin David Tall (ver \c
 
 Es inmediato al \cref{teo-EquivPDM} (y a \ref{cor-HCnoMrowkasNormales}, o bien, \ref{obs-HCNoQset}) la siguiente consecuencia:
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-PdmConsistente}
+\begin{corolario}\phantomsection\label{cor-PdmConsistente}
 	Bajo $\HC$ se cumple $\Pdm$, y con ello:
 	\begin{enumerate}
 		\item Ningún espacio de Mrówka no numerable es normal.
@@ -219,7 +218,7 @@ Es inmediato al \cref{teo-EquivPDM} (y a \ref{cor-HCnoMrowkasNormales}, o bien, 
 	A razón de lo anterior, $\Pdm$ es consistente con $\zfc$.
 \end{corolario}
 
-\subsection{Consistencia de \texorpdfstring{$\lnot$}\textsf{WMC}}
+\section{Consistencia de \texorpdfstring{$\lnot$}\textsf{WMC}}
 
 Para la segunda parte de la prueba de independencia de $\Pdm$ se hará uso; como es previsible desde anteriores capítulos, de la negación de $\HC$ con el Axioma de Martin. Se comenzará observando cómo se pueden caracterizar a todos los $Q$-sets haciendo uso del Lema de Solovay (\cref{lem-Solovay}) y $\Ma$.
 
@@ -230,20 +229,20 @@ Para la segunda parte de la prueba de independencia de $\Pdm$ se hará uso; como
 	Por el teorema de metrización de Arhangel’skii (\cref{metri-Arhan}), $X$ admite una base regular (véase la \cref{base-reg}) $\mathcal{C}$. Como $X$ es metrizable, el \cref{metri-lindSii2an} prueba que es $2\AN$, siguiéndose de \ref{prop-baseKappa}, que existe una base $\mathcal{B}=\{B_n \tq n \in \omega\} \subseteq \mathcal{C}$. Osérvese que $\mathcal{B}$ sigue siendo una base regular.
 
 	Dados $x,y \in X$ son distintos, sean $U,V$ abiertos ajenos que separan a $x$ y $y$. Por regularidad de $\mathcal{B}$, existe $W \subseteq U$ abierto de manera que $x\in W$ y
-	\[ \mathcal{B}_W:=\{n \in \omega \tq B_n \cap W \neq \emptyset \land B_n \setminus W \neq \emptyset\} =^* \emptyset \, . \]
+	\[ \mathcal{B}_W \mycoloneq \{n \in \omega \tq B_n \cap W \neq \emptyset \land B_n \setminus W \neq \emptyset\} =^* \emptyset \, . \]
 	
 	Luego, el conjunto $A_x \cap A_y \subseteq \mathcal{B}_W$ es finito.
 \end{proof}
 
-\begin{proposicion}[Tall, Silver]\phantomsection\phantomsection\label{pro-MaQsetChar}
+\begin{proposicion}[Tall, Silver]\phantomsection\label{pro-MaQsetChar}
 	Bajo $\Ma$, un espacio $X$ es $Q$-set si y sólo si es homeomorfo a un subespacio de $\mathbb{R}$ de tamaño menor que $\mathfrak{c}$.
 \end{proposicion}
 \begin{proof}
 	Supóngase $\Ma$. La suficiencia viene dada por \ref{teo-EquivPDM} y \ref{prop-QsetEquivs}.
 	
-	Para la necesidad supóngase que $X \in [\mathbb{R}]^{<\mathfrak{c}}$, sin pérdida de generalidad más que numerable (véase \cref{ej-QsetFacil}). Como $X$ es metrizable y separable, tómense $\mathcal{B}=\{B_n \tq n \in \omega \}$ y $\ms{A}=\{A_x \tq x \in X\}$ como en el Lema previo. Sean $Y \subseteq X$ y $\ms{B}:=\{A_y \in \ms{A} \tq y \in Y\}$.
+	Para la necesidad supóngase que $X \in [\mathbb{R}]^{<\mathfrak{c}}$, sin pérdida de generalidad más que numerable (véase \cref{ej-QsetFacil}). Como $X$ es metrizable y separable, tómense $\mathcal{B}=\{B_n \tq n \in \omega \}$ y $\ms{A}=\{A_x \tq x \in X\}$ como en el Lema previo. Sean $Y \subseteq X$ y $\ms{B} \mycoloneq \{A_y \in \ms{A} \tq y \in Y\}$.
 
-	Como $|\ms{A} \setminus \ms{B}|,|\ms{B}|<\mathfrak{c}$ y se cumple $\Ma$, del Lema de Solovay (\ref{lem-Solovay}) se desprende la existencia de un subconjunto $D \subseteq \omega$  tal que, si $y \in Y$ y $x \in X \setminus Y$, entonces $A_y \cap D\neq ^*\emptyset$ y $A_x \cap D= ^*\emptyset$. Para cada $n \in \omega$ defínase el conjunto $U_n:=\midcup\{ B_m \in \mathcal{B} \tq m \in D \setminus n \}$.
+	Como $|\ms{A} \setminus \ms{B}|,|\ms{B}|<\mathfrak{c}$ y se cumple $\Ma$, del Lema de Solovay (\ref{lem-Solovay}) se desprende la existencia de un subconjunto $D \subseteq \omega$  tal que, si $y \in Y$ y $x \in X \setminus Y$, entonces $A_y \cap D\neq ^*\emptyset$ y $A_x \cap D= ^*\emptyset$. Para cada $n \in \omega$ defínase el conjunto $U_n \mycoloneq \midcup\{ B_m \in \mathcal{B} \tq m \in D \setminus n \}$.
 	
 	Nótese que $Y=\midcap\{U_n \tq n \in \omega\}$. En efecto, si $y \in X \setminus Y$ y $n \in \omega$ son cualesquiera, $A_y \cap D$ es infinito, y por ello, existe $m \in D \setminus n$ tal que $y \in B_m$. En consecuencia $y \in U_n$, y así $Y \subseteq \midcap\{U_n \tq n \in \omega\}$.
 
@@ -254,7 +253,7 @@ Para la segunda parte de la prueba de independencia de $\Pdm$ se hará uso; como
 
 De la proposición recién mostrada, el \cref{teo-EquivPDM} y el \cref{cor-PdmConsistente} surge el resultado que pone punto final a la Conjetura Débil de Moore.
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-PdmIndependiente}
+\begin{corolario}\phantomsection\label{cor-PdmIndependiente}
 	Bajo $\Ma$; para cada cardinal infinito $\kappa<\mathfrak{c}$ existe un espacio de Mrówka normal, de tamaño $\kappa$. Consecuentemente:
 	\begin{enumerate}
 		\item Bajo $\Ma+\lnot \HC$; existen tales espacios.

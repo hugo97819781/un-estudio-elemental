@@ -4,10 +4,10 @@
 \emph{\small Se probará que el carácter del punto al infinito en el compacto de Franklin asociado a $\Psi(\ms{A})$ es $|\ms{A}|$, y se demostrará que este espacio es de Fréchet si y sólo si su familia asociada es maximal en ninguna parte. Esto a su paso dará la negativa, dentro de $\zfc$, a una cuestión relevante que estuvo sin solución durante el siglo XX: ¿es la propiedad de Fréchet finitamente productiva?.}
 
 \section{\texorpdfstring{Sucesiones en $\ms{F}(\ms{A})$}{Sucesiones en F(A)}}
-\phantomsection\phantomsection\label{Subsec-sucesiones-Franklin}
+\phantomsection\label{Subsec-sucesiones-Franklin}
 
 \begin{definicion}\index[alph]{compacto!de Franklin}\index[alph]{Franklin! compacto de}\index[sym]{$\ms{F}(\ms{A})$}
-	Sea $\ms{A}\subseteq [\omega]^\omega$ cualquiera. El \textbf{compacto de Franklin generado por $\ms{A}$} es la extensión unipuntual del $\Psi$-espacio generado por $\ms{A}$, se denota por $ \ms{F}(\ms{A}):=\Psi(\ms{A}) \cup \{\infty_\ms{A} \} $.
+	Sea $\ms{A}\subseteq [\omega]^\omega$ cualquiera. El \textbf{compacto de Franklin generado por $\ms{A}$} es la extensión unipuntual del $\Psi$-espacio generado por $\ms{A}$, se denota por $ \ms{F}(\ms{A}) \mycoloneq \Psi(\ms{A}) \cup \{\infty_\ms{A} \} $.
 
 	Cuando el contexto así lo permita, se omitirá el subíndice ``$_\ms{A}$'' y se denotará el punto al infinito simplemente por $\infty$.
 \end{definicion}
@@ -33,7 +33,7 @@ Lo primero a observar es lo siguiente: dado que $\Psi(\ms{A})$ no es compacto, a
 
 Comparando con el \cref{cor-MrwokaSiempre} con las observaciones recién hechas, vale mencionar que existen propiedades $\ms{F}(\ms{A})$ que tienen una dependencia más compleja con $\Psi(\ms{A})$. Iniciarmos mostrando estas disparidades con lo próximo:
 
-\begin{proposicion}\phantomsection\phantomsection\label{prop-caracterFrechet}
+\begin{proposicion}\phantomsection\label{prop-caracterFrechet}
 	Para toda familia $\ms{A}$ se tiene que $\chi(\infty) = \aleph_0 + |\ms{A}|$.
 \end{proposicion}
 
@@ -43,7 +43,7 @@ Para la desigualdad recíproca defínase:
 $$ \mathcal{B} = \big\{ V( B \cup \midcup h \cup h ) \tq (B,h) \in [\omega]^{<\omega} \times [\ms{A}]^{<\omega} \big\} $$
 y nótese que $\mathcal{B}$ es un conjunto de vecindades de $\infty$ en $\ms{F}(\ms{A})$.
 
-Ahora, si $K \subseteq \Psi(\ms{A})$ es compacto, $h:=K \cap \ms{A} \subseteq \ms{A}$ y $G:=(K \cap \omega) \setminus \midcup h \subseteq \omega$ son finitos, además $V\big( G \cup \midcup h \cup h \big) \subseteq V(K)$. Lo cual demuestra que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$. Dado que $ |\mathcal{B}| \leq | [\omega]^{<\omega} \times [\ms{A}]^{<\omega} | = \aleph_0 + |\ms{A}| $, resulta que $\chi(\infty) \leq \aleph_0 + |\ms{A}|$.
+Ahora, si $K \subseteq \Psi(\ms{A})$ es compacto, $h \mycoloneq K \cap \ms{A} \subseteq \ms{A}$ y $G \mycoloneq (K \cap \omega) \setminus \midcup h \subseteq \omega$ son finitos, además $V\big( G \cup \midcup h \cup h \big) \subseteq V(K)$. Lo cual demuestra que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$. Dado que $ |\mathcal{B}| \leq | [\omega]^{<\omega} \times [\ms{A}]^{<\omega} | = \aleph_0 + |\ms{A}| $, resulta que $\chi(\infty) \leq \aleph_0 + |\ms{A}|$.
 \end{proof}
 
 En seguida a lo anterior se concluye que, para toda familia no compacta e infinita, el espacio $\ms{F}(\ms{A})$ no es de primero numerable. 
@@ -56,7 +56,7 @@ El siguiente Corolario se puede enriquecer con \ref{prop-tra-numerable}.
 
 El próximo Lema es clave por varios motivos; entre ellos, responde a una pregunta que sugiere la discusión previa al \cref{prop-CaracMADPositiv} ¿qué distingue a los subconjuntos de $\omega$ casi ajenos con cada elemento de $\ms{A}$, con los elementos de $\ms{I}^+(\ms{A})$?, encontramos la solución a esta interrogante por medio de la topología.
 
-\begin{lema}\phantomsection\phantomsection\label{lem-convClave}
+\begin{lema}\phantomsection\label{lem-convClave}
 	Sean $\ms{A}\in \Ad(\omega)$ y $B \subseteq \Psi(\ms{A})$ infinito, entonces:
 	\begin{enumerate}[i)]
 		\item $\infty \in \scl(B)$ si y sólo si $|B \cap \ms{A}| \geq \omega$ o $|B \cap \omega| \geq \omega$ y $\ms{A} \upharpoonright (B \cap \omega
@@ -70,7 +70,7 @@ El próximo Lema es clave por varios motivos; entre ellos, responde a una pregun
 
 	Recíprocamente, si $B \cap \ms{A}$ es infinito, existe $C_0 \in [B \cap \ms{A}]^\omega$; y, si $K \subseteq \Psi(\ms{A})$ es cualquier compacto, entonces $C_0 \setminus V(K) = C_0 \cap K \subseteq K \cap \ms{A}$ es finito, mostrando que $C_0 \to \infty$ y que $\infty \in \scl(B)$.
 
-	Ahora, supóngase que $B \cap \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$. Si $\infty \notin \scl(B)$, entonces $B \cap \omega \not\to \infty$ y existiría un compacto $K_0 \subseteq \Psi(\ms{A})$ tal que $S:=(B \cap \omega) \cap K_0$ es infinito. $S \subseteq K$ es un elemento en $\ms{I}(\ms{A})$; a consecuencia de esto y de \ref{cor-CasiajenoPartePositiva}, existe cierto $a \in A$ con $S \cap a$ infinito; de donde, $B \cap a$ es infinito, contradiciendo la suposición sobre $B$. Por tanto, $\infty \in \scl(B)$
+	Ahora, supóngase que $B \cap \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$. Si $\infty \notin \scl(B)$, entonces $B \cap \omega \not\to \infty$ y existiría un compacto $K_0 \subseteq \Psi(\ms{A})$ tal que $S \mycoloneq (B \cap \omega) \cap K_0$ es infinito. $S \subseteq K$ es un elemento en $\ms{I}(\ms{A})$; a consecuencia de esto y de \ref{cor-CasiajenoPartePositiva}, existe cierto $a \in A$ con $S \cap a$ infinito; de donde, $B \cap a$ es infinito, contradiciendo la suposición sobre $B$. Por tanto, $\infty \in \scl(B)$
 
 	(ii) Para la suficiencia, supóngase que $\infty \in \cla(B)$ y que $B \cap \ms{A}$ es finito. Resulta necesario que $\infty \in \cla(B \cap \omega)$. Si $K \subseteq \Psi(\ms{A})$ es compacto, $(B \cap \omega) \cap V(K) \neq \emptyset$, prohibiendo que $B \cap \omega \subseteq K$, por tanto, $B \cap \omega \notin \ms{I}(\ms{A})$.
 
@@ -78,7 +78,7 @@ El próximo Lema es clave por varios motivos; entre ellos, responde a una pregun
 \end{proof}
 
 Si $\ms{A}$ es una familia maximal, la condición (i) del resultado anterior implica que ninguna sucesión contenida en $\omega$ es convergente a $\infty$. A continuación se establecen las únicas convergencias posibles en el compacto de Franklin.
-\begin{corolario}\phantomsection\phantomsection\label{cor-convMaximal}
+\begin{corolario}\phantomsection\label{cor-convMaximal}
 	Sean $\ms{A} \in \Mad(\omega)$ infinita y $X \subseteq \ms{F}(\ms{A})$ numerable. Entonces $X$ es convergente si y sólo si $X \subseteq^* \ms{A}$, o para algún $a \in \ms{A}$, $X \subseteq^* a$, en cuyo caso: $X \to \infty$, o $X \to a$, respectivamente.
 \end{corolario}
 
@@ -96,7 +96,7 @@ El siguiente comportamiento es propio de las familias casi ajenas maximales, mue
 
 	Ahora, sea $X \subseteq \ms{F}(\ms{A})$, sin pérdida de generalidad infinito, y sea $x \in \cla(X)$. Dado que $\omega$ es discreto, de ocurrir $x \in \omega$, sería necesario que $x \in X \subseteq \scl^2(X)$. Por otro lado, si $x \in \ms{A}$, como $\{x\} \cup x$ es una vecindad abierta de $x$, por ser $\ms{F}(\ms{A})$ un espacio $\T_1$, debe existir $A \subseteq x \cap X$ numerable, concluyéndose a partir del \cref{lem-convObvia} que $A \to x$; y por ende, $x \in \scl(X) \subseteq \scl^2(X)$.
 
-	Finalmente, si $x=\infty$, entonces por \ref{lem-convClave}, $B:=X \cap \omega \in \ms{I}^+(\ms{A})$; y como $\ms{A}$ es maximal, por el \cref{cor-MADPositivCarac}, existe $\ms{B} \subseteq \ms{A}$ infinito, sin pérdida de generalidad numerable, tal que para cada $b \in \ms{B}$, el conjunto $B \cap b$ es infinito. Por ello, y \ref{lem-convObvia}, $\ms{B} \subseteq \scl(X)$, desprendiéndose de \ref{lem-convObvia}, que $x \in \scl^2(X)$. En todo caso, se ha mostrado que $\cla(X) \subseteq \scl^2(X)$ y por ende, $\Osq(\ms{F}(\ms{A})) \leq 2$.
+	Finalmente, si $x=\infty$, entonces por \ref{lem-convClave}, $B \mycoloneq X \cap \omega \in \ms{I}^+(\ms{A})$; y como $\ms{A}$ es maximal, por el \cref{cor-MADPositivCarac}, existe $\ms{B} \subseteq \ms{A}$ infinito, sin pérdida de generalidad numerable, tal que para cada $b \in \ms{B}$, el conjunto $B \cap b$ es infinito. Por ello, y \ref{lem-convObvia}, $\ms{B} \subseteq \scl(X)$, desprendiéndose de \ref{lem-convObvia}, que $x \in \scl^2(X)$. En todo caso, se ha mostrado que $\cla(X) \subseteq \scl^2(X)$ y por ende, $\Osq(\ms{F}(\ms{A})) \leq 2$.
 	%
 	%Ahora, sea $X \subseteq \ms{F}(\ms{A})$ cualquiera y supóngase que $x \in \scl^3(X)$. Como $\Psi(\ms{A})$ tiene orden secuencial $1$ (pues es $1\AN$, consecuentemente de Fréchet), es requisito que $x=\infty$. Así, existe $A \subseteq \scl^2(X)$ numerable tal que $A \to \infty$ en $\ms{F}(\ms{A})$. Sin pérdida de generalidad, $A \subseteq \ms{A}$ (dado \ref{lem-convClave}). Para cada $a \in A$ fíjese un conjunto numerable $B_a \in [\scl(X)]^\omega$ de manera que $B_a \to a$.
 	%
@@ -116,7 +116,7 @@ El siguiente comportamiento es propio de las familias casi ajenas maximales, mue
 \begin{proof}
 	Para la suficiencia basta suponer que $X=\ms{F}(\ms{A})$. Como $\Psi(\ms{A})$ es denso en $X$, resulta que $\der(X) = \{\infty\} \cup \der_{\Psi(\ms{A})}(\Psi(\ms{A})) = \{\infty\} \cup \ms{A}$. Consecuentemente $\der_{\der(X)}(\der(X)) \subseteq \{\infty\}$, pues $\ms{A}$ es un subespacio discreto de $\der(X)$. La contención recíproca ocurre; pues cada subespacio compacto de $\Psi(\ms{A})$ tiene intersección finita; particularmente no vacía, con el conjunto (infinito) $\ms{A}$. Así que $\infty$ es el único punto de acumulación de $\der(X)$. Además, $X \setminus \der(X) = \omega$, y dada la prueba del resultado anterior, $\infty \notin \scl(\omega)$.
 
-	Para la necesitadad, sea $x_0 \in X$ el punto que satisface las condiciones del enunciado. Defínase $Y:=X\setminus \{x_0\}$, se mostrará primero que $Y \cong \Psi(\ms{A})$ para alguna familia maximal $\ms{A}$. Efectivamente, nótese que $Y$ es infinito, de Hausdorff y separable (ya que $Y$ es abierto en $X$). Haciendo uso del \cref{cor-HLCPseudoCaract}, es suficiente mostrar lo subsecuente:
+	Para la necesitadad, sea $x_0 \in X$ el punto que satisface las condiciones del enunciado. Defínase $Y \mycoloneq X\setminus \{x_0\}$, se mostrará primero que $Y \cong \Psi(\ms{A})$ para alguna familia maximal $\ms{A}$. Efectivamente, nótese que $Y$ es infinito, de Hausdorff y separable (ya que $Y$ es abierto en $X$). Haciendo uso del \cref{cor-HLCPseudoCaract}, es suficiente mostrar lo subsecuente:
 
 	\begin{enumerate}
 		\item ($Y$ es regular) Dado que $X$ es compacto, de Hausdorff es normal y particularmente, regular. Esto prueba que $Y \subseteq X$ es regular.
@@ -133,7 +133,7 @@ El siguiente comportamiento es propio de las familias casi ajenas maximales, mue
 
 Continuando con los frutos del \cref{lem-convClave}, se extrae el siguiente Corolario; este relaciona las propiedades de combinatoria de las familias casi ajenas con propiedades de convergencia.
 
-\begin{lema}\phantomsection\phantomsection\label{lem-TrazaMad}
+\begin{lema}\phantomsection\label{lem-TrazaMad}
 	Sean $\ms{A} \in \Ad(\omega)$ y $X \subseteq \omega$. Entonces $\infty \in \scl(X)$ si y sólo si $\ms{A} \upharpoonright X \notin \Mad(X)$.
 \end{lema}
 
@@ -144,7 +144,7 @@ Continuando con los frutos del \cref{lem-convClave}, se extrae el siguiente Coro
 \end{proof}
 
 La contención recíproca de \ref{cor-CasiajenoPartePositiva} encapsula exáctamente la conexión que existe entre la combinatoria de $\ms{A}$ y la propiedad de Fréchet en su compacto de Franklin asociado.
-\begin{corolario}\phantomsection\phantomsection\label{cor-TraFrechet}\index[trad]{propiedad de!Fréchet en $\ms{F}(\ms{A})$}
+\begin{corolario}\phantomsection\label{cor-TraFrechet}\index[trad]{propiedad de!Fréchet en $\ms{F}(\ms{A})$}
 	Para cada $\ms{A} \in \Ad{A}$, son equivalentes:
 	\begin{enumerate}
 		\item $\ms{F}(\ms{A})$ es de Fréchet.
@@ -170,11 +170,11 @@ Por el Teorema de Simon (\ref{Teo-Simon}), cualquier familia maximal de tamaño 
 La \enquote{traducción} a la propiedad de Fréchet dada en \ref{cor-TraFrechet} esconde la capacidad de solucionar un problema relevante en topología general; determinar si el producto de dos espacios de Fréchet es, nuevamente, de Fréchet, la respuesta es negativa.
 
 \begin{proposicion}
-	Sea $(\ms{B},\ms{C})$ una grieta. Si $\ms{A}:=\ms{B} \cup \ms{C}$ es maximal en alguna parte, entonces $M:=\ms{F}(\ms{B}) \times \ms{F}(\ms{C})$ no es de Fréchet.
+	Sea $(\ms{B},\ms{C})$ una grieta. Si $\ms{A} \mycoloneq \ms{B} \cup \ms{C}$ es maximal en alguna parte, entonces $M \mycoloneq \ms{F}(\ms{B}) \times \ms{F}(\ms{C})$ no es de Fréchet.
 \end{proposicion}
 
 \begin{proof}
-	Supóngase que $X \in\ms{I}^+(\ms{A})$ es un conjunto tal que se satisface $\ms{A} \upharpoonright X \in \Mad(X)$ y sea $B:=\{ (n,n) \tq n \in X \}$.
+	Supóngase que $X \in\ms{I}^+(\ms{A})$ es un conjunto tal que se satisface $\ms{A} \upharpoonright X \in \Mad(X)$ y sea $B \mycoloneq \{ (n,n) \tq n \in X \}$.
 
 	Como $X \in \ms{I}^+(\ms{A})$ y $\ms{B},\ms{C} \subseteq \ms{A}$, resulta inmediato a \ref{prop-TrazaBasicos} que $X \in \ms{I}^+(\ms{B})$ y $X \in \ms{I}^+(\ms{C})$. De aquí que $\infty_\ms{B} \in \cla_{\ms{F}(\ms{B})}$ y $\infty_\ms{C} \in \cla_{\ms{F}(\ms{C})}$, a consecuencia del \cref{lem-convClave}. Por lo anterior, $ (\infty_\ms{B},\infty_C) \in \cla_M (B) $.
 
@@ -183,7 +183,7 @@ La \enquote{traducción} a la propiedad de Fréchet dada en \ref{cor-TraFrechet}
 
 Combinando con el Teorema de Simon (\ref{Teo-Simon}), se tiene la siguiente fuente de contrajemplos: Cada vez que $\ms{A}$ sea una familia infinita y maximal (por ello, no compacta), se pueden dar dos familias $\ms{B} \subseteq \ms{C}$ no vacías, maximales en ninguna parte, de modo que $\ms{A}=\ms{B} \cup \ms{C}$. Y se desprende de la Proposición previa que $\ms{F}(\ms{B}) \times \ms{F}(\ms{C})$ no es de Fréchet; pues claramente $\ms{A}$ es maximal en alguna parte, ya que $\omega \in \ms{I}^+(\ms{A})$ (véase el \cref{cor-IdealPropioCaract}). Además, $\ms{F}(\ms{B})$ y $\ms{F}(\ms{C})$ son ambos de Fréchet, en virtud del \cref{cor-TraFrechet}. Esta discusión es la prueba del siguiente Corolario:
 
-\begin{corolario}\phantomsection\phantomsection\label{cor-FrechNoProd}
+\begin{corolario}\phantomsection\label{cor-FrechNoProd}
 	Existen dos espacios compactos, de Hausdorff, separables y de Fréchet cuyo producto no es de Fréchet.
 \end{corolario}
 

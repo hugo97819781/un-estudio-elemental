@@ -12,7 +12,7 @@
         %voffset=40pt%
         ]{geometry}
     \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
-    \usepackage{amsmath,amsthm,stix2} 
+    \usepackage{amsmath,amsthm,stix2}
 
 %%% PAQUETES %%%
     \usepackage{array}
@@ -27,7 +27,21 @@
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
         \addbibresource{chapters/referencias.bib}
-    \newcommand{\pagp}{p.}
+    \AtBeginDocument{
+        \let\oldcref\cref
+        \let\oldref\ref
+        \let\oldpageref\pageref
+        \let\oldcite\cite
+        \DeclareRobustCommand{\ref}[1]{{\small\textsc{\oldref{#1}}}}
+        \renewcommand{\cref}[1]{\textcolor{rosa}{\small\textsc{\oldcref{#1}}}}
+        \renewcommand{\pageref}[1]{{\small\textsc{\oldpageref{#1}}}}
+        \DeclareRobustCommand{\cite}[2][]{%
+            \ifstrempty{#1}{{\small\textsc{\oldcite{#2}}}}{{\small\textsc{\oldcite[#1]{#2}}}}
+        }
+        
+    }
+    \newcommand{\pagp}{\textcolor{rosa}{\small\textsc{P.}}}
+    %\newcommand{\pagp}{p.}
 
 %%% ÍNDICES %%%
     \usepackage{imakeidx}

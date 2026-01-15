@@ -1,86 +1,66 @@
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%% FORMATO E IDIOMA %%%
-%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BÁSICOS %%%
     \documentclass[letterpaper,DIV=12,12pt]{scrbook}
     \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
-    \usepackage{scrlayer-scrpage}
-    \input{resources/koma.tex}
-    \usepackage{showframe}
-%%%%%%%%%%%%%%%%
+    \usepackage{amsmath,amsthm,stix2}   
+
 %%% PAQUETES %%%
-%%%%%%%%%%%%%%%%
     \usepackage{array}
     \usepackage[x11names]{xcolor}
     \usepackage{lipsum}
-    \usepackage[font=footnotesize, labelfont=bf]{caption}
-    \usepackage[shortlabels]{enumitem}
-        \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
-        \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% FUENTES Y MATEMÁTICAS %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{amsmath}
-    \usepackage{amsthm}
-    \usepackage{amssymb}
-    \usepackage{stix2}
-%%%%%%%%%%%%%%%%%%%
+    \usepackage{showframe}
+    
 %%% REFERENCIAS %%%
-%%%%%%%%%%%%%%%%%%%
     \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
     \usepackage[spanish, capitalize]{cleveref}
-    \crefname{section}{Sección}{Secciones}
-    \Crefname{section}{Sección}{Secciones}
+        \crefname{section}{Sección}{Secciones}
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
         \addbibresource{chapters/referencias.bib}
-%%%%%%%%%%%%%%%
+
 %%% ÍNDICES %%%
-%%%%%%%%%%%%%%%
     \usepackage{imakeidx}
     \usepackage{etoolbox}
-        \makeindex[columns=1, intoc, title=PRUEBA]
         \makeindex[name=trad, columns=1, intoc, title=Caracterizaciones]
         \makeindex[name=sym, columns=3, intoc, title=Índice Simbólico]
         \makeindex[name=alph, columns=2, intoc, title=Índice Alfabético]
         \indexsetup{firstpagestyle=beginstyle}
-%%%%%%%%%%%%%
+
 %%% CAJAS %%%
-%%%%%%%%%%%%%
     \usepackage{thmtools}
     \usepackage[framemethod=TikZ]{mdframed}
-    %\allowdisplaybreaks
-    \input{resources/cajas-main.tex}
+    \input{resources/cajas-print.tex}
     \makeatletter
         \let\c@figure\c@definicion
         \let\thefigure\thedefinicion
     \makeatother
-%%%%%%%%%%%%%%%%
-%%% COMANDOS %%%
-%%%%%%%%%%%%%%%%
-    %\renewcommand{\mathbb}[1]{{\symbb{#1}}}
-    %\renewcommand{\mathcal}[1]{{\symcal{#1}}}
-    %\renewcommand{\mathfrak}[1]{{\symfrak{#1}}}
+
+%%% ESTETICA %%%
+    \usepackage[font=footnotesize, labelfont=bf]{caption}
+    \usepackage[shortlabels]{enumitem}
+        \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+        \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+    \usepackage{scrlayer-scrpage}
+    \input{resources/koma-print.tex}
     \input{resources/comandos.tex}
-%%%%%%%%%%%%%%%%%
-%%% DOCUMENTO %%%
-%%%%%%%%%%%%%%%%%
+
+%%% CUERPO %%%
 \begin{document}
     \pagestyle{empty}
     \frontmatter
         \pagestyle{empty}
-        \input{resources/cover.tex}
-        \input{chapters/frase.tex}
+        \input{chapters/0-cover.tex}
+        \input{chapters/a0-frase.tex}
 
         \chapter*{Agradecimientos}
         \thispagestyle{empty}
-        \input{chapters/a0-agradecimientos.tex}
+        \input{chapters/a1-agradecimientos.tex}
 
         \clearpage
         \pagestyle{beginstyle}
         \tableofcontents
         \chapter*{Introducción}
         \addcontentsline{toc}{chapter}{Introducción}
-        \input{chapters/a1-introduccion.tex}
+        \input{chapters/a2-introduccion.tex}
 
     \mainmatter
         \cleardoublepage
@@ -95,7 +75,7 @@
         \cleardoublepage
 
         \appendix
-        \input{chapters/z1-apend-MA.tex}
+        \input{chapters/d1-logica.tex}
 
     \backmatter
         \cleardoublepage

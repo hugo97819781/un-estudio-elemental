@@ -60,7 +60,7 @@ El siguiente Lema será utilizado en el CHAP 4, anexaremos su demostración, pue
     Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
 \end{corolario}
 \begin{proof}
-    Sea $F \colon =\mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
+    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f \colon S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
 
     Supóngase ahora que $h,k \colon X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
     \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \, \]

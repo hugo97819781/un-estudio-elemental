@@ -1,105 +1,111 @@
-%%%%%%%%%%%%%%%%%%%%%%%%
-%%% FORMATO E IDIOMA %%%
-%%%%%%%%%%%%%%%%%%%%%%%%
-    \documentclass[letpterpaper,DIV=12,12pt]{scrbook}
+%%% BÁSICOS %%%
+    \documentclass[letterpaper,DIV=12,12pt,oneside]{scrbook}
+    \usepackage[%
+        paperwidth=450pt,
+        paperheight=570pt,
+        left=25pt,
+        right=25pt,
+        bottom=25pt,
+        top=25pt,
+        includehead,
+        noheadfoot,
+        %voffset=40pt
+        ]{geometry}
     \usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
-    \usepackage{scrlayer-scrpage}
-    \input{resources/koma.tex}
-    %\usepackage{showframe}
-%%%%%%%%%%%%%%%%
+    \usepackage{amsmath,amsthm,stix2}
+
 %%% PAQUETES %%%
-%%%%%%%%%%%%%%%%
     \usepackage{array}
     \usepackage[x11names]{xcolor}
-    \usepackage{lipsum}
-    \usepackage[font=footnotesize, labelfont=bf]{caption}
-    \usepackage[shortlabels]{enumitem}
-        \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
-        \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% FUENTES Y MATEMÁTICAS %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{amsmath}
-    \usepackage{amsthm}
-    \usepackage{amssymb}
-    \usepackage{stix2}
-%%%%%%%%%%%%%%%%%%%
+    %\usepackage{lipsum}
+    %\usepackage{showframe}
+    
 %%% REFERENCIAS %%%
-%%%%%%%%%%%%%%%%%%%
     \usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
     \usepackage[spanish, capitalize]{cleveref}
+        \crefname{section}{Sección}{Secciones}
     \usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
     \usepackage{csquotes,url}
         \addbibresource{chapters/referencias.bib}
-%%%%%%%%%%%%%%%
+    \AtBeginDocument{
+        \let\oldcref\cref
+        \let\oldref\ref
+        \let\oldpageref\pageref
+        \let\oldcite\cite
+        \DeclareRobustCommand{\ref}[1]{{\small\textsc{\oldref{#1}}}}
+        \renewcommand{\cref}[1]{\textcolor{rosa}{\small\textsc{\oldcref{#1}}}}
+        \renewcommand{\pageref}[1]{{\small\textsc{\oldpageref{#1}}}}
+        \DeclareRobustCommand{\cite}[2][]{\ifstrempty{#1}{{\small\textsc{\oldcite{#2}}}}{{\small\textsc{\oldcite[#1]{#2}}}}}        
+    }
+    \newcommand{\pagp}{\textcolor{rosa}{\small\textsc{P.}}}
+    %\newcommand{\pagp}{p.}
+
 %%% ÍNDICES %%%
-%%%%%%%%%%%%%%%
     \usepackage{imakeidx}
     \usepackage{etoolbox}
-        \makeindex[columns=1, intoc, title=PRUEBA]
         \makeindex[name=trad, columns=1, intoc, title=Caracterizaciones]
         \makeindex[name=sym, columns=3, intoc, title=Índice Simbólico]
         \makeindex[name=alph, columns=2, intoc, title=Índice Alfabético]
         \indexsetup{firstpagestyle=beginstyle}
-%%%%%%%%%%%%%
+
 %%% CAJAS %%%
-%%%%%%%%%%%%%
     \usepackage{thmtools}
     \usepackage[framemethod=TikZ]{mdframed}
-    %\allowdisplaybreaks
-    \input{resources/cajas-main.tex}
+    \input{resources/cajas-web.tex}
     \makeatletter
         \let\c@figure\c@definicion
         \let\thefigure\thedefinicion
     \makeatother
-%%%%%%%%%%%%%%%%
-%%% COMANDOS %%%
-%%%%%%%%%%%%%%%%
-    %\renewcommand{\mathbb}[1]{{\symbb{#1}}}
-    %\renewcommand{\mathcal}[1]{{\symcal{#1}}}
-    %\renewcommand{\mathfrak}[1]{{\symfrak{#1}}}
+
+%%% ESTETICA %%%
+    \usepackage[font=footnotesize, labelfont=bf]{caption}
+    \usepackage[shortlabels]{enumitem}
+        \setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+        \setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+    \usepackage{scrlayer-scrpage}
+    \input{resources/koma-web.tex}
     \input{resources/comandos.tex}
-%%%%%%%%%%%%%%%%%
-%%% DOCUMENTO %%%
-%%%%%%%%%%%%%%%%%
+
+%%% CUERPO %%%
 \begin{document}
     \pagestyle{empty}
     \frontmatter
         \pagestyle{empty}
-        \input{resources/cover.tex}
-        \input{chapters/frase.tex}
+        \input{chapters/0-cover.tex}
+        \input{chapters/a0-frase.tex}
 
         \chapter*{Agradecimientos}
         \thispagestyle{empty}
-        \input{chapters/a0-agradecimientos.tex}
+        \input{chapters/a1-agradecimientos.tex}
 
         \clearpage
         \pagestyle{beginstyle}
         \tableofcontents
         \chapter*{Introducción}
         \addcontentsline{toc}{chapter}{Introducción}
-        \input{chapters/a1-introduccion.tex}
+        \input{chapters/a2-introduccion.tex}
 
     \mainmatter
         \cleardoublepage
         \pagestyle{chapstyle}
 
-        \input{chapters/c0.tex}
+        \input{chapters/c0-new-set.tex}
+        \input{chapters/c0-new-topo.tex}
         \input{chapters/c1.tex}
         \input{chapters/c2.tex}
         \input{chapters/c3.tex}
         \input{chapters/c4.tex}
+        \cleardoublepage
 
         \appendix
-        \input{chapters/z1-apend-MA.tex}
-        \input{chapters/z1-apend-metrizables.tex}
+        \input{chapters/d1-logica.tex}
 
     \backmatter
         \cleardoublepage
         \pagenumbering{alph}
         \pagestyle{beginstyle}
 
-        \printindex[trad]
+        %\printindex[trad]
         \printindex[sym]
         \printindex[alph]
 

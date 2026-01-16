@@ -1,0 +1,95 @@
+\chapter{Sobre lógica y consistencia}
+\section{El lenguaje de la teoría de conjuntos}
+\label{apnd-ltc}
+\index[alph]{fórmula}\index[sym]{$\lengua$}\index[alph]{conjunto!de variables}\index[sym]{$\Var$}\index[alph]{expresión de $\lengua$}
+A lo largo del texto se utilizan frecuentemente los términos \enquote{consistente con} o \enquote{independiente de}. La meta de este apéndice es decir, de forma breve, qué significan tales términos dentro de la teoría de conjuntos.
+
+El \textit{lenguaje de la teoría de conjuntos} es el conjunto de símbolos:
+\[ \lengua = \{ \forall,\exists,\to,\lnot,\land,\lor,\leftrightarrow \} \cup \{ ( , ) \} \cup \{ \in \} \cup \Var \, \]
+donde $\Var$ es un conjunto infinito de variables. Una \textit{expresión} de $\lengua$ es sucesión finita en $\lengua$, escrita comunmente como la concatenación de los símbolos que la constituyen. Una expresión $\alpha$ se dice \textit{fórmula} (\textit{de la teoría de conjuntos}) si cae en alguno de los siguientes casos:
+\begin{enumerate}
+    \item Existen $x,y \in \Var$ tales que $\alpha$ es $x \in y$ o $x = y$.
+    \item Existe una fórmula $\beta$ tal que $\alpha$ es $\lnot \beta$.
+    \item Existen fórmulas $\beta$ y $\gamma$ tales que $\alpha$ es $(\beta \to \gamma)$, $(\beta \lor \gamma)$, $(\beta \land \gamma)$ o $(\beta \leftrightarrow \gamma)$.
+    \item Existe una fórmula $\beta$ y $x \in \Var$ tal que $\alpha$ es $\forall \, x \, \beta$ o $\exists \, x \, \beta$.
+\end{enumerate}
+
+Estos símbolos bastan para escribir toda la matemática que los conjuntos pueden describir. Por ejemplo la fórmula $\varphi(x,a,b)$ definida como $\forall z \, (z \in x \leftrightarrow (z=a \, \lor \, z=b))$ significa \enquote{$x$ es el par $\{a,b\}$}. Considerando que, en teoría de conjuntos, la pareja ordenada de $a$ y $b$ se define como $\{ \{a\}, \{a,b\}\}$, existe una fórmula de la teoría de conjuntos $\psi(x,a,b)$ que significa \enquote{$x$ es el par ordenado $(a,b)$}. De esta manera, con fórmulas de la teoría de conjuntos se pueden describir conceptos como el de función, espacio topológico, numerabilidad, etcétera.
+
+\index[alph]{variable libre}\index[alph]{enunciado}\index[sym]{$\lengua^0$}\index[alph]{teoría}\index[sym]{$\Sigma+\Lambda$}\index[sym]{$\Sigma+\lambda$}\index[sym]{$\zf$}\index[alph]{axioma!de extensionalidad}\index[alph]{axioma!de existencia}\index[alph]{axioma!del par}\index[alph]{axioma!de la unión}\index[alph]{axioma!del potencia}\index[alph]{axioma!(esquema) de separación}\index[alph]{axioma!(esquema) de reemplazo}\index[alph]{axioma!de buena fundación}
+Una variable $x \in \Var$ es \textit{libre} en una fórmula $\alpha$ cuando no está cuantificada, esto es, cuando aparece en $\alpha$ y nunca está precedida por los símbolos $\forall$ y $\exists$. Un \textit{enunciado} es una fórmula sin variables libres, el conjunto de todos ellos se denota como $\lengua^0$. Una \textit{teoría} de $\lengua$ es un subconjunto $\Sigma \subseteq \lengua^0$. Cuando $\Sigma$ y $\Lambda$ sean teorías, será costumbre escribir $\Sigma + \Lambda$ para referirse a $\Sigma \cup \Lambda$. Cuando $\lambda$ sea un enunciado, se escribirá $\Sigma + \lambda$ en lugar de $\Sigma + \{ \lambda \}$. $\zf$ es la teoría que consta de:
+\begin{enumerate}[ ]
+    \item \textit{Axioma de extensionalidad:}  $ \forall x \forall y (\forall z (z \in x \leftrightarrow z \in y) \to x = y) $.
+    \item \textit{Axioma de existencia:}  $ \exists x \forall y \neg (y \in x) $.
+    \item \textit{Axioma del par:}  $ \forall x \forall y \exists z \forall w (w \in z \leftrightarrow (w = x \lor w = y)) $.
+    \item \textit{Axioma de la unión:}  $  \forall x \exists y \forall z (z \in y \leftrightarrow \exists w (w \in x \land z \in w)) $.
+    \item \textit{Axioma del potencia:}  $ \forall x \exists y \forall z (z \in y \leftrightarrow \forall w (w \in z \to w \in x)) $.
+    \item \textit{Esquema de separación:} Para cada fórmula $\varphi$, sin $z$ como variable libre:
+    \[ \forall z \exists y \forall x (x \in y \leftrightarrow (x \in z \land \varphi )) \, . \]
+    \item \textit{Axioma del infinito:}  $ \exists x (\emptyset \in x \land \forall y (y \in x \to y \cup \{y\} \in x)) $.
+    \item \textit{Esquema de reemplazo:} Para cada fórmula $\varphi$, sin $w$ como variable libre:
+    \[ \forall x ( \exists z \, \varphi(x,z) \land \forall u \forall v ( (\varphi(x,u) \land \varphi(x,v)) \to u=v ) ) \to \]
+    \[ \forall a \exists b \forall z (z \in b \leftrightarrow \exists x (x \in a \land \varphi(x,z)) ) \, . \]
+    \item \textit{Axioma de buena fundación:}  $ \forall x (x \neq \emptyset \to \exists y (y \in x \land y \cap x = \emptyset)) $.
+\end{enumerate}
+
+\index[alph]{función!de elección}\index[alph]{elección!función de}\index[alph]{axioma!de elección}\index[sym]{$\Ac$}\index[sym]{$\zfc$}
+Si $X$ es un conjunto no vacío, se dice que $f \colon \ms{P}(X) \setminus \{\emptyset\} \to X$ es una \textit{función de elección} en $X$ cuando para cada $x \in X$ ocurre $f(x) \in x$. El \textit{Axioma de Elección} ($\Ac$) es el enunciado: \enquote{todo conjunto no vacío admite una función de elección}. La teoría $\zfc$ es $\zf + \Ac$. \newpage
+
+\section{Demostraciones y consistencia}
+
+\index[alph]{axioma!de Hilbert}\index[alph]{Hilbert!axioma de}
+Un \textit{axioma de Hilbert} es cualquier fórmula de la forma:
+\begin{enumerate}[ ]
+    \item \text{Ax.} 1. $\alpha \to (\beta \to \alpha)$.
+    \item \text{Ax.} 2. $(\alpha \to (\beta \to \gamma)) \to ((\alpha \to \beta) \to \gamma)$.
+    \item \text{Ax.} 3. $(\alpha \to \lnot \beta) \to ((\alpha \to \beta) \to \lnot \alpha)$.
+\end{enumerate}
+
+\index[alph]{regla!de inferencia}\index[sym]{$\Gen$}\index[sym]{$\MP$}\index[alph]{regla!generalización}\index[alph]{regla!Modus Ponens}
+Una \textit{regla de inferencia} es una operación parcial sobre el conjunto de fórmulas de $\lengua$. En este sistema nos interesarán las reglas de inferencia \textit{generalización} y \textit{Modus Ponens}, definidas como las operaciones parciales:
+\begin{align*}
+    \Gen : \varphi & \mapsto \forall x \, \varphi \\
+    \MP : (\varphi,\varphi \to \sigma) & \mapsto \sigma
+\end{align*}
+
+\index[alph]{demostración formal}\index[alph]{prueba formal}\index[alph]{teoría!que prueba a}\index[alph]{teoría! que demuestra a}\index[sym]{$\Sigma \vdash \varphi$}
+Un conjunto de fórmulas $\Sigma$ \textit{demuestra} (o \textit{prueba}) una fórmula $\varphi$, lo cual se denota $\Sigma \vdash \varphi$, si y sólo si existe una sucesión finita de fórmulas $\varphi_1,\dots,\varphi_n$ de manera que:
+\begin{enumerate}
+    \item $\varphi_n=\varphi$.
+    \item Para cada $i \leq n$ ocurre alguna de las siguientes:
+    \begin{enumerate}
+        \item $\varphi_i \in \Sigma$,
+        \item $\varphi_i$ es un axioma de Hilbert,
+        \item Existen $j<i$ con $\varphi_i=\Gen(\varphi_j)$, o
+        \item Existen $k,j<i$ con $\varphi_i=\MP(\varphi_j,\varphi_k)$.
+    \end{enumerate}
+\end{enumerate}
+En tal caso, $(\varphi_i)_{i \leq n}$ es una \textit{prueba} (o \textit{demostración}) \textit{formal} de $\varphi$ a partir de $\Sigma$.
+
+\index[alph]{Teorema}\index[alph]{teoría!consistente}\index[alph]{teoría!inconsistente}\index[alph]{consistente! con}\index[alph]{independiente! con}\index[alph]{conjunto! de axiomas}\index[alph]{axioma}
+Sea $\Sigma \subseteq \lengua$ una teoría. Un \textit{teorema} de $\Sigma$ es una fórmula $\alpha$ tal que $\Sigma \vdash \alpha$. Se dice que $\Sigma$ es \textit{consistente} cuando para ningún $\alpha \in \lengua$ ocurren $\Sigma \vdash \alpha$ y $\Sigma \vdash \lnot \alpha$ simultáneamente. Un enunciado $\sigma$ es \textit{consistente} con $\Sigma$ cuando $\Sigma \not\vdash \lnot\sigma$, y es \textit{independiente} de $\Sigma$ si tanto $\sigma$ como $\lnot \sigma$ son consistentes con $\Sigma$. Un subconjunto de enunciados $\Sigma \subseteq \lengua$ es un \textit{conjunto de axiomas} (y sus elementos son \textit{axiomas}) cuando:
+\begin{enumerate}
+    \item $\Sigma$ es consistente, y
+    \item Cada $\sigma \in \Sigma$ es independiente de $\Sigma \setminus \{\sigma\}$.
+\end{enumerate}
+
+La demostración del subsecuente teorema, así como una discusión basta sobre el tema, se puede ver en \cite[\S~ 2.4]{mendelson}.
+\begin{teorema}[de la Deducción]\phantomsection\label{teo-deduccion}\index[alph]{teorema!de la Deducción}\index[alph]{Deducción!teorema de la}
+    Para cualquier teoría $\Sigma \subseteq \lengua^0$ y cualesquiera $\varphi, \psi \in \lengua^0$ se tiene que $\Sigma + \varphi \vdash \psi$ si y sólo si $\Sigma \vdash \varphi \to \psi$.
+\end{teorema}
+
+En el mundo de la lógica existen diversas, muy diversas y sofisticadas, técnicas para demostrar la consistencia relativa de cierto enunciado respecto un conjunto de una teoría. Para el presente trabajo, únicamente nos serviremos de:
+\begin{proposicion}
+    Sean $\Sigma \subseteq \lengua^0$ una teoría consistente y $\varphi, \psi \in \lengua^0$. Supóngase que $\Sigma + \varphi \vdash \psi$ y que $\varphi$ es consistente con $\Sigma$, entonces $\psi$ es consistente con $\Sigma$.
+\end{proposicion}
+\begin{proof}
+    Por contradicción, supóngase que $\psi$ no es consistente con $\Sigma$, entonces $\Sigma \vdash \lnot \psi$. Dada la definición de prueba formal, es inmediato que se cumple $\Sigma + \varphi \vdash \lnot \psi$. Por hipótesis $\Sigma + \varphi \vdash \psi$, entonces del \cref{teo-deduccion}, existen pruebas formales $\alpha_1, \dots , \alpha_n=\varphi \to \psi$ y $\beta_1, \dots , \beta_m=\varphi \to \lnot\psi$ que sean testigo de que $\Sigma \vdash \varphi \to \psi$ y $\Sigma \vdash \varphi \to \lnot\psi$, respectivamente. Considérense:
+    \begin{align*}
+        \gamma_1 & = (\varphi \to \lnot \psi) \to ((\varphi \to \psi) \to \lnot \psi) \tag*{Ax. 3.} \\
+        \gamma_2 & = (\varphi \to \psi) \to \lnot \psi  \tag*{$\MP(\alpha_n,\gamma_1)$.} \\
+        \gamma_2 & = \psi \tag*{$\MP(\beta_m,\gamma_2)$.}
+    \end{align*}
+
+    Así que $\alpha_1, \dots \alpha_n, \beta_1, \dots , \beta_m, \gamma_1, \gamma_2, \gamma_3$ es una prueba formal de $\lnot \psi$ desde $\Sigma$. Lo anterior es imposible, pues $\psi$ es consistente con $\Sigma$.
+\end{proof}

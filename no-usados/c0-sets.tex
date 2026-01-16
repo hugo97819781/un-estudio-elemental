@@ -1,0 +1,164 @@
+\setcounter{chapter}{-1}
+\chapter{Preeliminares}
+
+\section{Conjuntos}
+
+\index[sym]{$\zfc$}\index[sym]{$\zf$}\index[sym]{$\Ac$}\index[sym]{$\HC$}\index[sym]{$\Ma$}
+El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ (véase p.\pageref{CHDef}) o el axioma de Martin $\Ma$ (véase p.\pageref{MADef}). Los sistemas previamente mencionados pueden consultarse en \cite[p.~3]{jechSet}.
+
+\index[alph]{clase}\index[sym]{$\ms{P}$}\index[sym]{$f \upharpoonright B$}
+Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Ahora, si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$. Las jerarquía de operaciones binarias entre conjuntos que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$. Una \textit{enumeración} para un conjunto $A$ es una función biyectiva $I \to A$ ($i \mapsto a_i$), en esta situación, se dice que $A$ \textit{está enumerado} como $A=\{ A_i \tq i \in I \}$.
+
+\subsection{Órdenes Parciales}
+
+\index[alph]{conjunto!parcialmente ordenado}\index[alph]{orden!parcial}\index[alph]{orden!parcial antireflexivo}\index[sym]{$\leq$ (orden)}\index[sym]{$<$ (orden)}
+Un \textit{orden parcial} sobre un conjunto $P$ es una relación $\leq \subseteq P \times P$ tal que para cualesquiera $p,q,r \in P$ se cumple: $p \leq p$ ($\leq$ reflexiva); si $p \leq q$ y $q \leq r$, entonces $p \leq r$ ($\leq$ es transitiva); y, si $p \leq q$ y $q \leq p$, entonces $p=q$ ($\leq$ antisimétrica). Se denotará por $<$ a $\leq \setminus \Id(P)$. Un \textit{conjunto parcialmente ordenado} es un par ordenado $(P,R)$, donde $R$ es un orden parcial en $P$. 
+
+\index[alph]{isomorfismo de orden}\index[alph]{función!creciente}\index[alph]{función!estrictamente}\index[alph]{función!isomorfismo de orden}\index[sym]{$(P,\leq) \cong (Q,\leq)$}
+Si $(P,\leq)$ y $(Q,\leq)$ son conjuntos parcialmente ordenados y $f:P\to Q$, $f$ se dice \textit{creciente} si para cualesquiera $p,r \in P$, se cumple que $p \leq r$ implica $f(p) \leq f(r)$; es \textit{estrictamente creciente} cuando para cualesquiera $r,p \in P$, $p<r$ implica que $f(p)<f(r)$ Si además, $f$ es biyección y su inversa también es creciente, se dirá que $f$ es un \textit{isomorfismo de órdenes}, dentoado $(P,\leq) \cong (Q,\leq)$.
+
+\index[alph]{cota!superior}\index[alph]{cota!inferior}\index[alph]{elemento!máximo}\index[alph]{elemento!mínimo}\index[alph]{elemento!supremo}\index[alph]{elemento!ínfimo}\index[alph]{elemento!maximal}\index[alph]{elemento!minimal}\index[sym]{$\uparrow(A)$}\index[sym]{$\downarrow(A)$}\index[sym]{$\max(A)$}\index[sym]{$\min(A)$}\index[sym]{$\sup(A)$}\index[sym]{$\inf(A)$}\index[alph]{conjunto!totalmente ordenado}\index[alph]{orden!total}\index[alph]{orden!buen orden}\index[alph]{enumeración}\index[alph]{conjunto!enumerado}
+Dados un conjunto parcialmente ordenado $(P,\leq)$ y cualquier $A \subseteq \emptyset$, se denotará por $\uparrow (A)$ al conjunto de \textit{cotas superiores} de $A$, es decir, $\uparrow (A) = \{ p \in P \tq \forall a \in A \, (a \leq p) \}$. Un elemento $p \in P$ es máximo de $A$ si y sólo si $p \in A \cap \uparrow (A)$, este $p$ es único y se denota $\max(A)$. De forma dual se define el conjunto de \textit{cotas inferiores} de $A$, $\downarrow (A)$, y el elemento mínimo de $A$, $\min(A)$. Un elemento $q \in P$ es \textit{supremo} de $A$ cuando $p=\min(\uparrow (A))$, en cuyo caso, se denota $p=\sup(A)$. De forma dual se define el \textit{ínfimo} de $A$, $\inf(A)$. Finalmente, diremos que $r \in P$ es en elemento \textit{maximal} de $A$ si no existe $a \in A$ tal que $r < a$; de forma análoga se define el elemento \textit{minimal} de $A$.
+
+Un subconjunto $C \subseteq P$ es una \textit{cadena} de $(P,\leq$) si $p,q \in P$, se cumple $p \leq q$ o $q \leq p$. Cuando $P$ mismo sea una cadena, se dirá que $(P,\leq)$ es un \textit{conjunto totalmente ordenado}, o que $R$ es \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $(P,\leq)$ es un \textit{buen orden}, o que $R$ es un \textit{buen orden} en $P$.
+
+\index[alph]{función!de elección}\index[alph]{elección!función de}\index[alph]{elección!axioma de}
+Si $X$ es un conjunto no vacío, se dice que $f:\ms{P}(X) \setminus \{\emptyset\} \to X$ es una \textit{función de elección} en $X$ cuando para cada $x \in X$ ocurre $f(x) \in x$. La formulación clásica del \textit{Axioma de Elección} ($\Ac$) dicta que todo conjunto no vacío admite una función de elección. Utilizaremos con frecuencia la siguiente equivalencia para este axioma:
+\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
+    Si $(P,\leq)$ es un conjunto parcialmente ordenado y no vacío, existe una cadena $C$ de $(P,\leq)$ que es $\subseteq$-maximal (del conjunto de cadenas de $P$).
+\end{teorema}
+
+\subsection{Ordinales y Cardinales}
+
+\index[alph]{número!ordinal}\index[sym]{$\alpha < \beta$ (ordinales)}\index[sym]{$\omega$}\index[alph]{número!ordinal!sucesor}\index[alph]{número!ordinal!límite}\index[alph]{número!ordinal!cero}
+Como es estándar, trabajaremos sobre el universo de Von Neumann  para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$.Es un hecho que toda clase no vacía de ordinales tiene un  mínimo \cite[Obs.~I.2.4]{jechSet}. Para cada ordinal $\alpha$, el sucesor de $\alpha$ se define como $\alpha+1=\alpha \cup \{\alpha\}$, existen tres tipos de ordinales: \textit{cero} ($0=\emptyset$), los \textit{sucesor} (aquellos de la forma $\alpha+1$, para algún ordinal $\alpha$), y los \textit{límite} (ninguno de los anteriores). Denotaremos por $\omega$ al primer ordinal límite; es un hecho que $\omega$ es el conjunto de todos los números naturales. Una \textit{sucesión} en un conjunto $A$ es una función $x:\omega \to A$, es comun denotar esto por $(x_n)_{n \in \omega} \subseteq A$, una \textit{sucesión finita} en $A$ es una función $x:n \to A$, con $n$ natural, se denota $(x_k)_{k \in n} \subseteq A$.
+
+Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$, o algún buen orden. El mecanismo detrás de esto es la siguiente restricción del teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
+\begin{teorema}[Recursión en ordinales]\index[alph]{teoremade recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
+    Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$ y cualesquiera $x_0 \in X$, $g:X \to X$ y $f:\ms{P}(X) \to X$:
+    \begin{enumerate}
+        \item Existe una única $h: \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)f(h[\beta])$.
+        \item Existe una única $j: \alpha \to X$ de modo que: $j(0)=x_0$; para cada $\beta \in \alpha$, $j(\beta+1)=g(j(\alpha))$; y, para cada ordinal límite $\gamma \in \alpha$, $j(\gamma)=f(j[\gamma])$.
+    \end{enumerate}
+    
+    
+\end{teorema}
+
+\index[alph]{número!ordinal}\index[sym]{$\aleph_\alpha$}\index[sym]{$|X|$}\index[sym]{$\omega_\alpha$}\index[sym]{$\aleph_\alpha$}\index[sym]{$\mathfrak{c}$}\index[alph]{conjunto!numerable}\index[alph]{conjunto!finito}\index[alph]{conjunto!más que numerable}\index[alph]{conjunto!no numerable}\index[alph]{conjunto!contable}\index[alph]{conjunto!a lo más numerable}\index[alph]{cardinalidad}\index[alph]{tamaño}\index[alph]{conjunto!cardinalidad de}\index[alph]{conjunto!tamaño de}
+Un \textit{número cardinal} es un ordinal no biyectable con ninguno de sus elementos. Se usará la enumeración habitual de los cardinales, $\aleph_\alpha=\omega_\alpha$. Para cada conjunto $A$: denotaremos por $|A|$ al único cardinal biyectable con $A$, al cual se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $A$; $A$ se dice \textit{finito} si $|A|<\omega$; \textit{contable} (o \textit{a lo más numerable}) si $|A| \leq \omega$; \textit{numerable} si $|A|=\omega$; y, cuando $|A|>\omega$, se dirá que $A$ es \textit{más que numerable} o \textit{no numerable}. El siguiente hecho es consecuencia que la cardinalidad de cualquier conjunto esté bien definida:
+\begin{proposicion}
+    Para cualesquiera conjuntos $X$ y $Y$:
+    \begin{enumerate}
+        \item $|X|=|Y|$ si y sólo si existe $f: X \to Y$ biyectiva.
+        \item $|X| \leq |Y|$ si y sólo si existe $f: X \to Y$ inyectiva.
+        \item ($\Ac$) $|X| \leq |Y|$ si y sólo si existe $f: Y \to X$ sobreyectiva.
+        \item Si $|X| \leq |Y|$ y $|Y| \leq |X|$, entonces $|X| = |Y|$.
+    \end{enumerate}
+\end{proposicion}
+
+De manera puntual, se hará referencia a la aritmética ordinal y cardinal, utilizando la notación convencional para la suma, el producto y la exponenciación \cite[\S.~ I.3, I.5]{jechSet}. Conviene recordar el comportamiento clásico de la aritmética cardinal, este se usará implícitamente en todo lo que sigue:
+\begin{proposicion}
+    Si $\kappa,\lambda$ y $\mu$ son cardinales, entonces:
+    \begin{enumerate}
+        \item $\kappa + \lambda = \lambda + \kappa = \kappa  \lambda = \lambda  \kappa$.
+        \item $(\lambda \kappa)^\mu = \lambda^\mu \kappa^\mu$ y $\kappa^{\lambda + \mu} = \kappa^\lambda \kappa ^\mu$.
+        \item Si $\kappa \leq \lambda$, entonces:
+        \begin{enumerate}
+            \item $\kappa + \mu = \lambda + \mu$, $\kappa \mu = \lambda \mu$.
+            \item $\mu^ \kappa \leq \mu ^ \lambda$.
+            \item Si $\mu \neq 0$, $\kappa^ \mu \leq \lambda ^ \mu$.
+        \end{enumerate}
+        \item Si $\kappa\geq \omega$, entonces $\kappa + \lambda = \max\{\kappa, \lambda\}$.
+        \item Para cada conjunto $X$, $|\ms{P}(X)|=2^{|X|}>|X|$.
+    \end{enumerate}
+\end{proposicion}
+
+Si $\{\kappa_\alpha \tq \alpha \in I\}$ es una familia no vacía de cardinales y cada $\kappa_\alpha$ es infinito; o bien, $I$ es infinito, entonces:
+    \[ \sum_{\alpha \in  I} \kappa_\alpha = |I| \sup_{\alpha \in I} \kappa_\alpha \, . \]
+
+\index[sym]{$\mathfrak{c}$}\phantomsection\label{CHDef}
+La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir $\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}$. La formulación de $\HC$ que utilizaremos es: $\aleph_1=\mathfrak{c}$.
+
+\index[sym]{$[X]^\kappa$}\index[sym]{$[X]^{<\kappa}$}\index[sym]{$[X]^{\leq\kappa}$}\index[sym]{$[X]^{>\kappa}$}\index[sym]{$[X]^{\geq\kappa}$}\index[sym]{$X^\kappa$}\index[sym]{$X^{\kappa}$}
+Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\kappa$ y $[X]^{<\kappa}$ a las colecciones de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$ y menor que $\kappa$, respectivamente. De forma análoga se definen $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto $\{ f \tq \exists \alpha < \kappa \, (f:\alpha \to X) \}$.
+\begin{proposicion}
+    Sean $X$ un conjunto infinito y $\kappa \leq |X|$, entonces:
+    \begin{enumerate}
+        \item $|[X]^\kappa| = |X|^\kappa$, en particular; si $X$ es numerable, $|[X]^{\omega}| = \mathfrak{c}$.
+        \item $|[X]^{<\omega}| = |X|$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Para cada $A \in [X]^\kappa \subseteq \ms{P}(X)$ fíjese ($\Ac$) una biyección $g_A : \kappa \to A$. Entonces la función $A \mapsto g_A$ es inyección de $[X]^\kappa$ en $X^\kappa$. Para la desigualdad recíproca, como $\kappa \leq |X|$, existe una biyección $g:X \times \kappa \to X$. Cada $f \in X^\kappa$ es un subconjunto de tamaño $\kappa$ de $X \times \kappa$; por tanto, la asignación $f \mapsto g[f]$ es inyección de $X^\kappa$ en $[X]^\kappa$.
+
+    Ahora, si $|X|=\aleph_0$, entonces $|[X]^\omega| = \aleph_0^{\aleph_0}$. Como $2 \leq \aleph_0$, entonces $\aleph_0 ^{\aleph_0}$; y como $\aleph_0 < 2^\aleph_0$, entonces $\aleph_0^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \aleph_0} = 2^\aleph_0$.
+
+    (iii) Obsérvese que $|X|\leq [X]^{<\omega}$, pues $x \mapsto \{x\}$ es inyección de $X$ en $[X]^{<\omega}$. Para la desigualdad recíproca, note que:
+    \[ |[X]^{<\omega}| = \Bigg| \bigcup_{n \in \omega} [X]^n \Bigg| \leq \sum_{n \in \omega} |[X]^n| = \sum_{n \in \omega} |X| = |X| \cdot \aleph_0  = |X| \, . \]
+    probando la igualdad deseada.
+\end{proof}
+
+\index[alph]{cofinalidad}\index[alph]{número!ordinal!regular}\index[alph]{número!cardinal!regular}\index[alph]{función!cofinal}\index[sym]{$\cf(\alpha)$}\index[alph]{regular!ordinal}\index[alph]{regular!cardinal}
+Una función entre ordinales $f:\alpha \to \beta$ es \textit{cofinal} (en $\alpha$) si para cada $\delta \in \beta$ existe un elemetno $\varepsilon \in \gamma$ de manera que $\delta \leq f(\varepsilon)$. Se define:
+\[ \cf(\alpha) = \min \{  \beta \tq \exists f:\beta \to \alpha \, (f \text{ es cofinal en } \alpha ) \} \, . \]
+Es un hecho que para cualquier ordinal $\alpha$, ocurre que: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un cardinal; y, que siempre existe una función cofinal y estrictamente creciente $f:\cf(\alpha) \to \alpha$. Un ordinal (cardinal) $\kappa$ es regular cuando $\cf(\kappa)=\kappa$, $\omega_1$ es regular. Todo lo anteriormente dicho se puede consultar en \cite[\S.~I.3.Cofinality]{jechSet}.
+
+\index[alph]{conjunto!cerrado (en ordinales)}\index[alph]{conjunto!club}\index[alph]{conjunto!estacionario}
+Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no es cofinal en $\gamma$, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente herramienta últil \cite[I.8.7]{jechSet}:
+
+\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{lema!de Fodor}\index[alph]{Fodor!Lema de}\index[alph]{función!estacionaria}
+    Sean $\kappa$ un cardinal regular, $S \subseteq \kappa$ estacionario y supóngase que $f:S \to \kappa$ es \textit{regresiva}, es decir, para cada $\alpha \in S \setminus \{0\}$ se da $f(\alpha)<\alpha$. Entonces existe un conjunto estacionario $T \subseteq S$ tal que $f \upharpoonright T$ es constante; equivalentemente, existe $\delta \in \kappa$ tal que $f^{-1}[\{\delta\}] \subseteq S$ es estacionario.
+\end{teorema}
+
+\subsection{Casi contención}
+
+\index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
+Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si la diferencia $A \setminus B$ es finita, esta situación se denotará por $A \subseteq^* B$ y convendremos que $A=^*B$ ($A$ y $B$ son \textit{casi iguales}) si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$. Nótese que $A \subseteq^* B$ si y sólo si existe un conjunto finito $F$ de forma que $A \subseteq B$, en consecuencia, un conjunto $N$ es finito si y sólo si $N =^* \emptyset$, particularmente, $A \subseteq^* B$ si y sólo si $A \setminus B =^* \emptyset$. Se dice que $A$ es \textit{casi ajeno} con $B$ si y sólo si $X \cap Y =^* \emptyset$. Claramente $A \subseteq B$ implica que $A \subseteq^* B$.
+\begin{proposicion}
+    Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
+    \begin{enumerate}
+        \item $A \subseteq^* A$ y $A =^* A$.
+        \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
+        \item $=^*$ se comporta como relación de equivalencia.
+        \item Si $A,B \subseteq C$ entonces $A \setminus B$ si y sólo si $C \setminus B \subseteq C \setminus A$.
+        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    Los puntos (i) y (ii) son claros, (iii) se sigue de estos.
+
+    Para (iv) basta probar necesidad, nótese que si $A,B \subseteq C$, entonces ocurren $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus B$ y $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus (C \setminus A) = A$. De esta manera, si $A \setminus B$ es finito, entonces $(C \setminus B) \setminus (C \setminus A) \subseteq A \setminus B$ igual.
+    
+    (v) Basta notar que $(A \cap C) \setminus (A \cap B) \subseteq A \setminus B$ y también $(A \cup C) \setminus (A \cup B) \subseteq A \setminus B$.
+\end{proof}
+\begin{proposicion}
+    Sean $f:X \to Y$, $A,B \subseteq X$ y $C \subseteq Y$. Entonces:
+    \begin{enumerate}
+        \item Si $A \subseteq^* B$, entonces $f[A] \subseteq^* f[B]$.
+        \item Si $A \subseteq^* f^{-1}[C]$ entonces $f[A] \subseteq^* C$.
+    \end{enumerate}
+    Además, si $f$ es inyectiva, ocurren los recíprocos.
+\end{proposicion}
+\begin{proof}
+    Para (i), si $A \setminus B$ es finito, también lo es $f[A \setminus B]$. El resultado se obtiene de que $f[A] \setminus f[B] \subseteq f[A \setminus B]$. El punto (ii) es inmediato a (i) y que $f[f^{-1}[C]] \subseteq C$.
+
+    Finalmente, supóngase que $f$ es inyectiva. Obsérvese que $f[A] \setminus f[B] = f[A \setminus B]$ y además $|A \setminus B| = |f[A \setminus B]|$, lo cual implica el recíproco de (i); así mismo, el recíroco de (ii), pues: $A \subseteq f^{-1}[f[A]]$.
+\end{proof}
+
+\subsection{Árboles}
+
+Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. Cuando esto ocurre, $(\{ p \in T \tq p<x \},<)$ es isomorfo a un único ordinal (ordenado con la pertenencia), el cual denotaremos $o(x)$. La altura de un arbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadinas de $\mathbb{T}$.
+
+\begin{proposicion}\phantomsection\label{2fin-es-arbol}
+	El conjunto ordenado $\mathbb{T}=(2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$. Más aún, para cada $f \in 2^\omega$, el conjunto $\{ f \upharpoonright n \tq n \in \omega \}$ es rama numerable de $T$.
+\end{proposicion}
+
+\begin{proof}
+	Si $f=f \upharpoonright n \in 2^{<\omega}$, entonces $(n,\in) \cong (f, \subsetneq_f)$ por medio de $H:n \to \subsetneq_f=\{ f \upharpoonright m \tq m < \dom(f) \}$, definida como $H(m)=f \upharpoonright m$ para cada $m \in n$. En efecto, para cualesquiera $m,k \in n$ se tiene $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$ y además claramente $H$ es biyectiva, así que $H$ es isomorfismo de orden.
+
+	Por lo tanto $\mathbb{T}$ es un árbol, y más aún, el orden de cada $f \in 2^{<\omega}$ es su dominio; como $2^{<\omega}$ contiene únicamente a todas las funciones de en $2$, se sigue que la altura de $\mathbb{T}$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
+
+	Además $2^{<\omega}$ es numerable, ya que:
+	\[ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega \,, \]
+    finalizando la demostración
+\end{proof}

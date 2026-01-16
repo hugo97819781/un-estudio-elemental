@@ -1,0 +1,505 @@
+\setcounter{chapter}{-1}
+\chapter{Preeliminares}
+
+\section{Conjuntos}
+
+\index[sym]{$\zfc$}\index[sym]{$\zf$}\index[sym]{$\Ac$}\index[sym]{$\HC$}\index[sym]{$\Ma$}
+El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ (véase p.\pageref{CHDef}) o el axioma de Martin $\Ma$ (véase p.\pageref{MADef}). Los sistemas previamente mencionados pueden consultarse en \cite[p.~3]{jechSet}.
+
+\index[alph]{clase}\index[sym]{$\ms{P}$}\index[sym]{$f \upharpoonright B$}
+Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto potencia. Ahora, si $f:A \to X$ es una función y $B \subseteq A$, se escribirá la restricción de $f$ a $B$ como $f \upharpoonright B$. Las jerarquía de operaciones binarias entre conjuntos que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$. Una \textit{enumeración} para un conjunto $A$ es una función biyectiva $I \to A$ ($i \mapsto a_i$), en esta situación, se dice que $A$ \textit{está enumerado} como $A=\{ A_i \tq i \in I \}$.
+
+\subsection{Órdenes Parciales}
+
+\index[alph]{conjunto!parcialmente ordenado}\index[alph]{orden!parcial}\index[alph]{orden!parcial antireflexivo}\index[sym]{$\leq$ (orden)}\index[sym]{$<$ (orden)}
+Un \textit{orden parcial} sobre un conjunto $P$ es una relación $\leq \subseteq P \times P$ tal que para cualesquiera $p,q,r \in P$ se cumple: $p \leq p$ ($\leq$ reflexiva); si $p \leq q$ y $q \leq r$, entonces $p \leq r$ ($\leq$ es transitiva); y, si $p \leq q$ y $q \leq p$, entonces $p=q$ ($\leq$ antisimétrica). Se denotará por $<$ a $\leq \setminus \Id(P)$. Un \textit{conjunto parcialmente ordenado} es un par ordenado $(P,R)$, donde $R$ es un orden parcial en $P$. 
+
+\index[alph]{isomorfismo de orden}\index[alph]{función!creciente}\index[alph]{función!estrictamente}\index[alph]{función!isomorfismo de orden}\index[sym]{$(P,\leq) \cong (Q,\leq)$}
+Si $(P,\leq)$ y $(Q,\leq)$ son conjuntos parcialmente ordenados y $f:P\to Q$, $f$ se dice \textit{creciente} si para cualesquiera $p,r \in P$, se cumple que $p \leq r$ implica $f(p) \leq f(r)$; es \textit{estrictamente creciente} cuando para cualesquiera $r,p \in P$, $p<r$ implica que $f(p)<f(r)$ Si además, $f$ es biyección y su inversa también es creciente, se dirá que $f$ es un \textit{isomorfismo de órdenes}, dentoado $(P,\leq) \cong (Q,\leq)$.
+
+\index[alph]{cota!superior}\index[alph]{cota!inferior}\index[alph]{elemento!máximo}\index[alph]{elemento!mínimo}\index[alph]{elemento!supremo}\index[alph]{elemento!ínfimo}\index[alph]{elemento!maximal}\index[alph]{elemento!minimal}\index[sym]{$\uparrow(A)$}\index[sym]{$\downarrow(A)$}\index[sym]{$\max(A)$}\index[sym]{$\min(A)$}\index[sym]{$\sup(A)$}\index[sym]{$\inf(A)$}\index[alph]{conjunto!totalmente ordenado}\index[alph]{orden!total}\index[alph]{orden!buen orden}\index[alph]{enumeración}\index[alph]{conjunto!enumerado}
+Dados un conjunto parcialmente ordenado $(P,\leq)$ y cualquier $A \subseteq \emptyset$, se denotará por $\uparrow (A)$ al conjunto de \textit{cotas superiores} de $A$, es decir, $\uparrow (A) = \{ p \in P \tq \forall a \in A \, (a \leq p) \}$. Un elemento $p \in P$ es máximo de $A$ si y sólo si $p \in A \cap \uparrow (A)$, este $p$ es único y se denota $\max(A)$. De forma dual se define el conjunto de \textit{cotas inferiores} de $A$, $\downarrow (A)$, y el elemento mínimo de $A$, $\min(A)$. Un elemento $q \in P$ es \textit{supremo} de $A$ cuando $p=\min(\uparrow (A))$, en cuyo caso, se denota $p=\sup(A)$. De forma dual se define el \textit{ínfimo} de $A$, $\inf(A)$. Finalmente, diremos que $r \in P$ es en elemento \textit{maximal} de $A$ si no existe $a \in A$ tal que $r < a$; de forma análoga se define el elemento \textit{minimal} de $A$.
+
+Un subconjunto $C \subseteq P$ es una \textit{cadena} de $(P,\leq$) si $p,q \in P$, se cumple $p \leq q$ o $q \leq p$. Cuando $P$ mismo sea una cadena, se dirá que $(P,\leq)$ es un \textit{conjunto totalmente ordenado}, o que $R$ es \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $(P,\leq)$ es un \textit{buen orden}, o que $R$ es un \textit{buen orden} en $P$.
+
+\index[alph]{función!de elección}\index[alph]{elección!función de}\index[alph]{elección!axioma de}
+Si $X$ es un conjunto no vacío, se dice que $f:\ms{P}(X) \setminus \{\emptyset\} \to X$ es una \textit{función de elección} en $X$ cuando para cada $x \in X$ ocurre $f(x) \in x$. La formulación clásica del \textit{Axioma de Elección} ($\Ac$) dicta que todo conjunto no vacío admite una función de elección. Utilizaremos con frecuencia la siguiente equivalencia para este axioma:
+\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
+    Si $(P,\leq)$ es un conjunto parcialmente ordenado y no vacío, existe una cadena $C$ de $(P,\leq)$ que es $\subseteq$-maximal (del conjunto de cadenas de $P$).
+\end{teorema}
+
+\subsection{Ordinales y Cardinales}
+
+\index[alph]{número!ordinal}\index[sym]{$\alpha < \beta$ (ordinales)}\index[sym]{$\omega$}\index[alph]{número!ordinal!sucesor}\index[alph]{número!ordinal!límite}\index[alph]{número!ordinal!cero}
+Como es estándar, trabajaremos sobre el universo de Von Neumann  para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$.Es un hecho que toda clase no vacía de ordinales tiene un  mínimo \cite[Obs.~I.2.4]{jechSet}. Para cada ordinal $\alpha$, el sucesor de $\alpha$ se define como $\alpha+1=\alpha \cup \{\alpha\}$, existen tres tipos de ordinales: \textit{cero} ($0=\emptyset$), los \textit{sucesor} (aquellos de la forma $\alpha+1$, para algún ordinal $\alpha$), y los \textit{límite} (ninguno de los anteriores). Denotaremos por $\omega$ al primer ordinal límite; es un hecho que $\omega$ es el conjunto de todos los números naturales. Una \textit{sucesión} en un conjunto $A$ es una función $x:\omega \to A$, es comun denotar esto por $(x_n)_{n \in \omega} \subseteq A$, una \textit{sucesión finita} en $A$ es una función $x:n \to A$, con $n$ natural, se denota $(x_k)_{k \in n} \subseteq A$.
+
+Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$, o algún buen orden. El mecanismo detrás de esto es la siguiente restricción del teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
+\begin{teorema}[Recursión en ordinales]\index[alph]{teoremade recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
+    Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$ y cualesquiera $x_0 \in X$, $g:X \to X$ y $f:\ms{P}(X) \to X$:
+    \begin{enumerate}
+        \item Existe una única $h: \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)f(h[\beta])$.
+        \item Existe una única $j: \alpha \to X$ de modo que: $j(0)=x_0$; para cada $\beta \in \alpha$, $j(\beta+1)=g(j(\alpha))$; y, para cada ordinal límite $\gamma \in \alpha$, $j(\gamma)=f(j[\gamma])$.
+    \end{enumerate}
+    
+    
+\end{teorema}
+
+\index[alph]{número!ordinal}\index[sym]{$\aleph_\alpha$}\index[sym]{$|X|$}\index[sym]{$\omega_\alpha$}\index[sym]{$\aleph_\alpha$}\index[sym]{$\mathfrak{c}$}\index[alph]{conjunto!numerable}\index[alph]{conjunto!finito}\index[alph]{conjunto!más que numerable}\index[alph]{conjunto!no numerable}\index[alph]{conjunto!contable}\index[alph]{conjunto!a lo más numerable}\index[alph]{cardinalidad}\index[alph]{tamaño}\index[alph]{conjunto!cardinalidad de}\index[alph]{conjunto!tamaño de}
+Un \textit{número cardinal} es un ordinal no biyectable con ninguno de sus elementos. Se usará la enumeración habitual de los cardinales, $\aleph_\alpha=\omega_\alpha$. Para cada conjunto $A$: denotaremos por $|A|$ al único cardinal biyectable con $A$, al cual se llamará la \textit{cardinalidad} (o el \textit{tamaño}) de $A$; $A$ se dice \textit{finito} si $|A|<\omega$; \textit{contable} (o \textit{a lo más numerable}) si $|A| \leq \omega$; \textit{numerable} si $|A|=\omega$; y, cuando $|A|>\omega$, se dirá que $A$ es \textit{más que numerable} o \textit{no numerable}. El siguiente hecho es consecuencia que la cardinalidad de cualquier conjunto esté bien definida:
+\begin{proposicion}
+    Para cualesquiera conjuntos $X$ y $Y$:
+    \begin{enumerate}
+        \item $|X|=|Y|$ si y sólo si existe $f: X \to Y$ biyectiva.
+        \item $|X| \leq |Y|$ si y sólo si existe $f: X \to Y$ inyectiva.
+        \item ($\Ac$) $|X| \leq |Y|$ si y sólo si existe $f: Y \to X$ sobreyectiva.
+        \item Si $|X| \leq |Y|$ y $|Y| \leq |X|$, entonces $|X| = |Y|$.
+    \end{enumerate}
+\end{proposicion}
+
+De manera puntual, se hará referencia a la aritmética ordinal y cardinal, utilizando la notación convencional para la suma, el producto y la exponenciación \cite[\S.~ I.3, I.5]{jechSet}. Conviene recordar el comportamiento clásico de la aritmética cardinal, este se usará implícitamente en todo lo que sigue:
+\begin{proposicion}
+    Si $\kappa,\lambda$ y $\mu$ son cardinales, entonces:
+    \begin{enumerate}
+        \item $\kappa + \lambda = \lambda + \kappa = \kappa  \lambda = \lambda  \kappa$.
+        \item $(\lambda \kappa)^\mu = \lambda^\mu \kappa^\mu$ y $\kappa^{\lambda + \mu} = \kappa^\lambda \kappa ^\mu$.
+        \item Si $\kappa \leq \lambda$, entonces:
+        \begin{enumerate}
+            \item $\kappa + \mu = \lambda + \mu$, $\kappa \mu = \lambda \mu$.
+            \item $\mu^ \kappa \leq \mu ^ \lambda$.
+            \item Si $\mu \neq 0$, $\kappa^ \mu \leq \lambda ^ \mu$.
+        \end{enumerate}
+        \item Si $\kappa\geq \omega$, entonces $\kappa + \lambda = \max\{\kappa, \lambda\}$.
+        \item Para cada conjunto $X$, $|\ms{P}(X)|=2^{|X|}>|X|$.
+    \end{enumerate}
+\end{proposicion}
+
+Si $\{\kappa_\alpha \tq \alpha \in I\}$ es una familia no vacía de cardinales y cada $\kappa_\alpha$ es infinito; o bien, $I$ es infinito, entonces:
+    \[ \sum_{\alpha \in  I} \kappa_\alpha = |I| \sup_{\alpha \in I} \kappa_\alpha \, . \]
+
+\index[sym]{$\mathfrak{c}$}\phantomsection\label{CHDef}
+La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir $\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}$. La formulación de $\HC$ que utilizaremos es: $\aleph_1=\mathfrak{c}$.
+
+\index[sym]{$[X]^\kappa$}\index[sym]{$[X]^{<\kappa}$}\index[sym]{$[X]^{\leq\kappa}$}\index[sym]{$[X]^{>\kappa}$}\index[sym]{$[X]^{\geq\kappa}$}\index[sym]{$X^\kappa$}\index[sym]{$X^{\kappa}$}
+Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\kappa$ y $[X]^{<\kappa}$ a las colecciones de todos los subconjuntos de $X$ de cardinalidad exactamente $\kappa$ y menor que $\kappa$, respectivamente. De forma análoga se definen $[X]^{\leq \kappa}$, $[X]^{>\kappa}$ y $[X]^{\geq \kappa}$. Además, $X^\kappa$ denota el conjunto de todas las funciones de $\kappa$ en $X$, mientras que $X^{<\kappa}$ es el conjunto $\{ f \tq \exists \alpha < \kappa \, (f:\alpha \to X) \}$.
+\begin{proposicion}
+    Sean $X$ un conjunto infinito y $\kappa \leq |X|$, entonces:
+    \begin{enumerate}
+        \item $|[X]^\kappa| = |X|^\kappa$, en particular; si $X$ es numerable, $|[X]^{\omega}| = \mathfrak{c}$.
+        \item $|[X]^{<\omega}| = |X|$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Para cada $A \in [X]^\kappa \subseteq \ms{P}(X)$ fíjese ($\Ac$) una biyección $g_A : \kappa \to A$. Entonces la función $A \mapsto g_A$ es inyección de $[X]^\kappa$ en $X^\kappa$. Para la desigualdad recíproca, como $\kappa \leq |X|$, existe una biyección $g:X \times \kappa \to X$. Cada $f \in X^\kappa$ es un subconjunto de tamaño $\kappa$ de $X \times \kappa$; por tanto, la asignación $f \mapsto g[f]$ es inyección de $X^\kappa$ en $[X]^\kappa$.
+
+    Ahora, si $|X|=\aleph_0$, entonces $|[X]^\omega| = \aleph_0^{\aleph_0}$. Como $2 \leq \aleph_0$, entonces $\aleph_0 ^{\aleph_0}$; y como $\aleph_0 < 2^\aleph_0$, entonces $\aleph_0^{\aleph_0} \leq (2^{\aleph_0})^{\aleph_0} = 2^{\aleph_0 \aleph_0} = 2^\aleph_0$.
+
+    (iii) Obsérvese que $|X|\leq [X]^{<\omega}$, pues $x \mapsto \{x\}$ es inyección de $X$ en $[X]^{<\omega}$. Para la desigualdad recíproca, note que:
+    \[ |[X]^{<\omega}| = \Bigg| \bigcup_{n \in \omega} [X]^n \Bigg| \leq \sum_{n \in \omega} |[X]^n| = \sum_{n \in \omega} |X| = |X| \cdot \aleph_0  = |X| \, . \]
+    probando la igualdad deseada.
+\end{proof}
+
+\index[alph]{cofinalidad}\index[alph]{número!ordinal!regular}\index[alph]{número!cardinal!regular}\index[alph]{función!cofinal}\index[sym]{$\cf(\alpha)$}\index[alph]{regular!ordinal}\index[alph]{regular!cardinal}
+Una función entre ordinales $f:\alpha \to \beta$ es \textit{cofinal} (en $\alpha$) si para cada $\delta \in \beta$ existe un elemetno $\varepsilon \in \gamma$ de manera que $\delta \leq f(\varepsilon)$. Se define:
+\[ \cf(\alpha) = \min \{  \beta \tq \exists f:\beta \to \alpha \, (f \text{ es cofinal en } \alpha ) \} \, . \]
+Es un hecho que para cualquier ordinal $\alpha$, ocurre que: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un cardinal; y, que siempre existe una función cofinal y estrictamente creciente $f:\cf(\alpha) \to \alpha$. Un ordinal (cardinal) $\kappa$ es regular cuando $\cf(\kappa)=\kappa$, $\omega_1$ es regular. Todo lo anteriormente dicho se puede consultar en \cite[\S.~I.3.Cofinality]{jechSet}.
+
+\index[alph]{conjunto!cerrado (en ordinales)}\index[alph]{conjunto!club}\index[alph]{conjunto!estacionario}
+Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no es cofinal en $\gamma$, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente herramienta últil \cite[I.8.7]{jechSet}:
+
+\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{lema!de Fodor}\index[alph]{Fodor!Lema de}\index[alph]{función!estacionaria}
+    Sean $\kappa$ un cardinal regular, $S \subseteq \kappa$ estacionario y supóngase que $f:S \to \kappa$ es \textit{regresiva}, es decir, para cada $\alpha \in S \setminus \{0\}$ se da $f(\alpha)<\alpha$. Entonces existe un conjunto estacionario $T \subseteq S$ tal que $f \upharpoonright T$ es constante; equivalentemente, existe $\delta \in \kappa$ tal que $f^{-1}[\{\delta\}] \subseteq S$ es estacionario.
+\end{teorema}
+
+\subsection{Casi contención}
+
+\index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
+Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si la diferencia $A \setminus B$ es finita, esta situación se denotará por $A \subseteq^* B$ y convendremos que $A=^*B$ ($A$ y $B$ son \textit{casi iguales}) si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$. Nótese que $A \subseteq^* B$ si y sólo si existe un conjunto finito $F$ de forma que $A \subseteq B$, en consecuencia, un conjunto $N$ es finito si y sólo si $N =^* \emptyset$, particularmente, $A \subseteq^* B$ si y sólo si $A \setminus B =^* \emptyset$. Se dice que $A$ es \textit{casi ajeno} con $B$ si y sólo si $X \cap Y =^* \emptyset$. Claramente $A \subseteq B$ implica que $A \subseteq^* B$.
+\begin{proposicion}
+    Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
+    \begin{enumerate}
+        \item $A \subseteq^* A$ y $A =^* A$.
+        \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
+        \item $=^*$ se comporta como relación de equivalencia.
+        \item Si $A,B \subseteq C$ entonces $A \setminus B$ si y sólo si $C \setminus B \subseteq C \setminus A$.
+        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    Los puntos (i) y (ii) son claros, (iii) se sigue de estos.
+
+    Para (iv) basta probar necesidad, nótese que si $A,B \subseteq C$, entonces ocurren $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus B$ y $(C \setminus B) \setminus (C \setminus A) \subseteq C \setminus (C \setminus A) = A$. De esta manera, si $A \setminus B$ es finito, entonces $(C \setminus B) \setminus (C \setminus A) \subseteq A \setminus B$ igual.
+    
+    (v) Basta notar que $(A \cap C) \setminus (A \cap B) \subseteq A \setminus B$ y también $(A \cup C) \setminus (A \cup B) \subseteq A \setminus B$.
+\end{proof}
+\begin{proposicion}
+    Sean $f:X \to Y$, $A,B \subseteq X$ y $C \subseteq Y$. Entonces:
+    \begin{enumerate}
+        \item Si $A \subseteq^* B$, entonces $f[A] \subseteq^* f[B]$.
+        \item Si $A \subseteq^* f^{-1}[C]$ entonces $f[A] \subseteq^* C$.
+    \end{enumerate}
+    Además, si $f$ es inyectiva, ocurren los recíprocos.
+\end{proposicion}
+\begin{proof}
+    Para (i), si $A \setminus B$ es finito, también lo es $f[A \setminus B]$. El resultado se obtiene de que $f[A] \setminus f[B] \subseteq f[A \setminus B]$. El punto (ii) es inmediato a (i) y que $f[f^{-1}[C]] \subseteq C$.
+
+    Finalmente, supóngase que $f$ es inyectiva. Obsérvese que $f[A] \setminus f[B] = f[A \setminus B]$ y además $|A \setminus B| = |f[A \setminus B]|$, lo cual implica el recíproco de (i); así mismo, el recíroco de (ii), pues: $A \subseteq f^{-1}[f[A]]$.
+\end{proof}
+
+\subsection{Árboles}
+
+Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. Cuando esto ocurre, $(\{ p \in T \tq p<x \},<)$ es isomorfo a un único ordinal (ordenado con la pertenencia), el cual denotaremos $o(x)$. La altura de un arbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadinas de $\mathbb{T}$.
+
+\begin{proposicion}\phantomsection\label{2fin-es-arbol}
+	El conjunto ordenado $\mathbb{T}=(2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$. Más aún, para cada $f \in 2^\omega$, el conjunto $\{ f \upharpoonright n \tq n \in \omega \}$ es rama numerable de $T$.
+\end{proposicion}
+
+\begin{proof}
+	Si $f=f \upharpoonright n \in 2^{<\omega}$, entonces $(n,\in) \cong (f, \subsetneq_f)$ por medio de $H:n \to \subsetneq_f=\{ f \upharpoonright m \tq m < \dom(f) \}$, definida como $H(m)=f \upharpoonright m$ para cada $m \in n$. En efecto, para cualesquiera $m,k \in n$ se tiene $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$ y además claramente $H$ es biyectiva, así que $H$ es isomorfismo de orden.
+
+	Por lo tanto $\mathbb{T}$ es un árbol, y más aún, el orden de cada $f \in 2^{<\omega}$ es su dominio; como $2^{<\omega}$ contiene únicamente a todas las funciones de en $2$, se sigue que la altura de $\mathbb{T}$ es $\omega = \sup\{ n+1 \tq n \in \omega \}$.
+
+	Además $2^{<\omega}$ es numerable, ya que:
+	\[ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega \,, \]
+    finalizando la demostración
+\end{proof}
+
+\section{Topología}
+
+\index[alph]{espacio!topológico}\index[alph]{espacio}\index[alph]{conjunto!abierto}\index[alph]{conjunto!cerrado}\index[alph]{abierto}\index[alph]{cerrado}\index[alph]{subespacio}
+Un \textit{espacio topológico} (o simplemente \textit{espacio}) es una pareja ordenada $(X,\tau)$, donde $X$ es un conjunto y $\tau \subseteq \ms{P}(X)$ es una colección cerrada bajo uniones arbitrarias, intersecciones finitas y tal que $\emptyset, X \in \tau$, en tal caso $\tau$ es una \textit{topología} para $X$. En la gran mayoría de ocasiones, se hará referencia al espacio $(X,\tau)$ únicamente con el nombre de su conjunto subyacente, $X$; así por ejemplo $\mathbb{R}$ bastará para denotar a la línea real con su topología estándar, $\omega$ (tratado como espacio topológico) será el discreto numerable, $2^\omega$ el conjunto de Cantor, etcétera. En todo lo que resta del capítulo, $X$ y $Y$ serán espacios topológicos.
+
+Los elementos de $\tau$ se denominan \textit{abiertos} de $X$, y, los complementos de estos, \textit{cerrados} de $X$. Un \textit{subespacio} de un espacio topológico $(X,\tau)$ es un espacio topológico $(A,\eta)$, donde $A \subseteq X$ y $\eta=\{A \cap U \tq U \in \tau\}$.
+
+\index[alph]{base!de un espacio}\index[alph]{base!local}\index[alph]{base!de vecindades}\index[alph]{vecindad}\index[alph]{conjunto!vecindad}
+Una \textit{base} para un $X$ es una colección de abiertos $\mathcal{B}$ de $X$ tal que cualquier abierto $U$ es unión de alguna subcolección de $\mathcal{B}$; equivalentemente, tal que para cada abierto $U$ y punto $x \in U$ existe $B \in \mathcal{B}$ de modo que $x \in B \subseteq U$. Convendremos que una \textit{vecindad} para un punto $x \in X$ es un conjunto $N$ tal que existe un abierto $U$ de $X$ con la propiedad $x \in U \subseteq N$. Una \textit{base local} (\textit{de vecindades}, respectivamente) para un punto $x$ en $X$ es una colección de abiertos que contienen a $x$ (de vecindades de $x$, respectivamente) $\mathcal{B}_x$ de $X$ de manera que para cada abierto $U$, con $x \in U$, existe $B \in \mathcal{B}_x$ de modo que $x \in B \subseteq U$.
+
+\index[alph]{función!continua}\index[alph]{función!abierta}\index[alph]{función!cerrada}\index[alph]{función!continua!en un punto}\index[alph]{continuidad}\index[alph]{continuidad!puntual}\index[alph]{espacio!homeomorfo a otro}\index[alph]{espacios!homeomorfos}\index[alph]{función!homeomorfismo}\index[alph]{homeomorfismo}\index[alph]{encaje}\index[sym]{$X \cong Y$}\index[alph]{encaje}\index[alph]{espacio!que se encaja}\index[alph]{espacio!encajado}\index[alph]{copia homeomorfa}
+Sea $f: X \to Y$ una función. Se dice que $f$ es \textit{continua} si y sólo si para cada abierto $U$ de $Y$, el conjunto $f^{-1}[U]$ es abierto en $X$. Además, $f$ es \textit{continua en el punto} $x \in X$ cuando, para todo abierto $U$ de $Y$ tal que $f(x) \in U$, existe un abierto $V$ de $X$ con $x \in V$ y $f[V] \subseteq U$; esto es, con $x \in V \subseteq f^{-1}[U]$. Si $f$ es biyectiva y $f^{-1}:Y \to X$ es continua, entonces $f$ es un \textit{homeomorfismo}, en tal caso se dice que $X$ y $Y$ son \textit{homeomorfos}, lo cual se denota $X \cong Y$. Se dice que $f$ es \textit{abierta} (\textit{cerrada}, respectivamente) cuando para todo subconjunto abierto (cerrado, respectivamente) $A$ de $X$, se tiene que $f[A]$ es abierto (cerrado, respectivamente) en $Y$. Finalmente, $f$ es un \textit{encaje} si y sólo si es un homeomorfismo entre $X$ y el subespacio $f[X]$ de $Y$, en esta situación, se dice que $X$ \textit{se encaja} en $Y$, $X$ \textit{está en encajado} en $Y$, o bien, que $Y$ contiene una \textit{copia homeomorfa} de $X$.
+
+\begin{proposicion}
+    Sean $X$ y $Y$ espacios topológicos y $U,V \subseteq X$ abiertos. Si $f:U \to Y$ y $g:V \to Y$ son funciones continuas y $f \cap g$ es función, entonces $f \cup g: U \cup V \to Y$ es función continua.
+\end{proposicion}
+
+\index[alph]{producto!topológico}\index[alph]{suma topológica}\index[sym]{$\coprod_{\alpha \in I} X_\alpha$}\index[sym]{$\prod_{\alpha \in I} X_\alpha$}\index[alph]{producto!de Tychonoff}\index[alph]{Tychonoff!producto de}\index[alph]{función!proyección}\index[alph]{proyección!cartesiana}\index[sym]{$\pi_\alpha$}
+Dada una familia de espacios $\{X_\alpha \tq \alpha \in I \}$, la \textit{suma topológica} y el \textit{producto topológico} (o \textit{de Tychonoff}) serán $\coprod_{\alpha \in I} X_\alpha$ y $\prod_{\alpha \in I} X_\alpha$, respectivamente. Si $\beta \in I$, $\pi_\beta:\prod_{\alpha \in I} X_\alpha \to X_\beta$ será la $\beta$-ésima \textit{proyección cartesiana} ($f \mapsto f(\beta)$).
+
+\index[alph]{conjunto!denso}\index[alph]{punto!de acumulación}\index[alph]{punto!aislado}\index[alph]{operador!derivado}\index[alph]{operador!clausura}\index[alph]{operador!interior}\index[alph]{operador!exterior}\index[alph]{operador!frontera}\index[alph]{derivado}\index[alph]{clausura}\index[alph]{interior}\index[alph]{exterior}\index[alph]{frontera}\index[sym]{$\der(A)$}\index[sym]{$\cla(A)$}\index[sym]{$\inte(A)$}\index[sym]{$\ext(A)$}\index[sym]{$\fron(A)$}
+Sea $A \subseteq X$. Se dice que $x \in X$ es \textit{punto de acumulación} de $X$ cuando para todo abierto $U$, con $x \in U$, ocurre $U \cap A \setminus \{x\} \neq \emptyset$. Al conjunto de puntos de acumulación, o \textit{derivado} de $A$, se lo denotará $\der(A)$ y cuando $y \in A \setminus \der(A)$, se dirá que $y$ es \textit{puntos aislado} de $A$. En adición a esto, los operadores $\inte(A)$, $\cla(A)$, $\ext(A)$ y $\fron(A)$ serán el \textit{interior}, la \textit{clausura}, el \textit{exterior} y la \textit{frontera} de $A$, respectivamente. Un subconjunto $D \subseteq X$ es \textit{denso} en $X$ si y sólo si tiene intersección no vacía con cada abierto no vacío de $X$, equivalentemente, si $X=\cla(D)$.
+
+
+\index[alph]{propiedad!topológica}\index[alph]{propiedad!topológica!hereditaria}\index[alph]{propiedad!topológica!débilmente hereditaria}\index[alph]{propiedad!topológica!productiva}\index[alph]{propiedad!topológica!finitamente productiva}\index[alph]{propiedad!topológica!factorizable}
+Una fórmula $\mathcal{P}$ (de la teoría de conjuntos) es una \textit{propiedad topológica}, o \textit{invariante topológico}, que se preserva bajo homeomorfismos, es decir, si $X$ y $Y$ son espacios topológicos homeomorfos, entonces $X$ satisface la propiedad $\mathcal{P}$ si y sólo si $Y$ la satisface. Una propiedad topológica $\mathcal{P}$ es \textit{hereditaria} cuando cada vez que $X$ tiene la propiedad $\mathcal{P}$, entonces cualquier subespacio de $X$ la tiene; si en lugar de esto, cada subespacio cerrado de $X$ tiene la propiedad $\mathcal{P}$, diremos que $\mathcal{P}$ es \textit{débilmente hereditaria}. Decimos que $\mathcal{P}$ es \textit{productiva} (\textit{finitamente productiva}, respectivamente), si siempre que todos los espacios topológicos de una colección (colección finita, respectivamente) no vacía de espacios no vacíos $\{ X_\alpha \tq \alpha \in I \}$ tienen la propiedad $\mathcal{P}$, entonces el producto $\prod_{\alpha \in I} X_\alpha$ tiene la propiedad $\mathcal{P}$. Finalmente, $\mathcal{P}$ es \textit{factorizable}, cuando para cualquier colección no vacía de espacios no vacíos $\{ X_\alpha \tq \alpha \in I \}$, si producto $\prod_{\alpha \in I} X_\alpha$ tiene la propiedad $\mathcal{P}$, entonces cada $X_\alpha$ tiene la propiedad $\mathcal{P}$. Nótese que, si $\mathcal{P}$ es productiva, entonces es factorizable (todo producto no vacío de espacios no vacíos $\prod_{\alpha \in I} X_\alpha$ contiene una copia homeomorfa de cada uno de sus factores). Dados invariantes $\mathcal{P},\mathcal{Q},\mathcal{R}$, se dice que $\mathcal{P}$ es \textit{intermedia entre} $\mathcal{Q}$ y $\mathcal{R}$ si ocurren las implicaciones $\mathcal{Q} \to \mathcal{P}$ y $\mathcal{P} \to \mathcal{R}$, pero existen contrajemplos para los recíprocos de ambas.
+
+\index[alph]{espacio!primero numerable}\index[alph]{espacio!primero numerable}\index[alph]{espacio!primero numerable}
+A continuación se presentan algunas propiedades topológicas. Se dice que $X$ es \textit{segundo numerable} (o $2\AN$) si admite una base contable; es \textit{primero numerable} (o $1\AN$) si cada punto $x \in X$ tiene una base local contable; y, $X$ es \textit{separable} si existe un subconjunto $D \subseteq X$ denso y contable.
+\begin{proposicion}\phantomsection\label{prop-baseKappa}
+    Sean $X$ un espacio y $\mathscr{B}$ una base de tamaño $\kappa$ para $X$.
+    \begin{enumerate}
+        \item $X$ contiene un denso de tamaño a lo más $\kappa$.
+        \item Si $\mathscr{C}$ es base de $X$, existe una base $\mathcal{C}' \in [\mathcal{C}]^{\leq \kappa}$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Fíjese ($\Ac$), para cada $B \in \mathcal{B}$, un elemento $x_B \in B$. De esta forma, si $U$ es cualquier abierto no vacío de $X$, existen un punto $x \in U$ y cierto $B \in \mathcal{B}$ de modo que $x \in B \subseteq U$. De aquí que $x_B \in U$, mostrando que $D \mycoloneq \{ x_B \tq B \in \mathcal{B} \}$ es un denso de $X$ de cardinalidad menor o igual a $\kappa$.
+
+    (ii) Sea $R \mycoloneq \{ (U,W) \in \mathcal{B}^2 \tq \exists C \in \mathcal{C} \, (U \subseteq C \subseteq W) \}$. Utilizando $\Ac$, para cada $(U,W) \in R$ fíjese $C_{U,W} \in W$ tal que $U \subseteq C_{U,W} \subseteq W$. De esta manera, $\mathcal{C}' \mycoloneq \{ C_{U,W} \tq U,W \in \mathcal{B}^2 \} \subseteq \mathcal{C}$ tiene tamaño no mayor a $\kappa$.
+    
+    
+    Sea $O$ un abierto de $X$ y supóngase que $x \in O$, entonces existe $W \in \mathcal{B}$ tal que $x \in W \subseteq O$; de donde, por ser $\mathcal{C}$ base, existe $C \in \mathcal{C}$ de modo que $x \in C \subseteq W \subseteq O$. De nuevo, por ser $\mathcal{B}$ base, existe cierto $U \in \mathcal{B}$ tal que $x \in U \subseteq C \subseteq W \subseteq O$. De esta forma, $(U,W) \in R$, y así $x \in C_{U,W} \subseteq O$, mostrando que $\mathcal{C}'$ es base de $X$.
+\end{proof}
+
+\index[alph]{función!cardinal}\index[alph]{función!cardinal!peso}\index[alph]{función!cardinal!densidad}\index[alph]{función!cardinal!caracter}\index[alph]{peso}\index[alph]{densidad}\index[alph]{caracter}\index[sym]{$w(X)$}\index[sym]{$\chi(X)$}\index[sym]{$d(X)$}
+Para cada espacio $X$ se define el \textit{peso} de $X$ como el mínimo cardinal $\kappa$ para el cual existe una base de $X$ de tamaño exactamente $\kappa$, este número se denota por $w(X)$. Para cada $x \in X$, el \textit{carácter} de $X$ es el mínimo cardinal $\lambda$ para el cual existe una base local de $x$ en $X$ de tamaño $\lambda$, este número se denota como $\chi(x,X)$ (o $\chi(x)$ si queda claro el contexto), y, se define $\chi(X) \mycoloneq \sup\{ \chi(x,X) \tq x \in X \}$. Finalmente, la \textit{densidad} de $X$ es el mínimo cardinal $\mu$ para el cual existe un denso de $X$ de cardinalidad $\mu$, este cardinal se denota por $d(X)$. Este tipo de asignaciones se conocen como \textit{funciones cardinales}, y son propiedades topológicas, en el sentido de que se preservan bajo homeomorfismos.
+
+\index[alph]{axioma!de separación}\index[alph]{axioma!$\T_0$}\index[alph]{axioma!$\T_1$}\index[alph]{axioma!$\T_2$}\index[alph]{axioma!$\T_3$}\index[alph]{axioma!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{axioma!$\T_4$}\index[alph]{axioma!de regularidad}\index[alph]{axioma!de normalidad}\index[alph]{axioma!de regularidad completa}\index[alph]{espacio!de Hausdorff}\index[alph]{espacio!de Tychonoff}\index[alph]{regular!espacio completamente}\index[alph]{regular!espacio}\index[alph]{normal!espacio}\index[alph]{Hausdorff!espacio de}\index[alph]{Tychonoff!espacio de}
+Los siguientes invariantes son conocidos como \textit{axiomas de separación}:
+\begin{enumerate}[$\bullet$]
+    \item \textit{Axioma $\T_0$}: Para cualesquiera $x,y \in X$ distintos, existe un abierto $U$ tal que $U \cap \{x,y\}$ tiene tamaño $1$.
+    \item \textit{Axioma $\T_1$}: Para cualesquiera $x,y \in X$ distintos, existe un abierto $U$ tal que $U \cap \{x,y\}=\{x\}$.
+    \item \textit{Axioma $\T_2$}: Para cualesquiera $x,y \in X$ distintos, existen un abiertos $U,V$ ajenos de manera tal que $x \in U$ y $y \in V$. Cuando un espacio es $\T_2$ se dice que es \textit{de Hausdorff}
+    \item \textit{Axioma de regularidad}: Para cada $F \subseteq X$ cerrado, y cada $x \in X \setminus F$, existen abiertos ajenos $U,V$ tales que $x \in U$ y $F \subseteq V$.
+    \item \textit{Axioma de regularidad completa}. Para cualquier cerrado $F \subseteq X$ y cualquier $x \in X \setminus F$, existe una función $f:X\to [0,1]$ continua de modo que $f(x)=0$ y $f(\{F\}) \subseteq \{1\}$.
+    \item \textit{Axioma de normalidad}: Para cada par de cerrados ajenos $F$ y $G$, existen abiertos ajenos $U,V$ tales que $F \subseteq U$ y $G \subseteq V$.
+    \item Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad,respectivamente, adicionados con el axioma $\T_1$. Cuando es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}.
+\end{enumerate}
+
+Los axiomas $\T_0,\T_1,\T_2,\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son propiedades productivas, factorizables; y todas menos $\T_4$, son  hereditarias; $\T_4$ sólo es es décilmente hereditaria. Un espacio $X$ es \textit{cero-dimensional} si y sólo si contiene una base compuesta de conjuntos abiertos y cerrados a la vez, este invariante topológico es hereditario (por tanto, factorizable) y productivo. %La clase de espacios $\T_1$ será la más utilizada durante el transcurso de esta tesis. %, se utilizará frecuentemente que, si $A$ es subespacio de un espacio $\T_1$ y Si $x \in \der(A)$, todo abierto que contenga a $x$, tiene intersección infinita con $A$.
+
+\begin{proposicion}\phantomsection\label{cero-dim-caracte}
+    Sea $X$ un espacio $\T_1$. Entonces son equivalentes:
+    \begin{enumerate}
+        \item $X$ es cero-dimensional.
+        \item $X$ se encaja en $2^{w(X)}$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase la función $f:X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
+
+    $f$ es continua, pues para cada $\alpha \in w(X)$, $\pi_\alpha f$ es la función característica del abierto y cerrado $B_\alpha \subseteq X$. Ahora, si $x \neq y$, entonces por ser $X$ espacio $\T_1$, existe $\beta \in w(X)$ de manera que $x \in B_\beta$, pero $y \notin B_\beta$; así que $f(x)(\beta) \neq f(y)(\beta)$ y en consecuencia $f(x) \neq f(y)$.
+    
+    Finalmente, verificaremos que para cualquier $\alpha \in w(X)$, $f[B_\alpha]$ es abierto en $f[X]$, lo suficiente para mostrar que $f$ es abierta, y con ello homeomorfismo, sobre su imagen. Si $f(x) \in f[B_\alpha]$ es arbitrario, $x \in B_\alpha$ (por ser $f$ inyectiva); y así $f(x) \in \pi_\alpha^{-1}[\{1\}] \cap f[X] \subseteq f[B_\alpha] \cap f[X]$. En efecto, si $f(y) \in \pi_\alpha^{-1}[\{1\}] \cap f[X]$, entonces $f(y)(\alpha)=1$, mostrando que $y \in B_\alpha$, y así, $f(y) \in f[B_\alpha]$. Por lo tanto, $f[B_\alpha]$ es abierto en $f[X]$, luego, $f$ es encaje de $X$ en $2^{w(X)}$.
+
+    (ii) $\to$ (i) El espacio $2=\{0,1\}$ es cero-dimensional, así que por ser tal propiedad productiva y hereditaria, cualquier subespacio de $2^{w(X)}$ es cero-dimensional.
+\end{proof}
+
+Dado que el discreto de dos puntos es un de Tychonoff, tal propiedad es productiva y hereditaria, resulta que:
+
+\begin{corolario}\phantomsection\label{cerodim-Tych}
+    Todo espacio $\T_1$ y cero-dimensional es  de Tychonoff
+\end{corolario}
+
+el próximo enunciando es uno de los más fuertes para espacios normales, su demostración se consultar en \cite[Teo.~ 2.1.8]{engelTopo}.
+
+\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{teoremade extensión de Tietze}\index[alph]{Tietze!teorema de extensión de}
+    Sea $X$ un espacio $\T_1$ y $F \subseteq X$ cualquier cerrado. Si $f:F \to \mathbb{R}$ es continua, entonces existe $g:X \to \mathbb{R}$ continua y tal que extiende a $f$, es decir, $g \upharpoonright A = f$.
+\end{teorema}
+
+\begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{lema!de Jones}\index[alph]{Jones!Lema de}
+    Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
+\end{corolario}
+\begin{proof}
+    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f:X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.%, por lo que $|\mathbb{R}^S| \leq |\mathbb{R}^\mathbb{R}|$.
+
+    Supóngase ahora que $h,k:X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva.
+
+    Por lo mencionado anteriormente, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, así:
+    \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \]
+    finalizando la prueba.
+\end{proof}
+
+\subsection{Convergencia de sucesiones}
+\phantomsection\label{prelim-sucesiones}
+
+\index[alph]{subsucesión}\index[alph]{sucesión!convergente}\index[alph]{sucesión!subsucesión}\index[sym]{$x_n \to a$}
+Una sucesión $(x_n)_{n \in \omega} \subseteq X$ es \textit{convergente} a un punto $a \in X$ si y sólo si para cada abierto $U$ de $X$ tal que $a \in U$, existe un natural $N \in \omega$ de manera que $\{x_n \tq n \geq N\} \subseteq U$. Esto se denotará como $x_n \to a$. Una \textit{subsucesión} de $(x_n)_{n \in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f:\omega \to \omega$ es una función estrictamente creciente. Es fácil verificar que, si $x_n \to a$ y $(x_{f(n)})_{n \in \omega}$ es subsucesión de $(x_n)_{n \in \omega}$, entonces $x_{f(n)} \to a$. Un espacio $X$ es \textit{secuencialmente compacto} si y sólo si toda sucesión $(x_n)_{n \in \omega} \subseteq X$ contiene una subsucesión convergente.
+
+\index[alph]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}\index[sym]{$\US$}
+El espacio $X$ se dice \textit{de convergencia única} ($\US$) si para toda sucesión convergente $(x_n)_{n \in \omega} \subseteq X$ existe un único $a \in X$ para el cual $x_n \to a$; en tal caso, se denotará $a=\lim_{n \to \infty} (x_n)$. La propiedad $\US$ es intermedia entre los axiomas de separación $T_2$ y $T_1$ \cite[Prop.~ 1.6.11,1.6.16]{engelTopo}.
+
+\index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
+Un subconjunto numerable $A \in [X]^\omega$ es, de igual forma, una \textit{sucesión convergente}, cuando existe $a \in A$ de manera que, para cada abierto $U$ de $X$ tal que $a \in U$ ocurre $A \subseteq ^* U$; en tal caso también se denotará $A \to a$, si el espacio es $\US$, $a=\lim(A)$. Obsérvese que en tal caso si $B \in [A]^\omega$, entonces $B \to a$.
+
+\begin{proposicion}\phantomsection\label{prop-sucesionesConvergentes}
+    Sean $X$ un espacio y $a \in X$. Entonces:
+    \begin{enumerate}
+        \item Si $(x_\omega)_{n \in \omega} \subseteq X$ es infinita y convergente a $a$, entonces $x[\omega]$ es una sucesión convergente a $a$.
+        \item Si $A \in [X]^\omega$ es una sucesión convergente a $a$, entonces cualquier biyección $x:\omega \to A$ es una sucesión convergente a $a$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) $\to$ (ii) Supóngase que $x_n \to a$ y sea $U$ un abierto tal que $a \in U$. Entonces existe $N \in \omega$ tal que $\{x_n \tq n\geq N\} \subseteq U$, consecuentemente, ocurre que $B \setminus U \subseteq \{x_n \tq n<N\} =^* \emptyset$, y así, $x[\omega] \to a$.
+
+    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x:\omega \to A$ cualquier biyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $x[\omega] = A \setminus U$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
+\end{proof}
+
+\index[alph]{clausura!secuencial}\index[alph]{secuencial!clausura}\index[sym]{$\scl(A)$}\index[alph]{operador!clausura secuencial}
+Para cualquier espacio $X$ se puede considerar la \textit{clausura secuencial} de cualquiera de sus subespacios $A \subseteq X$, esto es, el conjunto de todos los límites de las sucesiones contenidas en $A$: $\scl(A)  \mycoloneq  \{ a \in X \tq \exists (x_n)_{n \in \omega} \subseteq A \, (x_n \to a) \} $.
+
+Nótese que, si $A$ es subespacio de un espacio $\T_1$, $X$, y $(x_\omega)_{n \in \omega} \subseteq X$ converge a $a \in A \setminus X$, entonces $a \in \cla(x[\omega]) \setminus x[\omega] \subseteq \der(x[\omega])$ y es necesario que tal sucesión sea infinita. Así que en virtud de lo anterior:
+
+\begin{corolario}\phantomsection\label{sqcl-en-T1}
+    Sean $X$ un espacio $\T_1$ y $A \subseteq X$. Entonces:
+    \begin{enumerate}
+        \item $\scl(A) = A \cup \{ x \in X \tq \exists B \in [A]^\omega \, (B \to a) \}$.
+        \item $X$ es secuencialmente compacto si y sólo si para cada $A \subseteq X$ numerable, existe $B \in [A]^\omega$ convergente.
+    \end{enumerate}
+\end{corolario}
+
+\index[alph]{espacio!de Fréchet}\index[alph]{propiedad!de Fréchet}\index[alph]{Fréchet!espacio de}
+Por lo ya mencionado anteriormente, toda clausura secuencial está contenida en la clausura del correspondiente subespacio. Por supuesto, los operadores $\scl$ y $\cla$ no necesariamente son iguales. Se dice que $X$ es de \textit{Fréchet} (o de \textit{Fréchet-Uryshon}), o tiene la \textit{propiedad de Fréchet}, si y sólo si para cada $A \subseteq X$ ocurre $\cla(A) \subseteq \scl(A)$. Es conocido que, todo espacio $1\AN$ es de Fréchet, y que la propiedad de Féchet es hereditaria, así pues, factorizable \cite[Ej.~2.1.H]{engelTopo}.
+
+\index[alph]{subespacio!secuencialmente cerrado}\index[alph]{secuencialmente! cerrado (subespacio)}\index[alph]{espacio!secuencial}\index[alph]{secuencial!espacio}\index[alph]{clausura!secuencial transfinita}\index[alph]{secuencial!clausura (transfinita)}\index[sym]{$\scl^\alpha(A)$}\index[alph]{operador!clausura secuencial transfinita}
+Un subespacio $A \subseteq X$ es \textit{secuencialmente cerrado} cuando $\scl(A) \subseteq A$. Es claro que cualquier subespacio cerrado es secuencialmente cerrado, sin embargo el recíroco de esto es falso en general, cuando cualquier subespacio secuencialmente cerrado de $X$ es cerrado, se dice que $X$ es un espacio secuencial. A continuación se construye una herramienta que permite determinar cuándo, y \enquote{qué tanto}, un espacio es secuencial, la \textit{clausura secuencial transfinita}. Para cada ordinal $\alpha \leq \omega_1$ defínase por recursión:
+\begin{enumerate}
+    \item $\scl^0(A)=A$,
+    \item Para todo ordinal $\alpha<\omega_1$, $\scl^{\alpha+1}(A)=\scl(\scl^\alpha(A))$, y
+    \item Para todo ordinal límite $\gamma \leq \omega_1$, $\scl^{\gamma}(A)=\midcup\{ \scl^\alpha (A) \tq \alpha < \gamma \}$.
+\end{enumerate}
+
+\index[alph]{orden!secuencial}\index[alph]{secuencial!orden}\index[sym]{$\Osq(X)$}
+En caso de existir, se define el \textit{orden secuencial} de $X$ como el mínimo ordinal $\alpha$ tal que, para cada $A \subseteq X$, ocurre $\scl^\alpha(A)=\cla(A)$; tal ordinal se denota $\Osq(X)$. Nótese que si $A \subseteq X$ y $\alpha \leq \beta \leq \omega_1$, entonces $\scl^\alpha (A) \subseteq \scl^\beta (A) \subseteq \cla(A)$, consecuentemente $\cla(A)=\cla(\scl^\alpha(A))$.Un espacio es de Fréchet si y sólo si tiene orden secuencial menor o igual a $1$. La siguiente proposición caracteriza a los espacios secuenciales, los clasifica, y de paso, muestra que todo espacio de Fréchet es secuencial.
+ 
+\begin{proposicion}
+Para todo espacio $X$ son equivalentes:
+\begin{enumerate}
+    \item $X$ es secuencial.
+    \item Para cada $A \subseteq X$, $\scl^{\omega_1}(A)=\cla(A)$.
+    \item $\Osq(X)$ existe.
+\end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) $\to$ (ii). Supóngase que $X$ es secuencial y sea $A \subseteq X$. Nótese que, si $(x_n)_{n \in \omega} \subseteq \scl^{\omega_1}(A)$ es convergenete, digamos que $x_n \to x$ en $X$. Para cada $n \in \omega$ sea $\alpha_n$ el mínimo $\alpha$ para el que $x_n \in \scl^\alpha(A)$, por regularidad de $\omega_1$, existe $\alpha < \omega_1$ tal que $(x_n)_{n \in \omega} \subseteq \scl^\alpha(A)$. Esto demuestra que $x \in \scl^{\alpha+1}(A) \subseteq \scl^{\omega_1}(A)$ y que $\scl^{\omega_1}(A)$ es secuencialmente cerrado. Por lo tanto, es cerrado y así:
+    \[ \scl^{\omega_1}(A) = \cla(\scl^{\omega_1}(A)) = \cla(A) \]
+
+    La implicación (ii) $\to$ (iii) es inmediata.
+
+    (iii) $\to$ (i) Supóngase (iii) y sea $A \subseteq X$ secuencialmente cerrado. Entonces $A = \scl(A)$ y, consecuentemente, para cada ordinal $\alpha \leq \omega_1$, $A = \scl^{\omega_1} (A) = \cla(A)$. Esto prueba que $A$ es cerrado, por tanto, $X$ secuencial.
+\end{proof}
+
+\subsection{Compacidad y tipos de compacidad}
+
+\index[alph]{cubierta}\index[alph]{subcubierta}\index[alph]{cubierta!abierta}\index[alph]{espacio!compacto}\index[alph]{espacio!$\sigma$-compacto}\index[alph]{espacio!numerablemente compacto}\index[alph]{espacio!de Lindelöf}\index[alph]{función!acotada}\index[alph]{espacio!localmente compacto}
+Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P}(X)$ tal que $A \subseteq \midcup \mathcal{U}$. Una \textit{subcubierta} de $\mathcal{U}$ es una cubierta de $A$ contenida en $\mathcal{U}$. Si $X$ es un espacio topológico, se dice que una cubierta $\mathcal{U}$, de $X$, es \textit{abierta} cuando sus elementos son abiertos de $X$. El espacio $X$ es \textit{compacto} si y sólo si, toda cubierta abierta, $\mathcal{U}$, de $X$ tiene una subcubierta finita; es \textit{numerablemente compacto} cuando cualquier cubierta abierta, a lo más numerable, de $X$ tiene una subcubierta finita; y, es \textit{de Lindelöf} si y sólo si toda cubierta abierta de $X$ tiene una subcubierta a lo más numerable. Se dice que $X$ es \textit{$\sigma$-compacto} cuando es unión numerable de espacios compactos. Ahora, $X$ es localmente compacto cuando cada punto $x \in X$ tiene una base de vecindades compactas. Todas las propiedades anteriores son débilmente hereditarias, y, un espacio es compacto si y sólo si es numerablemente compacto y de Lindelöf.
+
+\index[alph]{refinamiento}\index[alph]{refinamiento!abierto}\index[alph]{cubierta!refinamiento}\index[sym]{$\mathcal{V} \preccurlyeq \mathcal{U}$}
+Dada una cubierta $\mathcal{U}$ para un espacio $X$, decimos que una cubierta $\mathcal{V} \subseteq \ms{P}(X)$ es \textit{refinamiento} de $\mathcal{U}$ cuando para cada $V \in \mathcal{V}$ existe $U \in \mathcal{U}$ de manera que $V \subseteq U$, esta situación será denotada por $\mathcal{V} \preccurlyeq \mathcal{U}$. Un refinamiento es \textit{abierto} cuando todos sus elementos son abiertos. Nótese que si $\mathcal{V} \preccurlyeq \mathcal{U}$, entonces fijando para cada $V \in \mathcal{V}$ un elemento $U_V \in \mathcal{U}$ de modo que $V \subseteq U_V$ se obtiene una subcubierta $\{U_V \tq V \in \mathcal{V}\}$ de $\mathcal{U}$ de tamaño a lo más $|\mathcal{V}|$.
+
+\begin{lema}
+    Sea $X$ un espacio $2\AN$. Si $\mathcal{U}$ es una cubierta de $X$ y para cada $x \in X$ tiene una vecindad $N \in \mathcal{U}$, $\mathcal{U}$ contiene una subcubierta contable.
+\end{lema}
+\begin{proof}
+    Por los comentarios previos al enunciado de esta proposición, basta encontrar un refinamiento a lo más numerable de $\mathcal{U}$. Defínase la colección $\mathcal{V} \mycoloneq \{  B \in \mathcal{B} \tq \exists U \in \mathcal{U} \, (B \subseteq U) \}$, para que $\mathcal{V} \preccurlyeq \mathcal{U}$, resta ver que $\mathcal{V}$ cubre a $X$.
+
+    Efectivamente, si $x \in X$, existe una vecindad de $N \in \mathcal{U}$ de $x$ en $X$. Así, existen un abierto $U$ de $X$, y un elemento $B \in \mathcal{B}$, tales que $x \in B \subseteq U \subseteq N$. Esto prueba que $B \in \mathcal{V}$, por lo que $X \subseteq \midcup \mathcal{V}$.
+\end{proof}
+
+\begin{corolario}\phantomsection\label{cor-2AN-Linde}
+    Sea $X$ un espacio topológico.
+    \begin{enumerate}
+        \item Si $X$ es $2\AN$, o $\sigma$ compacto, entonces es de Lindelöf
+        \item Si $X$ es $2\AN$ y localmente compacto, entonces es $\sigma$-compacto.
+    \end{enumerate}
+\end{corolario}
+\begin{proof}
+    (i) Sea $\mathcal{U}$ una cubierta abierta para $X$, como todo abierto es vecindad de cada uno de sus puntos, $\mathcal{U}$ satisface las hipótesis del lema previo. Con ello, si $X$ es segundo numerable, $\mathcal{U}$ admite una subcubierta contable.
+
+    Por otro lado, si $X$ es $\sigma$-compacto, $X$ es unión a lo más numerable de subespacios compactos de $X$, a saber $\{X_n \tq n \in \omega\}$. Como cada uno de ellos es compacto, para cada $n \in \omega$ existe un subconjunto $\mathcal{U}_n \in [\mathcal{U}]^{<\omega}$ con $X_n \subseteq \midcup \mathcal{U}_n$. Entonces $\midcup\{ \mathcal{U}_n \tq n \in \omega\}$ es una subcubierta a lo más numerable de $\mathcal{U}$.
+
+    (ii) Supógnase que $X$ es $2\AN$, localmente compacto. Para cada $x \in X$ sea ($\Ac$) $N_x$ una vecindad compacta de $x$ en $X$, entonces $\mathcal{U} \mycoloneq \{ N_x \tq x \in X \}$ cumple las hipótesis del lema previo, y admite una subcubierta contable $\mathcal{V}$. Como cada elemento en $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, se tiene que $X$ es $\sigma$-compacto.
+\end{proof}
+
+\begin{proposicion}\phantomsection\label{t1-limPointsiiNumcCom}
+    Sea $X$ un espacio topológico, entonces:
+    \begin{enumerate}
+        \item Si $X$ es numerablemente compacto, para cada $A \subseteq [X]^{\geq \omega}$, $\der(A) \neq \emptyset$.
+        \item Si $X$ es $\T_1$ y para cada $A \subseteq X$ infinito, $\der(A) \neq \emptyset$; entonces, $X$ es numerablemente compacto.
+    \end{enumerate}
+\end{proposicion}
+
+Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conocido de que \enquote{los compactos se comportan como puntos}, en este aspecto, es bien sabido que cualquier subespacio compacto de un espacio de Hausdorff es cerrado; mucho más fuerte aún, todo espacio compacto de Hausdorff es normal \cite[Teo.~3.1.9]{engelTopo}. Se explorará ahora la siguiente equivalencia para la compacidad local en espacios de Hausdorff:
+
+\begin{proposicion}
+    Sea $X$ un espacio localmente compacto y de Hausdorff. Para cada $A \subseteq X$ son equivalentes:
+    \begin{enumerate}
+        \item $A$ es localmente compacto
+        \item $A$ es abierto en $\cla(A)$
+        \item Existen un abierto $U$ y un cerrado $F$ tales que $A=U \cap F$.        
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) $\to$ (ii) Supóngase que $A$ es localmente compacto y sea $x \in A$ cualquiera. Como $A$ es localmente compacto, existe una vecindad compacta $N$ de $x$ en $A$, con ello, hay un abierto $V$ de $A$ tal que $x \in V \subseteq K \subseteq A$. Como $A$ es de Hausdorff, $\cla_A(V) \subseteq \cla_A(K) = K$, y así, $\cla_A(V)$ es subespacio cerrado del compacto $K$, por ello, es compacto.
+
+    Por ser $X$ de Hausdorff, $\cla_A(V) = \cla(V) \cap A$ es cerrado en $X$. Dado que $V \subseteq A$, entonces $V \subseteq \cla(V) \cap A$, y así $\cla(V) \subseteq \cla(\cla(V) \cap A) = \cla(V) \cap A$. Se deduce entonces que $\cla(V) \subseteq A$.
+
+    Como $V$ es abierto en $A$, existe un abierto $U$ de $X$ con $V = U \cap A$. La condición $\cla(V) \subseteq A$ implica que $\cla(A) \cap U \subseteq A$. Como $U$ es abierto en $X$, entonces el conjunto  $W \mycoloneq \cla(A)\cap U$ es un abierto de $\cla(A)$ tal que $x \in W \subseteq A \subseteq \cla(A)$. Lo cual demuestra que $A$ es abierto en $\cla(A)$.
+
+    (ii) $\to$ (iii) Supógnase que $A$ es abierto en su clausura, entonces $A=U \cap \cla(A)$, donde $U$ es abierto en $X$ y $\cla(A)$ es cerrado en $X$.
+
+    (iii) $\to$ (i) Supóngase que $A=U \cap F$, donde $U$ es abierto y $F$ es cerrado. Sean $x \in A$ y $W$ abierto en $U \cap F$ tal que $x \in W$, entonces, existe un abierto $W'$ de $X$ tal que $W=W' \cap (U \cap F) = (W' \cap U) \cap F$.    
+    
+    Como $x \in W' \cap U$ y $X$ es localmente compacto, existe un a vecindad compacta $N$ de $x$ en $X$ tal que $x \in N \subseteq W' \cap U$, de donde, $x \in N \cap F \subseteq W' \cap (U \cap F)$. Nótese que $N \cap F$ es un subespacio cerrado de $N$, y como $N$ es compacto, entonces $N \cap F$ es compacto.
+
+    Finalmente, como $N$ es vecindad de $x$ en $X$, existe un abierto $V$ de $X$ tal que $x \in V \subseteq N$, de aquí que $x \in V \cap (U \cap F) \subseteq N \cap F \subseteq U \cap F$; y, como $V \cap (U \cap F)$ es abierto en $U \cap F$, $N \cap F$ es una vecindad compacta de $x$ en $U \cap F$. Lo cual prueba que $A=U \cap F$ es localmente compacto.
+\end{proof}
+
+\begin{corolario}\phantomsection\label{Hauss-LocComp}
+    Sea $X$ un espacio de Hausdorff. Entonces:
+    \begin{enumerate}
+        \item $X$ es localmente compacto si y sólo si cada $x \in X$ tiene una vecindad compacta. Particularmente, cualquier compacto de Hausdorff es localmente compacto.
+        \item Si $D \subseteq X$ es denso y abierto, entonces es localmente compacto
+    \end{enumerate}
+    
+\end{corolario}
+\begin{proof}
+    (i) Basta probar necesidad. Supóngase que cada punto de $X$ tiene una vecindad compacta. Sea $x \in X$ cualquiera y $\mathcal{B}$ una base local para $x$ en $X$, por la proposición anterior cada $B \in \mathcal{B}$ es localmente compacto. Fíjese ($\Ac$) una vecindad compacta $N_B$ de $x$ en $B$.
+
+    Como $N_B$ es vecindad de $x$ en $B$, existe un abierto $U$ de $V$ tal que $x \in U \subseteq N_B \subseteq B$, pero al ser $B$ abierto, $U$ es abierto en $X$. Esto prueba que cada $N_B$ es vecindad compacta de $x$ en $X$; y así, $\{ N_B \tq B \in \mathcal{B} \}$ es una base de vecindades compactas para $x$ en $X$.
+
+    (ii) Como $D$ es denso, de ser abierto, es abierto en $X=\cla(D)$, siguiéndose el resultado de la proposición previa.
+\end{proof}
+
+\index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del teorema de Categoría de Baire.
+
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teoremade Categoría de Baire}\index[alph]{Baire!teorema de Categoría de}
+    Todo espacio $X$ de Hausdorff, localmente compacto, es de Baire.
+\end{teorema}
+\begin{proof}
+    Sea $\{D_n \tq n \in \omega\}$ una colección de abiertos, densos de $X$, habrá de mostrarse que $A \mycoloneq \midcap\{ D_n \tq n \in \omega \}$ es denso en $X$. Sea $U$ un abierto no vacío de $X$.
+
+    Para cada punto $x \in X$ y vecindad $N$ de $x$ fíjese ($\Ac$) una vecindad compacta $K(x,N)$ de $X$ tal que $x \in K(x,N) \subseteq N$. Por recursión en $\omega$ defínanse $x_0$ como cualquier elemento de $U \cap D_0$ y $K_0 \mycoloneq K(x_0,U \cap D_0)$; y, para cada $n \in \omega$, tómense $x_{n+1} \in K_n \cap D_{n+1}$ y $K_{n+1}=K(x_{n+1},K_n \cap D_{n+1})$.
+    
+    De esta manera, $\{K_n \tq n \in \omega\}$ es una sucesión $\subseteq$-decreciente de subespacios compactos no vacíos de $X$. Como todos ellos son subespacios compactos, de Hausdorff, no vacíos, y del espacio compacto $K_0$, la siguiente intersección no puede ser vacía: $\midcap\{ K_n \tq n \in \omega \} \subseteq U \cap A$. Así, $A$ es denso y $X$ es de Baire.
+\end{proof}
+
+\index[alph]{espacio!pseudocompacto}
+El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función continua $f:X \to \mathbb{R}$ es \textit{acotada}, es decir, existe $M>0$ tal que para cada $x \in X$, ocurre $|f(x)| \leq M$. Se tiene una relación importante entre la compacidad numerable y la pseudocompacidad.
+
+\begin{proposicion}\phantomsection\label{pseudo-numerableCompacto}
+    Sea $X$ un espacio topológico $\T_1$.
+    \begin{enumerate}
+        \item Si $X$ es numerablemente compacto, es pseudocompacto.
+        \item Si $X$ es normal y pseudocompacto, es numerablemente compacto.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Por absurdo, supóngase que $X$ es numerablemente compacto  y no pseudocompacto. Fíjese $f:X \to \mathbb{R}$ no acodada. Entonces, para cada $n \in \omega$ se puede fijar ($\Ac$) un elemento $x_n \in X$ de modo que $|f(x)|>n$, con ello, el conjunto $A \mycoloneq \{x_n \tq n \in \omega\}$ es infinito.
+
+    Como $X$ es numerablemente compacto y $\T_1$, existe $x \in \der(A)$ y como $f$ es continua, $f(x) \in \der(f[A])$. A razón de esto, $(0,f(x)+1) \cap f[A]$ es infinito, de donde, $\{ m \in \omega \tq f(x_n) < f(x)+1 \}$ es infinito. Pero, lo anterior es una contradicción, dada la elección de los puntos $x_n$. Por lo tanto, $X$ debe ser pseudocompacto.
+
+    (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f:A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
+
+    Como $X$ es normal, el teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+\end{proof}
+
+\begin{proposicion}\phantomsection\label{pseudocom-subcjtos}
+    Sean $X$ un espacio topológico y $B \subseteq X$.
+    \begin{enumerate}
+        \item Si $X$ es pseudocompacto y $B$ es abierto y cerrado, $B$ no puede ser infinito.
+        \item Si $B$ es denso y cada sucesión en $B$ contiene una subsucesión convergente en $X$, entonces $X$ es pseudocompacto.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) Supóngase que $B$ es abierto, cerrado e infinito, sin pérdida de generalidad, numerable. Sea $f:B \to \omega \subseteq \mathbb{R}$ biyectiva, nótese que al ser $B$ discreto, $f$ es continua. Sea $g:X \setminus B \to \mathbb{R}$ la función constante $0$, $g$ es continua. Como $f,g$ son continuas y $B , X \setminus B$ son abiertos (ajenos) de $X$, entonces $f \cup g:X \to \mathbb{R}$ es continua, y claramente no acotada, probando que $X$ no es pseudocompacto, lo cual es imposible.
+
+    (ii) Supóngase que $B$ es denso y que $X$ no es pseudocompacto. Entonces para cada $n \in \omega$, por densidad de $B$, se puede fijar un elemento $x_n \in D \cap f^{-1}[(n, \infty)] \neq \emptyset$. Se afirma que $(x_n)_{n \in \omega} \subseteq D$ no tiene subsucesiones convergentes.
+
+    Efectivamente, sea $g:\omega \to \omega$ estrictamente creciente. Por continuidad de $f$, si $(x_{g(n)})_{n \in \omega}$ converge en $X$, $(f(x_{g(n)}))_{n \in \omega}$ converge en $\mathbb{R}$, y por tanto, es acotada. Esto contradice la construcción de $f$, por lo tanto, $(x_n)_{n \in \omega}$ no contiene subsucesiones convergentes en $X$.
+\end{proof}
+
+\subsection{Extensiones unipuntuales}
+
+\index[alph]{exntesión!unipuntual}\index[alph]{unipuntual!exntesión}
+Para cada espacio topológico $(X,\tau)$ considérese un punto $\infty \notin X$ (siempre existe tal punto, pues en $\zfc$, ningún conjunto tiene por elemento a cualquier conjunto). Se define la \textit{extensión unipuntual} de $(X,\tau)$ como el espacio $(X \cup \{ \infty \},\eta)$, donde:
+\[ \eta \mycoloneq  \tau \cup \{ U \subseteq X \cup \{ \infty \} \tq \infty \in U \, \land \, X \setminus U \text{ es compacto y cerrado en } X \} \]
+es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
+
+\begin{proposicion}
+    Sean $(X,\tau)$ un espacio topológico y $(X \cup \{ \infty \},\eta)$ su extensión unipuntual.
+    \begin{enumerate}
+        \item $(X,\tau)$ es subespacio de $(X \cup \{ \infty \},\eta)$.
+        \item $X \cup \{ \infty \}$ es compacto.
+        \item $X$ es no es compacto si y sólo si $X$ es subespacio denso de $X \cup \{ \infty \}$.
+    \end{enumerate}
+\end{proposicion}
+\begin{proof}
+    (i) La contención $\tau \subseteq \eta'  \mycoloneq  \{ U \cap X \tq U \in \eta \}$ es evidente. De forma recíproca, sea $U \in \eta$, sin pérdida de generalidad $U \notin \tau$. Sea $y \in U \cap X$ cualquier elemento, entonces, $y \in X \setminus (X \setminus U)$. Por definición de $\eta$, $X \setminus U$ es cerrado en $X$, así que $X \setminus U$ es abierto en $X$ y existe $V \in \eta$ de manera que ocurre $y \in V \subseteq X \setminus (X \setminus U) \subseteq U \cap X$. Esto muestra que $U \cap X$ es abierto en $X$, es decir, $U \cap X \in \tau$.
+
+    (ii) Sea $\mathcal{U}$ una cubierta abierta de $X \cup \{ \infty \}$. Entonces existe $U_0 \in \mathcal{U}$ de modo que $\infty \in U_0$. Por definición de $\eta$, $X \setminus U_0$ es compacto, entonces, existe un subconjunto finito $\mathcal{V}$ de $\mathcal{U}$ de modo que $X \setminus U_0 \subseteq \midcup \mathcal{V}$. Así, $\mathcal{V} \cup \{U_0\}$ es una subcubierta finita de $\mathcal{U}$. Lo anterior demuestra que $X \cup \{ \infty \}$ es compacto.
+
+    (ii) Finalmente, obsérvese que $X$ es denso en $X$ si y sólo si $\{\infty\}$ no es abierto en $X \cup \{ \infty \}$. Pero por definición de $\eta$, $\{\infty\}$ es abierto $X \cup \{ \infty \}$ si y sólo si $X$ es compacto (y cerrado en $X$).
+\end{proof}
+
+\index[alph]{compactación!de Alexandroff}\index[alph]{Alexandroff!compactación de}\index[alph]{compactación!Hausdorff}
+Decimos que la extensión unipuntual de un espacio no compacto $X$ es la \textit{compactación de Alexandroff} cuando resulta ser de Hausdorff; y más en general, decimos que un espacio $Y$ es una \textit{compactación Hausdorff} del espacio $X$ cuando: $Y$ es compacto, de Hausdorff y $Y$ contiene una copia homeomorfa de $X$, densa en $Y$. Es bien sabido \cite[Teo.~3.5.1]{engelTopo} que un espacio de Hausdorff, no compacto, $X$ tiene compactaciones Hausdorff si y sólo si $X$ es de Tychonoff. A propósitos de este trabajo, nos serviremos únicamente de la siguiente caracterización.
+
+\begin{proposicion}\phantomsection\label{admiAlex}
+    Sea $X$ un espacio no compacto. La extensión unipuntual $Y \mycoloneq X \cup \{\infty\}$ es la compactación de Alexandroff de $X$ si y sólo si $X$ es de Hausdorff y localmente compacto.
+\end{proposicion}
+\begin{proof}
+    Supóngase primero que $Y$ es de Hausdorff, entonces el localmente compacto (por \ref{Hauss-LocComp}). Como $X$ es espacio no compacto y $Y$ es de Hausdorff, $X=Y \setminus \{ \infty\}$ es un subespacio de Hausdorff, denso y abierto de $Y$. Lo cual, nuevamente por \ref{Hauss-LocComp}, implica que $X$ es localmente compacto.
+
+    De forma recíproca, supóngase que $X$ es de Hausdorff y localmente compacto. Como $X$ es subespacio de $Y$, para verificar que $X$ es de Hausdorff, resta ver que si $x \in X$, entonces $\infty$ y $x$ se separan por abiertos ajenos.
+    
+    Efectivamente, sean $x \in X$ y $N$ una vecindad compacta para $x$ en $X$. Fíjese un abierto $V$ de $X$ con $x \in V \subseteq N$. Ahora, como $N$ es compacto y cerrado del espacio de Hausdorff $X$; por lo tanto, $U \mycoloneq  \{\infty\} \cup X \setminus N$ es un abierto en $X \cup \{\infty\}$ ajeno con $V$.
+\end{proof}

@@ -1,0 +1,186 @@
+\documentclass[letterpaper,DIV=12,12pt]{scrbook}
+\usepackage[spanish,mexico,shorthands=off,es-lcroman]{babel}
+\usepackage{scrlayer-scrpage}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\KOMAoptions{twoside=true,open=left}
+
+\newpairofpagestyles{chapstyle}{
+	\clearpairofpagestyles
+	\lehead{\textbf{\chaptername~\thechapter} \leftmark}
+	\rohead{\textbf{\thesection} \rightmark}
+	\rehead{\pagemark}
+	\lohead{\pagemark}
+	\addtokomafont{pagehead}{\normalfont\footnotesize}
+	\KOMAoptions{headsepline=true}
+}
+
+\newpairofpagestyles{beginstyle}{
+	\clearpairofpagestyles
+	\KOMAoptions{headsepline=false}
+	\cfoot{\footnotesize \pagemark}
+}
+
+\renewcommand*{\chapterpagestyle}{beginstyle}
+
+\addtokomafont{chapter}{\rmfamily}
+\addtokomafont{section}{\rmfamily}
+\addtokomafont{subsection}{\raggedleft\rmfamily}
+\addtokomafont{subsubsection}{\raggedleft\rmfamily}
+\addtokomafont{chapterentry}{\rmfamily}
+
+\setlength{\headsep}{5pt}
+\setlength{\footskip}{25pt}
+\setlength{\textheight}{500pt}
+\setlength{\textwidth}{400pt}
+
+\usepackage{array}
+\usepackage[x11names]{xcolor}
+\usepackage{lipsum}
+\usepackage[font=footnotesize, labelfont=bf]{caption}
+\usepackage[shortlabels]{enumitem}
+\setenumerate[1]{label=\MakeLowercase{\roman*}), ref=\roman*}
+\setenumerate[2]{label=\MakeLowercase{\alph*}), ref=\alph*}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stix2}
+
+\usepackage[colorlinks=true, linkcolor=rosa, citecolor=azulC, urlcolor=dorado]{hyperref}
+\usepackage[spanish, capitalize]{cleveref}
+\crefname{section}{Sección}{Secciones}
+\Crefname{section}{Sección}{Secciones}
+\usepackage[backend=biber, style=numeric, sortcites, url=true]{biblatex}
+\usepackage{csquotes,url}
+\addbibresource{chapters/referencias.bib}
+
+\usepackage{imakeidx}
+\usepackage{etoolbox}
+\makeindex[columns=1, intoc, title=PRUEBA]
+\makeindex[name=trad, columns=1, intoc, title=Caracterizaciones]
+\makeindex[name=sym, columns=3, intoc, title=Índice Simbólico]
+\makeindex[name=alph, columns=2, intoc, title=Índice Alfabético]
+\indexsetup{firstpagestyle=beginstyle}
+
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\definecolor{azul}{RGB}{0, 60, 113}
+\definecolor{dorado}{RGB}{196, 151, 57}
+\definecolor{morado}{RGB}{101, 43, 145}
+\definecolor{rosa}{RGB}{146, 33, 209}
+\definecolor{azulC}{RGB}{52, 90, 229}
+
+\mdfsetup{linewidth=0}
+
+\mdfdefinestyle{caja1}{
+	roundcorner=5pt,
+	backgroundcolor=azul!8,
+	linewidth=0,
+}
+
+\mdfdefinestyle{caja2}{
+	roundcorner=5pt,
+	backgroundcolor=dorado!8,
+	linewidth=0,
+}
+
+\mdfdefinestyle{caja3}{
+	roundcorner=5pt,
+	backgroundcolor=morado!8,
+	linewidth=0,
+}
+\mdfdefinestyle{caja4}{
+	roundcorner=5pt,
+	backgroundcolor=gray!10,
+	linewidth=0,
+}
+
+\declaretheoremstyle[
+    headfont=\bfseries,
+    notefont=\bfseries,
+    notebraces={(}{)},
+    bodyfont=\itshape,
+    postheadspace=0.5em,
+]{myTeoStyle}
+
+
+\declaretheorem[style=myTeoStyle,mdframed={style=caja1},name=Definición,numberwithin=section]{definicion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Proposición,sharenumber=definicion]{proposicion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Lema,sharenumber=definicion]{lema}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja3},name=Corolario,sharenumber=definicion]{corolario}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Observación,sharenumber=definicion]{observacion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Ejemplo,sharenumber=definicion]{ejemplo}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja4},name=Consideración,sharenumber=definicion]{consideracion}
+\declaretheorem[style=myTeoStyle,mdframed={style=caja2},name=Teorema,sharenumber=definicion]{teorema}
+
+
+\makeatletter
+\renewenvironment{proof}{%
+    \par\pushQED{\qed}%
+    \renewcommand{\qedsymbol}{$\blacksquare$}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item[\hskip\labelsep\bfseries\itshape Demostración.]\ignorespaces
+}{%
+    \popQED\endtrivlist\@endpefalse
+    \vspace{-0.3em}
+}
+\makeatother
+
+\makeatletter
+\let\c@figure\c@definicion
+\let\thefigure\thedefinicion
+\makeatother
+
+
+
+\newcommand{\tq}{\text{ $|$ }}
+\newcommand{\midcup}{\mbox{$\bigcup$}\,}
+\newcommand{\midcap}{\mbox{$\bigcap$}\,}
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\mycoloneq}{\mathrel{\text{\ooalign{\raisebox{0.5ex}{\scalebox{0.52}{$\bullet$}}\cr \raisebox{0.05ex}{\scalebox{0.52}{$\bullet$}}}}\mkern-5mu =}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\tau}{\ms{T}}
+
+\newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\mysetminusT}{\mysetminusD}
+\newcommand{\mysetminusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\mysetminusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+\newcommand{\mysetminus}{\mathbin{\mathchoice{\mysetminusD}{\mysetminusT}{\mysetminusS}{\mysetminusSS}}}
+\renewcommand{\setminus}{\mysetminus}
+
+
+\DeclareMathOperator{\inte}{int}
+\DeclareMathOperator{\ext}{ext}
+\DeclareMathOperator{\cla}{cl}
+\DeclareMathOperator{\der}{der}
+\DeclareMathOperator{\fron}{fr}
+\DeclareMathOperator{\scl}{sqcl}
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\ima}{ima}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\Osq}{so}
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\US}{US}
+\DeclareMathOperator{\AN}{AN}
+\DeclareMathOperator{\OR}{OR}
+\DeclareMathOperator{\CAR}{CAR}
+\DeclareMathOperator{\zfc}{ZFC}
+\DeclareMathOperator{\zf}{ZF}
+\DeclareMathOperator{\HC}{CH}
+\DeclareMathOperator{\Ma}{MA}
+\DeclareMathOperator{\Ac}{AC}
+\DeclareMathOperator{\Pm}{MC}
+\DeclareMathOperator{\Pdm}{WMC}
+\DeclareMathOperator{\Ad}{AD}
+\DeclareMathOperator{\Mad}{MAD}
+\DeclareMathOperator{\Gen}{Gen}
+\DeclareMathOperator{\MP}{MP}
+
+\newcommand{\CTT}{\textcolor{magenta}{(CITE)}}

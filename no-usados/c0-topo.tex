@@ -25,7 +25,7 @@
 
     Por otro lado, si $X$ es $\sigma$-compacto, $X$ es unión a lo más numerable de subespacios compactos de $X$, a saber $\{X_n \tq n \in \omega\}$. Como cada uno de ellos es compacto, para cada $n \in \omega$ existe un subconjunto $\mathcal{U}_n \in [\mathcal{U}]^{<\omega}$ con $X_n \subseteq \midcup \mathcal{U}_n$. Entonces $\midcup\{ \mathcal{U}_n \tq n \in \omega\}$ es una subcubierta a lo más numerable de $\mathcal{U}$.
 
-    (ii) Supógnase que $X$ es $2\AN$, localmente compacto. Para cada $x \in X$ sea ($\Ac$) $N_x$ una vecindad compacta de $x$ en $X$, entonces $\mathcal{U}:=\{ N_x \tq x \in X \}$ cumple las hipótesis del lema previo, y admite una subcubierta contable $\mathcal{V}$. Como cada elemento en $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, se tiene que $X$ es $\sigma$-compacto.
+    (ii) Supógnase que $X$ es $2\AN$, localmente compacto. Para cada $x \in X$ sea ($\Ac$) $N_x$ una vecindad compacta de $x$ en $X$, entonces $\mathcal{U} \mycoloneq \{ N_x \tq x \in X \}$ cumple las hipótesis del lema previo, y admite una subcubierta contable $\mathcal{V}$. Como cada elemento en $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, se tiene que $X$ es $\sigma$-compacto.
 \end{proof}
 
 \begin{proposicion}\phantomsection\label{t1-limPointsiiNumcCom}
@@ -66,7 +66,7 @@ Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conoc
 
     Por ser $X$ de Hausdorff, $\cla_A(V) = \cla(V) \cap A$ es cerrado en $X$. Dado que $V \subseteq A$, entonces $V \subseteq \cla(V) \cap A$, y así $\cla(V) \subseteq \cla(\cla(V) \cap A) = \cla(V) \cap A$. Se deduce entonces que $\cla(V) \subseteq A$.
 
-    Como $V$ es abierto en $A$, existe un abierto $U$ de $X$ con $V = U \cap A$. La condición $\cla(V) \subseteq A$ implica que $\cla(A) \cap U \subseteq A$. Como $U$ es abierto en $X$, entonces el conjunto  $W:=\cla(A)\cap U$ es un abierto de $\cla(A)$ tal que $x \in W \subseteq A \subseteq \cla(A)$. Lo cual demuestra que $A$ es abierto en $\cla(A)$.
+    Como $V$ es abierto en $A$, existe un abierto $U$ de $X$ con $V = U \cap A$. La condición $\cla(V) \subseteq A$ implica que $\cla(A) \cap U \subseteq A$. Como $U$ es abierto en $X$, entonces el conjunto  $W \mycoloneq \cla(A)\cap U$ es un abierto de $\cla(A)$ tal que $x \in W \subseteq A \subseteq \cla(A)$. Lo cual demuestra que $A$ es abierto en $\cla(A)$.
 
     (ii) $\to$ (iii) Supógnase que $A$ es abierto en su clausura, entonces $A=U \cap \cla(A)$, donde $U$ es abierto en $X$ y $\cla(A)$ es cerrado en $X$.
 
@@ -100,9 +100,9 @@ Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magr
     Todo espacio $X$ de Hausdorff, localmente compacto, es de Baire.
 \end{teorema}
 \begin{proof}
-    Sea $\{D_n \tq n \in \omega\}$ una colección de abiertos, densos de $X$, habrá de mostrarse que $A:=\midcap\{ D_n \tq n \in \omega \}$ es denso en $X$. Sea $U$ un abierto no vacío de $X$.
+    Sea $\{D_n \tq n \in \omega\}$ una colección de abiertos, densos de $X$, habrá de mostrarse que $A \mycoloneq \midcap\{ D_n \tq n \in \omega \}$ es denso en $X$. Sea $U$ un abierto no vacío de $X$.
 
-    Para cada punto $x \in X$ y vecindad $N$ de $x$ fíjese ($\Ac$) una vecindad compacta $K(x,N)$ de $X$ tal que $x \in K(x,N) \subseteq N$. Por recursión en $\omega$ defínanse $x_0$ como cualquier elemento de $U \cap D_0$ y $K_0:=K(x_0,U \cap D_0)$; y, para cada $n \in \omega$, tómense $x_{n+1} \in K_n \cap D_{n+1}$ y $K_{n+1}=K(x_{n+1},K_n \cap D_{n+1})$.
+    Para cada punto $x \in X$ y vecindad $N$ de $x$ fíjese ($\Ac$) una vecindad compacta $K(x,N)$ de $X$ tal que $x \in K(x,N) \subseteq N$. Por recursión en $\omega$ defínanse $x_0$ como cualquier elemento de $U \cap D_0$ y $K_0 \mycoloneq K(x_0,U \cap D_0)$; y, para cada $n \in \omega$, tómense $x_{n+1} \in K_n \cap D_{n+1}$ y $K_{n+1}=K(x_{n+1},K_n \cap D_{n+1})$.
     
     De esta manera, $\{K_n \tq n \in \omega\}$ es una sucesión $\subseteq$-decreciente de subespacios compactos no vacíos de $X$. Como todos ellos son subespacios compactos, de Hausdorff, no vacíos, y del espacio compacto $K_0$, la siguiente intersección no puede ser vacía: $\midcap\{ K_n \tq n \in \omega \} \subseteq U \cap A$. Así, $A$ es denso y $X$ es de Baire.
 \end{proof}
@@ -118,7 +118,7 @@ El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función 
     \end{enumerate}
 \end{proposicion}
 \begin{proof}
-    (i) Por absurdo, supóngase que $X$ es numerablemente compacto  y no pseudocompacto. Fíjese $f:X \to \mathbb{R}$ no acodada. Entonces, para cada $n \in \omega$ se puede fijar ($\Ac$) un elemento $x_n \in X$ de modo que $|f(x)|>n$, con ello, el conjunto $A:=\{x_n \tq n \in \omega\}$ es infinito.
+    (i) Por absurdo, supóngase que $X$ es numerablemente compacto  y no pseudocompacto. Fíjese $f:X \to \mathbb{R}$ no acodada. Entonces, para cada $n \in \omega$ se puede fijar ($\Ac$) un elemento $x_n \in X$ de modo que $|f(x)|>n$, con ello, el conjunto $A \mycoloneq \{x_n \tq n \in \omega\}$ es infinito.
 
     Como $X$ es numerablemente compacto y $\T_1$, existe $x \in \der(A)$ y como $f$ es continua, $f(x) \in \der(f[A])$. A razón de esto, $(0,f(x)+1) \cap f[A]$ es infinito, de donde, $\{ m \in \omega \tq f(x_n) < f(x)+1 \}$ es infinito. Pero, lo anterior es una contradicción, dada la elección de los puntos $x_n$. Por lo tanto, $X$ debe ser pseudocompacto.
 
@@ -142,11 +142,30 @@ El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función 
     Efectivamente, sea $g:\omega \to \omega$ estrictamente creciente. Por continuidad de $f$, si $(x_{g(n)})_{n \in \omega}$ converge en $X$, $(f(x_{g(n)}))_{n \in \omega}$ converge en $\mathbb{R}$, y por tanto, es acotada. Esto contradice la construcción de $f$, por lo tanto, $(x_n)_{n \in \omega}$ no contiene subsucesiones convergentes en $X$.
 \end{proof}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Extensiones unipuntuales}
 
 \index[alph]{exntesión!unipuntual}\index[alph]{unipuntual!exntesión}
 Para cada espacio topológico $(X,\tau)$ considérese un punto $\infty \notin X$ (siempre existe tal punto, pues en $\zfc$, ningún conjunto tiene por elemento a cualquier conjunto). Se define la \textit{extensión unipuntual} de $(X,\tau)$ como el espacio $(X \cup \{ \infty \},\eta)$, donde:
-\[ \eta:= \tau \cup \{ U \subseteq X \cup \{ \infty \} \tq \infty \in U \, \land \, X \setminus U \text{ es compacto y cerrado en } X \} \]
+\[ \eta \mycoloneq  \tau \cup \{ U \subseteq X \cup \{ \infty \} \tq \infty \in U \, \land \, X \setminus U \text{ es compacto y cerrado en } X \} \]
 es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
 
 \begin{proposicion}
@@ -158,7 +177,7 @@ es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
     \end{enumerate}
 \end{proposicion}
 \begin{proof}
-    (i) La contención $\tau \subseteq \eta' := \{ U \cap X \tq U \in \eta \}$ es evidente. De forma recíproca, sea $U \in \eta$, sin pérdida de generalidad $U \notin \tau$. Sea $y \in U \cap X$ cualquier elemento, entonces, $y \in X \setminus (X \setminus U)$. Por definición de $\eta$, $X \setminus U$ es cerrado en $X$, así que $X \setminus U$ es abierto en $X$ y existe $V \in \eta$ de manera que ocurre $y \in V \subseteq X \setminus (X \setminus U) \subseteq U \cap X$. Esto muestra que $U \cap X$ es abierto en $X$, es decir, $U \cap X \in \tau$.
+    (i) La contención $\tau \subseteq \eta'  \mycoloneq  \{ U \cap X \tq U \in \eta \}$ es evidente. De forma recíproca, sea $U \in \eta$, sin pérdida de generalidad $U \notin \tau$. Sea $y \in U \cap X$ cualquier elemento, entonces, $y \in X \setminus (X \setminus U)$. Por definición de $\eta$, $X \setminus U$ es cerrado en $X$, así que $X \setminus U$ es abierto en $X$ y existe $V \in \eta$ de manera que ocurre $y \in V \subseteq X \setminus (X \setminus U) \subseteq U \cap X$. Esto muestra que $U \cap X$ es abierto en $X$, es decir, $U \cap X \in \tau$.
 
     (ii) Sea $\mathcal{U}$ una cubierta abierta de $X \cup \{ \infty \}$. Entonces existe $U_0 \in \mathcal{U}$ de modo que $\infty \in U_0$. Por definición de $\eta$, $X \setminus U_0$ es compacto, entonces, existe un subconjunto finito $\mathcal{V}$ de $\mathcal{U}$ de modo que $X \setminus U_0 \subseteq \midcup \mathcal{V}$. Así, $\mathcal{V} \cup \{U_0\}$ es una subcubierta finita de $\mathcal{U}$. Lo anterior demuestra que $X \cup \{ \infty \}$ es compacto.
 
@@ -169,14 +188,14 @@ es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
 Decimos que la extensión unipuntual de un espacio no compacto $X$ es la \textit{compactación de Alexandroff} cuando resulta ser de Hausdorff; y más en general, decimos que un espacio $Y$ es una \textit{compactación Hausdorff} del espacio $X$ cuando: $Y$ es compacto, de Hausdorff y $Y$ contiene una copia homeomorfa de $X$, densa en $Y$. Es bien sabido \cite[Teo.~3.5.1]{engelTopo} que un espacio de Hausdorff, no compacto, $X$ tiene compactaciones Hausdorff si y sólo si $X$ es de Tychonoff. A propósitos de este trabajo, nos serviremos únicamente de la siguiente caracterización.
 
 \begin{proposicion}\phantomsection\label{admiAlex}
-    Sea $X$ un espacio no compacto. La extensión unipuntual $Y:=X \cup \{\infty\}$ es la compactación de Alexandroff de $X$ si y sólo si $X$ es de Hausdorff y localmente compacto.
+    Sea $X$ un espacio no compacto. La extensión unipuntual $Y \mycoloneq X \cup \{\infty\}$ es la compactación de Alexandroff de $X$ si y sólo si $X$ es de Hausdorff y localmente compacto.
 \end{proposicion}
 \begin{proof}
     Supóngase primero que $Y$ es de Hausdorff, entonces el localmente compacto (por \ref{Hauss-LocComp}). Como $X$ es espacio no compacto y $Y$ es de Hausdorff, $X=Y \setminus \{ \infty\}$ es un subespacio de Hausdorff, denso y abierto de $Y$. Lo cual, nuevamente por \ref{Hauss-LocComp}, implica que $X$ es localmente compacto.
 
     De forma recíproca, supóngase que $X$ es de Hausdorff y localmente compacto. Como $X$ es subespacio de $Y$, para verificar que $X$ es de Hausdorff, resta ver que si $x \in X$, entonces $\infty$ y $x$ se separan por abiertos ajenos.
     
-    Efectivamente, sean $x \in X$ y $N$ una vecindad compacta para $x$ en $X$. Fíjese un abierto $V$ de $X$ con $x \in V \subseteq N$. Ahora, como $N$ es compacto y cerrado del espacio de Hausdorff $X$; por lo tanto, $U:= \{\infty\} \cup X \setminus N$ es un abierto en $X \cup \{\infty\}$ ajeno con $V$.
+    Efectivamente, sean $x \in X$ y $N$ una vecindad compacta para $x$ en $X$. Fíjese un abierto $V$ de $X$ con $x \in V \subseteq N$. Ahora, como $N$ es compacto y cerrado del espacio de Hausdorff $X$; por lo tanto, $U \mycoloneq  \{\infty\} \cup X \setminus N$ es un abierto en $X \cup \{\infty\}$ ajeno con $V$.
 \end{proof}
 
 \section{Espacios Metrizables}
@@ -186,17 +205,17 @@ Una \textit{métrica} sobre un conjunto $X$ es una función $d:X \times X \to \m
 
 \index[alph]{bola abierta}\index[alph]{topología!inducida por una métrica}\index[alph]{conjunto!bola abierta}\index[sym]{$B(x,\varepsilon)$}\index[sym]{$\tau_d$}\index[alph]{espacio!metrizable}
 Sea $(X,d)$ un espacio métrico, para cada $\varepsilon>0$ y $x \in X$ se define la \textit{bola abierta de radio} $\varepsilon$ \textit{y centro} $x$ como el conjunto $B(x,\varepsilon)=\{ y \in X \tq d(y,x)<\varepsilon \}$. Dado esto, se define la \textit{topología inducida por} $d$ \textit{en} $X$ como:
-\[ \tau_d := \{ U \subseteq X \tq \forall x \in U \, \exists \varepsilon > 0 \, ( x \in B(x,\varepsilon) \subseteq U ) \} \, . \]
+\[ \tau_d  \mycoloneq  \{ U \subseteq X \tq \forall x \in U \, \exists \varepsilon > 0 \, ( x \in B(x,\varepsilon) \subseteq U ) \} \, . \]
 Es un hecho que $\tau_d$ es siempre una topología, y que, las bolas abiertas son subconjuntos abieros en $(X,\tau_d)$.Un espacio topológico $(X,\tau)$ es \textit{metrizable} cuando existe una métrica $d$ en $X$ tal que $\tau=\tau_d$.
 
 \index[alph]{estrella al rededor de $x$}\index[alph]{espacio!desarrollable}\index[alph]{desarrollo}\index[alph]{espacio!de Moore}\index[alph]{Moore!espacio de}\index[sym]{$\St(x,\mathcal{U})$}
-A continuación se introduce una forma de \enquote{aproximar} la metrizabilidad de un espacio. Sea $X$ un espacio topológico, si $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ defínase la \textit{estrella al rededor} de $x$ (respecto $\mathcal{U}$) como: $\St(x,\mathcal{U}):=\midcup \{ U \in \mathcal{U} \tq x \in U \}$. Se dice que un conjunto contable de cubiertas abiertas para $X$, digamos $\{U_n \tq n \in \omega\}$, es un \textit{desarrollo} para $X$ si y sólo si para cada $x \in X$, el conjunto $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es una base local para $x$ en $X$, en tal caso $X$ es \textit{desarrollable}. Un espacio es de Moore si y sólo si es $\T_3$ y desarrollable. Todo espacio de Moore es $1\AN$, es bien sabido \cite[Teo.~ 4.1.13]{engelTopo} que todo espacio metrizable es $\T_4$. Ahora:
+A continuación se introduce una forma de \enquote{aproximar} la metrizabilidad de un espacio. Sea $X$ un espacio topológico, si $\mathcal{U}$ es una cubierta abierta de $X$, para cada $x \in X$ defínase la \textit{estrella al rededor} de $x$ (respecto $\mathcal{U}$) como: $\St(x,\mathcal{U}) \mycoloneq \midcup \{ U \in \mathcal{U} \tq x \in U \}$. Se dice que un conjunto contable de cubiertas abiertas para $X$, digamos $\{U_n \tq n \in \omega\}$, es un \textit{desarrollo} para $X$ si y sólo si para cada $x \in X$, el conjunto $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es una base local para $x$ en $X$, en tal caso $X$ es \textit{desarrollable}. Un espacio es de Moore si y sólo si es $\T_3$ y desarrollable. Todo espacio de Moore es $1\AN$, es bien sabido \cite[Teo.~ 4.1.13]{engelTopo} que todo espacio metrizable es $\T_4$. Ahora:
 
 \begin{proposicion}\phantomsection\label{metri-moore}
     Todo espacio metrizable es normal y de Moore.
 \end{proposicion}
 \begin{proof}
-    Sea $X$ un espacio metrizable por la métrica $d$, basta demostrar que $X$ es desarrollable. Para cada $n \in \omega$ sea $\mathcal{U}_n:=\{ B(x,1/n) \tq x \in X \}$, entonces $\{ \mathcal{U}_n \tq n \in \omega \}$ es un desarrollo para $X$.
+    Sea $X$ un espacio metrizable por la métrica $d$, basta demostrar que $X$ es desarrollable. Para cada $n \in \omega$ sea $\mathcal{U}_n \mycoloneq \{ B(x,1/n) \tq x \in X \}$, entonces $\{ \mathcal{U}_n \tq n \in \omega \}$ es un desarrollo para $X$.
 
     Efectivamente, supóngase que $U$ es abierto en $X$ y que $x \in X$, entonces, existe $\varepsilon>0$ de manera que $x \in B(x,\varepsilon) \subseteq U$. Sea $N \in \omega$ tal que $1/N<\varepsilon /2$ y supóngase que $y \in \St(x,\mathcal{U}_N)$ es cualquiera. Por ello, existe $z \in X$ con $x,y \in B(z,1/N)$, consecuentemente $d(x,y) \leq d(x,z) +  d(z,y) \leq 2/N < \varepsilon$. Esto prueba que $x \in \St(x, \mathcal{U}_N) \subseteq U$, por lo que $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es base local de $x$ en $X$.
 \end{proof}
@@ -210,7 +229,7 @@ Se tiene el siguiente comportamiento para los espacios desarrollables.
     Sea $X$ un espacio desarrollable, entonces $X$ es $2\AN$ si y sólo si $X$ es de Lindelöf.
 \end{proposicion}
 \begin{proof}
-    La suficiencia es inmediata al \cref{cor-2AN-Linde}. Para la necesidad sea $\{ \mathcal{U}_n \tq n \in \omega \}$ un desarrollo de $X$ y supóngase que $X$ es de Lindelöf. Para cada $n \in \omega$ fíjsese ($\Ac$) una subcubierta contable $\mathcal{V}_n$ de $\mathcal{U}_n$. Entonces $\mathcal{B}:=\midcup\{ \mathcal{V}_n \tq n \in \omega \}$ es una coleción contable de abiertos de $X$.
+    La suficiencia es inmediata al \cref{cor-2AN-Linde}. Para la necesidad sea $\{ \mathcal{U}_n \tq n \in \omega \}$ un desarrollo de $X$ y supóngase que $X$ es de Lindelöf. Para cada $n \in \omega$ fíjsese ($\Ac$) una subcubierta contable $\mathcal{V}_n$ de $\mathcal{U}_n$. Entonces $\mathcal{B} \mycoloneq \midcup\{ \mathcal{V}_n \tq n \in \omega \}$ es una coleción contable de abiertos de $X$.
 
     Supóngase que $U$ es un abierto de $X$ y $x \in U$, entonces existe $N \in \omega$ de modo que $x \in \St(x,\mathcal{U}_N) \subseteq U$. Como $\mathcal{V}_N$ es cubierta de $X$, existe $V \in \mathcal{U}_N \subseteq \mathcal{B}$ tal que $x \in U$. Nótese que, como $\mathcal{V}_n \subseteq \mathcal{U}_n$ y $x \in V$, se tiene que $x \in V \subseteq \St(x,\mathcal{U}_N) \subseteq U$, mostrando que $\mathcal{B}$ es base contable para $X$.
 \end{proof}
@@ -227,7 +246,7 @@ Se tiene el siguiente comportamiento para los espacios desarrollables.
 \begin{proof}
     Por \ref{metri-moore} y \ref{desarrollo-lindSii2an}, basta probar (iii) $\to$ (i).
 
-    Supóngase que $D=\{x_n \tq n \in \omega\} \subseteq X$ es denso. Se afirma que el conjunto numerable de abiertos, $\mathcal{B}:=\{ B(x_m,1/n) \tq (m,n) \in \omega \times \omega \setminus \{0\} \}$, es base para $X$. En efecto, supóngase que $U$ es abierto y que $x \in U$, entonces existe $\varepsilon>0$ tal que $x \in B(x,\varepsilon) \subseteq U$. Por densidad de $D$, existe $m \in \omega$ tal que $x_m \in B(x,\varepsilon /2)$.
+    Supóngase que $D=\{x_n \tq n \in \omega\} \subseteq X$ es denso. Se afirma que el conjunto numerable de abiertos, $\mathcal{B} \mycoloneq \{ B(x_m,1/n) \tq (m,n) \in \omega \times \omega \setminus \{0\} \}$, es base para $X$. En efecto, supóngase que $U$ es abierto y que $x \in U$, entonces existe $\varepsilon>0$ tal que $x \in B(x,\varepsilon) \subseteq U$. Por densidad de $D$, existe $m \in \omega$ tal que $x_m \in B(x,\varepsilon /2)$.
 
     Tómese $N \in \omega$ de manera que $1/N<\varepsilon/2$. Entonces, si $y \in B(x_m,N)$, entonces $d(x,y) \leq d(y,x_m)+d(x_m,x) < \varepsilon$, mostrando que $x \in B(x_m, 1/N)$, y con ello, que $\mathcal{B}$ es base contable para $X$.
 \end{proof}

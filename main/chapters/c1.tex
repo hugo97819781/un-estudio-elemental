@@ -8,32 +8,32 @@
 \begin{definicion}\phantomsection\label{def-casi-ajena}\index[alph]{casi!ajeno}\index[alph]{casi!ajena sobre $N$, familia}\index[alph]{familia!casi ajena}\index[alph]{casi!ajena, familia}\index[alph]{familia!casi ajena sobre $N$}\index[sym]{$\Ad(N)$}
 	Sea $N$ un conjunto numerable. Una \textbf{familia casi ajena sobre $N$} es un subconjunto $\ms{A}\subseteq[N]^\omega$ cuyos elementos son casi ajenos por pares. $\Ad(N)$ es el conjunto de todas las familias casi ajenas sobre $N$.
 	
-	El término \textbf{familia casi ajena} (o simplemente \textbf{familia}) hará referencia a una familia casi ajena sobre $\omega$.
+	El término \textbf{familia casi ajena} (o simplemente, \textbf{familia}) hará referencia a una familia casi ajena sobre $\omega$.
 \end{definicion}
 
-El concepto previo es fácilmente generalizable, el lector puede indagar al respecto en \cite[Def.~9.20, p.~118]{jechSet}. Sin embargo, la teoría asociada a las familias casi ajenas, definidas como en \ref{def-casi-ajena}, es suficientemente amplia y meritoria de un estudio dedicado.
+El concepto previo es fácilmente generalizable \cite[Def.~9.20, p.~118]{jechSet}. Sin embargo, la teoría asociada a las familias casi ajenas, definidas como en \ref{def-casi-ajena}, es suficientemente amplia y meritoria de un estudio dedicado.
 
-Cualquier familia de subconjuntos ajenos por pares de $N$, es también una familia casi ajena sobre $N$; particularmente, $\emptyset$ y cualquier colección de la forma $\{A\}$, con $A \in [N]^\omega$. Además, resulta evidente que cada subconjunto de una familia casi ajena sobre $N$ es, a su vez, una familia casi ajena sobre $N$.
+Cualquier familia de subconjuntos ajenos por pares de $N$, es también una familia casi ajena sobre $N$; particularmente, $\emptyset$ y cualquier colección de la forma $\{A\}$, con $A \in [N]^\omega$.
 
-Es claro que toda familia casi ajena tiene tamaño menor o igual a $\mathfrak{c}$; así que en virtud de lo previamente observado, de existir alguna de ellas de tamaño el continuo, se garantizaría la existencia de familias ajenas de cualquier tamaño inferior a $\mathfrak{c}$.
+Toda familia casi ajena tiene tamaño menor o igual a $|[\omega]^\omega| = \mathfrak{c}$, así que de existir alguna de ellas de tamaño el continuo, se garantizaría la existencia de familias ajenas de cualquier tamaño $\lambda \leq \mathfrak{c}$; pues, cada subconjunto de una familia casi ajena, es de nuevo, una familia casi ajena.
 
 \begin{ejemplo}
 	\phantomsection\label{ej-ADfacil}
 	Las siguientes colecciones: $\{\omega\}$, $\{ \{ 2n \tq n \in \omega \}, \{ 2n+1 \tq n \in \omega \} \}$ y $\{ \{ p^n \tq n \in \omega \setminus \{0\} \} \tq p \text{ es primo} \}$ son familias casi ajenas sobre $\omega$.
 \end{ejemplo}
 
-No resulta muy difícil verificar que las primeras dos familias del ejemplo anterior son \enquote{grandes}, en el siguiente sentido:
+%No resulta muy difícil verificar que las primeras dos familias del ejemplo anterior son \enquote{grandes}, en el siguiente sentido:
 
 \begin{definicion}\index[alph]{familia!casi ajena sobre $N$!maximal en $N$}\index[sym]{$\Mad(N)$}\index[alph]{familia!casi ajena!maximal}
-	Sea $N$ conjunto numerable. Una familia $\ms{A}$ sobre $N$ es \textbf{maximal en} $N$ si es $\subseteq$-maximal del conjunto $\Ad(N)$. Se denotará por $\Mad(N)$ al conjunto de todas ellas.
+	Sea $N$ conjunto numerable. Una familia casi ajena $\ms{A}$ sobre $N$ es \textbf{maximal en} $N$ si es $\subseteq$-maximal del conjunto $\Ad(N)$. Se denotará por $\Mad(N)$ al conjunto de todas ellas.
 	
-	Cuando no haya riesgo de ambigüedad, el término \textbf{familia maximal} hará referencia a una familia maximal en $\omega$.
+	Cuando no haya riesgo de ambigüedad, el término \textbf{familia maximal} hará referencia a una familia casi ajena maximal en $\omega$.
 \end{definicion}
 
 Dado que los elementos de toda familia casi ajena son infinitos, se tiene inmediatamente la siguiente observación:
 
 \begin{observacion}
-	Una familia $\ms{A} \in \Ad(N) $ es maximal en $N$ si y sólo si se cumple cualquiera de las siguientes condiciones equivalentes:
+	Una familia $\ms{A} \in \Ad(N) $ es maximal en $N$ si y sólo si se cumple alguna de las siguientes condiciones equivalentes:
 	\begin{enumerate}
 		%\item Para toda $\ms{B} \in \Ad(N)$, si $\ms{A} \subseteq \ms{B}$, entonces $\ms{A} = \ms{B}$
 		\item Para cualquier $\ms{B} \subseteq [N]^\omega$, si $\ms{A} \subsetneq \ms{B}$, entonces $\ms{B} \notin \Ad(N)$.
@@ -41,7 +41,7 @@ Dado que los elementos de toda familia casi ajena son infinitos, se tiene inmedi
 	\end{enumerate}
 \end{observacion}
 
-Se advierte que las familias sobre $\omega$ parecerán deslucir a las construidas sobre otros conjuntos numerables; pero al no ser el estudio sobre estas últimas nulo, es menester considerar las propiedades que son transferibles entre estas dos clases de objetos.
+Las familias sobre $\omega$ parecerán deslucir a las construidas sobre otros conjuntos numerables; pero al no ser el estudio sobre estas últimas nulo, es menester considerar las propiedades que son transferibles entre estas dos clases de objetos.
 
 \begin{definicion}\phantomsection\label{def-Biyecs-h}\index[sym]{$\Phi_h$}
 	Sean $N,M$ conjuntos numerables y $h \colon N \to M$ cualquier biyección. Se define $\Phi_h  \colon  \ms{P}(\ms{P}(N)) \to \ms{P}(\ms{P}(M))$ como:
@@ -71,8 +71,6 @@ En términos de lo recién definido, se remarca que al ser $h$ biyección, $\Phi
 
 A partir de este momento se consolida la usanza de hacer hincapié en qué propiedades, u objetos, basados en familias casi ajenas se preservan bajo las biyecciones $\Phi_h$.
 
-Una aplicación superflua de lo anterior es el nacimiento de un método cómodo para generar familias casi ajenas; en especial, infinitas.
-
 \begin{ejemplo}
 	\phantomsection\label{ej-Bandas}
 	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h \colon \omega \times \omega \to \omega$ es biyección, $\Phi_h(\ms{A}) \in \Ad(\omega)$. Más aún, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec}).
@@ -88,7 +86,7 @@ A continuación se comenzarán a examinar las propiedades de las familias casi a
 	Por contrapuesta, supóngase que $B \mycoloneq \omega \setminus \midcup \ms{A}$ es infinito. Si $A \in \ms{A}$, entonces $A \subseteq \midcup \ms{A}$, y así $A \cap B \subseteq A \setminus \midcup \ms{A} \subseteq A \setminus A = \emptyset$. Por lo que $B \in [\omega]^\omega$ es casi ajeno con cada elemento de $\ms{A}$.
 \end{proof}
 
-El recíproco del Lema previo falla para familias infinitas (véase la familia $\Psi(\ms{A})$ del \cref{ej-Bandas}); y de hecho, no se cuenta un resultado \enquote{amigable} para determinar cuándo estas resultan ser maximales (véase \ref{prop-CaracMADPositiv}). En contraparte a esto, se deduce rápidamente la siguiente equivalencia:
+El recíproco de lo previo falla para familias infinitas (véase la familia $\Phi_h(\ms{A})$ del \cref{ej-Bandas}), de hecho, no se cuenta un resultado \enquote{amigable} para determinar cuándo estas resultan ser maximales (véase \ref{prop-CaracMADPositiv}). En contraparte a esto, se deduce rápidamente la siguiente equivalencia:
 
 \begin{corolario}\phantomsection\label{cor-MADnecesarioUnion}
 	Sea $\ms{A} \in \Ad(\omega)$. $\ms{A}$ es maximal si y sólo si $\omega \subseteq^* \midcup \ms{A}$.
@@ -114,19 +112,19 @@ El recíproco del Lema previo falla para familias infinitas (véase la familia $
 	Finalmente, si $\ms{B}' \in \Ad(\omega)$ y $\ms{B} \subseteq \ms{B}'$, entonces $Y \cup \{\ms{B}'\}$ es una cadena de $(X,\subseteq)$; lo cual, junto a la maximalidad de $Y$, implica que $\mathscr{B}' \in Y$ y $\mathscr{B} = \mathscr{B}'$. Por lo tanto, $\ms{B}\in \Mad(\omega)$.
 \end{proof}
 
-El siguiente resultado revela un fenómeno interesante respecto al tamaño de las familias maximales. Este se le atribuye a Wacław Sierpiński (se desprende de \cite[Teo.~2, p.~458]{SierpinskiCardinal}).
+El siguiente resultado se le atrubiye a Wacław Sierpiński, quien lo demostró en \cite[Teo.~2, p.~458]{SierpinskiCardinal}. Revela un fenómeno interesante respecto al tamaño de las familias maximales.
 
 \begin{lema}\phantomsection\label{prop-MADnoNum}
 	Ninguna familia casi ajena numerable es maximal.
 \end{lema}
 
 \begin{proof}
-	Sea $\ms{A} \in \Ad(\omega)$ enumerada por $\ms{A}=\{A_n \tq n \in \omega\}$. Si $n \in \omega$ es cualquiera, $A_n \cap \midcup \{A_m \tq m< n\} = \midcup \{A_n \cap A_m \tq m<n\}$ es finito, al ser unión finita de conjuntos finitos. Luego, por ser $A_n$ infinito, $A_n \setminus \midcup \{A_m \tq m<n\} = A_n \setminus \big( A_n \cap \midcup \{A_m \tq m<n\} \big)$ debe ser infinito; y particularmente, no no vacío.
+	Sea $\ms{A} \in \Ad(\omega)$ enumerada por $\ms{A}=\{A_n \tq n \in \omega\}$. Si $n \in \omega$, etonces $A_n \cap \midcup \{A_m \tq m< n\} = \midcup \{A_n \cap A_m \tq m<n\}$ es finito, por ser unión finita de conjuntos finitos. Así, $A_n \setminus \midcup \{A_m \tq m<n\} = A_n \setminus \big( A_n \cap \midcup \{A_m \tq m<n\} \big)$ debe ser infinito; y particularmente, no no vacío.
 
-	Considérese $f \colon \omega \to \omega$ definida por $f(n) = \min\{A_n \setminus \midcup \{A_m \tq m<n\}\}$ para cada $n$. Resulta que $f$ es inyectiva; si $m<n$, entonces $f(n) \notin A_m$, $f(m) \in A_m$ y $f(n) \neq f(m)$. Además, para cada $n \in \omega$ se tiene que $A_n \cap f[\omega] = \{f(n)\}$; y con ello $f[\omega] \subseteq \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
+	Considérese $f \colon \omega \to \omega$ definida por $f(n) = \min\{A_n \setminus \midcup \{A_m \tq m<n\}\}$, para cada $n$. Resulta que $f$ es inyectiva; si $m<n$, entonces $f(n) \notin A_m$, $f(m) \in A_m$ y $f(n) \neq f(m)$. Además, para cada $n \in \omega$ se tiene que $A_n \cap f[\omega] = \{f(n)\}$; y con ello $f[\omega] \subseteq \omega$ es infinito y casi ajeno con cada elemento de $\ms{A}$.
 \end{proof}
 
-Tomando cualquier familia infinita $\ms{A}$ y aplicando \cref{lem-MADs}, se obtiene una familia maximal $\ms{B} \supseteq \ms{A}$ de tamaño infinito. Por el resultado anterior, tal infinito debe ser más que numerable. Esta consecuencia es tan inmediata como, quizás, poco satisfactoria; pues su naturaleza es \enquote{no constructiva}. Durante la posterior sección se mostrarán métodos para obtener estos últimos objetos de una manera más explícita.
+Tomando cualquier familia infinita $\ms{A}$ y aplicando \cref{lem-MADs}, se obtiene una familia maximal $\ms{B} \supseteq \ms{A}$ no numerable. Esta consecuencia es tan inmediata como, quizás, poco satisfactoria, pues su naturaleza es \enquote{no constructiva}. Durante la posterior sección se mostrarán métodos para obtener estos últimos objetos de una manera más explícita.
 
 \begin{observacion}\phantomsection\label{obs-ExisteNoNumMAD}
 	Existe una familia maximal de tamaño al menos $\aleph_1$.
@@ -143,9 +141,9 @@ Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$
 \end{proposicion}
 
 \begin{proof}
-	Con sustento en los comentarios previos, para cada $x \in A$ fíjese ($\Ac$) un conjunto $A_x \subseteq D$ numerable y convergente a $x$ en $X$. Defínase la colección $\ms{A}_{D,A}$ como $\{ A_x \subseteq D \tq x \in A \} \subseteq [D]^\omega$.
+	Para cada $x \in A$ fíjese ($\Ac$) un conjunto $A_x \subseteq D$ numerable y convergente a $x$ en $X$. y sea $\ms{A}_{D,A} \mycoloneq \{ A_x \subseteq D \tq x \in A \} \subseteq [D]^\omega$.
 
-	Sean $x,y \in A$ con $x \neq y$, por ser $X$ de Hausdorff, hay abiertos ajenos $U,V$ tales que $x \in U$ y $y \in V$. Seguido de que $A_x \to x$ y $A_y \to y$, se tiene $A_x \subseteq^* U$ y $A_y \subseteq ^* V$; consecuentemente $A_x \cap A_y \subseteq^* U \cap V = \emptyset$. Lo cual prueba que $\ms{A}_{D,A} \in \Ad(D)$ y $|\ms{A}_{D,A}|=|A|$.
+	Sean $x,y \in A$ con $x \neq y$. Por ser $X$ de Hausdorff, existe un par de abiertos ajenos $U,V$, tales que $x \in U$ y $y \in V$. Seguido de las convergenteas $A_x \to x$ y $A_y \to y$, se tiene que $A_x \subseteq^* U$ y $A_y \subseteq ^* V$; por ello $A_x \cap A_y \subseteq^* U \cap V = \emptyset$. Lo anterior prueba que $\ms{A}_{D,A}$ es familia casi ajena en $D$, con $|\ms{A}_{D,A}|=|A|$.
 \end{proof}
 
 \begin{definicion}\phantomsection\label{def-FamSucesiones}\index[alph]{familia!de!sucesiones en $D$ convergentes a $A$ en $X$}\index[sym]{$\ms{A}_{D,A}$}

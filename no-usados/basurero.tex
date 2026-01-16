@@ -12,7 +12,7 @@
 	Además $T$ es numerable, ya que:
 	$$ \omega \leq |2^{<\omega}| = \Big| \bigcup_{n \in \omega} 2^n \Big| \leq \sum_{n \in \omega} |2^n| = \omega $$
 
-	Ahora, sean $f \in 2^\omega$ cualquiera y $R:=\{ f \upharpoonright n \tq n \in \omega \}$, claramente $R$ es cadena de $T$. Supóngase que $S \subseteq 2^{<\omega}$ es una rama de $T$ tal que $R \subseteq S$ y sea $g \in S$. Si $\dom(g)=n$, dado que $S$ es cadena de $T$, $f \upharpoonright n \subseteq g$ o $g \subseteq f \upharpoonright n$. Cualquiera de los casos anteriores implican que $f \upharpoonright n = g$ ya que $\dom(g)=\dom(f \upharpoonright n)$, así que $g \in R$ y $R = S$.
+	Ahora, sean $f \in 2^\omega$ cualquiera y $R \mycoloneq \{ f \upharpoonright n \tq n \in \omega \}$, claramente $R$ es cadena de $T$. Supóngase que $S \subseteq 2^{<\omega}$ es una rama de $T$ tal que $R \subseteq S$ y sea $g \in S$. Si $\dom(g)=n$, dado que $S$ es cadena de $T$, $f \upharpoonright n \subseteq g$ o $g \subseteq f \upharpoonright n$. Cualquiera de los casos anteriores implican que $f \upharpoonright n = g$ ya que $\dom(g)=\dom(f \upharpoonright n)$, así que $g \in R$ y $R = S$.
 \end{proof}
 
 
@@ -31,6 +31,6 @@ Recién se dio un ejemplo de dos espacios de Fréchet cuyo producto no satisface
 	Entonces; bajo $\Ma$, existe $x \in A^\omega$ de modo que:
 	\begin{enumerate}
 		\item Si $i \neq j$, entonces $\ima(x(i)) \cap \ima(x(j)) = \emptyset$.
-		\item $B:=\{ \pi_i (x(j)) \tq i \in n \land j \in m \}$ es casi ajeno con cada elemento de $\ms{A}$. Donde cada $\pi_i$ es la $i$-ésima proyección de $\omega^{n+m}$.
+		\item $B \mycoloneq \{ \pi_i (x(j)) \tq i \in n \land j \in m \}$ es casi ajeno con cada elemento de $\ms{A}$. Donde cada $\pi_i$ es la $i$-ésima proyección de $\omega^{n+m}$.
 	\end{enumerate}
 \end{lema}

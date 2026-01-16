@@ -6,7 +6,7 @@
 \section{\texorpdfstring{Sucesiones en $\ms{F}(\ms{A})$}{Sucesiones en F(A)}}
 \phantomsection\label{Subsec-sucesiones-Franklin}
 
-\begin{definicion}\index[alph]{compacto!de Franklin}\index[alph]{Franklin! compacto de}\index[sym]{$\ms{F}(\ms{A})$}
+\begin{definicion}\index[alph]{compactode Franklin}\index[alph]{Franklin! compacto de}\index[sym]{$\ms{F}(\ms{A})$}
 	Sea $\ms{A}\subseteq [\omega]^\omega$ cualquiera. El \textbf{compacto de Franklin generado por $\ms{A}$} es la extensión unipuntual del $\Psi$-espacio generado por $\ms{A}$, se denota por $ \ms{F}(\ms{A}) \mycoloneq \Psi(\ms{A}) \cup \{\infty_\ms{A} \} $.
 
 	Cuando el contexto así lo permita, se omitirá el subíndice ``$_\ms{A}$'' y se denotará el punto al infinito simplemente por $\infty$.
@@ -31,19 +31,19 @@ Puesto que $\Psi(\ms{A})$ es no compacto, al ser un espacio de Hausdorff y local
 	Sea $\ms{A}$ una familia casi ajena. Entonces $\ms{F}(\ms{A})$ es de Hausdorff, compacto, normal, localmente compacto, separable y disperso.
 \end{observacion}
 
-Comparando con el \cref{cor-MrwokaSiempre} con las observaciones recién hechas, vale mencionar que existen propiedades $\ms{F}(\ms{A})$ que tienen una dependencia más compleja con $\Psi(\ms{A})$. Iniciarmos mostrando estas disparidades con lo próximo:
+Comparando el \cref{cor-MrwokaSiempre} con las observaciones recién hechas, vale mencionar que existen propiedades de $\ms{F}(\ms{A})$ que tienen una dependencia más compleja con $\Psi(\ms{A})$. Una de ellas es el carácter topológico.
 
 \begin{proposicion}\phantomsection\label{prop-caracterFrechet}
-	Para toda familia $\ms{A}$ se tiene que $\chi(\infty) = \aleph_0 + |\ms{A}|$.
+	Para toda familia $\ms{A}$ se tiene que $\chi(\infty,\ms{F}(\ms{A})) = \aleph_0 + |\ms{A}|$.
 \end{proposicion}
 
-\begin{proof} Es evidente que $\aleph_0 \leq \chi(\infty)$. Ahora, sea $\mathcal{B}$ una base local de $\infty$ en $\ms{F}(\ms{A})$. Para cada $y \in \ms{A}$ fíjese ($\Ac$) un $B_y \in \mathcal{B}$ con $B_y \subseteq V(y \cup \{y\})$. Obsérvese que la asignación $y \mapsto B_y$ es inyectiva; pues, si $x,y \in \ms{A}$ son distintos, entonces $B_x \subseteq U(x \cup \{x\})$ y $B_y \subseteq U(y \cup \{y\})$, de donde $x \in B_y \setminus B_x$. Por lo tanto $ |\ms{A}| \leq |\mathcal{B}|$, y en consecuencia $\aleph_0 + |\ms{A}|\leq \chi(\infty)$.
+\begin{proof} Es evidente que $\aleph_0 \leq \chi(\infty,\ms{F}(\ms{A}))$. Ahora, sea $\mathcal{B}$ una base local de $\infty$ en $\ms{F}(\ms{A})$. Para cada $y \in \ms{A}$ fíjese ($\Ac$) un $B_y \in \mathcal{B}$ con $B_y \subseteq V(y \cup \{y\})$. Obsérvese que la asignación $y \mapsto B_y$ es inyectiva; pues, si $x,y \in \ms{A}$ son distintos, entonces $B_x \subseteq U(x \cup \{x\})$ y $B_y \subseteq U(y \cup \{y\})$, de donde $x \in B_y \setminus B_x$. Por lo tanto $ |\ms{A}| \leq |\mathcal{B}|$, y en consecuencia $\aleph_0 + |\ms{A}|\leq \chi(\infty,\ms{F}(\ms{A}))$.
 
 Para la desigualdad recíproca defínase:
 $$ \mathcal{B} = \big\{ V( B \cup \midcup h \cup h ) \tq (B,h) \in [\omega]^{<\omega} \times [\ms{A}]^{<\omega} \big\} $$
 y nótese que $\mathcal{B}$ es un conjunto de vecindades de $\infty$ en $\ms{F}(\ms{A})$.
 
-Ahora, si $K \subseteq \Psi(\ms{A})$ es compacto, $h \mycoloneq K \cap \ms{A} \subseteq \ms{A}$ y $G \mycoloneq (K \cap \omega) \setminus \midcup h \subseteq \omega$ son finitos, además $V\big( G \cup \midcup h \cup h \big) \subseteq V(K)$. Lo cual demuestra que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$. Dado que $ |\mathcal{B}| \leq | [\omega]^{<\omega} \times [\ms{A}]^{<\omega} | = \aleph_0 + |\ms{A}| $, resulta que $\chi(\infty) \leq \aleph_0 + |\ms{A}|$.
+Ahora, si $K \subseteq \Psi(\ms{A})$ es compacto, $h \mycoloneq K \cap \ms{A} \subseteq \ms{A}$ y $G \mycoloneq (K \cap \omega) \setminus \midcup h \subseteq \omega$ son finitos, además $V\big( G \cup \midcup h \cup h \big) \subseteq V(K)$. Lo cual demuestra que $\mathcal{B}$ es base local para $\infty$ en $\ms{F}(\ms{A})$. Dado que $ |\mathcal{B}| \leq | [\omega]^{<\omega} \times [\ms{A}]^{<\omega} | = \aleph_0 + |\ms{A}| $, resulta que $\chi(\infty,\ms{F}(\ms{A})) \leq \aleph_0 + |\ms{A}|$.
 \end{proof}
 
 En seguida a lo anterior se concluye que, para toda familia no compacta e infinita, el espacio $\ms{F}(\ms{A})$ no es de primero numerable. 
@@ -115,7 +115,7 @@ El siguiente comportamiento es propio de las familias casi ajenas maximales, mue
 \begin{proof}
 	Para la suficiencia basta suponer que $X=\ms{F}(\ms{A})$. Como $\Psi(\ms{A})$ es denso en $X$, resulta que $\der(X) = \{\infty\} \cup \der_{\Psi(\ms{A})}(\Psi(\ms{A})) = \{\infty\} \cup \ms{A}$. Consecuentemente $\der_{\der(X)}(\der(X)) \subseteq \{\infty\}$, pues $\ms{A}$ es un subespacio discreto de $\der(X)$. La contención recíproca ocurre; pues cada subespacio compacto de $\Psi(\ms{A})$ tiene intersección finita; particularmente no vacía, con el conjunto (infinito) $\ms{A}$. Así que $\infty$ es el único punto de acumulación de $\der(X)$. Además, $X \setminus \der(X) = \omega$, y dada la prueba del resultado anterior, $\infty \notin \scl(\omega)$.
 
-	Para la necesitadad, sea $x_0 \in X$ el punto que satisface las condiciones del enunciado. Defínase $Y \mycoloneq X\setminus \{x_0\}$, se mostrará primero que $Y \cong \Psi(\ms{A})$ para alguna familia maximal $\ms{A}$. Efectivamente, nótese que $Y$ es infinito, de Hausdorff y separable (ya que $Y$ es abierto en $X$). Haciendo uso del \cref{cor-HLCPseudoCaract}, es suficiente mostrar lo subsecuente:
+	Para la necesidad, sea $x_0 \in X$ el punto que satisface las condiciones del enunciado. Defínase $Y \mycoloneq X\setminus \{x_0\}$, se mostrará primero que $Y \cong \Psi(\ms{A})$ para alguna familia maximal $\ms{A}$. Efectivamente, nótese que $Y$ es infinito, de Hausdorff y separable (ya que $Y$ es abierto en $X$). Haciendo uso del \cref{cor-HLCPseudoCaract}, es suficiente mostrar lo subsecuente:
 
 	\begin{enumerate}
 		\item ($Y$ es regular) Dado que $X$ es compacto, de Hausdorff es normal y particularmente, regular. Esto prueba que $Y \subseteq X$ es regular.
@@ -142,7 +142,7 @@ Continuando con los frutos del \cref{lem-convClave}, se extrae lo siguiente:
 	De forma recíproca, si $\ms{A} \upharpoonright X \notin \Mad(X)$, entonces existe $B \in [X]^\omega$ casi ajeno con cada elemento de $\ms{A} \upharpoonright X$. Nótese que entonces $B \cap X$ es casi ajeno con cada elemento de $\ms{A}$; y por lo tanto, $B \to \infty$, dado el \cref{lem-convClave}.
 \end{proof}
 
-La contención recíproca de \ref{cor-CasiajenoPartePositiva} encapsula exáctamente la conexión que existe entre la combinatoria de $\ms{A}$ y la propiedad de Fréchet en su compacto de Franklin asociado.
+La contención recíproca de \ref{cor-CasiajenoPartePositiva} encapsula exactamente la conexión que existe entre la combinatoria de $\ms{A}$ y la propiedad de Fréchet en su compacto de Franklin asociado.
 \begin{corolario}\phantomsection\label{cor-TraFrechet}\index[trad]{propiedad de!Fréchet en $\ms{F}(\ms{A})$}
 	Para cada $\ms{A} \in \Ad{A}$, son equivalentes:
 	\begin{enumerate}

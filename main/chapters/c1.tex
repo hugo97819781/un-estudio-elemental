@@ -5,7 +5,7 @@
 
 \section{Observaciones inmediatas}
 
-\begin{definicion}\phantomsection\label{def-casi-ajena}\index[alph]{casi!ajeno}\index[alph]{casi!ajena sobre $N$, familia}\index[alph]{familia!casi ajena}\index[alph]{casi!ajena, familia}\index[alph]{familia!casi ajena sobre $N$}\index[sym]{$\Ad(N)$}
+\begin{definicion}\phantomsection\label{def-casi-ajena}\index[alph]{casi!ajeno}\index[alph]{casi!ajena sobre $N$, familia}\index[alph]{familia!casi ajena}\index[alph]{casi!ajena, familia}\index[alph]{familia!casi ajena sobre $N$}\index[alph]{familia}\index[sym]{$\Ad(N)$}
 	Sea $N$ un conjunto numerable. Una \textbf{familia casi ajena sobre $N$} es un subconjunto $\ms{A}\subseteq[N]^\omega$ cuyos elementos son casi ajenos por pares. $\Ad(N)$ es el conjunto de todas las familias casi ajenas sobre $N$.
 	
 	El término \textbf{familia casi ajena} (o simplemente, \textbf{familia}) hará referencia a una familia casi ajena sobre $\omega$.
@@ -218,7 +218,7 @@ El teorema recién enunciado es consecuencia de \cite[Teo.~5.1, p.~127]{kunenHan
 
 \section{El ideal generado y su comportamiento}
 \phantomsection\label{Sec-IdealGenerado}
-\index[alph]{ideal!generado por $\ms{A}$}\index[sym]{$\ms{I}_N(\ms{A})$}\index[alph]{parte!positiva de $\ms{A}$}\index[sym]{$\ms{I}_N^+(\ms{A})$}\index[sym]{$\ms{I}(\ms{A})$}\index[sym]{$\ms{I}^+(\ms{A})$}
+\index[alph]{ideal!generado por $\ms{A}$}\index[sym]{$\ms{I}_N(\ms{A})$}\index[alph]{parte positiva de $\ms{A}$}\index[sym]{$\ms{I}_N^+(\ms{A})$}\index[sym]{$\ms{I}(\ms{A})$}\index[sym]{$\ms{I}^+(\ms{A})$}
 \begin{definicion}\phantomsection\label{def-ideal}
 	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$.
 	\begin{enumerate}[i)]
@@ -349,7 +349,7 @@ Si $X \in [\omega]^\omega$ y $\ms{A}$ es maximal, entonces $X$ debe tener inters
 	Recíprocamente, si $\ms{A}$ no es maximal, existe $B \in [\omega]^\omega$ casi ajeno con cada elemento de $\ms{A}$. Así, $\ms{A} \upharpoonright B = \emptyset$ y se sigue de \ref{cor-CasiajenoPartePositiva}, que $B \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
-Como ninguna familia maximal es numerable, del corolario anterior se desprende la siguiente condensación de todo lo comentado y demostrado tras \ref{def-MaxEnAlguna}.
+Como ninguna familia maximal es numerable, de lo anterior se desprende la posterior condensación de todo lo comentado y demostrado tras \ref{def-MaxEnAlguna}.
 
 \begin{corolario}\phantomsection\label{cor-MADPositivCarac}
 	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Entonces $\{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \notin \Mad(X) \lor \omega \leq |\ms{A} \upharpoonright X|\} = \ms{I}_N^+(\ms{A})$, y en caso de ser $\ms{A}$ maximal, $ \{ X \in [N]^\omega \tq \omega < |\ms{A} \upharpoonright X| \} = \ms{I}_N^+(\ms{A})$ y más aún
@@ -378,7 +378,7 @@ El siguiente resultado constata que la parte positiva de una familia es grande, 
 \end{lema}
 
 \begin{proof}
-	Por el \cref{cor-MADPositivCarac}, si $n \in \omega$, $H_n \mycoloneq \{ A \in \ms{A} \tq A \cap X_n \neq^* \emptyset \}$ debe ser infinito. Para cada $n \in \omega$ fijese ($\Ac$) una función $f_n  \colon  \ms{P}(H_n) \setminus \{\emptyset\} \to H_n$ de elección; y defínase recursivamente $B \colon \omega \to \ms{A}$ como $B(n) = f(H_n \setminus B[n] )$.
+	Por el \cref{cor-MADPositivCarac}, si $n \in \omega$, $H_n \mycoloneq \{ A \in \ms{A} \tq A \cap X_n \neq^* \emptyset \}$ debe ser infinito. Para cada $n \in \omega$ fíjese ($\Ac$) una función $f_n  \colon  \ms{P}(H_n) \setminus \{\emptyset\} \to H_n$ de elección; y defínase recursivamente $B \colon \omega \to \ms{A}$ como $B(n) = f(H_n \setminus B[n] )$.
 
 	Así, $(\midcup\{B(m) \tq m\geq n \} \cap X_n)_{n \in \omega}$ satisface las hipótesis del lema previo. Efectivamente; si $n \in \omega$, entonces $B(n) \in H_n$ y $\midcup\{B(m) \tq m\geq n \} \cap X_n \supseteq B(n) \cap X_n$ es infinito. Esta sucesión es $\subseteq$-decreciente, debido a que $(X_n)_n \in \omega$ también lo es. Por lo tanto, existe $Y \in [\omega]^\omega$ de manera que para cada $k \in \omega$:
 	\[ Y \subseteq^* \midcup\{B(m) \tq m\leq k \} \cap X_n \subseteq B(k) \cap X_k \subseteq X_k \, . \]
@@ -387,7 +387,7 @@ El siguiente resultado constata que la parte positiva de una familia es grande, 
 
 El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y como se verá más adelante (\cref{cor-FrechNoProd}), juega un papel fundamental en el estudio de la propiedad topológica de Fréchet.
 
-\begin{teorema}[Simon]\index[alph]{Simon!teorema de}\index[alph]{teoremade Simon}\phantomsection\label{Teo-Simon}
+\begin{teorema}[Simon]\index[alph]{Simon!teorema de}\index[alph]{teorema!de Simon}\phantomsection\label{Teo-Simon}
 	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $Y \in \ms{I}^+(\ms{A})$ tal que $\mathscr{A} \upharpoonright Y$ es unión ajena de dos familias maximales en ninguna parte.
 \end{teorema}
 \begin{proof}
@@ -417,7 +417,7 @@ La familia $\ms{A} \upharpoonright Y$ provista por el teorema de Simon es maxima
 
 La teoría de grietas (\enquote{gaps}, en inglés) es extensa, y su estudio se remonta a los trabajos de Felix Hausdorff. En lo que sigue nos restringiremos a analizar grietas en $\omega$. No obstante, a partir de la \cref{prop-ADbiyec} es inmediato comprobar que la definición que presentamos a continuación se extiende sin dificultad a grietas sobre cualquier conjunto numerable $N$.
 
-\begin{definicion}\phantomsection\label{Def-separador}\phantomsection\label{def-grieta}\index[alph]{separador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
+\begin{definicion}\phantomsection\label{Def-separador}\phantomsection\label{def-grieta}\index[alph]{separador}\index[alph]{conjunto!separador}\index[alph]{grieta}\index[alph]{grieta!separada}\index[alph]{grieta!contenida en una familia}\index[alph]{familia!que contiene a una grieta}
 	Una \textbf{grieta} es un par ordenado $(\ms{A},\ms{B}) \in \Ad(\omega) \times \Ad(\omega)$ tal que $\ms{A} \cup \ms{B} \in \Ad(\omega)$.
 	\begin{enumerate}
 		\item Se suele decir que $\ms{A} \cup \ms{B}$ \textbf{contiene a} $(\ms{A},\ms{B})$.
@@ -476,12 +476,12 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Cualquier familia Luzin es inseparable.
 \end{proposicion}
 \begin{proof}
-	Sean $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ una familia de Luzin y supógnase que $\ms{B}=\{A_\alpha \tq \alpha \in B\},\ms{C}=\{A_\alpha \tq \alpha \in C\} \subseteq \ms{A}$ son no numerables y ajenos. Como $C$ es infinito, existe $\alpha \in \omega_1$ de manera que $C \cap \alpha$ es infinito. Nótese que $B$ es cofinal en $\omega_1$, por ser $\omega_1$ regular; así que sin pérdida de generalidad, supóngase $\alpha \in B$.
+	Sean $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ una familia de Luzin y supóngase que $\ms{B}=\{A_\alpha \tq \alpha \in B\},\ms{C}=\{A_\alpha \tq \alpha \in C\} \subseteq \ms{A}$ son no numerables y ajenos. Como $C$ es infinito, existe $\alpha \in \omega_1$ de manera que $C \cap \alpha$ es infinito. Nótese que $B$ es cofinal en $\omega_1$, por ser $\omega_1$ regular; así que sin pérdida de generalidad, supóngase $\alpha \in B$.
 
 	Dados los comentarios previos a esta demostración, $A_\alpha \cap \midcup \{A_\beta \tq \beta \in C \cap \alpha \}$ es infinito, demostrando que $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito, y se sigue del \cref{lem-InseparableCar}, que $\ms{A}$ es inseparable.
 \end{proof}
 
-%La existencia de familias de Luzin no es tan inucitada, resulta que cualquier familia infinita trae consigo una extensión que es de Luzin.
+%La existencia de familias de Luzin no es tan inusitada, resulta que cualquier familia infinita trae consigo una extensión que es de Luzin.
 
 \begin{proposicion}\phantomsection\label{pro-LuzinExisten}
 	Toda familia casi ajena numerable se extiende a una familia de Luzin. Particularmente, existe una familia de Luzin.
@@ -501,7 +501,7 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 
 Los siguientes objetos son una suerte de modificación a la \cref{def-LuzinFam}; mientras que las familias de Luzin son \enquote{unidimensionales}, en el sentido de que están indexadas por $\omega_1$; las grietas de Luzin son \enquote{$n$-dimensionales}:
 
-	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de}\index[alph]{testigos!de una $n$-grieta de Luzin}
+	\begin{definicion}\index[alph]{$n$-grieta! de Luzin}\index[alph]{Luzin!$n$-grieta de}\index[alph]{grieta!de Luzin}\index[alph]{Luzin!grieta de}\index[alph]{testigos de una $n$-grieta de Luzin}
 		Sea $n \in \omega \setminus 2$. Una \textbf{$n$-grieta de Luzin} es una sucesión finita $(\ms{A}_i)_{i \in I} \subseteq \Ad(\omega)$ cuya union es una familia casi ajena; y, tales que existen $X \in [\omega_1]^{\omega_1}$ y $m \in \omega$, de modo que cada $\ms{A}_i$ se puede enumerar como $\{ A_\alpha^i \tq \alpha \in X \}$ de manera que:
 		\begin{enumerate}
 			\item Para cualesquiera $i,j \in n$ distintos y $\alpha \in X$, se da $A_\alpha^i \cap A_\alpha^j \subseteq m$.
@@ -571,7 +571,7 @@ lo cual demuestra $p \setminus k \subseteq \omega \setminus \midcup K$. Luego $\
 
 En términos sumamente intuitivos, $(p,P) \leq (h,H)$ significa que \enquote{$h$ se extiende a $p$ y $H$ a $P$}. Así, conforme $H \subseteq \ms{A}$ \enquote{crece}, se aproxima a $\ms{A}$. Dado que, conforme $h$ \enquote{crece}, este se \enquote{aproxima} a un subconjunto casi ajeno con $\midcup H$; y eventualmente, se formará un subconjunto casi ajeno con $\midcup \ms{A}$.
 
-Para dar una formalización de la intuición recien dada, comenzaremos definiendo los siguientes objetos para todo lo que resta de la sección.
+Para dar una formalización de la intuición recién dada, comenzaremos definiendo los siguientes objetos para todo lo que resta de la sección.
 \index[sym]{$D_a$ (si $a \in \ms{A}$)}\index[sym]{$D_G$ (si $G \subseteq \mathbb{P}_\ms{A}$)}
 \begin{enumerate}
 		\item Para cada $a \in \ms{A}$, $ D_a \mycoloneq \{ (p,P) \in \mathbb{P}_\ms{A} \tq a \in P\} $.
@@ -632,7 +632,7 @@ El \cref{cor-SolovayDebil} es una inmediatez, dada toda su discusión previa. Un
 
 	Sea $\ms{D}=\{ D(b,n) \tq (b,n) \in \ms{B} \times \omega \} \cup \{D_a \tq a \in \ms{A} \}$ y obsérvese que $\ms{D}$ es una familia de densos de $\mathbb{P}_\ms{A}$ de cardinalidad menor o igual a $\kappa$. Como $\mathbb{P}_\ms{A}$ es \textit{c.c.c.}, de $\Ma(\kappa)$ se desprende la existencia de un filtro $G$ en $\mathbb{P}_\ms{A}$, $\ms{D}$-genérico. Se afirma que $D_G$ es el conjunto buscado.
 
-	En efecto, por \ref{lem-DgMagia} se tiene que para cada $a \in \ms{A}$, el conjunto $D_G \cap a$ es finito. Ahora, si $b \in \ms{B}$ es cualquiera, para cada $n \in \omega$ existe $(k,K) \in G \cap D(b,n)$; y en consecuencia $D_G \cap b \not \subseteq n$ (pues $h \cap b \not \subseteq n$). Por lo que el conujunto $D_G \cap b$ no puede ser finito.
+	En efecto, por \ref{lem-DgMagia} se tiene que para cada $a \in \ms{A}$, el conjunto $D_G \cap a$ es finito. Ahora, si $b \in \ms{B}$ es cualquiera, para cada $n \in \omega$ existe $(k,K) \in G \cap D(b,n)$; y en consecuencia $D_G \cap b \not \subseteq n$ (pues $h \cap b \not \subseteq n$). Por lo que el conjunto $D_G \cap b$ no puede ser finito.
 \end{proof}
 
 Es deseable que la conclusión del lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falaz. Suponiendo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (véase \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad; pues esta tiene tamaño $\aleph_1 < \mathfrak{m}$ y es inseparable.

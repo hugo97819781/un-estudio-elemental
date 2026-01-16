@@ -29,7 +29,7 @@ Bajo la consideración previa, para cualquier conjunto numerable $N$ y familia d
 
 Tal colección forma una topología para $N \cup \ms{A}$. Evidentemente $\emptyset$ y $N \cup \ms{A}$ son elementos de $\tau_{\ms{A}}$. Si $U,V \in \tau_{\ms{A}}$ y $x \in (U \cap V) \cap \ms{A}$, entonces $x \subseteq^* U$ y $x \subseteq^* V$, de donde $x \subseteq^* U \cap V$ y $U \cap V \in \tau_{N,\ms{A}}$. Finalmente, si $\mathcal{U}\subseteq \tau_{\ms{A}}$ y $x \in \midcup \mathcal{U} \cap \ms{A}$, existe $U_0 \in \mathcal{U}$ con $x \in U_0$; así que $x \subseteq^* U_0 \subseteq \midcup \mathcal{U}$ y por ello $\midcup \mathcal{U} \in \tau_{\ms{A}}$.
 
-\begin{definicion}\phantomsection\label{Def-Mrowka}\index[alph]{topología!de Mrówka}\index[alph]{topología!de Isbell-Mrówka}\index[alph]{Mrówka! topología de}\index[alph]{Isbell-Mrówka!topología de}\index[sym]{$\tau_\ms{A}$}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$}\index[sym]{$\Psi_N(\ms{A})$}\index[sym]{$\Psi(\ms{A})$}
+\begin{definicion}\phantomsection\label{Def-Mrowka}\index[alph]{topología!de Mrówka}\index[alph]{topología!de Isbell-Mrówka}\index[alph]{Mrówka! topología de}\index[alph]{Isbell-Mrówka!topología de}\index[sym]{$\tau_\ms{A}$}\index[alph]{$\Psi$-espacio}\index[alph]{espacio!,$\Psi$-}\index[sym]{$\Psi_N(\ms{A})$}\index[sym]{$\Psi(\ms{A})$}
 	Sean $N$ un conjunto numerable y $\ms{A} \subseteq [N]^\omega$.
 	\begin{enumerate}
 		\item $\tau_{N,\ms{A}}$ es la \textbf{topología de de Isbell-Mrókwa} \textbf{generada por $\ms{A}$}.
@@ -149,7 +149,7 @@ Recordando que un espacio topológico es de Moore si y sólo si satisface el axi
 	Todo espacio de Mrókwa es separable, primero numerable, de Tychonoff, cero-dimensional, disperso y de Moore.
 \end{corolario}
 
-La siguiente es sólo una de las múltiples relaciones importantes que existen entre los espacios de Mrówka y el conjunto de Cantor. Su demostración se basa en que todo espacio $\T_1$ y cero-dimensional de peso $\kappa$ se encaja en $2^\kappa$ (véase el \cref{cero-dim-caracte}).
+La siguiente es sólo una de las múltiples relaciones importantes que existen entre los espacios de Mrówka y el conjunto de Cantor. Su demostración se basa en que todo espacio $\T_1$ y cero-dimensional de peso $\kappa$ se encaja en $2^\kappa$ (véase la \cref{cero-dim-caracte}).
 
 \begin{corolario}\phantomsection\label{cor-EncajeMrowkaCantor}
 	Todo espacio de Mrówka $\Psi(\ms{A})$ se encaja en $2^{\aleph_0+|\ms{A}|}$. Particularmente, si $|\ms{A}|\leq \aleph_0$, el espacio $\Psi(\ms{A})$ se encaja en $2^\omega$ y es metrizable.
@@ -240,7 +240,7 @@ El \cref{cor-EncajeMrowkaCantor} evidencía que la numerabilidad de una familia 
 \end{proposicion}
 
 \begin{proof}
-	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$, en cirtud del \cref{metri-lindSii2an}
+	(i) $\rightarrow$ (ii) $\rightarrow$ (iii) Si $|\ms{A}| \leq \omega$, se obtiene de \ref{cor-EncajeMrowkaCantor} que $\Psi(\ms{A})$ es metrizable. Por otro lado, si $\Psi(\ms{A})$ es metrizable, al ser este un espacio separable, se tiene garantizado que es $2\AN$, en virtud del \cref{metri-lindSii2an}
 
 	(iii) $\rightarrow$ (iv) $\to$ (v) Si $\Psi(\ms{A})$ es $2\AN$, entonces al localmente compacto, resulta que es $\sigma$-compacto. Además; todo espacio $\sigma$-compacto, es también de Lindelöf. Todo este párrafo es a razón del \cref{cor-2AN-Linde}.
 
@@ -308,7 +308,7 @@ La siguiente es una caracterización conocida \cite[p.~39,45]{GeorginaTesis}, el
 
 De (iv), en la proposición previa, surge que el espacio de ordinales $\omega^2$ es el único espacio de Mrówka metrizable y no compacto. Queda claro además, que cualesquiera dos familias numerables son \enquote{iguales} en el siguiente aspecto:
 
-\begin{definicion}\phantomsection\label{Dif-esencial}\index[alph]{familias!esencialmente iguales}
+\begin{definicion}\phantomsection\label{Dif-esencial}\index[alph]{familias!esencialmente igual a otra}
 	Dados conjuntos $N, M$ numerables, se dice que $\ms{A} \subseteq [N]^\omega$ y $\ms{B} \subseteq [M]^\omega$ son \textbf{esencialmente iguales} cuando $\Psi_N(\ms{A}) \cong \Psi_M(\ms{B})$.
 \end{definicion}
 
@@ -347,7 +347,7 @@ Una consecuencia \enquote{curiosa} en relación $\omega^2$, fruto de lo anterior
 
 La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisundaram Rajagopalan, quienes en 1970 (consúltese \cite{kannanHereditarily}) dieron con un resultado que permite caracterizar de una forma sencilla a los espacios de Mrówka. Su característica fundamental es la compacidad local hereditaria.
 
-\begin{teorema}[Kannan, Rajagopalan]\phantomsection\label{teo-HLCCaract}\index[alph]{Kannan!teorema de Rajagopalan y}\index[alph]{Rajagopalan!teorema de Kannan y}\index[alph]{teorema de Kannan y Rajagopalan}\index[trad]{compacidad local hereditaria de cualquier espacio infinito, separable, de Hausdorff}
+\begin{teorema}[Kannan, Rajagopalan]\phantomsection\label{teo-HLCCaract}\index[alph]{Kannan!teorema de Rajagopalan y}\index[alph]{Rajagopalan!teorema de Kannan y}\index[alph]{teorema!de Kannan y Rajagopalan}\index[trad]{compacidad local hereditaria de cualquier espacio infinito, separable, de Hausdorff}
 	Para todo espacio $X$ infinito, de Hausdorff y separable, son equivalentes:
 	\begin{enumerate}[i)]
 		\item $X$ es hereditariamente localmente compacto.
@@ -405,7 +405,7 @@ La siguiente caracterización es debida a Varadachariar Kannan y a Minakshisunda
 	Basta probar la necesidad. Supóngase que $\ms{A}$ es una familia casi ajena y que $U \subseteq \Psi(\ms{A})$ es un abierto tal que $X \cong U$. Como $X$ es infinito, $U$ es infinito, además por ser $\Psi(\ms{A})$ de Hausdorff y hereditariamente localmente compacto, se tiene que $U$ es de Hausdorff y hereditariamente localmente compacto. Por último, como $\omega$ es denso en $\Psi(\ms{A})$ y $U$ es abierto en $\Psi(\ms{A})$, se tiene que $U \cap \omega$ es denso en $U$; así que $U$ es separable. De lo anterior $U$, y por tanto $X$, es homeomorfo a un espacio de Mrówka; a saber $\Psi_{U \cap \omega} (U \cap \ms{A})$.
 \end{proof}
 
-A continuación expoloramos cuándo el producto y la suma topológica de espacios de Mrówka, es de nuevo, un espacio de Mrówka.
+A continuación exploraremos cuándo el producto y la suma topológica de espacios de Mrówka, es de nuevo, un espacio de Mrówka.
 
 \begin{corolario}
 	Sea $\{X_\alpha \tq \alpha \in \kappa \}$ una familia no vacía de espacios topológicos infinitos; sin pérdida de generalidad ajenos dos a dos. Son equivalentes:
@@ -493,13 +493,13 @@ El siguiente es un teorema sencillo (y sumamente particular) de metrización.
 
 La \textit{curiosidad} (comentada posteriormente a \ref{prop-alomasNumCaract}) en relación al espacio de ordinales $\omega^2$ tiene su justificación en el anterior corolario.
 
-\subsection{Sobre una observacion de Kannan y Rajagopalan}
+\subsection{Sobre una observación de Kannan y Rajagopalan}
 
-Se finalizará la sección; y con ello el actual capítulo, dando una caracrterización importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. El resultado aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} enunciado de la siguiente manera: \enquote{\textit{Un espacio $X$ infinito, de Hausdorff es imagen continua de un espacio de Mrówka pseudocompacto si y sólo si existe un denso numerable $D \subseteq X$ de manera de forma que toda sucesión en $D$ contiene una subsucesión convergente.}}. En el documento original se esboza la mitad de la prueba del enunciado, mostraremos que tal formulación es herronea, trabajando dentro de $\zfc$.
+Se finalizará la sección; y con ello el actual capítulo, dando una caracterización importante en relación a las imágenes continuas de los espacios de Mrówka pseudocompactos. El resultado aparece en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} enunciado de la siguiente manera: \enquote{\textit{Un espacio $X$ infinito, de Hausdorff es imagen continua de un espacio de Mrówka pseudocompacto si y sólo si existe un denso numerable $D \subseteq X$ de manera de forma que toda sucesión en $D$ contiene una subsucesión convergente.}}. En el documento original se esboza la mitad de la prueba del enunciado, mostraremos que tal formulación es erronea, trabajando dentro de $\zfc$.
 
- A continuación daremos un ejemplo, consistente con $\zfc$, de espacio de Hausdorff, separable y secuencialmente compacto, que tenga tamaño mayor al continuo. Tal espacio satisfaría la condición escrita en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily} y no podría ser imágen continua de ningún espacio de Mrówka, pues ninguno de ellos tiene tamaño estrictamente mayor a $\mathfrak{c}$.
+A continuación daremos un ejemplo, consistente con $\zfc$, de espacio de Hausdorff, separable y secuencialmente compacto, que tiene tamaño mayor al continuo. Tal espacio satisfaría la condición escrita en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily}, pero no podría ser imagen continua de ningún espacio de Mrówka, pues todos ellos tienes tamaño menor o igual que $\mathfrak{c}$.
 
-Es un hecho conocido que el espacio $2^\mathfrak{c}$ no es secuencialmente compacto (vase lo posterior a \cite[Teo.~ 3.10.38]{engelTopo}), se puede considerar entonces el cardinal \cite[Teo.~III.6.1]{kunenHandbook}:
+Es un hecho conocido que el espacio $2^\mathfrak{c}$ no es secuencialmente compacto (véase lo posterior a \cite[Teo.~ 3.10.38]{engelTopo}), se puede considerar entonces el siguiente número cardinal \cite[Teo.~III.6.1]{kunenHandbook}:
 \index[sym]{$\mathfrak{s}$}
 \[\mathfrak{s}=\min\{ \kappa \geq \omega \tq 2^\kappa \text{ no es secuencialmente compacto } \} \, . \]
 Pero, seguido de la prueba expuesta en \cite[Teo.~III.5.4]{kunenHandbook}, se desprende que:
@@ -507,7 +507,7 @@ Pero, seguido de la prueba expuesta en \cite[Teo.~III.5.4]{kunenHandbook}, se de
 	Es consistente con $\zfc$ que $\aleph_1<\mathfrak{s}$ y $\mathfrak{c}<2^{\aleph_1}$.
 \end{teorema}
 
-A razón de lo anterior, es consistene con $\zfc$ que $2^{\omega_1}$ es un espacio secuencialmente compacto de tamaño mayor a $\mathfrak{c}$. Este espacio es de Hausdorff y cumple la condición enunciada en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily}, pues al ser un producto de menos de $\mathfrak{c}$ espacios separables, es separable \cite[Teo.~ 2.3.15]{engelTopo}. Así, desde $\zfc$, es imposible demostrar lo enunciado por Kannan y Rajagopalan,incluso en la clase de espacios compactos y de Hausdorff.
+A razón de lo anterior, es consistente con $\zfc$ que $2^{\omega_1}$ es un espacio secuencialmente compacto de tamaño mayor a $\mathfrak{c}$. Este espacio es de Hausdorff y cumple la condición enunciada en \cite[Obs.~1.3-b), p.~6]{kannanHereditarily}, pues al ser un producto de menos de $\mathfrak{c}$ espacios separables, es separable \cite[Teo.~ 2.3.15]{engelTopo}. Así, desde $\zfc$, es imposible demostrar lo enunciado por Kannan y Rajagopalan,incluso en la clase de espacios compactos y de Hausdorff.
 
 Una manera de \enquote{rescatar} el resultado es agregando la siguiente hipótesis.
 
@@ -541,7 +541,7 @@ Si $X$ es un espacio metrizable y compacto, en automático se deduce que es sepa
 \end{corolario}
 
 \index[alph]{continuo!espacio}\index[alph]{espacio!continuo}
-El cubo de Hilbert, $[0,1]^\omega$, contiene una copia homeomorfa de todos los espacios metrizables y separables (véase \ref{cubo-Hilbert-encaje}) y todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imágen continua de algún espacio de Mrówka generado por una familia casi ajena maximal. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$, todo \textit{continuo} (todo espacio $X$ no vacío, metrizable, compacto y conexo), por mencionar algunos.
+El cubo de Hilbert, $[0,1]^\omega$, contiene una copia homeomorfa de todos los espacios metrizables y separables (véase \ref{cubo-Hilbert-encaje}) y todos sus subespacios son metrizables y separables. Así que tanto él, como todos sus subespacios compactos, son imagen continua de algún espacio de Mrówka generado por una familia casi ajena maximal. En lo anterior caben: el conjunto de cantor $2^\omega$, el intervalo $[0,1]$, todo \textit{continuo} (todo espacio no vacío, metrizable, compacto y conexo), por mencionar algunos.
 
 %%%%%%%%% Estoy casi seguro de que NO se puede remover, pero no sale la demostración.
 

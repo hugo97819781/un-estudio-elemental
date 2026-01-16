@@ -1,6 +1,6 @@
 \section{Topología}
 
-\index[alph]{espacio!topológico}\index[alph]{espacio}
+\index[alph]{espacio!topológico}\index[alph]{espacio}\index[alph]{topología}
 Un \textit{espacio topológico} (o simplemente, \textit{espacio}) es un par ordenado $(X,\tau)$, donde $X$ es un conjunto y $\tau \subseteq \ms{P}(X)$ es una colección cerrada bajo uniones arbitrarias, intersecciones finitas y tal que $\emptyset, X \in \tau$, en tal caso $\tau$ es una \textit{topología} para $X$. En la gran mayoría de ocasiones, se hará referencia al espacio $(X,\tau)$ únicamente con el nombre de su conjunto subyacente, $X$. En todo lo que resta del capítulo, $X$ y $Y$ serán espacios topológicos.
 
 \index[alph]{base!local}\index[alph]{base!de vecindades}\index[alph]{vecindad}\index[alph]{conjunto!vecindad}
@@ -9,18 +9,18 @@ Una \textit{vecindad} para un punto $x \in X$ es un conjunto $N \subseteq X$ tal
 \index[alph]{función!abierta}\index[alph]{función!encaje}\index[alph]{encaje}\index[sym]{$X \cong Y$}\index[alph]{espacio!encajado en}\index[alph]{copia homeomorfa}
 Si $X$ y $Y$ son homeomorfos, escribiremos $X \cong Y$. Una función $f \colon X \to Y$ es \textit{encaje} si es un homeomorfismo entre $X$ y $f[X] \subseteq Y$, en tal caso, se dice que $X$ \textit{está encajado} en $Y$ o que $Y$ contiene una \textit{copia homeomorfa} de $X$. Una función $g \colon X \to Y$ es \textit{abierta} si para cada $U$ abierto en $X$, $g[U]$ es abierto en $Y$.
 
-\index[alph]{producto topológico}\index[alph]{suma topológica}\index[sym]{$\coprod_{\alpha \in I} X_\alpha$}\index[sym]{$\prod_{\alpha \in I} X_\alpha$}\index[alph]{función!proyección}\index[alph]{proyección!cartesiana}\index[sym]{$\pi_\alpha$}
+\index[alph]{producto topológico}\index[alph]{suma topológica}\index[sym]{$\coprod_{\alpha \in I} X_\alpha$}\index[sym]{$\prod_{\alpha \in I} X_\alpha$}\index[alph]{función!proyección cartesiana}\index[alph]{proyección cartesiana}\index[sym]{$\pi_\alpha$}
 La \textit{suma topológica} y el \textit{producto topológico}, de una colección no vacía de espacios $\{X_\alpha \tq \alpha \in I \}$, se denotarán $\coprod_{\alpha \in I} X_\alpha$ y $\prod_{\alpha \in I} X_\alpha$, respectivamente. Si $\beta \in I$, $\pi_\beta \colon \prod_{\alpha \in I} X_\alpha \to X_\beta$ será la $\beta$-ésima \textit{proyección cartesiana} ($f \mapsto f(\beta)$).
 
 \index[alph]{operador!derivado}\index[alph]{operador!clausura}\index[alph]{operador!interior}\index[alph]{operador!exterior}\index[alph]{operador!frontera}\index[alph]{derivado}\index[alph]{clausura}\index[alph]{interior}\index[alph]{exterior}\index[alph]{frontera}\index[sym]{$\der(A)$}\index[sym]{$\cla(A)$}\index[sym]{$\inte(A)$}\index[sym]{$\ext(A)$}\index[sym]{$\fron(A)$}
 Para cualquier $A \subseteq X$ utilizaremos las notaciones $\der(A)$, $\inte(A)$, $\cla(A)$, $\ext(A)$ y $\fron(A)$ para: el conjunto de puntos de acumulación, el \textit{interior}, la \textit{clausura}, el \textit{exterior} y la \textit{frontera} de $A$, respectivamente.
 
-\index[alph]{propiedad!topológica}\index[alph]{invariante!topológico}\index[alph]{propiedad!topológica!hereditaria}\index[alph]{propiedad!topológica!débilmente hereditaria}\index[alph]{propiedad!topológica!productiva}\index[alph]{propiedad!topológica!finitamente productiva}\index[alph]{propiedad!topológica!factorizable}
+\index[alph]{propiedad!topológica}\index[alph]{invariante topológico}\index[alph]{propiedad!topológica!hereditaria}\index[alph]{propiedad!topológica!débilmente hereditaria}\index[alph]{propiedad!topológica!productiva}\index[alph]{propiedad!topológica!finitamente productiva}\index[alph]{propiedad!topológica!factorizable}
 Una \textit{propiedad}, o \textit{invariante topológico}, es una cualidad que se preserva bajo homeomorfismos. Una propiedad topológica es: \textit{hereditaria} (\textit{débilmente hereditaria}, respectivamente) si se preserva bajo subespacios (subespacios cerrados, respectivamente), \textit{productiva} (\textit{finitamente productiva}, respectivamente) si se preserva bajo productos arbitrarios (productos finitos, respectivamente); y es \textit{factorizable} si cada vez que un producto topológico cuenta con ella, cada factor también. Toda propiedad hereditaria es factorizable.
 
 \subsection{Axiomas de numerabilidad y separación}
 
-\index[alph]{peso}\index[alph]{densidad}\index[alph]{carácter}\index[alph]{espacio!de peso $\kappa$}\index[alph]{espacio!de densidad $\kappa$}\index[alph]{punto de caracter $\kappa$}\index[sym]{$w(X)$}\index[sym]{$\chi(x,X)$}\index[sym]{$d(X)$}\index[alph]{espacio!primero numerable}\index[alph]{espacio!segundo numerable}\index[sym]{$1\AN$}\index[sym]{$2\AN$}
+\index[alph]{peso}\index[alph]{densidad}\index[alph]{carácter}\index[alph]{espacio!de peso $\kappa$}\index[alph]{espacio!de densidad $\kappa$}\index[alph]{punto de carácter $\kappa$}\index[sym]{$w(X)$}\index[sym]{$\chi(x,X)$}\index[sym]{$d(X)$}\index[alph]{espacio!primero numerable}\index[alph]{espacio!segundo numerable}\index[sym]{$1\AN$}\index[sym]{$2\AN$}
 
 Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los cuales $X$ tiene una base de tamaño $\kappa$ y un denso de cardinalidad $\kappa$, respectivamente. Para cada $x \in X$, $\chi(x,X)$ es el mínimo tamaño para cualquier base local de $x$. Estos números son el \textit{peso} de $X$, la \textit{densidad} de $X$, y el \textit{carácter} de $x \in X$, respectivamente. Se dice que el espacio $X$ es \textit{segundo numerable} ($2\AN$) si $w(X)\leq \omega$; \textit{primero numerable} ($1\AN$) cuando para cada $x \in X$, $\chi(x,X)\leq \omega$; y \textit{separable} si $d(X)\leq \omega$.
 
@@ -40,17 +40,17 @@ Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los c
 %    Sea $O$ un abierto de $X$ y supóngase que $x \in O$, entonces existe $W \in \mathcal{B}$ tal que $x \in W \subseteq O$; de donde, por ser $\mathcal{C}$ base, existe $C \in \mathcal{C}$ de modo que $x \in C \subseteq W \subseteq O$. De nuevo, por ser $\mathcal{B}$ base, existe cierto $U \in \mathcal{B}$ tal que $x \in U \subseteq C \subseteq W \subseteq O$. De esta forma, $(U,W) \in R$, y así $x \in C_{U,W} \subseteq O$, mostrando que $\mathcal{C}'$ es base de $X$.
 %\end{proof}
 
-\index[alph]{axioma!$\T_0$}\index[alph]{axioma!$\T_1$}\index[alph]{axioma!$\T_2$}\index[alph]{axioma!$\T_3$}\index[alph]{axioma!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{axioma!$\T_4$}\index[alph]{espacio!de Hausdorff}\index[alph]{espacio!de Tychonoff}\index[alph]{espacio!completamente regular}\index[alph]{espacio!regular}\index[alph]{espacio!normal}
+\index[alph]{axioma!$\T_1$}\index[alph]{axioma!$\T_2$}\index[alph]{axioma!$\T_3$}\index[alph]{axioma!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{axioma!$\T_4$}\index[alph]{espacio!de Hausdorff}\index[alph]{espacio!de Tychonoff}\index[alph]{espacio!completamente regular}\index[alph]{espacio!regular}\index[alph]{espacio!normal}\index[alph]{espacio!$\T_1$}\index[alph]{espacio!$\T_2$}\index[alph]{espacio!$\T_3$}\index[alph]{espacio!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{espacio!$\T_4$}\index[alph]{Hausdorff!espacio de}\index[alph]{Tychonoff!espacio de}
 
 El espacio $X$ es \textit{regular} (\textit{completamente regular}, respectivamente) si cualquier cerrado $F$ y cualquier $x \in X \setminus F$ se separan por abiertos ajenos (se separan funcionalmente, respectivamente). Se dice que $X$ es \textit{normal} si cualquier par de cerrados ajenos se separan por abiertos ajenos. Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad, respectivamente, adicionados con el axioma $\T_1$. Cuando $X$ es $\T_2$ se dice que es \textit{de Hausdorff}, y cuando es es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}. Los axiomas $\T_0,\T_1,\T_2,\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son invariantes productivos, factorizables. Todos menos $\T_4$, son hereditarios, $\T_4$ sólo es es débilmente hereditario.
 
 A continuación se enuncian dos de los resultados más notables en relación a los axiomas de separación. Las pruebas de los mismos pueden consultarse en \cite[Teo.~ 2.3.23]{engelTopo} y \cite[Teo.~ 2.1.18]{engelTopo}, respectivamente.
 
-\begin{teorema}[inmersión de Tychonoff]\phantomsection\label{Teo-Inm-Tych}\index[alph]{teoremade inmersión de Tychonoff}\index[alph]{Tychonoff!teorema de inmersión de}
+\begin{teorema}[inmersión de Tychonoff]\phantomsection\label{Teo-Inm-Tych}\index[alph]{teorema!de inmersión de Tychonoff}\index[alph]{Tychonoff!teorema de inmersión de}
     Un espacio $X$ es de Tychonoff si y sólo si se encaja en $[0,1]^{w(X)}$.
 \end{teorema}
 
-\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{teoremade extensión de Tietze}\index[alph]{Tietze!teorema de extensión de}
+\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{teorema!de extensión de Tietze}\index[alph]{Tietze!teorema de extensión de}
     Un espacio $X$ es normal si y sólo si para cualquier cerrado $F \subseteq X$ y cualquier función continua $f \colon F \to \mathbb{R}$, existe $g \colon X \to \mathbb{R}$ continua y tal que $g \upharpoonright A = f$.
 \end{teorema}
 
@@ -86,7 +86,7 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
 \subsection{Convergencia de sucesiones}
 \label{prelim-sucesiones}
 
-\index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[alph]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}
+\index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[alph]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}\index[alph]{sucesión!convergente (función)}
 Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f \colon \omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
 
 \index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
@@ -109,7 +109,7 @@ Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente
 Un espacio $X$ es \textit{secuencialmente compacto} si y sólo si cada sucesión en $X$ tiene una subsucesión convergente; equivalentemente (en virtud de \ref{prop-sucesionesConvergentes}), para cada $A \in [X]^\omega$ existen $a \in X$ y $B \in [A]^\omega$ con $B \to a$.
 
 \index[alph]{clausura!secuencial}\index[sym]{$\scl(A)$}\index[alph]{operador!clausura secuencial}
-Para cada $A \subseteq X$ denotarmos por $\scl(A)$ la \textit{clausura secuencial} de $A$, esto es, el conjunto de puntos $x \in X$ tales que existe $(y_n)_{n \in \omega} \subseteq A$ con $y_n \to x$. Se dice que $A \subseteq X$ es \textit{secuencialmente cerrado} si $\scl(A) \subseteq X$. Como consecuencia de la \cref{prop-sucesionesConvergentes} se tiene que:
+Para cada $A \subseteq X$ denotaremos por $\scl(A)$ la \textit{clausura secuencial} de $A$, esto es, el conjunto de puntos $x \in X$ tales que existe $(y_n)_{n \in \omega} \subseteq A$ con $y_n \to x$. Se dice que $A \subseteq X$ es \textit{secuencialmente cerrado} si $\scl(A) \subseteq X$. Como consecuencia de la \cref{prop-sucesionesConvergentes} se tiene que:
 \begin{corolario}\phantomsection\label{sqcl-en-T1}
     Si $X$ es espacio $\T_1$ y $A \subseteq X$, entonces:
     \[ \scl(A) = A \cup \{ x \in X \tq \exists B \in [A]^\omega \, (B \to a) \} \, . \]
@@ -123,7 +123,7 @@ Para cada ordinal $\alpha \leq \omega_1$ defínase la \textit{clausura secuencia
     \item Para todo ordinal límite $\gamma \leq \omega_1$, $\scl^{\gamma}(A)=\midcup\{ \scl^\alpha (A) \tq \alpha < \gamma \}$.
 \end{enumerate} 
 
-\index[alph]{orden!secuencial}\index[alph]{secuencial!orden}\index[sym]{$\Osq(X)$}
+\index[alph]{orden!secuencial}\index[sym]{$\Osq(X)$}
 En caso de existir, se define el \textit{orden secuencial} de $X$, $\Osq(X)$, como el mínimo ordinal $\alpha$ tal que para cada $A \subseteq X$, $\scl^\alpha(A)=\cla(A)$.
 
 El espacio $X$ es \textit{secuencial} cuando todos sus subconjuntos secuencialmente cerrados son cerrados en $X$, equivalentemente, cuando $\Osq(X)$ está bien definido. El espacio $X$ es \textit{de Fréchet} si para cada $A \subseteq X$, $\cla(A)=\scl(A)$, equivalentemente, si $\Osq(X)=1$. Todo espacio $1\AN$ es de Fréchet y todo espacio de Fréchet es secuencial. La propiedad de Féchet es hereditaria, por ello, factorizable. %\cite[Ej.~2.1.H]{engelTopo}.
@@ -158,7 +158,7 @@ Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P
     (iii) Supóngase que $X$ es unión contable de subespacios compactos, a saber $\{X_n \tq n \in \omega\}$. Para cada $n \in \omega$ tómese ($\Ac$) algún $\mathcal{U}_n \in [\mathcal{U}]^{<\omega}$ con $X_n \subseteq \midcup \mathcal{U}_n$, consecuentemente, $\midcup\{ \mathcal{U}_n \tq n \in \omega\}$ es subcubierta contable de $\mathcal{U}$.
 \end{proof}
 
-En la clase de espacios Haussdorff, la compacidad de $X$ implica su normalidad \cite[Teo.~3.1.9]{engelTopo}, además, se tienen los siguientes resultados conocidos para la compacidad local:
+En la clase de espacios Hausdorff, la compacidad de $X$ implica su normalidad \cite[Teo.~3.1.9]{engelTopo}, además, se tienen los siguientes resultados conocidos para la compacidad local:
 \begin{proposicion}
     Sea $X$ un espacio localmente compacto y de Hausdorff. Para cada $A \subseteq X$ son equivalentes:
     \begin{enumerate}
@@ -202,7 +202,7 @@ En la clase de espacios Haussdorff, la compacidad de $X$ implica su normalidad \
 \index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
 Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del teorema de Categoría de Baire.
 
-\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teoremade Categoría de Baire}\index[alph]{Baire!teorema de Categoría de}
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teorema!de categoría de Baire}\index[alph]{Baire!teorema de categoría de}
     Si $X$ es un espacio topológico de Hausdorff y localmente compacto, $X$ es de Baire.
 \end{teorema}
 \begin{proof}
@@ -243,12 +243,12 @@ El espacio $X$ es \textit{pseudocompacto} si cualquier función $f \colon X \to 
 \begin{proof}
     (i) Supóngase que $B$ es abierto, cerrado e infinito, sin pérdida de generalidad, numerable. Sea $f \colon B \to \omega \subseteq \mathbb{R}$ biyectiva. Al ser $B$ discreto, $f$ es continua. Sea $g \colon X \setminus B \to \mathbb{R}$ la función constante $0$. Como $f,g$ son continuas y $B , X \setminus B$ son abiertos de $X$, entonces $f \cup g \colon X \to \mathbb{R}$ es continua, y claramente no acotada, por lo que $X$ no es pseudocompacto.
 
-    (ii) Supóngase que $B$ es denso y que $X$ no es pseudocompacto, así, exsite una función continua y no acotada $f \colon X \to \mathbb{R}$. Por densidad de $B$, fíjese ($\Ac$) para cada $n \in \omega$ cierto $x_n \in D \cap f^{-1}[(n, \infty)]$.
+    (ii) Supóngase que $B$ es denso y que $X$ no es pseudocompacto, así, existe una función continua y no acotada $f \colon X \to \mathbb{R}$. Por densidad de $B$, fíjese ($\Ac$) para cada $n \in \omega$ cierto $x_n \in D \cap f^{-1}[(n, \infty)]$.
 
     Sea $g \colon \omega \to \omega$ estrictamente creciente. Por continuidad de $f$, si $(x_{g(n)})_{n \in \omega}$ converge en $X$, $(f(x_{g(n)}))_{n \in \omega}$ es convergente, por tanto acotada, en $\mathbb{R}$, lo cual contradice la elección de $f$. Por lo tanto, la sucesión $(x_n)_{n \in \omega}$ no tiene subsucesiones convergentes en $X$.
 \end{proof}
 
-\index[alph]{exntesión!unipuntual}\index[alph]{unipuntual!exntesión}
+\index[alph]{extensión unipuntual}
 Para cada espacio $(X,\tau)$ considérese un punto $\infty \notin X$. Se define la \textit{extensión unipuntual} de $(X,\tau)$ como el espacio $(X \cup \{ \infty \},\eta)$, donde:
 \[ \eta \mycoloneq  \tau \cup \{ U \subseteq X \cup \{ \infty \} \tq \infty \in U \, \land \, X \setminus U \text{ es compacto y cerrado en } X \} \]
 es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
@@ -271,8 +271,6 @@ es un hecho que $(X \cup \{ \infty \},\eta)$ es un espacio topológico.
 
 \index[alph]{compactación!de Alexandroff}\index[alph]{Alexandroff!compactación de}\index[alph]{compactación!Hausdorff}
 Un espacio $Y$ es \textit{compactación Hausdorff} de $X$ cuando es compacto, de Hausdorff y contiene una copia homeomorfa y densa de $X$. Es conocido que un espacio de Hausdorff, no compacto, $X$ tiene compactaciones Hausdorff si y sólo si $X$ es de Tychonoff \cite[Teo.~3.5.1]{engelTopo}. La extensión unipuntual de $X$ es su \textit{compactación de Alexandroff} cuando $X \cup \{\infty\}$ es de Hasudorff y $X$ es no compacto.
-
-%Cuando la extensión unipuntual de un espacio no comacto, es de Hausdorff, se dice que es la \textit{compactación de Alexandroff} de $X$.
 
 \begin{proposicion}\phantomsection\label{admiAlex}
     Sea $X$ un espacio no compacto. La extensión unipuntual $Y \mycoloneq X \cup \{\infty\}$ es la compactación de Alexandroff de $X$ si y sólo si $X$ es de Hausdorff y localmente compacto.
@@ -385,22 +383,23 @@ El siguiente teorema es una caracterización clásica para la compacidad de un e
 
 Un teorema de metrización es un teorema que caracteriza que un espacio sea metrizable, quizás el más famoso de ellos es el siguiente \cite[Teo.~ 4.2.9]{engelTopo}:
 
-\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{teoremade metrización de Uryshon}\index[alph]{Uryshon!teorema de metrización de}
+\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{teorema!de metrización!de Uryshon}\index[alph]{Uryshon!teorema de metrización de}
     Cualquier espacio topológico $\T_3$ y segundo numerable es metrizable.
 \end{teorema}
 
+\index[alph]{cubo!de Hilbert}\index[alph]{ Hilbert!cubo de}
 El cubo de Hilbert es el espacio $[0,1]^\omega$. Se sigue del resultado anterior la siguiente caracterización para los espacios metrizables y separables.
 
 \begin{corolario}\phantomsection\label{cubo-Hilbert-encaje}
     Un espacio es metrizable y separable si y sólo si se encaja en el cubo de Hilbert. En particular, $2^\omega$ es metrizable.
 \end{corolario}
 
-En lo que resta, daremos la terminomlogía necesaria para enunciar dos resultados fuertes, los teoremas de metrización de Bing y Arhangel’skii. Sus pruebas pueden verse en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
+En lo que resta, daremos la terminología necesaria para enunciar dos resultados fuertes, los teoremas de metrización de Bing y Arhangel’skii. Sus pruebas pueden verse en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
 
 \index[alph]{familia!discreta}\index[alph]{espacio!colectivamente normal}
-Una familia $\mathcal{A} \subseteq \ms{P}(X)$ es \textit{discreta} si para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, de elementos cerrados de $X$, se seapara por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos, $\{ U_A \tq A \in \mathcal{A} \}$, tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
+Una familia $\mathcal{A} \subseteq \ms{P}(X)$ es \textit{discreta} si para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, de elementos cerrados de $X$, se separa por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos, $\{ U_A \tq A \in \mathcal{A} \}$, tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
 
-\begin{teorema}[metrización de Bing]\phantomsection\label{metri-Bing}\index[alph]{teoremade metrización de Bing}\index[alph]{Bing!teorema de metrización de}
+\begin{teorema}[metrización de Bing]\phantomsection\label{metri-Bing}\index[alph]{teorema!de metrización!de Bing}\index[alph]{Bing!teorema de metrización de}
     Un espacio de Moore es metrizable si y sólo si es colectivamente normal.
 \end{teorema}
 
@@ -411,7 +410,7 @@ Una base $\mathcal{B}$ de un espacio topológico $X$ es \textit{regular} si y s�
 \[ \{ B \in \mathcal{B} \tq B \cap V \neq \emptyset \, \land \, B \cap (X \setminus V) \neq \emptyset \} =^* \emptyset \, \]
 el siguiente teorema de metrización establece que lo únicos espacios $\T_1$ que admiten bases regulares, son exactamente los metrizables.
 
-\begin{teorema}[metrización de Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{teoremade metrización de Arhangel’skii}\index[alph]{Arhangel’skii!teorema de metrización de}
+\begin{teorema}[metrización de Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{teorema!de metrización!de Arhangel’skii}\index[alph]{Arhangel’skii!teorema de metrización de}
     Un espacio es metrizable si y sólo si es $\T_1$ y admite una base regular.
 \end{teorema}
 

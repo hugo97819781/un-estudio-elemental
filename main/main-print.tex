@@ -24,10 +24,7 @@
         \DeclareRobustCommand{\ref}[1]{\textbf{\small\textsc{\oldref{#1}}}}
         \renewcommand{\cref}[1]{\textbf{\small\textsc{\oldcref{#1}}}}
         \renewcommand{\pageref}[1]{\textbf{\small\textsc{\oldpageref{#1}}}}
-        \DeclareRobustCommand{\cite}[2][]{%
-            \ifstrempty{#1}{\textbf{\small\textsc{\oldcite{#2}}}}{\textbf{\small\textsc{\oldcite[#1]{#2}}}}
-        }
-        
+        \DeclareRobustCommand{\cite}[2][]{\ifstrempty{#1}{\textbf{\small\textsc{\oldcite{#2}}}}{\textbf{\small\textsc{\oldcite[#1]{#2}}}}}        
     }
     \newcommand{\pagp}{\textbf{\small\textsc{P.}}}
 
@@ -62,7 +59,7 @@
     \frontmatter
         \pagestyle{empty}
         \input{chapters/0-cover.tex}
-        %{\selectcolormodel{gray}		
+        {\selectcolormodel{gray}		
         \input{chapters/a0-frase.tex}
 
         \chapter*{Agradecimientos}
@@ -100,5 +97,5 @@
         \printindex[sym]
         \printindex[alph]
         \printbibliography[heading=bibintoc, title={Referencias}]
-    %}
+    }
 \end{document}

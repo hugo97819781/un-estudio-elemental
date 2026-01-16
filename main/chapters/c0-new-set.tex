@@ -20,22 +20,23 @@ Sean $\mathbb{P}=(P,\leq)$ un orden parcial y $A \subseteq \mathbb{P}$. Se denot
 
 Una \textit{cadena} de $\mathbb{P}$ es un subconjunto $C \subseteq P$ de elementos comparables. Cuando $P$ mismo sea una cadena, se dirá que $\mathbb{P}$ es un \textit{conjunto totalmente ordenado} y que $\leq$ (o bien, $<$) es un \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $\mathbb{P}$ es un \textit{buen orden} y que $\leq$ (o bien, $<$) es un \textit{buen orden} en $P$.
 
-La prueba de la siguiente equivalencia para $\Ac$ se puede ver en \CTT:
+La prueba de la siguiente equivalencia para $\Ac$ se puede ver en \cite[\S ~ I.11]{munkresTopo}:
 \begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
     Todo conjunto parcialmente ordenado y no vacío $\mathbb{P}$ contiene una cadena, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{P}$.
 \end{teorema}
 
 \index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
 
-A continuación se presenta un objeto que, si bien no es un orden parcial, está inducido por uno (su construcción proviene de una mucho más general basada en ideales, ver \CTT para un estudio más profundo). Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si $A \setminus B$ es finito, esta situación se denotará por $A \subseteq^* B$. Se conviene que $A$ y $B$ son \textit{casi iguales}, denotado $A=^*B$, si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$.
+A continuación se presenta un objeto que, si bien no es un orden parcial, está inducido el orden parcial contención y la finitud. Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si $A \setminus B$ es finito, esta situación se denotará por $A \subseteq^* B$. Se conviene que $A$ y $B$ son \textit{casi iguales}, denotado $A=^*B$, si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$.
 \begin{proposicion}
     Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
     \begin{enumerate}
-        \item $A \subseteq^* A$ y $A =^* A$.
+        \item Si $A \subseteq^* B$ si y sólo si existe $F \subseteq A$ finito tal que $A \setminus F \subseteq^* B$.
+        \item $A \subseteq^* A$ u $A=^* B$.
         \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
         \item $=^*$ se comporta como relación de equivalencia.
         \item Si $A,B \subseteq C$, entonces $A \subseteq^* B$ si y sólo si $C \setminus B \subseteq^* C \setminus A$.
-        \item Si $A \subseteq^* B$, entonces $A \cap C \subseteq^* B \cap C$ y $A \cup C \subseteq^* B \cup C$.
+        \item Si $A,B \subseteq C$, entonces $A \subseteq^* B$ si y sólo si $C \setminus B \subseteq^* C \setminus A$.
     \end{enumerate}
 \end{proposicion}
 
@@ -116,7 +117,7 @@ Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\ka
 \subsection{Estructuras combinatorias}
 \subsubsection{Árboles}
 \label{sec-arbols}
-Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. El \textit{oden} de un elemento $x \in T$, denotado $o(X)$, es el único ordinal isomorfo a $(\{ p \in T \tq p<x \},<)$ \CTT. La altura de un árbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{T}$.
+Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. El \textit{oden} de un elemento $x \in T$, denotado $o(X)$, es el único ordinal isomorfo a $(\{ p \in T \tq p<x \},<)$ \cite[\S.~I.2.12]{jechSet}. La altura de un árbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{T}$.
 
 \begin{proposicion}\phantomsection\label{2fin-es-arbol}
 	$\mathbb{T} \mycoloneq (2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$.
@@ -202,4 +203,4 @@ En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ 
 \end{proof}
 
 \phantomsection\label{MADef}\index[alph]{axioma!de Martin}\index[alph]{Martin!axioma de}\index[sym]{$\Ma$}\index[sym]{$\mathfrak{m}$}\index[alph]{cardinal!de Martin}\index[alph]{Martin!cardinal de}
-A razón de lo anterior, tiene sentido definir el \textit{cardinal de Martin}, $\mathfrak{m}$, como el menor cardinal para el cual $\Ma(\kappa)$ es falso. El \textit{Axioma de Martin} es el enunciado: \textit{Para cualquier cardinal $\kappa$ menor que $\mathfrak{c}$, $\Ma(\kappa)$ es verdadero}; equivalentemente, $\mathfrak{m}=\mathfrak{c}$. Tanto $\HC$, como $\lnot\HC + \Ma$, son independientes de $\zfc$ \CTT.
+Así, tiene sentido definir el \textit{cardinal de Martin}, $\mathfrak{m}$, como el menor cardinal $\kappa$ para el cual $\Ma(\kappa)$ es falso. El \textit{Axioma de Martin} es el enunciado: \textit{Para cualquier cardinal $\kappa$ menor que $\mathfrak{c}$, $\Ma(\kappa)$ es verdadero}; equivalentemente, $\mathfrak{m}=\mathfrak{c}$. $\HC$ y $\lnot\HC + \Ma$ son consistentes con $\zfc$ \cite[Teo.~ II.13.20, II.16.13]{jechSet}.

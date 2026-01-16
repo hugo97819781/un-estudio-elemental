@@ -35,10 +35,7 @@
         \DeclareRobustCommand{\ref}[1]{{\small\textsc{\oldref{#1}}}}
         \renewcommand{\cref}[1]{\textcolor{rosa}{\small\textsc{\oldcref{#1}}}}
         \renewcommand{\pageref}[1]{{\small\textsc{\oldpageref{#1}}}}
-        \DeclareRobustCommand{\cite}[2][]{%
-            \ifstrempty{#1}{{\small\textsc{\oldcite{#2}}}}{{\small\textsc{\oldcite[#1]{#2}}}}
-        }
-        
+        \DeclareRobustCommand{\cite}[2][]{\ifstrempty{#1}{{\small\textsc{\oldcite{#2}}}}{{\small\textsc{\oldcite[#1]{#2}}}}}        
     }
     \newcommand{\pagp}{\textcolor{rosa}{\small\textsc{P.}}}
     %\newcommand{\pagp}{p.}

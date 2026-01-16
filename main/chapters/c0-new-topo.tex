@@ -44,7 +44,7 @@ Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los c
 
 El espacio $X$ es \textit{regular} (\textit{completamente regular}, respectivamente) si cualquier cerrado $F$ y cualquier $x \in X \setminus F$ se separan por abiertos ajenos (se separan funcionalmente, respectivamente). Se dice que $X$ es \textit{normal} si cualquier par de cerrados ajenos se separan por abiertos ajenos. Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad, respectivamente, adicionados con el axioma $\T_1$. Cuando $X$ es $\T_2$ se dice que es \textit{de Hausdorff}, y cuando es es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}. Los axiomas $\T_0,\T_1,\T_2,\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son invariantes productivos, factorizables. Todos menos $\T_4$, son hereditarios, $\T_4$ sólo es es débilmente hereditario.
 
-A continuación se enuncian dos de los resultados más notables en relación a los axiomas de separación. Las pruebas de los mismos pueden consultarse en \CTT, \CTT y \CTT, respectivamente.
+A continuación se enuncian dos de los resultados más notables en relación a los axiomas de separación. Las pruebas de los mismos pueden consultarse en \cite[Teo.~ 2.3.23]{engelTopo} y \cite[Teo.~ 2.1.18]{engelTopo}, respectivamente.
 
 \begin{teorema}[inmersión de Tychonoff]\phantomsection\label{Teo-Inm-Tych}\index[alph]{teoremade inmersión de Tychonoff}\index[alph]{Tychonoff!teorema de inmersión de}
     Un espacio $X$ es de Tychonoff si y sólo si se encaja en $[0,1]^{w(X)}$.
@@ -323,10 +323,10 @@ Para cada cubierta abierta $\mathcal{U}$ de $X$ y cada $x \in X$ definimos la \t
     Supóngase que $U$ es un abierto de $X$ y $x \in U$, entonces existe $N \in \omega$ de modo que $x \in \St(x,\mathcal{U}_N) \subseteq U$. Como $\mathcal{V}_N$ es cubierta de $X$, existe $V \in \mathcal{U}_N \subseteq \mathcal{B}$ tal que $x \in U$. Nótese que, como $\mathcal{V}_n \subseteq \mathcal{U}_n$ y $x \in V$, se tiene que $x \in V \subseteq \St(x,\mathcal{U}_N) \subseteq U$, mostrando que $\mathcal{B}$ es base contable para $X$.
 \end{proof}
 
-El conocido hecho: \textit{todo espacio metrizable separable es $2\AN$} \CTT, otorga la siguiente equivalencia:
+El conocido hecho: \textit{todo espacio metrizable separable es $2\AN$} \cite[Teo.~ 4.1.15]{engelTopo}, otorga la siguiente equivalencia:
 
 \begin{corolario}\phantomsection\label{metri-lindSii2an}
-    Para cualquier espacio metrizable, $X$, so equivalentes:
+    Para cualquier espacio metrizable, $X$, son equivalentes:
     \begin{enumerate}
         \item $X$ es $2\AN$.
         \item $X$ es de Lindelöf.
@@ -341,10 +341,10 @@ El conocido hecho: \textit{todo espacio metrizable separable es $2\AN$} \CTT, ot
 %    Tómese $N \in \omega$ de manera que $1/N<\varepsilon/2$. Entonces, si $y \in B(x_m,N)$, entonces $d(x,y) \leq d(y,x_m)+d(x_m,x) < \varepsilon$, mostrando que $x \in B(x_m, 1/N)$, y con ello, que $\mathcal{B}$ es base contable para $X$.
 %\end{proof}
 
-El siguiente teorema es una caracterización clásica para la compacidad de un espacio metrizable. Su demostración se puede revisar con detalle en \CTT.
+El siguiente teorema es una caracterización clásica para la compacidad de un espacio metrizable. Su demostración se puede revisar en \cite[Teo.~ 4.1.17]{engelTopo}.
 
 \begin{proposicion}\phantomsection\label{metri-comp}
-    Sea $X$ un espacio metrizable por la métrica $d$. Las siguientes condiciones son equivalentes:
+    Para cualquier espacio metrizable $X$, son equivalentes las siguientes condiciones:
     \begin{enumerate}
         \item $X$ es compacto.
         \item $X$ es numerablemente compacto. 

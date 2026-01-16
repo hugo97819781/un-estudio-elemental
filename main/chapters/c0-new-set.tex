@@ -2,9 +2,7 @@
 \chapter{Preliminares}
 \section{Conjuntos}
 
-
-\index[sym]{$\zfc$}\index[sym]{$\zf$}\index[sym]{$\Ac$}\index[sym]{$\HC$}\index[sym]{$\Ma$}
-El presente trabajo se desarrolla dentro del sistema axiomático usual de la teoría de conjuntos, a saber, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ (véase \pagp\pageref{CHDef}) o el axioma de Martin $\Ma$ (véase \pagp\pageref{MADef}). \textcolor{magenta}{Los sistemas mencionados pueden consultarse en \cite[p.~3]{jechSet}.}
+El presente trabajo se desarrolla dentro de la teoría de conjuntos usual, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ (véase \pagp\pageref{CHDef}) o el axioma de Martin $\Ma$ (véase \pagp\pageref{MADef}). Los sistemas mencionados pueden consultarse en la \cref{apnd-ltc}.
 
 \index[alph]{conjunto!potencia}\index[alph]{función!restricción de una}\index[alph]{clase}\index[sym]{$\ms{P}$}\index[sym]{$f \upharpoonright B$}\index[sym]{$\ms{P}(X)$}\index[alph]{conjunto!potencia}
 Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto \textit{potencia}. Ahora, si $f \colon A \to X$ es una función y $B \subseteq A$, se escribirá la \textit{restricción} de $f$ a $B$ como $f \upharpoonright B$. Las jerarquía de operaciones binarias entre conjuntos que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$. Una \textit{enumeración} para un conjunto $A$ es una función biyectiva $I \to A$ ($i \mapsto a_i$), en esta situación, se dice que $A$ \textit{está enumerado} como $A=\{ A_i \tq i \in I \}$.
@@ -23,7 +21,7 @@ Sean $\mathbb{P}=(P,\leq)$ un orden parcial y $A \subseteq \mathbb{P}$. Se denot
 Una \textit{cadena} de $\mathbb{P}$ es un subconjunto $C \subseteq P$ de elementos comparables. Cuando $P$ mismo sea una cadena, se dirá que $\mathbb{P}$ es un \textit{conjunto totalmente ordenado} y que $\leq$ (o bien, $<$) es un \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $\mathbb{P}$ es un \textit{buen orden} y que $\leq$ (o bien, $<$) es un \textit{buen orden} en $P$.
 
 La prueba de la siguiente equivalencia para $\Ac$ se puede ver en \CTT:
-\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{Lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
+\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
     Todo conjunto parcialmente ordenado y no vacío $\mathbb{P}$ contiene una cadena, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{P}$.
 \end{teorema}
 
@@ -53,15 +51,14 @@ A continuación se presenta un objeto que, si bien no es un orden parcial, está
 
 \subsection{Ordinales y Cardinales}
 
-
 \index[alph]{número!ordinal}\index[sym]{$\alpha < \beta$ (ordinales)}\index[sym]{$\omega$}\index[alph]{número!ordinal!sucesor}\index[alph]{número!ordinal!límite}\index[alph]{número!ordinal!cero}
 Como es estándar, se trabajará sobre el universo de Von Neumann. Así, $\alpha$ es un \textit{número ordinal} si $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$. Toda clase no vacía de ordinales tiene mínimo \cite[Obs.~I.2.4]{jechSet}. Para cada ordinal $\alpha$, el sucesor de $\alpha$ es $\alpha+1=\alpha \cup \{\alpha\}$. Existen tres tipos de ordinales: \textit{cero} ($0=\emptyset$), los \textit{sucesor} (aquellos de la forma $\alpha+1$, para algún ordinal $\alpha$), y los \textit{límite} (ninguno de los anteriores). Denotaremos por $\omega$ al primer ordinal límite; $\omega$ es el conjunto de números naturales.
 
 \index[alph]{sucesión}\index[alph]{sucesión!finita}\index[sym]{$(x_n)_{n \in \omega} \subseteq A$}\index[sym]{$(x_k)_{k \in n} \subseteq A$}
 Una \textit{sucesión} (\textit{sucesión finita}, respectivamente) en un conjunto $A$ es una función $x \colon \omega \to A$ ($x \colon n \to A$ para algún $n \in \omega$). Esto se denota por $(x_n)_{n \in \omega} \subseteq A$, o bien, si $x$ es sucesión finita: $(x_k)_{k \in n} \subseteq A$.
 
-Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$. El mecanismo detrás de esto es la siguiente restricción del Teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
-\begin{teorema}[Recursión en ordinales]\index[alph]{Teorema!de recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!Teorema de}
+Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$. El mecanismo detrás de esto es la siguiente restricción del teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
+\begin{teorema}[Recursión en ordinales]\index[alph]{teoremade recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
     Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$, $x_0 \in X$, $g \colon X \to X$ y $f \colon \ms{P}(X) \to X$ arbitrarias:
     \begin{enumerate}
         \item Existe una única $h \colon  \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)f(h[\beta])$.
@@ -94,7 +91,7 @@ De manera puntual, se hará referencia a la aritmética ordinal y cardinal, util
     \[ \sum_{\alpha \in  I} \kappa_\alpha = |I| \sup_{\alpha \in I} \kappa_\alpha \, . \]
 \end{proposicion}
 
-\index[sym]{$\mathfrak{c}$}\phantomsection\label{CHDef}
+\index[sym]{$\mathfrak{c}$}\phantomsection\label{CHDef}\index[sym]{$\HC$}
 La letra $\mathfrak{c}$ denota el cardinal del \textit{continuo}, es decir $\mathfrak{c}=|\mathbb{R}|=2^{\aleph_0}$. La formulación de $\HC$ que utilizaremos es: $\aleph_1=\mathfrak{c}$.
 
 \index[sym]{$[X]^\kappa$}\index[sym]{$[X]^{<\kappa}$}\index[sym]{$[X]^{\leq\kappa}$}\index[sym]{$[X]^{>\kappa}$}\index[sym]{$[X]^{\geq\kappa}$}\index[sym]{$X^\kappa$}\index[sym]{$X^{\kappa}$}
@@ -118,6 +115,7 @@ Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\ka
 
 \subsection{Estructuras combinatorias}
 \subsubsection{Árboles}
+\label{sec-arbols}
 Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. El \textit{oden} de un elemento $x \in T$, denotado $o(X)$, es el único ordinal isomorfo a $(\{ p \in T \tq p<x \},<)$ \CTT. La altura de un árbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{T}$.
 
 \begin{proposicion}\phantomsection\label{2fin-es-arbol}
@@ -130,7 +128,7 @@ Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ 
 	Por lo tanto $\mathbb{T}$ es un árbol y para cada $f \in 2^{<\omega}$, $o(f)=n$. Consecuentemente, la altura de $\mathbb{T}$ es $\sup\{ n+1 \tq n \in \omega \}=\omega$. Por \ref{cardi-subcolec}, $2^{<\omega}$ es numerable.
 \end{proof}
 
-\subsubsection{Cofinalidad y Lema de Fodor}
+\subsubsection{Cofinalidad y lema de Fodor}
 \index[alph]{cofinalidad}\index[alph]{número!ordinal!regular}\index[alph]{número!cardinal!regular}\index[alph]{función!cofinal}\index[sym]{$\cf(\alpha)$}\index[alph]{regular!ordinal}\index[alph]{regular!cardinal}
 Una función entre ordinales $f \colon \alpha \to \beta$ es \textit{cofinal} en $\alpha$ si para cada $\delta \in \beta$ existe cierto $\varepsilon \in \gamma$ de manera tal que $\delta \leq f(\varepsilon)$. Se define:
 \[ \cf(\alpha) = \min \{  \beta \tq \exists f:\beta \to \alpha \, (f \text{ es cofinal en } \alpha ) \} \, . \]
@@ -139,7 +137,7 @@ Para cualquier ordinal $\alpha$: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un c
 \index[alph]{conjunto!cerrado (en ordinales)}\index[alph]{conjunto!club}\index[alph]{conjunto!estacionario}
 Sea $\gamma$ un ordinal límite. $C \subseteq \gamma$ se dice \textit{cerrado} (en $\gamma$) si para todo $\alpha<\gamma$, $\midcup (C \cap \alpha)=\alpha$ implica que $\alpha \in C$. Si $C$ es cerrado y no cofinal en $\gamma$, diremos que $C$ es un \textit{club} (de $\gamma$). Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} (en $\gamma$) si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente últil herramienta \cite[I.8.7]{jechSet}:
 
-\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{Lema!de Fodor}\index[alph]{Fodor!Lema de}\index[alph]{función!estacionaria}
+\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{lema!de Fodor}\index[alph]{Fodor!lema de}\index[alph]{función!estacionaria}
     Sean $\kappa$ un cardinal regular, $S \subseteq \kappa$ estacionario y $f \colon S \to \kappa$ \textit{regresiva}, es decir, para cada $\alpha \in S \setminus \{0\}$, $f(\alpha)<\alpha$. Entonces existe un conjunto estacionario $T \subseteq S$ tal que $f \upharpoonright T$ es constante; equivalentemente, existe $\delta \in \kappa$ tal que $f^{-1}[\{\delta\}] \subseteq S$ es estacionario.
 \end{teorema}
 
@@ -168,9 +166,9 @@ De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, 
 \end{proposicion}
 
 %\index[alph]{ultrafiltro}\index[alph]{conjunto!ultrafiltro}
-%Un \textit{ultrafiltro} $\mathbb{P}$ es in filtro $\subseteq$-maximal del conjunto de filtros de $\mathbb{P}$. El siguiente es un Teorema sumamente conocido, su demostración tiene por base el \cref{teo-PMO} \CTT.
+%Un \textit{ultrafiltro} $\mathbb{P}$ es in filtro $\subseteq$-maximal del conjunto de filtros de $\mathbb{P}$. El siguiente es un teorema sumamente conocido, su demostración tiene por base el \cref{teo-PMO} \CTT.
 
-%\begin{teorema}[Lema del Ultrafiltro]\phantomsection\label{lem-ultrafil}\index[alph]{Lema!del ultrafiltro}\index[alph]{ultrafiltro!Lema del}
+%\begin{teorema}[Lema del Ultrafiltro]\phantomsection\label{lem-ultrafil}\index[alph]{lema!del ultrafiltro}\index[alph]{ultrafiltro!lema del}
     %Sean $\mathbb{P}$ un conjunto parcialmente ordenado y $F$ de $\mathbb{P}$ un filtro. Entonces existe un ultrafiltro $U \supseteq F$.
 %\end{teorema}
 

@@ -24,7 +24,7 @@ Un subconjunto $C \subseteq P$ es una \textit{cadena} de $(P,\leq$) si $p,q \in 
 
 \index[alph]{función!de elección}\index[alph]{elección!función de}\index[alph]{elección!axioma de}
 Si $X$ es un conjunto no vacío, se dice que $f:\ms{P}(X) \setminus \{\emptyset\} \to X$ es una \textit{función de elección} en $X$ cuando para cada $x \in X$ ocurre $f(x) \in x$. La formulación clásica del \textit{Axioma de Elección} ($\Ac$) dicta que todo conjunto no vacío admite una función de elección. Utilizaremos con frecuencia la siguiente equivalencia para este axioma:
-\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{Lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
+\begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{princpio!de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
     Si $(P,\leq)$ es un conjunto parcialmente ordenado y no vacío, existe una cadena $C$ de $(P,\leq)$ que es $\subseteq$-maximal (del conjunto de cadenas de $P$).
 \end{teorema}
 
@@ -33,8 +33,8 @@ Si $X$ es un conjunto no vacío, se dice que $f:\ms{P}(X) \setminus \{\emptyset\
 \index[alph]{número!ordinal}\index[sym]{$\alpha < \beta$ (ordinales)}\index[sym]{$\omega$}\index[alph]{número!ordinal!sucesor}\index[alph]{número!ordinal!límite}\index[alph]{número!ordinal!cero}
 Como es estándar, trabajaremos sobre el universo de Von Neumann  para la teoría de conjuntos. En este contexto, un conjunto $\alpha$ se denomina \textit{número ordinal} cuando $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$.Es un hecho que toda clase no vacía de ordinales tiene un  mínimo \cite[Obs.~I.2.4]{jechSet}. Para cada ordinal $\alpha$, el sucesor de $\alpha$ se define como $\alpha+1=\alpha \cup \{\alpha\}$, existen tres tipos de ordinales: \textit{cero} ($0=\emptyset$), los \textit{sucesor} (aquellos de la forma $\alpha+1$, para algún ordinal $\alpha$), y los \textit{límite} (ninguno de los anteriores). Denotaremos por $\omega$ al primer ordinal límite; es un hecho que $\omega$ es el conjunto de todos los números naturales. Una \textit{sucesión} en un conjunto $A$ es una función $x:\omega \to A$, es comun denotar esto por $(x_n)_{n \in \omega} \subseteq A$, una \textit{sucesión finita} en $A$ es una función $x:n \to A$, con $n$ natural, se denota $(x_k)_{k \in n} \subseteq A$.
 
-Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$, o algún buen orden. El mecanismo detrás de esto es la siguiente restricción del Teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
-\begin{teorema}[Recursión en ordinales]\index[alph]{Teorema!de recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!Teorema de}
+Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$, o algún buen orden. El mecanismo detrás de esto es la siguiente restricción del teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
+\begin{teorema}[Recursión en ordinales]\index[alph]{teoremade recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
     Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$ y cualesquiera $x_0 \in X$, $g:X \to X$ y $f:\ms{P}(X) \to X$:
     \begin{enumerate}
         \item Existe una única $h: \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)f(h[\beta])$.
@@ -106,7 +106,7 @@ Es un hecho que para cualquier ordinal $\alpha$, ocurre que: $\cf(\alpha)\leq \a
 \index[alph]{conjunto!cerrado (en ordinales)}\index[alph]{conjunto!club}\index[alph]{conjunto!estacionario}
 Sea $\gamma$ un ordinal límite. Un subconjunto $C \subseteq \gamma$ se dice \textit{cerrado} si, para todo $\alpha<\gamma$, se cumple que, cuando $\midcup (C \cap \alpha)=\alpha$, entonces $\alpha \in C$. Si $C$ es cerrado y no es cofinal en $\gamma$, diremos que $C$ es un \textit{club} de $\gamma$. Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente herramienta últil \cite[I.8.7]{jechSet}:
 
-\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{Lema!de Fodor}\index[alph]{Fodor!Lema de}\index[alph]{función!estacionaria}
+\begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{lema!de Fodor}\index[alph]{Fodor!Lema de}\index[alph]{función!estacionaria}
     Sean $\kappa$ un cardinal regular, $S \subseteq \kappa$ estacionario y supóngase que $f:S \to \kappa$ es \textit{regresiva}, es decir, para cada $\alpha \in S \setminus \{0\}$ se da $f(\alpha)<\alpha$. Entonces existe un conjunto estacionario $T \subseteq S$ tal que $f \upharpoonright T$ es constante; equivalentemente, existe $\delta \in \kappa$ tal que $f^{-1}[\{\delta\}] \subseteq S$ es estacionario.
 \end{teorema}
 
@@ -250,15 +250,15 @@ Dado que el discreto de dos puntos es un de Tychonoff, tal propiedad es producti
 
 el próximo enunciando es uno de los más fuertes para espacios normales, su demostración se consultar en \cite[Teo.~ 2.1.8]{engelTopo}.
 
-\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{Teorema!de extensión de Tietze}\index[alph]{Tietze!Teorema de extensión de}
+\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{teoremade extensión de Tietze}\index[alph]{Tietze!teorema de extensión de}
     Sea $X$ un espacio $\T_1$ y $F \subseteq X$ cualquier cerrado. Si $f:F \to \mathbb{R}$ es continua, entonces existe $g:X \to \mathbb{R}$ continua y tal que extiende a $f$, es decir, $g \upharpoonright A = f$.
 \end{teorema}
 
-\begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{Lema!de Jones}\index[alph]{Jones!Lema de}
+\begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{lema!de Jones}\index[alph]{Jones!Lema de}
     Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
 \end{corolario}
 \begin{proof}
-    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f:X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.%, por lo que $|\mathbb{R}^S| \leq |\mathbb{R}^\mathbb{R}|$.
+    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f:S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f:X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.%, por lo que $|\mathbb{R}^S| \leq |\mathbb{R}^\mathbb{R}|$.
 
     Supóngase ahora que $h,k:X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva.
 
@@ -419,9 +419,9 @@ Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conoc
 \end{proof}
 
 \index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
-Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del Teorema de Categoría de Baire.
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del teorema de Categoría de Baire.
 
-\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{Teorema!de Categoría de Baire}\index[alph]{Baire!Teorema de Categoría de}
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teoremade Categoría de Baire}\index[alph]{Baire!teorema de Categoría de}
     Todo espacio $X$ de Hausdorff, localmente compacto, es de Baire.
 \end{teorema}
 \begin{proof}
@@ -449,7 +449,7 @@ El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función 
 
     (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f:A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
 
-    Como $X$ es normal, el Teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+    Como $X$ es normal, el teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
 \end{proof}
 
 \begin{proposicion}\phantomsection\label{pseudocom-subcjtos}

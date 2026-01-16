@@ -46,21 +46,21 @@ El espacio $X$ es \textit{regular} (\textit{completamente regular}, respectivame
 
 A continuación se enuncian dos de los resultados más notables en relación a los axiomas de separación. Las pruebas de los mismos pueden consultarse en \CTT, \CTT y \CTT, respectivamente.
 
-\begin{teorema}[inmersión de Tychonoff]\phantomsection\label{Teo-Inm-Tych}\index[alph]{Teorema!de inmersión de Tychonoff}\index[alph]{Tychonoff!Teorema de inmersión de}
+\begin{teorema}[inmersión de Tychonoff]\phantomsection\label{Teo-Inm-Tych}\index[alph]{teoremade inmersión de Tychonoff}\index[alph]{Tychonoff!teorema de inmersión de}
     Un espacio $X$ es de Tychonoff si y sólo si se encaja en $[0,1]^{w(X)}$.
 \end{teorema}
 
-\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{Teorema!de extensión de Tietze}\index[alph]{Tietze!Teorema de extensión de}
+\begin{teorema}[extensión de Tietze]\phantomsection\label{Teo-Tietze}\index[alph]{teoremade extensión de Tietze}\index[alph]{Tietze!teorema de extensión de}
     Un espacio $X$ es normal si y sólo si para cualquier cerrado $F \subseteq X$ y cualquier función continua $f \colon F \to \mathbb{R}$, existe $g \colon X \to \mathbb{R}$ continua y tal que $g \upharpoonright A = f$.
 \end{teorema}
 
-El siguiente Lema será utilizado en el CHAP 4, anexaremos su demostración, pues es una alicación sencilla del Teorema de extensión de Tietze.
+El siguiente lema será utilizado en el CHAP 4, anexaremos su demostración, pues es una alicación sencilla del teorema de extensión de Tietze.
 
-\begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{Lema!de Jones}\index[alph]{Jones!Lema de}
+\begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{lema!de Jones}\index[alph]{Jones!lema de}
     Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
 \end{corolario}
 \begin{proof}
-    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f \colon S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el Teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
+    Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f \colon S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
 
     Supóngase ahora que $h,k \colon X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
     \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \, \]
@@ -71,7 +71,7 @@ El siguiente Lema será utilizado en el CHAP 4, anexaremos su demostración, pue
 Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene una base compuesta de conjuntos abiertos y cerrados a la vez, este invariante topológico es productivo y hereditario (por tanto, factorizable).
 
 \begin{proposicion}\phantomsection\label{cero-dim-caracte}\phantomsection\label{cerodim-Tych}
-    Un espacio $X$ es cero-dimensional y sólo si se encaja en $2^{w(X)}$. Por tanto, todo espacio cero-dimensional es de Tychonoff (\ref{Teo-Inm-Tych}).
+    Un espacio $X$ es cero-dimensional y sólo si se encaja en $2^{w(X)}$. Por tanto, todo espacio cero-dimensional es de Tychonoff.
 \end{proposicion}
 \begin{proof}
     (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase la función $f \colon X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
@@ -86,7 +86,7 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
 \subsection{Convergencia de sucesiones}
 \label{prelim-sucesiones}
 
-\index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[sym]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}
+\index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[alph]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}
 Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f \colon \omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
 
 \index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
@@ -105,12 +105,12 @@ Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente
 %    (ii) $\to$ (i) Supóngase que $A \to a$ y sea $x \colon \omega \to A$ cualquier inyección. Si $U$ es cualquier abierto en $X$ con $a \in U$, se cumple que $A \setminus U \subseteq x[\omega]$ es finito. Como $x$ es biyección, existe $N \in \omega$ tal que $A \setminus U \subseteq \{x_n \tq n < N\}$. Debido a lo anterior, $\{x_n \tq n \geq N \} \subseteq U$, y así, $x_n \to a$.
 %\end{proof}
 
-\index[sym]{espacio!secuencialmente compacto}
+\index[alph]{espacio!secuencialmente compacto}
 Un espacio $X$ es \textit{secuencialmente compacto} si y sólo si cada sucesión en $X$ tiene una subsucesión convergente; equivalentemente (en virtud de \ref{prop-sucesionesConvergentes}), para cada $A \in [X]^\omega$ existen $a \in X$ y $B \in [A]^\omega$ con $B \to a$.
 
 \index[alph]{clausura!secuencial}\index[sym]{$\scl(A)$}\index[alph]{operador!clausura secuencial}
 Para cada $A \subseteq X$ denotarmos por $\scl(A)$ la \textit{clausura secuencial} de $A$, esto es, el conjunto de puntos $x \in X$ tales que existe $(y_n)_{n \in \omega} \subseteq A$ con $y_n \to x$. Se dice que $A \subseteq X$ es \textit{secuencialmente cerrado} si $\scl(A) \subseteq X$. Como consecuencia de la \cref{prop-sucesionesConvergentes} se tiene que:
-\begin{corolario}
+\begin{corolario}\phantomsection\label{sqcl-en-T1}
     Si $X$ es espacio $\T_1$ y $A \subseteq X$, entonces:
     \[ \scl(A) = A \cup \{ x \in X \tq \exists B \in [A]^\omega \, (B \to a) \} \, . \]
 \end{corolario}
@@ -151,9 +151,9 @@ Una cubierta, de un conjunto $A$, es una colección $\mathcal{U} \subseteq \ms{P
     \end{enumerate}
 \end{proposicion}
 \begin{proof}
-    (i) Se sigue del Lema anterior y de que $2\AN$ es hereditaria.
+    (i) Se sigue del lema anterior y de que $2\AN$ es hereditaria.
 
-    (ii) Supóngase que $X$ es $2\AN$ y localmente compacto. Para cada $x \in X$ elíjase ($\Ac$) una vecindad compacta, $N_x$, de $x$. Entonces $\mathcal{U} \mycoloneq \{ N_x \tq x \in X \}$ cumple las hipótesis del Lema previo, y así, admite una subcubierta contable $\mathcal{V}$. Como cada elemento de $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, $X$ es $\sigma$-compacto.
+    (ii) Supóngase que $X$ es $2\AN$ y localmente compacto. Para cada $x \in X$ elíjase ($\Ac$) una vecindad compacta, $N_x$, de $x$. Entonces $\mathcal{U} \mycoloneq \{ N_x \tq x \in X \}$ cumple las hipótesis del lema previo, y así, admite una subcubierta contable $\mathcal{V}$. Como cada elemento de $\mathcal{V}$ es compacto y $X \subseteq \midcup \mathcal{V}$, $X$ es $\sigma$-compacto.
 
     (iii) Supóngase que $X$ es unión contable de subespacios compactos, a saber $\{X_n \tq n \in \omega\}$. Para cada $n \in \omega$ tómese ($\Ac$) algún $\mathcal{U}_n \in [\mathcal{U}]^{<\omega}$ con $X_n \subseteq \midcup \mathcal{U}_n$, consecuentemente, $\midcup\{ \mathcal{U}_n \tq n \in \omega\}$ es subcubierta contable de $\mathcal{U}$.
 \end{proof}
@@ -200,9 +200,9 @@ En la clase de espacios Haussdorff, la compacidad de $X$ implica su normalidad \
 %\end{proof}
 
 \index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
-Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del Teorema de Categoría de Baire.
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del teorema de Categoría de Baire.
 
-\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{Teorema!de Categoría de Baire}\index[alph]{Baire!Teorema de Categoría de}
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teoremade Categoría de Baire}\index[alph]{Baire!teorema de Categoría de}
     Si $X$ es un espacio topológico de Hausdorff y localmente compacto, $X$ es de Baire.
 \end{teorema}
 \begin{proof}
@@ -230,7 +230,7 @@ El espacio $X$ es \textit{pseudocompacto} si cualquier función $f \colon X \to 
 
     (ii) Por contradicción, supóngase que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f \colon A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
 
-    Como $X$ es normal, el Teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g \colon X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+    Como $X$ es normal, el teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g \colon X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
 \end{proof}
 
 \begin{proposicion}\phantomsection\label{pseudocom-subcjtos}
@@ -292,9 +292,7 @@ Un espacio $Y$ es \textit{compactación Hausdorff} de $X$ cuando es compacto, de
 \index[alph]{función!métrica}\index[alph]{métrica}\index[alph]{espacio!métrico}\index[alph]{bola abierta}\index[alph]{topología!inducida por una métrica}\index[alph]{conjunto!bola abierta}\index[sym]{$B(x,\varepsilon)$}\index[sym]{$\tau_d$}\index[alph]{espacio!metrizable}
 Una \textit{métrica} sobre un conjunto $M$ es una función $d:M \times M \to \mathbb{R}^+ \cup \{0\}$ tal que para cualesquiera $x,y,z \in M$ se cumple: $d(x,y)=d(y,x)$; $d(x,y)=0$ si y sólo si $x=y$; y $d(x,z)\leq d(x,y) + d(y,z)$. En tal caso, $(M,d)$ es un \textit{espacio métrico}. Para cada $x \in M$ y $\varepsilon>0$, denotaremos por $B(x,\varepsilon)$ a la \textit{bola abierta de radio} $\varepsilon$ \textit{y centro} $x$ y por $\tau_d$ a la \textit{topología inducida} por $d$ en $M$, esto es:
 \[ \tau_d  \mycoloneq  \{ U \subseteq M \tq \forall x \in U \, \exists \varepsilon > 0 \, ( x \in B(x,\varepsilon) \subseteq U ) \} \, . \]
-El espacio $(X,\tau)$ es \textit{metrizable} si existe una métrica, $d$, en $X$ con $\tau=\tau_d$.
-
-
+El espacio $(X,\tau)$ es \textit{metrizable} si existe una métrica, $d$, en $X$ con $\tau=\tau_d$. %Cualquier subespacio de un espacio metrizable es, de nuevo, metrizable.
 %Sea $(X,d)$ un espacio métrico, para cada $\varepsilon>0$ y $x \in X$ se define la \textit{bola abierta de radio} $\varepsilon$ \textit{y centro} $x$ como el conjunto $B(x,\varepsilon)=\{ y \in X \tq d(y,x)<\varepsilon \}$. Dado esto, se define la \textit{topología inducida por} $d$ \textit{en} $X$ como:
 %\[ \tau_d  \mycoloneq  \{ U \subseteq X \tq \forall x \in U \, \exists \varepsilon > 0 \, ( x \in B(x,\varepsilon) \subseteq U ) \} \, . \]
 %Es un hecho que $\tau_d$ es siempre una topología, y que, las bolas abiertas son subconjuntos abieros en $(X,\tau_d)$.Un espacio topológico $(X,\tau)$ es \textit{metrizable} cuando existe una métrica $d$ en $X$ tal que $\tau=\tau_d$.
@@ -310,7 +308,7 @@ Para cada cubierta abierta $\mathcal{U}$ de $X$ y cada $x \in X$ definimos la \t
 
     Si $U$ es abierto en $X$ y $x \in U$, existe $\varepsilon>0$ de manera que $x \in B(x,\varepsilon) \subseteq U$. Sea $N \in \omega$ tal que $1/N<\varepsilon /2$ y supóngase que $y \in \St(x,\mathcal{U}_N)$ es cualquiera. Por ello, existe $z \in X$ con $x,y \in B(z,1/N)$, consecuentemente $d(x,y) \leq d(x,z) +  d(z,y) \leq 2/N < \varepsilon$. Luego, $\{ \St(x,\mathcal{U}_n) \tq n \in \omega \}$ es base local de $x$, y por tanto, $\{ \mathcal{U}_n \tq n \in \omega \}$ es un desarrollo de $X$.
 \end{proof}
-\begin{corolario}
+\begin{corolario}\label{metri-1an}
     Todo espacio metrizable es primero numerable
 \end{corolario}
 
@@ -381,28 +379,28 @@ El siguiente teorema es una caracterización clásica para la compacidad de un e
     %Las afirmaciones anteriores prueban que $\{ B(x,\delta) \tq x \in N \} \preccurlyeq \mathcal{U}$, lo cual muestra que $\mathcal{U}$ tiene una subcubierta finita. Así, $X$ es compacto.
 %\end{proof}
 
-\begin{corolario}
+\begin{corolario}\phantomsection\label{metric-com-separable}
     Todo espacio metrizable y compacto, es separable.
 \end{corolario}
 
 Un teorema de metrización es un teorema que caracteriza que un espacio sea metrizable, quizás el más famoso de ellos es el siguiente \cite[Teo.~ 4.2.9]{engelTopo}:
 
-\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{Teorema!de metrización de Uryshon}\index[alph]{Uryshon!Teorema de metrización de}
+\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{teoremade metrización de Uryshon}\index[alph]{Uryshon!teorema de metrización de}
     Cualquier espacio topológico $\T_3$ y segundo numerable es metrizable.
 \end{teorema}
 
 El cubo de Hilbert es el espacio $[0,1]^\omega$. Se sigue del resultado anterior la siguiente caracterización para los espacios metrizables y separables.
 
-\begin{corolario}
+\begin{corolario}\phantomsection\label{cubo-Hilbert-encaje}
     Un espacio es metrizable y separable si y sólo si se encaja en el cubo de Hilbert. En particular, $2^\omega$ es metrizable.
 \end{corolario}
 
-En lo que resta, daremos la terminomlogía necesaria para enunciar dos resultados fuertes, los Teoremas de metrización de Bing y Arhangel’skii. Sus pruebas pueden verse en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
+En lo que resta, daremos la terminomlogía necesaria para enunciar dos resultados fuertes, los teoremas de metrización de Bing y Arhangel’skii. Sus pruebas pueden verse en \cite[Teo.~ 5.4.1]{engelTopo} y \cite[Teo.~ 5.4.6]{engelTopo}, respectivamente.
 
 \index[alph]{familia!discreta}\index[alph]{espacio!colectivamente normal}
 Una familia $\mathcal{A} \subseteq \ms{P}(X)$ es \textit{discreta} si para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, de elementos cerrados de $X$, se seapara por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos, $\{ U_A \tq A \in \mathcal{A} \}$, tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
 
-\begin{teorema}[Bing]\phantomsection\label{metri-Bing}\index[alph]{Teorema!de metrización de Bing}\index[alph]{Bing!Teorema de metrización de}
+\begin{teorema}[metrización de Bing]\phantomsection\label{metri-Bing}\index[alph]{teoremade metrización de Bing}\index[alph]{Bing!teorema de metrización de}
     Un espacio de Moore es metrizable si y sólo si es colectivamente normal.
 \end{teorema}
 
@@ -413,7 +411,7 @@ Una base $\mathcal{B}$ de un espacio topológico $X$ es \textit{regular} si y s�
 \[ \{ B \in \mathcal{B} \tq B \cap V \neq \emptyset \, \land \, B \cap (X \setminus V) \neq \emptyset \} =^* \emptyset \, \]
 el siguiente teorema de metrización establece que lo únicos espacios $\T_1$ que admiten bases regulares, son exactamente los metrizables.
 
-\begin{teorema}[Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{Teorema!de metrización de Arhangel’skii}\index[alph]{Arhangel’skii!Teorema de metrización de}
+\begin{teorema}[metrización de Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{teoremade metrización de Arhangel’skii}\index[alph]{Arhangel’skii!teorema de metrización de}
     Un espacio es metrizable si y sólo si es $\T_1$ y admite una base regular.
 \end{teorema}
 

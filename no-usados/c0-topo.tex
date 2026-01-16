@@ -94,9 +94,9 @@ Dentro de la clase de espacios de Hausdorff, la compacidad tiene el efecto conoc
 \end{proof}
 
 \index[alph]{conjunto!magro}\index[alph]{conjunto!de primera categoría}\index[alph]{conjunto!de segunda categoría}
-Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del Teorema de Categoría de Baire.
+Un subconjunto $A \subseteq X$ es \textit{de primera categoría} (o \textit{magro}) si y sólo si es unión numerable de conjuntos $B$, tales que $\inte(\cla(B))=\emptyset$. Un subconjunto de $X$ es \textit{de segunda categoría} cuando no es de primera categoría. Finalmente, el espacio $X$ es \textit{de Baire} cuando cualquiera de sus subconjuntos magros tiene interior vacío, equivalentemente, cuando la intersección numerable de conjuntos abiertos densos, es densa. La siguiente es una versión, de las dos más \enquote{populares} que existen, del teorema de Categoría de Baire.
 
-\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{Teorema!de Categoría de Baire}\index[alph]{Baire!Teorema de Categoría de}
+\begin{teorema}\phantomsection\label{teo-CatBaire}\index[alph]{teoremade Categoría de Baire}\index[alph]{Baire!teorema de Categoría de}
     Todo espacio $X$ de Hausdorff, localmente compacto, es de Baire.
 \end{teorema}
 \begin{proof}
@@ -124,7 +124,7 @@ El espacio $X$ se dice \textit{pseudocompacto} si y sólo si cualquier función 
 
     (ii) Supóngase, por contradicción que $X$ es normal, pseudocompacto y no numerablemente compacto, entonces al ser $X$ un espacio $\T_1$, existe $A \subseteq X$ infinito, sin pérdida de generalidad numerable, y sin puntos de acumulación, esto implica que $A$ es discreto y cerrado. Sea $f:A \to \omega \subseteq \mathbb{R}$ cualquier biyección, entonces $f$ es continua, porque $A$ es cerrado.
 
-    Como $X$ es normal, el Teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
+    Como $X$ es normal, el teorema de Tietze (\ref{Teo-Tietze}) garantiza la existencia de una función continua $g:X \to \mathbb{R}$ de manera que $g \upharpoonright A = f$. Claramente $g$ es no acotada, lo cual contradice que $X$ sea pseudocompacto.
 \end{proof}
 
 \begin{proposicion}\phantomsection\label{pseudocom-subcjtos}
@@ -295,7 +295,7 @@ A continuación se caracterizará la compacidad en espacios metrizables.
 
 Un teorema de metrización es un teorema que caracteriza que un espacio sea metrizable, quizás el más famoso de ellos es el siguiente \cite[Teo.~ 4.2.9]{engelTopo}:
 
-\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{Teorema!de metrización de Uryshon}\index[alph]{Uryshon!Teorema de metrización de}
+\begin{teorema}[metrización de Uryshon]\phantomsection\label{metri-Ury}\index[alph]{teoremade metrización de Uryshon}\index[alph]{Uryshon!teorema de metrización de}
     Todo espacio $\T_3$ y segundo numerable es metrizable.
 \end{teorema}
 
@@ -304,7 +304,7 @@ En lo que resta, daremos la terminomlogía necesaria para enunciar dos de los te
 \index[alph]{familia!discreta}\index[alph]{espacio!colectivamente normal}
 Una familia de subconjuntos $\mathcal{A}$ de un espacio $X$ es \textit{discreta} cuando para cada $x \in X$ existe un abierto $U$ tal que $x \in U$ y $|\{ A \in \mathcal{A} \tq A \cap U \neq \emptyset \}| \leq 1$. Un espacio $X$ es \textit{colectivamente normal} cuando cualquier familia discreta $\mathcal{A}$, cuyos elementos sean cerrados de $X$, se seapara por abiertos ajenos; esto es, existe una colección de abiertos ajenos dos a dos $\{ U_A \tq A \in \mathcal{A} \}$ tales que para cada $A \in \mathcal{A}$ ocurre $A \subseteq U_A$.
 
-\begin{teorema}[Bing]\phantomsection\label{metri-Bing}\index[alph]{Teorema!de metrización de Bing}\index[alph]{Bing!Teorema de metrización de}
+\begin{teorema}[Bing]\phantomsection\label{metri-Bing}\index[alph]{teoremade metrización de Bing}\index[alph]{Bing!teorema de metrización de}
     Un espacio de Moore es metrizable si y sólo si es colectivamente normal.
 \end{teorema}
 
@@ -315,6 +315,6 @@ Una base $\mathcal{B}$ de un espacio topológico $X$ es \textit{regular} si y s�
 \[ \{ B \in \mathcal{B} \tq B \cap V \neq \emptyset \, \land \, B \cap (X \setminus V) \neq \emptyset \} =^* \emptyset \, \]
 el siguiente teorema de metrización establece que lo únicos espacios $\T_1$ que admiten bases regulares, son exactamente los metrizables.
 
-\begin{teorema}[Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{Teorema!de metrización de Arhangel’skii}\index[alph]{Arhangel’skii!Teorema de metrización de}
+\begin{teorema}[Arhangel’skii]\phantomsection\label{metri-Arhan}\index[alph]{teoremade metrización de Arhangel’skii}\index[alph]{Arhangel’skii!teorema de metrización de}
     Un espacio es metrizable si y sólo si es $\T_1$ y admite una base regular.
 \end{teorema}

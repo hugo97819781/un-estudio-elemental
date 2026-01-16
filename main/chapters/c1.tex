@@ -1,7 +1,7 @@
 \chapter{Familias casi ajenas}
 \emph{\small Las familias casi ajenas (\enquote{almost disjoint families}, en inglés) son objetos fascinantes de la teoría de conjuntos; como se verá a lo largo de este trabajo, sus aplicaciones no sólo se limitan a esta rama de las matemáticas, sino que sus repercusiones se extienden a la topología. Entre los pioneros de su estudio destacan enormes personajes, entre ellos Felix Hausdorff, Wacław Sierpiński, Kazimierz Kuratowski, Eduard Čech y Stefan Banach.}
 
-\emph{\small En lo que sigue, se presentarán estos objetos y se expondrán sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. A lo largo de esta última sección, se abordarán las pruebas de algunos resultados clásicos, principalmente: los Lemas de Dočkálková y de Solovay, el Teorema de Simon y la existencia de las familias de Luzin. Por último, se darán algunas aplicaciones de esta teoría sobre el comportamiento de los cardinales $\mathfrak{c}$, $\mathfrak{m}$ y $\mathfrak{a}$.}
+\emph{\small En lo que sigue, se presentarán estos objetos y se expondrán sus propiedades más inmediatas; algunos métodos para su construcción; y finalmente, un estudio básico sobre su combinatoria. A lo largo de esta última sección, se abordarán las pruebas de algunos resultados clásicos, principalmente: los lemas de Dočkálková y de Solovay, el teorema de Simon y la existencia de las familias de Luzin. Por último, se darán algunas aplicaciones de esta teoría sobre el comportamiento de los cardinales $\mathfrak{c}$, $\mathfrak{m}$ y $\mathfrak{a}$.}
 
 \section{Observaciones inmediatas}
 
@@ -73,7 +73,7 @@ A partir de este momento se consolida la usanza de hacer hincapié en qué propi
 
 \begin{ejemplo}
 	\phantomsection\label{ej-Bandas}
-	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h \colon \omega \times \omega \to \omega$ es biyección, $\Phi_h(\ms{A}) \in \Ad(\omega)$. Más aún, tal familia es del mismo tamaño que $\ms{A}$ (todo gracias a \ref{prop-ADbiyec}).
+	Claramente $\ms{A}=\{ \{n\} \times \omega \tq n \in \omega \} \in \Ad(\omega \times \omega)$. Así que si $h \colon \omega \times \omega \to \omega$ es biyección, $\Phi_h(\ms{A}) \in \Ad(\omega)$. Más aún, tal familia es del mismo tamaño que $\ms{A}$, todo gracias a la proposición previa.
 \end{ejemplo}
 
 A continuación se comenzarán a examinar las propiedades de las familias casi ajenas maximales; se tiene la intención de responder a las preguntas que surgen naturalmente como: ¿puede haber familias casi ajenas más que numerables?, o, ¿existen familias maximales infinitas?
@@ -93,7 +93,7 @@ El recíproco de lo previo falla para familias infinitas (véase la familia $\Ph
 \end{corolario}
 
 \begin{proof}
-	Por el Lema previo, basta demostrar la necesidad.
+	Por el lema previo, basta demostrar la necesidad.
 
 	Supóngase $\omega \subseteq^* \midcup \ms{A}$ y nótese que si $B \in [\omega]^\omega$, entonces $B \subseteq^*\midcup \ms{A}$ y con ello $\emptyset \neq^* B  \subseteq^* B \cap \midcup \ms{A} = \midcup\{B \cap A \tq A \in \ms{A}\}$. Como la última es una unión finita, $B$ debe tener intersección infinita con algún elemento de $\ms{A}$.
 \end{proof}
@@ -147,32 +147,32 @@ Al tomar un espacio de Fréchet $X$ y cualquier subespacio denso $D \subseteq X$
 \end{proof}
 
 \begin{definicion}\phantomsection\label{def-FamSucesiones}\index[alph]{familia!de!sucesiones en $D$ convergentes a $A$ en $X$}\index[sym]{$\ms{A}_{D,A}$}
-	Si $X$, $D$ y $A$ son como en la Proposición anterior, a $\ms{A}_{D,A}$ se le denomina \textbf{familia de sucesiones en $D$ convergentes a $A$ en $X$}.
+	Si $X$, $D$ y $A$ son como en la proposición anterior, a $\ms{A}_{D,A}$ se le denomina \textbf{familia de sucesiones en $D$ convergentes a $A$ en $X$}.
 \end{definicion}
 
-Como la recta real $\mathbb{R}$ es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable; de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$, el conjunto $A_x$ de la \cref{prop-famSucesiones} se puede construir de manera explícita. Si $q \colon \omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
+Como la recta real es de Hausdorff, de Fréchet (por ser $1\AN$) y $\mathbb{Q} \subseteq \mathbb{R}$ es un subespacio denso numerable, de lo previamente establecido se obtiene que $\ms{A}_{\mathbb{Q},\mathbb{R}\setminus \mathbb{Q}}$ es una familia casi ajena sobre $\mathbb{Q}$ de tamaño $\mathfrak{c}=|\mathbb{R} \setminus \mathbb{Q}|$. Conviene destacar que la construcción recién mencionada no depende del $\Ac$; pues para cada $x \in \mathbb{R} \setminus \mathbb{Q}$, el conjunto $A_x$ de la \cref{prop-famSucesiones} se puede construir de manera explícita. Si $q \colon \omega \to \mathbb{Q}$ es cualquier biyección, basta considerar:
 \[ A_x = \Big\{ q \Big( \min \Big( q^{-1} \Big[ \mathbb{Q} \cap \Big( x-\frac{1}{n+1}, x-\frac{1}{n} \Big) \Big] \Big) \Big) \, \Big| \, n \in \omega \setminus \{0\} \Big\} \, . \]
 
 
 
-El corazón de la próxima estrategia para la obtención explícita de familias casi ajenas de tamaño el continuo, son los árboles.
+El corazón de la próxima estrategia para la obtención explícita de familias casi ajenas de tamaño el continuo, son los árboles (véase la \cref{sec-arbols}).
 
-Comenzaremos observando que si $S$ es cualquier rama de un árbol $(T,\leq)$, entonces $S$ es cerrada bajo cotas inferiores. En efecto, sean $x \in S$ y $y \leq x$. Para cada $s \in S$, al ser $S$ cadena, se tiene que $x \leq s$ o $s < x$. En el primer caso, $y \leq x \leq s$ y $y$ es comparable con $s$. En el segundo $y,s < x$; y como $(\{ y \in T \tq y < x \},\leq)$ es buen orden, $y$ y $s$ son comparables. Por lo tanto, $S \cup \{y\}$ es una cadena; y seguido de que $S$ es rama, $y \in S$.
+Comenzaremos observando que si $S$ es cualquier rama de un árbol $(T,\leq)$ es cerrada bajo cotas inferiores. En efecto, sean $x \in S$ y $y \leq x$. Para cada $s \in S$, al ser $S$ cadena, se tiene que $x \leq s$ o $s < x$. En el primer caso, $y \leq x \leq s$ y $y$ es comparable con $s$. En el segundo $y,s < x$; y como $(\{ y \in T \tq y < x \},\leq)$ es buen orden, $y$ y $s$ son comparables. Por lo tanto, $S \cup \{y\}$ es una cadena; y seguido de que $S$ es rama, $y \in S$. A razón de lo recién comentado:
 
 \begin{proposicion}
 	Sea $(T,\leq)$ un árbol numerable de altura $\omega$ y $\ms{A} \subseteq [T]^\omega$ el conjunto de todas las ramas numerables de $(T,\leq)$. Entonces $\ms{A} \in \Ad(T)$.
 \end{proposicion}
 
 \begin{proof}
-	Sean $R,S \in \ms{A}$ con $R \neq S$, sin pérdida de generalidad, existe $x_0 \in R \setminus S \neq \emptyset$. De existir $y \in R \cap S$ tal que $y \not < x_0$, resultaría que $x_0 \leq y$, en virtud de que $x,y \in R$ y $R$ es rama. Lo anterior y la discusión previa a esta Proposición implican que $x_0 \in S$, lo cual es imposible.
+	Sean $R,S \in \ms{A}$ con $R \neq S$, sin pérdida de generalidad, existe $x_0 \in R \setminus S \neq \emptyset$. De existir $y \in R \cap S$ tal que $y \not < x_0$, resultaría que $x_0 \leq y$, en virtud de que $x,y \in R$ y $R$ es rama. Lo anterior y la discusión previa a esta proposición implican que $x_0 \in S$, lo cual es imposible.
 	
 	Por lo tanto $R \cap S \subseteq \{ y \in T \tq y<z \}$; y como $T$ tiene altura $\omega$, el orden de $x_0$ es un natural; consecuentemente, $R \cap S$ es finito.
 \end{proof}
 
-Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (\cref{2fin-es-arbol}); considerar la siguiente clase de familias desembocará en resultados sumamente notables (como se puede ver en la \cref{Sec-PDM}).
+Un ejemplo clásico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (\cref{2fin-es-arbol}); considerar la siguiente clase de familias desembocará en resultados sumamente notables (como se puede ver en la \cref{Sec-PDM}).
 
 \begin{proposicion}
-	Para cada $f \in 2^\omega$ defínase $A_f \mycoloneq \{ f \upharpoonright n \tq n \in \omega \} \subseteq 2^{<\omega}$; entonces:
+	Para cualquier $f \in 2^\omega$ defínase $A_f \mycoloneq \{ f \upharpoonright n \tq n \in \omega \} \subseteq 2^{<\omega}$. Entonces se cumple que:
 	\begin{enumerate}
 		\item Cada $A_f$ es una rama de $(2^{<\omega},\subseteq)$.
 		\item Si $f\neq g$, entonces $A_f \neq A_g$.
@@ -186,10 +186,10 @@ Un ejemplo canónico de árbol numerable de altura $\omega$ es $2^{<\omega}$ (\c
 	(ii) Si $f \neq g$, entonces existe $m\in \omega$ tal que $f(m) \neq g(m)$. Así, se obtiene que $f \upharpoonright m+1 \neq g \upharpoonright m+1$ y $f \upharpoonright m+1 \in R_f \setminus R_g$, por lo que $R_f \neq R_g$.
 \end{proof}
 
-Las proposiciones anteriores permiten definir, de forma explícita y sin recurrir al $\Ac$, el siguiente tipo de familias casi ajenas.
+%Las proposiciones anteriores permiten definir, de forma explícita y sin recurrir al $\Ac$, el siguiente tipo de familias casi ajenas.
 
 \begin{definicion}\phantomsection\label{def-FamRamas}\index[sym]{$\ms{A}_X$}\index[alph]{familia!de!ramas de $X$ en $2^\omega$}
-	Para cada $X \subseteq 2^\omega$ defínase $\ms{A}_X \mycoloneq \{A_f \tq f \in X\}$ como en la Proposición previa.
+	Para cada $X \subseteq 2^\omega$ defínase $\ms{A}_X \mycoloneq \{A_f \tq f \in X\}$ como en la proposición previa.
 
 	Esta familia será nombrada la \textbf{familia de las ramas de $X$ en $2^{<\omega}$}.
 \end{definicion}
@@ -208,13 +208,13 @@ Se concluirá esta sección comentando qué ocurre respecto una interrogante sur
 	El \textbf{cardinal de casi ajenidad}, $\mathfrak{a}$, es el mínimo cardinal infinito $\kappa$ tal que existe una familia maximal de tamaño $\kappa$.
 \end{definicion}
 
-Debido a \textbf{\ref{prop-MADnoNum}}, se tiene $\aleph_1 \leq \mathfrak{a} \leq \mathfrak{c}$ y claramente bajo $\HC$ se debe satisfacer que $\mathfrak{a}=\mathfrak{c}$; luego, es consistente con $\zfc$ que $\mathfrak{a}=\mathfrak{c}$. Comentar que la teoría en relación al cardinal $\mathfrak{a}$ es basta y existen resultados de consistencia como el enunciado en seguida:
+Debido a \ref{prop-MADnoNum}, se tiene $\aleph_1 \leq \mathfrak{a} \leq \mathfrak{c}$ y claramente bajo $\HC$ se debe satisfacer que $\mathfrak{a}=\mathfrak{c}$; luego, es consistente con $\zfc$ que $\mathfrak{a}=\mathfrak{c}$. Comentar que la teoría en relación al cardinal $\mathfrak{a}$ es basta y existen resultados de consistencia como el enunciado en seguida:
 
 \begin{teorema}\phantomsection\label{teo-stafa}
-	Si $\aleph_1 \leq \kappa \leq \mathfrak{c}$ y $\kappa$ es cardinal regular, es consistente con $\zfc$ que $\mathfrak{a}=\kappa$.
+	Supóngase que $\aleph_1 \leq \kappa \leq \mathfrak{c}$ y que $\kappa$ es cardinal regular. Entonces, es consistente con $\zfc$ que $\mathfrak{a}=\kappa$.
 \end{teorema}
 
-El Teorema recién enunciado consecuencia de \cite[Teo.~5.1, p.~127]{kunenHandbook}; y si bien su demostración escapa a los propósitos del presente texto, sí se expondrán resultados en relación a la igualdad $\mathfrak{a}=\mathfrak{c}$ más adelante (véase \ref{cor-MaSimple}).
+El teorema recién enunciado es consecuencia de \cite[Teo.~5.1, p.~127]{kunenHandbook}; y si bien su demostración escapa a los propósitos del presente texto, sí se expondrán resultados en relación a la igualdad $\mathfrak{a}=\mathfrak{c}$ más adelante (véase \ref{cor-MaSimple}).
 
 \section{El ideal generado y su comportamiento}
 \phantomsection\label{Sec-IdealGenerado}
@@ -222,7 +222,7 @@ El Teorema recién enunciado consecuencia de \cite[Teo.~5.1, p.~127]{kunenHandbo
 \begin{definicion}\phantomsection\label{def-ideal}
 	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$.
 	\begin{enumerate}[i)]
-		\item El \textbf{ideal generado por $\ms{A}$} es el conjunto $\ms{I}_N(\ms{A})$; definido como la colección $\{ B \subseteq N \tq \exists H \in [\ms{A}]^{<\omega} \: ( B \subseteq^* \midcup H ) \} $.
+		\item El \textbf{ideal generado por $\ms{A}$} es el conjunto $\ms{I}_N(\ms{A})$, definido como la colección $\{ B \subseteq N \tq \exists H \in [\ms{A}]^{<\omega} \: ( B \subseteq^* \midcup H ) \} $.
 		\item La \textbf{parte positiva de $\ms{A}$} es $ \ms{I}_N^+(\ms{A})  \mycoloneq  \ms{P}(N) \setminus \ms{I}_N(\ms{A})$.
 	\end{enumerate}
 	Si $N=\omega$, estos conjuntos se denotarán por $\ms{I}(\ms{A})$ y $\ms{I}^+(\ms{A})$, respectivamente.
@@ -250,25 +250,18 @@ Resulta sencillo constatar que el objeto definido en \ref{def-ideal} es; como su
 	\end{enumerate}
 \end{observacion}
 
-Obsérvese adempás que si $\ms{A} \in \Mad(\omega)$ es finita; en virtud del \cref{lem-MADnecesarioUnion} se tendrá que $\omega \in \ms{I}(\ms{A})$, pues $\ms{A} \subseteq \ms{A}$ es finito y $\omega \subseteq^* \midcup \ms{A}$. El recíproco de esto también es cierto.
+Obsérvese además que, si $\ms{A} \in \Mad(\omega)$ es finita; en virtud del \cref{lem-MADnecesarioUnion} se tendrá que $\omega \in \ms{I}(\ms{A})$, pues $\ms{A} \subseteq \ms{A}$ es finito y $\omega \subseteq^* \midcup \ms{A}$. El recíproco de esto también es cierto.
 
-\begin{proposicion}
-	Sea $\ms{A} \in \Ad(\omega)$ cualquiera. Si $\omega \in \ms{I}(\ms{A})$, entonces $\ms{A}$ es maximal y finita.
+\begin{proposicion}\phantomsection\label{cor-IdealPropioCaract}
+	Sea $\ms{A} \in \Ad(\omega)$. Entonces $\omega \in \ms{I}(\ms{A})$ si y sólo si $\ms{A}$ es maximal y finita.
 \end{proposicion}
 
-\begin{proof}
+\begin{proof}Basta probar suficiencia.
+	
 	Supóngase que $\omega \in \ms{I}(\ms{A})$, entonces existe $H \subseteq \ms{A}$ finito con $\omega \subseteq^* \midcup H \subseteq \midcup \ms{A}$. Por \ref{cor-MADnecesarioUnion}, basta ver que $\ms{A}$ es finita.
-
+	
 	Supóngase que existe $B \in \ms{A} \setminus H$. Así, $B$ casi ajeno con cada elemento de $H \subseteq \ms{A}$, luego, $B \cap \midcup H = \midcup \{B \cap h \tq h \in H \}$ es finito. De lo anterior, $B = B \cap \omega \subseteq^* B \cap \midcup H$ es finito, lo cual es imposible. Por lo tanto, $\ms{A} \subseteq H$ y $\ms{A}$ es finita.
 \end{proof}
-
-\begin{corolario}\phantomsection\label{cor-IdealPropioCaract}
-	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Las siguientes condiciones son equivalentes:
-	\begin{enumerate}[i)]
-		\item El ideal $\ms{I}_N(\ms{A})$ no es propio, es decir, $N \in \ms{I}_N(\ms{A})$.
-		\item $\ms{A}$ es finita y maximal en $N$.
-	\end{enumerate}
-\end{corolario}
 
 Con relativa frecuencia aparecerán familias que, pese a no ser maximales, satisfacen la condición (ii) de lo subsecuente; esta puede ser tomada como un debilitamiento a la condición de maximalidad.
 
@@ -283,7 +276,7 @@ Con relativa frecuencia aparecerán familias que, pese a no ser maximales, satis
 
 Si $X \in [N]^\omega$, entonces $\ms{A} \upharpoonright X \in \Ad(X)$. Más aún, si $\ms{A}$ es maximal, para cada $B \subseteq X$ infinito existe $A \in \ms{A}$ tal que $A \cap B = (A \cap X) \cap (B \cap X)$ es infinito, mostrando la maximalidad de $\ms{A} \upharpoonright X$. Así que, efectivamente, la definición anterior es un debilitamiento de la condición de maximalidad.
 
-Sin causa de asombro, los conceptos recién establecidos son respetados por las biyecciones $\Phi_h$.
+%Sin causa de asombro, los conceptos recién establecidos son respetados por las biyecciones $\Phi_h$.
 
 \begin{proposicion}
 	Sean $N,M$ conjuntos numerables, $h \colon N \to M$ biyección y $\ms{A} \in \Ad(N)$.
@@ -331,7 +324,7 @@ Si bien se demostró, tras la \cref{def-MaxEnAlguna}, que la maximalidad de una 
 \end{proposicion}
 
 \begin{proof}
-	Por el \cref{cor-IdealPropioCaract}, basta mostrar que $X \in \ms{I}(\ms{A})$ si y sólo si $X \in \ms{I}_X(\ms{A} \upharpoonright X)$. Dado lo demostrado en \ref{prop-TrazaBasicos}, la necesidad de tal equivalencia es inmediata. Ahora, si $X \in \ms{I}(\ms{A})$, entonces $X \subseteq^* \midcup H$ para cierto $H \in [\ms{A}^{<\omega}]$. Luego $X \subseteq^* X \cap \midcup H$ y la finitud de $H$ implica que:
+	Por la \cref{cor-IdealPropioCaract}, basta mostrar que $X \in \ms{I}(\ms{A})$ si y sólo si $X \in \ms{I}_X(\ms{A} \upharpoonright X)$. Dado lo demostrado en \ref{prop-TrazaBasicos}, la necesidad de tal equivalencia es inmediata. Ahora, si $X \in \ms{I}(\ms{A})$, entonces $X \subseteq^* \midcup H$ para cierto $H \in [\ms{A}^{<\omega}]$. Luego $X \subseteq^* X \cap \midcup H$ y la finitud de $H$ implica que:
 	\begin{align*}
 		X & \subseteq^* \{ A \cap X \in [X]^{<\omega} \tq A \in H \} \cup \{ A \cap X \in [X]^\omega \tq A \in H \} \\
 		& =^* \{ A \cap X \in [X]^\omega \tq A \in H \} \, ,
@@ -339,7 +332,7 @@ Si bien se demostró, tras la \cref{def-MaxEnAlguna}, que la maximalidad de una 
 	probando que $X \in \ms{I}_X(\ms{A} \upharpoonright X)$.
 \end{proof}
 
-Como la familia vacía no es maximal, la Proposición anterior deja como reflexión que los únicos conjuntos que podrían ser testigos de que $\ms{A}$ no es maximal, son aquellos que pertenecen a la parte positiva de $\ms{A}$.
+Como la familia vacía no es maximal, la proposición anterior deja como reflexión que los únicos conjuntos que podrían ser testigos de que $\ms{A}$ no es maximal, son aquellos que pertenecen a la parte positiva de $\ms{A}$.
 
 \begin{corolario}\phantomsection\label{cor-CasiajenoPartePositiva}
 	Si $\ms{A} \in \Ad(\omega)$, $\{X \in [\omega]^{\omega} \tq \ms{A} \upharpoonright X= \emptyset \} \subseteq \ms{I}^+(\ms{A})$.
@@ -356,7 +349,7 @@ Si $X \in [\omega]^\omega$ y $\ms{A}$ es maximal, entonces $X$ debe tener inters
 	Recíprocamente, si $\ms{A}$ no es maximal, existe $B \in [\omega]^\omega$ casi ajeno con cada elemento de $\ms{A}$. Así, $\ms{A} \upharpoonright B = \emptyset$ y se sigue de \ref{cor-CasiajenoPartePositiva}, que $B \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
-Como ninguna familia maximal es numerable, del Corolario anterior se desprende la siguiente condensación de todo lo comentado y demostrado tras \ref{def-MaxEnAlguna}.
+Como ninguna familia maximal es numerable, del corolario anterior se desprende la siguiente condensación de todo lo comentado y demostrado tras \ref{def-MaxEnAlguna}.
 
 \begin{corolario}\phantomsection\label{cor-MADPositivCarac}
 	Sean $N$ un conjunto numerable y $\ms{A} \in \Ad(N)$. Entonces $\{ X \in [N]^\omega \tq \ms{A} \upharpoonright X \notin \Mad(X) \lor \omega \leq |\ms{A} \upharpoonright X|\} = \ms{I}_N^+(\ms{A})$, y en caso de ser $\ms{A}$ maximal, $ \{ X \in [N]^\omega \tq \omega < |\ms{A} \upharpoonright X| \} = \ms{I}_N^+(\ms{A})$ y más aún
@@ -367,7 +360,7 @@ Como ninguna familia maximal es numerable, del Corolario anterior se desprende l
 \subsection{Teorema de Simon}\phantomsection\label{subsec-Simon}
 \phantomsection\label{Sec-TeoSimon}
 
-Se abordará en lo subsecuente un análisis simple sobre la combinatoria de las familias casi ajenas. Los próximos lemas configuran la antesala para enunciar el primer resultado importante de la sección, el Teorema de Simon (\ref{Teo-Simon}).
+Se abordará en lo subsecuente un análisis simple sobre la combinatoria de las familias casi ajenas. Los próximos lemas configuran la antesala para enunciar el primer resultado importante de la sección, el teorema de Simon (\ref{Teo-Simon}).
 
 \begin{lema} 
 	Sea $(X_n)_{n\in \omega} \subseteq [\omega]^\omega$ una sucesión $\subseteq$-decreciente. Entonces existe $Y \in [X_0]^\omega$ tal que para cada $k \in \omega$, ocurre $Y \subseteq^* X_k$.
@@ -380,21 +373,21 @@ Se abordará en lo subsecuente un análisis simple sobre la combinatoria de las 
 
 El siguiente resultado constata que la parte positiva de una familia es grande, en el sentido de que esta contiene la suficiente cantidad de elementos como para acotar inferiormente a cualquier $\subseteq$-cadena numerable contenida en ella.
 
-\begin{lema}[Dočkálková]\index[alph]{Dočkálková!Lema de}\index[alph]{Lema!de Dočkálková}\phantomsection\label{lem-PositivCadenaDecreciente}
+\begin{lema}[Dočkálková]\index[alph]{Dočkálková!lema de}\index[alph]{lema!de Dočkálková}\phantomsection\label{lem-PositivCadenaDecreciente}
 	Sean $\ms{A} \in \Mad(\omega)$ y $(X_n)_{n\in\omega} \subseteq \ms{I}^+(\ms{A})$ una sucesión $\subseteq$-decreciente. Existe $Y \in \ms{I}^+(\ms{A})$ tal que si $n\in \omega$, entonces $Y \subseteq^* X_n$.
 \end{lema}
 
 \begin{proof}
 	Por el \cref{cor-MADPositivCarac}, si $n \in \omega$, $H_n \mycoloneq \{ A \in \ms{A} \tq A \cap X_n \neq^* \emptyset \}$ debe ser infinito. Para cada $n \in \omega$ fijese ($\Ac$) una función $f_n  \colon  \ms{P}(H_n) \setminus \{\emptyset\} \to H_n$ de elección; y defínase recursivamente $B \colon \omega \to \ms{A}$ como $B(n) = f(H_n \setminus B[n] )$.
 
-	Así, $(\midcup\{B(m) \tq m\geq n \} \cap X_n)_{n \in \omega}$ satisface las hipótesis del Lema previo. Efectivamente; si $n \in \omega$, entonces $B(n) \in H_n$ y $\midcup\{B(m) \tq m\geq n \} \cap X_n \supseteq B(n) \cap X_n$ es infinito. Esta sucesión es $\subseteq$-decreciente, debido a que $(X_n)_n \in \omega$ también lo es. Por lo tanto, existe $Y \in [\omega]^\omega$ de manera que para cada $k \in \omega$:
+	Así, $(\midcup\{B(m) \tq m\geq n \} \cap X_n)_{n \in \omega}$ satisface las hipótesis del lema previo. Efectivamente; si $n \in \omega$, entonces $B(n) \in H_n$ y $\midcup\{B(m) \tq m\geq n \} \cap X_n \supseteq B(n) \cap X_n$ es infinito. Esta sucesión es $\subseteq$-decreciente, debido a que $(X_n)_n \in \omega$ también lo es. Por lo tanto, existe $Y \in [\omega]^\omega$ de manera que para cada $k \in \omega$:
 	\[ Y \subseteq^* \midcup\{B(m) \tq m\leq k \} \cap X_n \subseteq B(k) \cap X_k \subseteq X_k \, . \]
 	Y, al ser $Y$ infinito, se tiene que $Y \cap B(k) \supseteq X \cap (B(k) \cap X_k )$ es infinito. Por lo tanto $\ms{A} \upharpoonright Y$ es infinita; siguiéndose del \cref{cor-MADPositivCarac} que $Y \in \ms{I}^+(\ms{A})$.
 \end{proof}
 
 El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{SimonFrechet} y como se verá más adelante (\cref{cor-FrechNoProd}), juega un papel fundamental en el estudio de la propiedad topológica de Fréchet.
 
-\begin{teorema}[Simon]\index[alph]{Simon!Teorema de}\index[alph]{Teorema!de Simon}\phantomsection\label{Teo-Simon}
+\begin{teorema}[Simon]\index[alph]{Simon!teorema de}\index[alph]{teoremade Simon}\phantomsection\label{Teo-Simon}
 	Para toda familia maximal e infinita $\ms{A}$ existe un elemento $Y \in \ms{I}^+(\ms{A})$ tal que $\mathscr{A} \upharpoonright Y$ es unión ajena de dos familias maximales en ninguna parte.
 \end{teorema}
 \begin{proof}
@@ -408,12 +401,12 @@ El siguiente resultado fue demostrado en 1980 por Petr Simon \cite[p.~751]{Simon
 
 	Defínase recursivamente la sucesión $(X_n)_{n \in \omega}$ como $X_0=\omega$; y para cada $n \in \omega$, $X_{n+1}=j(n,X_n)$. Si $n \in \omega$, se da $X_{n+1} \in \ms{I}_{X_n}^+( \ms{A}(n,k(n,X_n)) \upharpoonright X_n ) \subseteq \ms{I}^+(\ms{A})$ (véase \ref{prop-TrazaBasicos}); y además, por la definición de $j$:
 	\[ \ms{A}(n,k(n,X_n)) \upharpoonright X_{n+1} \in \Mad(X_{n+1}) \, ; \]	
-	a consecuencia del ello $X_{n+1} \subseteq X_n$. Aplicando el Lema de Dočkálková, se obtiene un conjunto $Y \in \ms{I}^+ (\ms{A})$ casi contenido en cada $X_n$.
+	a consecuencia del ello $X_{n+1} \subseteq X_n$. Aplicando el lema de Dočkálková, se obtiene un conjunto $Y \in \ms{I}^+ (\ms{A})$ casi contenido en cada $X_n$.
 
 	Por \ref{cor-MADPositivCarac}, $\ms{A} \upharpoonright Y$ es infinita; y por ello, existen $g \in F$ y $m \in \omega$ tales que $g(m) \neq k(m,X_m)$ y $A_g \cap Y$ es infinito. Puesto que $Y \setminus X_{m+1} =^* \emptyset$, es necesario que $A_g \cap X_{m+1} \subseteq X_{m+1}$ sea infinito y como $\ms{A}(m,k(m,X_m)) \upharpoonright X_{m+1} \in \Mad(X_{m+1})$, existe $A_f \in \ms{A}(m,k(m,X_m))$ tal que $(A_g \cap X_{m+1}) \cap (A_f \cap X_{m+1}) \neq ^* \emptyset$. Pero, a razón de que $f(m)=k(m,X_m) \neq g(m)$, se tiene que $f \neq g$ y $A_f \cap A_g =^* \emptyset$, lo cual es un absurdo a lo previamente establecido.
 \end{proof}
 
-La familia $\ms{A} \upharpoonright Y$ provista por el Teorema de Simon es maximal e infinita necesariamente. Así que, tomando en cualquier $\ms{A} \in \Mad(\omega)$ infinita se tiene:
+La familia $\ms{A} \upharpoonright Y$ provista por el teorema de Simon es maximal e infinita necesariamente. Así que, tomando en cualquier $\ms{A} \in \Mad(\omega)$ infinita se tiene:
 
 \begin{corolario}
 	Existe una familia maximal infinita que es unión ajena de dos familias maximales en ninguna parte.
@@ -488,7 +481,7 @@ Una de las ideas centrales detrás de que $\ms{A}=\{A_\alpha \tq \alpha \in \ome
 	Dados los comentarios previos a esta demostración, $A_\alpha \cap \midcup \{A_\beta \tq \beta \in C \cap \alpha \}$ es infinito, demostrando que $\midcup \ms{B} \cap \midcup \ms{C}$ es infinito, y se sigue del \cref{lem-InseparableCar}, que $\ms{A}$ es inseparable.
 \end{proof}
 
-La existencia de familias de Luzin no es tan inucitada, resulta que cualquier familia infinita trae consigo una extensión que es de Luzin.
+%La existencia de familias de Luzin no es tan inucitada, resulta que cualquier familia infinita trae consigo una extensión que es de Luzin.
 
 \begin{proposicion}\phantomsection\label{pro-LuzinExisten}
 	Toda familia casi ajena numerable se extiende a una familia de Luzin. Particularmente, existe una familia de Luzin.
@@ -538,10 +531,10 @@ Los siguientes objetos son una suerte de modificación a la \cref{def-LuzinFam};
 		Si una familia casi ajena es parcialmente separable, no puede contener ninguna $n$-grieta de Luzin.
 	\end{corolario}
 	\begin{proof}
-		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el Lema previo a esta demostración, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que el conjunto $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
+		Sea $(\ms{A}_i \tq i \in I)$ una $n$- grieta de Luzin con testigos $X$ y $m$. Si $ \ms{A} \supseteq \midcup \{ \ms{A}_i \tq i \in n \}$, entonces dado el lema previo a esta demostración, para cualesquiera $i,j \in n$ distintos, existen $\alpha,\beta \in X$ diferentes de modo que el conjunto $\midcup\{ A_\alpha^i \cap A_\beta^j \tq i, j \in n \, \land \, i \neq j\}$ es infinito. Es decir, $\midcup \ms{A}_i \cap \midcup \ms{A}_j$ es infinito, siguiéndose la conclusión automáticamente de \ref{lem-InseparableCar}.
 	\end{proof}
 
-	La siguiente Proposición deja en claro la labor de \enquote{debilitamiento} que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; cualquiera de estas últimas contiene siempre una $2$-grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} (\cref{fodor-lem}) y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
+	La siguiente proposición deja en claro la labor de \enquote{debilitamiento} que cumplen las $n$-grietas de Luzin respecto a las familias de Luzin; cualquiera de estas últimas contiene siempre una $2$-grieta de Luzin. La prueba del hecho en cuestión requiere invocar el \textit{Lema de Fodor} (\cref{fodor-lem}) y el hecho de que siempre existen funciones ordinales como las solicitadas en la subsecuente prueba.
 
 	\begin{proposicion}
 		Toda familia de Luzin contiene una grieta de Luzin. En consecuencia, existe una grieta de Luzin.
@@ -549,7 +542,7 @@ Los siguientes objetos son una suerte de modificación a la \cref{def-LuzinFam};
 	\begin{proof}
 		Sea $\ms{A}=\{A_\alpha \tq \alpha \in \omega_1\}$ una familia de Luzin y $f,g \colon \omega_1 \to \omega_1$ tales que si $ \beta < \alpha < \omega_1$, entonces $g(\beta) < f(\beta) < g(\alpha)$.
 
-		Como $\omega_1 \setminus \omega$ es estacionario en $\omega_1$ y la asignación $j \colon \omega_1 \setminus \omega \to \omega_1$; dada por $j(\alpha) = \max(A_{f(\alpha)} \cap A_{g(\alpha)}) +1 $, es regresiva, en virtud del Lema de Fodor, existen $S \subseteq \omega_1 \setminus \omega$ estacionario en $\omega_1$ y un natural $m$ tales que $j[S] \subseteq \{m\}$.
+		Como $\omega_1 \setminus \omega$ es estacionario en $\omega_1$ y la asignación $j \colon \omega_1 \setminus \omega \to \omega_1$; dada por $j(\alpha) = \max(A_{f(\alpha)} \cap A_{g(\alpha)}) +1 $, es regresiva, en virtud del lema de Fodor, existen $S \subseteq \omega_1 \setminus \omega$ estacionario en $\omega_1$ y un natural $m$ tales que $j[S] \subseteq \{m\}$.
 
         Ahora, si $\beta < \alpha$, entonces debido a la hipótesis $f(\beta) < g(\alpha)$, de modo que $f[\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}] \subseteq \{ \gamma < g(\alpha) \tq A_{g(\alpha)} \subseteq m \}$. Como $\ms{A}$ es de Luzin y $f$ es inyectiva (por ser estrictamente creciente), $\{ \beta < \alpha \tq A_{f(\beta)} \cap A_{g(\alpha)} \subseteq m \}$ es finito, permitiendo la buena definición de $l \colon S \to \omega_1$, definida por medio de la siguiente regla de correspondencia:
         \[ l(\alpha) = \left\lbrace \begin{array}{l l}
@@ -557,7 +550,7 @@ Los siguientes objetos son una suerte de modificación a la \cref{def-LuzinFam};
             \max\{ \gamma < \alpha \tq A_{f(\gamma)} \cap A_{g(\alpha)} \subseteq m \} & ; \,\, \text{otro caso}
         \end{array} \right. \]
         
-        Como $0 \notin S$, $l$ es regresiva; nuevamente, del Lema de Fodor, se sigue la existencia de un conjunto $X \subseteq S$, estacionario en $\omega_1$, tal que $l$ es constante en $X$. Así, para cada $\alpha \in X$ se tiene que $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y en consecuencia $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$, pues $X \subseteq S$ y $j[S] \subseteq \{m\}$.
+        Como $0 \notin S$, $l$ es regresiva; nuevamente, del lema de Fodor, se sigue la existencia de un conjunto $X \subseteq S$, estacionario en $\omega_1$, tal que $l$ es constante en $X$. Así, para cada $\alpha \in X$ se tiene que $m=\max(A_{f(\alpha)} \cap A_{f(\alpha)})+1$ y en consecuencia $A_{f(\alpha)} \cap A_{f(\alpha)} \subseteq m$, pues $X \subseteq S$ y $j[S] \subseteq \{m\}$.
 		
 		Ahora, supóngase que $\beta, \alpha \in X$ y $\beta < \alpha$, como $l$ es constante en $X$, $l(\alpha) = l(\beta)$. Si este último valor es cero, entonces $A_{f(\beta)} \cap A_{g(\alpha)} \not\subseteq m$. En caso contrario:
             \[ 0 \neq l(\alpha) = l (\beta) < \beta < \alpha \, , \]
@@ -585,7 +578,7 @@ Para dar una formalización de la intuición recien dada, comenzaremos definiend
 		\item Si $G \subseteq \mathbb{P}_\ms{A}$, se define $ D_G \mycoloneq \midcup\{ h \subseteq \omega \tq \exists H \in [\omega]^{\omega} \: \big( (h,H) \in G \big) \} $.
 \end{enumerate}
 
-El siguiente Lema indica por qué la existencia de ciertos filtros en $\mathbb{P}_{\mathscr{A}}$ genera conjuntos casi ajenos con cada elemento de $\ms{A}$; es decir, se implica bajo esta condición, la no maximalidad de la familia.
+%El siguiente lema indica por qué la existencia de ciertos filtros en $\mathbb{P}_{\mathscr{A}}$ genera conjuntos casi ajenos con cada elemento de $\ms{A}$; es decir, se implica bajo esta condición, la no maximalidad de la familia.
 
 \begin{lema}\phantomsection\label{lem-DgMagia}
 	Sean $\ms{A}$ una familia casi ajena, y $G$ un filtro de $\mathbb{P}_\ms{A}$, entonces para cada $a \in \ms{A}$:
@@ -628,7 +621,7 @@ Y en efecto, si $\mathcal{A} \subseteq \mathbb{P}_\ms{A}$ es anticadena y $(p,P)
 
 El \cref{cor-SolovayDebil} es una inmediatez, dada toda su discusión previa. Una versión bastante más fortalecida de este, es el siguiente resultado mostrado por Robert Solovay.
 
-\begin{lema}[Solovay]\phantomsection\label{lem-Solovay}\index[alph]{Lema!de Solovay}\index[alph]{Solovay!Lema de}
+\begin{lema}[Solovay]\phantomsection\label{lem-Solovay}\index[alph]{lema!de Solovay}\index[alph]{Solovay!lema de}
 	Sean $\kappa$ un cardinal con $\omega \leq \kappa < \mathfrak{c}$ y $(\ms{A},\ms{B})$ una grieta tal que $|\ms{A}|,|\ms{B}|\leq \kappa$. Bajo $\Ma(\kappa)$; existe $D\subseteq \ms{A}$ de modo que para cualesquiera $A \in \ms{A}$ y $b \in \ms{B}$ ocurre $a \cap D=^*\emptyset$ y $b \cap D\neq ^*\emptyset$.
 \end{lema}
 
@@ -642,7 +635,7 @@ El \cref{cor-SolovayDebil} es una inmediatez, dada toda su discusión previa. Un
 	En efecto, por \ref{lem-DgMagia} se tiene que para cada $a \in \ms{A}$, el conjunto $D_G \cap a$ es finito. Ahora, si $b \in \ms{B}$ es cualquiera, para cada $n \in \omega$ existe $(k,K) \in G \cap D(b,n)$; y en consecuencia $D_G \cap b \not \subseteq n$ (pues $h \cap b \not \subseteq n$). Por lo que el conujunto $D_G \cap b$ no puede ser finito.
 \end{proof}
 
-Es deseable que la conclusión del Lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falaz. Suponiendo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (véase \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad; pues esta tiene tamaño $\aleph_1 < \mathfrak{m}$ y es inseparable.
+Es deseable que la conclusión del lema de Solovay fuese que la grieta $(\ms{A},\ms{B})$ está separada; sin embargo tal formulación desemboca en un resultado falaz. Suponiendo $\Ma + \lnot\HC$, la existencia de una familia de Luzin (véase \ref{prop-LuzinSeparadas}) sería testigo de tal falsedad; pues esta tiene tamaño $\aleph_1 < \mathfrak{m}$ y es inseparable.
 
 \index[alph]{familia!débilmente separada}
 Como \enquote{breviario cultural}, cuando una grieta $(\ms{A},\ms{B})$ satisface la conclusión de \ref{lem-Solovay} para cierto subconjunto $D \subseteq \omega$, se dirá que está \textit{débilmente separada} (siguiendo la terminología de \cite[\S~ 3.2]{hruAlmost}). 
@@ -661,7 +654,7 @@ Aprovechamos para mencionar una última aplicación \enquote{conjuntista} de la 
 \begin{proof}
 	Sea $\kappa$ un cardinal con $\omega \leq \kappa <\mathfrak{c}$ y supóngase $\Ma(\kappa)$. Tomando en cuenta \ref{cor-famGrandes}, fíjese una familia casi ajena $\ms{A}$ con $|\ms{A}|=\kappa$ y defínase la función $f \colon \ms{P}(\omega) \to \ms{P}(\ms{A})$ como $ f(X)=\{ b \in \ms{A} \tq b \cap X =^* \emptyset \} $.
 
-	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el Lema de Solovay (\ref{lem-Solovay}) se concluye la existencia de un separador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$. Esto resulta en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
+	Si $\ms{B} \subseteq \ms{A}$ es cualquiera, entonces $|\ms{A} \setminus \ms{B}|, |\ms{B}| \leq \kappa$ y por el lema de Solovay (\ref{lem-Solovay}) se concluye la existencia de un separador $D \subseteq \omega$ para $\ms{A} \setminus \ms{B}$ y $\ms{B}$. Esto resulta en que $ f(D)=\{b \in \ms{A} \tq b \cap X =^* \emptyset \} = \ms{B} $. Luego $f$ es sobreyectiva y $\mathfrak{c} \geq 2^\kappa $. Como además $\kappa \geq \aleph_0$, entonces $2^\kappa \geq 2^{\aleph_0}=\mathfrak{c}$.
 
 	Para la segunda parte, es suficiente notar que $\Ma + \lnot \HC$ es consistente con $\zfc$, y que a partir de ellos se concluye $\Ma(\aleph_1)$ y $\omega \leq \aleph_1 < \mathfrak{c}$.
 \end{proof}

@@ -5,12 +5,12 @@
 El presente trabajo se desarrolla dentro de la teoría de conjuntos usual, $\zfc$, entendido como $\zf$ junto con el axioma de elección $\Ac$. Ocasionalmente haremos referencia a axiomas adicionales, tales como la hipótesis del continuo $\HC$ (véase \pagp\pageref{CHDef}) o el axioma de Martin $\Ma$ (véase \pagp\pageref{MADef}). Los sistemas mencionados pueden consultarse en la \cref{apnd-ltc}.
 
 \index[alph]{conjunto!potencia}\index[alph]{función!restricción de una}\index[alph]{clase}\index[sym]{$f \upharpoonright B$}\index[sym]{$\ms{P}(X)$}\index[alph]{conjunto!potencia}\index[alph]{enumeración}\index[alph]{conjunto!enumerado}
-Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto \textit{potencia}. Ahora, si $f \colon A \to X$ es una función y $B \subseteq A$, se escribirá la \textit{restricción} de $f$ a $B$ como $f \upharpoonright B$. Las jerarquía de operaciones binarias entre conjuntos que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$. Una \textit{enumeración} para un conjunto $A$ es una función biyectiva $I \to A$ ($i \mapsto a_i$), en esta situación, se dice que $A$ \textit{está enumerado} como $A=\{ A_i \tq i \in I \}$.
+Dado un conjunto $X$, se denotará por $\ms{P}(X)$ a su conjunto \textit{potencia}. Ahora, si $f \colon A \to X$ es una función y $B \subseteq A$, se escribirá la \textit{restricción} de $f$ a $B$ como $f \upharpoonright B$ y denotaremos la composición de funciones por yuxtaposición. Las jerarquía de operaciones binarias que utilizaremos será: $\setminus, \times, \cup, \cap$.Identificaremos cualquier fórmula $\varphi$ de la teoría de conjuntos con una \textit{clase}, esto es, una colección $\{ x \tq \varphi \}$. Una \textit{enumeración} para un conjunto $A$ es una función biyectiva $I \to A$ ($i \mapsto a_i$), en esta situación, se dice que $A$ \textit{está enumerado} como $A=\{ A_i \tq i \in I \}$.
 
 
 \subsection{Órdenes Parciales}
 \index[alph]{conjunto!parcialmente ordenado}\index[alph]{orden!parcial}\index[alph]{orden!parcial antireflexivo}\index[alph]{orden!parcial antireflexivo}\index[sym]{$\leq$ (orden)}\index[sym]{$<$ (orden)}\index[alph]{orden}
-Un \textit{orden parcial} sobre un conjunto $P$ es una relación reflexiva transitiva y antisimétrica en $P$. Cuando $\leq$ sea un orden parcial en $P$, se denotará el \textit{orden antireflexivo} asociado a $\leq$ por $< \mycoloneq  \leq \setminus \Id_A$. Un \textit{conjunto parcialmente ordenado} es un par ordenado $(P,R)$, donde $R$ es un orden parcial en $P$, o un orden antireflexivo asociado a un orden parcial en $P$.
+Un \textit{orden parcial} sobre un conjunto $P$ es una relación reflexiva, transitiva y antisimétrica en $P$. Cuando $\leq$ sea un orden parcial en $P$, se denotará el \textit{orden antireflexivo} asociado a $\leq$ por $< \mycoloneq  \leq \setminus \Id_A$. Un \textit{conjunto parcialmente ordenado} es un par ordenado $(P,R)$, donde $R$ es un orden parcial en $P$, o un orden antireflexivo asociado a un orden parcial en $P$.
 
 \index[alph]{isomorfismo de orden}\index[alph]{órdenes!isomorfos}\index[alph]{función!creciente}\index[alph]{función!estrictamente creciente}\index[alph]{función!isomorfismo de orden}\index[sym]{$(P,\leq) \cong (Q,\leq)$}\index[sym]{$(P,<) \cong (Q,<)$}
 Una función $f \colon P \to Q$ entre órdenes parciales es \textit{creciente} (\textit{estrictamente creciente}, respectivamente) siempre que para todos $p,q \in P$, con $p < q$, se cumple $f(p) \leq f(q)$ ($f(p) < f(q)$, respectivamente). Si $f$ es biyectiva, creciente y $f^{-1}$ es creciente, se dice que $f$ es \textit{isomorfismo de órdenes}, en tal caso usaremos la notación $(P,\leq) \cong (Q,\leq)$ (o bien, $(P,<) \cong (Q,<)$).
@@ -18,7 +18,7 @@ Una función $f \colon P \to Q$ entre órdenes parciales es \textit{creciente} (
 \index[alph]{elemento!máximo}\index[alph]{elementos comparable con otro}\index[alph]{elemento!mínimo}\index[alph]{elemento!supremo}\index[alph]{elemento!ínfimo}\index[alph]{elemento!maximal}\index[alph]{elemento!minimal}\index[sym]{$\max(A)$}\index[sym]{$\min(A)$}\index[sym]{$\sup(A)$}\index[sym]{$\inf(A)$}\index[alph]{conjunto!totalmente ordenado}\index[alph]{orden!total}\index[alph]{orden!buen orden}\index[alph]{conjunto!bien ordenado}
 Sean $\mathbb{P}=(P,\leq)$ un conjunto parcialmente ordenado. Seguiremos la notación estándar para los elementos \textit{máximo}, \textit{mínimo}, \textit{supremo} e \textit{ínfimo} de $A$ (cuando existan); esto es, $\max(A)$, $\min(A)$, $\sup(A)$, $\inf(A)$, respectivamente. Un elemento $r \in P$ es $\leq$-\textit{maximal} de $A$ si no existe $a \in A$ tal que $r < a$; de forma análoga se define el concepto de $\leq$-\textit{minimal} de $A$. Se dice que $p,q \in P$ son \textit{comparables} cuando $p \leq q$ o $q \leq p$.
 
-Una \textit{cadena} de $\mathbb{P}$ es un subconjunto $C \subseteq P$ de elementos comparables. Cuando $P$ mismo sea una cadena, se dirá que $\mathbb{P}$ es un \textit{conjunto totalmente ordenado} y que $\leq$ (o bien, $<$) es un \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $\mathbb{P}$ es un \textit{buen orden} y que $\leq$ (o bien, $<$) es un \textit{buen orden} en $P$.
+Una \textit{cadena} de $\mathbb{P}$ es un subconjunto $C \subseteq P$ de elementos comparables. Cuando $P$ mismo sea una cadena, se dirá que $\mathbb{P}$ es un \textit{conjunto totalmente ordenado} y que $\leq$ (o bien, $<$) es un \textit{orden total} en $P$. Si cada $A \in \ms{P}(P) \setminus \{ \emptyset \}$ tiene mínimo, diremos que $\mathbb{P}$ es un \textit{conjunto bien ordenado} y que $\leq$ (o bien, $<$) es un \textit{buen orden} en $P$.
 
 La prueba de la siguiente equivalencia para $\Ac$ se puede ver en \cite[\S ~ I.11]{munkresTopo}:
 \begin{teorema}[Principio de Maximalidad de Hausdorff]\phantomsection\label{teo-PMO}\index[alph]{lema!principio de maximalidad de Hausdorff}\index[alph]{principio de maximalidad de Hausdorff}\index[alph]{Hausdorff!principio de maximalidad de}
@@ -27,11 +27,11 @@ La prueba de la siguiente equivalencia para $\Ac$ se puede ver en \cite[\S ~ I.1
 
 \index[alph]{casi!contenido}\index[alph]{casi!contención}\index[alph]{casi!iguales}\index[alph]{casi!igualdad}\index[alph]{casi!ajeno}\index[sym]{$\subseteq^*$}\index[sym]{$=^*$}
 
-A continuación se presenta un objeto que, si bien no es un orden parcial, está inducido el orden parcial contención y la finitud. Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si $A \setminus B$ es finito, esta situación se denotará por $A \subseteq^* B$. Se conviene que $A$ y $B$ son \textit{casi iguales}, denotado $A=^*B$, si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$.
+A continuación se presenta un objeto que, si bien no es un orden parcial, está inducido por orden parcial contención. Para dos conjuntos cualesquiera $A$ y $B$, diremos que $A$ está \textit{casi contenido} en $B$ si $A \setminus B$ es finito, esta situación se denotará por $A \subseteq^* B$. Se conviene que $A$ y $B$ son \textit{casi iguales}, denotado $A=^*B$, si y sólo si $A \subseteq^* B$ y $B \subseteq ^* B$.
 \begin{proposicion}
     Sean $A,B$ y $C$ conjuntos arbitrarios, entonces:
     \begin{enumerate}
-        \item Si $A \subseteq^* B$ si y sólo si existe $F \subseteq A$ finito tal que $A \setminus F \subseteq^* B$.
+        \item Si $A \subseteq^* B$ si y sólo si existe $F \subseteq A$ finito tal que $A \setminus F \subseteq B$.
         \item $A \subseteq^* A$ u $A=^* B$.
         \item Si $A \subseteq^* B$ y $B \subseteq^* C$, entonces $A \subseteq^* C$.
         \item $=^*$ se comporta como relación de equivalencia.
@@ -56,14 +56,14 @@ A continuación se presenta un objeto que, si bien no es un orden parcial, está
 Como es estándar, se trabajará sobre el universo de Von Neumann. Así, $\alpha$ es un \textit{número ordinal} si $\alpha \subseteq \ms{P}(\alpha)$ y $(\alpha,\in)$ es un conjunto bien ordenado. Dados ordinales $\alpha$ y $\beta$, escribiremos $\alpha < \beta$ para indicar que $\alpha \in \beta$, equivalentemente, $\alpha \subsetneq \beta$. Toda clase no vacía de ordinales tiene mínimo \cite[Obs.~I.2.4]{jechSet}. Para cada ordinal $\alpha$, el sucesor de $\alpha$ es $\alpha+1=\alpha \cup \{\alpha\}$. Existen tres tipos de ordinales: \textit{cero} ($0=\emptyset$), los \textit{sucesor} (aquellos de la forma $\alpha+1$, para algún ordinal $\alpha$), y los \textit{límite} (ninguno de los anteriores). Denotaremos por $\omega$ al primer ordinal límite; $\omega$ es el conjunto de números naturales.
 
 \index[alph]{sucesión}\index[alph]{sucesión!finita}\index[sym]{$(x_n)_{n \in \omega} \subseteq A$}\index[sym]{$(x_k)_{k \in n} \subseteq A$}
-Una \textit{sucesión} (\textit{sucesión finita}, respectivamente) en un conjunto $A$ es una función $x \colon \omega \to A$ ($x \colon n \to A$ para algún $n \in \omega$). Esto se denota por $(x_n)_{n \in \omega} \subseteq A$, o bien, si $x$ es sucesión finita: $(x_k)_{k \in n} \subseteq A$.
+Una \textit{sucesión} (\textit{sucesión finita}, respectivamente) en un conjunto $A$ es una función $x \colon \omega \to A$ ($x \colon n \to A$, para algún $n \in \omega$, respectivamente). Esto se denota por $(x_n)_{n \in \omega} \subseteq A$, o bien, si $x$ es sucesión finita: $(x_k)_{k \in n} \subseteq A$.
 
 Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\omega$ y $\omega_1$. El mecanismo detrás de esto es la siguiente restricción del teorema de Recursión Transfinita \cite[\S~ I.2.Induction~ and~ Recursion]{jechSet}.
 \begin{teorema}[Recursión en ordinales]\index[alph]{teorema!de recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
     Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$, $x_0 \in X$, $g \colon X \to X$ y $f \colon \ms{P}(X) \to X$ arbitrarias:
     \begin{enumerate}
-        \item Existe una única $h \colon  \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)f(h[\beta])$.
-        \item Existe una única $j \colon  \alpha \to X$ de modo que: $j(0)=x_0$; para cada $\beta \in \alpha$, $j(\beta+1)=g(j(\alpha))$; y, para cada ordinal límite $\gamma \in \alpha$, $j(\gamma)=f(j[\gamma])$.
+        \item Existe una única $h \colon  \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta+1)=gh(\beta)$.
+        \item Existe una única $j \colon  \alpha \to X$ de modo que: $j(0)=x_0$; para cada $\beta \in \alpha$, $j(\beta+1)=gj(\beta)$; y, para cada ordinal límite $\gamma \in \alpha$, $j(\gamma)=f(j[\gamma])$.
     \end{enumerate}
     
     
@@ -80,7 +80,7 @@ De manera puntual, se hará referencia a la aritmética ordinal y cardinal, util
         \item $(\lambda \kappa)^\mu = \lambda^\mu \kappa^\mu$ y $\kappa^{\lambda + \mu} = \kappa^\lambda \kappa ^\mu$.
         \item Si $\kappa \leq \lambda$, entonces:
         \begin{enumerate}
-            \item $\kappa + \mu = \lambda + \mu$, $\kappa \mu = \lambda \mu$.
+            \item $\kappa + \mu \leq \lambda + \mu$ y $\kappa \mu \leq \lambda \mu$.
             \item $\mu^ \kappa \leq \mu ^ \lambda$.
             \item Si $\mu \neq 0$, $\kappa^ \mu \leq \lambda ^ \mu$.
         \end{enumerate}
@@ -88,7 +88,7 @@ De manera puntual, se hará referencia a la aritmética ordinal y cardinal, util
         \item Para cada conjunto $X$, $|\ms{P}(X)|=2^{|X|}>|X|$.
     \end{enumerate}
 
-    Y, si $\{\kappa_\alpha \tq \alpha \in I\}$ es una familia no vacía de cardinales y cada $\kappa_\alpha$ es infinito, o bien $I$ es infinito, entonces:
+    Y si $\{\kappa_\alpha \tq \alpha \in I\}$ es una familia no vacía de cardinales y cada $\kappa_\alpha$ es infinito, o bien $I$ es infinito, entonces:
     \[ \sum_{\alpha \in  I} \kappa_\alpha = |I| \sup_{\alpha \in I} \kappa_\alpha \, . \]
 \end{proposicion}
 
@@ -117,26 +117,27 @@ Dado un conjunto $X$ y un cardinal $\kappa \leq |X|$, se denotarán por $[X]^\ka
 \subsection{Estructuras combinatorias}
 \subsubsection{Árboles}
 \label{sec-arbols}
-Un árbol es un orden parcial $\mathbb{T}=(T,\leq)$ tal que para cada $x \in T$ el conjunto $\{ p \in T \tq p<x \}$ es un buen orden. El \textit{oden} de un elemento $x \in T$, denotado $o(X)$, es el único ordinal isomorfo a $(\{ p \in T \tq p<x \},<)$ \cite[\S.~I.2.12]{jechSet}. La altura de un árbol se define como $\sup\{ o(x) +1 \tq x \in T \}$. Una \textit{rama} de $\mathbb{T}$ es una cadena $R$ de $\mathbb{T}$, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{T}$.
+\index[alph]{orden parcial!árbol}\index[alph]{árbol}\index[alph]{árbol!altura de un}\index[alph]{orden!en un árbol}\index[sym]{$o(x)$}
+Un árbol es un conjunto parcialmente ordenado $\mathbb{T}=(T,\leq)$ tal que si $x \in T$, $\leq$ es buen orden en $\{ p \in T \tq p<x \}$. El \textit{orden} de $x \in T$, $o(x)$, es el único ordinal isomorfo a $(\{ p \in T \tq p<x \},<)$ \cite[\S.~I.2.12]{jechSet}. $\sup\{ o(x) +1 \tq x \in T \}$ es la \textit{altura de} $\mathbb{T}$. Una \textit{rama} de $\mathbb{T}$ es una cadena, $\subseteq$-maximal del conjunto de cadenas de $\mathbb{T}$.
 
 \begin{proposicion}\phantomsection\label{2fin-es-arbol}
 	$\mathbb{T} \mycoloneq (2^{<\omega}, \subseteq)$ es un árbol numerable de altura $\omega$.
 \end{proposicion}
 
 \begin{proof}
-	Sea $f\in 2^{<\omega}$, con $n=\dom(f)$. Entonces $(n,\in) \cong (f, \subsetneq_f)$ por medio de $H \colon n \to \subsetneq_f=\{ f \upharpoonright m \tq m < \dom(f) \}$ definida por $H(m)=f \upharpoonright m$; pues $H$ es biyectiva y para cualesquiera $m,k \in n$, $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$.
+	Sean $f\in 2^{<\omega}$, $n=\dom(f)$ y $T_f:=\{ g \in 2^{<\omega} \tq g \subsetneq f \}$. Nótese que $T_f =\{ f \upharpoonright m \tq m < n \}$. Entonces $H \colon n \to T_f$, definida por $H(m)=f \upharpoonright m$, es isomorfismo de orden, pues es biyectiva y para cualesquiera $m,k \in n$, $k \in m$ si y sólo si $f \upharpoonright k \subsetneq f \upharpoonright m$.
 
 	Por lo tanto $\mathbb{T}$ es un árbol y para cada $f \in 2^{<\omega}$, $o(f)=n$. Consecuentemente, la altura de $\mathbb{T}$ es $\sup\{ n+1 \tq n \in \omega \}=\omega$. Por \ref{cardi-subcolec}, $2^{<\omega}$ es numerable.
 \end{proof}
 
 \subsubsection{Cofinalidad y lema de Fodor}
 \index[alph]{cofinalidad}\index[alph]{número!ordinal!regular}\index[alph]{número!cardinal!regular}\index[alph]{función!cofinal}\index[sym]{$\cf(\alpha)$}\index[alph]{regular!ordinal}\index[alph]{regular!cardinal}
-Una función entre ordinales $f \colon \alpha \to \beta$ es \textit{cofinal} en $\alpha$ si para cada $\delta \in \beta$ existe cierto $\varepsilon \in \gamma$ de manera tal que $\delta \leq f(\varepsilon)$. Se define:
+Una función entre ordinales $f \colon \beta \to \alpha$ es \textit{cofinal} en $\alpha$ si para cada $\delta \in \alpha$ existe cierto $\varepsilon \in \beta$ de manera tal que $\delta \leq f(\varepsilon)$. Se define:
 \[ \cf(\alpha) = \min \{  \beta \tq \exists f:\beta \to \alpha \, (f \text{ es cofinal en } \alpha ) \} \, . \]
-Para cualquier ordinal $\alpha$: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un cardinal; y siempre existe una función cofinal y estrictamente creciente $f \colon \cf(\alpha) \to \alpha$ \cite[\S.~I.3.Cofinality]{jechSet}. Un ordinal (cardinal, respectivamente) $\kappa$ es regular si $\cf(\kappa)=\kappa$, $\omega_1$ es regular. \newpage
+Para cualquier ordinal $\alpha$: $\cf(\alpha)\leq \alpha$; $\cf(\alpha)$ es un cardinal; y siempre existe una función cofinal y estrictamente creciente $f \colon \cf(\alpha) \to \alpha$ \cite[\S.~I.3.Cofinality]{jechSet}. Un ordinal (cardinal, respectivamente) $\kappa$ es \textit{regular} si $\cf(\kappa)=\kappa$. $\omega_1$ es regular. \newpage
 
 \index[alph]{conjunto!cerrado (en ordinales)}\index[alph]{conjunto!club}\index[alph]{conjunto!estacionario}
-Sea $\gamma$ un ordinal límite. $C \subseteq \gamma$ se dice \textit{cerrado} (en $\gamma$) si para todo $\alpha<\gamma$, $\midcup (C \cap \alpha)=\alpha$ implica que $\alpha \in C$. Si $C$ es cerrado y no cofinal en $\gamma$, diremos que $C$ es un \textit{club} (de $\gamma$). Un conjunto $S \subseteq \gamma$ se denomina \textit{estacionario} (en $\gamma$) si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente últil herramienta \cite[I.8.7]{jechSet}:
+Sea $\gamma$ un ordinal límite. $C \subseteq \gamma$ se denomina \textit{cerrado} (en $\gamma$) si para todo $\alpha<\gamma$, $\midcup (C \cap \alpha)=\alpha$ implica que $\alpha \in C$. Si $C$ es cerrado y no cofinal en $\gamma$, diremos que $C$ es un \textit{club} (de $\gamma$). Un conjunto $S \subseteq \gamma$ se dice \textit{estacionario} (en $\gamma$) si y sólo si tiene intersección no vacía con todo club de $\gamma$. Con esta terminología se enuncia la siguiente últil herramienta \cite[Teo.~ I.8.7]{jechSet}:
 
 \begin{teorema}[Lema de Fodor]\phantomsection\label{fodor-lem}\index[alph]{lema!de Fodor}\index[alph]{Fodor!lema de}\index[alph]{función!estacionaria}
     Sean $\kappa$ un cardinal regular, $S \subseteq \kappa$ estacionario y $f \colon S \to \kappa$ \textit{regresiva}, es decir, para cada $\alpha \in S \setminus \{0\}$, $f(\alpha)<\alpha$. Entonces existe un conjunto estacionario $T \subseteq S$ tal que $f \upharpoonright T$ es constante; equivalentemente, existe $\delta \in \kappa$ tal que $f^{-1}[\{\delta\}] \subseteq S$ es estacionario.
@@ -150,7 +151,7 @@ Sea $\gamma$ un ordinal límite. $C \subseteq \gamma$ se dice \textit{cerrado} (
 Por lo que resta de la sección, $\mathbb{P}=(P,\leq)$ será un conjunto parcialmente ordenado. Dos elementos $p,q \in P$ son \textit{compatibles} cuando existe $r \in P$ con $r\leq p$ y $r\leq p$, esto se denotará por $p \parallel q$. Si $p \not \parallel q$, diremos que $p$ y $q$ son \textit{incompatibles} y escribiremos $p \perp q$. Una \textit{anticadena} de $\mathbb{P}$ es un subconjunto $A \subseteq P$ de elementos incompatibles dos a dos. Cuando toda anticadena de $\mathbb{P}$ sea contable, diremos que $\mathbb{P}$ tiene la \textit{propiedad de anticadena contable} (\textit{c.c.c.}). Un conjunto $D \subseteq P$ es \textit{denso} (en $\mathbb{P}$) cuando para cualquier $p \in P$ existe $d \in D$ tal que $d \leq a$.
 
 \index[alph]{filtro}\index[alph]{ideal}
-Un \textit{filtro} es un subconjunto no vacío $F \subseteq P$ tal que:
+Un \textit{filtro} es un conjunto no vacío $F \subseteq P$ tal que para cualesquiera $p,q \in P$:
 \begin{enumerate}
     \item Si $p \in F$ y $p \leq q$, entonces $q \in F$, y
     \item Si $p,q \in F$, entonces existe $r \in F$ de manera que $r \leq p$ y $r \leq q$.
@@ -161,8 +162,8 @@ De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, 
 \begin{proposicion}
     Sean $X$ un conjunto y $F \subseteq \ms{P}(X)$. $F$ es filtro si y sólo si:
     \begin{enumerate}
-        \item Para cada $A \in F$, si $A \leq B$, entonces $B \in F$, y
-        \item Para cualesquiera $A,B \in F$, $A \cap B \in F$.
+        \item Para cada $A \in F$, si $A \subseteq B \subseteq X$, entonces $B \in F$, y
+        \item Para cualesquiera $A,B \in F$ ocurre que $A \cap B \in F$.
     \end{enumerate}
 \end{proposicion}
 
@@ -174,10 +175,10 @@ De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, 
 %\end{teorema}
 
 \index[alph]{filtro!genérico}\index[alph]{filtro!$\ms{D}$-genérico}
-Si $\ms{D} \subseteq \ms{P}(P)$ es una colección de subconjuntos densos y $G$ es un filtro propio de $\mathbb{P}$, diremos que $G$ es $\ms{D}$-\textit{genérico} cuando para cada $D \in \ms{D}$ ocurre $G \cap D \neq \emptyset$; si $\ms{D}$ es la colección de todos los densos de $\mathbb{P}$, se dice que $G$ es \textit{genérico}.
+Si $\ms{D} \subseteq \ms{P}(P)$ es una colección de subconjuntos densos y $G$ es un filtro de $\mathbb{P}$, diremos que $G$ es $\ms{D}$-\textit{genérico} cuando para cada $D \in \ms{D}$ ocurre $G \cap D \neq \emptyset$; si $\ms{D}$ es la colección de todos los densos de $\mathbb{P}$, se dice que $G$ es \textit{genérico}.
 
 \index[alph]{axioma!de Martin en $\kappa$}\index[alph]{Martin!axioma de (en $\kappa$)}\index[sym]{$\Ma(\kappa)$}
-En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ se define el \textit{Axioma de Martin en} $\kappa$, denotado $\Ma(\kappa)$, como el enunciado: \textit{Para todo orden parcial $\mathbb{P}$ con la c.c.c. y toda colección de densos $\ms{D}$ de tamaño a lo más $\kappa$, existe un filtro $\ms{D}$-genérico}.
+En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ se define el \textit{Axioma de Martin en} $\kappa$, denotado $\Ma(\kappa)$, como el enunciado: \textit{Para todo orden parcial $\mathbb{P}$ con la c.c.c. y toda colección $\ms{D}$, de densos en $\mathbb{P}$, de tamaño a lo más $\kappa$, existe un filtro $\ms{D}$-genérico}.
 
 \begin{proposicion}
     Para todo par de cardinales $\lambda$ y $\kappa$:
@@ -193,13 +194,13 @@ En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ 
     (ii) Sean $\mathbb{P}=(P,\leq)$ cualquier orden parcial, $p_0 \in D_0$ y supóngase que $\ms{D}$ es una colección de densos de $\mathbb{P}$ enumerada como $\{D_n \tq n \in \omega\}$. Utilizando recursión y el $\Ac$, para cada $n\in \omega$ fíjese un elemento $p_{n+1} \in D_{n+1}$ con $p_{n+1} \leq p_n$. Sea
     \[ G \mycoloneq \{ q \in P \tq \exists n \in \omega \, ( p_n \leq q ) \} \, .\]
     
-    Claramente, si $p \in G$ y $q \geq p$, entonces $q \in G$. Además, si $p,q \in G$ entonces existen $n,m \in \omega$ tales que $p_n \leq p$ y $p_m \leq q$, de donde $p_k \leq p$ y $p_k \leq q$, donde $k \mycoloneq \max\{n,m\}$. Por contrucción, $G$ es un filtro $\ms{D}$-genérico.
+    Claramente, si $p \in G$ y $q \geq p$, entonces $q \in G$. Además, si $p,q \in G$ entonces existen $n,m \in \omega$ tales que $p_n \leq p$ y $p_m \leq q$, de donde $p_k \leq p$ y $p_k \leq q$, si es que $k \mycoloneq \max\{n,m\}$. Por contrucción, $G$ es un filtro $\ms{D}$-genérico.
 
-    (iiii) Considérese $\mathbb{T} \mycoloneq (2^{<\omega},\supseteq)$. Nótese que si $A \subseteq 2^{<\omega}$ es anticadena de $\mathbb{T}$ entonces $A$ es contable, pues $2^{<\omega}$ es numerable. Para cada $f \in 2^\omega$ defínase el conjunto $D_f  \mycoloneq  \{ p \in 2^{<\omega} \tq p \not\subseteq f \}$. Cada $D_f$ es denso, pues si $p \in 2^{<\omega}$, entonces $q  \mycoloneq  p \cup \{(\dom(p)+1,1-f(\dom(p)+1))\} \in D$ y $q \supseteq p$. Como los $D_f$ son distintos dos a dos, la cantidad de densos en $\mathbb{T}$ es $\mathfrak{c}$.
+    (iiii) Considérese $\mathbb{T} \mycoloneq (2^{<\omega},\supseteq)$. Nótese que si $A \subseteq 2^{<\omega}$ es anticadena de $\mathbb{T}$ entonces $A$ es contable, pues $2^{<\omega}$ es numerable. Para cada $f \in 2^\omega$ defínase el conjunto $D_f  \mycoloneq  \{ p \in 2^{<\omega} \tq p \not\subseteq f \}$. Cada $D_f$ es denso, pues si $p \in 2^{<\omega}$, entonces $q  \mycoloneq  p \cup \{(\dom(p),1-f(\dom(p)))\} \in D$ y $q \supseteq p$. Como los $D_f$ son distintos dos a dos, la cantidad de densos en $\mathbb{T}$ es $\mathfrak{c}$.
     
-    Supóngase, por contradicción, que existe un filtro $G$ de $\mathbb{T}$ tal que interseca a todos los densos de $\mathbb{T}$. Sea $g \mycoloneq \midcup G$, nótese que $g$ es función, pues para cualesquiera $h,k \in G$ existe $r \in G$ con $r \leq h,k$, de donde $r \supseteq h \cup k$, mostrando que $h \cup k$ es función. Similarmete a los conjuntos $D_n$, se tiene que para cada $n \in \omega$ el conjunto $E_n \mycoloneq \{ p \in 2^{<\omega} \tq n \in \dom(p) \} $ es denso. Por lo tanto, existe $t \in G \cap E_n$, mostrando que $p \in \dom(t) \subseteq \dom(\midcup G)$. Así que $\midcup G \colon  \omega \to 2$.
+    Supóngase, por contradicción, que existe un filtro $G$ de $\mathbb{T}$ tal que interseca a todos los densos de $\mathbb{T}$. Sea $g \mycoloneq \midcup G$, nótese que $g$ es función, pues para cualesquiera $h,k \in G$ existe $r \in G$ con $r \leq h,k$, de donde $r \supseteq h \cup k$, mostrando que $h \cup k$ es función. Similarmete a los conjuntos $D_n$, se tiene que para cada $n \in \omega$ el conjunto $E_n \mycoloneq \{ p \in 2^{<\omega} \tq n \in \dom(p) \} $ es denso. Así, para cada $n \in \omega$, existe $t \in G \cap E_n$, de donde $n \in \dom(t) \subseteq \dom(\midcup G)$. Luego, $\midcup G \colon  \omega \to 2$.
 
-    Sin embargo, para cada $f \in 2^\omega$, existe cierto $s \in G \cap D_f$. Así que $s \not\subseteq f$, y con ello, $f \neq \midcup G$, esto implica que $\midcup G \notin 2^\omega$, lo que es una contradicción. Por lo tanto, la colección $\ms{D}$ de todos los densos de $\mathbb{T}$ es una colección de tamaño $\mathfrak{c}$ y no existe ningún filtro $\ms{D}$-genérico en $\mathbb{P}$, mostrando que $\Ma(\mathfrak{c})$ es falso.
+    Sin embargo, para cada $f \in 2^\omega$, existe cierto $s \in G \cap D_f$. Por lo cual, $s \not\subseteq f$ y con ello $f \neq \midcup G$. Esto implica que $\midcup G \notin 2^\omega$, lo que es una contradicción. Por lo tanto, la colección $\ms{D}$ de todos los densos de $\mathbb{T}$ es una colección de tamaño $\mathfrak{c}$ para la que no existe ningún filtro $\ms{D}$-genérico en $\mathbb{P}$.
 \end{proof}
 
 \phantomsection\label{MADef}\index[alph]{axioma!de Martin}\index[alph]{Martin!axioma de}\index[sym]{$\Ma$}\index[sym]{$\mathfrak{m}$}\index[alph]{cardinal!de Martin}\index[alph]{Martin!cardinal de}

@@ -13,7 +13,7 @@ Si $X$ y $Y$ son homeomorfos, escribiremos $X \cong Y$. Una función $f \colon X
 La \textit{suma topológica} y el \textit{producto topológico}, de una colección no vacía de espacios $\{X_\alpha \tq \alpha \in I \}$, se denotarán $\coprod_{\alpha \in I} X_\alpha$ y $\prod_{\alpha \in I} X_\alpha$, respectivamente. Si $\beta \in I$, $\pi_\beta \colon \prod_{\alpha \in I} X_\alpha \to X_\beta$ será la $\beta$-ésima \textit{proyección cartesiana} ($f \mapsto f(\beta)$).
 
 \index[alph]{operador!derivado}\index[alph]{operador!clausura}\index[alph]{operador!interior}\index[alph]{operador!exterior}\index[alph]{operador!frontera}\index[alph]{derivado}\index[alph]{clausura}\index[alph]{interior}\index[alph]{exterior}\index[alph]{frontera}\index[sym]{$\der(A)$}\index[sym]{$\cla(A)$}\index[sym]{$\inte(A)$}\index[sym]{$\ext(A)$}\index[sym]{$\fron(A)$}
-Para cualquier $A \subseteq X$ utilizaremos las notaciones $\der(A)$, $\inte(A)$, $\cla(A)$, $\ext(A)$ y $\fron(A)$ para: el conjunto de puntos de acumulación, el \textit{interior}, la \textit{clausura}, el \textit{exterior} y la \textit{frontera} de $A$, respectivamente.
+Para cualquier $A \subseteq X$ utilizaremos las notaciones $\der(A)$, $\inte(A)$, $\cla(A)$, $\ext(A)$ y $\fron(A)$ para: el conjunto de puntos de acumulación (el \textit{derivado}), el \textit{interior}, la \textit{clausura}, el \textit{exterior} y la \textit{frontera} de $A$, respectivamente.
 
 \index[alph]{propiedad!topológica}\index[alph]{invariante topológico}\index[alph]{propiedad!topológica!hereditaria}\index[alph]{propiedad!topológica!débilmente hereditaria}\index[alph]{propiedad!topológica!productiva}\index[alph]{propiedad!topológica!finitamente productiva}\index[alph]{propiedad!topológica!factorizable}
 Una \textit{propiedad}, o \textit{invariante topológico}, es una cualidad que se preserva bajo homeomorfismos. Una propiedad topológica es: \textit{hereditaria} (\textit{débilmente hereditaria}, respectivamente) si se preserva bajo subespacios (subespacios cerrados, respectivamente), \textit{productiva} (\textit{finitamente productiva}, respectivamente) si se preserva bajo productos arbitrarios (productos finitos, respectivamente); y es \textit{factorizable} si cada vez que un producto topológico cuenta con ella, cada factor también. Toda propiedad hereditaria es factorizable.
@@ -22,7 +22,7 @@ Una \textit{propiedad}, o \textit{invariante topológico}, es una cualidad que s
 
 \index[alph]{peso}\index[alph]{densidad}\index[alph]{carácter}\index[alph]{espacio!de peso $\kappa$}\index[alph]{espacio!de densidad $\kappa$}\index[alph]{punto de carácter $\kappa$}\index[sym]{$w(X)$}\index[sym]{$\chi(x,X)$}\index[sym]{$d(X)$}\index[alph]{espacio!primero numerable}\index[alph]{espacio!segundo numerable}\index[sym]{$1\AN$}\index[sym]{$2\AN$}
 
-Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los cuales $X$ tiene una base de tamaño $\kappa$ y un denso de cardinalidad $\kappa$, respectivamente. Para cada $x \in X$, $\chi(x,X)$ es el mínimo tamaño para cualquier base local de $x$. Estos números son el \textit{peso} de $X$, la \textit{densidad} de $X$, y el \textit{carácter} de $x \in X$, respectivamente. Se dice que el espacio $X$ es \textit{segundo numerable} ($2\AN$) si $w(X)\leq \omega$; \textit{primero numerable} ($1\AN$) cuando para cada $x \in X$, $\chi(x,X)\leq \omega$; y \textit{separable} si $d(X)\leq \omega$.
+Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los cuales $X$ tiene una base de tamaño $\kappa$ y un denso de cardinalidad $\kappa$, respectivamente. Para cada $x \in X$, $\chi(x,X)$ es el mínimo tamaño para cualquier base local de $x$. Estos números son el \textit{peso} de $X$, la \textit{densidad} de $X$, y el \textit{carácter} de $x \in X$, respectivamente. El espacio $X$ se dice \textit{segundo numerable} ($2\AN$) si $w(X)\leq \omega$; \textit{primero numerable} ($1\AN$) cuando para cada $x \in X$, $\chi(x,X)\leq \omega$; y \textit{separable} si $d(X)\leq \omega$.
 
 \begin{proposicion}\phantomsection\label{prop-baseKappa}
     Para todo espacio topológico $X$:
@@ -42,7 +42,7 @@ Los números $w(X)$ y $d(X)$ denotan los mínimos cardinales $\kappa$ para los c
 
 \index[alph]{axioma!$\T_1$}\index[alph]{axioma!$\T_2$}\index[alph]{axioma!$\T_3$}\index[alph]{axioma!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{axioma!$\T_4$}\index[alph]{espacio!de Hausdorff}\index[alph]{espacio!de Tychonoff}\index[alph]{espacio!completamente regular}\index[alph]{espacio!regular}\index[alph]{espacio!normal}\index[alph]{espacio!$\T_1$}\index[alph]{espacio!$\T_2$}\index[alph]{espacio!$\T_3$}\index[alph]{espacio!$\T_{3 {\scriptscriptstyle 1/2}}$}\index[alph]{espacio!$\T_4$}\index[alph]{Hausdorff!espacio de}\index[alph]{Tychonoff!espacio de}
 
-El espacio $X$ es \textit{regular} (\textit{completamente regular}, respectivamente) si cualquier cerrado $F$ y cualquier $x \in X \setminus F$ se separan por abiertos ajenos (se separan funcionalmente, respectivamente). Se dice que $X$ es \textit{normal} si cualquier par de cerrados ajenos se separan por abiertos ajenos. Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad, respectivamente, adicionados con el axioma $\T_1$. Cuando $X$ es $\T_2$ se dice que es \textit{de Hausdorff}, y cuando es es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}. Los axiomas $\T_0,\T_1,\T_2,\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son invariantes productivos, factorizables. Todos menos $\T_4$, son hereditarios, $\T_4$ sólo es es débilmente hereditario.
+El espacio $X$ es \textit{regular} (\textit{completamente regular}, respectivamente) si cualquier cerrado $F$ y cualquier $x \in X \setminus F$ se separan por abiertos ajenos (se separan funcionalmente, respectivamente). Se dice que $X$ es \textit{normal} si cualquier par de cerrados ajenos se separan por abiertos ajenos. Los axiomas $\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son los axiomas de regularidad, regularidad completa y normalidad, respectivamente, adicionados con el axioma $\T_1$. Cuando $X$ es $\T_2$ se dice que es \textit{de Hausdorff}, y cuando es es $\T_{3 {\scriptscriptstyle 1/2}}$, se dice que es \textit{de Tychonoff}. Los axiomas $\T_1,\T_2,\T_3,\T_{3 {\scriptscriptstyle 1/2}}$ y $\T_4$ son invariantes productivos y factorizables. Todos menos $\T_4$, son hereditarios, $\T_4$ sólo es es débilmente hereditario.
 
 A continuación se enuncian dos de los resultados más notables en relación a los axiomas de separación. Las pruebas de los mismos pueden consultarse en \cite[Teo.~ 2.3.23]{engelTopo} y \cite[Teo.~ 2.1.18]{engelTopo}, respectivamente.
 
@@ -54,31 +54,31 @@ A continuación se enuncian dos de los resultados más notables en relación a l
     Un espacio $X$ es normal si y sólo si para cualquier cerrado $F \subseteq X$ y cualquier función continua $f \colon F \to \mathbb{R}$, existe $g \colon X \to \mathbb{R}$ continua y tal que $g \upharpoonright A = f$.
 \end{teorema}
 
-El siguiente lema será utilizado en el CHAP 4, anexaremos su demostración, pues es una alicación sencilla del teorema de extensión de Tietze.
+Anexaremos la demostración del siguiente resultado, es una aplicación sencilla del teorema de extensión de Tietze.
 
 \begin{corolario}[Lema de Jones]\phantomsection\label{lem-JonesS}\index[alph]{lema!de Jones}\index[alph]{Jones!lema de}
-    Sea $X$ un espacio $\T_4$ y $A \subseteq X$ infinito, discreto y cerrado en $X$. Si $D$ es denso infinito en $X$, entonces $2^{|A|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|A|} \leq \mathfrak{c}$.
+    Sean $X$ un espacio normal y $S \subseteq X$ infinito, discreto y cerrado. Si $D$ es denso infinito en $X$, entonces $2^{|S|} \leq 2^{|D|}$. Particularmente, si $X$ es separable, $2^{|S|} \leq \mathfrak{c}$.
 \end{corolario}
 \begin{proof}
     Sea $F \mycoloneq \mathbb{R}^S=\{ f \tq f \colon S \to \mathbb{R} \}$. Como $A$ es discreto, cada $f \in F$ es función continua. Ahora, como $A$ es cerrado, utilícese el teorema de Tietze para fijar ($\Ac$), para cada $f \in F$, una extesión continua $g_f \colon X \to \mathbb{R}$ de $f$. Obsérvese que $f \mapsto g_f$ es inyectiva.
 
-    Supóngase ahora que $h,k \colon X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, la asignación $h \mapsto \hat{h}$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
+    Supóngase ahora que $h,k \colon X \to \mathbb{R}$ son continuas y tales que $h \upharpoonright D=k \upharpoonright D$. Sea $x \in X$ cualquiera, si $h(x)\neq k(y)$, existen dos abiertos ajenos de $\mathbb{R}$, a saber $U$ y $V$, tales que $h(x) \in U$ y $k(x) \in V$. Como $x \in h^{-1}[U] \cap k^{-1}[V]$ son abiertos no vacíos de $X$, existe $d \in D \cap h^{-1}[U] \cap k^{-1}[V]$, lo cual es imposible pues implica que $h(d)=k(d) \in U \cap V$. Por lo tanto, $h=k$; esto es, $h \mapsto h \upharpoonright D$ es inyectiva. Por tanto, hay una inyección de $\mathbb{R}^S$ en $\mathbb{R}^D$, y así:
     \[ 2^{|S|} = 2^{\aleph_0 |S|} = (2^{\aleph_0})^{|S|} = |\mathbb{R}^S| \leq |\mathbb{R}^D| = (2^{\aleph_0})^{|D|} = 2^{\aleph_0 |D|} = 2^{|D|} \, \]
     finalizando la prueba.
 \end{proof}
 
 \index[alph]{espacio!cero-dimensional}
-Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene una base compuesta de conjuntos abiertos y cerrados a la vez, este invariante topológico es productivo y hereditario (por tanto, factorizable).
-
+Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene una base compuesta de conjuntos abiertos y cerrados a la vez. Este invariante topológico es productivo y hereditario (por tanto, factorizable).
+e
 \begin{proposicion}\phantomsection\label{cero-dim-caracte}\phantomsection\label{cerodim-Tych}
     Un espacio $X$ es cero-dimensional y sólo si se encaja en $2^{w(X)}$. Por tanto, todo espacio cero-dimensional es de Tychonoff.
 \end{proposicion}
 \begin{proof}
-    (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase la función $f \colon X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
+    (i) $\to$ (ii) Supóngase que $X$ es cero-dimensional y sea $\mathcal{B}$ una base compuesta de abiertos y cerrados para $X$, enumerada como $\{ B_\alpha \tq \alpha \in w(X) \}$ (usando \ref{prop-baseKappa}). Defínase $f \colon X \to 2^{w(X)}$, para cada $x \in X$, como $f(x)(\alpha)=1$ si y sólo si $x \in B_\alpha$.
 
     $f$ es continua, pues para cada $\alpha \in w(X)$, $\pi_\alpha f$ es la función característica del abierto y cerrado $B_\alpha \subseteq X$. Ahora, si $x \neq y$, entonces por ser $X$ espacio $\T_1$, existe $\beta \in w(X)$ de manera que $x \in B_\beta$, pero $y \notin B_\beta$; así que $f(x)(\beta) \neq f(y)(\beta)$ y en consecuencia $f(x) \neq f(y)$.
     
-    Finalmente, verificaremos que para cualquier $\alpha \in w(X)$, $f[B_\alpha]$ es abierto en $f[X]$, lo suficiente para mostrar que $f$ es abierta, y con ello homeomorfismo, sobre su imagen. Si $f(x) \in f[B_\alpha]$ es arbitrario, $x \in B_\alpha$ (por ser $f$ inyectiva); y así $f(x) \in \pi_\alpha^{-1}[\{1\}] \cap f[X] \subseteq f[B_\alpha] \cap f[X]$. En efecto, si $f(y) \in \pi_\alpha^{-1}[\{1\}] \cap f[X]$, entonces $f(y)(\alpha)=1$, mostrando que $y \in B_\alpha$, y así, $f(y) \in f[B_\alpha]$. Por lo tanto, $f[B_\alpha]$ es abierto en $f[X]$, luego, $f$ es encaje de $X$ en $2^{w(X)}$.
+    Finalmente, verificaremos que para cualquier $\alpha \in w(X)$, $f[B_\alpha]$ es abierto en $f[X]$, lo suficiente para mostrar que $f$ es abierta, y con ello, homeomorfismo sobre su imagen. Si $f(x) \in f[B_\alpha]$ es arbitrario, $x \in B_\alpha$ (por ser $f$ inyectiva); y así $f(x) \in \pi_\alpha^{-1}[\{1\}] \cap f[X] \subseteq f[B_\alpha]$. En efecto, si $f(y) \in \pi_\alpha^{-1}[\{1\}] \cap f[X]$, entonces $f(y)(\alpha)=1$, mostrando que $y \in B_\alpha$, y así, $f(y) \in f[B_\alpha]$. Por lo tanto, $f[B_\alpha]$ es abierto en $f[X]$ y $f$ es encaje de $X$ en $2^{w(X)}$.
 
     (ii) $\to$ (i) El espacio $2=\{0,1\}$ es cero-dimensional, así que por ser tal propiedad productiva y hereditaria, cualquier subespacio de $2^{w(X)}$ es cero-dimensional.
 \end{proof}
@@ -87,7 +87,7 @@ Un espacio $X$ es \textit{cero-dimensional} si y sólo si es $\T_1$ y contiene u
 \label{prelim-sucesiones}
 
 \index[alph]{subsucesión}\index[sym]{$x_n \to a$}\index[alph]{espacio!de convergencia única}\index[sym]{$\lim(x_n)$}\index[alph]{sucesión!convergente (función)}
-Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f \colon \omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$ (en tal caso, escribimos $a = \lim_{n \to \infty} x_n$). Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
+Durante esta subsección, $(x_n)_{n\in \omega}$ será una sucesión en $X$. Un \textit{subsucesión} de $(x_n)_{n\in \omega}$ es una sucesión de la forma $(x_{f(n)})_{n \in \omega}$, donde $f \colon \omega \to \omega$ es estrictamente creciente. Se utilizará la notación $x_n \to a$ para indicar que $(x_n)_{n\in \omega}$ converge al punto $a$ del espacio. El espacio $X$ es \textit{de convergencia única} si para cualquier sucesión $(y_n)_{n \in \omega} \subseteq X$, $y_n \to a$ y $y_n \to b$ implican $a = b$; en tal caso, escribimos $a = \lim x_n$. Todo espacio $\T_2$ es de convergencia única. %\cite[Prop. 1.6.11]{engelTopo}.
 
 \index[alph]{sucesión!convergente (conjunto)}\index[alph]{conjunto!convergente}\index[sym]{$A \to a$}\index[sym]{$\lim(A)$}
 Un subconjunto numerable $A \in [X]^\omega$ es una \textit{sucesión convergente} si existe $a \in X$ de manera que, para cada abierto $U$ de $X$ con $a \in U$, $A \subseteq ^* U$; lo cual se denotará como $A \to a$, o bien $a=\lim(A)$ si $X$ es de convergencia única.

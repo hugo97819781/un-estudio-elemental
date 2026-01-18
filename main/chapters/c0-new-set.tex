@@ -62,7 +62,7 @@ Con relativa frecuencia se realizarán construcciones \textit{recursivas} en $\o
 \begin{teorema}[Recursión en ordinales]\index[alph]{teorema!de recursión en ordinales}\index[alph]{recursión!en ordinales}\index[alph]{recursión!teorema de}
     Sea $\alpha \neq 0$ un ordinal, entonces para todo conjunto $X$, $x_0 \in X$, $g \colon X \to X$ y $f \colon \ms{P}(X) \to X$ arbitrarias:
     \begin{enumerate}
-        \item Existe una única $h \colon  \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta+1)=gh(\beta)$.
+        \item Existe una única $h \colon  \alpha \to X$ tal que para cada $\beta \in \alpha$, $h(\beta)=f(h[\beta])$.
         \item Existe una única $j \colon  \alpha \to X$ de modo que: $j(0)=x_0$; para cada $\beta \in \alpha$, $j(\beta+1)=gj(\beta)$; y, para cada ordinal límite $\gamma \in \alpha$, $j(\gamma)=f(j[\gamma])$.
     \end{enumerate}
     
@@ -148,7 +148,7 @@ Sea $\gamma$ un ordinal límite. $C \subseteq \gamma$ se denomina \textit{cerrad
 \phantomsection
 \label{copo-ccc}
 \index[alph]{elemento!compatible con otro}\index[alph]{elemento!incompatible con otro}\index[sym]{$p \parallel q$}\index[sym]{$p \perp q$}\index[alph]{conjunto!anticadena}\index[alph]{anticadena}\index[alph]{propiedad!de anticadena contable}\index[alph]{propiedad!c.c.c.}\index[alph]{c.c.c.}\index[alph]{conjunto!denso (en un orden parcial)}
-Por lo que resta de la sección, $\mathbb{P}=(P,\leq)$ será un conjunto parcialmente ordenado. Dos elementos $p,q \in P$ son \textit{compatibles} cuando existe $r \in P$ con $r\leq p$ y $r\leq p$, esto se denotará por $p \parallel q$. Si $p \not \parallel q$, diremos que $p$ y $q$ son \textit{incompatibles} y escribiremos $p \perp q$. Una \textit{anticadena} de $\mathbb{P}$ es un subconjunto $A \subseteq P$ de elementos incompatibles dos a dos. Cuando toda anticadena de $\mathbb{P}$ sea contable, diremos que $\mathbb{P}$ tiene la \textit{propiedad de anticadena contable} (\textit{c.c.c.}). Un conjunto $D \subseteq P$ es \textit{denso} (en $\mathbb{P}$) cuando para cualquier $p \in P$ existe $d \in D$ tal que $d \leq a$.
+Por lo que resta de la sección, $\mathbb{P}=(P,\leq)$ será un conjunto parcialmente ordenado. Dos elementos $p,q \in P$ son \textit{compatibles} cuando existe $r \in P$ con $r\leq p$ y $r\leq q$, esto se denotará por $p \parallel q$. Si $p \not \parallel q$, diremos que $p$ y $q$ son \textit{incompatibles} y escribiremos $p \perp q$. Una \textit{anticadena} de $\mathbb{P}$ es un subconjunto $A \subseteq P$ de elementos incompatibles dos a dos. Cuando toda anticadena de $\mathbb{P}$ sea contable, diremos que $\mathbb{P}$ tiene la \textit{propiedad de anticadena contable} (\textit{c.c.c.}). Un conjunto $D \subseteq P$ es \textit{denso} (en $\mathbb{P}$) cuando para cualquier $p \in P$ existe $d \in D$ tal que $d \leq a$.
 
 \index[alph]{filtro}\index[alph]{ideal}
 Un \textit{filtro} es un conjunto no vacío $F \subseteq P$ tal que para cualesquiera $p,q \in P$:
@@ -158,7 +158,7 @@ Un \textit{filtro} es un conjunto no vacío $F \subseteq P$ tal que para cualesq
 \end{enumerate}
 
 \index[alph]{filtro!propio}\index[alph]{ideal!propio}
-De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, respectivamente) es \textit{propio} cuando es diferente de $P$.
+De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, respectivamente) es \textit{propio} cuando es distinto de $P$.
 \begin{proposicion}
     Sean $X$ un conjunto y $F \subseteq \ms{P}(X)$. $F$ es filtro si y sólo si:
     \begin{enumerate}
@@ -178,7 +178,7 @@ De manera dual, un \textit{ideal} es un filtro en $(P,\geq)$. Un filtro (ideal, 
 Si $\ms{D} \subseteq \ms{P}(P)$ es una colección de subconjuntos densos y $G$ es un filtro de $\mathbb{P}$, diremos que $G$ es $\ms{D}$-\textit{genérico} cuando para cada $D \in \ms{D}$ ocurre $G \cap D \neq \emptyset$; si $\ms{D}$ es la colección de todos los densos de $\mathbb{P}$, se dice que $G$ es \textit{genérico}.
 
 \index[alph]{axioma!de Martin en $\kappa$}\index[alph]{Martin!axioma de (en $\kappa$)}\index[sym]{$\Ma(\kappa)$}
-En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ se define el \textit{Axioma de Martin en} $\kappa$, denotado $\Ma(\kappa)$, como el enunciado: \textit{Para todo orden parcial $\mathbb{P}$ con la c.c.c. y toda colección $\ms{D}$, de densos en $\mathbb{P}$, de tamaño a lo más $\kappa$, existe un filtro $\ms{D}$-genérico}.
+En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ se define el \textit{Axioma de Martin en} $\kappa$, denotado $\Ma(\kappa)$, como el enunciado: \textit{Para todo orden parcial $\mathbb{P}$ con la c.c.c. y toda colección $\ms{D}$, de tamaño a lo más $\kappa$, de densos en $\mathbb{P}$, existe un filtro $\ms{D}$-genérico}.
 
 \begin{proposicion}
     Para todo par de cardinales $\lambda$ y $\kappa$:
@@ -204,4 +204,4 @@ En honor al matemático Donald A. Martin (1940–), para cada cardinal $\kappa$ 
 \end{proof}
 
 \phantomsection\label{MADef}\index[alph]{axioma!de Martin}\index[alph]{Martin!axioma de}\index[sym]{$\Ma$}\index[sym]{$\mathfrak{m}$}\index[alph]{cardinal!de Martin}\index[alph]{Martin!cardinal de}
-Así, tiene sentido definir el \textit{cardinal de Martin}, $\mathfrak{m}$, como el menor cardinal $\kappa$ para el cual $\Ma(\kappa)$ es falso. El \textit{Axioma de Martin} es el enunciado: \textit{Para cualquier cardinal $\kappa$ menor que $\mathfrak{c}$, $\Ma(\kappa)$ es verdadero}; equivalentemente, $\mathfrak{m}=\mathfrak{c}$. $\HC$ y $\lnot\HC + \Ma$ son consistentes con $\zfc$ \cite[Teo.~ II.13.20, II.16.13]{jechSet}.
+Así, tiene sentido definir el \textit{cardinal de Martin}, $\mathfrak{m}$, como el menor cardinal $\kappa$ para el cual $\Ma(\kappa)$ es falso. El \textit{Axioma de Martin} es el enunciado: \textit{Para cualquier cardinal $\kappa$ menor que $\mathfrak{c}$, $\Ma(\kappa)$ es verdadero}; equivalentemente, $\mathfrak{m}=\mathfrak{c}$. Tanto $\HC$, como $\lnot\HC + \Ma$, son consistentes con $\zfc$ \cite[Teo.~ II.13.20, II.16.13]{jechSet}.
